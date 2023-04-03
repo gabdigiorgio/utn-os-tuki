@@ -11,19 +11,19 @@
 #include "memoria.h"
 
 int main(void) {
-	logger = log_create("log.log", "Servidor", 1, LOG_LEVEL_DEBUG);
-	int server_fd = iniciar_servidor();
+	logger = log_create("memoria.log", "Memoria", 1, LOG_LEVEL_DEBUG);
+	int memoria_fd = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir al CPU");
-	int cliente_fd = esperar_cliente(server_fd);
+	int cpu_fd = esperar_cliente(memoria_fd);
 	t_list* lista;
 	while (1) {
-			int cod_op = recibir_operacion(cliente_fd);
+			int cod_op = recibir_operacion(cpu_fd);
 			switch (cod_op) {
 			case MENSAJE:
-				recibir_mensaje(cliente_fd);
+				recibir_mensaje(cpu_fd);
 				break;
 			case PAQUETE:
-				lista = recibir_paquete(cliente_fd);
+				lista = recibir_paquete(cpu_fd);
 				log_info(logger, "Me llegaron los siguientes valores:\n");
 				list_iterate(lista, (void*) iterator);
 				break;
