@@ -14,6 +14,8 @@
 #include <commons/log.h>
 
 #include "server_utils.h"
+#include "client_utils.h"
+#include "utils.h"
 
 void iterator(char* value);
 

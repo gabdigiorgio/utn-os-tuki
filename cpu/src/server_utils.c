@@ -4,7 +4,6 @@ int iniciar_servidor(char* puerto)
 {
 
 	int socket_servidor;
-	char* puerto;
 	struct addrinfo hints, *servinfo, *p;
 
 	memset(&hints, 0, sizeof(hints));
