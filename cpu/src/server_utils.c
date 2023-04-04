@@ -1,23 +1,9 @@
 #include "server_utils.h"
 
-
-t_log* logger;
-t_config* config;
-
-t_config* iniciar_config(void)
-{
-	t_config* nuevo_config;
-	if((nuevo_config = config_create("./cpu.config"))==NULL){
-		printf("No pude leer la config \n");
-		exit(2);
-	}
-	return nuevo_config;
-}
-int iniciar_servidor(void)
+int iniciar_servidor(char* puerto)
 {
 
 	int socket_servidor;
-	config = iniciar_config();
 	char* puerto;
 	struct addrinfo hints, *servinfo, *p;
 
@@ -26,7 +12,6 @@ int iniciar_servidor(void)
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE;
 
-	puerto = config_get_string_value(config,"PUERTO_ESCUCHA");
 	getaddrinfo(NULL, puerto, &hints, &servinfo);
 
 	// Creamos el socket de escucha del servidor

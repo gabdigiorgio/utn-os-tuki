@@ -10,11 +10,29 @@
 
 #include "cpu.h"
 
+char* ip;
+char* server_port;
+char* client_port;
+t_log* logger;
+t_config* config;
+int server_connection;
+int client_connection;
+
+
 int main(void) {
-	logger = log_create("cpu.log", "CPU", 1, LOG_LEVEL_DEBUG);
-	int cpu_fd = iniciar_servidor();
+
+	//Iniciamos tanto el log como el config
+	logger = iniciar_logger();
+	config = iniciar_config();
+	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
+	log_info(logger,initial_setup());
+
+	if(client_connection = crear_conexion(ip,client_port) != 0) log_info(logger, "Conexion con la memoria establecida correctamente");
+
+	int server_connection = iniciar_servidor(server_port);
+
 	log_info(logger, "Cpu lista para recibir al Kernel");
-	int connection_fd = esperar_cliente(cpu_fd);
+	int connection_fd = esperar_cliente(server_connection);
 	t_list* lista;
 	while (1) {
 			int cod_op = recibir_operacion(connection_fd);
@@ -39,4 +57,25 @@ int main(void) {
 }
 void iterator(char* value) {
 	log_info(logger,"%s", value);
+}
+
+char* initial_setup(){
+	char* result;
+	int error = 1;
+
+	if(error == 1 && strcmp(ip = config_get_string_value(config,"IP") == "")){
+		result = "No se pudo obtener la IP desde el archivo config";
+		error = 0;
+	}
+	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA") == "")){
+		result = "No se pudo obtener el puerto de escucha desde el archivo config";
+		error = 0;
+	}
+	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_MEMORIA") == "")){
+		result = "No se pudo obtener el puerto de conexion desde el archivo config";
+		error = 0;
+	}
+	if(error == 1) result = "Valores de configuracion leidos correctamente";
+
+	return result;
 }
