@@ -15,6 +15,7 @@
 #include<netdb.h>
 #include<commons/log.h>
 #include<commons/collections/list.h>
+#include<commons/config.h>
 #include<string.h>
 #include<assert.h>
 
@@ -29,7 +30,7 @@ typedef enum
 extern t_log* logger;
 
 void* recibir_buffer(int*, int);
-
+t_config* iniciar_config(void);
 int iniciar_servidor(void);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
