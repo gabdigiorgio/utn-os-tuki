@@ -60,18 +60,18 @@ void iterator(char* value) {
 }
 
 char* initial_setup(){
-	char* result;
+	char* result = "";
 	int error = 1;
 
-	if(error == 1 && strcmp(ip = config_get_string_value(config,"IP") == "")){
+	if(error == 1 && strcmp(ip = config_get_string_value(config,"IP_MEMORIA"),"") == 0){
 		result = "No se pudo obtener la IP desde el archivo config";
 		error = 0;
 	}
-	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA") == "")){
+	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA"),"") == 0){
 		result = "No se pudo obtener el puerto de escucha desde el archivo config";
 		error = 0;
 	}
-	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_MEMORIA") == "")){
+	if(error == 1 && strcmp(client_port = config_get_string_value(config,"PUERTO_MEMORIA"),"") == 0){
 		result = "No se pudo obtener el puerto de conexion desde el archivo config";
 		error = 0;
 	}

@@ -19,19 +19,11 @@
 #include<string.h>
 #include<assert.h>
 
-#define PUERTO "4444"
-
-typedef enum
-{
-	MENSAJE,
-	PAQUETE
-}op_code;
-
 extern t_log* logger;
 
 void* recibir_buffer(int*, int);
 t_config* iniciar_config(void);
-int iniciar_servidor(void);
+int iniciar_servidor(char* puerto);
 int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);

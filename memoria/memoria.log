@@ -7,3 +7,6 @@
 [INFO] 11:51:01:479 Memoria/(2260:2260): Memoria lista para recibir al CPU, Kernel o File System
 [INFO] 11:51:44:376 Memoria/(2313:2313): 8002
 [INFO] 11:51:44:376 Memoria/(2313:2313): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:47:43:746 Memoria/(6283:6283): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:52:27:604 Memoria/(6283:6283): Se conecto un cliente!
+[ERROR] 13:52:57:367 Memoria/(6283:6283): el cliente se desconecto. Terminando servidor
