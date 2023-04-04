@@ -39,6 +39,23 @@ int crear_conexion(char *ip, char* puerto)
 	return socket_cliente;
 }
 
+char* handshake(int socket_cliente){
+	char* message = "";
+	uint32_t handshake = 1;
+	uint32_t result;
+
+	send(socket_cliente, &handshake, sizeof(uint32_t), NULL);
+	recv(socket_cliente, &result, sizeof(uint32_t), MSG_WAITALL);
+
+	if(result == 1){
+		message = "Handshake realizado correctamente";
+	} else {
+		message = "Fallo al realizar el handshake";
+	}
+
+	return message;
+}
+
 void enviar_mensaje(char* mensaje, int socket_cliente)
 {
 	t_paquete* paquete = malloc(sizeof(t_paquete));

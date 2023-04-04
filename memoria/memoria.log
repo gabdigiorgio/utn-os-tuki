@@ -10,3 +10,25 @@
 [INFO] 13:47:43:746 Memoria/(6283:6283): Memoria lista para recibir al CPU, Kernel o File System
 [INFO] 13:52:27:604 Memoria/(6283:6283): Se conecto un cliente!
 [ERROR] 13:52:57:367 Memoria/(6283:6283): el cliente se desconecto. Terminando servidor
+[INFO] 17:59:55:255 Memoria/(1881:1881): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 18:00:02:540 Memoria/(1881:1881): Se conecto un cliente!
+[ERROR] 18:01:34:869 Memoria/(1881:1881): el cliente se desconecto. Terminando servidor
+[INFO] 18:01:49:066 Memoria/(1994:1994): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 18:02:09:688 Memoria/(1994:1994): Se conecto un cliente!
+[ERROR] 18:02:39:092 Memoria/(1994:1994): el cliente se desconecto. Terminando servidor
+[INFO] 18:03:36:621 Memoria/(2100:2100): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 18:03:52:863 Memoria/(2100:2100): Se conecto un cliente!
+[INFO] 18:03:52:866 Memoria/(2100:2100): Me llego el mensaje ok
+[INFO] 19:04:54:404 Memoria/(3075:3075): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 19:11:33:269 Memoria/(3415:3415): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 19:11:44:530 Memoria/(3415:3415): Se conecto un cliente!
+[INFO] 19:11:44:532 Memoria/(3415:3415): Handshake recibido correctamente
+[ERROR] 19:12:01:250 Memoria/(3415:3415): el cliente se desconecto. Terminando servidor
+[INFO] 19:13:04:341 Memoria/(3534:3534): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 19:13:10:448 Memoria/(3534:3534): Se conecto un cliente!
+[INFO] 19:13:10:448 Memoria/(3534:3534): Error al intentar handshake
+[ERROR] 19:13:35:404 Memoria/(3534:3534): el cliente se desconecto. Terminando servidor
+[INFO] 19:13:41:587 Memoria/(3582:3582): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 19:13:47:147 Memoria/(3582:3582): Se conecto un cliente!
+[INFO] 19:13:47:148 Memoria/(3582:3582): Handshake recibido correctamente
+[ERROR] 19:13:50:200 Memoria/(3582:3582): el cliente se desconecto. Terminando servidor

@@ -4,3 +4,27 @@
 [INFO] 13:52:16:404 CPU/(6522:6522): Valores de configuracion leidos correctamente
 [INFO] 13:52:35:243 CPU/(6522:6522): Conexion con la memoria establecida correctamente
 [INFO] 13:52:44:907 CPU/(6522:6522): Cpu lista para recibir al Kernel
+[INFO] 18:00:02:536 CPU/(1917:1917): Valores de configuracion leidos correctamente
+[INFO] 18:00:02:541 CPU/(1917:1917): Conexion con la memoria establecida correctamente
+[INFO] 18:00:02:541 CPU/(1917:1917): Cpu lista para recibir al Kernel
+[INFO] 18:02:05:283 CPU/(2026:2026): Valores de configuracion leidos correctamente
+[INFO] 18:02:09:692 CPU/(2026:2026): Conexion con la memoria establecida correctamente
+[INFO] 18:03:52:860 CPU/(2143:2143): Valores de configuracion leidos correctamente
+[INFO] 18:03:52:863 CPU/(2143:2143): Conexion con la memoria establecida correctamente
+[INFO] 18:03:52:867 CPU/(2143:2143): Cpu lista para recibir al Kernel
+[INFO] 19:11:11:633 CPU/(3367:3367): Valores de configuracion leidos correctamente
+[INFO] 19:11:11:636 CPU/(3367:3367): Conexion establecida con la memoria
+[INFO] 19:11:11:637 CPU/(3367:3367): Handshake realizado correctamente
+[INFO] 19:11:11:638 CPU/(3367:3367): Cpu lista para recibir al Kernel
+[INFO] 19:11:44:523 CPU/(3440:3440): Valores de configuracion leidos correctamente
+[INFO] 19:11:44:532 CPU/(3440:3440): Conexion establecida con la memoria
+[INFO] 19:11:44:532 CPU/(3440:3440): Handshake realizado correctamente
+[INFO] 19:11:44:532 CPU/(3440:3440): Cpu lista para recibir al Kernel
+[INFO] 19:13:10:435 CPU/(3558:3558): Valores de configuracion leidos correctamente
+[INFO] 19:13:10:448 CPU/(3558:3558): Conexion establecida con la memoria
+[INFO] 19:13:10:448 CPU/(3558:3558): Fallo al realizar el handshake
+[INFO] 19:13:10:448 CPU/(3558:3558): Cpu lista para recibir al Kernel
+[INFO] 19:13:47:146 CPU/(3622:3622): Valores de configuracion leidos correctamente
+[INFO] 19:13:47:148 CPU/(3622:3622): Conexion establecida con la memoria
+[INFO] 19:13:47:148 CPU/(3622:3622): Handshake realizado correctamente
+[INFO] 19:13:47:148 CPU/(3622:3622): Cpu lista para recibir al Kernel

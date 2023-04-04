@@ -15,6 +15,8 @@ int main(void) {
 	int memoria_fd = iniciar_servidor();
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
 	int connection_fd = esperar_cliente(memoria_fd);
+	log_info(logger,handshake(connection_fd));
+
 	t_list* lista;
 	while (1) {
 			int cod_op = recibir_operacion(connection_fd);

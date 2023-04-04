@@ -27,7 +27,9 @@ int main(void) {
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
 	log_info(logger,initial_setup());
 
-	if(client_connection = crear_conexion(ip,client_port) != 0) log_info(logger, "Conexion con la memoria establecida correctamente");
+	if((client_connection = crear_conexion(ip,client_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
+
+	log_info(logger, handshake(client_connection));
 
 	int server_connection = iniciar_servidor(server_port);
 

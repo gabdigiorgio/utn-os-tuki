@@ -111,3 +111,21 @@ t_list* recibir_paquete(int socket_cliente)
 	free(buffer);
 	return valores;
 }
+
+char* handshake(int socket_cliente){
+	char* message = "";
+	uint32_t handshake;
+	uint32_t resultOk = 1;
+	uint32_t resultError = -1;
+
+	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL);
+
+	if(handshake == 1){
+		send(socket_cliente, &resultOk, sizeof(uint32_t), NULL);
+		message = "Handshake recibido correctamente";
+	} else {
+		send(socket_cliente, &resultError, sizeof(uint32_t), NULL);
+		message = "Error al intentar handshake";
+	}
+	return message;
+}
