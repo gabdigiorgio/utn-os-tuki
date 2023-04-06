@@ -23,5 +23,4 @@
 void iterator(char* value);
 char* initial_setup(void);
 
-
 #endif /* CPU_H_ */
