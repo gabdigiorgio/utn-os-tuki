@@ -28,3 +28,9 @@
 [INFO] 19:13:47:148 CPU/(3622:3622): Conexion establecida con la memoria
 [INFO] 19:13:47:148 CPU/(3622:3622): Handshake realizado correctamente
 [INFO] 19:13:47:148 CPU/(3622:3622): Cpu lista para recibir al Kernel
+[INFO] 19:15:36:246 CPU/(7097:7097): Valores de configuracion leidos correctamente
+[INFO] 19:15:36:270 CPU/(7097:7097): Conexion establecida con la memoria
+[INFO] 19:15:36:270 CPU/(7097:7097): Handshake realizado correctamente
+[INFO] 19:15:36:271 CPU/(7097:7097): Cpu lista para recibir al Kernel
+[INFO] 19:17:52:426 CPU/(7097:7097): Se conecto un cliente!
+[ERROR] 19:18:51:781 CPU/(7097:7097): el cliente se desconecto. Terminando servidor
