@@ -37,47 +37,32 @@ int main(void) {
 
 	//NO HAGO HANDSHAKE con ninguno de los 3 (no lo pide la consigna)
 
-
-	int server_connection = iniciar_servidor(server_port);
-
+	// Inicio servidor del Kernel
+	int socket_servidor = iniciar_servidor(server_port);
 	log_info(logger, "Kernel listo para recibir Consolas");
-	int connection_fd = esperar_cliente(server_connection);
-	t_list* lista;
-	while (1) {
-			int cod_op = recibir_operacion(connection_fd);
-			switch (cod_op) {
-			case MENSAJE:
-				recibir_mensaje(connection_fd);
-				break;
-			case PAQUETE:
-				lista = recibir_paquete(connection_fd);
-				log_info(logger, "Me llegaron los siguientes valores:\n");
-				list_iterate(lista, (void*) iterator);
-				break;
-			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				return EXIT_FAILURE;
-			default:
-				log_warning(logger,"Operacion desconocida. No quieras meter la pata");
-				break;
-			}
-		}
+
+	// Espero Conexiones de las consolas
+	while (1){
+		 pthread_t console_thread;
+		   int *socket_console_client = malloc(sizeof(int));
+		   *socket_console_client = esperar_cliente(socket_servidor);
+		   pthread_create(&console_thread, NULL, (void*) atender_consola, socket_console_client);
+		   pthread_detach(console_thread);
+	}
 
 
-	terminar_programa(server_connection, logger, config);
+
+	terminar_programa();
 
 	return EXIT_SUCCESS;
 }
-void iterator(char* value) {
-	log_info(logger,"%s", value);
-}
 
-void terminar_programa(int conexion, t_log* logger, t_config* config)
+
+void terminar_programa()
 {
-	/* Y por ultimo, hay que liberar lo que utilizamos (conexion, log y config)
-	  con las funciones de las commons y del TP mencionadas en el enunciado */
-
 	log_destroy(logger);
 	config_destroy(config);
-	liberar_conexion(conexion);
+	liberar_conexion(memoria_connection);
+	liberar_conexion(file_system_connection);
+	liberar_conexion(cpu_connection);
 }

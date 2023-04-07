@@ -34,3 +34,68 @@
 [INFO] 19:15:36:271 CPU/(7097:7097): Cpu lista para recibir al Kernel
 [INFO] 19:17:52:426 CPU/(7097:7097): Se conecto un cliente!
 [ERROR] 19:18:51:781 CPU/(7097:7097): el cliente se desconecto. Terminando servidor
+[INFO] 04:25:56:136 CPU/(6374:6374): Valores de configuracion leidos correctamente
+[INFO] 04:25:56:145 CPU/(6374:6374): Conexion establecida con la memoria
+[INFO] 04:27:40:305 CPU/(6470:6470): Valores de configuracion leidos correctamente
+[INFO] 04:27:40:311 CPU/(6470:6470): Conexion establecida con la memoria
+[INFO] 04:29:35:421 CPU/(6603:6603): Valores de configuracion leidos correctamente
+[INFO] 04:29:35:431 CPU/(6603:6603): Conexion establecida con la memoria
+[INFO] 04:29:35:434 CPU/(6603:6603): Cpu lista para recibir al Kernel
+[INFO] 04:35:39:871 CPU/(6766:6766): Valores de configuracion leidos correctamente
+[INFO] 04:35:39:877 CPU/(6766:6766): Conexion establecida con la memoria
+[INFO] 04:47:02:912 CPU/(7312:7312): Valores de configuracion leidos correctamente
+[INFO] 04:47:02:920 CPU/(7312:7312): Conexion establecida con la memoria
+[INFO] 04:48:10:869 CPU/(7330:7330): Valores de configuracion leidos correctamente
+[INFO] 04:48:10:881 CPU/(7330:7330): Conexion establecida con la memoria
+[INFO] 04:49:50:751 CPU/(7373:7373): Valores de configuracion leidos correctamente
+[INFO] 04:49:50:755 CPU/(7373:7373): Conexion establecida con la memoria
+[INFO] 04:51:12:683 CPU/(7406:7406): Valores de configuracion leidos correctamente
+[INFO] 04:51:12:688 CPU/(7406:7406): Conexion establecida con la memoria
+[INFO] 04:56:11:804 CPU/(7646:7646): Valores de configuracion leidos correctamente
+[INFO] 04:56:11:813 CPU/(7646:7646): Conexion establecida con la memoria
+[INFO] 04:56:47:099 CPU/(7667:7667): Valores de configuracion leidos correctamente
+[INFO] 04:56:47:106 CPU/(7667:7667): Conexion establecida con la memoria
+[INFO] 05:04:26:244 CPU/(8269:8269): Valores de configuracion leidos correctamente
+[INFO] 05:04:26:249 CPU/(8269:8269): Conexion establecida con la memoria
+[INFO] 05:04:26:253 CPU/(8269:8269): Cpu lista para recibir al Kernel
+[INFO] 05:05:10:957 CPU/(8336:8336): Valores de configuracion leidos correctamente
+[INFO] 05:05:10:966 CPU/(8336:8336): Conexion establecida con la memoria
+[INFO] 05:05:10:970 CPU/(8336:8336): Cpu lista para recibir al Kernel
+[INFO] 05:05:23:515 CPU/(8353:8353): Valores de configuracion leidos correctamente
+[INFO] 05:05:23:520 CPU/(8353:8353): Conexion establecida con la memoria
+[INFO] 05:05:23:522 CPU/(8353:8353): Cpu lista para recibir al Kernel
+[INFO] 05:06:28:085 CPU/(8526:8526): Valores de configuracion leidos correctamente
+[INFO] 05:06:28:087 CPU/(8526:8526): Conexion establecida con la memoria
+[INFO] 05:06:28:087 CPU/(8526:8526): Cpu lista para recibir al Kernel
+[INFO] 05:06:35:074 CPU/(8544:8544): Valores de configuracion leidos correctamente
+[INFO] 05:06:35:079 CPU/(8544:8544): Conexion establecida con la memoria
+[INFO] 05:06:35:079 CPU/(8544:8544): Cpu lista para recibir al Kernel
+[INFO] 05:10:08:957 CPU/(8845:8845): Valores de configuracion leidos correctamente
+[INFO] 05:10:08:964 CPU/(8845:8845): Conexion establecida con la memoria
+[INFO] 05:13:12:902 CPU/(9114:9114): Valores de configuracion leidos correctamente
+[INFO] 05:13:12:910 CPU/(9114:9114): Conexion establecida con la memoria
+[INFO] 05:13:12:910 CPU/(9114:9114): Cpu lista para recibir al Kernel
+[INFO] 05:13:19:542 CPU/(9127:9127): Valores de configuracion leidos correctamente
+[INFO] 05:13:19:548 CPU/(9127:9127): Conexion establecida con la memoria
+[INFO] 05:13:19:548 CPU/(9127:9127): Cpu lista para recibir al Kernel
+[INFO] 05:15:28:139 CPU/(9404:9404): Valores de configuracion leidos correctamente
+[INFO] 05:15:28:146 CPU/(9404:9404): Conexion establecida con la memoria
+[INFO] 05:15:28:146 CPU/(9404:9404): Cpu lista para recibir al Kernel
+[INFO] 05:15:39:446 CPU/(9419:9419): Valores de configuracion leidos correctamente
+[INFO] 05:15:39:447 CPU/(9419:9419): Conexion establecida con la memoria
+[INFO] 05:15:39:447 CPU/(9419:9419): Cpu lista para recibir al Kernel
+[INFO] 05:18:06:355 CPU/(9685:9685): Valores de configuracion leidos correctamente
+[INFO] 05:18:06:362 CPU/(9685:9685): Conexion establecida con la memoria
+[INFO] 05:18:06:363 CPU/(9685:9685): Cpu lista para recibir al Kernel
+[INFO] 05:19:06:162 CPU/(9711:9711): Valores de configuracion leidos correctamente
+[INFO] 05:19:06:171 CPU/(9711:9711): Conexion establecida con la memoria
+[INFO] 05:19:06:171 CPU/(9711:9711): Cpu lista para recibir al Kernel
+[INFO] 05:21:51:198 CPU/(9960:9960): Valores de configuracion leidos correctamente
+[INFO] 05:21:51:204 CPU/(9960:9960): Conexion establecida con la memoria
+[INFO] 05:21:51:204 CPU/(9960:9960): Cpu lista para recibir al Kernel
+[INFO] 05:24:30:831 CPU/(10138:10138): Valores de configuracion leidos correctamente
+[INFO] 05:24:30:838 CPU/(10138:10138): Conexion establecida con la memoria
+[INFO] 05:24:30:839 CPU/(10138:10138): Cpu lista para recibir al Kernel
+[INFO] 05:24:38:374 CPU/(10155:10155): Valores de configuracion leidos correctamente
+[INFO] 05:24:38:388 CPU/(10155:10155): Conexion establecida con la memoria
+[INFO] 05:24:38:389 CPU/(10155:10155): Cpu lista para recibir al Kernel

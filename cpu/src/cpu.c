@@ -31,10 +31,6 @@ int main(void) {
 
 	log_info(logger, handshake(client_connection));
 
-	sleep(10);
-
-	liberar_conexion(client_connection);
-
 	int server_connection = iniciar_servidor(server_port);
 
 	log_info(logger, "Cpu lista para recibir al Kernel");

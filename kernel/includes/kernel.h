@@ -5,17 +5,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <commons/log.h>
-#include <commons/string.h>
-#include <commons/config.h>
-#include <readline/readline.h>
+#include <pthread.h>
 
 #include "server_utils.h"
 #include "client_utils.h"
+#include "console_threads.h"
 #include "utils.h"
 #include "initial_setup.h"
 
 void iterator(char* value);
-void terminar_programa(int conexion, t_log* logger, t_config* config);
+void terminar_programa();
 
 
 

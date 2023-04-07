@@ -12,3 +12,140 @@
 [INFO] 19:17:52:425 KERNEL/(7147:7147): Conexion establecida con el File System
 [INFO] 19:17:52:427 KERNEL/(7147:7147): Conexion establecida con la CPU
 [INFO] 19:17:52:428 KERNEL/(7147:7147): Kernel listo para recibir Consolas
+[INFO] 04:24:49:697 KERNEL/(6324:6324): Valores de configuracion leidos correctamente
+[INFO] 04:24:49:704 KERNEL/(6324:6324): Conexion establecida con la Memoria
+[INFO] 04:24:49:705 KERNEL/(6324:6324): Conexion establecida con el File System
+[INFO] 04:24:49:705 KERNEL/(6324:6324): Conexion establecida con la CPU
+[INFO] 04:24:49:720 KERNEL/(6324:6324): Kernel listo para recibir Consolas
+[INFO] 04:25:56:154 KERNEL/(6324:6379): Thread iniciado correctamente
+[ERROR] 04:25:56:155 KERNEL/(6324:6379): el cliente se desconecto. Terminando servidor
+[INFO] 04:27:25:423 KERNEL/(6453:6453): Valores de configuracion leidos correctamente
+[INFO] 04:27:25:425 KERNEL/(6453:6453): Conexion establecida con la Memoria
+[INFO] 04:27:25:427 KERNEL/(6453:6453): Conexion establecida con el File System
+[INFO] 04:27:25:428 KERNEL/(6453:6453): Kernel listo para recibir Consolas
+[INFO] 04:27:40:315 KERNEL/(6453:6475): Thread iniciado correctamente
+[ERROR] 04:27:40:318 KERNEL/(6453:6475): el cliente se desconecto. Terminando servidor
+[INFO] 04:29:24:635 KERNEL/(6570:6570): Valores de configuracion leidos correctamente
+[INFO] 04:29:24:647 KERNEL/(6570:6570): Conexion establecida con la Memoria
+[INFO] 04:29:24:647 KERNEL/(6570:6570): Conexion establecida con el File System
+[INFO] 04:29:24:647 KERNEL/(6570:6570): Kernel listo para recibir Consolas
+[INFO] 04:29:35:436 KERNEL/(6570:6608): Thread iniciado correctamente
+[ERROR] 04:29:35:437 KERNEL/(6570:6608): el cliente se desconecto. Terminando servidor
+[INFO] 04:35:29:557 KERNEL/(6731:6731): Valores de configuracion leidos correctamente
+[INFO] 04:35:29:564 KERNEL/(6731:6731): Conexion establecida con la Memoria
+[INFO] 04:35:29:568 KERNEL/(6731:6731): Conexion establecida con el File System
+[INFO] 04:35:29:573 KERNEL/(6731:6731): Kernel listo para recibir Consolas
+[INFO] 04:35:39:892 KERNEL/(6731:6771): Thread iniciado correctamente
+[ERROR] 04:35:39:893 KERNEL/(6731:6771): el cliente se desconecto. Terminando servidor
+[INFO] 04:37:58:680 KERNEL/(6843:6843): Valores de configuracion leidos correctamente
+[INFO] 04:37:58:681 KERNEL/(6843:6843): Conexion establecida con la Memoria
+[INFO] 04:37:58:681 KERNEL/(6843:6843): Conexion establecida con el File System
+[INFO] 04:37:58:681 KERNEL/(6843:6843): Kernel listo para recibir Consolas
+[INFO] 04:44:26:456 KERNEL/(7170:7170): Valores de configuracion leidos correctamente
+[INFO] 04:44:26:464 KERNEL/(7170:7170): Conexion establecida con la Memoria
+[INFO] 04:44:26:464 KERNEL/(7170:7170): Conexion establecida con el File System
+[INFO] 04:44:26:466 KERNEL/(7170:7170): Kernel listo para recibir Consolas
+[INFO] 04:44:26:466 KERNEL/(7170:7170): Se conecto un cliente!
+[INFO] 04:45:11:631 KERNEL/(7187:7187): Valores de configuracion leidos correctamente
+[INFO] 04:45:11:634 KERNEL/(7187:7187): Conexion establecida con la Memoria
+[INFO] 04:45:11:634 KERNEL/(7187:7187): Conexion establecida con el File System
+[INFO] 04:45:11:635 KERNEL/(7187:7187): Kernel listo para recibir Consolas
+[INFO] 04:45:11:637 KERNEL/(7187:7187): Se conecto un cliente!
+[INFO] 04:46:52:924 KERNEL/(7294:7294): Valores de configuracion leidos correctamente
+[INFO] 04:46:52:931 KERNEL/(7294:7294): Conexion establecida con la Memoria
+[INFO] 04:46:52:932 KERNEL/(7294:7294): Conexion establecida con el File System
+[INFO] 04:46:52:933 KERNEL/(7294:7294): Kernel listo para recibir Consolas
+[INFO] 04:47:02:917 KERNEL/(7294:7294): Se conecto un cliente!
+[INFO] 04:48:10:887 KERNEL/(7294:7336): Thread iniciado correctamente
+[INFO] 04:49:43:059 KERNEL/(7356:7356): Valores de configuracion leidos correctamente
+[INFO] 04:49:43:066 KERNEL/(7356:7356): Conexion establecida con la Memoria
+[INFO] 04:49:43:068 KERNEL/(7356:7356): Conexion establecida con el File System
+[INFO] 04:49:43:068 KERNEL/(7356:7356): Kernel listo para recibir Consolas
+[INFO] 04:56:02:937 KERNEL/(7631:7631): Valores de configuracion leidos correctamente
+[INFO] 04:56:02:944 KERNEL/(7631:7631): Conexion establecida con la Memoria
+[INFO] 04:56:02:945 KERNEL/(7631:7631): Conexion establecida con el File System
+[INFO] 04:56:02:946 KERNEL/(7631:7631): Kernel listo para recibir Consolas
+[INFO] 04:56:11:812 KERNEL/(7631:7631): Se conecto un cliente!
+[INFO] 04:56:11:819 KERNEL/(7631:7651): Thread iniciado correctamente
+[INFO] 04:56:47:106 KERNEL/(7631:7631): Se conecto un cliente!
+[INFO] 04:56:47:108 KERNEL/(7631:7672): Thread iniciado correctamente
+[ERROR] 04:56:59:204 KERNEL/(7631:7672): el cliente se desconecto. Terminando servidor
+[INFO] 05:03:41:393 KERNEL/(8198:8198): Valores de configuracion leidos correctamente
+[INFO] 05:03:41:400 KERNEL/(8198:8198): Conexion establecida con la Memoria
+[INFO] 05:03:41:401 KERNEL/(8198:8198): Conexion establecida con el File System
+[INFO] 05:03:41:402 KERNEL/(8198:8198): Conexion establecida con la CPU
+[INFO] 05:03:41:403 KERNEL/(8198:8198): Kernel listo para recibir Consolas
+[INFO] 05:04:26:247 KERNEL/(8198:8198): Se conecto un cliente!
+[INFO] 05:04:26:257 KERNEL/(8198:8274): Thread iniciado correctamente
+[ERROR] 05:04:26:258 KERNEL/(8198:8274): el cliente se desconecto. Terminando servidor
+[INFO] 05:05:04:982 KERNEL/(8303:8303): Valores de configuracion leidos correctamente
+[INFO] 05:05:04:985 KERNEL/(8303:8303): Conexion establecida con la Memoria
+[INFO] 05:05:04:986 KERNEL/(8303:8303): Conexion establecida con el File System
+[INFO] 05:05:04:989 KERNEL/(8303:8303): Conexion establecida con la CPU
+[INFO] 05:05:04:989 KERNEL/(8303:8303): Kernel listo para recibir Consolas
+[INFO] 05:06:20:543 KERNEL/(8511:8511): Valores de configuracion leidos correctamente
+[INFO] 05:06:20:549 KERNEL/(8511:8511): Conexion establecida con la Memoria
+[INFO] 05:06:20:550 KERNEL/(8511:8511): Conexion establecida con el File System
+[INFO] 05:06:20:550 KERNEL/(8511:8511): Conexion establecida con la CPU
+[INFO] 05:06:20:551 KERNEL/(8511:8511): Kernel listo para recibir Consolas
+[INFO] 05:06:28:086 KERNEL/(8511:8511): Se conecto un cliente!
+[INFO] 05:06:28:090 KERNEL/(8511:8531): Thread iniciado correctamente
+[INFO] 05:06:35:078 KERNEL/(8511:8511): Se conecto un cliente!
+[INFO] 05:06:35:079 KERNEL/(8511:8549): Thread iniciado correctamente
+[INFO] 05:10:01:888 KERNEL/(8811:8811): Valores de configuracion leidos correctamente
+[INFO] 05:10:01:894 KERNEL/(8811:8811): Conexion establecida con la Memoria
+[INFO] 05:10:01:895 KERNEL/(8811:8811): Conexion establecida con el File System
+[INFO] 05:10:01:896 KERNEL/(8811:8811): Conexion establecida con la CPU
+[INFO] 05:10:01:896 KERNEL/(8811:8811): Kernel listo para recibir Consolas
+[INFO] 05:10:08:962 KERNEL/(8811:8811): Se conecto un cliente!
+[INFO] 05:10:08:966 KERNEL/(8811:8850): Thread iniciado correctamente
+[ERROR] 05:10:08:966 KERNEL/(8811:8850): el cliente se desconecto. Terminando servidor
+[INFO] 05:10:49:986 KERNEL/(8877:8877): Valores de configuracion leidos correctamente
+[INFO] 05:10:49:995 KERNEL/(8877:8877): Conexion establecida con la Memoria
+[INFO] 05:10:49:996 KERNEL/(8877:8877): Conexion establecida con el File System
+[INFO] 05:10:49:996 KERNEL/(8877:8877): Conexion establecida con la CPU
+[INFO] 05:10:49:997 KERNEL/(8877:8877): Kernel listo para recibir Consolas
+[INFO] 05:10:59:259 KERNEL/(8893:8893): Valores de configuracion leidos correctamente
+[INFO] 05:10:59:269 KERNEL/(8893:8893): Conexion establecida con la Memoria
+[INFO] 05:10:59:269 KERNEL/(8893:8893): Conexion establecida con el File System
+[INFO] 05:10:59:269 KERNEL/(8893:8893): Conexion establecida con la CPU
+[INFO] 05:10:59:270 KERNEL/(8893:8893): Kernel listo para recibir Consolas
+[INFO] 05:13:02:055 KERNEL/(9075:9075): Valores de configuracion leidos correctamente
+[INFO] 05:13:02:060 KERNEL/(9075:9075): Conexion establecida con la Memoria
+[INFO] 05:13:02:061 KERNEL/(9075:9075): Conexion establecida con el File System
+[INFO] 05:13:02:061 KERNEL/(9075:9075): Conexion establecida con la CPU
+[INFO] 05:13:02:062 KERNEL/(9075:9075): Kernel listo para recibir Consolas
+[INFO] 05:13:12:909 KERNEL/(9075:9075): Se conecto un cliente!
+[INFO] 05:13:12:916 KERNEL/(9075:9119): Thread iniciado correctamente
+[INFO] 05:13:19:547 KERNEL/(9075:9075): Se conecto un cliente!
+[INFO] 05:13:19:553 KERNEL/(9075:9134): Thread iniciado correctamente
+[INFO] 05:15:21:303 KERNEL/(9388:9388): Valores de configuracion leidos correctamente
+[INFO] 05:15:21:314 KERNEL/(9388:9388): Conexion establecida con la Memoria
+[INFO] 05:15:21:316 KERNEL/(9388:9388): Conexion establecida con el File System
+[INFO] 05:15:21:318 KERNEL/(9388:9388): Conexion establecida con la CPU
+[INFO] 05:15:21:318 KERNEL/(9388:9388): Kernel listo para recibir Consolas
+[INFO] 05:17:59:462 KERNEL/(9670:9670): Valores de configuracion leidos correctamente
+[INFO] 05:17:59:474 KERNEL/(9670:9670): Conexion establecida con la Memoria
+[INFO] 05:17:59:475 KERNEL/(9670:9670): Conexion establecida con el File System
+[INFO] 05:17:59:475 KERNEL/(9670:9670): Conexion establecida con la CPU
+[INFO] 05:17:59:476 KERNEL/(9670:9670): Kernel listo para recibir Consolas
+[INFO] 05:18:06:361 KERNEL/(9670:9670): Se conecto un cliente!
+[INFO] 05:18:06:368 KERNEL/(9670:9690): Thread iniciado correctamente
+[ERROR] 05:18:06:368 KERNEL/(9670:9690): el cliente se desconecto. Terminando servidor
+[INFO] 05:19:06:170 KERNEL/(9670:9670): Se conecto un cliente!
+[INFO] 05:19:06:171 KERNEL/(9670:9716): Thread iniciado correctamente
+[ERROR] 05:19:06:171 KERNEL/(9670:9716): el cliente se desconecto. Terminando servidor
+[INFO] 05:21:43:915 KERNEL/(9945:9945): Valores de configuracion leidos correctamente
+[INFO] 05:21:43:920 KERNEL/(9945:9945): Conexion establecida con la Memoria
+[INFO] 05:21:43:921 KERNEL/(9945:9945): Conexion establecida con el File System
+[INFO] 05:21:43:921 KERNEL/(9945:9945): Conexion establecida con la CPU
+[INFO] 05:21:43:922 KERNEL/(9945:9945): Kernel listo para recibir Consolas
+[INFO] 05:24:24:261 KERNEL/(10123:10123): Valores de configuracion leidos correctamente
+[INFO] 05:24:24:265 KERNEL/(10123:10123): Conexion establecida con la Memoria
+[INFO] 05:24:24:265 KERNEL/(10123:10123): Conexion establecida con el File System
+[INFO] 05:24:24:267 KERNEL/(10123:10123): Conexion establecida con la CPU
+[INFO] 05:24:24:267 KERNEL/(10123:10123): Kernel listo para recibir Consolas
+[INFO] 05:24:30:838 KERNEL/(10123:10123): Se conecto un cliente!
+[INFO] 05:24:30:841 KERNEL/(10123:10143): Thread iniciado correctamente
+[INFO] 05:24:38:386 KERNEL/(10123:10123): Se conecto un cliente!
+[INFO] 05:24:38:394 KERNEL/(10123:10160): Thread iniciado correctamente
