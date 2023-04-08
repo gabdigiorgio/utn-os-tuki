@@ -8,12 +8,11 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 
+#include "client_utils.h"
+#include "server_utils.h"
 #include "utils.h"
 
-t_log* iniciar_logger(void);
-t_config* iniciar_config(void);
-void leer_consola(t_log*);
-void paquete(int);
-void terminar_programa(int, t_log*, t_config*);
+void iterator(char* value);
+char* initial_setup(void);
 
 #endif

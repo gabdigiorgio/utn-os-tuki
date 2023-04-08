@@ -8,3 +8,40 @@
 [INFO] 14:04:07:922 File system/(6523:6523): Puerto de la memoria: 8002
 [INFO] 14:04:43:399 File system/(6560:6560): IP de la memoria: 127.0.0.1
 [INFO] 14:04:43:400 File system/(6560:6560): Puerto de la memoria: 8002
+[INFO] 21:54:22:528 File system/(5592:5592): Valores de configuracion leidos correctamente
+[INFO] 21:54:22:528 File system/(5592:5592): Conexion con la memoria establecida correctamente
+[INFO] 21:54:22:528 File system/(5592:5592): File system listo para recibir al Kernel
+[INFO] 21:54:52:570 File system/(5616:5616): Valores de configuracion leidos correctamente
+[INFO] 21:54:52:570 File system/(5616:5616): Conexion con la memoria establecida correctamente
+[INFO] 21:54:52:570 File system/(5616:5616): File system listo para recibir al Kernel
+[INFO] 21:56:38:302 File system/(5916:5916): Valores de configuracion leidos correctamente
+[INFO] 21:56:38:302 File system/(5916:5916): Conexion con la memoria establecida correctamente
+[INFO] 21:56:38:302 File system/(5916:5916): File system listo para recibir al Kernel
+[INFO] 21:57:37:733 File system/(5961:5961): Valores de configuracion leidos correctamente
+[INFO] 21:57:37:733 File system/(5961:5961): Conexion con la memoria establecida correctamente
+[INFO] 21:57:37:734 File system/(5961:5961): File system listo para recibir al Kernel
+[INFO] 21:57:39:974 File system/(5961:5961): Se conecto un cliente!
+[ERROR] 21:57:44:462 File system/(5961:5961): el cliente se desconecto. Terminando servidor
+[INFO] 21:57:46:033 File system/(5963:5963): Valores de configuracion leidos correctamente
+[INFO] 21:57:46:033 File system/(5963:5963): Conexion con la memoria establecida correctamente
+[INFO] 21:57:46:034 File system/(5963:5963): File system listo para recibir al Kernel
+[INFO] 21:57:47:524 File system/(5963:5963): Se conecto un cliente!
+[INFO] 21:58:04:444 File system/(5968:5968): Valores de configuracion leidos correctamente
+[INFO] 21:58:04:445 File system/(5968:5968): Conexion con la memoria establecida correctamente
+[INFO] 21:58:04:445 File system/(5968:5968): File system listo para recibir al Kernel
+[INFO] 22:02:55:541 File system/(6074:6074): Valores de configuracion leidos correctamente
+[INFO] 22:02:55:542 File system/(6074:6074): Conexion con la memoria establecida correctamente
+[INFO] 22:02:55:542 File system/(6074:6074): Handshake realizado correctamente
+[INFO] 22:02:55:542 File system/(6074:6074): File system listo para recibir al Kernel
+[INFO] 22:03:12:423 File system/(6078:6078): Valores de configuracion leidos correctamente
+[INFO] 22:03:12:423 File system/(6078:6078): Conexion con la memoria establecida correctamente
+[INFO] 22:03:31:893 File system/(6080:6080): Valores de configuracion leidos correctamente
+[INFO] 22:03:31:893 File system/(6080:6080): Conexion con la memoria establecida correctamente
+[INFO] 22:04:48:035 File system/(6083:6083): Valores de configuracion leidos correctamente
+[INFO] 22:04:48:035 File system/(6083:6083): Conexion con la memoria establecida correctamente
+[INFO] 22:05:15:106 File system/(6088:6088): Valores de configuracion leidos correctamente
+[INFO] 22:05:15:106 File system/(6088:6088): Conexion con la memoria establecida correctamente
+[INFO] 22:05:15:106 File system/(6088:6088): Handshake realizado correctamente
+[INFO] 22:05:15:106 File system/(6088:6088): File system listo para recibir al Kernel
+[INFO] 22:18:38:186 File system/(6312:6312): Valores de configuracion leidos correctamente
+[INFO] 22:18:38:186 File system/(6312:6312): Conexion con la memoria establecida correctamente

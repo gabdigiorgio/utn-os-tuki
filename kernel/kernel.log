@@ -178,3 +178,38 @@
 
 [INFO] 13:55:25:214 KERNEL/(6407:6429): Hola
 [ERROR] 13:55:25:215 KERNEL/(6407:6429): el cliente se desconecto. Terminando servidor
+[INFO] 21:56:33:942 KERNEL/(5915:5915): Valores de configuracion leidos correctamente
+[INFO] 21:56:33:947 KERNEL/(5915:5915): Conexion establecida con la Memoria
+[INFO] 21:56:33:947 KERNEL/(5915:5915): Conexion establecida con el File System
+[INFO] 21:56:33:949 KERNEL/(5915:5915): Conexion establecida con la CPU
+[INFO] 21:56:33:949 KERNEL/(5915:5915): Kernel listo para recibir Consolas
+[INFO] 21:56:41:622 KERNEL/(5917:5917): Valores de configuracion leidos correctamente
+[INFO] 21:56:41:622 KERNEL/(5917:5917): Conexion establecida con la Memoria
+[INFO] 21:56:41:622 KERNEL/(5917:5917): Conexion establecida con el File System
+[INFO] 21:56:41:623 KERNEL/(5917:5917): Conexion establecida con la CPU
+[INFO] 21:56:41:623 KERNEL/(5917:5917): Kernel listo para recibir Consolas
+[INFO] 21:57:35:843 KERNEL/(5960:5960): Valores de configuracion leidos correctamente
+[INFO] 21:57:35:844 KERNEL/(5960:5960): Conexion establecida con la Memoria
+[INFO] 21:57:35:844 KERNEL/(5960:5960): Conexion establecida con el File System
+[INFO] 21:57:35:845 KERNEL/(5960:5960): Conexion establecida con la CPU
+[INFO] 21:57:35:845 KERNEL/(5960:5960): Kernel listo para recibir Consolas
+[INFO] 21:57:39:973 KERNEL/(5962:5962): Valores de configuracion leidos correctamente
+[INFO] 21:57:39:974 KERNEL/(5962:5962): Conexion establecida con la Memoria
+[INFO] 21:57:39:974 KERNEL/(5962:5962): Conexion establecida con el File System
+[INFO] 21:57:39:974 KERNEL/(5962:5962): Conexion establecida con la CPU
+[INFO] 21:57:39:974 KERNEL/(5962:5962): Kernel listo para recibir Consolas
+[INFO] 21:57:47:523 KERNEL/(5964:5964): Valores de configuracion leidos correctamente
+[INFO] 21:57:47:524 KERNEL/(5964:5964): Conexion establecida con la Memoria
+[INFO] 21:57:47:524 KERNEL/(5964:5964): Conexion establecida con el File System
+[INFO] 21:57:47:524 KERNEL/(5964:5964): Conexion establecida con la CPU
+[INFO] 21:57:47:524 KERNEL/(5964:5964): Kernel listo para recibir Consolas
+[INFO] 22:03:28:663 KERNEL/(6079:6079): Valores de configuracion leidos correctamente
+[INFO] 22:03:28:664 KERNEL/(6079:6079): Conexion establecida con la Memoria
+[INFO] 22:03:28:664 KERNEL/(6079:6079): Conexion establecida con el File System
+[INFO] 22:03:28:664 KERNEL/(6079:6079): Conexion establecida con la CPU
+[INFO] 22:03:28:664 KERNEL/(6079:6079): Kernel listo para recibir Consolas
+[INFO] 22:13:59:698 KERNEL/(6197:6197): Valores de configuracion leidos correctamente
+[INFO] 22:13:59:699 KERNEL/(6197:6197): Conexion establecida con la Memoria
+[INFO] 22:13:59:699 KERNEL/(6197:6197): Conexion establecida con el File System
+[INFO] 22:13:59:699 KERNEL/(6197:6197): Conexion establecida con la CPU
+[INFO] 22:13:59:699 KERNEL/(6197:6197): Kernel listo para recibir Consolas

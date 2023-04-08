@@ -124,3 +124,7 @@
 [INFO] 13:55:03:175 CPU/(6388:6388): Handshake realizado correctamente
 [INFO] 13:55:03:177 CPU/(6388:6388): Cpu lista para recibir al Kernel
 [INFO] 13:55:07:098 CPU/(6388:6388): Se conecto el Kernel
+[INFO] 22:13:38:848 CPU/(6194:6194): Valores de configuracion leidos correctamente
+[INFO] 22:13:38:848 CPU/(6194:6194): Conexion establecida con la memoria
+[INFO] 22:14:02:819 CPU/(6198:6198): Valores de configuracion leidos correctamente
+[INFO] 22:14:02:819 CPU/(6198:6198): Conexion establecida con la memoria
