@@ -99,3 +99,7 @@
 [INFO] 05:24:38:374 CPU/(10155:10155): Valores de configuracion leidos correctamente
 [INFO] 05:24:38:388 CPU/(10155:10155): Conexion establecida con la memoria
 [INFO] 05:24:38:389 CPU/(10155:10155): Cpu lista para recibir al Kernel
+[INFO] 13:18:44:033 CPU/(5333:5333): Valores de configuracion leidos correctamente
+[INFO] 13:18:44:033 CPU/(5333:5333): Conexion establecida con la memoria
+[INFO] 13:18:44:033 CPU/(5333:5333): Handshake realizado correctamente
+[INFO] 13:18:44:033 CPU/(5333:5333): Cpu lista para recibir al Kernel

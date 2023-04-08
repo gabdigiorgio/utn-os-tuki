@@ -149,3 +149,16 @@
 [INFO] 05:24:30:841 KERNEL/(10123:10143): Thread iniciado correctamente
 [INFO] 05:24:38:386 KERNEL/(10123:10123): Se conecto un cliente!
 [INFO] 05:24:38:394 KERNEL/(10123:10160): Thread iniciado correctamente
+[INFO] 13:18:38:229 KERNEL/(5288:5288): Valores de configuracion leidos correctamente
+[INFO] 13:18:38:230 KERNEL/(5288:5288): Conexion establecida con la Memoria
+[INFO] 13:18:38:230 KERNEL/(5288:5288): Conexion establecida con el File System
+[INFO] 13:18:38:230 KERNEL/(5288:5288): Conexion establecida con la CPU
+[INFO] 13:18:38:230 KERNEL/(5288:5288): Kernel listo para recibir Consolas
+[INFO] 13:30:42:273 KERNEL/(5288:5288): Se conecto un cliente!
+[INFO] 13:30:42:274 KERNEL/(5288:5876): Thread iniciado correctamente
+[INFO] 13:31:10:515 KERNEL/(5288:5876): Me llegaron los siguientes valores:
+
+[INFO] 13:31:10:515 KERNEL/(5288:5876): hola
+[INFO] 13:31:10:515 KERNEL/(5288:5876): como
+[INFO] 13:31:10:515 KERNEL/(5288:5876): estas
+[ERROR] 13:31:10:515 KERNEL/(5288:5876): el cliente se desconecto. Terminando servidor
