@@ -162,3 +162,19 @@
 [INFO] 13:31:10:515 KERNEL/(5288:5876): como
 [INFO] 13:31:10:515 KERNEL/(5288:5876): estas
 [ERROR] 13:31:10:515 KERNEL/(5288:5876): el cliente se desconecto. Terminando servidor
+[INFO] 13:54:33:552 KERNEL/(6346:6346): Valores de configuracion leidos correctamente
+[INFO] 13:54:33:553 KERNEL/(6346:6346): Conexion establecida con la Memoria
+[INFO] 13:54:33:553 KERNEL/(6346:6346): Conexion establecida con el File System
+[INFO] 13:54:33:554 KERNEL/(6346:6346): Conexion establecida con la CPU
+[INFO] 13:54:33:554 KERNEL/(6346:6346): Kernel listo para recibir Consolas
+[INFO] 13:55:07:097 KERNEL/(6407:6407): Valores de configuracion leidos correctamente
+[INFO] 13:55:07:098 KERNEL/(6407:6407): Conexion establecida con la Memoria
+[INFO] 13:55:07:098 KERNEL/(6407:6407): Conexion establecida con el File System
+[INFO] 13:55:07:099 KERNEL/(6407:6407): Conexion establecida con la CPU
+[INFO] 13:55:07:104 KERNEL/(6407:6407): Kernel listo para recibir Consolas
+[INFO] 13:55:16:841 KERNEL/(6407:6407): Se conecto un cliente!
+[INFO] 13:55:16:842 KERNEL/(6407:6429): Thread iniciado correctamente
+[INFO] 13:55:25:213 KERNEL/(6407:6429): Me llegaron los siguientes valores:
+
+[INFO] 13:55:25:214 KERNEL/(6407:6429): Hola
+[ERROR] 13:55:25:215 KERNEL/(6407:6429): el cliente se desconecto. Terminando servidor

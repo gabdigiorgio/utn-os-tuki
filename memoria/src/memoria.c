@@ -29,6 +29,7 @@ int main(void) {
 	int server_connection = iniciar_servidor(server_port);
 
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
+	//SO_REUSEADDR flag para reutilizar el socket
 
 	while (num_threads < 4){
 		t_conexion *conexion = malloc(sizeof *conexion);
