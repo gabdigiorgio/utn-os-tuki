@@ -8,49 +8,77 @@
 #include "../includes/initial_setup.h"
 
 
-char* initial_setup(){
-	char* result = "";
+int initial_setup(){
 	int error = 1;
 
 	//Memoria
-	if(error == 1 && strcmp(memoria_ip = config_get_string_value(config,"IP_MEMORIA"),"") == 0){
-		result = "No se pudo obtener la IP desde el archivo config";
+	
+	if (config_has_property(config, "IP_MEMORIA")){
+		memoria_ip = config_get_string_value(config, "IP_MEMORIA");
+	} else {
+		failed_initial_setup("IP_MEMORIA");
 		error = 0;
 	}
-	if(error == 1 && strcmp(memoria_port = config_get_string_value(config,"PUERTO_MEMORIA"),"") == 0){
-		result = "No se pudo obtener el puerto de conexion desde el archivo config";
+
+	if (config_has_property(config, "PUERTO_MEMORIA")){
+		memoria_port = config_get_string_value(config, "PUERTO_MEMORIA");
+	} else {
+		failed_initial_setup("PUERTO_MEMORIA");
 		error = 0;
 	}
 
 	//File System
-	if(error == 1 && strcmp(file_system_ip = config_get_string_value(config,"IP_FILESYSTEM"),"") == 0){
-		result = "No se pudo obtener la IP desde el archivo config";
+
+	if (config_has_property(config, "IP_FILESYSTEM")){
+		file_system_ip = config_get_string_value(config, "IP_FILESYSTEM");
+	} else {
+		failed_initial_setup("IP_FILESYSTEM");
 		error = 0;
 	}
-	if(error == 1 && strcmp(file_system_port = config_get_string_value(config,"PUERTO_FILESYSTEM"),"") == 0){
-		result = "No se pudo obtener el puerto de conexion desde el archivo config";
+
+	if (config_has_property(config, "PUERTO_FILESYSTEM")){
+		file_system_port = config_get_string_value(config, "PUERTO_FILESYSTEM");
+	} else {
+		failed_initial_setup("PUERTO_FILESYSTEM");
 		error = 0;
 	}
 
 	//CPU
-	if(error == 1 && strcmp(cpu_ip = config_get_string_value(config,"IP_CPU"),"") == 0){
-		result = "No se pudo obtener la IP desde el archivo config";
-		error = 0;
-	}
-	if(error == 1 && strcmp(cpu_port = config_get_string_value(config,"PUERTO_CPU"),"") == 0){
-		result = "No se pudo obtener el puerto de conexion desde el archivo config";
+	if (config_has_property(config, "IP_CPU")){
+		cpu_ip = config_get_string_value(config, "IP_CPU");
+	} else {
+		failed_initial_setup("IP_CPU");
 		error = 0;
 	}
 
+	if (config_has_property(config, "PUERTO_CPU")){
+		cpu_port = config_get_string_value(config, "PUERTO_CPU");
+	} else {
+		failed_initial_setup("PUERTO_CPU");
+		error = 0;
+	}
 
 	// SERVER PORT
-	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA"),"") == 0){
-		result = "No se pudo obtener el puerto de escucha desde el archivo config";
+	if (config_has_property(config, "PUERTO_ESCUCHA")){
+		server_port = config_get_string_value(config, "PUERTO_ESCUCHA");
+	} else {
+		failed_initial_setup("PUERTO_ESCUCHA");
 		error = 0;
 	}
 
 
-	if(error == 1) result = "Valores de configuracion leidos correctamente";
+	if(error == 1){
+		log_info(logger, "Valores de configuracion leidos correctamente");
+		return EXIT_SUCCESS;
+	} else {
+		return EXIT_FAILURE;
+	}
 
-	return result;
+}
+
+void failed_initial_setup(char* key){
+	char *info_error = string_new();
+	string_append(&info_error, "No se pudo obtener del archivo config el valor de ");
+	string_append(&info_error, key);
+	log_error(logger, "%s",info_error);
 }

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <commons/log.h>
+#include <commons/string.h>
 #include <pthread.h>
 
 #include "server_utils.h"
@@ -13,10 +14,24 @@
 #include "utils.h"
 #include "initial_setup.h"
 
+#define CANTIDAD_DE_THREADS 4
+
 void iterator(char* value);
 void terminar_programa();
 
+// ___ CONFIG VARIABLES ____
 
+t_log* logger;
+
+int server_connection;
+
+int memoria_connection;
+int file_system_connection;
+int cpu_connection;
+
+int cant_threads_activos;
+
+// _____________________
 
 // ___ CONFIG VARIABLES ____
 char* memoria_ip;

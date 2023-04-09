@@ -12,23 +12,23 @@
 #include "../includes/kernel.h"
 
 
-t_log* logger;
 
-int server_connection;
+int main(int argc, char *argv[]) {
 
-int memoria_connection;
-int file_system_connection;
-int cpu_connection;
-
-
-int main(void) {
-
-	//Iniciamos tanto el log como el config
+	//Iniciamos log, config y cant_threads_activos
 	logger = iniciar_logger();
-	config = iniciar_config();
+	  if (argc < 2) {
+	    log_error(logger, "Falta parametro del path del archivo de configuracion");
+	    return EXIT_FAILURE;
+	  }
+	config = iniciar_config(argv[1]);
+	cant_threads_activos = 0;
 
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
-	log_info(logger,initial_setup());
+	int exit_status = initial_setup();
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la Memoria");
@@ -43,11 +43,17 @@ int main(void) {
 
 	// Espero Conexiones de las consolas
 	while (1){
-		 pthread_t console_thread;
+		if(cant_threads_activos<CANTIDAD_DE_THREADS-1){
+		  pthread_t console_thread;
+
 		   int *socket_console_client = malloc(sizeof(int));
 		   *socket_console_client = esperar_cliente(socket_servidor);
+
 		   pthread_create(&console_thread, NULL, (void*) atender_consola, socket_console_client);
 		   pthread_detach(console_thread);
+
+		   cant_threads_activos++;
+		}
 	}
 
 

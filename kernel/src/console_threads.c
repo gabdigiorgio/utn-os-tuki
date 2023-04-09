@@ -23,7 +23,8 @@ void atender_consola(int *socket_console_client){
 				list_iterate(lista, (void*) iterator);
 				break;
 			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
+				log_error(logger, "el cliente se desconecto");
+				cant_threads_activos--;
 				estado = 0;
 				break;
 			default:
