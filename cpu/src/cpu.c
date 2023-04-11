@@ -10,11 +10,22 @@
 
 #include "../includes/cpu.h"
 
-
+//Declaramos los registros de proposito general
+char ax[5];
+char bx[5];
+char cx[5];
+char dx[5];
+char eax[9];
+char ebx[9];
+char ecx[9];
+char edx[9];
+char rax[17];
+char rbx[17];
+char rcx[17];
+char rdx[17];
 
 
 int main(int argc, char *argv[]) {
-
 	//Iniciamos tanto el log como el config
 	logger = iniciar_logger();
 
@@ -64,5 +75,28 @@ int main(int argc, char *argv[]) {
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
+int registro_4b(char registro[5]){
+	if(strlen(registro)!= 4){
+		return EXIT_FAILURE;
+	}
+	//printf("%s",registro);
+	return 0;
+}
+
+int registro_8b(char registro[9]){
+	if(strlen(registro)!= 8){
+		return EXIT_FAILURE;
+	}
+	//printf("%s",registro);
+	return 0;
+}
+int registro_16b(char registro[16]){
+	if(strlen(registro)!= 16){
+		return EXIT_FAILURE;
+	}
+	//printf("%s",registro);
+	return 0;
+}
+
 
 

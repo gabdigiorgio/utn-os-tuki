@@ -135,3 +135,37 @@
 [INFO] 05:02:49:976 CPU/(7313:7313): Conexion establecida con la memoria
 [INFO] 05:02:50:036 CPU/(7313:7313): Handshake realizado correctamente
 [INFO] 05:02:50:037 CPU/(7313:7313): Cpu lista para recibir al Kernel
+[ERROR] 18:10:08:493 CPU/(3788:3788): Falta parametro del path del archivo de configuracion
+[ERROR] 18:10:40:849 CPU/(3836:3836): Falta parametro del path del archivo de configuracion
+[INFO] 18:14:05:458 CPU/(3862:3862): Valores de configuracion leidos correctamente
+[INFO] 18:14:05:458 CPU/(3862:3862): Conexion establecida con la memoria
+[INFO] 18:14:05:458 CPU/(3862:3862): Fallo al realizar el handshake
+[INFO] 18:14:05:459 CPU/(3862:3862): Cpu lista para recibir al Kernel
+[INFO] 18:14:10:478 CPU/(3877:3877): Valores de configuracion leidos correctamente
+[INFO] 18:14:10:478 CPU/(3877:3877): Conexion establecida con la memoria
+[INFO] 18:14:10:478 CPU/(3877:3877): Fallo al realizar el handshake
+[INFO] 18:14:10:479 CPU/(3877:3877): Cpu lista para recibir al Kernel
+[INFO] 18:15:36:246 CPU/(4054:4054): Valores de configuracion leidos correctamente
+[INFO] 18:15:36:246 CPU/(4054:4054): Conexion establecida con la memoria
+[INFO] 18:15:36:246 CPU/(4054:4054): Fallo al realizar el handshake
+[INFO] 18:15:36:246 CPU/(4054:4054): Cpu lista para recibir al Kernel
+[INFO] 18:25:14:949 CPU/(4433:4433): Valores de configuracion leidos correctamente
+[INFO] 18:25:14:949 CPU/(4433:4433): Conexion establecida con la memoria
+[INFO] 18:25:14:949 CPU/(4433:4433): Fallo al realizar el handshake
+[INFO] 18:25:14:949 CPU/(4433:4433): Cpu lista para recibir al Kernel
+[INFO] 18:25:41:941 CPU/(4482:4482): Valores de configuracion leidos correctamente
+[INFO] 18:25:41:942 CPU/(4482:4482): Conexion establecida con la memoria
+[INFO] 18:25:41:942 CPU/(4482:4482): Fallo al realizar el handshake
+[INFO] 18:25:41:942 CPU/(4482:4482): Cpu lista para recibir al Kernel
+[INFO] 18:28:06:317 CPU/(4803:4803): Valores de configuracion leidos correctamente
+[INFO] 18:28:06:317 CPU/(4803:4803): Conexion establecida con la memoria
+[INFO] 18:28:06:317 CPU/(4803:4803): Fallo al realizar el handshake
+[INFO] 18:28:06:318 CPU/(4803:4803): Cpu lista para recibir al Kernel
+[INFO] 18:29:06:398 CPU/(4869:4869): Valores de configuracion leidos correctamente
+[INFO] 18:29:06:398 CPU/(4869:4869): Conexion establecida con la memoria
+[INFO] 18:29:06:398 CPU/(4869:4869): Fallo al realizar el handshake
+[INFO] 18:29:06:398 CPU/(4869:4869): Cpu lista para recibir al Kernel
+[INFO] 19:26:30:036 CPU/(5196:5196): Valores de configuracion leidos correctamente
+[INFO] 19:26:30:036 CPU/(5196:5196): Conexion establecida con la memoria
+[INFO] 19:26:30:036 CPU/(5196:5196): Fallo al realizar el handshake
+[INFO] 19:26:30:036 CPU/(5196:5196): Cpu lista para recibir al Kernel

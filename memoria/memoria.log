@@ -38,3 +38,4 @@
 [INFO] 21:54:49:330 Memoria/(5615:5615): Memoria lista para recibir al CPU, Kernel o File System
 [INFO] 21:54:52:570 Memoria/(5615:5615): Se conecto un cliente!
 [ERROR] 21:54:59:179 Memoria/(5615:5615): el cliente se desconecto. Terminando servidor
+[ERROR] 18:09:56:917 MEMORIA/(3774:3774): Falta parametro del path del archivo de configuracion
