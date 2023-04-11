@@ -9,5 +9,5 @@
 #include<readline/readline.h>
 
 t_log* iniciar_logger(void);
-t_config* iniciar_config(void);
+t_config* iniciar_config(char * path_config);
 #endif /* CLIENT_H_ */

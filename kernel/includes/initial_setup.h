@@ -15,8 +15,8 @@
 #include <commons/string.h>
 #include <commons/config.h>
 
-char* initial_setup(void);
-
+int initial_setup(void);
+void failed_initial_setup(char* key);
 
 extern char* memoria_ip;
 extern char* memoria_port;
@@ -28,5 +28,7 @@ extern char* cpu_port;
 extern char* server_port;
 
 extern t_config* config;
+
+extern t_log* logger;
 
 #endif /* INITIAL_SETUP_H_ */
