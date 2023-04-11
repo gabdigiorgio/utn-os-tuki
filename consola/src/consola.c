@@ -8,51 +8,38 @@
  ============================================================================
  */
 
-#include "consola.h"
-#include<readline/readline.h>
+#include "../includes/consola.h"
 
-int main(void) {
 
-	int conexion;
-		char* ip;
-		char* puerto;
-		char* valor;
+int main(int argc, char *argv[]) {
 
-		t_log* logger;
-		t_config* config;
 
-		logger= iniciar_logger();
-		config=iniciar_config();
+	logger= iniciar_logger();
+	  if (argc < 2) {
+		log_error(logger, "Falta parametro del path del archivo de configuracion");
+		return EXIT_FAILURE;
+	  }
+	  config = iniciar_config(argv[1]);
 
-		ip=config_get_string_value(config,"IP_KERNEL");
-		puerto=config_get_string_value(config,"PUERTO_KERNEL");
+	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
+	int exit_status = initial_setup();
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
-		//CREAMOS CONEXION HACIA EL SERVIDOR DE KERNEL
+	//CREAMOS CONEXION HACIA EL SERVIDOR DE KERNEL
 
-		conexion=crear_conexion(ip,puerto);
-		//enviar_mensaje(valor,conexion);
-		//leo la consola
-		leer_consola(logger);
-		//armo paquete
-		paquete(conexion);
-		terminar_programa(conexion,logger,config);
+	kernel_connection=crear_conexion(kernel_ip,kernel_port);
+	//enviar_mensaje(valor,conexion);
+	//leo la consola
+	leer_consola(logger);
+	//armo paquete
+	paquete(kernel_connection);
+	terminar_programa(kernel_connection,logger,config);
 
 }
 
- t_log* iniciar_logger(void)
-{
-  t_log* nuevo_logger;
-  nuevo_logger=log_create("./consola.log","consola",1,LOG_LEVEL_INFO);
 
-  return nuevo_logger;
-}
-
- t_config* iniciar_config(void)
-{
-	t_config* nuevo_config=config_create("./consola.config");
-
-	return nuevo_config;
-}
 
 void leer_consola(t_log* logger)
 {
@@ -86,10 +73,10 @@ void paquete(int conexion)
 	    eliminar_paquete(paquete);
 }
 
-void terminar_programa(int conexion, t_log* logger, t_config* config)
+void terminar_programa()
 {
 	log_destroy(logger);
 	config_destroy(config);
-	liberar_conexion(conexion);
+	liberar_conexion(kernel_connection);
 
 }

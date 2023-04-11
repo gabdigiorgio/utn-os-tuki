@@ -8,28 +8,32 @@
  ============================================================================
  */
 
-#include "cpu.h"
-
-char* ip;
-char* server_port;
-char* client_port;
-t_log* logger;
-t_config* config;
-int server_connection;
-int client_connection;
+#include "../includes/cpu.h"
 
 
-int main(void) {
+
+
+int main(int argc, char *argv[]) {
 
 	//Iniciamos tanto el log como el config
 	logger = iniciar_logger();
-	config = iniciar_config();
+
+	 if (argc < 2) {
+		 log_error(logger, "Falta parametro del path del archivo de configuracion");
+		 return EXIT_FAILURE;
+	 }
+
+	config = iniciar_config(argv[1]);
+
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
-	log_info(logger,initial_setup());
+	int exit_status = initial_setup();
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
-	if((client_connection = crear_conexion(ip,client_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
+	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
 
-	log_info(logger, handshake(client_connection));
+	log_info(logger, handshake(memoria_connection));
 
 	int server_connection = iniciar_servidor(server_port);
 
@@ -61,23 +65,4 @@ void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
 
-char* initial_setup(){
-	char* result = "";
-	int error = 1;
 
-	if(error == 1 && strcmp(ip = config_get_string_value(config,"IP_MEMORIA"),"") == 0){
-		result = "No se pudo obtener la IP desde el archivo config";
-		error = 0;
-	}
-	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA"),"") == 0){
-		result = "No se pudo obtener el puerto de escucha desde el archivo config";
-		error = 0;
-	}
-	if(error == 1 && strcmp(client_port = config_get_string_value(config,"PUERTO_MEMORIA"),"") == 0){
-		result = "No se pudo obtener el puerto de conexion desde el archivo config";
-		error = 0;
-	}
-	if(error == 1) result = "Valores de configuracion leidos correctamente";
-
-	return result;
-}

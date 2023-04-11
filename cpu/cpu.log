@@ -128,3 +128,10 @@
 [INFO] 22:13:38:848 CPU/(6194:6194): Conexion establecida con la memoria
 [INFO] 22:14:02:819 CPU/(6198:6198): Valores de configuracion leidos correctamente
 [INFO] 22:14:02:819 CPU/(6198:6198): Conexion establecida con la memoria
+[ERROR] 05:00:05:739 CPU/(7265:7265): Falta parametro del path del archivo de configuracion
+[ERROR] 05:01:48:360 CPU/(7280:7280): Falta parametro del path del archivo de configuracion
+[ERROR] 05:01:59:114 CPU/(7296:7296): Falta parametro del path del archivo de configuracion
+[INFO] 05:02:49:974 CPU/(7313:7313): Valores de configuracion leidos correctamente
+[INFO] 05:02:49:976 CPU/(7313:7313): Conexion establecida con la memoria
+[INFO] 05:02:50:036 CPU/(7313:7313): Handshake realizado correctamente
+[INFO] 05:02:50:037 CPU/(7313:7313): Cpu lista para recibir al Kernel

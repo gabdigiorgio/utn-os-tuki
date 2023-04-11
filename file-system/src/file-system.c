@@ -1,32 +1,34 @@
-#include "file-system.h"
+#include "../includes/file-system.h"
 
-int conexion_cliente;
-int conexion_servidor;
-char* ip;
-char* puerto_cliente;
-char* puerto_server;
-t_log* logger;
-t_config* config;
 
-int main(void)
+
+int main(int argc, char *argv[])
 {
 	logger = iniciar_logger();
-	config = iniciar_config();
+	  if (argc < 2) {
+	    log_error(logger, "Falta parametro del path del archivo de configuracion");
+	    return EXIT_FAILURE;
+	  }
+	config = iniciar_config(argv[1]);
 
-	log_info(logger,initial_setup());
+	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
+	int exit_status = initial_setup();
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
 	// Creamos una conexión hacia el servidor (memoria)
 
-	conexion_cliente = crear_conexion(ip, puerto_cliente);
+	memoria_connection = crear_conexion(memoria_ip, memoria_port);
 
-	if(conexion_cliente != 0) log_info(logger, "Conexion con la memoria establecida correctamente");
+	if(memoria_connection != 0) log_info(logger, "Conexion con la memoria establecida correctamente");
 
-	log_info(logger, handshake(conexion_cliente));
+	log_info(logger, handshake(memoria_connection));
 
-	conexion_servidor = iniciar_servidor(puerto_server);
+	memoria_connection = iniciar_servidor(server_port);
 
 	log_info(logger, "File system listo para recibir al Kernel");
-	int cliente_fd = esperar_cliente(conexion_servidor);
+	int cliente_fd = esperar_cliente(memoria_connection);
 
 	t_list* lista;
 	while (1) {
@@ -55,25 +57,4 @@ int main(void)
 
 void iterator(char* value) {
 	log_info(logger,"%s", value);
-}
-
-char* initial_setup(){
-	char* result = "";
-	int error = 1;
-
-	if(error == 1 && strcmp(ip = config_get_string_value(config,"IP_MEMORIA"),"") == 0){
-		result = "No se pudo obtener la IP desde el archivo config";
-		error = 0;
-	}
-	if(error == 1 && strcmp(puerto_server = config_get_string_value(config,"PUERTO_ESCUCHA"),"") == 0){
-		result = "No se pudo obtener el puerto de escucha desde el archivo config";
-		error = 0;
-	}
-	if(error == 1 && strcmp(puerto_cliente = config_get_string_value(config,"PUERTO_MEMORIA"),"") == 0){
-		result = "No se pudo obtener el puerto de conexion desde el archivo config";
-		error = 0;
-	}
-	if(error == 1) result = "Valores de configuracion leidos correctamente";
-
-	return result;
 }

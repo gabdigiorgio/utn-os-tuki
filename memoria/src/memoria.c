@@ -8,23 +8,23 @@
  ============================================================================
  */
 
-#include "memoria.h"
+#include "../includes/memoria.h"
 
-char* ip;
-char* server_port;
-char* client_port;
-t_log* logger;
-t_config* config;
-int server_connection;
-int client_connection;
-int num_threads = 0;
-pthread_t tid[3];
 
-int main(void) {
+
+int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
-	config = iniciar_config();
+	  if (argc < 2) {
+	    log_error(logger, "Falta parametro del path del archivo de configuracion");
+	    return EXIT_FAILURE;
+	  }
+	config = iniciar_config(argv[1]);
 
-	log_info(logger,initial_setup());
+	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
+	int exit_status = initial_setup();
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
 	int server_connection = iniciar_servidor(server_port);
 
@@ -76,15 +76,4 @@ void thread_main(t_conexion *conexion){
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
-char* initial_setup(){
-	char* result = "";
-	int error = 1;
 
-	if(error == 1 && strcmp(server_port = config_get_string_value(config,"PUERTO_ESCUCHA"),"") == 0){
-		result = "No se pudo obtener el puerto de escucha desde el archivo config";
-		error = 0;
-	}
-	if(error == 1) result = "Valores de configuracion leidos correctamente";
-
-	return result;
-}
