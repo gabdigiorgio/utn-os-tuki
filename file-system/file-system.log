@@ -45,3 +45,8 @@
 [INFO] 22:05:15:106 File system/(6088:6088): File system listo para recibir al Kernel
 [INFO] 22:18:38:186 File system/(6312:6312): Valores de configuracion leidos correctamente
 [INFO] 22:18:38:186 File system/(6312:6312): Conexion con la memoria establecida correctamente
+[ERROR] 14:05:30:191 FILE-SYSTEM/(4064:4064): Falta parametro del path del archivo de configuracion
+[INFO] 15:58:25:433 FILE-SYSTEM/(4438:4438): Valores de configuracion leidos correctamente
+[INFO] 15:58:25:434 FILE-SYSTEM/(4438:4438): Conexion con la memoria establecida correctamente
+[INFO] 15:58:25:434 FILE-SYSTEM/(4438:4438): Handshake realizado correctamente
+[INFO] 15:58:25:435 FILE-SYSTEM/(4438:4438): File system listo para recibir al Kernel

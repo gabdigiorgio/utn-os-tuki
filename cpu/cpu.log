@@ -135,3 +135,7 @@
 [INFO] 05:02:49:976 CPU/(7313:7313): Conexion establecida con la memoria
 [INFO] 05:02:50:036 CPU/(7313:7313): Handshake realizado correctamente
 [INFO] 05:02:50:037 CPU/(7313:7313): Cpu lista para recibir al Kernel
+[INFO] 15:59:08:034 CPU/(4573:4573): Valores de configuracion leidos correctamente
+[INFO] 15:59:08:034 CPU/(4573:4573): Conexion establecida con la memoria
+[INFO] 15:59:08:042 CPU/(4573:4573): Handshake realizado correctamente
+[INFO] 15:59:08:043 CPU/(4573:4573): Cpu lista para recibir al Kernel

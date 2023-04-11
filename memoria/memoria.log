@@ -38,3 +38,14 @@
 [INFO] 21:54:49:330 Memoria/(5615:5615): Memoria lista para recibir al CPU, Kernel o File System
 [INFO] 21:54:52:570 Memoria/(5615:5615): Se conecto un cliente!
 [ERROR] 21:54:59:179 Memoria/(5615:5615): el cliente se desconecto. Terminando servidor
+[ERROR] 14:05:21:190 MEMORIA/(4049:4049): Falta parametro del path del archivo de configuracion
+[INFO] 15:57:05:865 MEMORIA/(4321:4321): Valores de configuracion leidos correctamente
+[INFO] 15:57:05:866 MEMORIA/(4321:4321): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 15:57:49:448 MEMORIA/(4321:4321): Se conecto un cliente!
+[INFO] 15:57:49:449 MEMORIA/(4321:4423): Thread iniciado correctamente
+[INFO] 15:58:25:434 MEMORIA/(4321:4321): Se conecto un cliente!
+[INFO] 15:58:25:434 MEMORIA/(4321:4444): Thread iniciado correctamente
+[INFO] 15:58:25:438 MEMORIA/(4321:4444): Handshake recibido correctamente
+[INFO] 15:59:08:034 MEMORIA/(4321:4321): Se conecto un cliente!
+[INFO] 15:59:08:042 MEMORIA/(4321:4579): Thread iniciado correctamente
+[INFO] 15:59:08:042 MEMORIA/(4321:4579): Handshake recibido correctamente

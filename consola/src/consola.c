@@ -31,7 +31,10 @@ int main(int argc, char *argv[]) {
 	}
 
 	//Leemos el archivo de pseudo-codigo
-
+	exit_status = leer_pseudocodigo(argv[2]);
+	if (exit_status==EXIT_FAILURE){
+		return EXIT_FAILURE;
+	}
 
 	//CREAMOS CONEXION HACIA EL SERVIDOR DE KERNEL
 
@@ -89,17 +92,30 @@ void terminar_programa()
 
 int leer_pseudocodigo(char* path_pseudocodigo){
 	FILE *fp = fopen(path_pseudocodigo, "r");
+	t_instruc *instruccion = malloc(sizeof *instruccion);
+	int nro = 0;
 
 	if (fp == NULL){
 		log_error(logger, "No se pudo leer el archivo de pseudocodigo");
 		return EXIT_FAILURE;
 	}
 
-	const unsigned MAX_LENGTH = 256;
+	const unsigned MAX_LENGTH = 20;
 	char buffer[MAX_LENGTH];
 
-	while (fgets(buffer, MAX_LENGTH, fp))
-		printf("%s", buffer);
+	while (fgets(buffer, MAX_LENGTH, fp)){
+		char** parameters = string_split(buffer," ");
+
+		instruccion->nro = nro;
+		instruccion->instruct = parameters[0];
+		if (parameters[1] != NULL) instruccion->param1 = parameters[1];
+		if (parameters[2] != NULL) instruccion->param2 = parameters[2];
+		if (parameters[3] != NULL) instruccion->param3 = parameters[3];
+
+		nro++;
+
+		queue_push(instruc_queue,instruccion);
+	}
 
 	fclose(fp);
 

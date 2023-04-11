@@ -228,3 +228,16 @@
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Conexion establecida con el File System
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Conexion establecida con la CPU
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Kernel listo para recibir Consolas
+[INFO] 15:57:49:448 KERNEL/(4417:4417): Valores de configuracion leidos correctamente
+[INFO] 15:57:49:449 KERNEL/(4417:4417): Conexion establecida con la Memoria
+[INFO] 15:57:49:449 KERNEL/(4417:4417): Conexion establecida con el File System
+[INFO] 15:57:49:449 KERNEL/(4417:4417): Conexion establecida con la CPU
+[INFO] 15:57:49:449 KERNEL/(4417:4417): Kernel listo para recibir Consolas
+[INFO] 16:01:51:831 KERNEL/(4417:4417): Se conecto un cliente!
+[INFO] 16:01:51:832 KERNEL/(4417:4765): Thread iniciado correctamente
+[ERROR] 16:02:05:770 KERNEL/(4417:4765): el cliente se desconecto
+[INFO] 16:02:28:210 KERNEL/(4417:4417): Se conecto un cliente!
+[INFO] 16:02:28:210 KERNEL/(4417:4826): Thread iniciado correctamente
+[ERROR] 16:02:40:468 KERNEL/(4417:4826): el cliente se desconecto
+[INFO] 16:04:27:309 KERNEL/(4417:4417): Se conecto un cliente!
+[INFO] 16:04:27:310 KERNEL/(4417:5057): Thread iniciado correctamente
