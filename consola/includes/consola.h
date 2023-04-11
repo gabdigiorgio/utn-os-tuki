@@ -6,6 +6,7 @@
 #include<commons/log.h>
 #include<commons/string.h>
 #include<commons/config.h>
+#include<commons/collections/queue.h>
 #include<readline/readline.h>
 
 #include "client_utils.h"
@@ -16,6 +17,7 @@
 void leer_consola(t_log*);
 void paquete(int);
 void terminar_programa();
+int leer_pseudocodigo(char* path);
 
 
 
@@ -33,6 +35,21 @@ char* kernel_ip;
 char* kernel_port;
 
 t_config* config;
+
+// _____________________
+
+// ___ INSTRUCCIONES ____
+
+typedef struct
+{
+	int nro;
+	char* instruct;
+    char* param1;
+    char* param2;
+    char* param3;
+} t_instruc;
+
+t_queue* instruc_queue;
 
 // _____________________
 

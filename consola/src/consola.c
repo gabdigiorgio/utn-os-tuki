@@ -18,6 +18,9 @@ int main(int argc, char *argv[]) {
 	  if (argc < 2) {
 		log_error(logger, "Falta parametro del path del archivo de configuracion");
 		return EXIT_FAILURE;
+	  } else if (argc < 3){
+		log_error(logger, "Falta parametro del path del archivo de pseudo-codigo");
+		return EXIT_FAILURE;
 	  }
 	  config = iniciar_config(argv[1]);
 
@@ -26,6 +29,9 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
+
+	//Leemos el archivo de pseudo-codigo
+
 
 	//CREAMOS CONEXION HACIA EL SERVIDOR DE KERNEL
 
@@ -79,4 +85,23 @@ void terminar_programa()
 	config_destroy(config);
 	liberar_conexion(kernel_connection);
 
+}
+
+int leer_pseudocodigo(char* path_pseudocodigo){
+	FILE *fp = fopen(path_pseudocodigo, "r");
+
+	if (fp == NULL){
+		log_error(logger, "No se pudo leer el archivo de pseudocodigo");
+		return EXIT_FAILURE;
+	}
+
+	const unsigned MAX_LENGTH = 256;
+	char buffer[MAX_LENGTH];
+
+	while (fgets(buffer, MAX_LENGTH, fp))
+		printf("%s", buffer);
+
+	fclose(fp);
+
+	return 0;
 }
