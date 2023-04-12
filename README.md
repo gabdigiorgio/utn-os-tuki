@@ -42,6 +42,20 @@ https://docs.google.com/document/d/1xYmkJXRRddM51fQZfxr3CEuhNtFCWe5YU7hhvsUnTtg/
 
     Recibira conección desde CPU.
 
+### Protocolo de handshake
+
+    Cada módulo del sistema envía un mensaje de handshake al servidor al conectarse. El mensaje de handshake tiene un valor entero que indica el tipo de módulo:
+
+    - 1: CPU
+    - 2: Kernel
+    - 3: File System
+    - 4: Consola
+
+    Si el servidor recibe un valor mayor a 0, asume que se trata de un mensaje de handshake. El servidor responde con un valor entero que indica si el handshake fue exitoso:
+
+    - 1: Handshake exitoso
+    - -1: Error de handshake
+
 ## División de tareas
 
     Para comenzar hay que realizar las conecciones iniciales. Empezar por memoria -> cpu -> kernel -> consolas.
