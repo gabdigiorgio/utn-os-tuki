@@ -1,6 +1,7 @@
 #include "../includes/client_utils.h"
 
 void serializar_instrucciones(int socket, t_list* lista){
+	//Creo el buffer a utilizar para las instrucciones
 	t_buffer* buffer = malloc(sizeof(t_buffer));
 	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
@@ -9,6 +10,7 @@ void serializar_instrucciones(int socket, t_list* lista){
 
 	buffer->size = 0;
 
+	//Leo la lista de instrucciones para sumar el tamaño de toda la lista
 	for(int i = 0; i < lineas; i++){
 		instrucciones = list_get(lista, i);
 
@@ -23,8 +25,10 @@ void serializar_instrucciones(int socket, t_list* lista){
 				+ instrucciones->param3_length;
 	}
 
+	//Asigno memoria para el stream del tamaño de mi lista
 	void* stream = malloc(buffer->size);
 
+	//Leo toda la lista para copiar los valores en memoria
 	for(int i = 0; i < lineas; i++){
 		instrucciones = list_get(lista, i);
 
@@ -48,19 +52,24 @@ void serializar_instrucciones(int socket, t_list* lista){
 		if(i != lineas) offset += instrucciones->param3_length;
 	}
 
+	//Añado el stream a mi buffer
 	buffer->stream = stream;
 
+	//Libero la memoria de instrucciones
 	free(instrucciones);
 
+	//Creo un paquete y le asigno los valores iniciales
 	t_paquete* paquete = malloc(sizeof(t_paquete));
 
 	paquete->codigo_operacion = 1;
 	paquete->buffer = buffer;
 	paquete->lineas = lineas;
 
+	//Reservo el stream para el header del paquete
 	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t));
 	offset = 0;
 
+	//Añado los datos del header al stream
 	memcpy(a_enviar + offset, &(paquete->codigo_operacion), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 	memcpy(a_enviar + offset, &(paquete->lineas), sizeof(uint32_t));
@@ -69,8 +78,10 @@ void serializar_instrucciones(int socket, t_list* lista){
 	offset += sizeof(uint32_t);
 	memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
 
+	//Envio todo el stream al servidor
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
+	//Libero memoria que ya no voy a utilizar
 	free(a_enviar);
 	free(paquete->buffer->stream);
 	free(paquete->buffer);

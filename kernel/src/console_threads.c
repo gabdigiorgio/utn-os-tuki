@@ -16,23 +16,19 @@ void atender_consola(int *socket_console_client){
 	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
 	while (estado == 1) {
+
+		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
 
-		if((recv(socket, &(paquete->codigo_operacion), sizeof(uint32_t), 0)) > 0){
-			printf("recibi algo");
-		}
-		if((recv(socket, &(paquete->lineas), sizeof(uint32_t), 0)) > 0){
-			printf("recibi algo");
-		}
-		if((recv(socket, &(paquete->buffer->size), sizeof(uint32_t), 0)) > 0){
-			printf("recibi algo");
-		}
+		//Recivo el header del paquete + el stream de datos
+		recv(socket, &(paquete->codigo_operacion), sizeof(uint32_t), 0);
+		recv(socket, &(paquete->lineas), sizeof(uint32_t), 0);
+		recv(socket, &(paquete->buffer->size), sizeof(uint32_t), 0);
 		paquete->buffer->stream = malloc(paquete->buffer->size);
-		if((recv(socket, paquete->buffer->stream, paquete->buffer->size, 0)) > 0){
-			printf("recibi algo");
-		}
+		recv(socket, paquete->buffer->stream, paquete->buffer->size, 0)
 
+		//Reviso el header para saber de que paquete se trata y deserealizo acorde
 		switch(paquete->codigo_operacion){
 			case 1:
 				instruc_lista = deserializar_instrucciones(paquete->buffer, paquete->lineas);

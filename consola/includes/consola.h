@@ -9,7 +9,7 @@
 #include<commons/collections/list.h>
 #include<readline/readline.h>
 
-#include "tad.h"
+#include "../../shared/includes/tad.h"
 #include "client_utils.h"
 #include "utils.h"
 #include "initial_setup.h"

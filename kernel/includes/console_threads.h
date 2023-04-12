@@ -6,7 +6,7 @@
 
 #include "server_utils.h"
 #include "client_utils.h"
-#include "tad.h"
+#include "../../shared/includes/tad.h"
 
 void atender_consola(int *socket_console_client);
 void iterator(char* value);
