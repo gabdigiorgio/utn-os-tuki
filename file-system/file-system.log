@@ -50,3 +50,9 @@
 [INFO] 15:58:25:434 FILE-SYSTEM/(4438:4438): Conexion con la memoria establecida correctamente
 [INFO] 15:58:25:434 FILE-SYSTEM/(4438:4438): Handshake realizado correctamente
 [INFO] 15:58:25:435 FILE-SYSTEM/(4438:4438): File system listo para recibir al Kernel
+[INFO] 23:59:31:119 FILE-SYSTEM/(4762:4762): Valores de configuracion leidos correctamente
+[INFO] 23:59:31:120 FILE-SYSTEM/(4762:4762): Conexion con la memoria establecida correctamente
+[INFO] 23:59:31:121 FILE-SYSTEM/(4762:4762): Handshake realizado correctamente
+[INFO] 23:59:31:121 FILE-SYSTEM/(4762:4762): File system listo para recibir al Kernel
+[INFO] 00:49:45:812 FILE-SYSTEM/(4762:4762): Se conecto un cliente!
+[ERROR] 00:53:29:341 FILE-SYSTEM/(4762:4762): el cliente se desconecto. Terminando servidor

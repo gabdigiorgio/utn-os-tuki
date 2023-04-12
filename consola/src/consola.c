@@ -13,6 +13,7 @@
 
 int main(int argc, char *argv[]) {
 
+	instruc_list = list_create();
 
 	logger= iniciar_logger();
 	  if (argc < 2) {
@@ -35,15 +36,12 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
-
 	//CREAMOS CONEXION HACIA EL SERVIDOR DE KERNEL
 
 	kernel_connection=crear_conexion(kernel_ip,kernel_port);
-	//enviar_mensaje(valor,conexion);
-	//leo la consola
-	leer_consola(logger);
-	//armo paquete
-	paquete(kernel_connection);
+
+	serializar_instrucciones(kernel_connection,instruc_list);
+
 	terminar_programa(kernel_connection,logger,config);
 
 }
@@ -66,22 +64,6 @@ void leer_consola(t_log* logger)
 
 }
 
-void paquete(int conexion)
-{
-	char* leido;
-	t_paquete* paquete=crear_paquete();
-
-	while(1){
-				leido = readline("ingrese un valor del paquete > ");
-				if(strcmp(leido, "") == 0){break;}
-				agregar_a_paquete(paquete,leido,strlen(leido)+1);
-				free(leido);
-			}
-	    enviar_paquete(paquete,conexion);
-	    puts("Mensaje enviada al servidor kernel, con exito!");
-	    eliminar_paquete(paquete);
-}
-
 void terminar_programa()
 {
 	log_destroy(logger);
@@ -92,7 +74,6 @@ void terminar_programa()
 
 int leer_pseudocodigo(char* path_pseudocodigo){
 	FILE *fp = fopen(path_pseudocodigo, "r");
-	t_instruc *instruccion = malloc(sizeof *instruccion);
 	int nro = 0;
 
 	if (fp == NULL){
@@ -100,24 +81,44 @@ int leer_pseudocodigo(char* path_pseudocodigo){
 		return EXIT_FAILURE;
 	}
 
-	const unsigned MAX_LENGTH = 20;
+	const unsigned MAX_LENGTH = 256;
 	char buffer[MAX_LENGTH];
 
 	while (fgets(buffer, MAX_LENGTH, fp)){
 		char** parameters = string_split(buffer," ");
+		t_instruc *instruccion = malloc(sizeof *instruccion);
 
 		instruccion->nro = nro;
-		instruccion->instruct = parameters[0];
-		if (parameters[1] != NULL) instruccion->param1 = parameters[1];
-		if (parameters[2] != NULL) instruccion->param2 = parameters[2];
-		if (parameters[3] != NULL) instruccion->param3 = parameters[3];
+		instruccion->instruct = string_replace(parameters[0],"\n","");
+		instruccion->instruct_length = strlen(instruccion->instruct) + 1;
+		instruccion->param1 = "";
+		instruccion->param1_length = strlen(instruccion->param1) + 1;
+		instruccion->param2 = "";
+		instruccion->param2_length = strlen(instruccion->param2) + 1;
+		instruccion->param3 = "";
+		instruccion->param3_length = strlen(instruccion->param3) + 1;
+
+		if (parameters[1] != NULL) {
+			instruccion->param1 = string_replace(parameters[1],"\n","");
+			instruccion->param1_length = strlen(instruccion->param1) + 1;
+		}
+
+		if (parameters[1] != NULL && parameters[2] != NULL) {
+			instruccion->param2 = string_replace(parameters[2],"\n","");
+			instruccion->param2_length = strlen(instruccion->param2) + 1;
+		}
+
+		if (parameters[1] != NULL && parameters[2] != NULL && parameters[3] != NULL) {
+			instruccion->param3 = string_replace(parameters[3],"\n","");
+			instruccion->param3_length = strlen(instruccion->param3) + 1;
+		}
 
 		nro++;
 
-		queue_push(instruc_queue,instruccion);
+		list_add(instruc_list,instruccion);
 	}
 
 	fclose(fp);
 
-	return 0;
+	return EXIT_SUCCESS;
 }

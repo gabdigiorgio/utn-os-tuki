@@ -49,3 +49,17 @@
 [INFO] 15:59:08:034 MEMORIA/(4321:4321): Se conecto un cliente!
 [INFO] 15:59:08:042 MEMORIA/(4321:4579): Thread iniciado correctamente
 [INFO] 15:59:08:042 MEMORIA/(4321:4579): Handshake recibido correctamente
+[INFO] 17:06:41:594 MEMORIA/(4321:4423): Error al intentar handshake
+[ERROR] 17:06:41:594 MEMORIA/(4321:4423): el cliente se desconecto. Terminando servidor
+[INFO] 23:58:12:116 MEMORIA/(4527:4527): Valores de configuracion leidos correctamente
+[INFO] 23:58:12:121 MEMORIA/(4527:4527): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 23:59:24:462 MEMORIA/(4527:4527): Se conecto un cliente!
+[INFO] 23:59:24:466 MEMORIA/(4527:4695): Thread iniciado correctamente
+[INFO] 23:59:31:120 MEMORIA/(4527:4527): Se conecto un cliente!
+[INFO] 23:59:31:121 MEMORIA/(4527:4767): Thread iniciado correctamente
+[INFO] 23:59:31:121 MEMORIA/(4527:4767): Handshake recibido correctamente
+[INFO] 23:59:38:207 MEMORIA/(4527:4527): Se conecto un cliente!
+[INFO] 23:59:38:208 MEMORIA/(4527:4839): Thread iniciado correctamente
+[INFO] 23:59:38:216 MEMORIA/(4527:4839): Handshake recibido correctamente
+[INFO] 00:49:45:286 MEMORIA/(4527:4527): Se conecto un cliente!
+[INFO] 00:49:45:286 MEMORIA/(4527:4527): Se superaron las conexiones maximas establecidas, cerrando memoria

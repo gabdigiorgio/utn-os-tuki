@@ -139,3 +139,14 @@
 [INFO] 15:59:08:034 CPU/(4573:4573): Conexion establecida con la memoria
 [INFO] 15:59:08:042 CPU/(4573:4573): Handshake realizado correctamente
 [INFO] 15:59:08:043 CPU/(4573:4573): Cpu lista para recibir al Kernel
+[INFO] 23:59:38:206 CPU/(4834:4834): Valores de configuracion leidos correctamente
+[INFO] 23:59:38:208 CPU/(4834:4834): Conexion establecida con la memoria
+[INFO] 23:59:38:215 CPU/(4834:4834): Handshake realizado correctamente
+[INFO] 23:59:38:216 CPU/(4834:4834): Cpu lista para recibir al Kernel
+[INFO] 00:49:47:076 CPU/(4834:4834): Se conecto el Kernel
+[ERROR] 00:53:29:341 CPU/(4834:4834): el cliente se desconecto. Terminando servidor
+[INFO] 01:19:30:066 CPU/(9397:9397): Valores de configuracion leidos correctamente
+[INFO] 01:19:30:986 CPU/(9397:9397): Conexion establecida con la memoria
+[INFO] 01:19:41:695 CPU/(9397:9397): Fallo al realizar el handshake
+[INFO] 01:19:43:204 CPU/(9397:9397): Cpu lista para recibir al Kernel
+[INFO] 01:19:55:327 CPU/(9397:9397): Se conecto el Kernel

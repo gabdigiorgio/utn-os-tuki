@@ -1,19 +1,80 @@
 #include "../includes/client_utils.h"
 
+void serializar_instrucciones(int socket, t_list* lista){
+	t_buffer* buffer = malloc(sizeof(t_buffer));
+	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
-void* serializar_paquete(t_paquete* paquete, int bytes)
-{
-	void * magic = malloc(bytes);
-	int desplazamiento = 0;
+	int offset = 0;
+	int lineas = list_size(lista);
 
-	memcpy(magic + desplazamiento, &(paquete->codigo_operacion), sizeof(int));
-	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, &(paquete->buffer->size), sizeof(int));
-	desplazamiento+= sizeof(int);
-	memcpy(magic + desplazamiento, paquete->buffer->stream, paquete->buffer->size);
-	desplazamiento+= paquete->buffer->size;
+	buffer->size = 0;
 
-	return magic;
+	for(int i = 0; i < lineas; i++){
+		instrucciones = list_get(lista, i);
+
+		buffer->size = buffer->size + sizeof(uint32_t)
+				+ sizeof(uint32_t)
+				+ instrucciones->instruct_length
+				+ sizeof(uint32_t)
+				+ instrucciones->param1_length
+				+ sizeof(uint32_t)
+				+ instrucciones->param2_length
+				+ sizeof(uint32_t)
+				+ instrucciones->param3_length;
+	}
+
+	void* stream = malloc(buffer->size);
+
+	for(int i = 0; i < lineas; i++){
+		instrucciones = list_get(lista, i);
+
+		memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		memcpy(stream + offset, &instrucciones->instruct_length, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		memcpy(stream + offset, instrucciones->instruct, instrucciones->instruct_length);
+		offset += instrucciones->instruct_length;
+		memcpy(stream + offset, &instrucciones->param1_length, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		memcpy(stream + offset, instrucciones->param1, instrucciones->param1_length);
+		offset += instrucciones->param1_length;
+		memcpy(stream + offset, &instrucciones->param2_length, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		memcpy(stream + offset, instrucciones->param2, instrucciones->param2_length);
+		offset += instrucciones->param2_length;
+		memcpy(stream + offset, &instrucciones->param3_length, sizeof(uint32_t));
+		offset += sizeof(uint32_t);
+		memcpy(stream + offset, instrucciones->param3, instrucciones->param3_length);
+		if(i != lineas) offset += instrucciones->param3_length;
+	}
+
+	buffer->stream = stream;
+
+	free(instrucciones);
+
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+
+	paquete->codigo_operacion = 1;
+	paquete->buffer = buffer;
+	paquete->lineas = lineas;
+
+	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t));
+	offset = 0;
+
+	memcpy(a_enviar + offset, &(paquete->codigo_operacion), sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(a_enviar + offset, &(paquete->lineas), sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
+
+	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+	free(a_enviar);
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
 }
 
 int crear_conexion(char *ip, char* puerto)
@@ -39,80 +100,6 @@ int crear_conexion(char *ip, char* puerto)
 
 	freeaddrinfo(server_info);
 	return socket_cliente;
-}
-
-void enviar_mensaje(char* mensaje, int socket_cliente)
-{
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-	paquete->codigo_operacion = MENSAJE;
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = strlen(mensaje) + 1;
-	paquete->buffer->stream = malloc(paquete->buffer->size);
-	memcpy(paquete->buffer->stream, mensaje, paquete->buffer->size);
-
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-
-	void* a_enviar = serializar_paquete(paquete, bytes);
-
-	send(socket_cliente, a_enviar, bytes, 0);
-
-	free(a_enviar);
-	eliminar_paquete(paquete);
-}
-
-
-void crear_buffer(t_paquete* paquete)
-{
-	paquete->buffer = malloc(sizeof(t_buffer));
-	paquete->buffer->size = 0;
-	paquete->buffer->stream = NULL;
-}
-
-t_paquete* crear_super_paquete(void)
-{
-
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-
-	paquete->codigo_operacion = PAQUETE;
-	crear_buffer(paquete);
-	return paquete;
-}
-
-t_paquete* crear_paquete(void)
-{
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-	paquete->codigo_operacion = PAQUETE;
-	crear_buffer(paquete);
-	return paquete;
-}
-
-void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio)
-{
-	paquete->buffer->stream = realloc(paquete->buffer->stream, paquete->buffer->size + tamanio + sizeof(int));
-
-	memcpy(paquete->buffer->stream + paquete->buffer->size, &tamanio, sizeof(int));
-	memcpy(paquete->buffer->stream + paquete->buffer->size + sizeof(int), valor, tamanio);
-
-	paquete->buffer->size += tamanio + sizeof(int);
-}
-
-void enviar_paquete(t_paquete* paquete, int socket_cliente)
-{
-	int bytes = paquete->buffer->size + 2*sizeof(int);
-	void* a_enviar = serializar_paquete(paquete, bytes);
-
-	send(socket_cliente, a_enviar, bytes, 0);
-
-	free(a_enviar);
-}
-
-void eliminar_paquete(t_paquete* paquete)
-{
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
 }
 
 void liberar_conexion(int socket_cliente)

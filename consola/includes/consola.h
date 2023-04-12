@@ -6,9 +6,10 @@
 #include<commons/log.h>
 #include<commons/string.h>
 #include<commons/config.h>
-#include<commons/collections/queue.h>
+#include<commons/collections/list.h>
 #include<readline/readline.h>
 
+#include "tad.h"
 #include "client_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
@@ -40,16 +41,7 @@ t_config* config;
 
 // ___ INSTRUCCIONES ____
 
-typedef struct
-{
-	int nro;
-	char* instruct;
-    char* param1;
-    char* param2;
-    char* param3;
-} t_instruc;
-
-t_queue* instruc_queue;
+t_list* instruc_list;
 
 // _____________________
 
