@@ -228,3 +228,9 @@
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Conexion establecida con el File System
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Conexion establecida con la CPU
 [INFO] 05:31:23:934 KERNEL/(9329:9329): Kernel listo para recibir Consolas
+[ERROR] 17:13:27:522 KERNEL/(115296:115296): Falta parametro del path del archivo de configuracion
+[INFO] 17:13:57:084 KERNEL/(115329:115329): Valores de configuracion leidos correctamente
+[INFO] 17:13:57:085 KERNEL/(115329:115329): Conexion establecida con la Memoria
+[INFO] 17:13:57:085 KERNEL/(115329:115329): Conexion establecida con el File System
+[INFO] 17:13:57:085 KERNEL/(115329:115329): Conexion establecida con la CPU
+[INFO] 17:13:57:085 KERNEL/(115329:115329): Kernel listo para recibir Consolas

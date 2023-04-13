@@ -38,3 +38,42 @@
 [INFO] 21:54:49:330 Memoria/(5615:5615): Memoria lista para recibir al CPU, Kernel o File System
 [INFO] 21:54:52:570 Memoria/(5615:5615): Se conecto un cliente!
 [ERROR] 21:54:59:179 Memoria/(5615:5615): el cliente se desconecto. Terminando servidor
+[ERROR] 16:44:28:581 MEMORIA/(114854:114854): Falta parametro del path del archivo de configuracion
+[INFO] 16:45:29:902 MEMORIA/(114902:114902): Valores de configuracion leidos correctamente
+[INFO] 16:45:29:903 MEMORIA/(114902:114902): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 16:46:50:309 MEMORIA/(114902:114902): Se conecto un cliente!
+[INFO] 16:46:50:311 MEMORIA/(114902:115008): Thread iniciado correctamente
+[INFO] 16:46:50:312 MEMORIA/(114902:115008): Handshake recibido correctamente
+[ERROR] 16:50:34:212 MEMORIA/(114902:115008): el cliente se desconecto. Terminando servidor
+[INFO] 16:51:11:265 MEMORIA/(115018:115018): Valores de configuracion leidos correctamente
+[INFO] 16:51:11:271 MEMORIA/(115018:115018): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 16:51:34:927 MEMORIA/(114902:114902): Se conecto un cliente!
+[INFO] 16:51:34:928 MEMORIA/(114902:115035): Thread iniciado correctamente
+[INFO] 16:51:34:929 MEMORIA/(114902:115035): Handshake recibido correctamente
+[ERROR] 16:53:01:813 MEMORIA/(114902:115035): el cliente se desconecto. Terminando servidor
+[INFO] 17:04:16:104 MEMORIA/(115107:115107): Valores de configuracion leidos correctamente
+[INFO] 17:04:16:107 MEMORIA/(115107:115107): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 17:05:05:084 MEMORIA/(115133:115133): Valores de configuracion leidos correctamente
+[INFO] 17:05:05:089 MEMORIA/(115133:115133): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 17:05:19:108 MEMORIA/(114902:114902): Se conecto un cliente!
+[INFO] 17:05:19:108 MEMORIA/(114902:115149): Thread iniciado correctamente
+[INFO] 17:05:19:109 MEMORIA/(114902:115149): Handshake recibido correctamente
+[INFO] 17:06:36:776 MEMORIA/(115160:115160): Valores de configuracion leidos correctamente
+[INFO] 17:06:36:777 MEMORIA/(115160:115160): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 17:06:48:181 MEMORIA/(115179:115179): Valores de configuracion leidos correctamente
+[INFO] 17:06:48:186 MEMORIA/(115179:115179): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 17:07:04:651 MEMORIA/(115194:115194): Valores de configuracion leidos correctamente
+[INFO] 17:07:04:661 MEMORIA/(115194:115194): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 17:07:31:163 MEMORIA/(115194:115194): Se conecto un cliente!
+[INFO] 17:07:31:164 MEMORIA/(115194:115211): Thread iniciado correctamente
+[INFO] 17:07:31:166 MEMORIA/(115194:115211): Handshake recibido correctamente
+[ERROR] 17:07:47:682 MEMORIA/(115194:115211): el cliente se desconecto. Terminando servidor
+[INFO] 17:11:16:959 MEMORIA/(115194:115194): Se conecto un cliente!
+[INFO] 17:11:16:970 MEMORIA/(115194:115225): Thread iniciado correctamente
+[INFO] 17:11:16:970 MEMORIA/(115194:115225): Handshake recibido correctamente
+[ERROR] 17:11:33:642 MEMORIA/(115194:115225): el cliente se desconecto. Terminando servidor
+[INFO] 17:13:57:084 MEMORIA/(115194:115194): Se conecto un cliente!
+[INFO] 17:13:57:085 MEMORIA/(115194:115334): Thread iniciado correctamente
+[INFO] 17:14:17:936 MEMORIA/(115194:115194): Se conecto un cliente!
+[INFO] 17:14:17:937 MEMORIA/(115194:115345): Thread iniciado correctamente
+[INFO] 17:14:17:938 MEMORIA/(115194:115345): Handshake recibido correctamente
