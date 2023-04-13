@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
 
-	log_info(logger, handshake(memoria_connection));
+	log_info(logger, handshake(memoria_connection)); //handshake(memoria_connection,1)
 
 	int server_connection = iniciar_servidor(server_port);
 

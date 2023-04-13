@@ -102,11 +102,28 @@ char* handshake(int socket_cliente){
 	uint32_t resultOk = 1;
 	uint32_t resultError = -1;
 
-	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
 
-	if(handshake == 1){
+	/*
+
+	 switch(handshake)
+	 	 case 1:
+	 	 	 if(cpu_conectada == 0){
+	 	 	 	 send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
+		     	 message = "Handshake recibido correctamente";
+		     	 cpu_conectada = 1;
+	 	 	 } else {
+	 	 	 	 send(socket_cliente, &resultError, sizeof(uint8_t), NULL);
+				message = "Error al intentar handshake";
+	 	 	 }
+	 	 	 break;
+	 */
+
+
+	if(handshake > 0){
 		send(socket_cliente, &resultOk, sizeof(uint32_t), NULL);
 		message = "Handshake recibido correctamente";
+		//es_cpu = 1;
 	} else {
 		send(socket_cliente, &resultError, sizeof(uint32_t), NULL);
 		message = "Error al intentar handshake";

@@ -6,6 +6,7 @@
  */
 
 #include "../includes/console_threads.h"
+#include "../includes/server_utils.h"
 
 void atender_consola(int *socket_console_client){
 	t_list* instruc_lista;
@@ -16,17 +17,12 @@ void atender_consola(int *socket_console_client){
 	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
 	while (estado == 1) {
-
 		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
 
 		//Recivo el header del paquete + el stream de datos
-		recv(socket, &(paquete->codigo_operacion), sizeof(uint32_t), 0);
-		recv(socket, &(paquete->lineas), sizeof(uint32_t), 0);
-		recv(socket, &(paquete->buffer->size), sizeof(uint32_t), 0);
-		paquete->buffer->stream = malloc(paquete->buffer->size);
-		recv(socket, paquete->buffer->stream, paquete->buffer->size, 0)
+		deserializar_header(paquete, socket);
 
 		//Reviso el header para saber de que paquete se trata y deserealizo acorde
 		switch(paquete->codigo_operacion){
@@ -41,49 +37,4 @@ void atender_consola(int *socket_console_client){
 		free(paquete->buffer);
 		free(paquete);
 		}
-}
-
-t_list* deserializar_instrucciones(t_buffer* buffer, int lineas){
-	t_list* lista = malloc(sizeof(t_list));
-
-	void* stream = buffer->stream;
-
-	for(int i=0; i<lineas; i++){
-		t_instruc* instrucciones = malloc(sizeof *instrucciones);
-
-		memcpy(&(instrucciones->nro), stream, sizeof(uint32_t));
-		stream += sizeof(uint32_t);
-
-		memcpy(&(instrucciones->instruct_length), stream, sizeof(uint32_t));
-		stream += sizeof(uint32_t);
-
-		instrucciones->instruct = malloc(instrucciones->instruct_length);
-		memcpy(instrucciones->instruct, stream, instrucciones->instruct_length);
-		stream += instrucciones->instruct_length;
-
-		memcpy(&(instrucciones->param1_length), stream, sizeof(uint32_t));
-		stream += sizeof(uint32_t);
-
-		instrucciones->param1 = malloc(instrucciones->param1_length);
-		memcpy(instrucciones->param1, stream, instrucciones->param1_length);
-		stream += instrucciones->param1_length;
-
-		memcpy(&(instrucciones->param2_length), stream, sizeof(uint32_t));
-		stream += sizeof(uint32_t);
-
-		instrucciones->param2 = malloc(instrucciones->param2_length);
-		memcpy(instrucciones->param2, stream, instrucciones->param2_length);
-		stream += instrucciones->param2_length;
-
-		memcpy(&(instrucciones->param3_length), stream, sizeof(uint32_t));
-		stream += sizeof(uint32_t);
-
-		instrucciones->param3 = malloc(instrucciones->param3_length);
-		memcpy(instrucciones->param3, stream, instrucciones->param3_length);
-		stream += instrucciones->param3_length;
-
-		list_add(lista, instrucciones);
-	}
-
-	return lista;
 }

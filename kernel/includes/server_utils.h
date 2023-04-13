@@ -18,14 +18,12 @@
 #include<commons/config.h>
 #include<string.h>
 #include<assert.h>
+#include "../../shared/includes/tad.h"
 
 extern t_log* logger;
 
-void* recibir_buffer(int*, int);
 int iniciar_servidor(char* puerto);
 int esperar_cliente(int);
-t_list* recibir_paquete(int);
-void recibir_mensaje(int);
-int recibir_operacion(int);
+void deserializar_header(t_paquete* paquete, int socket);
 
 #endif /* SERVER_UTILS_H_ */

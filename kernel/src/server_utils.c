@@ -41,57 +41,58 @@ int esperar_cliente(int socket_servidor)
 	return socket_cliente;
 }
 
-int recibir_operacion(int socket_cliente)
-{
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
-		return cod_op;
-	else
-	{
-		close(socket_cliente);
-		return -1;
+void deserializar_header(t_paquete* paquete, int socket){
+	recv(socket, &(paquete->codigo_operacion), sizeof(uint32_t), 0);
+	recv(socket, &(paquete->lineas), sizeof(uint32_t), 0);
+	recv(socket, &(paquete->buffer->size), sizeof(uint32_t), 0);
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	recv(socket, paquete->buffer->stream, paquete->buffer->size, 0);
+}
+
+t_list* deserializar_instrucciones(t_buffer* buffer, int lineas){
+	t_list* lista = malloc(sizeof(t_list));
+
+	void* stream = buffer->stream;
+
+	for(int i=0; i<lineas; i++){
+		t_instruc* instrucciones = malloc(sizeof *instrucciones);
+
+		memcpy(&(instrucciones->nro), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		memcpy(&(instrucciones->instruct_length), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		instrucciones->instruct = malloc(instrucciones->instruct_length);
+		memcpy(instrucciones->instruct, stream, instrucciones->instruct_length);
+		stream += instrucciones->instruct_length;
+
+		memcpy(&(instrucciones->param1_length), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		instrucciones->param1 = malloc(instrucciones->param1_length);
+		memcpy(instrucciones->param1, stream, instrucciones->param1_length);
+		stream += instrucciones->param1_length;
+
+		memcpy(&(instrucciones->param2_length), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		instrucciones->param2 = malloc(instrucciones->param2_length);
+		memcpy(instrucciones->param2, stream, instrucciones->param2_length);
+		stream += instrucciones->param2_length;
+
+		memcpy(&(instrucciones->param3_length), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		instrucciones->param3 = malloc(instrucciones->param3_length);
+		memcpy(instrucciones->param3, stream, instrucciones->param3_length);
+		stream += instrucciones->param3_length;
+
+		list_add(lista, instrucciones);
 	}
+
+	return lista;
 }
 
-void* recibir_buffer(int* size, int socket_cliente)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
-}
-
-void recibir_mensaje(int socket_cliente)
-{
-	int size;
-	char* buffer = recibir_buffer(&size, socket_cliente);
-	log_info(logger, "Me llego el mensaje %s", buffer);
-	free(buffer);
-}
-
-t_list* recibir_paquete(int socket_cliente)
-{
-	int size;
-	int desplazamiento = 0;
-	void * buffer;
-	t_list* valores = list_create();
-	int tamanio;
-
-	buffer = recibir_buffer(&size, socket_cliente);
-	while(desplazamiento < size)
-	{
-		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
-		desplazamiento+=sizeof(int);
-		char* valor = malloc(tamanio);
-		memcpy(valor, buffer+desplazamiento, tamanio);
-		desplazamiento+=tamanio;
-		list_add(valores, valor);
-	}
-	free(buffer);
-	return valores;
-}
 
 

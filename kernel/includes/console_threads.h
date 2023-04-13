@@ -10,7 +10,6 @@
 
 void atender_consola(int *socket_console_client);
 void iterator(char* value);
-t_list* deserializar_instrucciones(t_buffer* buffer, int lineas);
 
 extern t_log* logger;
 extern int cant_threads_activos;;
