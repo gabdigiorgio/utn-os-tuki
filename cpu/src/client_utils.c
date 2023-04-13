@@ -39,9 +39,10 @@ int crear_conexion(char *ip, char* puerto)
 	return socket_cliente;
 }
 
-char* handshake(int socket_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
+char* handshake(int socket_cliente, uint8_t tipo_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
+
 	char* message = "";
-	uint32_t handshake = 1;
+	uint32_t handshake = tipo_cliente;
 	uint32_t result;
 
 	send(socket_cliente, &handshake, sizeof(uint32_t), NULL);
