@@ -130,8 +130,9 @@ char* handshake(int socket_cliente){
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
 					message = "Error al intentar handshake";
 				}
+				break;
 
-			/*case 2:
+			case 2:
 				if(kernel_conectada == 0){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de Kernel recibido correctamente";
@@ -140,6 +141,7 @@ char* handshake(int socket_cliente){
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
 					message = "Error al intentar handshake";
 				}
+				break;
 			case 3:
 				if(fileSystem_conectada == 0){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
@@ -148,7 +150,8 @@ char* handshake(int socket_cliente){
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
 					message = "Error al intentar handshake";
-				}*/
+				}
+				break;
 		}
 
 

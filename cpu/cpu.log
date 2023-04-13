@@ -210,3 +210,9 @@
 [INFO] 20:14:14:791 CPU/(5288:5288): Conexion establecida con la memoria
 [INFO] 20:14:31:934 CPU/(5288:5288): Handshake realizado correctamente
 [INFO] 20:14:31:935 CPU/(5288:5288): Cpu lista para recibir al Kernel
+[INFO] 20:23:54:373 CPU/(5622:5622): Valores de configuracion leidos correctamente
+[INFO] 20:23:54:373 CPU/(5622:5622): Conexion establecida con la memoria
+[INFO] 20:25:01:283 CPU/(5622:5622): Handshake realizado correctamente
+[INFO] 20:25:01:283 CPU/(5622:5622): Cpu lista para recibir al Kernel
+[INFO] 20:26:00:221 CPU/(5701:5701): Valores de configuracion leidos correctamente
+[INFO] 20:26:00:224 CPU/(5701:5701): Conexion establecida con la memoria
