@@ -13,6 +13,7 @@
 #include "console_threads.h"
 #include "utils.h"
 #include "initial_setup.h"
+#include "../../shared/includes/tad.h"
 
 #define CANTIDAD_DE_THREADS 4
 

@@ -10,8 +10,6 @@
 
 #include "../includes/memoria.h"
 
-
-
 int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 	  if (argc < 2) {
