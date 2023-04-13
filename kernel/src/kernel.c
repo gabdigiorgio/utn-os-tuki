@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
+	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la Memoria");
 	if((file_system_connection = crear_conexion(file_system_ip,file_system_port)) != 0) log_info(logger, "Conexion establecida con el File System");
 	if((cpu_connection = crear_conexion(cpu_ip,cpu_port)) != 0) log_info(logger, "Conexion establecida con la CPU");
@@ -43,7 +44,7 @@ int main(int argc, char *argv[]) {
 
 	// Espero Conexiones de las consolas
 	while (1){
-		if(cant_threads_activos<CANTIDAD_DE_THREADS-1){
+		if(cant_threads_activos<CANTIDAD_DE_THREADS){
 		  pthread_t console_thread;
 
 		   int *socket_console_client = malloc(sizeof(int));

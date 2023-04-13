@@ -160,3 +160,12 @@
 [INFO] 17:14:17:936 CPU/(115340:115340): Conexion establecida con la memoria
 [INFO] 17:14:17:937 CPU/(115340:115340): Handshake realizado correctamente
 [INFO] 17:14:17:938 CPU/(115340:115340): Cpu lista para recibir al Kernel
+[INFO] 04:27:26:027 CPU/(3638:3638): Valores de configuracion leidos correctamente
+[INFO] 04:27:26:093 CPU/(3638:3638): Conexion establecida con la memoria
+[INFO] 04:27:26:103 CPU/(3638:3638): Handshake realizado correctamente
+[INFO] 04:27:26:105 CPU/(3638:3638): Cpu lista para recibir al Kernel
+[INFO] 04:28:37:070 CPU/(3638:3638): Se conecto el Kernel
+[INFO] 04:29:19:648 CPU/(3767:3767): Valores de configuracion leidos correctamente
+[INFO] 04:29:19:658 CPU/(3767:3767): Conexion establecida con la memoria
+[INFO] 04:29:38:372 CPU/(3767:3767): Handshake realizado correctamente
+[INFO] 04:29:38:373 CPU/(3767:3767): Cpu lista para recibir al Kernel

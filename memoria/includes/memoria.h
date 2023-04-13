@@ -18,6 +18,8 @@
 #include "utils.h"
 #include "initial_setup.h"
 
+#define CANTIDAD_DE_THREADS 3
+
 typedef struct
 {
 	int num_socket;
