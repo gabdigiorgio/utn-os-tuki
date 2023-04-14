@@ -47,6 +47,42 @@ char* server_port;
 t_config* config;
 
 // _____________________
+typedef struct{
+	 uint32_t ids;
+	 uint32_t direccion_base;
+	 uint32_t tamanio;
+}segmento_t;
+
+typedef struct{
+	 segmento_t* segmento;
+}tabla_segmentos_t;
+typedef struct{
+	 char* instrucciones;
+}lista_instucciones_t;
+
+typedef struct{
+	uint32_t id_archivo;
+	uint32_t posicion_puntero;
+}archivo_abierto_t;
+
+typedef struct{
+	archivo_abierto_t* archivos_abiertos;
+}tabla_archivos_abiertos_t;
+
+typedef struct {
+	uint32_t pid;
+	uint32_t porgram_counter;
+	uint32_t estimado_proxima_rafaga;
+	uint32_t tiempo_llegada_ready;
+	//registros_cpu_t registros_cpu;
+	tabla_segmentos_t tabla_segmento;
+	lista_instucciones_t instrucciones;
+	tabla_archivos_abiertos_t tabla_archivos;
+}pcb_t;
+
+
+
+
 
 
 #endif /* KERNEL_H_ */
