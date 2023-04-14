@@ -56,3 +56,13 @@
 [INFO] 23:59:31:121 FILE-SYSTEM/(4762:4762): File system listo para recibir al Kernel
 [INFO] 00:49:45:812 FILE-SYSTEM/(4762:4762): Se conecto un cliente!
 [ERROR] 00:53:29:341 FILE-SYSTEM/(4762:4762): el cliente se desconecto. Terminando servidor
+[INFO] 04:27:02:869 FILE-SYSTEM/(3561:3561): Valores de configuracion leidos correctamente
+[INFO] 04:27:02:886 FILE-SYSTEM/(3561:3561): Conexion con la memoria establecida correctamente
+[INFO] 04:27:02:894 FILE-SYSTEM/(3561:3561): Handshake realizado correctamente
+[INFO] 04:27:02:894 FILE-SYSTEM/(3561:3561): File system listo para recibir al Kernel
+[INFO] 04:28:21:742 FILE-SYSTEM/(3673:3673): Valores de configuracion leidos correctamente
+[INFO] 04:28:21:753 FILE-SYSTEM/(3673:3673): Conexion con la memoria establecida correctamente
+[INFO] 04:28:21:758 FILE-SYSTEM/(3673:3673): Handshake realizado correctamente
+[INFO] 04:28:21:759 FILE-SYSTEM/(3673:3673): File system listo para recibir al Kernel
+[INFO] 04:28:37:063 FILE-SYSTEM/(3673:3673): Se conecto un cliente!
+[ERROR] 04:48:48:221 FILE-SYSTEM/(3673:3673): el cliente se desconecto. Terminando servidor

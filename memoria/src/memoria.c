@@ -29,14 +29,16 @@ int main(int argc, char *argv[]) {
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
 	//SO_REUSEADDR flag para reutilizar el socket
 
-	while (num_threads < 4){
-		t_conexion *conexion = malloc(sizeof *conexion);
-		conexion->num_socket = esperar_cliente(server_connection);
-		conexion->id_cliente = num_threads;
+	while (1){
+		if(num_threads<CANTIDAD_DE_THREADS){
+			t_conexion *conexion = malloc(sizeof *conexion);
+			conexion->num_socket = esperar_cliente(server_connection);
+			conexion->id_cliente = num_threads;
 
-		pthread_create(&(tid[num_threads]), NULL, (void *)thread_main, conexion);
-		pthread_detach(&(tid[num_threads]));
-		num_threads++;
+			pthread_create(&(tid[num_threads]), NULL, (void *)thread_main, conexion);
+			pthread_detach(&(tid[num_threads]));
+			num_threads++;
+		}
 	}
 
 	log_info(logger, "Se superaron las conexiones maximas establecidas, cerrando memoria");

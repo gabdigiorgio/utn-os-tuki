@@ -77,3 +77,29 @@
 [INFO] 17:14:17:936 MEMORIA/(115194:115194): Se conecto un cliente!
 [INFO] 17:14:17:937 MEMORIA/(115194:115345): Thread iniciado correctamente
 [INFO] 17:14:17:938 MEMORIA/(115194:115345): Handshake recibido correctamente
+[INFO] 04:26:47:243 MEMORIA/(3479:3479): Valores de configuracion leidos correctamente
+[INFO] 04:26:47:331 MEMORIA/(3479:3479): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 04:27:02:886 MEMORIA/(3479:3479): Se conecto un cliente!
+[INFO] 04:27:02:894 MEMORIA/(3479:3566): Thread iniciado correctamente
+[INFO] 04:27:02:894 MEMORIA/(3479:3566): Handshake recibido correctamente
+[INFO] 04:27:26:086 MEMORIA/(3479:3479): Se conecto un cliente!
+[INFO] 04:27:26:095 MEMORIA/(3479:3643): Thread iniciado correctamente
+[INFO] 04:27:26:106 MEMORIA/(3479:3643): Handshake recibido correctamente
+[ERROR] 04:28:02:222 MEMORIA/(3479:3566): el cliente se desconecto. Terminando servidor
+[INFO] 04:28:21:752 MEMORIA/(3479:3479): Se conecto un cliente!
+[INFO] 04:28:21:758 MEMORIA/(3479:3681): Thread iniciado correctamente
+[INFO] 04:28:21:759 MEMORIA/(3479:3681): Handshake recibido correctamente
+[INFO] 04:28:37:052 MEMORIA/(3479:3479): Se conecto un cliente!
+[INFO] 04:28:37:072 MEMORIA/(3479:3727): Thread iniciado correctamente
+[ERROR] 04:29:38:356 MEMORIA/(3479:3643): el cliente se desconecto. Terminando servidor
+[INFO] 04:29:38:370 MEMORIA/(3479:3479): Se conecto un cliente!
+[INFO] 04:29:38:372 MEMORIA/(3479:3784): Thread iniciado correctamente
+[INFO] 04:29:38:373 MEMORIA/(3479:3784): Handshake recibido correctamente
+[INFO] 04:48:48:220 MEMORIA/(3479:3727): Error al intentar handshake
+[ERROR] 04:48:48:222 MEMORIA/(3479:3727): el cliente se desconecto. Terminando servidor
+[ERROR] 04:48:48:223 MEMORIA/(3479:3681): el cliente se desconecto. Terminando servidor
+[ERROR] 04:48:50:362 MEMORIA/(3479:3784): el cliente se desconecto. Terminando servidor
+[INFO] 04:58:29:690 MEMORIA/(5237:5237): Valores de configuracion leidos correctamente
+[INFO] 04:58:29:700 MEMORIA/(5237:5237): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 05:01:58:137 MEMORIA/(5567:5567): Valores de configuracion leidos correctamente
+[INFO] 05:01:58:144 MEMORIA/(5567:5567): Memoria lista para recibir al CPU, Kernel o File System

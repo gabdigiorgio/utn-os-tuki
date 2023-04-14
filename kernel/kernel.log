@@ -234,4 +234,19 @@
 [INFO] 17:13:57:085 KERNEL/(115329:115329): Conexion establecida con el File System
 [INFO] 17:13:57:085 KERNEL/(115329:115329): Conexion establecida con la CPU
 [INFO] 17:13:57:085 KERNEL/(115329:115329): Kernel listo para recibir Consolas
-[ERROR] 03:06:46:983 KERNEL/(14308:14308): Falta parametro del path del archivo de configuracion
+[INFO] 04:14:55:968 KERNEL/(2863:2863): Valores de configuracion leidos correctamente
+[INFO] 04:14:55:993 KERNEL/(2863:2863): Conexion establecida con la Memoria
+[INFO] 04:14:55:993 KERNEL/(2863:2863): Conexion establecida con el File System
+[INFO] 04:14:55:993 KERNEL/(2863:2863): Conexion establecida con la CPU
+[INFO] 04:14:56:010 KERNEL/(2863:2863): Kernel listo para recibir Consolas
+[INFO] 04:19:38:523 KERNEL/(2863:2863): Se conecto un cliente!
+[INFO] 04:19:38:543 KERNEL/(2863:3032): Thread iniciado correctamente
+[INFO] 04:19:52:559 KERNEL/(2863:2863): Se conecto un cliente!
+[INFO] 04:19:52:566 KERNEL/(2863:3068): Thread iniciado correctamente
+[INFO] 04:20:06:964 KERNEL/(2863:2863): Se conecto un cliente!
+[INFO] 04:20:07:005 KERNEL/(2863:3103): Thread iniciado correctamente
+[INFO] 04:28:37:032 KERNEL/(3722:3722): Valores de configuracion leidos correctamente
+[INFO] 04:28:37:061 KERNEL/(3722:3722): Conexion establecida con la Memoria
+[INFO] 04:28:37:068 KERNEL/(3722:3722): Conexion establecida con el File System
+[INFO] 04:28:37:077 KERNEL/(3722:3722): Conexion establecida con la CPU
+[INFO] 04:28:37:089 KERNEL/(3722:3722): Kernel listo para recibir Consolas
