@@ -425,3 +425,11 @@
 [INFO] 22:29:09:403 CPU/(5109:5109): Se conecto el Kernel
 [INFO] 22:29:09:403 CPU/(5109:5109): Handshake de Kernel recibido correctamente
 [ERROR] 22:29:28:651 CPU/(5109:5109): el cliente se desconecto. Terminando servidor
+[INFO] 22:35:22:268 CPU/(5415:5415): Valores de configuracion leidos correctamente
+[INFO] 22:35:22:269 CPU/(5415:5415): Conexion establecida con la memoria
+[INFO] 22:35:22:269 CPU/(5415:5415): Handshake realizado correctamente
+[INFO] 22:35:22:270 CPU/(5415:5415): Cpu lista para recibir al Kernel
+[INFO] 22:35:24:359 CPU/(5427:5427): Valores de configuracion leidos correctamente
+[INFO] 22:35:24:360 CPU/(5427:5427): Conexion establecida con la memoria
+[INFO] 22:35:24:362 CPU/(5427:5427): Handshake realizado correctamente
+[INFO] 22:35:24:362 CPU/(5427:5427): Cpu lista para recibir al Kernel

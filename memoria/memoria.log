@@ -456,3 +456,11 @@
 [ERROR] 22:29:28:649 MEMORIA/(5078:5099): el cliente se desconecto. Terminando servidor
 [ERROR] 22:29:28:651 MEMORIA/(5078:5115): el cliente se desconecto. Terminando servidor
 [ERROR] 22:29:28:652 MEMORIA/(5078:5134): el cliente se desconecto. Terminando servidor
+[INFO] 22:35:16:546 MEMORIA/(5399:5399): Valores de configuracion leidos correctamente
+[INFO] 22:35:16:547 MEMORIA/(5399:5399): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 22:35:22:269 MEMORIA/(5399:5399): Se conecto un cliente!
+[INFO] 22:35:22:269 MEMORIA/(5399:5421): Thread iniciado correctamente
+[INFO] 22:35:22:270 MEMORIA/(5399:5421): Handshake de CPU recibido correctamente
+[INFO] 22:35:24:360 MEMORIA/(5399:5399): Se conecto un cliente!
+[INFO] 22:35:24:362 MEMORIA/(5399:5433): Thread iniciado correctamente
+[INFO] 22:35:24:362 MEMORIA/(5399:5433): Handshake de CPU recibido correctamente
