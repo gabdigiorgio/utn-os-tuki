@@ -61,11 +61,11 @@ void enviar_mensaje(char* mensaje, int socket_cliente)
 char* handshake_client(int socket_cliente, uint8_t tipo_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
 
 	char* message = "";
-	uint32_t handshake = tipo_cliente;
-	uint32_t result;
+	uint8_t handshake = tipo_cliente;
+	uint8_t result;
 
-	send(socket_cliente, &handshake, sizeof(uint32_t), NULL);
-	recv(socket_cliente, &result, sizeof(uint32_t), MSG_WAITALL);
+	send(socket_cliente, &handshake, sizeof(uint8_t), NULL);
+	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL);
 
 	if(result == 1){
 		message = "Handshake realizado correctamente";

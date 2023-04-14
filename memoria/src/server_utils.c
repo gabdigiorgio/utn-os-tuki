@@ -101,14 +101,14 @@ t_list* recibir_paquete(int socket_cliente)
 
 char* handshake(int socket_cliente){
 	char* message = "";
-	uint32_t handshake;
+	uint8_t handshake;
 	bool cpu_conectada=NULL;
 	bool kernel_conectada=NULL;
 	bool fileSystem_conectada=NULL;
-	uint32_t resultOk = 1;
-	uint32_t resultError = -1;
+	uint8_t resultOk = 1;
+	uint8_t resultError = -1;
 
-	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
+	recv(socket_cliente, &handshake, sizeof(uint8_t), MSG_WAITALL); //recive el mensaje
 	if(handshake == 1){
 		cpu_conectada = 0;
 	}
@@ -156,27 +156,6 @@ char* handshake(int socket_cliente){
 
 
 	}
-/*
-	 switch(handshake)
-	 	 case 1:
-	 	 	 if(cpu_conectada == 0){
-	 	 	 	 send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
-		     	 message = "Handshake recibido correctamente";
-		     	 cpu_conectada = 1;
-	 	 	 } else {
-	 	 	 	 send(socket_cliente, &resultError, sizeof(uint8_t), NULL);
-				message = "Error al intentar handshake";
-	 	 	 }
-	 	 	 break;
-
-	if(handshake > 0){
-		send(socket_cliente, &resultOk, sizeof(uint32_t), NULL);
-		message = "Handshake recibido correctamente";
-		//es_cpu = 1;
-	} else {
-		send(socket_cliente, &resultError, sizeof(uint32_t), NULL);
-		message = "Error al intentar handshake";
-	}*/
 	return message;
 }
 

@@ -648,3 +648,43 @@
 [INFO] 20:47:48:592 KERNEL/(8461:8461): Conexion establecida con File System
 [INFO] 20:47:48:593 KERNEL/(8461:8461): Fallo al realizar el handshake
 [INFO] 20:47:48:593 KERNEL/(8461:8461): Kernel listo para recibir Consolas
+[INFO] 22:04:11:146 KERNEL/(3770:3770): Valores de configuracion leidos correctamente
+[INFO] 22:04:11:147 KERNEL/(3770:3770): Conexion establecida con la Memoria
+[INFO] 22:04:11:147 KERNEL/(3770:3770): Fallo al realizar el handshake
+[INFO] 22:04:11:148 KERNEL/(3770:3770): Conexion establecida con la CPU
+[INFO] 22:04:11:148 KERNEL/(3770:3770): Fallo al realizar el handshake
+[INFO] 22:04:11:148 KERNEL/(3770:3770): Conexion establecida con File System
+[INFO] 22:04:11:148 KERNEL/(3770:3770): Fallo al realizar el handshake
+[INFO] 22:04:11:149 KERNEL/(3770:3770): Kernel listo para recibir Consolas
+[INFO] 22:06:04:694 KERNEL/(3879:3879): Valores de configuracion leidos correctamente
+[INFO] 22:06:04:695 KERNEL/(3879:3879): Conexion establecida con la Memoria
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Handshake realizado correctamente
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Conexion establecida con la CPU
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Fallo al realizar el handshake
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Conexion establecida con File System
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Fallo al realizar el handshake
+[INFO] 22:06:28:689 KERNEL/(3879:3879): Kernel listo para recibir Consolas
+[INFO] 22:07:12:442 KERNEL/(3974:3974): Valores de configuracion leidos correctamente
+[INFO] 22:07:12:464 KERNEL/(3974:3974): Conexion establecida con la Memoria
+[INFO] 22:08:58:745 KERNEL/(4039:4039): Valores de configuracion leidos correctamente
+[INFO] 22:09:06:125 KERNEL/(4039:4039): Conexion establecida con la Memoria
+[INFO] 22:10:01:984 KERNEL/(4100:4100): Valores de configuracion leidos correctamente
+[INFO] 22:10:01:985 KERNEL/(4100:4100): Conexion establecida con la Memoria
+[INFO] 22:27:43:015 KERNEL/(5013:5013): Valores de configuracion leidos correctamente
+[INFO] 22:27:43:016 KERNEL/(5013:5013): Conexion establecida con la Memoria
+[INFO] 22:27:59:585 KERNEL/(5013:5013): Fallo al realizar el handshake
+[INFO] 22:27:59:585 KERNEL/(5013:5013): Conexion establecida con la CPU
+[INFO] 22:27:59:586 KERNEL/(5013:5013): Fallo al realizar el handshake
+[INFO] 22:27:59:588 KERNEL/(5013:5013): Conexion establecida con File System
+[INFO] 22:27:59:588 KERNEL/(5013:5013): Fallo al realizar el handshake
+[INFO] 22:27:59:588 KERNEL/(5013:5013): Kernel listo para recibir Consolas
+[INFO] 22:29:09:397 KERNEL/(5128:5128): Valores de configuracion leidos correctamente
+[INFO] 22:29:09:401 KERNEL/(5128:5128): Conexion establecida con la Memoria
+[INFO] 22:29:09:403 KERNEL/(5128:5128): Handshake realizado correctamente
+[INFO] 22:29:09:403 KERNEL/(5128:5128): Conexion establecida con la CPU
+[INFO] 22:29:09:403 KERNEL/(5128:5128): Handshake realizado correctamente
+[INFO] 22:29:09:404 KERNEL/(5128:5128): Conexion establecida con File System
+[INFO] 22:29:09:404 KERNEL/(5128:5128): Handshake realizado correctamente
+[INFO] 22:29:09:404 KERNEL/(5128:5128): Kernel listo para recibir Consolas
+[INFO] 22:29:22:613 KERNEL/(5128:5128): Se conecto un cliente!
+[INFO] 22:29:22:613 KERNEL/(5128:5150): Thread iniciado correctamente

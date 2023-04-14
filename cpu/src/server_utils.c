@@ -95,12 +95,12 @@ t_list* recibir_paquete(int socket_cliente)
 }
 char* handshake(int socket_cliente){
 	char* message = "";
-	uint32_t handshake;
+	uint8_t handshake;
 	bool kernel_conectada=NULL;
-	uint32_t resultOk = 1;
-	uint32_t resultError = -1;
+	uint8_t resultOk = 1;
+	uint8_t resultError = -1;
 
-	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
+	recv(socket_cliente, &handshake, sizeof(uint8_t), MSG_WAITALL); //recive el mensaje
 	if(handshake == 2){
 		kernel_conectada = 0;
 	}

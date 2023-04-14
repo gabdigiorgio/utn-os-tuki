@@ -221,3 +221,24 @@
 [INFO] 20:46:38:154 FILE-SYSTEM/(8403:8403): File System listo para recibir al Kernel
 [INFO] 20:48:11:674 FILE-SYSTEM/(8490:8490): Valores de configuracion leidos correctamente
 [INFO] 20:48:11:684 FILE-SYSTEM/(8490:8490): Conexion establecida con la memoria
+[INFO] 22:03:41:823 FILE-SYSTEM/(3691:3691): Valores de configuracion leidos correctamente
+[INFO] 22:03:41:824 FILE-SYSTEM/(3691:3691): Conexion establecida con la memoria
+[INFO] 22:03:41:824 FILE-SYSTEM/(3691:3691): Fallo al realizar el handshake
+[INFO] 22:03:41:824 FILE-SYSTEM/(3691:3691): File System listo para recibir al Kernel
+[INFO] 22:06:15:525 FILE-SYSTEM/(3894:3894): Valores de configuracion leidos correctamente
+[INFO] 22:06:15:526 FILE-SYSTEM/(3894:3894): Conexion establecida con la memoria
+[INFO] 22:06:28:690 FILE-SYSTEM/(3894:3894): Handshake realizado correctamente
+[INFO] 22:06:28:690 FILE-SYSTEM/(3894:3894): File System listo para recibir al Kernel
+[INFO] 22:06:58:597 FILE-SYSTEM/(3944:3944): Valores de configuracion leidos correctamente
+[INFO] 22:06:58:601 FILE-SYSTEM/(3944:3944): Conexion establecida con la memoria
+[INFO] 22:28:23:632 FILE-SYSTEM/(5062:5062): Valores de configuracion leidos correctamente
+[INFO] 22:28:23:632 FILE-SYSTEM/(5062:5062): Conexion establecida con la memoria
+[INFO] 22:28:23:632 FILE-SYSTEM/(5062:5062): Fallo al realizar el handshake
+[INFO] 22:28:23:633 FILE-SYSTEM/(5062:5062): File System listo para recibir al Kernel
+[INFO] 22:28:42:564 FILE-SYSTEM/(5093:5093): Valores de configuracion leidos correctamente
+[INFO] 22:28:42:564 FILE-SYSTEM/(5093:5093): Conexion establecida con la memoria
+[INFO] 22:28:42:565 FILE-SYSTEM/(5093:5093): Handshake realizado correctamente
+[INFO] 22:28:42:565 FILE-SYSTEM/(5093:5093): File System listo para recibir al Kernel
+[INFO] 22:29:09:404 FILE-SYSTEM/(5093:5093): Se conecto el Kernel
+[INFO] 22:29:09:404 FILE-SYSTEM/(5093:5093): Handshake de Kernel recibido correctamente
+[ERROR] 22:29:28:649 FILE-SYSTEM/(5093:5093): el cliente se desconecto. Terminando servidor
