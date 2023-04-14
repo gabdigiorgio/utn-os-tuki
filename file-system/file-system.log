@@ -66,3 +66,158 @@
 [INFO] 04:28:21:759 FILE-SYSTEM/(3673:3673): File system listo para recibir al Kernel
 [INFO] 04:28:37:063 FILE-SYSTEM/(3673:3673): Se conecto un cliente!
 [ERROR] 04:48:48:221 FILE-SYSTEM/(3673:3673): el cliente se desconecto. Terminando servidor
+[ERROR] 23:13:13:860 FILE-SYSTEM/(2659:2659): Falta parametro del path del archivo de configuracion
+[INFO] 23:13:32:750 FILE-SYSTEM/(2669:2669): Valores de configuracion leidos correctamente
+[INFO] 23:13:32:750 FILE-SYSTEM/(2669:2669): Conexion con la memoria establecida correctamente
+[INFO] 23:13:32:750 FILE-SYSTEM/(2669:2669): Fallo al realizar el handshake
+[INFO] 23:13:32:750 FILE-SYSTEM/(2669:2669): File system listo para recibir al Kernel
+[INFO] 23:13:48:961 FILE-SYSTEM/(2697:2697): Valores de configuracion leidos correctamente
+[INFO] 23:13:48:962 FILE-SYSTEM/(2697:2697): Conexion con la memoria establecida correctamente
+[INFO] 23:13:57:853 FILE-SYSTEM/(2697:2697): Handshake realizado correctamente
+[INFO] 23:13:57:854 FILE-SYSTEM/(2697:2697): File system listo para recibir al Kernel
+[INFO] 23:34:34:046 FILE-SYSTEM/(3321:3321): Valores de configuracion leidos correctamente
+[INFO] 23:34:34:046 FILE-SYSTEM/(3321:3321): Conexion con la memoria establecida correctamente
+[INFO] 23:34:34:046 FILE-SYSTEM/(3321:3321): Fallo al realizar el handshake
+[INFO] 23:34:34:046 FILE-SYSTEM/(3321:3321): File system listo para recibir al Kernel
+[INFO] 23:34:39:726 FILE-SYSTEM/(3321:3321): Se conecto un cliente!
+[WARNING] 23:34:39:726 FILE-SYSTEM/(3321:3321): Operacion desconocida. No quieras meter la pata
+[INFO] 23:37:10:507 FILE-SYSTEM/(3674:3674): Valores de configuracion leidos correctamente
+[INFO] 23:37:10:507 FILE-SYSTEM/(3674:3674): Conexion con la memoria establecida correctamente
+[INFO] 23:37:10:507 FILE-SYSTEM/(3674:3674): Fallo al realizar el handshake
+[INFO] 23:37:10:507 FILE-SYSTEM/(3674:3674): File system listo para recibir al Kernel
+[INFO] 23:42:38:481 FILE-SYSTEM/(3886:3886): Valores de configuracion leidos correctamente
+[INFO] 23:42:38:493 FILE-SYSTEM/(3886:3886): Conexion con la memoria establecida correctamente
+[INFO] 23:42:38:493 FILE-SYSTEM/(3886:3886): Fallo al realizar el handshake
+[INFO] 23:42:38:493 FILE-SYSTEM/(3886:3886): File system listo para recibir al Kernel
+[INFO] 23:42:44:352 FILE-SYSTEM/(3886:3886): Se conecto un cliente!
+[WARNING] 23:42:44:353 FILE-SYSTEM/(3886:3886): Operacion desconocida. No quieras meter la pata
+[INFO] 23:42:59:725 FILE-SYSTEM/(3920:3920): Valores de configuracion leidos correctamente
+[INFO] 23:42:59:728 FILE-SYSTEM/(3920:3920): Conexion con la memoria establecida correctamente
+[INFO] 23:42:59:728 FILE-SYSTEM/(3920:3920): Fallo al realizar el handshake
+[INFO] 23:42:59:728 FILE-SYSTEM/(3920:3920): File system listo para recibir al Kernel
+[INFO] 23:43:24:460 FILE-SYSTEM/(3962:3962): Valores de configuracion leidos correctamente
+[INFO] 23:43:24:468 FILE-SYSTEM/(3962:3962): Conexion con la memoria establecida correctamente
+[INFO] 23:43:24:468 FILE-SYSTEM/(3962:3962): Fallo al realizar el handshake
+[INFO] 23:43:24:468 FILE-SYSTEM/(3962:3962): File system listo para recibir al Kernel
+[INFO] 23:49:00:695 FILE-SYSTEM/(4134:4134): Valores de configuracion leidos correctamente
+[INFO] 23:49:00:695 FILE-SYSTEM/(4134:4134): Conexion con la memoria establecida correctamente
+[INFO] 23:49:06:907 FILE-SYSTEM/(4147:4147): Valores de configuracion leidos correctamente
+[INFO] 23:49:06:911 FILE-SYSTEM/(4147:4147): Conexion con la memoria establecida correctamente
+[INFO] 23:49:32:716 FILE-SYSTEM/(4134:4134): Handshake realizado correctamente
+[INFO] 23:49:32:717 FILE-SYSTEM/(4134:4134): File system listo para recibir al Kernel
+[INFO] 23:49:48:692 FILE-SYSTEM/(4775:4775): Valores de configuracion leidos correctamente
+[INFO] 23:49:48:694 FILE-SYSTEM/(4775:4775): Conexion con la memoria establecida correctamente
+[INFO] 23:49:48:695 FILE-SYSTEM/(4775:4775): Fallo al realizar el handshake
+[INFO] 23:49:48:696 FILE-SYSTEM/(4775:4775): File system listo para recibir al Kernel
+[INFO] 23:50:02:172 FILE-SYSTEM/(4775:4775): Se conecto un cliente!
+[WARNING] 23:50:02:172 FILE-SYSTEM/(4775:4775): Operacion desconocida. No quieras meter la pata
+[INFO] 23:54:29:344 FILE-SYSTEM/(4827:4827): Valores de configuracion leidos correctamente
+[INFO] 23:54:29:345 FILE-SYSTEM/(4827:4827): Conexion con la memoria establecida correctamente
+[INFO] 23:54:58:003 FILE-SYSTEM/(4853:4853): Valores de configuracion leidos correctamente
+[INFO] 23:54:58:008 FILE-SYSTEM/(4853:4853): Conexion con la memoria establecida correctamente
+[INFO] 23:55:04:877 FILE-SYSTEM/(4866:4866): Valores de configuracion leidos correctamente
+[INFO] 23:55:04:877 FILE-SYSTEM/(4866:4866): Conexion con la memoria establecida correctamente
+[ERROR] 18:57:10:910 FILE-SYSTEM/(3678:3678): Falta parametro del path del archivo de configuracion
+[INFO] 18:57:58:054 FILE-SYSTEM/(3693:3693): Valores de configuracion leidos correctamente
+[INFO] 18:57:58:060 FILE-SYSTEM/(3693:3693): Conexion con la memoria establecida correctamente
+[INFO] 18:57:58:065 FILE-SYSTEM/(3693:3693): Fallo al realizar el handshake
+[INFO] 18:57:58:065 FILE-SYSTEM/(3693:3693): File system listo para recibir al Kernel
+[INFO] 19:11:52:000 FILE-SYSTEM/(4228:4228): Valores de configuracion leidos correctamente
+[INFO] 19:11:52:013 FILE-SYSTEM/(4228:4228): Conexion con la memoria establecida correctamente
+[INFO] 19:12:03:808 FILE-SYSTEM/(4228:4228): Handshake realizado correctamente
+[INFO] 19:12:03:811 FILE-SYSTEM/(4228:4228): File system listo para recibir al Kernel
+[INFO] 19:41:11:911 FILE-SYSTEM/(5232:5232): Valores de configuracion leidos correctamente
+[INFO] 19:41:11:917 FILE-SYSTEM/(5232:5232): Conexion con la memoria establecida correctamente
+[INFO] 19:41:11:918 FILE-SYSTEM/(5232:5232): Fallo al realizar el handshake
+[INFO] 19:41:11:918 FILE-SYSTEM/(5232:5232): File system listo para recibir al Kernel
+[INFO] 19:45:08:938 FILE-SYSTEM/(5623:5623): Valores de configuracion leidos correctamente
+[INFO] 19:45:08:945 FILE-SYSTEM/(5623:5623): Conexion con la memoria establecida correctamente
+[INFO] 19:45:08:948 FILE-SYSTEM/(5623:5623): Fallo al realizar el handshake
+[INFO] 19:45:08:949 FILE-SYSTEM/(5623:5623): File system listo para recibir al Kernel
+[INFO] 19:45:16:900 FILE-SYSTEM/(5232:5232): Se conecto un cliente!
+[INFO] 19:46:18:673 FILE-SYSTEM/(5716:5716): Valores de configuracion leidos correctamente
+[INFO] 19:46:18:679 FILE-SYSTEM/(5716:5716): Conexion con la memoria establecida correctamente
+[INFO] 19:46:18:680 FILE-SYSTEM/(5716:5716): Fallo al realizar el handshake
+[INFO] 19:46:18:681 FILE-SYSTEM/(5716:5716): File system listo para recibir al Kernel
+[INFO] 19:46:25:602 FILE-SYSTEM/(5729:5729): Valores de configuracion leidos correctamente
+[INFO] 19:46:25:612 FILE-SYSTEM/(5729:5729): Conexion con la memoria establecida correctamente
+[INFO] 19:46:25:613 FILE-SYSTEM/(5729:5729): Fallo al realizar el handshake
+[INFO] 19:46:25:615 FILE-SYSTEM/(5729:5729): File system listo para recibir al Kernel
+[INFO] 19:46:31:294 FILE-SYSTEM/(5716:5716): Se conecto un cliente!
+[INFO] 19:48:46:361 FILE-SYSTEM/(5963:5963): Valores de configuracion leidos correctamente
+[INFO] 19:48:46:367 FILE-SYSTEM/(5963:5963): Conexion con la memoria establecida correctamente
+[INFO] 19:48:46:368 FILE-SYSTEM/(5963:5963): Fallo al realizar el handshake
+[INFO] 19:48:46:368 FILE-SYSTEM/(5963:5963): File system listo para recibir al Kernel
+[INFO] 19:48:52:077 FILE-SYSTEM/(5963:5963): Se conecto un cliente!
+[INFO] 19:50:01:617 FILE-SYSTEM/(6035:6035): Valores de configuracion leidos correctamente
+[INFO] 19:50:01:624 FILE-SYSTEM/(6035:6035): Conexion con la memoria establecida correctamente
+[INFO] 19:50:01:624 FILE-SYSTEM/(6035:6035): Fallo al realizar el handshake
+[INFO] 19:50:01:624 FILE-SYSTEM/(6035:6035): File system listo para recibir al Kernel
+[INFO] 19:53:08:517 FILE-SYSTEM/(6339:6339): Valores de configuracion leidos correctamente
+[INFO] 19:53:08:525 FILE-SYSTEM/(6339:6339): Conexion con la memoria establecida correctamente
+[INFO] 19:53:11:185 FILE-SYSTEM/(6339:6339): Handshake realizado correctamente
+[INFO] 19:53:11:188 FILE-SYSTEM/(6339:6339): File system listo para recibir al Kernel
+[INFO] 19:53:27:980 FILE-SYSTEM/(6360:6360): Valores de configuracion leidos correctamente
+[INFO] 19:53:27:985 FILE-SYSTEM/(6360:6360): Conexion con la memoria establecida correctamente
+[INFO] 19:53:27:985 FILE-SYSTEM/(6360:6360): Fallo al realizar el handshake
+[INFO] 19:53:27:990 FILE-SYSTEM/(6360:6360): File system listo para recibir al Kernel
+[INFO] 19:53:35:033 FILE-SYSTEM/(6360:6360): Se conecto un cliente!
+[INFO] 20:00:19:456 FILE-SYSTEM/(6819:6819): Valores de configuracion leidos correctamente
+[INFO] 20:00:19:463 FILE-SYSTEM/(6819:6819): Conexion con la memoria establecida correctamente
+[INFO] 20:01:42:798 FILE-SYSTEM/(6890:6890): Valores de configuracion leidos correctamente
+[INFO] 20:01:42:804 FILE-SYSTEM/(6890:6890): Conexion con la memoria establecida correctamente
+[INFO] 20:01:42:805 FILE-SYSTEM/(6890:6890): Fallo al realizar el handshake
+[INFO] 20:01:42:805 FILE-SYSTEM/(6890:6890): File system listo para recibir al Kernel
+[INFO] 20:01:54:935 FILE-SYSTEM/(6890:6890): Se conecto un cliente!
+[INFO] 20:11:52:767 FILE-SYSTEM/(7190:7190): Valores de configuracion leidos correctamente
+[INFO] 20:11:52:772 FILE-SYSTEM/(7190:7190): Conexion con la memoria establecida correctamente
+[INFO] 20:11:52:774 FILE-SYSTEM/(7190:7190): Fallo al realizar el handshake
+[INFO] 20:11:52:774 FILE-SYSTEM/(7190:7190): File system listo para recibir al Kernel
+[INFO] 20:11:58:712 FILE-SYSTEM/(7190:7190): Se conecto el Kernel
+[INFO] 20:16:28:096 FILE-SYSTEM/(7386:7386): Valores de configuracion leidos correctamente
+[INFO] 20:16:28:102 FILE-SYSTEM/(7386:7386): Conexion establecida con la memoria
+[INFO] 20:16:28:104 FILE-SYSTEM/(7386:7386): Fallo al realizar el handshake
+[INFO] 20:16:28:104 FILE-SYSTEM/(7386:7386): File System listo para recibir al Kernel
+[INFO] 20:16:36:939 FILE-SYSTEM/(7386:7386): Se conecto el Kernel
+[INFO] 20:17:09:031 FILE-SYSTEM/(7416:7416): Valores de configuracion leidos correctamente
+[INFO] 20:17:09:036 FILE-SYSTEM/(7416:7416): Conexion establecida con la memoria
+[INFO] 20:17:09:038 FILE-SYSTEM/(7416:7416): Fallo al realizar el handshake
+[INFO] 20:17:09:039 FILE-SYSTEM/(7416:7416): File System listo para recibir al Kernel
+[INFO] 20:17:43:240 FILE-SYSTEM/(7454:7454): Valores de configuracion leidos correctamente
+[INFO] 20:17:43:245 FILE-SYSTEM/(7454:7454): Conexion establecida con la memoria
+[INFO] 20:17:43:246 FILE-SYSTEM/(7454:7454): Fallo al realizar el handshake
+[INFO] 20:17:43:247 FILE-SYSTEM/(7454:7454): File System listo para recibir al Kernel
+[INFO] 20:18:15:391 FILE-SYSTEM/(7493:7493): Valores de configuracion leidos correctamente
+[INFO] 20:18:15:396 FILE-SYSTEM/(7493:7493): Conexion establecida con la memoria
+[INFO] 20:18:15:396 FILE-SYSTEM/(7493:7493): Fallo al realizar el handshake
+[INFO] 20:18:15:399 FILE-SYSTEM/(7493:7493): File System listo para recibir al Kernel
+[INFO] 20:22:14:147 FILE-SYSTEM/(7668:7668): Valores de configuracion leidos correctamente
+[INFO] 20:22:14:152 FILE-SYSTEM/(7668:7668): Conexion establecida con la memoria
+[INFO] 20:22:14:153 FILE-SYSTEM/(7668:7668): Fallo al realizar el handshake
+[INFO] 20:22:14:153 FILE-SYSTEM/(7668:7668): File System listo para recibir al Kernel
+[INFO] 20:22:25:732 FILE-SYSTEM/(7668:7668): Se conecto el Kernel
+[INFO] 20:28:26:956 FILE-SYSTEM/(7990:7990): Valores de configuracion leidos correctamente
+[INFO] 20:28:26:963 FILE-SYSTEM/(7990:7990): Conexion establecida con la memoria
+[INFO] 20:28:26:963 FILE-SYSTEM/(7990:7990): Fallo al realizar el handshake
+[INFO] 20:28:26:964 FILE-SYSTEM/(7990:7990): File System listo para recibir al Kernel
+[INFO] 20:28:32:644 FILE-SYSTEM/(7990:7990): Se conecto el Kernel
+[INFO] 20:29:16:069 FILE-SYSTEM/(8029:8029): Valores de configuracion leidos correctamente
+[INFO] 20:29:16:075 FILE-SYSTEM/(8029:8029): Conexion establecida con la memoria
+[INFO] 20:34:59:551 FILE-SYSTEM/(8169:8169): Valores de configuracion leidos correctamente
+[INFO] 20:34:59:561 FILE-SYSTEM/(8169:8169): Conexion establecida con la memoria
+[INFO] 20:34:59:568 FILE-SYSTEM/(8169:8169): Fallo al realizar el handshake
+[INFO] 20:34:59:568 FILE-SYSTEM/(8169:8169): File System listo para recibir al Kernel
+[INFO] 20:35:05:920 FILE-SYSTEM/(8169:8169): Se conecto el Kernel
+[INFO] 20:45:24:947 FILE-SYSTEM/(8367:8367): Valores de configuracion leidos correctamente
+[INFO] 20:45:24:949 FILE-SYSTEM/(8367:8367): Conexion establecida con la memoria
+[INFO] 20:45:24:949 FILE-SYSTEM/(8367:8367): Fallo al realizar el handshake
+[INFO] 20:45:24:949 FILE-SYSTEM/(8367:8367): File System listo para recibir al Kernel
+[INFO] 20:45:32:806 FILE-SYSTEM/(8367:8367): Se conecto el Kernel
+[INFO] 20:45:32:807 FILE-SYSTEM/(8367:8367): Handshake de Kernel recibido correctamente
+[ERROR] 20:46:22:201 FILE-SYSTEM/(8367:8367): el cliente se desconecto. Terminando servidor
+[INFO] 20:46:38:149 FILE-SYSTEM/(8403:8403): Valores de configuracion leidos correctamente
+[INFO] 20:46:38:153 FILE-SYSTEM/(8403:8403): Conexion establecida con la memoria
+[INFO] 20:46:38:154 FILE-SYSTEM/(8403:8403): Fallo al realizar el handshake
+[INFO] 20:46:38:154 FILE-SYSTEM/(8403:8403): File System listo para recibir al Kernel
+[INFO] 20:48:11:674 FILE-SYSTEM/(8490:8490): Valores de configuracion leidos correctamente
+[INFO] 20:48:11:684 FILE-SYSTEM/(8490:8490): Conexion establecida con la memoria

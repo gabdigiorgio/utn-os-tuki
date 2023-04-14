@@ -22,6 +22,7 @@ int iniciar_servidor(char* puerto)
 	// Escuchamos las conexiones entrantes
 	listen(socket_servidor, SOMAXCONN);
 
+
 	freeaddrinfo(servinfo);
 	log_trace(logger, "Listo para escuchar a mi cliente");
 
@@ -30,9 +31,12 @@ int iniciar_servidor(char* puerto)
 
 int esperar_cliente(int socket_servidor)
 {
+	// Quitar esta línea cuando hayamos terminado de implementar la funcion
+	//assert(!"no implementado!");
+
 	// Aceptamos un nuevo cliente
 	int socket_cliente = accept(socket_servidor, NULL, NULL);
-	log_info(logger, "Se conecto un cliente!");
+	log_info(logger, "Se conecto el Kernel");
 
 	return socket_cliente;
 }
@@ -88,4 +92,33 @@ t_list* recibir_paquete(int socket_cliente)
 	}
 	free(buffer);
 	return valores;
+}
+char* handshake(int socket_cliente){
+	char* message = "";
+	uint32_t handshake;
+	bool kernel_conectada=NULL;
+	uint32_t resultOk = 1;
+	uint32_t resultError = -1;
+
+	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
+	if(handshake == 2){
+		kernel_conectada = 0;
+	}
+	if(handshake > 0){
+		switch(handshake) {
+			case 2:
+				if(kernel_conectada == 0){
+					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
+					message = "Handshake de Kernel recibido correctamente";
+						}
+				else {
+					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
+					message = "Error al intentar handshake";
+				}
+				break;
+		}
+
+
+	}
+	return message;
 }

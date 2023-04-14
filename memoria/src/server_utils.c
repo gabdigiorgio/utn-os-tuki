@@ -102,13 +102,61 @@ t_list* recibir_paquete(int socket_cliente)
 char* handshake(int socket_cliente){
 	char* message = "";
 	uint32_t handshake;
+	bool cpu_conectada=NULL;
+	bool kernel_conectada=NULL;
+	bool fileSystem_conectada=NULL;
 	uint32_t resultOk = 1;
 	uint32_t resultError = -1;
 
 	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
+	if(handshake == 1){
+		cpu_conectada = 0;
+	}
+	else if(handshake == 2){
+		kernel_conectada = 0;
+	}
+	else if(handshake == 3){
+		fileSystem_conectada = 0;
+	}
+	if(handshake > 0){
+		switch(handshake) {
 
-	/*
+			case 1:
+				if(cpu_conectada == 0){
+					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
+					message = "Handshake de CPU recibido correctamente";
+				}
+				else {
+					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
+					message = "Error al intentar handshake";
+				}
+				break;
 
+			case 2:
+				if(kernel_conectada == 0){
+					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
+					message = "Handshake de Kernel recibido correctamente";
+						}
+				else {
+					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
+					message = "Error al intentar handshake";
+				}
+				break;
+			case 3:
+				if(fileSystem_conectada == 0){
+					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
+					message = "Handshake de File System recibido correctamente";
+				}
+				else {
+					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
+					message = "Error al intentar handshake";
+				}
+				break;
+		}
+
+
+	}
+/*
 	 switch(handshake)
 	 	 case 1:
 	 	 	 if(cpu_conectada == 0){
@@ -120,8 +168,6 @@ char* handshake(int socket_cliente){
 				message = "Error al intentar handshake";
 	 	 	 }
 	 	 	 break;
-	 */
-
 
 	if(handshake > 0){
 		send(socket_cliente, &resultOk, sizeof(uint32_t), NULL);
@@ -130,7 +176,7 @@ char* handshake(int socket_cliente){
 	} else {
 		send(socket_cliente, &resultError, sizeof(uint32_t), NULL);
 		message = "Error al intentar handshake";
-	}
+	}*/
 	return message;
 }
 

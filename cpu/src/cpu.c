@@ -44,12 +44,13 @@ int main(int argc, char *argv[]) {
 
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
 
-	log_info(logger, handshake(memoria_connection)); //handshake(memoria_connection,1)
+	log_info(logger, handshake_client(memoria_connection,1)); //handshake(memoria_connection,1)
 
 	int server_connection = iniciar_servidor(server_port);
 
 	log_info(logger, "Cpu lista para recibir al Kernel");
 	int connection_fd = esperar_cliente(server_connection);
+	log_info(logger,handshake(connection_fd));
 	t_list* lista;
 	while (1) {
 			int cod_op = recibir_operacion(connection_fd);
