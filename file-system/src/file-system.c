@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	if(memoria_connection != 0) log_info(logger, "Conexion con la memoria establecida correctamente");
 
-	log_info(logger, handshake(memoria_connection));
+	log_info(logger, handshake_cliente(memoria_connection,3));
 
 	memoria_connection = iniciar_servidor(server_port);
 

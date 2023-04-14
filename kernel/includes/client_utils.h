@@ -14,6 +14,6 @@
 
 int crear_conexion(char* ip, char* puerto);
 void liberar_conexion(int socket_cliente);
-char* handshake(int socket_cliente);
+char* handshake(int socket_cliente, uint8_t tipo_cliente);
 
 #endif /* CLIENT_UTILS_H_ */

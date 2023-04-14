@@ -216,3 +216,67 @@
 [INFO] 20:25:01:283 CPU/(5622:5622): Cpu lista para recibir al Kernel
 [INFO] 20:26:00:221 CPU/(5701:5701): Valores de configuracion leidos correctamente
 [INFO] 20:26:00:224 CPU/(5701:5701): Conexion establecida con la memoria
+[INFO] 20:29:46:901 CPU/(5701:5701): Handshake realizado correctamente
+[INFO] 20:29:46:902 CPU/(5701:5701): Cpu lista para recibir al Kernel
+[INFO] 22:56:41:762 CPU/(2305:2305): Valores de configuracion leidos correctamente
+[INFO] 22:56:41:762 CPU/(2305:2305): Conexion establecida con la memoria
+[INFO] 22:56:45:277 CPU/(2305:2305): Handshake realizado correctamente
+[INFO] 22:56:45:277 CPU/(2305:2305): Cpu lista para recibir al Kernel
+[INFO] 23:12:21:885 CPU/(2607:2607): Valores de configuracion leidos correctamente
+[INFO] 23:12:21:885 CPU/(2607:2607): Conexion establecida con la memoria
+[INFO] 23:12:23:483 CPU/(2607:2607): Handshake realizado correctamente
+[INFO] 23:12:23:485 CPU/(2607:2607): Cpu lista para recibir al Kernel
+[INFO] 23:14:06:824 CPU/(2716:2716): Valores de configuracion leidos correctamente
+[INFO] 23:14:06:824 CPU/(2716:2716): Conexion establecida con la memoria
+[INFO] 23:14:06:824 CPU/(2716:2716): Fallo al realizar el handshake
+[INFO] 23:14:06:824 CPU/(2716:2716): Cpu lista para recibir al Kernel
+[INFO] 23:24:11:308 CPU/(2981:2981): Valores de configuracion leidos correctamente
+[INFO] 23:24:11:309 CPU/(2981:2981): Conexion establecida con la memoria
+[INFO] 23:24:11:309 CPU/(2981:2981): Fallo al realizar el handshake
+[INFO] 23:24:11:309 CPU/(2981:2981): Cpu lista para recibir al Kernel
+[INFO] 23:24:17:078 CPU/(2981:2981): Se conecto el Kernel
+[WARNING] 23:24:17:079 CPU/(2981:2981): Operacion desconocida. No quieras meter la pata
+[INFO] 23:32:43:466 CPU/(3163:3163): Valores de configuracion leidos correctamente
+[INFO] 23:32:43:466 CPU/(3163:3163): Conexion establecida con la memoria
+[INFO] 23:32:43:466 CPU/(3163:3163): Fallo al realizar el handshake
+[INFO] 23:32:43:466 CPU/(3163:3163): Cpu lista para recibir al Kernel
+[INFO] 23:33:35:814 CPU/(3230:3230): Valores de configuracion leidos correctamente
+[INFO] 23:33:35:815 CPU/(3230:3230): Conexion establecida con la memoria
+[INFO] 23:33:35:815 CPU/(3230:3230): Fallo al realizar el handshake
+[INFO] 23:33:35:816 CPU/(3230:3230): Cpu lista para recibir al Kernel
+[INFO] 23:34:51:712 CPU/(3349:3349): Valores de configuracion leidos correctamente
+[INFO] 23:34:51:713 CPU/(3349:3349): Conexion establecida con la memoria
+[INFO] 23:34:51:713 CPU/(3349:3349): Fallo al realizar el handshake
+[INFO] 23:34:51:713 CPU/(3349:3349): Cpu lista para recibir al Kernel
+[INFO] 23:34:53:783 CPU/(3349:3349): Se conecto el Kernel
+[WARNING] 23:34:53:783 CPU/(3349:3349): Operacion desconocida. No quieras meter la pata
+[ERROR] 23:35:32:106 CPU/(3349:3349): el cliente se desconecto. Terminando servidor
+[INFO] 23:36:50:571 CPU/(3641:3641): Valores de configuracion leidos correctamente
+[INFO] 23:36:50:572 CPU/(3641:3641): Conexion establecida con la memoria
+[INFO] 23:36:50:572 CPU/(3641:3641): Fallo al realizar el handshake
+[INFO] 23:36:50:572 CPU/(3641:3641): Cpu lista para recibir al Kernel
+[INFO] 23:36:56:325 CPU/(3641:3641): Se conecto el Kernel
+[WARNING] 23:36:56:325 CPU/(3641:3641): Operacion desconocida. No quieras meter la pata
+[INFO] 23:42:28:027 CPU/(3869:3869): Valores de configuracion leidos correctamente
+[INFO] 23:42:28:028 CPU/(3869:3869): Conexion establecida con la memoria
+[INFO] 23:42:30:708 CPU/(3869:3869): Handshake realizado correctamente
+[INFO] 23:42:30:708 CPU/(3869:3869): Cpu lista para recibir al Kernel
+[INFO] 23:48:52:371 CPU/(4122:4122): Valores de configuracion leidos correctamente
+[INFO] 23:48:52:371 CPU/(4122:4122): Conexion establecida con la memoria
+[INFO] 23:49:32:716 CPU/(4122:4122): Handshake realizado correctamente
+[INFO] 23:49:32:717 CPU/(4122:4122): Cpu lista para recibir al Kernel
+[INFO] 00:00:38:750 CPU/(5149:5149): Valores de configuracion leidos correctamente
+[INFO] 00:00:38:750 CPU/(5149:5149): Conexion establecida con la memoria
+[INFO] 00:00:38:750 CPU/(5149:5149): Fallo al realizar el handshake
+[INFO] 00:00:38:751 CPU/(5149:5149): Cpu lista para recibir al Kernel
+[INFO] 00:00:47:927 CPU/(5165:5165): Valores de configuracion leidos correctamente
+[INFO] 00:00:47:928 CPU/(5165:5165): Conexion establecida con la memoria
+[INFO] 00:00:47:928 CPU/(5165:5165): Fallo al realizar el handshake
+[INFO] 00:00:47:928 CPU/(5165:5165): Cpu lista para recibir al Kernel
+[INFO] 00:00:51:001 CPU/(5180:5180): Valores de configuracion leidos correctamente
+[INFO] 00:00:51:001 CPU/(5180:5180): Conexion establecida con la memoria
+[INFO] 00:00:51:001 CPU/(5180:5180): Fallo al realizar el handshake
+[INFO] 00:00:51:002 CPU/(5180:5180): Cpu lista para recibir al Kernel
+[INFO] 00:01:01:183 CPU/(5149:5149): Se conecto el Kernel
+[WARNING] 00:01:01:183 CPU/(5149:5149): Operacion desconocida. No quieras meter la pata
+[ERROR] 00:04:53:065 CPU/(5149:5149): el cliente se desconecto. Terminando servidor

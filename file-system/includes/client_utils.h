@@ -38,6 +38,6 @@ void agregar_a_paquete(t_paquete* paquete, void* valor, int tamanio);
 void enviar_paquete(t_paquete* paquete, int socket_cliente);
 void liberar_conexion(int socket_cliente);
 void eliminar_paquete(t_paquete* paquete);
-char* handshake(int socket_cliente);
+char* handshake_cliente(int socket_cliente, uint8_t tipo_cliente);
 
 #endif
