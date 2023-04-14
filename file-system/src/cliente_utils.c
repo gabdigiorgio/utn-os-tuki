@@ -58,7 +58,7 @@ void enviar_mensaje(char* mensaje, int socket_cliente)
 	eliminar_paquete(paquete);
 }
 
-char* handshake_cliente(int socket_cliente, uint8_t tipo_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
+char* handshake_client(int socket_cliente, uint8_t tipo_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
 
 	char* message = "";
 	uint32_t handshake = tipo_cliente;

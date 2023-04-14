@@ -96,21 +96,13 @@ t_list* recibir_paquete(int socket_cliente)
 char* handshake(int socket_cliente){
 	char* message = "";
 	uint32_t handshake;
-	bool cpu_conectada=NULL;
 	bool kernel_conectada=NULL;
-	bool fileSystem_conectada=NULL;
 	uint32_t resultOk = 1;
 	uint32_t resultError = -1;
 
 	recv(socket_cliente, &handshake, sizeof(uint32_t), MSG_WAITALL); //recive el mensaje
-	if(handshake == 1){
-		cpu_conectada = 0;
-	}
-	else if(handshake == 2){
+	if(handshake == 2){
 		kernel_conectada = 0;
-	}
-	else if(handshake == 3){
-		fileSystem_conectada = 0;
 	}
 	if(handshake > 0){
 		switch(handshake) {

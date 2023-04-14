@@ -50,6 +50,7 @@ int main(int argc, char *argv[]) {
 
 	log_info(logger, "Cpu lista para recibir al Kernel");
 	int connection_fd = esperar_cliente(server_connection);
+	log_info(logger,handshake(connection_fd));
 	t_list* lista;
 	while (1) {
 			int cod_op = recibir_operacion(connection_fd);

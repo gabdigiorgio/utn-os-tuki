@@ -27,6 +27,6 @@ int esperar_cliente(int);
 t_list* recibir_paquete(int);
 void recibir_mensaje(int);
 int recibir_operacion(int);
-char* handshake(int socket_cliente);
+char* handshake(int);
 
 #endif /* SERVER_UTILS_H_ */

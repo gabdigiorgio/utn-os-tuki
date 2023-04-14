@@ -40,8 +40,10 @@ int main(int argc, char *argv[]) {
 		log_info(logger, "Conexion establecida con la CPU");
 		log_info(logger, handshake(cpu_connection,2));
 	}
-
-
+	if((file_system_connection = crear_conexion(file_system_ip,file_system_port)) != 0){
+		log_info(logger, "Conexion establecida con File System");
+		log_info(logger, handshake(file_system_connection,2));
+	}
 	//NO HAGO HANDSHAKE con ninguno de los 3 (no lo pide la consigna)
 
 
