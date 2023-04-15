@@ -20,33 +20,6 @@
 void iterator(char* value);
 void terminar_programa();
 
-// ___ CONFIG VARIABLES ____
-
-t_log* logger;
-
-int server_connection;
-
-int memoria_connection;
-int file_system_connection;
-int cpu_connection;
-
-int cant_threads_activos;
-
-// _____________________
-
-// ___ CONFIG VARIABLES ____
-char* memoria_ip;
-char* memoria_port;
-char* file_system_ip;
-char* file_system_port;
-char* cpu_ip;
-char* cpu_port;
-
-char* server_port;
-
-t_config* config;
-
-// _____________________
 typedef struct{
 	 uint32_t ids;
 	 uint32_t direccion_base;
@@ -80,9 +53,33 @@ typedef struct {
 	tabla_archivos_abiertos_t tabla_archivos;
 }pcb_t;
 
+// ___ CONFIG VARIABLES ____
 
+t_log* logger;
 
+int server_connection;
 
+int memoria_connection;
+int file_system_connection;
+int cpu_connection;
+
+int cant_threads_activos;
+
+// _____________________
+
+// ___ CONFIG VARIABLES ____
+char* memoria_ip;
+char* memoria_port;
+char* file_system_ip;
+char* file_system_port;
+char* cpu_ip;
+char* cpu_port;
+
+char* server_port;
+
+t_config* config;
+
+//
 
 
 #endif /* KERNEL_H_ */

@@ -12,8 +12,10 @@
 
 #include "../../shared/includes/tad.h"
 
+extern t_log* logger;
+
 int crear_conexion(char* ip, char* puerto);
 void liberar_conexion(int socket_cliente);
-char* handshake(int socket_cliente, uint8_t tipo_cliente);
+int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor);
 
 #endif /* CLIENT_UTILS_H_ */

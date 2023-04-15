@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <commons/log.h>
+#include<stdbool.h>
 #include <pthread.h>
 
 #include "server_utils.h"
@@ -49,7 +50,13 @@ t_config* config;
 
 // _____________________
 
+// _____ GLOBAL VARIABLES
 
+bool cpu_conectada;
+bool kernel_conectado;
+bool fileSystem_conectado;
+
+// _____________________
 
 
 

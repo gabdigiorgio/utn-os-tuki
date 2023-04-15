@@ -16,6 +16,7 @@
 #include<commons/log.h>
 #include<commons/collections/list.h>
 #include<commons/config.h>
+#include<stdbool.h>
 #include<string.h>
 #include<assert.h>
 
@@ -26,13 +27,12 @@ typedef enum
 }op_code;
 
 extern t_log* logger;
+extern bool cpu_conectada;
+extern bool kernel_conectado;
+extern bool fileSystem_conectado;
 
-void* recibir_buffer(int*, int);
 int iniciar_servidor(char* puerto);
 int esperar_cliente(int);
-t_list* recibir_paquete(int);
-void recibir_mensaje(int);
-int recibir_operacion(int);
 char* handshake(int);
 void liberar_conexion(int socket_servidor);
 

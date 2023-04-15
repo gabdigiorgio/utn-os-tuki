@@ -11,8 +11,6 @@
 
 #include "../includes/kernel.h"
 
-
-
 int main(int argc, char *argv[]) {
 
 	//Iniciamos log, config y cant_threads_activos
@@ -32,22 +30,18 @@ int main(int argc, char *argv[]) {
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
-	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) {
-		log_info(logger, "Conexion establecida con la Memoria");
-		log_info(logger, handshake(memoria_connection,2));
+	/* if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake(memoria_connection,2,4) == -1) {
+		terminar_programa();
+		return EXIT_FAILURE;
 	}
-	if((cpu_connection = crear_conexion(cpu_ip,cpu_port)) != 0){
-		log_info(logger, "Conexion establecida con la CPU");
-		log_info(logger, handshake(cpu_connection,2));
+	if((cpu_connection = crear_conexion(cpu_ip,cpu_port)) == 0 || handshake(cpu_connection,2,1) == -1) {
+		terminar_programa();
+		return EXIT_FAILURE;
 	}
-	if((file_system_connection = crear_conexion(file_system_ip,file_system_port)) != 0){
-		log_info(logger, "Conexion establecida con File System");
-		log_info(logger, handshake(file_system_connection,2));
-	}
-	//NO HAGO HANDSHAKE con ninguno de los 3 (no lo pide la consigna)
-
-
-
+	if((file_system_connection = crear_conexion(file_system_ip,file_system_port)) == 0 || handshake(file_system_connection,2,3) == -1) {
+		terminar_programa();
+		return EXIT_FAILURE;
+	} */
 
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);

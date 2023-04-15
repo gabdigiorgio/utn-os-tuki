@@ -42,9 +42,10 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) != 0) log_info(logger, "Conexion establecida con la memoria");
-
-	log_info(logger, handshake_client(memoria_connection,1)); //handshake(memoria_connection,1)
+	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,1,4) == -1) {
+		terminar_programa();
+		return EXIT_FAILURE;
+	}
 
 	int server_connection = iniciar_servidor(server_port);
 
@@ -52,26 +53,8 @@ int main(int argc, char *argv[]) {
 	int connection_fd = esperar_cliente(server_connection);
 	log_info(logger,handshake(connection_fd));
 	t_list* lista;
-	while (1) {
-			int cod_op = recibir_operacion(connection_fd);
-			switch (cod_op) {
-			case MENSAJE:
-				recibir_mensaje(connection_fd);
-				break;
-			case PAQUETE:
-				lista = recibir_paquete(connection_fd);
-				log_info(logger, "Me llegaron los siguientes valores:\n");
-				list_iterate(lista, (void*) iterator);
-				break;
-			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				return EXIT_FAILURE;
-			default:
-				log_warning(logger,"Operacion desconocida. No quieras meter la pata");
-				break;
-			}
-		}
-		return EXIT_SUCCESS;
+
+	return EXIT_SUCCESS;
 }
 void iterator(char* value) {
 	log_info(logger,"%s", value);
@@ -97,6 +80,13 @@ int registro_16b(char registro[16]){
 	}
 	//printf("%s",registro);
 	return 0;
+}
+
+void terminar_programa()
+{
+	log_destroy(logger);
+	config_destroy(config);
+	liberar_conexion(memoria_connection);
 }
 
 

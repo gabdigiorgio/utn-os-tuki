@@ -22,6 +22,7 @@
 #include "initial_setup.h"
 
 void iterator(char* value);
+void terminar_programa();
 
 // ___ CONFIG VARIABLES ____
 

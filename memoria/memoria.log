@@ -464,3 +464,157 @@
 [INFO] 22:35:24:360 MEMORIA/(5399:5399): Se conecto un cliente!
 [INFO] 22:35:24:362 MEMORIA/(5399:5433): Thread iniciado correctamente
 [INFO] 22:35:24:362 MEMORIA/(5399:5433): Handshake de CPU recibido correctamente
+[ERROR] 23:48:46:727 MEMORIA/(109795:109795): Falta parametro del path del archivo de configuracion
+[INFO] 23:50:55:022 MEMORIA/(109835:109835): Valores de configuracion leidos correctamente
+[INFO] 23:50:55:024 MEMORIA/(109835:109835): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 23:50:59:317 MEMORIA/(109835:109835): Se conecto un cliente!
+[INFO] 23:50:59:321 MEMORIA/(109835:109858): Thread iniciado correctamente
+[INFO] 23:50:59:323 MEMORIA/(109835:109858): Handshake de Kernel recibido correctamente
+[INFO] 23:51:03:362 MEMORIA/(109835:109835): Se conecto un cliente!
+[INFO] 23:51:03:365 MEMORIA/(109835:109877): Thread iniciado correctamente
+[INFO] 23:51:03:366 MEMORIA/(109835:109877): Handshake de File System recibido correctamente
+[INFO] 23:51:06:273 MEMORIA/(109835:109835): Se conecto un cliente!
+[INFO] 23:51:06:294 MEMORIA/(109835:109894): Thread iniciado correctamente
+[INFO] 23:51:06:294 MEMORIA/(109835:109894): Handshake de CPU recibido correctamente
+[ERROR] 23:51:12:852 MEMORIA/(109835:109858): el cliente se desconecto. Terminando servidor
+[INFO] 12:00:19:170 MEMORIA/(3124:3124): Valores de configuracion leidos correctamente
+[INFO] 12:00:19:175 MEMORIA/(3124:3124): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:15:33:912 MEMORIA/(3722:3722): Valores de configuracion leidos correctamente
+[INFO] 12:15:33:918 MEMORIA/(3722:3722): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:16:27:007 MEMORIA/(3124:3124): Se conecto un cliente!
+[INFO] 12:16:27:011 MEMORIA/(3124:3747): Thread iniciado correctamente
+[INFO] 12:16:44:066 MEMORIA/(3124:3747): 
+[INFO] 12:17:50:976 MEMORIA/(3782:3782): Valores de configuracion leidos correctamente
+[INFO] 12:17:50:980 MEMORIA/(3782:3782): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:18:10:613 MEMORIA/(3782:3782): Se conecto un cliente!
+[INFO] 12:18:10:615 MEMORIA/(3782:3832): Thread iniciado correctamente
+[INFO] 12:18:41:114 MEMORIA/(3782:3832): 
+[INFO] 12:18:57:768 MEMORIA/(3782:3782): Se conecto un cliente!
+[INFO] 12:18:57:773 MEMORIA/(3782:3886): Thread iniciado correctamente
+[INFO] 12:19:17:207 MEMORIA/(3782:3886): 
+[INFO] 12:19:49:528 MEMORIA/(3782:3782): Se conecto un cliente!
+[INFO] 12:19:49:539 MEMORIA/(3782:3944): Thread iniciado correctamente
+[INFO] 12:20:02:875 MEMORIA/(3782:3944): 
+[INFO] 12:20:55:699 MEMORIA/(4030:4030): Valores de configuracion leidos correctamente
+[INFO] 12:20:55:703 MEMORIA/(4030:4030): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:21:13:932 MEMORIA/(4030:4030): Se conecto un cliente!
+[INFO] 12:21:13:935 MEMORIA/(4030:4089): Thread iniciado correctamente
+[INFO] 12:21:18:803 MEMORIA/(4030:4089): Handshake de Kernel recibido correctamente
+[INFO] 12:26:27:728 MEMORIA/(4322:4322): Valores de configuracion leidos correctamente
+[INFO] 12:26:27:731 MEMORIA/(4322:4322): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:26:32:686 MEMORIA/(4030:4030): Se conecto un cliente!
+[INFO] 12:26:32:687 MEMORIA/(4030:4343): Thread iniciado correctamente
+[INFO] 12:26:32:688 MEMORIA/(4030:4343): Handshake de Kernel recibido correctamente
+[INFO] 12:27:00:979 MEMORIA/(4358:4358): Valores de configuracion leidos correctamente
+[INFO] 12:27:00:985 MEMORIA/(4358:4358): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:27:04:822 MEMORIA/(4358:4358): Se conecto un cliente!
+[INFO] 12:27:04:823 MEMORIA/(4358:4382): Thread iniciado correctamente
+[INFO] 12:27:04:824 MEMORIA/(4358:4382): Handshake de Kernel recibido correctamente
+[INFO] 12:27:22:108 MEMORIA/(4395:4395): Valores de configuracion leidos correctamente
+[INFO] 12:27:22:110 MEMORIA/(4395:4395): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:27:27:590 MEMORIA/(4395:4395): Se conecto un cliente!
+[INFO] 12:27:27:592 MEMORIA/(4395:4421): Thread iniciado correctamente
+[INFO] 12:27:27:594 MEMORIA/(4395:4421): Handshake de File System recibido correctamente
+[INFO] 12:27:32:582 MEMORIA/(4395:4395): Se conecto un cliente!
+[INFO] 12:27:32:585 MEMORIA/(4395:4438): Thread iniciado correctamente
+[INFO] 12:27:32:588 MEMORIA/(4395:4438): Handshake de CPU recibido correctamente
+[INFO] 12:27:36:820 MEMORIA/(4395:4395): Se conecto un cliente!
+[INFO] 12:27:36:830 MEMORIA/(4395:4456): Thread iniciado correctamente
+[INFO] 12:27:36:830 MEMORIA/(4395:4456): Handshake de Kernel recibido correctamente
+[INFO] 12:29:30:144 MEMORIA/(4556:4556): Valores de configuracion leidos correctamente
+[INFO] 12:29:30:146 MEMORIA/(4556:4556): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:29:51:433 MEMORIA/(4556:4556): Se conecto un cliente!
+[INFO] 12:29:51:437 MEMORIA/(4556:4616): Thread iniciado correctamente
+[INFO] 12:30:14:544 MEMORIA/(4556:4616): Handshake de Kernel recibido correctamente
+[INFO] 12:34:52:233 MEMORIA/(4702:4702): Valores de configuracion leidos correctamente
+[INFO] 12:34:52:235 MEMORIA/(4702:4702): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:34:58:511 MEMORIA/(4702:4702): Se conecto un cliente!
+[INFO] 12:34:58:513 MEMORIA/(4702:4747): Thread iniciado correctamente
+[INFO] 12:34:58:513 MEMORIA/(4702:4747): Handshake de Kernel recibido correctamente
+[INFO] 12:36:46:783 MEMORIA/(4768:4768): Valores de configuracion leidos correctamente
+[INFO] 12:36:46:785 MEMORIA/(4768:4768): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:37:00:825 MEMORIA/(4768:4768): Se conecto un cliente!
+[INFO] 12:37:00:829 MEMORIA/(4768:4829): Thread iniciado correctamente
+[INFO] 12:37:09:256 MEMORIA/(4768:4829): Handshake de Kernel recibido correctamente
+[INFO] 12:40:24:273 MEMORIA/(4768:4768): Se conecto un cliente!
+[INFO] 12:40:24:276 MEMORIA/(4768:4982): Thread iniciado correctamente
+[INFO] 12:40:28:712 MEMORIA/(4768:4982): Handshake de Kernel recibido correctamente
+[INFO] 12:42:00:202 MEMORIA/(4768:4768): Se conecto un cliente!
+[INFO] 12:42:00:217 MEMORIA/(4768:5110): Thread iniciado correctamente
+[INFO] 12:42:03:549 MEMORIA/(4768:5110): Handshake de Kernel recibido correctamente
+[INFO] 12:49:36:791 MEMORIA/(5528:5528): Valores de configuracion leidos correctamente
+[INFO] 12:49:36:800 MEMORIA/(5528:5528): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:49:47:095 MEMORIA/(5528:5528): Se conecto un cliente!
+[INFO] 12:49:47:097 MEMORIA/(5528:5591): Thread iniciado correctamente
+[INFO] 12:49:49:655 MEMORIA/(5528:5591): Handshake de Kernel recibido correctamente
+[INFO] 12:50:13:521 MEMORIA/(5528:5528): Se conecto un cliente!
+[INFO] 12:50:13:526 MEMORIA/(5528:5668): Thread iniciado correctamente
+[INFO] 12:50:14:928 MEMORIA/(5528:5668): Handshake de Kernel recibido correctamente
+[INFO] 12:50:28:745 MEMORIA/(5528:5528): Se conecto un cliente!
+[INFO] 12:50:28:761 MEMORIA/(5528:5717): Thread iniciado correctamente
+[INFO] 12:50:28:761 MEMORIA/(5528:5717): Handshake de Kernel recibido correctamente
+[INFO] 12:53:08:681 MEMORIA/(5823:5823): Valores de configuracion leidos correctamente
+[INFO] 12:53:08:685 MEMORIA/(5823:5823): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:53:13:085 MEMORIA/(5823:5823): Se conecto un cliente!
+[INFO] 12:53:13:087 MEMORIA/(5823:5863): Thread iniciado correctamente
+[INFO] 12:53:13:091 MEMORIA/(5823:5863): Handshake de Kernel recibido correctamente
+[INFO] 13:04:37:776 MEMORIA/(6477:6477): Valores de configuracion leidos correctamente
+[INFO] 13:04:37:784 MEMORIA/(6477:6477): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:04:47:156 MEMORIA/(6477:6477): Se conecto un cliente!
+[INFO] 13:04:47:159 MEMORIA/(6477:6504): Thread iniciado correctamente
+[INFO] 13:04:47:160 MEMORIA/(6477:6504): Handshake de File System recibido correctamente
+[INFO] 13:14:47:877 MEMORIA/(6779:6779): Valores de configuracion leidos correctamente
+[INFO] 13:14:47:879 MEMORIA/(6779:6779): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:15:05:579 MEMORIA/(6779:6779): Se conecto un cliente!
+[INFO] 13:15:05:581 MEMORIA/(6779:6800): Thread iniciado correctamente
+[INFO] 13:15:05:583 MEMORIA/(6779:6800): Handshake de File System recibido correctamente
+[INFO] 13:15:18:406 MEMORIA/(6779:6779): Se conecto un cliente!
+[INFO] 13:15:18:408 MEMORIA/(6779:6821): Thread iniciado correctamente
+[INFO] 13:15:18:412 MEMORIA/(6779:6821): Handshake de CPU recibido correctamente
+[INFO] 13:15:34:514 MEMORIA/(6779:6779): Se conecto un cliente!
+[INFO] 13:15:34:526 MEMORIA/(6779:6841): Thread iniciado correctamente
+[INFO] 13:15:34:531 MEMORIA/(6779:6841): Handshake de Kernel recibido correctamente
+[INFO] 13:28:31:884 MEMORIA/(7381:7381): Valores de configuracion leidos correctamente
+[INFO] 13:28:31:886 MEMORIA/(7381:7381): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:28:37:348 MEMORIA/(7381:7381): Se conecto un cliente!
+[INFO] 13:28:37:350 MEMORIA/(7381:7402): Thread iniciado correctamente
+[INFO] 13:28:37:354 MEMORIA/(7381:7402): Error al intentar handshake
+[INFO] 13:29:47:002 MEMORIA/(7441:7441): Valores de configuracion leidos correctamente
+[INFO] 13:29:47:003 MEMORIA/(7441:7441): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:29:52:386 MEMORIA/(7441:7441): Se conecto un cliente!
+[INFO] 13:29:52:392 MEMORIA/(7441:7477): Thread iniciado correctamente
+[INFO] 13:32:26:146 MEMORIA/(7576:7576): Valores de configuracion leidos correctamente
+[INFO] 13:32:26:151 MEMORIA/(7576:7576): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:32:30:579 MEMORIA/(7576:7576): Se conecto un cliente!
+[INFO] 13:32:30:588 MEMORIA/(7576:7599): Thread iniciado correctamente
+[INFO] 13:32:30:592 MEMORIA/(7576:7599): Handshake de File System recibido correctamente
+[INFO] 13:32:34:041 MEMORIA/(7576:7576): Se conecto un cliente!
+[INFO] 13:32:34:043 MEMORIA/(7576:7612): Thread iniciado correctamente
+[INFO] 13:32:34:046 MEMORIA/(7576:7612): Error al intentar handshake
+[INFO] 13:43:41:946 MEMORIA/(7970:7970): Valores de configuracion leidos correctamente
+[INFO] 13:43:41:949 MEMORIA/(7970:7970): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 13:43:45:740 MEMORIA/(7970:7970): Se conecto un cliente!
+[INFO] 13:43:45:742 MEMORIA/(7970:7993): Thread iniciado correctamente
+[INFO] 13:43:45:745 MEMORIA/(7970:7993): Handshake de File System recibido correctamente
+[INFO] 13:43:51:010 MEMORIA/(7970:7970): Se conecto un cliente!
+[INFO] 13:43:51:013 MEMORIA/(7970:8011): Thread iniciado correctamente
+[INFO] 13:43:51:017 MEMORIA/(7970:8011): Handshake de CPU recibido correctamente
+[INFO] 13:43:56:733 MEMORIA/(7970:7970): Se conecto un cliente!
+[INFO] 13:43:56:742 MEMORIA/(7970:8050): Thread iniciado correctamente
+[INFO] 13:43:56:747 MEMORIA/(7970:8050): Handshake de Kernel recibido correctamente
+[INFO] 14:32:49:173 MEMORIA/(9292:9292): Valores de configuracion leidos correctamente
+[INFO] 14:32:49:175 MEMORIA/(9292:9292): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 14:32:55:653 MEMORIA/(9292:9292): Se conecto un cliente!
+[INFO] 14:32:55:655 MEMORIA/(9292:9315): Thread iniciado correctamente
+[INFO] 14:32:55:658 MEMORIA/(9292:9315): Handshake de File System recibido correctamente
+[INFO] 14:33:04:415 MEMORIA/(9292:9292): Se conecto un cliente!
+[INFO] 14:33:04:417 MEMORIA/(9292:9331): Thread iniciado correctamente
+[INFO] 14:33:04:419 MEMORIA/(9292:9331): Handshake de CPU recibido correctamente
+[INFO] 14:44:50:209 MEMORIA/(9511:9511): Valores de configuracion leidos correctamente
+[INFO] 14:44:50:213 MEMORIA/(9511:9511): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 14:44:56:997 MEMORIA/(9511:9511): Se conecto un cliente!
+[INFO] 14:44:56:998 MEMORIA/(9511:9537): Thread iniciado correctamente
+[INFO] 14:44:57:000 MEMORIA/(9511:9537): Handshake de File System recibido correctamente
+[INFO] 14:45:23:130 MEMORIA/(9511:9511): Se conecto un cliente!
+[INFO] 14:45:23:132 MEMORIA/(9511:9560): Thread iniciado correctamente
+[INFO] 14:45:23:135 MEMORIA/(9511:9560): Error al intentar handshake

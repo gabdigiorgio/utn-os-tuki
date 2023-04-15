@@ -7,7 +7,6 @@
 
 #include "../includes/initial_setup.h"
 
-
 int initial_setup(){
 	int error = 1;
 

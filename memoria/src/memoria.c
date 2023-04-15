@@ -26,6 +26,10 @@ int main(int argc, char *argv[]) {
 
 	int server_connection = iniciar_servidor(server_port);
 
+	cpu_conectada = false;
+	kernel_conectado = false;
+	fileSystem_conectado = false;
+
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
 	//SO_REUSEADDR flag para reutilizar el socket
 
@@ -50,27 +54,6 @@ void thread_main(t_conexion *conexion){
 	log_info(logger, "Thread iniciado correctamente");
 	log_info(logger,handshake(conexion->num_socket));
 	t_list* lista;
-	while (estado == 1) {
-			int cod_op = recibir_operacion(conexion->num_socket);
-			switch (cod_op) {
-			case MENSAJE:
-				recibir_mensaje(conexion->num_socket);
-				break;
-			case PAQUETE:
-				lista = recibir_paquete(conexion->num_socket);
-				log_info(logger, "Me llegaron los siguientes valores:\n");
-				list_iterate(lista, (void*) iterator);
-				break;
-			case -1:
-				log_error(logger, "el cliente se desconecto. Terminando servidor");
-				num_threads--;
-				estado = 0;
-				break;
-			default:
-				log_warning(logger,"Operacion desconocida. No quieras meter la pata");
-				break;
-			}
-		}
 }
 
 void iterator(char* value) {

@@ -433,3 +433,27 @@
 [INFO] 22:35:24:360 CPU/(5427:5427): Conexion establecida con la memoria
 [INFO] 22:35:24:362 CPU/(5427:5427): Handshake realizado correctamente
 [INFO] 22:35:24:362 CPU/(5427:5427): Cpu lista para recibir al Kernel
+[INFO] 23:51:06:270 CPU/(109888:109888): Valores de configuracion leidos correctamente
+[INFO] 23:51:06:293 CPU/(109888:109888): Conexion establecida con la memoria
+[INFO] 23:51:06:294 CPU/(109888:109888): Handshake realizado correctamente
+[INFO] 23:51:06:294 CPU/(109888:109888): Cpu lista para recibir al Kernel
+[INFO] 12:27:32:579 CPU/(4432:4432): Valores de configuracion leidos correctamente
+[INFO] 12:27:32:582 CPU/(4432:4432): Conexion establecida con la memoria
+[INFO] 12:27:32:586 CPU/(4432:4432): Handshake realizado correctamente
+[INFO] 12:27:32:587 CPU/(4432:4432): Cpu lista para recibir al Kernel
+[INFO] 13:15:18:404 CPU/(6814:6814): Valores de configuracion leidos correctamente
+[INFO] 13:15:18:407 CPU/(6814:6814): Memoria
+[INFO] 13:15:18:410 CPU/(6814:6814): Se establecio correctamente la conexion
+[INFO] 13:15:18:411 CPU/(6814:6814): Cpu lista para recibir al Kernel
+[INFO] 13:15:34:527 CPU/(6814:6814): Se conecto el Kernel
+[INFO] 13:15:34:527 CPU/(6814:6814): Handshake de Kernel recibido correctamente
+[INFO] 13:43:51:008 CPU/(8005:8005): Valores de configuracion leidos correctamente
+[INFO] 13:43:51:011 CPU/(8005:8005): Memoria
+[INFO] 13:43:51:014 CPU/(8005:8005): Se establecio correctamente la conexion
+[INFO] 13:43:51:016 CPU/(8005:8005): Cpu lista para recibir al Kernel
+[INFO] 13:43:56:742 CPU/(8005:8005): Se conecto el Kernel
+[INFO] 13:43:56:742 CPU/(8005:8005): Handshake de Kernel recibido correctamente
+[INFO] 14:33:04:414 CPU/(9325:9325): Valores de configuracion leidos correctamente
+[INFO] 14:33:04:416 CPU/(9325:9325): Memoria
+[INFO] 14:33:04:418 CPU/(9325:9325): Se establecio correctamente la conexion
+[INFO] 14:33:04:419 CPU/(9325:9325): Cpu lista para recibir al Kernel

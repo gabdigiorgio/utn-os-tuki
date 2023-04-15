@@ -23,22 +23,41 @@ int crear_conexion(char *ip, char* puerto)
 	return socket_cliente;
 }
 
-char* handshake(int socket_cliente, uint8_t tipo_cliente){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
+int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
 
 	char* message = "";
 	uint8_t handshake = tipo_cliente;
 	uint8_t result;
 
+	switch(tipo_servidor){
+				case 1:
+					message = "Cpu";
+					break;
+				case 2:
+					message = "Kernel";
+					break;
+				case 3:
+					message = "File system";
+					break;
+				case 4:
+					message = "Memoria";
+					break;
+				default:
+					break;
+			}
+
 	send(socket_cliente, &handshake, sizeof(uint8_t), NULL);
-	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL);
+	log_info(logger, message);
+	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL); //consultar por un timeout
 
 	if(result == 1){
-		message = "Handshake realizado correctamente";
+		log_info(logger, "Se establecio correctamente la conexion");
 	} else {
-		message = "Fallo al realizar el handshake";
+		log_info(logger, "Fallo al realizar el handshake, cerrando conexion");
+		result = -1;
 	}
 
-	return message;
+	return result;
 }
 
 void liberar_conexion(int socket_cliente)

@@ -36,8 +36,6 @@ int iniciar_servidor(char* puerto)
 
 int esperar_cliente(int socket_servidor)
 {
-	// Quitar esta línea cuando hayamos terminado de implementar la funcion
-	//assert(!"no implementado!");
 
 	// Aceptamos un nuevo cliente
 	int socket_cliente = accept(socket_servidor, NULL, NULL);
@@ -46,85 +44,22 @@ int esperar_cliente(int socket_servidor)
 	return socket_cliente;
 }
 
-int recibir_operacion(int socket_cliente)
-{
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
-		return cod_op;
-	else
-	{
-		close(socket_cliente);
-		return -1;
-	}
-}
-
-void* recibir_buffer(int* size, int socket_cliente)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
-}
-
-void recibir_mensaje(int socket_cliente)
-{
-	int size;
-	char* buffer = recibir_buffer(&size, socket_cliente);
-	log_info(logger, "Me llego el mensaje %s", buffer);
-	free(buffer);
-}
-
-t_list* recibir_paquete(int socket_cliente)
-{
-	int size;
-	int desplazamiento = 0;
-	void * buffer;
-	t_list* valores = list_create();
-	int tamanio;
-
-	buffer = recibir_buffer(&size, socket_cliente);
-	while(desplazamiento < size)
-	{
-		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
-		desplazamiento+=sizeof(int);
-		char* valor = malloc(tamanio);
-		memcpy(valor, buffer+desplazamiento, tamanio);
-		desplazamiento+=tamanio;
-		list_add(valores, valor);
-	}
-	free(buffer);
-	return valores;
-}
-
 char* handshake(int socket_cliente){
 	char* message = "";
 	uint8_t handshake;
-	bool cpu_conectada=NULL;
-	bool kernel_conectada=NULL;
-	bool fileSystem_conectada=NULL;
 	uint8_t resultOk = 1;
 	uint8_t resultError = -1;
 
 	recv(socket_cliente, &handshake, sizeof(uint8_t), MSG_WAITALL); //recive el mensaje
-	if(handshake == 1){
-		cpu_conectada = 0;
-	}
-	else if(handshake == 2){
-		kernel_conectada = 0;
-	}
-	else if(handshake == 3){
-		fileSystem_conectada = 0;
-	}
+
 	if(handshake > 0){
 		switch(handshake) {
 
 			case 1:
-				if(cpu_conectada == 0){
+				if(cpu_conectada == false){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de CPU recibido correctamente";
+					cpu_conectada = true;
 				}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
@@ -133,9 +68,10 @@ char* handshake(int socket_cliente){
 				break;
 
 			case 2:
-				if(kernel_conectada == 0){
+				if(kernel_conectado == false){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de Kernel recibido correctamente";
+					kernel_conectado = true;
 						}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
@@ -143,9 +79,10 @@ char* handshake(int socket_cliente){
 				}
 				break;
 			case 3:
-				if(fileSystem_conectada == 0){
+				if(fileSystem_conectado == false){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de File System recibido correctamente";
+					fileSystem_conectado = true;
 				}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
