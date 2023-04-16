@@ -37,7 +37,7 @@ typedef struct{
 	uint32_t id_archivo;
 	uint32_t posicion_puntero;
 }archivo_abierto_t;
-+
+
 typedef struct{
 	archivo_abierto_t* archivos_abiertos;
 }tabla_archivos_abiertos_t;
