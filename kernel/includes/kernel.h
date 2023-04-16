@@ -37,20 +37,21 @@ typedef struct{
 	uint32_t id_archivo;
 	uint32_t posicion_puntero;
 }archivo_abierto_t;
-
++
 typedef struct{
 	archivo_abierto_t* archivos_abiertos;
 }tabla_archivos_abiertos_t;
 
 typedef struct {
 	uint32_t pid;
-	uint32_t porgram_counter;
-	uint32_t estimado_proxima_rafaga;
-	uint32_t tiempo_llegada_ready;
-	//registros_cpu_t registros_cpu;
-	tabla_segmentos_t tabla_segmento;
-	lista_instucciones_t instrucciones;
-	tabla_archivos_abiertos_t tabla_archivos;
+	char* estado; // tipo de estado, puede ser un enum
+	uint32_t program_counter;
+	uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
+	uint32_t tiempo_llegada_ready; // se hace con timer, ver timestamp
+	//registros_cpu_t registros_cpu; // crear struct de registros de cpu
+	tabla_segmentos_t tabla_segmento; // nada
+	t_list* instrucciones; // lista recibida de consola
+	tabla_archivos_abiertos_t tabla_archivos; // nada
 }pcb_t;
 
 // ___ CONFIG VARIABLES ____
