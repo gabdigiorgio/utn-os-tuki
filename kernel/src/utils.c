@@ -18,6 +18,6 @@ t_log* iniciar_logger(void)
 }
 
 void * list_pop(t_list * list){
-	int last_element_index = list_size(list)+1;
+	int last_element_index = list_size(list)-1;
 	return list_remove(list, last_element_index);
 }

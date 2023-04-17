@@ -12,32 +12,23 @@
 #include "../includes/kernel.h"
 
 int main(int argc, char *argv[]) {
-	logger = iniciar_logger();
-	iniciar_pcb_lists();
-	list_add(pcb_ready_list, "hola" );
-	log_info(logger, list_get(pcb_ready_list,0));
-	list_add(pcb_ready_list, "pepe");
-	log_info(logger, list_get(pcb_ready_list,1));
-	list_add(pcb_ready_list, "juan");
-	log_info(logger, list_pop(pcb_ready_list));
 
-
-/*	//Iniciamos log, config y cant_threads_activos
+	//Iniciamos log, config, cant_threads_activos y listas pcb
 	logger = iniciar_logger();
 	  if (argc < 2) {
 	    log_error(logger, "Falta parametro del path del archivo de configuracion");
 	    return EXIT_FAILURE;
 	  }
 	config = iniciar_config(argv[1]);
-	cant_threads_activos = 0;
 
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
 	int exit_status = initial_setup();
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
-
+	cant_threads_activos = 0;
 	iniciar_pcb_lists();
+
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake(memoria_connection,2,4) == -1) {
@@ -74,7 +65,7 @@ int main(int argc, char *argv[]) {
 
 
 
-	terminar_programa(); */
+	terminar_programa();
 
 	return EXIT_SUCCESS;
 }
