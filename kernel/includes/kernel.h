@@ -18,10 +18,6 @@
 
 #define CANTIDAD_DE_THREADS 4
 
-void iterator(char* value);
-void iniciar_pcb_lists();
-void terminar_programa();
-
 typedef struct{
 	 uint32_t ids;
 	 uint32_t direccion_base;
@@ -56,6 +52,15 @@ typedef struct {
 	tabla_archivos_abiertos_t tabla_archivos; // nada
 }pcb_t;
 
+void iterator(char* value);
+void iniciar_pcb_lists();
+void terminar_programa();
+
+void iniciar_planificador_corto_plazo();
+void estado_ready();
+pcb_t* planificar_hrrn();
+float calcular_ratio(pcb_t* pcb_actual);
+
 // ___ GLOBAL VARIABLES ____
 
 t_log* logger;
@@ -84,9 +89,9 @@ char* cpu_port;
 
 char* server_port;
 
-t_config* config;
+char* algoritmo_planificacion;
 
-//
+t_config* config;
 
 
 #endif /* KERNEL_H_ */

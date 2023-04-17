@@ -65,6 +65,14 @@ int initial_setup(){
 		error = 0;
 	}
 
+	// ALGORITMO PLANIFICACION
+	if (config_has_property(config, "ALGORITMO_PLANIFICACION")){
+		algoritmo_planificacion = config_get_string_value(config, "ALGORITMO_PLANIFICACION");
+		} else {
+			failed_initial_setup("ALGORITMO_PLANIFICACION");
+			error = 0;
+		}
+
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");

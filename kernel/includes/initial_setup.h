@@ -26,6 +26,8 @@ extern t_log* logger;
 
 extern char* server_port;
 
+extern char* algoritmo_planificacion;
+
 extern t_config* config;
 
 int initial_setup(void);

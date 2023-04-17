@@ -26,6 +26,7 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
+
 	cant_threads_activos = 0;
 	iniciar_pcb_lists();
 
@@ -43,6 +44,8 @@ int main(int argc, char *argv[]) {
 		terminar_programa();
 		return EXIT_FAILURE;
 	}
+
+	iniciar_planificador_corto_plazo();
 
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
@@ -64,7 +67,6 @@ int main(int argc, char *argv[]) {
 	}
 
 
-
 	terminar_programa();
 
 	return EXIT_SUCCESS;
@@ -83,4 +85,46 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 	liberar_conexion(file_system_connection);
 	liberar_conexion(cpu_connection);
+}
+
+void iniciar_planificador_corto_plazo(){
+
+	pthread_t hilo_ready;
+	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
+	pthread_detach(hilo_ready);
+}
+
+void estado_ready() {
+	while(1){
+
+		pcb_t* pcb_a_ejecutar = NULL;
+
+		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
+			pcb_a_ejecutar = list_pop(pcb_ready_list);
+		}
+		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
+			pcb_a_ejecutar = planificar_hrrn();
+		}
+	}
+}
+
+pcb_t* planificar_hrrn(){
+	pcb_t* pcb_a_ejecutar = NULL;
+	float ratio_actual = 0;
+
+	for(int i = 0; i < list_size(pcb_ready_list); i++){
+		pcb_t* pcb_actual = list_get(pcb_ready_list, i);
+		float ratio_respuesta = calcular_ratio(pcb_actual);
+
+		if(ratio_respuesta > ratio_actual){
+			ratio_actual = ratio_respuesta;
+			pcb_a_ejecutar = pcb_actual;
+		}
+	}
+	return pcb_a_ejecutar;
+}
+
+float calcular_ratio(pcb_t* pcb_actual){
+	float ratio = (pcb_actual->tiempo_llegada_ready + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
+	return ratio;
 }
