@@ -7,7 +7,9 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include <commons/collections/list.h>
 
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
+void * list_pop(t_list * list);
 #endif /* CLIENT_H_ */

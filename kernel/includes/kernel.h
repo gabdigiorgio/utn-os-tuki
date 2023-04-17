@@ -7,6 +7,7 @@
 #include <commons/log.h>
 #include <commons/string.h>
 #include <pthread.h>
+#include <commons/collections/list.h>
 
 #include "server_utils.h"
 #include "client_utils.h"
@@ -18,6 +19,7 @@
 #define CANTIDAD_DE_THREADS 4
 
 void iterator(char* value);
+void iniciar_pcb_lists();
 void terminar_programa();
 
 typedef struct{
@@ -54,7 +56,7 @@ typedef struct {
 	tabla_archivos_abiertos_t tabla_archivos; // nada
 }pcb_t;
 
-// ___ CONFIG VARIABLES ____
+// ___ GLOBAL VARIABLES ____
 
 t_log* logger;
 
@@ -65,6 +67,10 @@ int file_system_connection;
 int cpu_connection;
 
 int cant_threads_activos;
+
+t_list *pcb_ready_list;
+t_list *pcb_new_list;
+t_list *pcb_suspended_list;
 
 // _____________________
 

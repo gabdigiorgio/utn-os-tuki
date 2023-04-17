@@ -12,8 +12,17 @@
 #include "../includes/kernel.h"
 
 int main(int argc, char *argv[]) {
+	logger = iniciar_logger();
+	iniciar_pcb_lists();
+	list_add(pcb_ready_list, "hola" );
+	log_info(logger, list_get(pcb_ready_list,0));
+	list_add(pcb_ready_list, "pepe");
+	log_info(logger, list_get(pcb_ready_list,1));
+	list_add(pcb_ready_list, "juan");
+	log_info(logger, list_pop(pcb_ready_list));
 
-	//Iniciamos log, config y cant_threads_activos
+
+/*	//Iniciamos log, config y cant_threads_activos
 	logger = iniciar_logger();
 	  if (argc < 2) {
 	    log_error(logger, "Falta parametro del path del archivo de configuracion");
@@ -28,9 +37,10 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
+	iniciar_pcb_lists();
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
-	/* if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake(memoria_connection,2,4) == -1) {
+	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake(memoria_connection,2,4) == -1) {
 		terminar_programa();
 		return EXIT_FAILURE;
 	}
@@ -41,7 +51,7 @@ int main(int argc, char *argv[]) {
 	if((file_system_connection = crear_conexion(file_system_ip,file_system_port)) == 0 || handshake(file_system_connection,2,3) == -1) {
 		terminar_programa();
 		return EXIT_FAILURE;
-	} */
+	}
 
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
@@ -64,11 +74,16 @@ int main(int argc, char *argv[]) {
 
 
 
-	terminar_programa();
+	terminar_programa(); */
 
 	return EXIT_SUCCESS;
 }
 
+void iniciar_pcb_lists(){
+	pcb_ready_list = list_create();
+	pcb_new_list = list_create();
+	pcb_suspended_list = list_create();
+}
 
 void terminar_programa()
 {
