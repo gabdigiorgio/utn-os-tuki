@@ -93,18 +93,10 @@ void agregar_pcb_a_new(pcb_t *pcb,int socket_consola){
 	sleep(20);
 	log_info(logger,"Proceso añadido correctamente");
 }
-
-void transicion_a_ready(){
-
-}
-void transicion_a_exit(){
-
-}
-
 void iniciar_planificador_largo_plazo(){
 	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
+	pthread_detach(pcb_new);
 }
-
 void terminar_programa()
 {
 	log_destroy(logger);

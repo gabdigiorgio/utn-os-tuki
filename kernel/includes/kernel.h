@@ -94,8 +94,6 @@ void iterator(char* value);
 void iniciar_pcb_lists();
 pcb_t *crear_proceso(pcb_t *pcb);
 void agregar_pcb_a_new();
-void transicion_a_ready();
-void transicion_a_exit();
 void iniciar_planificador_largo_plazo();
 void terminar_programa();
 #endif /* KERNEL_H_ */
