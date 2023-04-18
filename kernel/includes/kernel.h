@@ -18,9 +18,8 @@
 
 #define CANTIDAD_DE_THREADS 4
 
-void iterator(char* value);
-void iniciar_pcb_lists();
-void terminar_programa();
+
+
 
 typedef struct{
 	 uint32_t ids;
@@ -86,7 +85,17 @@ char* server_port;
 
 t_config* config;
 
-//
+//_Planificador a Largo Plazo
+pthread_t pcb_new;
 
+//Funciones
 
+void iterator(char* value);
+void iniciar_pcb_lists();
+pcb_t *crear_proceso(pcb_t *pcb);
+void agregar_pcb_a_new();
+void transicion_a_ready();
+void transicion_a_exit();
+void iniciar_planificador_largo_plazo();
+void terminar_programa();
 #endif /* KERNEL_H_ */

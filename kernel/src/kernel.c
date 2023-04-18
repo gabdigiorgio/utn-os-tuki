@@ -48,6 +48,7 @@ int main(int argc, char *argv[]) {
 	int socket_servidor = iniciar_servidor(server_port);
 	log_info(logger, "Kernel listo para recibir Consolas");
 
+
 	// Espero Conexiones de las consolas
 	while (1){
 		if(cant_threads_activos<CANTIDAD_DE_THREADS){
@@ -74,6 +75,34 @@ void iniciar_pcb_lists(){
 	pcb_ready_list = list_create();
 	pcb_new_list = list_create();
 	pcb_suspended_list = list_create();
+}
+
+
+
+pcb_t *crear_proceso(pcb_t *pcb){
+	pcb_t *proceso = malloc(sizeof(pcb_t));
+	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
+	return proceso;
+}
+
+void agregar_pcb_a_new(pcb_t *pcb,int socket_consola){
+	pcb_t *proceso = crear_proceso(pcb);
+	list_add(pcb_new_list,proceso);
+	sleep(1);
+	printf("PID = [%d] ingresa a NEW", proceso->pid);
+	sleep(20);
+	log_info(logger,"Proceso añadido correctamente");
+}
+
+void transicion_a_ready(){
+
+}
+void transicion_a_exit(){
+
+}
+
+void iniciar_planificador_largo_plazo(){
+	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
 }
 
 void terminar_programa()
