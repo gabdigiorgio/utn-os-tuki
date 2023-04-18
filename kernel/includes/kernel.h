@@ -40,6 +40,14 @@ typedef struct{
 	archivo_abierto_t* archivos_abiertos;
 }tabla_archivos_abiertos_t;
 
+typedef enum {
+    PCB_NEW,
+    PCB_READY,
+    PCB_EXEC,
+    PCB_BLOCK,
+    PCB_EXIT
+} pcb_estado_t;
+
 typedef struct {
 	uint32_t pid;
 	char* estado; // tipo de estado, puede ser un enum

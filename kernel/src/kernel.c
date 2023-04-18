@@ -99,13 +99,24 @@ void estado_ready() {
 
 		pcb_t* pcb_a_ejecutar = NULL;
 
+		if (!list_is_empty(pcb_new_list)){
+			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
+			list_add(pcb_ready_list, pcb_nuevo);
+		}
+
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
 			pcb_a_ejecutar = list_pop(pcb_ready_list);
 		}
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
 			pcb_a_ejecutar = planificar_hrrn();
+
+			list_remove_by_condition(pcb_ready_list, (void*)mismo_pcb, pcb_a_ejecutar);
 		}
 	}
+}
+
+bool mismo_pcb(pcb_t* pcb1, pcb_t* pcb2) {
+    return (pcb1->pid == pcb2->pid);
 }
 
 pcb_t* planificar_hrrn(){
