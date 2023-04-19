@@ -66,6 +66,8 @@ void terminar_programa();
 
 void iniciar_planificador_corto_plazo();
 void estado_ready();
+void estado_exec();
+void estado_block();
 pcb_t* planificar_lista_ready_hrrn();
 float calcular_ratio(pcb_t* pcb_actual);
 
@@ -84,7 +86,7 @@ int cant_threads_activos;
 t_list *pcb_ready_list;
 t_list *pcb_new_list;
 t_list *pcb_exec_list;
-t_list *pcb_suspended_list;
+t_list *pcb_block_list;
 
 // _____________________
 

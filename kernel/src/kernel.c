@@ -76,7 +76,7 @@ void iniciar_pcb_lists(){
 	pcb_ready_list = list_create();
 	pcb_new_list = list_create();
 	pcb_exec_list = list_create();
-	pcb_suspended_list = list_create();
+	pcb_block_list = list_create();
 }
 
 void terminar_programa()
@@ -94,9 +94,11 @@ void iniciar_planificador_corto_plazo(){
 	pthread_t hilo_exec;
 	pthread_t hilo_block;
 	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
-	pthread_create(&hilo_exec, NULL, (void *)estado_exect, NULL);
+	pthread_create(&hilo_exec, NULL, (void *)estado_exec, NULL);
+	pthread_create(&hilo_block,NULL,(void*)estado_block,NULL);
 	pthread_detach(hilo_ready);
 	pthread_detach(hilo_exec);
+	pthread_detach(hilo_block);
 }
 
 void estado_ready() {
@@ -122,14 +124,19 @@ void estado_ready() {
 		}
 	}
 }
-void estado_exect(){
+void estado_exec(){
 	while(1)
 	{
-		if(!list_is_empty(pcb_ready_list)){
-			pcb_t* proceso_ejecutando=list_pop(pcb_ready_list);
+		if(!list_is_empty(pcb_exec_list)){
+			pcb_t* proceso_ejecutando=list_pop(pcb_exec_list);
 			proceso_ejecutando->estado=PCB_EXEC;
 			//cpu_ejecutando=true
 		}
+	}
+}
+void estado_block(){
+	while(1){
+
 	}
 }
 bool mismo_pcb(pcb_t* pcb1, pcb_t* pcb2) {
