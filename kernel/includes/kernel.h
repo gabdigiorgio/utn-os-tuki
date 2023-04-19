@@ -50,7 +50,7 @@ typedef enum {
 
 typedef struct {
 	uint32_t pid;
-	char* estado; // tipo de estado, puede ser un enum
+	pcb_estado_t estado; // tipo de estado, puede ser un enum
 	uint32_t program_counter;
 	uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
 	uint32_t tiempo_llegada_ready; // se hace con timer, ver timestamp

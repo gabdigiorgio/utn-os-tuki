@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 
 	cant_threads_activos = 0;
 	iniciar_pcb_lists();
+	iniciar_planificador_corto_plazo();
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
@@ -45,7 +46,6 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-	iniciar_planificador_corto_plazo();
 
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
@@ -110,7 +110,7 @@ void estado_ready() {
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
 			pcb_a_ejecutar = planificar_hrrn();
 
-			list_remove_by_condition(pcb_ready_list, (void*)mismo_pcb, pcb_a_ejecutar);
+			//list_remove_by_condition(pcb_ready_list, (void*)mismo_pcb, pcb_a_ejecutar);
 		}
 	}
 }
