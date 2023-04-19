@@ -75,6 +75,7 @@ int main(int argc, char *argv[]) {
 void iniciar_pcb_lists(){
 	pcb_ready_list = list_create();
 	pcb_new_list = list_create();
+	pcb_exec_list = list_create();
 	pcb_suspended_list = list_create();
 }
 
@@ -90,18 +91,19 @@ void terminar_programa()
 void iniciar_planificador_corto_plazo(){
 
 	pthread_t hilo_ready;
-	pthread_t hilo_exect;
+	pthread_t hilo_exec;
 	pthread_t hilo_block;
 	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
-	pthread_create(&hilo_exect, NULL, (void *)estado_exect, NULL);
+	pthread_create(&hilo_exec, NULL, (void *)estado_exect, NULL);
 	pthread_detach(hilo_ready);
-	pthread_detach(hilo_exect);
+	pthread_detach(hilo_exec);
 }
 
 void estado_ready() {
-	while(1){
 
-		pcb_t* pcb_a_ejecutar = NULL;
+	pcb_t* pcb_a_ejecutar = NULL;
+
+	while(1){
 
 		if (!list_is_empty(pcb_new_list)){
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
@@ -110,9 +112,11 @@ void estado_ready() {
 
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
 			pcb_a_ejecutar = list_pop(pcb_ready_list);
+			list_add(pcb_exec_list, pcb_a_ejecutar);
 		}
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			pcb_a_ejecutar = planificar_hrrn();
+			pcb_a_ejecutar = planificar_lista_ready_hrrn();
+			list_add(pcb_exec_list, pcb_a_ejecutar);
 
 			//list_remove_by_condition(pcb_ready_list, (void*)mismo_pcb, pcb_a_ejecutar);
 		}
@@ -132,7 +136,7 @@ bool mismo_pcb(pcb_t* pcb1, pcb_t* pcb2) {
     return (pcb1->pid == pcb2->pid);
 }
 
-pcb_t* planificar_hrrn(){
+pcb_t* planificar_lista_ready_hrrn(){
 	pcb_t* pcb_a_ejecutar = NULL;
 	float ratio_actual = 0;
 
