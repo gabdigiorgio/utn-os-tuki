@@ -90,8 +90,12 @@ void terminar_programa()
 void iniciar_planificador_corto_plazo(){
 
 	pthread_t hilo_ready;
+	pthread_t hilo_exect;
+	pthread_t hilo_block;
 	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
+	pthread_create(&hilo_exect, NULL, (void *)estado_exect, NULL);
 	pthread_detach(hilo_ready);
+	pthread_detach(hilo_exect);
 }
 
 void estado_ready() {
@@ -114,7 +118,16 @@ void estado_ready() {
 		}
 	}
 }
-
+void estado_exect(){
+	while(1)
+	{
+		if(!list_is_empty(pcb_ready_list)){
+			pcb_t* proceso_ejecutando=list_pop(pcb_ready_list);
+			proceso_ejecutando->estado=PCB_EXEC;
+			//cpu_ejecutando=true
+		}
+	}
+}
 bool mismo_pcb(pcb_t* pcb1, pcb_t* pcb2) {
     return (pcb1->pid == pcb2->pid);
 }
