@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 
 
 	// Espero Conexiones de las consolas
-	while (1){
+	while (recibido == 0){
 		if(cant_threads_activos<CANTIDAD_DE_THREADS){
 		  pthread_t console_thread;
 
@@ -58,8 +58,11 @@ int main(int argc, char *argv[]) {
 		   *socket_console_client = esperar_cliente(socket_servidor);
 
 		   pthread_create(&console_thread, NULL, (void*) atender_consola, socket_console_client);
-		   pthread_detach(console_thread);
 
+		   //recibido=1;
+		   pthread_detach(console_thread);
+		   //Temporal para acomodarlo
+		   //list_destroy(pcb_new_list);
 		   cant_threads_activos++;
 		}
 	}
@@ -67,7 +70,7 @@ int main(int argc, char *argv[]) {
 
 
 	terminar_programa();
-
+	recibido = 0;
 	return EXIT_SUCCESS;
 }
 
@@ -78,15 +81,17 @@ void iniciar_pcb_lists(){
 }
 
 
-
-pcb_t *crear_proceso(pcb_t *pcb){
+//Falta agregar pid automatico
+pcb_t *crear_proceso(t_list* instrucciones){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
+	proceso->pid=1;
+	proceso->instrucciones=instrucciones;
 	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
 	return proceso;
 }
 
-void agregar_pcb_a_new(pcb_t *pcb,int socket_consola){
-	pcb_t *proceso = crear_proceso(pcb);
+void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
+	pcb_t *proceso = crear_proceso(instrucciones);
 	list_add(pcb_new_list,proceso);
 	sleep(1);
 	printf("PID = [%d] ingresa a NEW", proceso->pid);
