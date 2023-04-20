@@ -117,10 +117,8 @@ void estado_ready() {
 			list_add(pcb_exec_list, pcb_a_ejecutar);
 		}
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			pcb_a_ejecutar = planificar_lista_ready_hrrn();
-			list_add(pcb_exec_list, pcb_a_ejecutar);
-
-			//list_remove_by_condition(pcb_ready_list, (void*)mismo_pcb, pcb_a_ejecutar);
+			pcb_a_ejecutar = list_pop(pcb_ready_list);
+			list_add_sorted(pcb_exec_list, pcb_a_ejecutar, mayor_ratio);
 		}
 	}
 }
@@ -130,7 +128,8 @@ void estado_exec(){
 		if(!list_is_empty(pcb_exec_list)){
 			pcb_t* proceso_ejecutando=list_pop(pcb_exec_list);
 			proceso_ejecutando->estado=PCB_EXEC;
-			//cpu_ejecutando=true
+			//ejecutar proceso
+			proceso_ejecutando->estado = PCB_EXIT;
 		}
 	}
 }
@@ -139,27 +138,15 @@ void estado_block(){
 
 	}
 }
-bool mismo_pcb(pcb_t* pcb1, pcb_t* pcb2) {
-    return (pcb1->pid == pcb2->pid);
-}
-
-pcb_t* planificar_lista_ready_hrrn(){
-	pcb_t* pcb_a_ejecutar = NULL;
-	float ratio_actual = 0;
-
-	for(int i = 0; i < list_size(pcb_ready_list); i++){
-		pcb_t* pcb_actual = list_get(pcb_ready_list, i);
-		float ratio_respuesta = calcular_ratio(pcb_actual);
-
-		if(ratio_respuesta > ratio_actual){
-			ratio_actual = ratio_respuesta;
-			pcb_a_ejecutar = pcb_actual;
-		}
-	}
-	return pcb_a_ejecutar;
-}
 
 float calcular_ratio(pcb_t* pcb_actual){
 	float ratio = (pcb_actual->tiempo_llegada_ready + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
 	return ratio;
+}
+
+bool mayor_ratio(void* proceso_1, void* proceso_2){
+	float ratio_1 = calcular_ratio((pcb_t*)proceso_1);
+	float ratio_2 = calcular_ratio((pcb_t*)proceso_2);
+
+	return ratio_1 > ratio_2;
 }

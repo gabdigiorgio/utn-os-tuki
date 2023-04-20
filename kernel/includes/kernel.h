@@ -68,8 +68,8 @@ void iniciar_planificador_corto_plazo();
 void estado_ready();
 void estado_exec();
 void estado_block();
-pcb_t* planificar_lista_ready_hrrn();
 float calcular_ratio(pcb_t* pcb_actual);
+bool mayor_ratio(void* proceso_1, void* proceso_2);
 
 // ___ GLOBAL VARIABLES ____
 
