@@ -37,4 +37,27 @@ typedef struct
 	t_buffer* buffer;
 } t_paquete;
 
-#endif
+typedef struct
+{
+	uint16_t ip;
+	char ax[5];
+	char bx[5];
+	char cx[5];
+	char dx[5];
+	char eax[9];
+	char ebx[9];
+	char ecx[9];
+	char edx[9];
+	char rax[17];
+	char rbx[17];
+	char rcx[17];
+	char rdx[17];
+} t_registros;
+
+typedef struct
+{
+	t_registros* registros;
+	t_instruc* instrucciones;
+} t_contexto;
+
+#endif /* TAD_H_ */

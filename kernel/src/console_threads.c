@@ -46,6 +46,30 @@ void atender_consola(int *socket_console_client){
 					log_info(logger,"--------------------");
 				}
 
+		t_contexto* contexto = malloc(sizeof(t_contexto));
+		t_registros* registros = malloc(sizeof(t_registros));
+
+		char adsa[5] = "0004";
+
+		registros->ip = 0;
+		registros->ax = "000a";
+		registros->bx = "000b";
+		registros->cx = "000c";
+		registros->dx = "000d";
+		registros->eax = "00ea";
+		registros->ebx = "00eb";
+		registros->ecx = "00ec";
+		registros->edx = "00ed";
+		registros->rax = "00ra";
+		registros->rbx = "00rb";
+		registros->rcx = "00rc";
+		registros->rdx = "00rd";
+
+		contexto->instrucciones = instrucciones;
+		contexto->registros = registros;
+
+		serializar_contexto(cpu_connection,contexto);
+
 		free(paquete->buffer->stream);
 		free(paquete->buffer);
 		free(paquete);

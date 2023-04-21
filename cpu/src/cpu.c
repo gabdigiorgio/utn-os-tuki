@@ -11,6 +11,7 @@
 #include "../includes/cpu.h"
 
 //Declaramos los registros de proposito general
+int ip;
 char ax[5];
 char bx[5];
 char cx[5];
