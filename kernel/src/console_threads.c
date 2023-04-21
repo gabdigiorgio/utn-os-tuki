@@ -44,6 +44,7 @@ void atender_consola(int *socket_console_client){
 					if(strcmp(instrucciones->param2,"")) log_info(logger,instrucciones->param2);
 					if(strcmp(instrucciones->param3,"")) log_info(logger,instrucciones->param3);
 					log_info(logger,"--------------------");
+					//Se cambia el estado una vez enviadas las instrucciones para detener el loop de impresion de instrucciones.
 					estado=0;
 				}
 		agregar_pcb_a_new(socket_console_client,instruc_lista);

@@ -92,7 +92,7 @@ pthread_t pcb_new;
 
 void iterator(char* value);
 void iniciar_pcb_lists();
-pcb_t *crear_proceso(t_list* instrucciones);
+pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);
 void agregar_pcb_a_new(int,t_list* instrucciones);
 void iniciar_planificador_largo_plazo();
 void terminar_programa();
