@@ -294,3 +294,9 @@
 [INFO] 14:45:23:131 FILE-SYSTEM/(9553:9553): Memoria
 [INFO] 14:45:23:133 FILE-SYSTEM/(9553:9553): Fallo al realizar el handshake, cerrando conexion
 [INFO] 14:45:23:134 FILE-SYSTEM/(9553:9553): File System listo para recibir al Kernel
+[INFO] 11:56:45:576 FILE-SYSTEM/(4450:4450): Valores de configuracion leidos correctamente
+[INFO] 11:56:45:578 FILE-SYSTEM/(4450:4450): Memoria
+[INFO] 11:56:45:595 FILE-SYSTEM/(4450:4450): Se establecio correctamente la conexion
+[INFO] 11:56:45:596 FILE-SYSTEM/(4450:4450): File System listo para recibir al Kernel
+[INFO] 11:56:56:152 FILE-SYSTEM/(4450:4450): Se conecto el Kernel
+[INFO] 11:56:56:153 FILE-SYSTEM/(4450:4450): Handshake de Kernel recibido correctamente

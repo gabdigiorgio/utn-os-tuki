@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
 	cant_threads_activos = 0;
 	iniciar_pcb_lists();
-	iniciar_planificador_corto_plazo();
+	//iniciar_planificador_corto_plazo();
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos

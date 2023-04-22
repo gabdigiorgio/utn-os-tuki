@@ -9,14 +9,14 @@
 #include "../includes/server_utils.h"
 
 void atender_consola(int *socket_console_client){
-	t_list* instruc_lista = malloc(sizeof(t_list));
+	t_list* instruc_lista;
 	int socket = *socket_console_client;
 
 	instruc_lista = list_create();
 
 	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
-	while (estado == 1) {
+	while (1) {
 		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));

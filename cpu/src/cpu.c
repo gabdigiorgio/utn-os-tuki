@@ -50,8 +50,9 @@ int main(int argc, char *argv[]) {
 	int server_connection = iniciar_servidor(server_port);
 
 	log_info(logger, "Cpu lista para recibir al Kernel");
-	int connection_fd = esperar_cliente(server_connection);
-	log_info(logger,handshake(connection_fd));
+	//int connection_fd = esperar_cliente(server_connection);
+	prueba_dps_borrar();
+	//log_info(logger,handshake(connection_fd));
 	t_list* lista;
 
 	return EXIT_SUCCESS;
@@ -87,6 +88,36 @@ void terminar_programa()
 	log_destroy(logger);
 	config_destroy(config);
 	liberar_conexion(memoria_connection);
+}
+
+void prueba_dps_borrar(){
+	t_instruc* instruccion = malloc(sizeof(t_instruc));
+
+	instruccion->instruct = "SET";
+	instruccion->param1 = "AX";
+	instruccion->param2 = "0090";
+
+	leer_instruccion(instruccion);
+
+	t_instruc* instruccion2 = malloc(sizeof(t_instruc));
+
+	instruccion2->instruct = "YIELD";
+	leer_instruccion(instruccion2);
+
+	t_instruc* instruccion3 = malloc(sizeof(t_instruc));
+
+	instruccion3->instruct = "SET";
+	instruccion3->param1 = "RAX";
+	instruccion3->param2 = "AAAA";
+
+	leer_instruccion(instruccion3);
+
+	t_instruc* instruccion4 = malloc(sizeof(t_instruc));
+
+	instruccion4->instruct = "EXIT";
+	leer_instruccion(instruccion4);
+
+
 }
 
 

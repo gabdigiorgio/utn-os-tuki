@@ -457,3 +457,123 @@
 [INFO] 14:33:04:416 CPU/(9325:9325): Memoria
 [INFO] 14:33:04:418 CPU/(9325:9325): Se establecio correctamente la conexion
 [INFO] 14:33:04:419 CPU/(9325:9325): Cpu lista para recibir al Kernel
+[INFO] 11:56:51:365 CPU/(4467:4467): Valores de configuracion leidos correctamente
+[INFO] 11:56:51:370 CPU/(4467:4467): Memoria
+[INFO] 11:56:51:375 CPU/(4467:4467): Se establecio correctamente la conexion
+[INFO] 11:56:51:376 CPU/(4467:4467): Cpu lista para recibir al Kernel
+[INFO] 11:56:56:147 CPU/(4467:4467): Se conecto el Kernel
+[INFO] 11:56:56:147 CPU/(4467:4467): Handshake de Kernel recibido correctamente
+[INFO] 11:57:38:747 CPU/(4512:4512): Valores de configuracion leidos correctamente
+[INFO] 11:57:38:792 CPU/(4512:4512): Memoria
+[INFO] 11:58:23:779 CPU/(4532:4532): Valores de configuracion leidos correctamente
+[INFO] 11:58:23:782 CPU/(4532:4532): Memoria
+[INFO] 11:58:23:784 CPU/(4532:4532): Fallo al realizar el handshake, cerrando conexion
+[INFO] 11:58:23:788 CPU/(4532:4532): Cpu lista para recibir al Kernel
+[INFO] 11:58:31:569 CPU/(4532:4532): Se conecto el Kernel
+[INFO] 11:58:31:569 CPU/(4532:4532): Handshake de Kernel recibido correctamente
+[INFO] 12:34:52:971 CPU/(5832:5832): Valores de configuracion leidos correctamente
+[INFO] 12:34:54:575 CPU/(5832:5832): Memoria
+[INFO] 12:34:54:576 CPU/(5832:5832): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:34:54:576 CPU/(5832:5832): Cpu lista para recibir al Kernel
+[INFO] 12:38:32:729 CPU/(5973:5973): Valores de configuracion leidos correctamente
+[INFO] 12:38:34:016 CPU/(5973:5973): Memoria
+[INFO] 12:38:34:016 CPU/(5973:5973): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:38:34:016 CPU/(5973:5973): Cpu lista para recibir al Kernel
+[INFO] 12:41:01:466 CPU/(6043:6043): Valores de configuracion leidos correctamente
+[INFO] 12:41:14:848 CPU/(6043:6043): Memoria
+[INFO] 12:41:14:848 CPU/(6043:6043): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:41:14:848 CPU/(6043:6043): Cpu lista para recibir al Kernel
+[INFO] 12:42:25:688 CPU/(6146:6146): Valores de configuracion leidos correctamente
+[INFO] 12:42:27:503 CPU/(6146:6146): Memoria
+[INFO] 12:42:27:503 CPU/(6146:6146): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:42:27:504 CPU/(6146:6146): Cpu lista para recibir al Kernel
+[INFO] 12:43:26:720 CPU/(6287:6287): Valores de configuracion leidos correctamente
+[INFO] 12:43:27:801 CPU/(6287:6287): Memoria
+[INFO] 12:43:27:802 CPU/(6287:6287): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:43:27:802 CPU/(6287:6287): Cpu lista para recibir al Kernel
+[INFO] 12:43:30:320 CPU/(6287:6287): Ejecute SET
+[INFO] 12:53:03:552 CPU/(6563:6563): Valores de configuracion leidos correctamente
+[INFO] 12:53:04:624 CPU/(6563:6563): Memoria
+[INFO] 12:53:04:625 CPU/(6563:6563): Fallo al realizar el handshake, cerrando conexion
+[INFO] 12:53:04:625 CPU/(6563:6563): Cpu lista para recibir al Kernel
+[INFO] 12:53:11:882 CPU/(6563:6563): Ejecute SET
+[INFO] 12:53:17:748 CPU/(6563:6563): Ejecute YIELD
+[INFO] 13:11:01:063 CPU/(7484:7484): Valores de configuracion leidos correctamente
+[INFO] 13:11:02:173 CPU/(7484:7484): Memoria
+[INFO] 13:11:02:173 CPU/(7484:7484): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:11:02:174 CPU/(7484:7484): Cpu lista para recibir al Kernel
+[INFO] 13:11:07:770 CPU/(7484:7484): Ejecute SET
+[INFO] 13:12:30:780 CPU/(7626:7626): Valores de configuracion leidos correctamente
+[INFO] 13:12:32:163 CPU/(7626:7626): Memoria
+[INFO] 13:12:32:163 CPU/(7626:7626): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:12:32:164 CPU/(7626:7626): Cpu lista para recibir al Kernel
+[INFO] 13:12:41:251 CPU/(7626:7626): Ejecute SET
+[INFO] 13:17:42:051 CPU/(7755:7755): Valores de configuracion leidos correctamente
+[INFO] 13:17:42:987 CPU/(7755:7755): Memoria
+[INFO] 13:17:42:987 CPU/(7755:7755): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:17:42:987 CPU/(7755:7755): Cpu lista para recibir al Kernel
+[INFO] 13:17:46:103 CPU/(7755:7755): Ejecute SET
+[INFO] 13:17:46:886 CPU/(7755:7755): 0090
+[INFO] 13:17:46:887 CPU/(7755:7755): 0000
+[INFO] 13:19:31:198 CPU/(7897:7897): Valores de configuracion leidos correctamente
+[INFO] 13:19:32:683 CPU/(7897:7897): Memoria
+[INFO] 13:19:32:684 CPU/(7897:7897): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:19:32:684 CPU/(7897:7897): Cpu lista para recibir al Kernel
+[INFO] 13:19:35:849 CPU/(7897:7897): Ejecute SET
+[INFO] 13:19:37:444 CPU/(7897:7897): 0090
+[INFO] 13:19:37:445 CPU/(7897:7897): 0
+[INFO] 13:20:42:368 CPU/(7987:7987): Valores de configuracion leidos correctamente
+[INFO] 13:20:44:082 CPU/(7987:7987): Memoria
+[INFO] 13:20:44:082 CPU/(7987:7987): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:20:44:082 CPU/(7987:7987): Cpu lista para recibir al Kernel
+[INFO] 13:20:48:797 CPU/(7987:7987): Ejecute SET
+[INFO] 13:21:06:131 CPU/(7987:7987): 0090
+[INFO] 13:21:06:132 CPU/(7987:7987): 0
+[INFO] 13:21:59:139 CPU/(8100:8100): Valores de configuracion leidos correctamente
+[INFO] 13:22:00:090 CPU/(8100:8100): Memoria
+[INFO] 13:22:00:090 CPU/(8100:8100): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:22:00:091 CPU/(8100:8100): Cpu lista para recibir al Kernel
+[INFO] 13:22:06:382 CPU/(8100:8100): Ejecute SET
+[INFO] 13:22:09:234 CPU/(8100:8100): 0090
+[INFO] 13:22:10:741 CPU/(8100:8100): 00A0
+[INFO] 13:24:02:250 CPU/(8185:8185): Valores de configuracion leidos correctamente
+[INFO] 13:24:02:835 CPU/(8185:8185): Memoria
+[INFO] 13:24:02:835 CPU/(8185:8185): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:24:02:835 CPU/(8185:8185): Cpu lista para recibir al Kernel
+[INFO] 13:24:04:635 CPU/(8185:8185): Ejecute SET
+[INFO] 13:24:05:259 CPU/(8185:8185): 0090
+[INFO] 13:24:05:259 CPU/(8185:8185): 00A0
+[INFO] 13:24:14:186 CPU/(8185:8185): Ejecute YIELD
+[INFO] 13:24:14:186 CPU/(8185:8185): 0090
+[INFO] 13:24:39:642 CPU/(8266:8266): Valores de configuracion leidos correctamente
+[INFO] 13:24:40:418 CPU/(8266:8266): Memoria
+[INFO] 13:24:40:418 CPU/(8266:8266): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:24:40:419 CPU/(8266:8266): Cpu lista para recibir al Kernel
+[INFO] 13:24:42:418 CPU/(8266:8266): Ejecute SET
+[INFO] 13:24:43:091 CPU/(8266:8266): 0090
+[INFO] 13:24:43:091 CPU/(8266:8266): 
+[INFO] 13:24:44:338 CPU/(8266:8266): Ejecute YIELD
+[INFO] 13:24:44:339 CPU/(8266:8266): 0090
+[INFO] 13:52:45:684 CPU/(8891:8891): Valores de configuracion leidos correctamente
+[INFO] 13:52:46:890 CPU/(8891:8891): Memoria
+[INFO] 13:52:46:890 CPU/(8891:8891): Fallo al realizar el handshake, cerrando conexion
+[INFO] 13:52:46:890 CPU/(8891:8891): Cpu lista para recibir al Kernel
+[INFO] 13:52:54:389 CPU/(8891:8891): Ejecute SET
+[INFO] 13:52:55:381 CPU/(8891:8891): 0090
+[INFO] 13:52:55:772 CPU/(8891:8891): 
+[INFO] 13:53:01:083 CPU/(8891:8891): Ejecute YIELD
+[INFO] 13:53:09:388 CPU/(8891:8891): Ejecute SET
+[INFO] 13:53:11:309 CPU/(8891:8891): AAAA
+[INFO] 13:53:11:725 CPU/(8891:8891): 
+[INFO] 14:06:26:535 CPU/(9226:9226): Valores de configuracion leidos correctamente
+[INFO] 14:06:26:537 CPU/(9226:9226): Memoria
+[INFO] 14:06:26:538 CPU/(9226:9226): Fallo al realizar el handshake, cerrando conexion
+[INFO] 14:06:26:539 CPU/(9226:9226): Cpu lista para recibir al Kernel
+[INFO] 14:06:26:541 CPU/(9226:9226): Ejecute SET
+[INFO] 14:06:26:541 CPU/(9226:9226): 0090
+[INFO] 14:06:26:542 CPU/(9226:9226): 
+[INFO] 14:06:26:542 CPU/(9226:9226): Ejecute YIELD
+[INFO] 14:06:26:542 CPU/(9226:9226): Ejecute SET
+[INFO] 14:06:26:542 CPU/(9226:9226): AAAA
+[INFO] 14:06:26:542 CPU/(9226:9226): 
+[INFO] 14:06:26:542 CPU/(9226:9226): Ejecute EXIT
