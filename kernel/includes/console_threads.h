@@ -8,10 +8,9 @@
 #include "client_utils.h"
 #include "../../shared/includes/tad.h"
 
-void atender_consola(int *socket_console_client);
+void atender_consola(int socket_servidor);
 void iterator(char* value);
 
 extern t_log* logger;
-extern int cant_threads_activos;;
 
 #endif /* CONSOLE_THREADS_H_ */

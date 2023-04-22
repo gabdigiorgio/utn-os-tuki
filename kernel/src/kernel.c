@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
 	cant_threads_activos = 0;
 	iniciar_pcb_lists();
-	iniciar_planificador_corto_plazo();
+	//iniciar_planificador_corto_plazo();
 
 	// Nos conectamos a los "servidores" (memoria, file system y CPU) como "clientes"
 	// IMPORTANTE!! -> es probable que las siguientes conexiones tengan que ser manejadas mediante hilos e finalizar el kernel si pierde la conexion con alguno de estos
@@ -53,19 +53,12 @@ int main(int argc, char *argv[]) {
 
 
 	// Espero Conexiones de las consolas
-	while (1){
-		if(cant_threads_activos<CANTIDAD_DE_THREADS){
-		  pthread_t console_thread;
+	pthread_t console_thread;
+	pthread_create(&console_thread, NULL, (void*) atender_consola, socket_servidor);
 
-		   int *socket_console_client = malloc(sizeof(int));
-		   *socket_console_client = esperar_cliente(socket_servidor);
-
-		   pthread_create(&console_thread, NULL, (void*) atender_consola, socket_console_client);
-		   pthread_detach(console_thread);
-		   cant_threads_activos++;
-		}
+	while(1){
+		sleep(1);
 	}
-
 
 	terminar_programa();
 	recibido = 0;
