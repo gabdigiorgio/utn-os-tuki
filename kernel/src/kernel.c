@@ -51,6 +51,7 @@ int main(int argc, char *argv[]) {
 	int socket_servidor = iniciar_servidor(server_port);
 	log_info(logger, "Kernel listo para recibir Consolas");
 
+
 	// Espero Conexiones de las consolas
 	while (1){
 		if(cant_threads_activos<CANTIDAD_DE_THREADS){
@@ -61,14 +62,13 @@ int main(int argc, char *argv[]) {
 
 		   pthread_create(&console_thread, NULL, (void*) atender_consola, socket_console_client);
 		   pthread_detach(console_thread);
-
 		   cant_threads_activos++;
 		}
 	}
 
 
 	terminar_programa();
-
+	recibido = 0;
 	return EXIT_SUCCESS;
 }
 
@@ -79,10 +79,35 @@ void iniciar_pcb_lists(){
 	pcb_block_list = list_create();
 }
 
+
+//Falta agregar pid automatico
+pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
+	pcb_t *proceso = malloc(sizeof(pcb_t));
+	proceso->pid= largo+1;
+	proceso->estimado_proxima_rafaga=config_get_int_value(config,"ESTIMACION_INICIAL");
+	proceso->instrucciones=instrucciones;
+	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
+	return proceso;
+}
+
+void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
+	uint32_t largo = list_size(pcb_new_list);
+	pcb_t *proceso = crear_proceso(largo,instrucciones);
+	list_add(pcb_new_list,proceso);
+	sleep(1);
+	printf("PID = [%d] ingresa a NEW", proceso->pid);
+	sleep(2);
+	log_info(logger,"Proceso añadido correctamente");
+}
+void iniciar_planificador_largo_plazo(){
+	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
+	pthread_detach(pcb_new);
+}
 void terminar_programa()
 {
 	log_destroy(logger);
 	config_destroy(config);
+	list_destroy(pcb_ready_list);
 	liberar_conexion(memoria_connection);
 	liberar_conexion(file_system_connection);
 	liberar_conexion(cpu_connection);

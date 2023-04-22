@@ -103,6 +103,16 @@ char* server_port;
 char* algoritmo_planificacion;
 
 t_config* config;
+bool recibido = 0;
+//_Planificador a Largo Plazo
+pthread_t pcb_new;
 
+//Funciones
 
+void iterator(char* value);
+void iniciar_pcb_lists();
+pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);
+void agregar_pcb_a_new(int,t_list* instrucciones);
+void iniciar_planificador_largo_plazo();
+void terminar_programa();
 #endif /* KERNEL_H_ */
