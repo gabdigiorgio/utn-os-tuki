@@ -10,6 +10,8 @@
 #include<string.h>
 #include<commons/log.h>
 
+#include "../../shared/includes/tad.h"
+
 extern t_log* logger;
 
 int crear_conexion(char* ip, char* puerto);

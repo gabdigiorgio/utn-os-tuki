@@ -20,10 +20,12 @@
 #include "client_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
+#include "code_reader.h"
 #include "../../shared/includes/tad.h"
 
 void iterator(char* value);
 void terminar_programa();
+void prueba_dps_borrar();
 
 // ___ CONFIG VARIABLES ____
 
