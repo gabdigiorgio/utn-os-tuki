@@ -49,23 +49,23 @@ void atender_consola(int *socket_console_client){
 		t_contexto* contexto = malloc(sizeof(t_contexto));
 		t_registros* registros = malloc(sizeof(t_registros));
 
-		char adsa[5] = "0004";
-
 		registros->ip = 0;
-		registros->ax = "000a";
-		registros->bx = "000b";
-		registros->cx = "000c";
-		registros->dx = "000d";
-		registros->eax = "00ea";
-		registros->ebx = "00eb";
-		registros->ecx = "00ec";
-		registros->edx = "00ed";
-		registros->rax = "00ra";
-		registros->rbx = "00rb";
-		registros->rcx = "00rc";
-		registros->rdx = "00rd";
+		strcpy(registros->ax,"000a");
+		strcpy(registros->bx,"000b");
+		strcpy(registros->cx,"000c");
+		strcpy(registros->dx,"000d");
+		strcpy(registros->eax,"000000ea");
+		strcpy(registros->ebx,"000000eb");
+		strcpy(registros->ecx,"000000ec");
+		strcpy(registros->edx,"000000ed");
+		strcpy(registros->rax,"00000000000000ra");
+		strcpy(registros->rbx,"00000000000000rb");
+		strcpy(registros->rcx,"00000000000000rc");
+		strcpy(registros->rdx,"00000000000000rd");
 
-		contexto->instrucciones = instrucciones;
+		contexto->instrucciones = list_create();
+
+		contexto->instrucciones = instruc_lista;
 		contexto->registros = registros;
 
 		serializar_contexto(cpu_connection,contexto);
@@ -73,5 +73,7 @@ void atender_consola(int *socket_console_client){
 		free(paquete->buffer->stream);
 		free(paquete->buffer);
 		free(paquete);
+
+		estado = 0;
 		}
 }

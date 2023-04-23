@@ -57,7 +57,7 @@ typedef struct
 typedef struct
 {
 	t_registros* registros;
-	t_instruc* instrucciones;
+	t_list* instrucciones;
 } t_contexto;
 
 #endif /* TAD_H_ */

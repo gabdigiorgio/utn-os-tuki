@@ -20,6 +20,7 @@
 #include "client_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
+#include "../../shared/includes/tad.h"
 
 void iterator(char* value);
 void terminar_programa();

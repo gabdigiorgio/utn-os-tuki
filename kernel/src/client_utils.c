@@ -90,7 +90,7 @@ uint32_t calcular_tam_registros(t_registros* registros){
 	return size;
 }
 
-void copiar_instrucciones(void* stream, t_list* lista){
+void copiar_contexto(void* stream, t_list* lista, t_registros* registros){
 	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	int lineas = list_size(lista);
 	int offset = 0;
@@ -115,14 +115,10 @@ void copiar_instrucciones(void* stream, t_list* lista){
 			memcpy(stream + offset, &instrucciones->param3_length, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 			memcpy(stream + offset, instrucciones->param3, instrucciones->param3_length);
-			if(i != lineas) offset += instrucciones->param3_length;
+			offset += instrucciones->param3_length;
 		}
-}
 
-void copiar_registros(void* stream, t_registros* registros){
-	int offset = 0;
-
-	memcpy(stream + offset, registros->ip, sizeof(uint16_t));
+	memcpy(stream + offset, &registros->ip, sizeof(uint16_t));
 	offset += sizeof(uint16_t);
 	memcpy(stream + offset, registros->ax, sizeof(char) * 5);
 	offset += sizeof(char) * 5;
@@ -147,7 +143,6 @@ void copiar_registros(void* stream, t_registros* registros){
 	memcpy(stream + offset, registros->rcx, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
 	memcpy(stream + offset, registros->rdx, sizeof(char) * 17);
-	offset += sizeof(char) * 17;
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
@@ -188,8 +183,7 @@ void serializar_contexto(int socket, t_contexto* contexto){
 	void* stream = malloc(buffer->size);
 
 	//Leo toda la lista para copiar los valores en memoria
-	copiar_registros(stream,contexto->registros);
-	copiar_instrucciones(stream,contexto->instrucciones);
+	copiar_contexto(stream,contexto->instrucciones,contexto->registros);
 
 	//Añado el stream a mi buffers
 	buffer->stream = stream;

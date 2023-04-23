@@ -11,7 +11,7 @@
 #include "../includes/cpu.h"
 
 //Declaramos los registros de proposito general
-int ip;
+uint16_t ip;
 char ax[5];
 char bx[5];
 char cx[5];
@@ -24,11 +24,13 @@ char rax[17];
 char rbx[17];
 char rcx[17];
 char rdx[17];
+t_list* instruc_lista;
 
 
 int main(int argc, char *argv[]) {
 	//Iniciamos tanto el log como el config
 	logger = iniciar_logger();
+	instruc_lista = list_create();
 
 	 if (argc < 2) {
 		 log_error(logger, "Falta parametro del path del archivo de configuracion");
@@ -53,7 +55,61 @@ int main(int argc, char *argv[]) {
 	log_info(logger, "Cpu lista para recibir al Kernel");
 	int connection_fd = esperar_cliente(server_connection);
 	log_info(logger,handshake(connection_fd));
-	t_list* lista;
+
+	t_contexto* contexto = malloc(sizeof(t_contexto));
+
+	contexto->instrucciones = list_create();
+
+	int salir = 0;
+
+	while (salir != 1) {
+		//Reservo memoria para el paquete
+		t_paquete* paquete = malloc(sizeof(t_paquete));
+		paquete->buffer = malloc(sizeof(t_buffer));
+
+		//Recivo el header del paquete + el stream de datos
+		deserializar_header(paquete, connection_fd);
+
+		//Reviso el header para saber de que paquete se trata y deserealizo acorde
+		switch(paquete->codigo_operacion){
+			case 1:
+				contexto = deserializar_contexto(paquete->buffer, paquete->lineas);
+				break;
+			default:
+				break;
+		}
+		ip = contexto->registros->ip;
+		strcpy(contexto->registros->ax,ax);
+		strcpy(contexto->registros->bx,bx);
+		strcpy(contexto->registros->cx,cx);
+		strcpy(contexto->registros->dx,dx);
+		strcpy(contexto->registros->eax,eax);
+		strcpy(contexto->registros->ebx,ebx);
+		strcpy(contexto->registros->ecx,ecx);
+		strcpy(contexto->registros->edx,edx);
+		strcpy(contexto->registros->rax,rax);
+		strcpy(contexto->registros->rbx,rbx);
+		strcpy(contexto->registros->rcx,rcx);
+		strcpy(contexto->registros->rdx,rdx);
+
+		instruc_lista = contexto->instrucciones;
+		int lineas = list_size(instruc_lista);
+				t_instruc* instrucciones = malloc(sizeof(t_instruc));
+
+		/* for(int i = 0; i < lineas; i++){
+					instrucciones = list_get(instruc_lista, i);
+					log_info(logger,"--------------------");
+					log_info(logger,instrucciones->instruct);
+					if(strcmp(instrucciones->param1,"")) log_info(logger,instrucciones->param1);
+					if(strcmp(instrucciones->param2,"")) log_info(logger,instrucciones->param2);
+					if(strcmp(instrucciones->param3,"")) log_info(logger,instrucciones->param3);
+					log_info(logger,"--------------------");
+				} */
+
+		salir = 1;
+	}
+
+	list_iterate(instruc_lista,ejecutar_instruccion);
 
 	return EXIT_SUCCESS;
 }
