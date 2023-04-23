@@ -8,6 +8,8 @@
 #include <commons/string.h>
 #include <pthread.h>
 #include <commons/collections/list.h>
+#include <commons/temporal.h>
+
 
 #include "server_utils.h"
 #include "client_utils.h"
@@ -53,7 +55,7 @@ typedef struct {
 	pcb_estado_t estado; // tipo de estado, puede ser un enum
 	uint32_t program_counter;
 	uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
-	uint32_t tiempo_llegada_ready; // se hace con timer, ver timestamp
+	t_temporal* tiempo_espera_en_ready; // se hace con timer, ver timestamp
 	//registros_cpu_t registros_cpu; // crear struct de registros de cpu
 	tabla_segmentos_t tabla_segmento; // nada
 	t_list* instrucciones; // lista recibida de consola
