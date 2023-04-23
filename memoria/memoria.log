@@ -645,3 +645,14 @@
 [INFO] 14:54:30:942 MEMORIA/(4527:4527): Se conecto un cliente!
 [INFO] 14:54:30:944 MEMORIA/(4527:4585): Thread iniciado correctamente
 [INFO] 14:54:30:952 MEMORIA/(4527:4585): Handshake de Kernel recibido correctamente
+[INFO] 20:02:49:279 MEMORIA/(1872:1872): Valores de configuracion leidos correctamente
+[INFO] 20:02:49:280 MEMORIA/(1872:1872): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 20:02:53:020 MEMORIA/(1872:1872): Se conecto un cliente!
+[INFO] 20:02:53:021 MEMORIA/(1872:1893): Thread iniciado correctamente
+[INFO] 20:02:53:022 MEMORIA/(1872:1893): Handshake de File System recibido correctamente
+[INFO] 20:03:00:560 MEMORIA/(1872:1872): Se conecto un cliente!
+[INFO] 20:03:00:567 MEMORIA/(1872:1982): Thread iniciado correctamente
+[INFO] 20:03:00:569 MEMORIA/(1872:1982): Handshake de CPU recibido correctamente
+[INFO] 20:03:05:815 MEMORIA/(1872:1872): Se conecto un cliente!
+[INFO] 20:03:05:823 MEMORIA/(1872:2056): Thread iniciado correctamente
+[INFO] 20:03:05:823 MEMORIA/(1872:2056): Handshake de Kernel recibido correctamente

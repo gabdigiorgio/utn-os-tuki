@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
 
 	int salir = 0;
 
-	while (salir != 1) {
+	while (1) {
 		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
@@ -93,27 +93,11 @@ int main(int argc, char *argv[]) {
 		strcpy(contexto->registros->rdx,rdx);
 
 		instruc_lista = contexto->instrucciones;
-		int lineas = list_size(instruc_lista);
-				t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
-		/* for(int i = 0; i < lineas; i++){
-					instrucciones = list_get(instruc_lista, i);
-					log_info(logger,"--------------------");
-					log_info(logger,instrucciones->instruct);
-					if(strcmp(instrucciones->param1,"")) log_info(logger,instrucciones->param1);
-					if(strcmp(instrucciones->param2,"")) log_info(logger,instrucciones->param2);
-					if(strcmp(instrucciones->param3,"")) log_info(logger,instrucciones->param3);
-					log_info(logger,"--------------------");
-				} */
+		list_sort(instruc_lista,(void*)sort_list);
 
-		salir = 1;
+		list_iterate(instruc_lista,ejecutar_instruccion);
 	}
-
-	//list_iterate(instruc_lista,ejecutar_instruccion);
-	//int connection_fd = esperar_cliente(server_connection);
-	prueba_dps_borrar();
-	//log_info(logger,handshake(connection_fd));
-	t_list* lista;
 
 	return EXIT_SUCCESS;
 }
@@ -150,35 +134,8 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 }
 
-void prueba_dps_borrar(){
-	t_instruc* instruccion = malloc(sizeof(t_instruc));
-
-	instruccion->instruct = "SET";
-	instruccion->param1 = "AX";
-	instruccion->param2 = "0090";
-
-	leer_instruccion(instruccion);
-
-	t_instruc* instruccion2 = malloc(sizeof(t_instruc));
-
-	instruccion2->instruct = "YIELD";
-	leer_instruccion(instruccion2);
-
-	t_instruc* instruccion3 = malloc(sizeof(t_instruc));
-
-	instruccion3->instruct = "SET";
-	instruccion3->param1 = "RAX";
-	instruccion3->param2 = "AAAA";
-
-	leer_instruccion(instruccion3);
-
-	t_instruc* instruccion4 = malloc(sizeof(t_instruc));
-
-	instruccion4->instruct = "EXIT";
-	leer_instruccion(instruccion4);
-
-
+static bool sort_list(t_instruc* instruc1, t_instruc* instruc2){
+	return instruc1->nro < instruc2->nro;
 }
-
 
 

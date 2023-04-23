@@ -37,6 +37,10 @@ typedef struct
 	t_buffer* buffer;
 } t_paquete;
 
+//10 instrucciones
+//ip vuelven en 5, entonces va a BLOCK
+//ip vuelve en 10, va a EXIT
+
 typedef struct
 {
 	uint16_t ip;
@@ -58,6 +62,7 @@ typedef struct
 {
 	t_registros* registros;
 	t_list* instrucciones;
+	//uint32_t pid;
 } t_contexto;
 
 #endif /* TAD_H_ */

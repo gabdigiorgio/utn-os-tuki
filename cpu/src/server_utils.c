@@ -50,7 +50,7 @@ void deserializar_header(t_paquete* paquete, int socket){
 }
 
 t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
-	t_list* lista = malloc(sizeof(t_list));
+	t_list* lista = list_create();
 	t_contexto* contexto = malloc(sizeof(t_contexto));
 
 	void* stream = buffer->stream;

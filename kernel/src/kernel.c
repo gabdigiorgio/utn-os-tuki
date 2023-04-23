@@ -140,6 +140,22 @@ void estado_ready() {
 		}
 	}
 }
+
+/*
+ * funcion_ejecutar{
+ *
+ * 		wait(sem_exec == 0)
+ *
+ * 		serializar_contexto()
+ *
+ * 		recibir_contexto()
+ *
+ *      cosas
+ *
+ *      signal(sem_exec) (reduce el semasforo a 0)
+ *
+ *     }
+ */
 void estado_exec(){
 	while(1)
 	{

@@ -26,6 +26,7 @@
 void iterator(char* value);
 void terminar_programa();
 void prueba_dps_borrar();
+static bool sort_list(t_instruc* instruc1, t_instruc* instruc2);
 
 // ___ CONFIG VARIABLES ____
 
