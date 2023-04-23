@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
 		salir = 1;
 	}
 
-	list_iterate(instruc_lista,ejecutar_instruccion);
+	//list_iterate(instruc_lista,ejecutar_instruccion);
 	//int connection_fd = esperar_cliente(server_connection);
 	prueba_dps_borrar();
 	//log_info(logger,handshake(connection_fd));

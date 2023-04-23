@@ -615,3 +615,34 @@
 [INFO] 01:55:59:557 CPU/(4394:4394): Se conecto el Kernel
 [INFO] 01:55:59:557 CPU/(4394:4394): Handshake de Kernel recibido correctamente
 [INFO] 01:57:20:924 CPU/(4394:4394): Ejecute SET
+[INFO] 14:54:27:709 CPU/(4561:4561): Valores de configuracion leidos correctamente
+[INFO] 14:54:27:709 CPU/(4561:4561): Memoria
+[INFO] 14:54:27:715 CPU/(4561:4561): Se establecio correctamente la conexion
+[INFO] 14:54:27:716 CPU/(4561:4561): Cpu lista para recibir al Kernel
+[INFO] 14:54:30:953 CPU/(4561:4561): Se conecto el Kernel
+[INFO] 14:54:30:953 CPU/(4561:4561): Handshake de Kernel recibido correctamente
+[INFO] 14:54:51:854 CPU/(4561:4561): Ejecute SET
+[INFO] 14:55:47:868 CPU/(4675:4675): Valores de configuracion leidos correctamente
+[INFO] 14:55:47:868 CPU/(4675:4675): Memoria
+[INFO] 14:55:47:869 CPU/(4675:4675): Fallo al realizar el handshake, cerrando conexion
+[INFO] 14:55:47:869 CPU/(4675:4675): Cpu lista para recibir al Kernel
+[INFO] 14:55:51:224 CPU/(4675:4675): Se conecto el Kernel
+[INFO] 14:55:51:224 CPU/(4675:4675): Handshake de Kernel recibido correctamente
+[INFO] 14:56:29:483 CPU/(4727:4727): Valores de configuracion leidos correctamente
+[INFO] 14:56:30:617 CPU/(4727:4727): Memoria
+[INFO] 14:56:30:617 CPU/(4727:4727): Fallo al realizar el handshake, cerrando conexion
+[INFO] 14:56:30:617 CPU/(4727:4727): Cpu lista para recibir al Kernel
+[INFO] 14:58:40:748 CPU/(4791:4791): Valores de configuracion leidos correctamente
+[INFO] 14:58:41:797 CPU/(4791:4791): Memoria
+[INFO] 14:58:41:797 CPU/(4791:4791): Fallo al realizar el handshake, cerrando conexion
+[INFO] 14:58:41:797 CPU/(4791:4791): Cpu lista para recibir al Kernel
+[INFO] 14:59:01:139 CPU/(4791:4791): Se conecto el Kernel
+[INFO] 14:59:01:139 CPU/(4791:4791): Handshake de Kernel recibido correctamente
+[INFO] 15:01:35:471 CPU/(4791:4791): Ejecute SET
+[INFO] 15:01:35:471 CPU/(4791:4791): 0090
+[INFO] 15:01:35:471 CPU/(4791:4791): 
+[INFO] 15:01:35:471 CPU/(4791:4791): Ejecute YIELD
+[INFO] 15:01:35:471 CPU/(4791:4791): Ejecute SET
+[INFO] 15:01:35:471 CPU/(4791:4791): AAAA
+[INFO] 15:01:35:471 CPU/(4791:4791): 
+[INFO] 15:01:35:471 CPU/(4791:4791): Ejecute EXIT
