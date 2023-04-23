@@ -12,5 +12,7 @@ void atender_consola(int socket_servidor);
 void iterator(char* value);
 
 extern t_log* logger;
+extern int cant_threads_activos;;
+extern int cpu_connection;
 
 #endif /* CONSOLE_THREADS_H_ */

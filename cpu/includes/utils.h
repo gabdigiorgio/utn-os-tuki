@@ -8,6 +8,11 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 
+#include "../../shared/includes/tad.h"
+
+extern t_log* logger;
+
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
+void ejecutar_instruccion(t_instruc* instruccion);
 #endif /* CLIENT_H_ */
