@@ -35,6 +35,8 @@ int main(int argc, char *argv[]) {
 
 	iniciar_pcb_lists();
 
+	iniciar_semaforos();
+
 	//iniciar_planificador_corto_plazo();
 
 	// ---------------------------------------------
@@ -75,8 +77,9 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 }
 
-
-
+void iniciar_semaforos(){
+	sem_init(&sem_estado_exec, 0, 1);
+}
 
 void iniciar_pcb_lists(){
 	pcb_ready_list = init_list_mutex();
@@ -177,17 +180,17 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 }
 
 
-//void estado_exec(){
-//	while(1)
-//	{
-//		if(!list_is_empty(pcb_exec_list)){
-//			pcb_t* proceso_ejecutando=list_pop(pcb_exec_list);
-//			proceso_ejecutando->estado=PCB_EXEC;
-//			//ejecutar proceso
-//			proceso_ejecutando->estado = PCB_EXIT;
-//		}
-//	}
-//}
+void estado_exec(){
+	while(1)
+	{
+		sem_wait(&sem_estado_exec);
+		if(!list_is_empty(pcb_ready_list)){
+			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
+			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
+		}
+		sem_post(&sem_estado_exec);
+	}
+}
 
 
 void estado_block(){

@@ -7,6 +7,7 @@
 #include <commons/log.h>
 #include <commons/string.h>
 #include <pthread.h>
+#include <semaphore.h>
 #include <commons/collections/list.h>
 
 #include "server_utils.h"
@@ -89,6 +90,8 @@ t_lista_mutex *pcb_ready_list;
 t_lista_mutex *pcb_new_list;
 t_lista_mutex *pcb_block_list;
 
+sem_t sem_estado_exec;
+
 // _____________________
 
 // ___ CONFIG VARIABLES ____
@@ -114,6 +117,7 @@ pthread_t pcb_new;
 
 void iterator(char* value);
 void iniciar_pcb_lists();
+void iniciar_semaforos();
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);
 void agregar_pcb_a_new(int,t_list* instrucciones);
 void iniciar_planificador_largo_plazo();
