@@ -101,6 +101,8 @@ char* cpu_port;
 char* server_port;
 
 char* algoritmo_planificacion;
+char* estimacion_inicial;
+char* hrrn_alfa;
 
 t_config* config;
 bool recibido = 0;

@@ -27,6 +27,8 @@ extern t_log* logger;
 extern char* server_port;
 
 extern char* algoritmo_planificacion;
+extern char* estimacion_inicial;
+extern char* hrrn_alfa;
 
 extern t_config* config;
 
