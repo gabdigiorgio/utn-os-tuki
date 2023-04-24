@@ -75,7 +75,7 @@ int initial_setup(){
 
 	// ESTIMACION_INICIAL
 	if (config_has_property(config, "ESTIMACION_INICIAL")){
-		estimacion_inicial = config_get_string_value(config, "ESTIMACION_INICIAL");
+		estimacion_inicial = config_get_int_value(config, "ESTIMACION_INICIAL");
 		} else {
 			failed_initial_setup("ESTIMACION_INICIAL");
 			error = 0;
@@ -83,7 +83,7 @@ int initial_setup(){
 
 	// HRRN_ALFA
 	if (config_has_property(config, "HRRN_ALFA")){
-		hrrn_alfa = config_get_string_value(config, "HRRN_ALFA");
+		hrrn_alfa = config_get_double_value(config, "HRRN_ALFA");
 		} else {
 			failed_initial_setup("HRRN_ALFA");
 			error = 0;

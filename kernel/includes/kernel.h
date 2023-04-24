@@ -40,6 +40,8 @@ typedef struct{
 	archivo_abierto_t* archivos_abiertos;
 }tabla_archivos_abiertos_t;
 
+
+
 typedef enum {
     PCB_NEW,
     PCB_READY,
@@ -66,7 +68,7 @@ void terminar_programa();
 
 void iniciar_planificador_corto_plazo();
 void estado_ready();
-void estado_exec();
+void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 void estado_block();
 float calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
@@ -83,10 +85,9 @@ int cpu_connection;
 
 int cant_threads_activos;
 
-t_list *pcb_ready_list;
-t_list *pcb_new_list;
-t_list *pcb_exec_list;
-t_list *pcb_block_list;
+t_lista_mutex *pcb_ready_list;
+t_lista_mutex *pcb_new_list;
+t_lista_mutex *pcb_block_list;
 
 // _____________________
 
@@ -101,8 +102,8 @@ char* cpu_port;
 char* server_port;
 
 char* algoritmo_planificacion;
-char* estimacion_inicial;
-char* hrrn_alfa;
+int estimacion_inicial;
+float hrrn_alfa;
 
 t_config* config;
 bool recibido = 0;

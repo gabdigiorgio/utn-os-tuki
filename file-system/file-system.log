@@ -316,3 +316,9 @@
 [INFO] 20:02:53:022 FILE-SYSTEM/(1887:1887): File System listo para recibir al Kernel
 [INFO] 20:03:05:826 FILE-SYSTEM/(1887:1887): Se conecto el Kernel
 [INFO] 20:03:05:826 FILE-SYSTEM/(1887:1887): Handshake de Kernel recibido correctamente
+[INFO] 04:24:58:495 FILE-SYSTEM/(5325:5325): Valores de configuracion leidos correctamente
+[INFO] 04:24:58:513 FILE-SYSTEM/(5325:5325): Memoria
+[INFO] 04:24:58:516 FILE-SYSTEM/(5325:5325): Se establecio correctamente la conexion
+[INFO] 04:24:58:516 FILE-SYSTEM/(5325:5325): File System listo para recibir al Kernel
+[INFO] 04:25:16:001 FILE-SYSTEM/(5325:5325): Se conecto el Kernel
+[INFO] 04:25:16:001 FILE-SYSTEM/(5325:5325): Handshake de Kernel recibido correctamente
