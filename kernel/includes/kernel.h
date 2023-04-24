@@ -56,7 +56,7 @@ typedef struct {
 	uint32_t program_counter;
 	uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
 	uint32_t tiempo_llegada_ready; // se hace con timer, ver timestamp
-	//registros_cpu_t registros_cpu; // crear struct de registros de cpu
+	t_registros registros_cpu; // crear struct de registros de cpu
 	tabla_segmentos_t tabla_segmento; // nada
 	t_list* instrucciones; // lista recibida de consola
 	tabla_archivos_abiertos_t tabla_archivos; // nada
@@ -72,7 +72,7 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 void estado_block();
 float calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
-
+void enviar_contexto(socket_servidor,contexto);
 // ___ GLOBAL VARIABLES ____
 
 t_log* logger;
