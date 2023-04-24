@@ -203,7 +203,7 @@ void estado_block(){
 }
 
 float calcular_ratio(pcb_t* pcb_actual){
-	float ratio = (pcb_actual->tiempo_llegada_ready + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
+	float ratio = (pcb_actual->tiempo_llegada_ready + hrrn_alfa*pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
 	return ratio;
 }
 
