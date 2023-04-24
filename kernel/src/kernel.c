@@ -123,6 +123,7 @@ void terminar_programa()
 	list_mutex_destroy(pcb_new_list);
 	list_mutex_destroy(pcb_ready_list);
 	list_mutex_destroy(pcb_block_list);
+	sem_destroy(&sem_estado_exec);
 	liberar_conexion(memoria_connection);
 	liberar_conexion(file_system_connection);
 	liberar_conexion(cpu_connection);
@@ -186,6 +187,8 @@ void estado_exec(){
 		sem_wait(&sem_estado_exec);
 		if(!list_is_empty(pcb_ready_list)){
 			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
+			pcb_a_ejecutar->estado = PCB_EXEC;
+			log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
 			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
 		sem_post(&sem_estado_exec);
