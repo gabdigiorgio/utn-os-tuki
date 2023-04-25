@@ -122,7 +122,6 @@ bool recibido = 0;
 pthread_t pcb_new;
 
 //Funciones
-
 void iterator(char* value);
 void iniciar_pcb_lists();
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);

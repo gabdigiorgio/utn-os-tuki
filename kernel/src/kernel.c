@@ -91,7 +91,7 @@ void iniciar_pcb_lists(){
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
 	proceso->pid= largo+1;
-	proceso->estimado_proxima_rafaga=estimacion_inicial;
+	proceso->estimado_proxima_rafaga=config_get_int_value(config,"ESTIMACION_INICIAL");
 	proceso->instrucciones=instrucciones;
 	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
 	return proceso;
