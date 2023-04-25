@@ -15,6 +15,7 @@
 #include "utils.h"
 #include "initial_setup.h"
 #include "../../shared/includes/tad.h"
+#include "semaphore.h"
 
 #define CANTIDAD_DE_THREADS 4
 
@@ -65,7 +66,7 @@ typedef struct {
 void iterator(char* value);
 void iniciar_pcb_lists();
 void terminar_programa();
-
+void iniciar_planificador_largo_plazo();
 void iniciar_planificador_corto_plazo();
 void estado_ready();
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
@@ -89,6 +90,16 @@ t_lista_mutex *pcb_ready_list;
 t_lista_mutex *pcb_new_list;
 t_lista_mutex *pcb_block_list;
 
+//Semaforos
+//Generales
+
+sem_t sem_grado_multiprogramacion;
+
+//Largo Plazo
+sem_t mutex_list_new;
+sem_t mutex_list_exit;
+sem_t admitir_pcb;
+sem_t sem_list_exit;
 // _____________________
 
 // ___ CONFIG VARIABLES ____
@@ -117,5 +128,6 @@ void iniciar_pcb_lists();
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);
 void agregar_pcb_a_new(int,t_list* instrucciones);
 void iniciar_planificador_largo_plazo();
+int get_grado_multiprogramacion();
 void terminar_programa();
 #endif /* KERNEL_H_ */

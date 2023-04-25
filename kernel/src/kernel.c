@@ -59,7 +59,9 @@ int main(int argc, char *argv[]) {
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
 	log_info(logger, "Kernel listo para recibir Consolas");
-
+	//Se proceden a iniciar la estructuras necesarias para la planificacion
+	iniciar_pcb_lists();
+	iniciar_planificador_largo_plazo();
 	// ---------------------------------------------
 
 	// Espero Conexiones de las consolas
@@ -85,7 +87,7 @@ void iniciar_pcb_lists(){
 }
 
 
-//Falta agregar pid automatico
+
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
 	proceso->pid= largo+1;
@@ -99,15 +101,18 @@ pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
 	uint32_t largo = list_size(pcb_new_list->lista);
 	pcb_t *proceso = crear_proceso(largo,instrucciones);
+	sem_wait(&mutex_list_new);
 	list_push(pcb_new_list,proceso);
-	sleep(1);
+	sem_post(&mutex_list_new);
 	printf("PID = [%d] ingresa a NEW", proceso->pid);
-	sleep(2);
-	log_info(logger,"Proceso añadido correctamente");
+	sem_post(&admitir_pcb);
+
 }
 
 
 void iniciar_planificador_largo_plazo(){
+	sem_init(&sem_grado_multiprogramacion,0,get_grado_multiprogramacion());
+	sem_init(&mutex_list_new,0,1);
 	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
 	pthread_detach(pcb_new);
 }
@@ -136,13 +141,15 @@ void iniciar_planificador_corto_plazo(){
 }
 
 void estado_ready() {
-
-	pcb_t* pcb_a_ejecutar = NULL;
-
 	while(1){
+		sem_wait(&admitir_pcb);
+		sem_wait(&sem_grado_multiprogramacion);
+		pcb_t* pcb_a_ejecutar;
 
 		if (!list_is_empty(pcb_new_list->lista)){
+			sem_wait(&mutex_list_new);
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
+			sem_post(&mutex_list_new);
 			list_push(pcb_ready_list, pcb_nuevo);
 		}
 
@@ -185,6 +192,8 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 //			proceso_ejecutando->estado=PCB_EXEC;
 //			//ejecutar proceso
 //			proceso_ejecutando->estado = PCB_EXIT;
+//
+//			sem_post(&sem_grado_multiprogramacion);
 //		}
 //	}
 //}
@@ -195,7 +204,9 @@ void estado_block(){
 
 	}
 }
-
+int get_grado_multiprogramacion(){
+	return config_get_int_value(config,"GRADO_MAX_MULTIPROGRAMACION");
+}
 float calcular_ratio(pcb_t* pcb_actual){
 	float ratio = (pcb_actual->tiempo_llegada_ready + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
 	return ratio;
