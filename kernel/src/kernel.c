@@ -93,6 +93,7 @@ t_contexto obtener_contexto_pcb(pcb_t pcb) {
 void enviar_contexto(int socket_servidor,t_contexto contexto){
 	serializar_contexto(socket_servidor,contexto);
 	//esperar respuesta de cpu
+	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
 	t_paquete* paquete = malloc(sizeof(t_paquete));
 			paquete->buffer = malloc(sizeof(t_buffer));
 
@@ -100,7 +101,12 @@ void enviar_contexto(int socket_servidor,t_contexto contexto){
 			deserializar_header(paquete,socket_servidor);
 
 	t_contexto* contexto_actualizado=deserializar_contexto(paquete->buffer, paquete->lineas);
-	if(contexto->instrucciones==size(contexto_actualizado->instrucciones))
+	if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->ip))
+	{
+		log_info(logger,"proceso a exit")
+	}
+	else
+		log_info(logger,"proceso a block")
 
 
 
