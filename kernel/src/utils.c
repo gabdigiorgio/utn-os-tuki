@@ -46,3 +46,9 @@ void list_mutex_destroy(t_lista_mutex * list){
 	free(list);
 }
 
+bool list_mutex_is_empty(t_lista_mutex * list){
+	pthread_mutex_lock(&(list->mutex));
+	bool is_empty = list_is_empty(list->lista);
+	pthread_mutex_unlock(&(list->mutex));
+	return is_empty;
+}

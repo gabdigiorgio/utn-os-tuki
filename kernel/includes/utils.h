@@ -21,4 +21,5 @@ t_lista_mutex* init_list_mutex();
 void list_push(t_lista_mutex * list , void* info);
 void * list_pop(t_lista_mutex * list);
 void list_mutex_destroy(t_lista_mutex * list);
+bool list_mutex_is_empty(t_lista_mutex * list);
 #endif /* CLIENT_H_ */

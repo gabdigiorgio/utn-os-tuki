@@ -185,7 +185,7 @@ void estado_exec(){
 	while(1)
 	{
 		sem_wait(&sem_estado_exec);
-		if(!list_is_empty(pcb_ready_list)){
+		if(!list_mutex_is_empty(pcb_ready_list)){
 			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
 			pcb_a_ejecutar->estado = PCB_EXEC;
 			log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
