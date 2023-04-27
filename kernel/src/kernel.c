@@ -174,18 +174,6 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
  *
  *
  */
-}
-
-
-//void estado_exec(){
-//	while(1)
-//	{
-//		if(!list_is_empty(pcb_exec_list)){
-//			pcb_t* proceso_ejecutando=list_pop(pcb_exec_list);
-//			proceso_ejecutando->estado=PCB_EXEC;
-//			//ejecutar proceso
-//			proceso_ejecutando->estado = PCB_EXIT;
-//		}
 //	}
 //}
 
@@ -197,7 +185,7 @@ void estado_block(){
 }
 
 float calcular_ratio(pcb_t* pcb_actual){
-	float ratio = (pcb_actual->tiempo_llegada_ready + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
+	float ratio = (temporal_gettime(pcb_actual->tiempo_espera_en_ready) + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
 	return ratio;
 }
 
