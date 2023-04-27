@@ -144,15 +144,25 @@ void estado_ready() {
 		if (!list_is_empty(pcb_new_list->lista)){
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
 			list_push(pcb_ready_list, pcb_nuevo);
+			pcb_nuevo->tiempo_espera_en_ready = temporal_create();
 		}
 
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
 			pcb_a_ejecutar = list_pop(pcb_ready_list);
+			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
 			enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
+
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			//list_add_sorted(pcb_exec_list, pcb_a_ejecutar, mayor_ratio);
-			// pcb_a_ejecutar = list_pop(pcb_ready_list);
+			pthread_mutex_lock(&(pcb_ready_list->mutex));
+			list_sort(pcb_ready_list->lista , mayor_ratio);
+			pthread_mutex_unlock(&(pcb_ready_list->mutex));
+
+			pcb_a_ejecutar = list_pop(pcb_ready_list);
+
+			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
+
+			enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
 	}
 }
@@ -160,9 +170,13 @@ void estado_ready() {
 
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 
+
 /*
  *
  * 		wait(sem_exec == 0)
+ *
+ *
+ * 		t_temporal* tiempo_en_ejecucion = temporal_create(); //NO MODIFICAR (calculo para HRRN)
  *
  * 		serializar_contexto()
  *
@@ -170,12 +184,20 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
  *
  *      cosas
  *
+ *		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
+ *		pcb_a_ejecutar->estimado_proxima_rafaga =  //NO MODIFICAR (calculo para HRRN)
+ *			hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
+ *			+ (1-hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
+ *
+ *		temporal_destroy(tiempo_en_ejecucion);  //NO MODIFICAR (calculo para HRRN)
+
  *      signal(sem_exec) (reduce el semasforo a 0)
  *
  *
  */
-//	}
-//}
+
+
+}
 
 
 void estado_block(){
@@ -185,7 +207,11 @@ void estado_block(){
 }
 
 float calcular_ratio(pcb_t* pcb_actual){
-	float ratio = (temporal_gettime(pcb_actual->tiempo_espera_en_ready) + pcb_actual->estimado_proxima_rafaga)/pcb_actual->estimado_proxima_rafaga;
+	float ratio = (
+			temporal_gettime(pcb_actual->tiempo_espera_en_ready)
+			+ pcb_actual->estimado_proxima_rafaga
+			)
+			/pcb_actual->estimado_proxima_rafaga;
 	return ratio;
 }
 
