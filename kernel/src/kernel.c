@@ -101,9 +101,7 @@ pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
 	uint32_t largo = list_size(pcb_new_list->lista);
 	pcb_t *proceso = crear_proceso(largo,instrucciones);
-	sem_wait(&mutex_list_new);
 	list_push(pcb_new_list,proceso);
-	sem_post(&mutex_list_new);
 	printf("PID = [%d] ingresa a NEW", proceso->pid);
 	sem_post(&admitir_pcb);
 
@@ -112,7 +110,7 @@ void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
 
 void iniciar_planificador_largo_plazo(){
 	sem_init(&sem_grado_multiprogramacion,0,get_grado_multiprogramacion());
-	sem_init(&mutex_list_new,0,1);
+	init_list_mutex();
 	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
 	pthread_detach(pcb_new);
 }
@@ -147,9 +145,7 @@ void estado_ready() {
 		pcb_t* pcb_a_ejecutar;
 
 		if (!list_is_empty(pcb_new_list->lista)){
-			sem_wait(&mutex_list_new);
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
-			sem_post(&mutex_list_new);
 			list_push(pcb_ready_list, pcb_nuevo);
 		}
 
