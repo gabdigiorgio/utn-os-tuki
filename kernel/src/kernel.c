@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 
 	//hilo para enviar contexto a cpu
 	pthread_t cpu_thread;
-	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto,socket_servidor,contexto);
+	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
 
 
 	terminar_programa();
@@ -90,7 +90,7 @@ t_contexto obtener_contexto_pcb(pcb_t pcb) {
 	return contexto;
 }
 
-void enviar_contexto(int socket_servidor,t_contexto contexto){
+void enviar_contexto(){
 	serializar_contexto(socket_servidor,contexto);
 	//esperar respuesta de cpu
 	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
