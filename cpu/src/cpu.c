@@ -137,5 +137,26 @@ void terminar_programa()
 static bool sort_list(t_instruc* instruc1, t_instruc* instruc2){
 	return instruc1->nro < instruc2->nro;
 }
+void modificar_contexto(t_contexto* contexto){
+    contexto->registros->ip = 100;
+    strcpy(contexto->registros->ax,"12");
+    		strcpy(contexto->registros->bx,"23");
+    		strcpy(contexto->registros->cx,"11");
+    		strcpy(contexto->registros->dx,"54");
+    		strcpy(contexto->registros->eax,"15");
+    		strcpy(contexto->registros->ebx,"67");
+    		strcpy(contexto->registros->ecx,"25");
+    		strcpy(contexto->registros->edx,"56");
+    		strcpy(contexto->registros->rax,"88");
+    		strcpy(contexto->registros->rbx,"3");
+    		strcpy(contexto->registros->rcx,"87");
+    		strcpy(contexto->registros->rdx,"65");
+
+}
+void enviar_contexto(int socket_servidor,t_contexto* contexto_actualizado)
+{
+	serializar_contexto(socket_servidor,contexto_actualizado);
+}
+
 
 

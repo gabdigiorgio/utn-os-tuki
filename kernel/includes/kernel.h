@@ -75,7 +75,7 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 void estado_block();
 float calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
-
+void enviar_contexto(socket_servidor,contexto);
 // ___ GLOBAL VARIABLES ____
 
 t_log* logger;
