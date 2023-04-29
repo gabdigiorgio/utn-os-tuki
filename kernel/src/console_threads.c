@@ -82,6 +82,12 @@ void atender_consola(int socket_servidor){
 
 		serializar_contexto(cpu_connection,contexto);
 
+		t_paquete* paquete2 = malloc(sizeof(t_paquete));
+		paquete2->buffer = malloc(sizeof(t_buffer));
+
+		//Recivo el header del paquete + el stream de datos
+		deserializar_header(paquete2, cpu_connection);
+
 		free(paquete->buffer->stream);
 		free(paquete->buffer);
 		free(paquete);
