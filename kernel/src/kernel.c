@@ -70,11 +70,48 @@ int main(int argc, char *argv[]) {
 
 	pthread_join(console_thread, NULL);
 
+	//hilo para enviar contexto a cpu
+	pthread_t cpu_thread;
+	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
+
+
 	terminar_programa();
 
 	recibido = 0;
 
+
 	return EXIT_SUCCESS;
+}
+t_contexto obtener_contexto_pcb(pcb_t pcb) {
+
+	t_contexto *contexto = malloc(sizeof(t_contexto));
+	t_registros *registros = malloc(sizeof(t_registros));
+	memcpy(registros, &(pcb->registros_cpu), sizeof(t_registros));
+	contexto->registros = registros;
+	contexto->instrucciones = pcb->instrucciones;
+	return contexto;
+}
+
+void enviar_contexto(){
+	serializar_contexto(socket_servidor,contexto);
+	//esperar respuesta de cpu
+	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
+	t_paquete* paquete = malloc(sizeof(t_paquete));
+			paquete->buffer = malloc(sizeof(t_buffer));
+
+			//Recivo el header del paquete + el stream de datos
+			deserializar_header(paquete,socket_servidor);
+
+	t_contexto* contexto_actualizado=deserializar_contexto(paquete->buffer, paquete->lineas);
+	if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->ip))
+	{
+		log_info(logger,"proceso a exit")
+	}
+	else
+		log_info(logger,"proceso a block")
+
+
+
 }
 
 void iniciar_semaforos(){
@@ -167,6 +204,8 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 /*
  *
  * 		wait(sem_exec == 0)
+ *
+ *      usar funcion generar_contexto
  *
  * 		serializar_contexto()
  *
