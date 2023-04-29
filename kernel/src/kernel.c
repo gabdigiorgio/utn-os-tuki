@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
 	//hilo para enviar contexto a cpu
 	pthread_t cpu_thread;
-	//pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
+	//pthread_create(&cpu_thread,NULL,(void*)enviar_contexto,socket_servidor);
 
 
 	terminar_programa();
@@ -84,37 +84,48 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
-/*t_contexto obtener_contexto_pcb(pcb_t pcb) {
+t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
-	memcpy(registros, &(pcb->registros_cpu), sizeof(t_registros));
 	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
 	return contexto;
-}*/
+}
 
-/*void enviar_contexto(){
-	serializar_contexto(socket_servidor,contexto);
+void enviar_contexto(t_contexto* contexto){
+	t_paquete* paquete2 = malloc(sizeof(t_paquete));
+	paquete2->buffer = malloc(sizeof(t_buffer));
+	t_contexto* contexto_actualizado = malloc(sizeof(t_contexto));
+	contexto_actualizado->instrucciones = list_create();
+	serializar_contexto(cpu_connection,contexto);
 	//esperar respuesta de cpu
-	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-			paquete->buffer = malloc(sizeof(t_buffer));
+	//Recibo el header del paquete + el stream de datos
+	deserializar_header(paquete2,cpu_connection);
+	switch(paquete2->codigo_operacion){
+		case 1:
+			contexto_actualizado = deserializar_contexto(paquete2->buffer, paquete2->lineas);
+			log_info(logger,contexto_actualizado->registros->ax);
+			break;
+		default:
+			log_info(logger,"falle");
+			break;
+	}
 
-			//Recivo el header del paquete + el stream de datos
-			deserializar_header(paquete,socket_servidor);
+	//aca va logica de exit
 
-	t_contexto* contexto_actualizado=deserializar_contexto(paquete->buffer, paquete->lineas);
-	if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->ip))
+	/*if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->registros->ip))
 	{
-		log_info(logger,"proceso a exit")
+		log_info(logger,"proceso a exit");
 	}
 	else
-		log_info(logger,"proceso a block")
-}*/
+		log_info(logger,"proceso a block");*/
+
+
+}
 
 void iniciar_semaforos(){
-	sem_init(&sem_estado_exec, 0, 1);
+	sem_init(&sem_estado_exec, 0, 0);
 }
 
 void iniciar_pcb_lists(){
@@ -128,22 +139,11 @@ void iniciar_pcb_lists(){
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
 	proceso->pid= largo+1;
-	proceso->estimado_proxima_rafaga=config_get_int_value(config,"ESTIMACION_INICIAL");
+	proceso->estimado_proxima_rafaga=estimacion_inicial;
 	proceso->instrucciones=instrucciones;
 	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
 	return proceso;
 }
-
-
-/*void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
-	uint32_t largo = list_size(pcb_new_list->lista);
-	pcb_t *proceso = crear_proceso(largo,instrucciones);
-	list_push(pcb_new_list,proceso);
-
-	printf("PID = [%d] ingresa a NEW \n", proceso->pid);
-	sem_post(&admitir_pcb);
-
-}*/
 
 void agregar_pcb_a_new(t_list* instrucciones){
 	uint32_t largo = list_size(pcb_new_list->lista);
@@ -152,84 +152,57 @@ void agregar_pcb_a_new(t_list* instrucciones){
 	sem_post(&sem_estado_new);
 }
 
-
-/*void iniciar_planificador_largo_plazo(){
-	sem_init(&sem_grado_multiprogramacion,0,get_grado_multiprogramacion());
-	init_list_mutex();
-	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
-	pthread_detach(pcb_new);
-}*/
-
 void iniciar_planificador_largo_plazo(){
 	pthread_t hilo_new;
 	pthread_create(&hilo_new, NULL, (void *)estado_new, NULL);
 	pthread_detach(hilo_new);
 }
 
-
-void terminar_programa()
-{
-	log_destroy(logger);
-	config_destroy(config);
-	list_mutex_destroy(pcb_new_list);
-	list_mutex_destroy(pcb_ready_list);
-	list_mutex_destroy(pcb_block_list);
-	sem_destroy(&sem_estado_exec);
-	liberar_conexion(memoria_connection);
-	liberar_conexion(file_system_connection);
-	liberar_conexion(cpu_connection);
-}
-
 void iniciar_planificador_corto_plazo(){
 
 	pthread_t hilo_ready;
 	pthread_t hilo_block;
+	pthread_t hilo_exec;
 	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
 	pthread_create(&hilo_block,NULL,(void*)estado_block,NULL);
+	pthread_create(&hilo_exec,NULL,(void*)estado_exec,NULL);
 	pthread_detach(hilo_ready);
 	pthread_detach(hilo_block);
+	pthread_detach(hilo_exec);
 }
 
 void estado_new(){
 	while(1)
 	{
 		sem_wait(&sem_estado_new);
-		if(!list_mutex_is_empty(pcb_new_list)){
-			pcb_t* pcb_para_listo = list_pop(pcb_new_list);
-			pcb_para_listo->estado = PCB_NEW;
-			log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
-			list_push(pcb_ready_list,pcb_para_listo);
-			sem_post(&admitir_pcb);
-			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
-		}
-		sem_post(&sem_estado_new);
+		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
+		pcb_para_listo->estado = PCB_NEW;
+		log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
+		list_push(pcb_ready_list,pcb_para_listo);
+		sem_post(&sem_estado_ready);
 	}
 }
 
 void estado_ready() {
 	while(1){
-		sem_wait(&admitir_pcb);
+		sem_wait(&sem_estado_ready);
 		//sem_wait(&sem_grado_multiprogramacion);
 		pcb_t* pcb_a_ejecutar;
 
-		printf("estado ready \n");
-
 		if (!list_is_empty(pcb_new_list->lista)){
-			printf("if 1\n");
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
 			list_push(pcb_ready_list, pcb_nuevo);
 			pcb_nuevo->tiempo_espera_en_ready = temporal_create();
 		}
 
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
-			printf("if 2\n");
 			pcb_a_ejecutar = list_pop(pcb_ready_list);
 			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
-			enviar_proceso_a_ejecutar(pcb_a_ejecutar);
+			sem_post(&sem_estado_exec);
 		}
 
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			printf("if 3\n");
+			log_info(logger, "El proceso: %d llego a estado ready");
 			pthread_mutex_lock(&(pcb_ready_list->mutex));
 			list_sort(pcb_ready_list->lista , mayor_ratio);
 			pthread_mutex_unlock(&(pcb_ready_list->mutex));
@@ -246,8 +219,6 @@ void estado_ready() {
 
 
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
-
-
 /*
  *
  * 		wait(sem_exec == 0)
@@ -272,8 +243,6 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
  *
  *
  */
-
-
 }
 
 
@@ -281,14 +250,13 @@ void estado_exec(){
 	while(1)
 	{
 		sem_wait(&sem_estado_exec);
-		printf("estado exec \n");
 		if(!list_mutex_is_empty(pcb_ready_list)){
 			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
 			pcb_a_ejecutar->estado = PCB_EXEC;
 			log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
+			enviar_contexto(obtener_contexto_pcb(pcb_a_ejecutar));
 			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
-		sem_post(&sem_estado_exec);
 	}
 }
 
@@ -298,9 +266,11 @@ void estado_block(){
 
 	}
 }
+
 int get_grado_multiprogramacion(){
 	return config_get_int_value(config,"GRADO_MAX_MULTIPROGRAMACION");
 }
+
 float calcular_ratio(pcb_t* pcb_actual){
 	float ratio = (
 			temporal_gettime(pcb_actual->tiempo_espera_en_ready)
@@ -315,4 +285,17 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 	float ratio_2 = calcular_ratio((pcb_t*)proceso_2);
 
 	return ratio_1 > ratio_2;
+}
+
+void terminar_programa()
+{
+	log_destroy(logger);
+	config_destroy(config);
+	list_mutex_destroy(pcb_new_list);
+	list_mutex_destroy(pcb_ready_list);
+	list_mutex_destroy(pcb_block_list);
+	sem_destroy(&sem_estado_exec);
+	liberar_conexion(memoria_connection);
+	liberar_conexion(file_system_connection);
+	liberar_conexion(cpu_connection);
 }

@@ -19,4 +19,6 @@ char* seleccionar_registro(char* param){
 	if((strcmp(param,"RBX"))==0) return rbx;
 	if((strcmp(param,"RCX"))==0) return rcx;
 	if((strcmp(param,"RDX"))==0) return rdx;
+
+	return "";
 }

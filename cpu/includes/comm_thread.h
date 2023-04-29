@@ -15,6 +15,7 @@
 void conexion_kernel(int server_connection);
 int ejecutar_contexto();
 void armar_contexto();
+void serializar_contexto(int socket_cliente, t_contexto* contexto);
 
 extern t_log* logger;
 extern uint16_t ip;

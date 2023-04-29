@@ -26,5 +26,6 @@ int iniciar_servidor(char* puerto);
 int esperar_cliente(int);
 void deserializar_header(t_paquete* paquete, int socket);
 t_list* deserializar_instrucciones(t_buffer* buffer, int lineas);
+t_contexto* deserializar_contexto(t_buffer* buffer, int lineas);
 
 #endif /* SERVER_UTILS_H_ */

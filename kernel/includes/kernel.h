@@ -68,16 +68,18 @@ typedef struct {
 
 void iterator(char* value);
 void iniciar_pcb_lists();
-void terminar_programa();
 void iniciar_planificador_largo_plazo();
 void iniciar_planificador_corto_plazo();
 void estado_ready();
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 void estado_block();
 void estado_new();
+void estado_exec();
+void terminar_programa();
 float calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
-void enviar_contexto(socket_servidor,contexto);
+void enviar_contexto(t_contexto* contexto);
+t_contexto* obtener_contexto_pcb(pcb_t* pcb);
 // ___ GLOBAL VARIABLES ____
 
 t_log* logger;
@@ -96,6 +98,7 @@ t_lista_mutex *pcb_block_list;
 
 sem_t sem_estado_exec;
 sem_t sem_estado_new;
+sem_t sem_estado_ready;
 
 //Semaforos
 //Generales
@@ -105,7 +108,6 @@ sem_t sem_grado_multiprogramacion;
 //Largo Plazo
 sem_t mutex_list_new;
 sem_t mutex_list_exit;
-sem_t admitir_pcb;
 sem_t sem_list_exit;
 // _____________________
 

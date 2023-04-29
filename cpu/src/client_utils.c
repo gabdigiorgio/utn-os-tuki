@@ -146,28 +146,18 @@ void copiar_contexto(void* stream, t_list* lista, t_registros* registros){
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
-	//Creo un paquete y le asigno los valores iniciales
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-	paquete->codigo_operacion = 1;
-	paquete->buffer = buffer;
-	paquete->lineas = lineas;
-
 	//Reservo el stream para el header del paquete
 	int offset = 0;
+	uint32_t i = 1;
 
 	//Añado los datos del header al stream
-	memcpy(a_enviar + offset, &(paquete->codigo_operacion), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(i), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, &(paquete->lineas), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(lineas), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(buffer->size), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
-
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
+	memcpy(a_enviar + offset, buffer->stream, buffer->size);
 }
 
 void serializar_contexto(int socket_cliente, t_contexto* contexto){
