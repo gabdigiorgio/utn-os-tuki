@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 
 	//hilo para enviar contexto a cpu
 	pthread_t cpu_thread;
-	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
+	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto,socket_servidor);
 
 
 	terminar_programa();
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
-t_contexto obtener_contexto_pcb(pcb_t pcb) {
+/*t_contexto obtener_contexto_pcb(pcb_t pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
@@ -88,9 +88,10 @@ t_contexto obtener_contexto_pcb(pcb_t pcb) {
 	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
 	return contexto;
-}
+}*/
 
-void enviar_contexto(){
+void enviar_contexto(int socket_servidor){
+	t_contexto* contexto;
 	serializar_contexto(socket_servidor,contexto);
 	//esperar respuesta de cpu
 	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
@@ -101,12 +102,12 @@ void enviar_contexto(){
 			deserializar_header(paquete,socket_servidor);
 
 	t_contexto* contexto_actualizado=deserializar_contexto(paquete->buffer, paquete->lineas);
-	if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->ip))
+	if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->registros->ip))
 	{
-		log_info(logger,"proceso a exit")
+		log_info(logger,"proceso a exit");
 	}
 	else
-		log_info(logger,"proceso a block")
+		log_info(logger,"proceso a block");
 
 
 
