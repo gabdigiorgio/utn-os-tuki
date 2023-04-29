@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 
 	iniciar_semaforos();
 
-	//iniciar_planificador_corto_plazo();
+	iniciar_planificador_corto_plazo();
 
 	// ---------------------------------------------
 
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 
 	//hilo para enviar contexto a cpu
 	pthread_t cpu_thread;
-	pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
+	//pthread_create(&cpu_thread,NULL,(void*)enviar_contexto);
 
 
 	terminar_programa();
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
-t_contexto obtener_contexto_pcb(pcb_t pcb) {
+/*t_contexto obtener_contexto_pcb(pcb_t pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
@@ -92,9 +92,9 @@ t_contexto obtener_contexto_pcb(pcb_t pcb) {
 	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
 	return contexto;
-}
+}*/
 
-void enviar_contexto(){
+/*void enviar_contexto(){
 	serializar_contexto(socket_servidor,contexto);
 	//esperar respuesta de cpu
 	//recv(socket_servidor, &(paquete->lineas), sizeof(uint32_t), 0);
@@ -111,10 +111,7 @@ void enviar_contexto(){
 	}
 	else
 		log_info(logger,"proceso a block")
-
-
-
-}
+}*/
 
 void iniciar_semaforos(){
 	sem_init(&sem_estado_exec, 0, 1);
@@ -138,21 +135,35 @@ pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
 }
 
 
-void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
+/*void agregar_pcb_a_new(int socket_consola,t_list* instrucciones){
 	uint32_t largo = list_size(pcb_new_list->lista);
 	pcb_t *proceso = crear_proceso(largo,instrucciones);
 	list_push(pcb_new_list,proceso);
-	printf("PID = [%d] ingresa a NEW", proceso->pid);
+
+	printf("PID = [%d] ingresa a NEW \n", proceso->pid);
 	sem_post(&admitir_pcb);
 
+}*/
+
+void agregar_pcb_a_new(t_list* instrucciones){
+	uint32_t largo = list_size(pcb_new_list->lista);
+	pcb_t *proceso = crear_proceso(largo,instrucciones);
+	list_push(pcb_new_list,proceso);
+	sem_post(&sem_estado_new);
 }
 
 
-void iniciar_planificador_largo_plazo(){
+/*void iniciar_planificador_largo_plazo(){
 	sem_init(&sem_grado_multiprogramacion,0,get_grado_multiprogramacion());
 	init_list_mutex();
 	pthread_create(&pcb_new,NULL,(void *)agregar_pcb_a_new,NULL);
 	pthread_detach(pcb_new);
+}*/
+
+void iniciar_planificador_largo_plazo(){
+	pthread_t hilo_new;
+	pthread_create(&hilo_new, NULL, (void *)estado_new, NULL);
+	pthread_detach(hilo_new);
 }
 
 
@@ -179,34 +190,56 @@ void iniciar_planificador_corto_plazo(){
 	pthread_detach(hilo_block);
 }
 
+void estado_new(){
+	while(1)
+	{
+		sem_wait(&sem_estado_new);
+		if(!list_mutex_is_empty(pcb_new_list)){
+			pcb_t* pcb_para_listo = list_pop(pcb_new_list);
+			pcb_para_listo->estado = PCB_NEW;
+			log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
+			list_push(pcb_ready_list,pcb_para_listo);
+			sem_post(&admitir_pcb);
+			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
+		}
+		sem_post(&sem_estado_new);
+	}
+}
+
 void estado_ready() {
 	while(1){
 		sem_wait(&admitir_pcb);
-		sem_wait(&sem_grado_multiprogramacion);
+		//sem_wait(&sem_grado_multiprogramacion);
 		pcb_t* pcb_a_ejecutar;
 
+		printf("estado ready \n");
+
 		if (!list_is_empty(pcb_new_list->lista)){
+			printf("if 1\n");
 			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
 			list_push(pcb_ready_list, pcb_nuevo);
 			pcb_nuevo->tiempo_espera_en_ready = temporal_create();
 		}
 
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
+			printf("if 2\n");
 			pcb_a_ejecutar = list_pop(pcb_ready_list);
 			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
 			enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
 
 		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
+			printf("if 3\n");
 			pthread_mutex_lock(&(pcb_ready_list->mutex));
 			list_sort(pcb_ready_list->lista , mayor_ratio);
 			pthread_mutex_unlock(&(pcb_ready_list->mutex));
 
-			pcb_a_ejecutar = list_pop(pcb_ready_list);
+			//pcb_a_ejecutar = list_pop(pcb_ready_list);
 
-			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
+			//temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
 
-			enviar_proceso_a_ejecutar(pcb_a_ejecutar);
+			sem_post(&sem_estado_exec);
+			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
 	}
 }
@@ -248,6 +281,7 @@ void estado_exec(){
 	while(1)
 	{
 		sem_wait(&sem_estado_exec);
+		printf("estado exec \n");
 		if(!list_mutex_is_empty(pcb_ready_list)){
 			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
 			pcb_a_ejecutar->estado = PCB_EXEC;

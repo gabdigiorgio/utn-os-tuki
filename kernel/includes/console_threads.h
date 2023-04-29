@@ -10,6 +10,7 @@
 
 void atender_consola(int socket_servidor);
 void iterator(char* value);
+void agregar_pcb_a_new(t_list* instrucciones);
 
 extern t_log* logger;
 extern int cant_threads_activos;;

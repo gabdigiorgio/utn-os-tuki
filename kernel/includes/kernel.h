@@ -74,6 +74,7 @@ void iniciar_planificador_corto_plazo();
 void estado_ready();
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 void estado_block();
+void estado_new();
 float calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
 void enviar_contexto(socket_servidor,contexto);
@@ -94,6 +95,7 @@ t_lista_mutex *pcb_new_list;
 t_lista_mutex *pcb_block_list;
 
 sem_t sem_estado_exec;
+sem_t sem_estado_new;
 
 //Semaforos
 //Generales
@@ -131,7 +133,7 @@ void iterator(char* value);
 void iniciar_pcb_lists();
 void iniciar_semaforos();
 pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones);
-void agregar_pcb_a_new(int,t_list* instrucciones);
+void agregar_pcb_a_new(t_list* instrucciones);
 void iniciar_planificador_largo_plazo();
 int get_grado_multiprogramacion();
 void terminar_programa();

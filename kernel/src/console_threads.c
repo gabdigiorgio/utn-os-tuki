@@ -29,34 +29,14 @@ void atender_consola(int socket_servidor){
 		{
 			case 1:
 				instruc_lista = deserializar_instrucciones(paquete->buffer, paquete->lineas);
+				agregar_pcb_a_new(instruc_lista);
 				break;
 			default:
 				break;
 		}
 
-		int lineas = list_size(instruc_lista);
+		/*int lineas = list_size(instruc_lista);
 		t_instruc* instrucciones = malloc(sizeof(t_instruc));
-
-		for(int i = 0; i < lineas; i++)
-		{
-			instrucciones = list_get(instruc_lista, i);
-			log_info(logger,"--------------------");
-			log_info(logger,instrucciones->instruct);
-			if(strcmp(instrucciones->param1,"")) log_info(logger,instrucciones->param1);
-			if(strcmp(instrucciones->param2,"")) log_info(logger,instrucciones->param2);
-			if(strcmp(instrucciones->param3,"")) log_info(logger,instrucciones->param3);
-			log_info(logger,"--------------------");
-		}
-		agregar_pcb_a_new(socket_console_client,instruc_lista);
-		for(int i = 0; i < lineas; i++){
-					instrucciones = list_get(instruc_lista, i);
-					log_info(logger,"--------------------");
-					log_info(logger,instrucciones->instruct);
-					if(strcmp(instrucciones->param1,"")) log_info(logger,instrucciones->param1);
-					if(strcmp(instrucciones->param2,"")) log_info(logger,instrucciones->param2);
-					if(strcmp(instrucciones->param3,"")) log_info(logger,instrucciones->param3);
-					log_info(logger,"--------------------");
-				}
 
 		t_contexto* contexto = malloc(sizeof(t_contexto));
 		t_registros* registros = malloc(sizeof(t_registros));
@@ -92,6 +72,6 @@ void atender_consola(int socket_servidor){
 		free(paquete->buffer);
 		free(paquete);
 
-		sleep(10);
+		sleep(10);*/
 	}
 }

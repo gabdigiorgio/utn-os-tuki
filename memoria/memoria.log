@@ -667,3 +667,14 @@
 [INFO] 04:25:15:990 MEMORIA/(5259:5259): Se conecto un cliente!
 [INFO] 04:25:15:999 MEMORIA/(5259:5448): Thread iniciado correctamente
 [INFO] 04:25:16:006 MEMORIA/(5259:5448): Handshake de Kernel recibido correctamente
+[INFO] 02:37:59:770 MEMORIA/(2584:2584): Valores de configuracion leidos correctamente
+[INFO] 02:37:59:795 MEMORIA/(2584:2584): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 02:38:03:892 MEMORIA/(2584:2584): Se conecto un cliente!
+[INFO] 02:38:03:893 MEMORIA/(2584:2605): Thread iniciado correctamente
+[INFO] 02:38:03:893 MEMORIA/(2584:2605): Handshake de File System recibido correctamente
+[INFO] 02:38:09:413 MEMORIA/(2584:2584): Se conecto un cliente!
+[INFO] 02:38:09:414 MEMORIA/(2584:2622): Thread iniciado correctamente
+[INFO] 02:38:09:419 MEMORIA/(2584:2622): Handshake de CPU recibido correctamente
+[INFO] 02:39:17:633 MEMORIA/(2584:2584): Se conecto un cliente!
+[INFO] 02:39:17:652 MEMORIA/(2584:2649): Thread iniciado correctamente
+[INFO] 02:39:17:660 MEMORIA/(2584:2649): Handshake de Kernel recibido correctamente
