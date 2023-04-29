@@ -41,12 +41,12 @@ int esperar_cliente(int socket_servidor)
 	return socket_cliente;
 }
 
-void deserializar_header(t_paquete* paquete, int socket){
-	recv(socket, &(paquete->codigo_operacion), sizeof(uint32_t), 0);
-	recv(socket, &(paquete->lineas), sizeof(uint32_t), 0);
-	recv(socket, &(paquete->buffer->size), sizeof(uint32_t), 0);
+void deserializar_header(t_paquete* paquete, int socket_cliente){
+	recv(socket_cliente, &(paquete->codigo_operacion), sizeof(uint32_t), 0);
+	recv(socket_cliente, &(paquete->lineas), sizeof(uint32_t), 0);
+	recv(socket_cliente, &(paquete->buffer->size), sizeof(uint32_t), 0);
 	paquete->buffer->stream = malloc(paquete->buffer->size);
-	recv(socket, paquete->buffer->stream, paquete->buffer->size, 0);
+	recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size, 0);
 }
 
 t_list* deserializar_instrucciones(t_buffer* buffer, int lineas){
