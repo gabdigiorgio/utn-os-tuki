@@ -33,11 +33,15 @@ int main(int argc, char *argv[]) {
 
 	cant_threads_activos = 0;
 
+	pid = 0;
+
 	iniciar_pcb_lists();
 
 	iniciar_semaforos();
 
 	iniciar_planificador_corto_plazo();
+
+	iniciar_planificador_largo_plazo();
 
 	// ---------------------------------------------
 
@@ -61,9 +65,7 @@ int main(int argc, char *argv[]) {
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
 	log_info(logger, "Kernel listo para recibir Consolas");
-	//Se proceden a iniciar la estructuras necesarias para la planificacion
-	iniciar_pcb_lists();
-	iniciar_planificador_largo_plazo();
+
 	// ---------------------------------------------
 
 	// Espero Conexiones de las consolas
@@ -125,7 +127,12 @@ void enviar_contexto(t_contexto* contexto){
 }
 
 void iniciar_semaforos(){
+	sem_init(&sem_estado_new, 0, 0);
+	sem_init(&sem_estado_ready, 0, 0);
+	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);
+
+	sem_init(&sem_pid_aumento, 0, 1);
 }
 
 void iniciar_pcb_lists(){
@@ -136,18 +143,20 @@ void iniciar_pcb_lists(){
 
 
 
-pcb_t *crear_proceso(uint32_t largo,t_list* instrucciones){
+pcb_t *crear_proceso(t_list* instrucciones){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
-	proceso->pid= largo+1;
-	proceso->estimado_proxima_rafaga=estimacion_inicial;
-	proceso->instrucciones=instrucciones;
+	sem_wait(&sem_pid_aumento);
+	proceso->pid = pid++;
+	sem_post(&sem_pid_aumento);
+	proceso->estimado_proxima_rafaga = estimacion_inicial;
+	proceso->instrucciones = instrucciones;
 	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
 	return proceso;
 }
 
 void agregar_pcb_a_new(t_list* instrucciones){
-	uint32_t largo = list_size(pcb_new_list->lista);
-	pcb_t *proceso = crear_proceso(largo,instrucciones);
+	//uint32_t largo = list_mutex_size(pcb_new_list);
+	pcb_t *proceso = crear_proceso(instrucciones);
 	list_push(pcb_new_list,proceso);
 	sem_post(&sem_estado_new);
 }
@@ -179,41 +188,36 @@ void estado_new(){
 		pcb_para_listo->estado = PCB_NEW;
 		log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
 		list_push(pcb_ready_list,pcb_para_listo);
+		pcb_para_listo->tiempo_espera_en_ready = temporal_create();
+		pcb_para_listo->estado = PCB_READY;
+		log_info(logger, "El proceso: %d se agrego a la lista de ready", pcb_para_listo->pid);
 		sem_post(&sem_estado_ready);
 	}
 }
 
 void estado_ready() {
 	while(1){
-		sem_wait(&sem_estado_ready);
-		//sem_wait(&sem_grado_multiprogramacion);
-		pcb_t* pcb_a_ejecutar;
 
-		if (!list_is_empty(pcb_new_list->lista)){
-			pcb_t* pcb_nuevo = list_pop(pcb_new_list);
-			list_push(pcb_ready_list, pcb_nuevo);
-			pcb_nuevo->tiempo_espera_en_ready = temporal_create();
-		}
+		//sem_wait(&sem_grado_multiprogramacion);
+
+		sem_wait(&sem_estado_ready); // espera a que haya algun proceso en la lista de ready
+
+		sem_wait(&sem_exec_libre); // espera a que exec este libre para planificar
+
+		log_info(logger, "Exec libre => estado_ready comienza a planificar");
 
 		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
-			pcb_a_ejecutar = list_pop(pcb_ready_list);
-			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
-			sem_post(&sem_estado_exec);
+			// Comportamiento por defecto
+			// No se tiene que hacer nada
 		}
-
-		else if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			log_info(logger, "El proceso: %d llego a estado ready");
+		else
+		if (strcmp(algoritmo_planificacion, "HRRN") == 0){
 			pthread_mutex_lock(&(pcb_ready_list->mutex));
 			list_sort(pcb_ready_list->lista , mayor_ratio);
 			pthread_mutex_unlock(&(pcb_ready_list->mutex));
-
-			//pcb_a_ejecutar = list_pop(pcb_ready_list);
-
-			//temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
-
-			sem_post(&sem_estado_exec);
-			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 		}
+
+		sem_post(&sem_estado_exec);
 	}
 }
 
@@ -249,14 +253,32 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 void estado_exec(){
 	while(1)
 	{
-		sem_wait(&sem_estado_exec);
-		if(!list_mutex_is_empty(pcb_ready_list)){
+		sem_wait(&sem_estado_exec); // espera que ready le diga que ya hay proceso para ejecutar
+
 			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
 			pcb_a_ejecutar->estado = PCB_EXEC;
+
+			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
+
 			log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
+
+			t_temporal* tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
+
 			enviar_contexto(obtener_contexto_pcb(pcb_a_ejecutar));
+
 			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
-		}
+
+			// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
+			pcb_a_ejecutar->estimado_proxima_rafaga =
+														hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
+														+
+														(1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
+
+			temporal_destroy(tiempo_en_ejecucion);
+
+			log_info(logger, "El proceso: %d termino de ejecutar", pcb_a_ejecutar->pid);
+
+		sem_post(&sem_exec_libre); // le avisa a ready que exec ya esta libre
 	}
 }
 
@@ -267,22 +289,20 @@ void estado_block(){
 	}
 }
 
-int get_grado_multiprogramacion(){
-	return config_get_int_value(config,"GRADO_MAX_MULTIPROGRAMACION");
-}
 
-float calcular_ratio(pcb_t* pcb_actual){
-	float ratio = (
-			temporal_gettime(pcb_actual->tiempo_espera_en_ready)
-			+ pcb_actual->estimado_proxima_rafaga
+long double calcular_ratio(pcb_t* pcb_actual){
+	long double  ratio = (
+			 (long double) temporal_gettime(pcb_actual->tiempo_espera_en_ready)
+			+ (long double) pcb_actual->estimado_proxima_rafaga
 			)
-			/pcb_actual->estimado_proxima_rafaga;
+			/(long double) pcb_actual->estimado_proxima_rafaga;
+
 	return ratio;
 }
 
 bool mayor_ratio(void* proceso_1, void* proceso_2){
-	float ratio_1 = calcular_ratio((pcb_t*)proceso_1);
-	float ratio_2 = calcular_ratio((pcb_t*)proceso_2);
+	long double ratio_1 = calcular_ratio((pcb_t*)proceso_1);
+	long double ratio_2 = calcular_ratio((pcb_t*)proceso_2);
 
 	return ratio_1 > ratio_2;
 }

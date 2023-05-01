@@ -52,3 +52,11 @@ bool list_mutex_is_empty(t_lista_mutex * list){
 	pthread_mutex_unlock(&(list->mutex));
 	return is_empty;
 }
+
+int list_mutex_size(t_lista_mutex * list){
+	pthread_mutex_lock(&(list->mutex));
+	int size = list_size(list->lista);
+	pthread_mutex_unlock(&(list->mutex));
+	return size;
+}
+

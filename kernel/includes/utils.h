@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 #include<commons/log.h>
 #include<commons/string.h>
 #include<commons/config.h>
@@ -22,4 +23,5 @@ void list_push(t_lista_mutex * list , void* info);
 void * list_pop(t_lista_mutex * list);
 void list_mutex_destroy(t_lista_mutex * list);
 bool list_mutex_is_empty(t_lista_mutex * list);
+int list_mutex_size(t_lista_mutex * list);
 #endif /* CLIENT_H_ */

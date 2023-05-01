@@ -1,0 +1,487 @@
+[INFO] 05:47:10:981 KERNEL/(5469:5469): Valores de configuracion leidos correctamente
+[INFO] 05:47:10:991 KERNEL/(5469:5469): Memoria
+[INFO] 05:47:10:992 KERNEL/(5469:5469): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:47:10:992 KERNEL/(5469:5469): Cpu
+[INFO] 05:47:10:992 KERNEL/(5469:5469): Se establecio correctamente la conexion
+[INFO] 05:47:10:992 KERNEL/(5469:5469): File system
+[INFO] 05:47:10:992 KERNEL/(5469:5469): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:47:10:993 KERNEL/(5469:5469): Kernel listo para recibir Consolas
+[INFO] 05:47:19:223 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:19:226 KERNEL/(5469:5477): El proceso: 0 llego a estado new
+[INFO] 05:47:19:226 KERNEL/(5469:5477): El proceso: 0 se agrego a la lista de ready
+[INFO] 05:47:19:226 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:19:226 KERNEL/(5469:5476): El proceso: 0 llego a estado exec
+[INFO] 05:47:23:340 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:23:340 KERNEL/(5469:5477): El proceso: 1 llego a estado new
+[INFO] 05:47:23:340 KERNEL/(5469:5477): El proceso: 1 se agrego a la lista de ready
+[INFO] 05:47:24:234 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:24:234 KERNEL/(5469:5476): El proceso: 0 termino de ejecutar
+[INFO] 05:47:24:234 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:24:234 KERNEL/(5469:5476): El proceso: 1 llego a estado exec
+[INFO] 05:47:25:080 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:25:083 KERNEL/(5469:5477): El proceso: 2 llego a estado new
+[INFO] 05:47:25:083 KERNEL/(5469:5477): El proceso: 2 se agrego a la lista de ready
+[INFO] 05:47:29:102 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:29:102 KERNEL/(5469:5477): El proceso: 3 llego a estado new
+[INFO] 05:47:29:102 KERNEL/(5469:5477): El proceso: 3 se agrego a la lista de ready
+[INFO] 05:47:29:237 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:29:238 KERNEL/(5469:5476): El proceso: 1 termino de ejecutar
+[INFO] 05:47:29:238 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:29:238 KERNEL/(5469:5474): El proceso: 2 --> tiempo esperando: 4154
+[INFO] 05:47:29:238 KERNEL/(5469:5474): El proceso: 3 --> tiempo esperando: 135
+[INFO] 05:47:29:238 KERNEL/(5469:5476): El proceso: 3 llego a estado exec
+[INFO] 05:47:31:614 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:31:615 KERNEL/(5469:5477): El proceso: 4 llego a estado new
+[INFO] 05:47:31:615 KERNEL/(5469:5477): El proceso: 4 se agrego a la lista de ready
+[INFO] 05:47:34:010 KERNEL/(5469:5478): Se conecto un cliente!
+[INFO] 05:47:34:012 KERNEL/(5469:5477): El proceso: 5 llego a estado new
+[INFO] 05:47:34:012 KERNEL/(5469:5477): El proceso: 5 se agrego a la lista de ready
+[INFO] 05:47:34:246 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:34:246 KERNEL/(5469:5476): El proceso: 3 termino de ejecutar
+[INFO] 05:47:34:246 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:34:246 KERNEL/(5469:5474): El proceso: 2 --> tiempo esperando: 9163
+[INFO] 05:47:34:246 KERNEL/(5469:5474): El proceso: 4 --> tiempo esperando: 2632
+[INFO] 05:47:34:246 KERNEL/(5469:5474): El proceso: 4 --> tiempo esperando: 2632
+[INFO] 05:47:34:246 KERNEL/(5469:5474): El proceso: 5 --> tiempo esperando: 234
+[INFO] 05:47:34:246 KERNEL/(5469:5476): El proceso: 5 llego a estado exec
+[INFO] 05:47:39:255 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:39:255 KERNEL/(5469:5476): El proceso: 5 termino de ejecutar
+[INFO] 05:47:39:255 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:39:255 KERNEL/(5469:5474): El proceso: 4 --> tiempo esperando: 7641
+[INFO] 05:47:39:255 KERNEL/(5469:5474): El proceso: 2 --> tiempo esperando: 14172
+[INFO] 05:47:39:255 KERNEL/(5469:5476): El proceso: 2 llego a estado exec
+[INFO] 05:47:44:264 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:44:264 KERNEL/(5469:5476): El proceso: 2 termino de ejecutar
+[INFO] 05:47:44:264 KERNEL/(5469:5474): Exec libre => estado_ready comienza a planificar
+[INFO] 05:47:44:264 KERNEL/(5469:5476): El proceso: 4 llego a estado exec
+[INFO] 05:47:49:272 KERNEL/(5469:5476): HOLA
+[INFO] 05:47:49:272 KERNEL/(5469:5476): El proceso: 4 termino de ejecutar
+[INFO] 05:56:50:276 KERNEL/(5936:5936): Valores de configuracion leidos correctamente
+[INFO] 05:56:50:287 KERNEL/(5936:5936): Memoria
+[INFO] 05:56:50:287 KERNEL/(5936:5936): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:56:50:288 KERNEL/(5936:5936): Cpu
+[INFO] 05:56:50:288 KERNEL/(5936:5936): Se establecio correctamente la conexion
+[INFO] 05:56:50:288 KERNEL/(5936:5936): File system
+[INFO] 05:56:50:288 KERNEL/(5936:5936): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:56:50:288 KERNEL/(5936:5936): Kernel listo para recibir Consolas
+[INFO] 05:56:59:731 KERNEL/(5936:5946): Se conecto un cliente!
+[INFO] 05:56:59:734 KERNEL/(5936:5945): El proceso: 0 llego a estado new
+[INFO] 05:56:59:734 KERNEL/(5936:5945): El proceso: 0 se agrego a la lista de ready
+[INFO] 05:56:59:734 KERNEL/(5936:5942): Exec libre => estado_ready comienza a planificar
+[INFO] 05:56:59:734 KERNEL/(5936:5944): El proceso: 0 llego a estado exec
+[INFO] 05:57:02:267 KERNEL/(5936:5946): Se conecto un cliente!
+[INFO] 05:57:02:270 KERNEL/(5936:5945): El proceso: 1 llego a estado new
+[INFO] 05:57:02:270 KERNEL/(5936:5945): El proceso: 1 se agrego a la lista de ready
+[INFO] 05:57:04:741 KERNEL/(5936:5944): HOLA
+[INFO] 05:57:04:741 KERNEL/(5936:5944): El proceso: 0 termino de ejecutar
+[INFO] 05:57:04:741 KERNEL/(5936:5942): Exec libre => estado_ready comienza a planificar
+[INFO] 05:57:04:741 KERNEL/(5936:5944): El proceso: 1 llego a estado exec
+[INFO] 05:57:06:374 KERNEL/(5936:5946): Se conecto un cliente!
+[INFO] 05:57:06:374 KERNEL/(5936:5945): El proceso: 2 llego a estado new
+[INFO] 05:57:06:375 KERNEL/(5936:5945): El proceso: 2 se agrego a la lista de ready
+[INFO] 05:57:09:750 KERNEL/(5936:5944): HOLA
+[INFO] 05:57:09:752 KERNEL/(5936:5944): El proceso: 1 termino de ejecutar
+[INFO] 05:57:09:752 KERNEL/(5936:5942): Exec libre => estado_ready comienza a planificar
+[INFO] 05:57:09:752 KERNEL/(5936:5944): El proceso: 2 llego a estado exec
+[INFO] 05:57:10:526 KERNEL/(5936:5946): Se conecto un cliente!
+[INFO] 05:57:10:526 KERNEL/(5936:5945): El proceso: 3 llego a estado new
+[INFO] 05:57:10:527 KERNEL/(5936:5945): El proceso: 3 se agrego a la lista de ready
+[INFO] 05:57:12:994 KERNEL/(5936:5946): Se conecto un cliente!
+[INFO] 05:57:12:996 KERNEL/(5936:5945): El proceso: 4 llego a estado new
+[INFO] 05:57:12:996 KERNEL/(5936:5945): El proceso: 4 se agrego a la lista de ready
+[INFO] 05:57:14:761 KERNEL/(5936:5944): HOLA
+[INFO] 05:57:14:761 KERNEL/(5936:5944): El proceso: 2 termino de ejecutar
+[INFO] 05:57:14:761 KERNEL/(5936:5942): Exec libre => estado_ready comienza a planificar
+[INFO] 05:57:14:761 KERNEL/(5936:5942): El proceso: 3 --> ratio: 1.000000
+[INFO] 05:57:14:761 KERNEL/(5936:5942): El proceso: 3 --> ratio: 1.000000
+[INFO] 05:57:14:761 KERNEL/(5936:5944): El proceso: 4 llego a estado exec
+[INFO] 05:57:19:775 KERNEL/(5936:5944): HOLA
+[INFO] 05:57:19:775 KERNEL/(5936:5944): El proceso: 4 termino de ejecutar
+[INFO] 05:57:19:775 KERNEL/(5936:5942): Exec libre => estado_ready comienza a planificar
+[INFO] 05:57:19:775 KERNEL/(5936:5944): El proceso: 3 llego a estado exec
+[INFO] 05:57:24:787 KERNEL/(5936:5944): HOLA
+[INFO] 05:57:24:788 KERNEL/(5936:5944): El proceso: 3 termino de ejecutar
+[INFO] 05:58:58:089 KERNEL/(6077:6077): Valores de configuracion leidos correctamente
+[INFO] 05:58:58:093 KERNEL/(6077:6077): Memoria
+[INFO] 05:58:58:097 KERNEL/(6077:6077): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:58:58:097 KERNEL/(6077:6077): Cpu
+[INFO] 05:58:58:097 KERNEL/(6077:6077): Se establecio correctamente la conexion
+[INFO] 05:58:58:097 KERNEL/(6077:6077): File system
+[INFO] 05:58:58:097 KERNEL/(6077:6077): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:58:58:097 KERNEL/(6077:6077): Kernel listo para recibir Consolas
+[INFO] 05:59:05:039 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 05:59:05:040 KERNEL/(6077:6086): El proceso: 0 llego a estado new
+[INFO] 05:59:05:040 KERNEL/(6077:6086): El proceso: 0 se agrego a la lista de ready
+[INFO] 05:59:05:040 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 05:59:05:040 KERNEL/(6077:6085): El proceso: 0 llego a estado exec
+[INFO] 05:59:10:049 KERNEL/(6077:6085): HOLA
+[INFO] 05:59:10:049 KERNEL/(6077:6085): El proceso: 0 termino de ejecutar
+[INFO] 05:59:12:903 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 05:59:12:903 KERNEL/(6077:6086): El proceso: 1 llego a estado new
+[INFO] 05:59:12:904 KERNEL/(6077:6086): El proceso: 1 se agrego a la lista de ready
+[INFO] 05:59:12:904 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 05:59:12:904 KERNEL/(6077:6085): El proceso: 1 llego a estado exec
+[INFO] 05:59:15:871 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 05:59:15:874 KERNEL/(6077:6086): El proceso: 2 llego a estado new
+[INFO] 05:59:15:874 KERNEL/(6077:6086): El proceso: 2 se agrego a la lista de ready
+[INFO] 05:59:17:908 KERNEL/(6077:6085): HOLA
+[INFO] 05:59:17:908 KERNEL/(6077:6085): El proceso: 1 termino de ejecutar
+[INFO] 05:59:17:908 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 05:59:17:908 KERNEL/(6077:6085): El proceso: 2 llego a estado exec
+[INFO] 05:59:21:976 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 05:59:21:978 KERNEL/(6077:6086): El proceso: 3 llego a estado new
+[INFO] 05:59:21:978 KERNEL/(6077:6086): El proceso: 3 se agrego a la lista de ready
+[INFO] 05:59:22:912 KERNEL/(6077:6085): HOLA
+[INFO] 05:59:22:913 KERNEL/(6077:6085): El proceso: 2 termino de ejecutar
+[INFO] 05:59:22:913 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 05:59:22:913 KERNEL/(6077:6085): El proceso: 3 llego a estado exec
+[INFO] 05:59:23:762 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 05:59:23:763 KERNEL/(6077:6086): El proceso: 4 llego a estado new
+[INFO] 05:59:23:763 KERNEL/(6077:6086): El proceso: 4 se agrego a la lista de ready
+[INFO] 05:59:27:920 KERNEL/(6077:6085): HOLA
+[INFO] 05:59:27:920 KERNEL/(6077:6085): El proceso: 3 termino de ejecutar
+[INFO] 05:59:27:920 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 05:59:27:920 KERNEL/(6077:6085): El proceso: 4 llego a estado exec
+[INFO] 05:59:32:930 KERNEL/(6077:6085): HOLA
+[INFO] 05:59:32:930 KERNEL/(6077:6085): El proceso: 4 termino de ejecutar
+[INFO] 06:00:27:334 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 06:00:27:334 KERNEL/(6077:6086): El proceso: 5 llego a estado new
+[INFO] 06:00:27:334 KERNEL/(6077:6086): El proceso: 5 se agrego a la lista de ready
+[INFO] 06:00:27:334 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 06:00:27:334 KERNEL/(6077:6085): El proceso: 5 llego a estado exec
+[INFO] 06:00:30:737 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 06:00:30:743 KERNEL/(6077:6086): El proceso: 6 llego a estado new
+[INFO] 06:00:30:744 KERNEL/(6077:6086): El proceso: 6 se agrego a la lista de ready
+[INFO] 06:00:32:337 KERNEL/(6077:6085): HOLA
+[INFO] 06:00:32:338 KERNEL/(6077:6085): El proceso: 5 termino de ejecutar
+[INFO] 06:00:32:338 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 06:00:32:338 KERNEL/(6077:6085): El proceso: 6 llego a estado exec
+[INFO] 06:00:33:393 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 06:00:33:394 KERNEL/(6077:6086): El proceso: 7 llego a estado new
+[INFO] 06:00:33:394 KERNEL/(6077:6086): El proceso: 7 se agrego a la lista de ready
+[INFO] 06:00:37:343 KERNEL/(6077:6085): HOLA
+[INFO] 06:00:37:344 KERNEL/(6077:6085): El proceso: 6 termino de ejecutar
+[INFO] 06:00:37:344 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 06:00:37:344 KERNEL/(6077:6085): El proceso: 7 llego a estado exec
+[INFO] 06:00:37:624 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 06:00:37:625 KERNEL/(6077:6086): El proceso: 8 llego a estado new
+[INFO] 06:00:37:625 KERNEL/(6077:6086): El proceso: 8 se agrego a la lista de ready
+[INFO] 06:00:39:675 KERNEL/(6077:6087): Se conecto un cliente!
+[INFO] 06:00:39:677 KERNEL/(6077:6086): El proceso: 9 llego a estado new
+[INFO] 06:00:39:677 KERNEL/(6077:6086): El proceso: 9 se agrego a la lista de ready
+[INFO] 06:00:42:349 KERNEL/(6077:6085): HOLA
+[INFO] 06:00:42:350 KERNEL/(6077:6085): El proceso: 7 termino de ejecutar
+[INFO] 06:00:42:353 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 06:00:42:353 KERNEL/(6077:6083): El proceso: 8 --> ratio: 1.000000
+[INFO] 06:00:42:353 KERNEL/(6077:6083): El proceso: 9 --> ratio: 1.000000
+[INFO] 06:00:42:353 KERNEL/(6077:6085): El proceso: 9 llego a estado exec
+[INFO] 06:00:47:361 KERNEL/(6077:6085): HOLA
+[INFO] 06:00:47:361 KERNEL/(6077:6085): El proceso: 9 termino de ejecutar
+[INFO] 06:00:47:361 KERNEL/(6077:6083): Exec libre => estado_ready comienza a planificar
+[INFO] 06:00:47:361 KERNEL/(6077:6085): El proceso: 8 llego a estado exec
+[INFO] 06:00:52:369 KERNEL/(6077:6085): HOLA
+[INFO] 06:00:52:369 KERNEL/(6077:6085): El proceso: 8 termino de ejecutar
+[INFO] 06:06:22:762 KERNEL/(6355:6355): Valores de configuracion leidos correctamente
+[INFO] 06:06:22:768 KERNEL/(6355:6355): Memoria
+[INFO] 06:06:22:770 KERNEL/(6355:6355): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:06:22:772 KERNEL/(6355:6355): Cpu
+[INFO] 06:06:22:772 KERNEL/(6355:6355): Se establecio correctamente la conexion
+[INFO] 06:06:22:772 KERNEL/(6355:6355): File system
+[INFO] 06:06:22:772 KERNEL/(6355:6355): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:06:22:773 KERNEL/(6355:6355): Kernel listo para recibir Consolas
+[INFO] 06:06:33:981 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:33:982 KERNEL/(6355:6363): El proceso: 0 llego a estado new
+[INFO] 06:06:33:982 KERNEL/(6355:6363): El proceso: 0 se agrego a la lista de ready
+[INFO] 06:06:33:982 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:33:982 KERNEL/(6355:6362): El proceso: 0 llego a estado exec
+[INFO] 06:06:38:679 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:38:682 KERNEL/(6355:6363): El proceso: 1 llego a estado new
+[INFO] 06:06:38:682 KERNEL/(6355:6363): El proceso: 1 se agrego a la lista de ready
+[INFO] 06:06:38:986 KERNEL/(6355:6362): HOLA
+[INFO] 06:06:38:986 KERNEL/(6355:6362): El proceso: 0 termino de ejecutar
+[INFO] 06:06:38:986 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:38:986 KERNEL/(6355:6362): El proceso: 1 llego a estado exec
+[INFO] 06:06:40:366 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:40:367 KERNEL/(6355:6363): El proceso: 2 llego a estado new
+[INFO] 06:06:40:367 KERNEL/(6355:6363): El proceso: 2 se agrego a la lista de ready
+[INFO] 06:06:43:992 KERNEL/(6355:6362): HOLA
+[INFO] 06:06:43:992 KERNEL/(6355:6362): El proceso: 1 termino de ejecutar
+[INFO] 06:06:43:992 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:43:992 KERNEL/(6355:6362): El proceso: 2 llego a estado exec
+[INFO] 06:06:44:902 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:44:903 KERNEL/(6355:6363): El proceso: 3 llego a estado new
+[INFO] 06:06:44:903 KERNEL/(6355:6363): El proceso: 3 se agrego a la lista de ready
+[INFO] 06:06:47:686 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:47:687 KERNEL/(6355:6363): El proceso: 4 llego a estado new
+[INFO] 06:06:47:687 KERNEL/(6355:6363): El proceso: 4 se agrego a la lista de ready
+[INFO] 06:06:48:938 KERNEL/(6355:6364): Se conecto un cliente!
+[INFO] 06:06:48:938 KERNEL/(6355:6363): El proceso: 5 llego a estado new
+[INFO] 06:06:48:939 KERNEL/(6355:6363): El proceso: 5 se agrego a la lista de ready
+[INFO] 06:06:49:004 KERNEL/(6355:6362): HOLA
+[INFO] 06:06:49:004 KERNEL/(6355:6362): El proceso: 2 termino de ejecutar
+[INFO] 06:06:49:004 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:49:004 KERNEL/(6355:6360): El proceso: 3 --> ratio: 1.000000
+[INFO] 06:06:49:004 KERNEL/(6355:6360): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:06:49:004 KERNEL/(6355:6360): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:06:49:004 KERNEL/(6355:6360): El proceso: 5 --> ratio: 1.000000
+[INFO] 06:06:49:005 KERNEL/(6355:6362): El proceso: 5 llego a estado exec
+[INFO] 06:06:54:013 KERNEL/(6355:6362): HOLA
+[INFO] 06:06:54:013 KERNEL/(6355:6362): El proceso: 5 termino de ejecutar
+[INFO] 06:06:54:015 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:54:015 KERNEL/(6355:6360): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:06:54:015 KERNEL/(6355:6360): El proceso: 3 --> ratio: 1.000000
+[INFO] 06:06:54:015 KERNEL/(6355:6362): El proceso: 3 llego a estado exec
+[INFO] 06:06:59:024 KERNEL/(6355:6362): HOLA
+[INFO] 06:06:59:024 KERNEL/(6355:6362): El proceso: 3 termino de ejecutar
+[INFO] 06:06:59:024 KERNEL/(6355:6360): Exec libre => estado_ready comienza a planificar
+[INFO] 06:06:59:024 KERNEL/(6355:6362): El proceso: 4 llego a estado exec
+[INFO] 06:07:04:034 KERNEL/(6355:6362): HOLA
+[INFO] 06:07:04:035 KERNEL/(6355:6362): El proceso: 4 termino de ejecutar
+[INFO] 06:11:46:677 KERNEL/(6974:6974): Valores de configuracion leidos correctamente
+[INFO] 06:11:46:684 KERNEL/(6974:6974): Memoria
+[INFO] 06:11:46:690 KERNEL/(6974:6974): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:11:46:692 KERNEL/(6974:6974): Cpu
+[INFO] 06:11:46:692 KERNEL/(6974:6974): Se establecio correctamente la conexion
+[INFO] 06:11:46:692 KERNEL/(6974:6974): File system
+[INFO] 06:11:46:692 KERNEL/(6974:6974): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:11:46:693 KERNEL/(6974:6974): Kernel listo para recibir Consolas
+[INFO] 06:11:54:790 KERNEL/(6974:6983): Se conecto un cliente!
+[INFO] 06:11:54:791 KERNEL/(6974:6982): El proceso: 0 llego a estado new
+[INFO] 06:11:54:791 KERNEL/(6974:6982): El proceso: 0 se agrego a la lista de ready
+[INFO] 06:11:54:792 KERNEL/(6974:6979): Exec libre => estado_ready comienza a planificar
+[INFO] 06:11:54:792 KERNEL/(6974:6981): El proceso: 0 llego a estado exec
+[INFO] 06:11:59:795 KERNEL/(6974:6981): HOLA
+[INFO] 06:11:59:795 KERNEL/(6974:6981): El proceso: 0 termino de ejecutar
+[INFO] 06:11:59:956 KERNEL/(6974:6983): Se conecto un cliente!
+[INFO] 06:11:59:958 KERNEL/(6974:6982): El proceso: 1 llego a estado new
+[INFO] 06:11:59:958 KERNEL/(6974:6982): El proceso: 1 se agrego a la lista de ready
+[INFO] 06:11:59:958 KERNEL/(6974:6979): Exec libre => estado_ready comienza a planificar
+[INFO] 06:11:59:958 KERNEL/(6974:6981): El proceso: 1 llego a estado exec
+[INFO] 06:12:03:118 KERNEL/(6974:6983): Se conecto un cliente!
+[INFO] 06:12:03:118 KERNEL/(6974:6982): El proceso: 2 llego a estado new
+[INFO] 06:12:03:118 KERNEL/(6974:6982): El proceso: 2 se agrego a la lista de ready
+[INFO] 06:12:04:965 KERNEL/(6974:6981): HOLA
+[INFO] 06:12:04:965 KERNEL/(6974:6981): El proceso: 1 termino de ejecutar
+[INFO] 06:12:04:965 KERNEL/(6974:6979): Exec libre => estado_ready comienza a planificar
+[INFO] 06:12:04:965 KERNEL/(6974:6981): El proceso: 2 llego a estado exec
+[INFO] 06:12:06:814 KERNEL/(6974:6983): Se conecto un cliente!
+[INFO] 06:12:06:815 KERNEL/(6974:6982): El proceso: 3 llego a estado new
+[INFO] 06:12:06:815 KERNEL/(6974:6982): El proceso: 3 se agrego a la lista de ready
+[INFO] 06:12:08:236 KERNEL/(6974:6983): Se conecto un cliente!
+[INFO] 06:12:08:237 KERNEL/(6974:6982): El proceso: 4 llego a estado new
+[INFO] 06:12:08:237 KERNEL/(6974:6982): El proceso: 4 se agrego a la lista de ready
+[INFO] 06:12:09:972 KERNEL/(6974:6981): HOLA
+[INFO] 06:12:09:972 KERNEL/(6974:6981): El proceso: 2 termino de ejecutar
+[INFO] 06:12:09:972 KERNEL/(6974:6979): Exec libre => estado_ready comienza a planificar
+[INFO] 06:12:09:972 KERNEL/(6974:6979): El proceso: 3 --> esperando: 3157
+[INFO] 06:12:09:972 KERNEL/(6974:6979): El proceso: 3 --> estimado: 10000
+[INFO] 06:12:09:972 KERNEL/(6974:6979): El proceso: 3 --> suma: 13157
+[INFO] 06:12:09:972 KERNEL/(6974:6979): En calcular ratio. El proceso: 3 --> ratio: 1.000000
+[INFO] 06:12:09:972 KERNEL/(6974:6979): El proceso: 4 --> esperando: 1736
+[INFO] 06:12:09:973 KERNEL/(6974:6979): El proceso: 4 --> estimado: 10000
+[INFO] 06:12:09:973 KERNEL/(6974:6979): El proceso: 4 --> suma: 11736
+[INFO] 06:12:09:973 KERNEL/(6974:6979): En calcular ratio. El proceso: 4 --> ratio: 1.000000
+[INFO] 06:12:09:973 KERNEL/(6974:6979): El proceso: 3 --> ratio: 1.000000
+[INFO] 06:12:09:973 KERNEL/(6974:6979): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:12:09:973 KERNEL/(6974:6981): El proceso: 4 llego a estado exec
+[INFO] 06:12:14:979 KERNEL/(6974:6981): HOLA
+[INFO] 06:12:14:979 KERNEL/(6974:6981): El proceso: 4 termino de ejecutar
+[INFO] 06:12:14:979 KERNEL/(6974:6979): Exec libre => estado_ready comienza a planificar
+[INFO] 06:12:14:979 KERNEL/(6974:6981): El proceso: 3 llego a estado exec
+[INFO] 06:12:19:989 KERNEL/(6974:6981): HOLA
+[INFO] 06:12:19:989 KERNEL/(6974:6981): El proceso: 3 termino de ejecutar
+[INFO] 06:14:55:251 KERNEL/(7146:7146): Valores de configuracion leidos correctamente
+[INFO] 06:14:55:257 KERNEL/(7146:7146): Memoria
+[INFO] 06:14:55:257 KERNEL/(7146:7146): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:14:55:259 KERNEL/(7146:7146): Cpu
+[INFO] 06:14:55:260 KERNEL/(7146:7146): Se establecio correctamente la conexion
+[INFO] 06:14:55:260 KERNEL/(7146:7146): File system
+[INFO] 06:14:55:260 KERNEL/(7146:7146): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:14:55:260 KERNEL/(7146:7146): Kernel listo para recibir Consolas
+[INFO] 06:15:07:448 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:07:449 KERNEL/(7146:7155): El proceso: 0 llego a estado new
+[INFO] 06:15:07:449 KERNEL/(7146:7155): El proceso: 0 se agrego a la lista de ready
+[INFO] 06:15:07:449 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:07:449 KERNEL/(7146:7154): El proceso: 0 llego a estado exec
+[INFO] 06:15:09:246 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:09:247 KERNEL/(7146:7155): El proceso: 1 llego a estado new
+[INFO] 06:15:09:247 KERNEL/(7146:7155): El proceso: 1 se agrego a la lista de ready
+[INFO] 06:15:12:459 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:12:459 KERNEL/(7146:7154): El proceso: 0 termino de ejecutar
+[INFO] 06:15:12:460 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:12:460 KERNEL/(7146:7154): El proceso: 1 llego a estado exec
+[INFO] 06:15:14:598 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:14:599 KERNEL/(7146:7155): El proceso: 2 llego a estado new
+[INFO] 06:15:14:599 KERNEL/(7146:7155): El proceso: 2 se agrego a la lista de ready
+[INFO] 06:15:17:466 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:17:467 KERNEL/(7146:7154): El proceso: 1 termino de ejecutar
+[INFO] 06:15:17:467 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:17:467 KERNEL/(7146:7154): El proceso: 2 llego a estado exec
+[INFO] 06:15:20:466 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:20:467 KERNEL/(7146:7155): El proceso: 3 llego a estado new
+[INFO] 06:15:20:467 KERNEL/(7146:7155): El proceso: 3 se agrego a la lista de ready
+[INFO] 06:15:22:473 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:22:473 KERNEL/(7146:7154): El proceso: 2 termino de ejecutar
+[INFO] 06:15:22:473 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:22:473 KERNEL/(7146:7154): El proceso: 3 llego a estado exec
+[INFO] 06:15:22:574 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:22:574 KERNEL/(7146:7155): El proceso: 4 llego a estado new
+[INFO] 06:15:22:574 KERNEL/(7146:7155): El proceso: 4 se agrego a la lista de ready
+[INFO] 06:15:24:014 KERNEL/(7146:7156): Se conecto un cliente!
+[INFO] 06:15:24:015 KERNEL/(7146:7155): El proceso: 5 llego a estado new
+[INFO] 06:15:24:015 KERNEL/(7146:7155): El proceso: 5 se agrego a la lista de ready
+[INFO] 06:15:27:479 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:27:479 KERNEL/(7146:7154): El proceso: 3 termino de ejecutar
+[INFO] 06:15:27:479 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 4 --> esperando: 4905
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 4 --> estimado: 10000
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 4 --> suma: 14905
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 4 --> ratio_64: 1
+[INFO] 06:15:27:479 KERNEL/(7146:7152): En calcular ratio. El proceso: 4 --> ratio: 1.000000
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 5 --> esperando: 3464
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 5 --> estimado: 10000
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 5 --> suma: 13464
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 5 --> ratio_64: 1
+[INFO] 06:15:27:479 KERNEL/(7146:7152): En calcular ratio. El proceso: 5 --> ratio: 1.000000
+[INFO] 06:15:27:479 KERNEL/(7146:7152): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:15:27:480 KERNEL/(7146:7152): El proceso: 5 --> ratio: 1.000000
+[INFO] 06:15:27:480 KERNEL/(7146:7154): El proceso: 5 llego a estado exec
+[INFO] 06:15:32:488 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:32:488 KERNEL/(7146:7154): El proceso: 5 termino de ejecutar
+[INFO] 06:15:32:489 KERNEL/(7146:7152): Exec libre => estado_ready comienza a planificar
+[INFO] 06:15:32:489 KERNEL/(7146:7154): El proceso: 4 llego a estado exec
+[INFO] 06:15:37:495 KERNEL/(7146:7154): HOLA
+[INFO] 06:15:37:496 KERNEL/(7146:7154): El proceso: 4 termino de ejecutar
+[INFO] 06:21:59:393 KERNEL/(7545:7545): Valores de configuracion leidos correctamente
+[INFO] 06:21:59:399 KERNEL/(7545:7545): Memoria
+[INFO] 06:21:59:400 KERNEL/(7545:7545): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:21:59:401 KERNEL/(7545:7545): Cpu
+[INFO] 06:21:59:401 KERNEL/(7545:7545): Se establecio correctamente la conexion
+[INFO] 06:21:59:401 KERNEL/(7545:7545): File system
+[INFO] 06:21:59:401 KERNEL/(7545:7545): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:21:59:401 KERNEL/(7545:7545): Kernel listo para recibir Consolas
+[INFO] 06:22:07:052 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:07:055 KERNEL/(7545:7554): El proceso: 0 llego a estado new
+[INFO] 06:22:07:055 KERNEL/(7545:7554): El proceso: 0 se agrego a la lista de ready
+[INFO] 06:22:07:055 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:07:055 KERNEL/(7545:7553): El proceso: 0 llego a estado exec
+[INFO] 06:22:12:063 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:12:064 KERNEL/(7545:7553): El proceso: 0 termino de ejecutar
+[INFO] 06:22:12:875 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:12:880 KERNEL/(7545:7554): El proceso: 1 llego a estado new
+[INFO] 06:22:12:880 KERNEL/(7545:7554): El proceso: 1 se agrego a la lista de ready
+[INFO] 06:22:12:880 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:12:880 KERNEL/(7545:7553): El proceso: 1 llego a estado exec
+[INFO] 06:22:14:744 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:14:744 KERNEL/(7545:7554): El proceso: 2 llego a estado new
+[INFO] 06:22:14:744 KERNEL/(7545:7554): El proceso: 2 se agrego a la lista de ready
+[INFO] 06:22:17:885 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:17:886 KERNEL/(7545:7553): El proceso: 1 termino de ejecutar
+[INFO] 06:22:17:886 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:17:886 KERNEL/(7545:7553): El proceso: 2 llego a estado exec
+[INFO] 06:22:19:204 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:19:205 KERNEL/(7545:7554): El proceso: 3 llego a estado new
+[INFO] 06:22:19:205 KERNEL/(7545:7554): El proceso: 3 se agrego a la lista de ready
+[INFO] 06:22:21:415 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:21:415 KERNEL/(7545:7554): El proceso: 4 llego a estado new
+[INFO] 06:22:21:415 KERNEL/(7545:7554): El proceso: 4 se agrego a la lista de ready
+[INFO] 06:22:22:890 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:22:891 KERNEL/(7545:7553): El proceso: 2 termino de ejecutar
+[INFO] 06:22:22:891 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 3 --> esperando: 3686
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 3 --> estimado: 10000
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 3 --> suma: 13686
+[INFO] 06:22:22:891 KERNEL/(7545:7551): En calcular ratio. El proceso: 3 --> ratio: 1.000000
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 4 --> esperando: 1476
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 4 --> estimado: 10000
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 4 --> suma: 11476
+[INFO] 06:22:22:891 KERNEL/(7545:7551): En calcular ratio. El proceso: 4 --> ratio: 1.000000
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 3 --> ratio: 1.000000
+[INFO] 06:22:22:891 KERNEL/(7545:7551): El proceso: 4 --> ratio: 1.000000
+[INFO] 06:22:22:891 KERNEL/(7545:7553): El proceso: 4 llego a estado exec
+[INFO] 06:22:23:739 KERNEL/(7545:7555): Se conecto un cliente!
+[INFO] 06:22:23:744 KERNEL/(7545:7554): El proceso: 5 llego a estado new
+[INFO] 06:22:23:744 KERNEL/(7545:7554): El proceso: 5 se agrego a la lista de ready
+[INFO] 06:22:27:900 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:27:900 KERNEL/(7545:7553): El proceso: 4 termino de ejecutar
+[INFO] 06:22:27:900 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:27:900 KERNEL/(7545:7551): El proceso: 3 --> esperando: 8696
+[INFO] 06:22:27:900 KERNEL/(7545:7551): El proceso: 3 --> estimado: 10000
+[INFO] 06:22:27:900 KERNEL/(7545:7551): El proceso: 3 --> suma: 18696
+[INFO] 06:22:27:900 KERNEL/(7545:7551): En calcular ratio. El proceso: 3 --> ratio: 1.000000
+[INFO] 06:22:27:900 KERNEL/(7545:7551): El proceso: 5 --> esperando: 4157
+[INFO] 06:22:27:901 KERNEL/(7545:7551): El proceso: 5 --> estimado: 10000
+[INFO] 06:22:27:902 KERNEL/(7545:7551): El proceso: 5 --> suma: 14158
+[INFO] 06:22:27:902 KERNEL/(7545:7551): En calcular ratio. El proceso: 5 --> ratio: 1.000000
+[INFO] 06:22:27:902 KERNEL/(7545:7551): El proceso: 3 --> ratio: 1.000000
+[INFO] 06:22:27:902 KERNEL/(7545:7551): El proceso: 5 --> ratio: 1.000000
+[INFO] 06:22:27:902 KERNEL/(7545:7553): El proceso: 5 llego a estado exec
+[INFO] 06:22:32:908 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:32:908 KERNEL/(7545:7553): El proceso: 5 termino de ejecutar
+[INFO] 06:22:32:910 KERNEL/(7545:7551): Exec libre => estado_ready comienza a planificar
+[INFO] 06:22:32:910 KERNEL/(7545:7553): El proceso: 3 llego a estado exec
+[INFO] 06:22:37:919 KERNEL/(7545:7553): HOLA
+[INFO] 06:22:37:919 KERNEL/(7545:7553): El proceso: 3 termino de ejecutar
+[INFO] 06:25:56:194 KERNEL/(7831:7831): Valores de configuracion leidos correctamente
+[INFO] 06:25:56:202 KERNEL/(7831:7831): Memoria
+[INFO] 06:25:56:202 KERNEL/(7831:7831): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:25:56:203 KERNEL/(7831:7831): Cpu
+[INFO] 06:25:56:203 KERNEL/(7831:7831): Se establecio correctamente la conexion
+[INFO] 06:25:56:203 KERNEL/(7831:7831): File system
+[INFO] 06:25:56:203 KERNEL/(7831:7831): Fallo al realizar el handshake, cerrando conexion
+[INFO] 06:25:56:203 KERNEL/(7831:7831): Kernel listo para recibir Consolas
+[INFO] 06:26:04:701 KERNEL/(7831:7840): Se conecto un cliente!
+[INFO] 06:26:04:701 KERNEL/(7831:7839): El proceso: 0 llego a estado new
+[INFO] 06:26:04:701 KERNEL/(7831:7839): El proceso: 0 se agrego a la lista de ready
+[INFO] 06:26:04:701 KERNEL/(7831:7836): Exec libre => estado_ready comienza a planificar
+[INFO] 06:26:04:701 KERNEL/(7831:7838): El proceso: 0 llego a estado exec
+[INFO] 06:26:07:440 KERNEL/(7831:7840): Se conecto un cliente!
+[INFO] 06:26:07:441 KERNEL/(7831:7839): El proceso: 1 llego a estado new
+[INFO] 06:26:07:441 KERNEL/(7831:7839): El proceso: 1 se agrego a la lista de ready
+[INFO] 06:26:09:713 KERNEL/(7831:7838): HOLA
+[INFO] 06:26:09:713 KERNEL/(7831:7838): El proceso: 0 termino de ejecutar
+[INFO] 06:26:09:713 KERNEL/(7831:7836): Exec libre => estado_ready comienza a planificar
+[INFO] 06:26:09:713 KERNEL/(7831:7838): El proceso: 1 llego a estado exec
+[INFO] 06:26:12:567 KERNEL/(7831:7840): Se conecto un cliente!
+[INFO] 06:26:12:568 KERNEL/(7831:7839): El proceso: 2 llego a estado new
+[INFO] 06:26:12:568 KERNEL/(7831:7839): El proceso: 2 se agrego a la lista de ready
+[INFO] 06:26:13:420 KERNEL/(7831:7840): Se conecto un cliente!
+[INFO] 06:26:13:422 KERNEL/(7831:7839): El proceso: 3 llego a estado new
+[INFO] 06:26:13:422 KERNEL/(7831:7839): El proceso: 3 se agrego a la lista de ready
+[INFO] 06:26:14:718 KERNEL/(7831:7838): HOLA
+[INFO] 06:26:14:718 KERNEL/(7831:7838): El proceso: 1 termino de ejecutar
+[INFO] 06:26:14:718 KERNEL/(7831:7836): Exec libre => estado_ready comienza a planificar
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 2 --> esperando: 2150
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 2 --> estimado: 10000
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 2 --> suma: 12150
+[INFO] 06:26:14:718 KERNEL/(7831:7836): En calcular ratio. El proceso: 2 --> ratio: 1.215000
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 3 --> esperando: 1296
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 3 --> estimado: 10000
+[INFO] 06:26:14:718 KERNEL/(7831:7836): El proceso: 3 --> suma: 11296
+[INFO] 06:26:14:719 KERNEL/(7831:7836): En calcular ratio. El proceso: 3 --> ratio: 1.129600
+[INFO] 06:26:14:719 KERNEL/(7831:7836): El proceso: 2 --> ratio: 1.215000
+[INFO] 06:26:14:719 KERNEL/(7831:7836): El proceso: 3 --> ratio: 1.129600
+[INFO] 06:26:14:719 KERNEL/(7831:7838): El proceso: 2 llego a estado exec
+[INFO] 06:26:16:019 KERNEL/(7831:7840): Se conecto un cliente!
+[INFO] 06:26:16:019 KERNEL/(7831:7839): El proceso: 4 llego a estado new
+[INFO] 06:26:16:019 KERNEL/(7831:7839): El proceso: 4 se agrego a la lista de ready
+[INFO] 06:26:19:725 KERNEL/(7831:7838): HOLA
+[INFO] 06:26:19:725 KERNEL/(7831:7838): El proceso: 2 termino de ejecutar
+[INFO] 06:26:19:725 KERNEL/(7831:7836): Exec libre => estado_ready comienza a planificar
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 3 --> esperando: 6303
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 3 --> estimado: 10000
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 3 --> suma: 16303
+[INFO] 06:26:19:725 KERNEL/(7831:7836): En calcular ratio. El proceso: 3 --> ratio: 1.630300
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 4 --> esperando: 3705
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 4 --> estimado: 10000
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 4 --> suma: 13705
+[INFO] 06:26:19:725 KERNEL/(7831:7836): En calcular ratio. El proceso: 4 --> ratio: 1.370500
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 3 --> ratio: 1.630300
+[INFO] 06:26:19:725 KERNEL/(7831:7836): El proceso: 4 --> ratio: 1.370500
+[INFO] 06:26:19:725 KERNEL/(7831:7838): El proceso: 3 llego a estado exec
+[INFO] 06:26:24:733 KERNEL/(7831:7838): HOLA
+[INFO] 06:26:24:733 KERNEL/(7831:7838): El proceso: 3 termino de ejecutar
+[INFO] 06:26:24:734 KERNEL/(7831:7836): Exec libre => estado_ready comienza a planificar
+[INFO] 06:26:24:734 KERNEL/(7831:7838): El proceso: 4 llego a estado exec
+[INFO] 06:26:29:741 KERNEL/(7831:7838): HOLA
+[INFO] 06:26:29:741 KERNEL/(7831:7838): El proceso: 4 termino de ejecutar

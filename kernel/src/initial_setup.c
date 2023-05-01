@@ -89,6 +89,19 @@ int initial_setup(){
 			error = 0;
 		}
 
+	// GRADO_MAX_MULTIPROGRAMACION
+	if (config_has_property(config, "GRADO_MAX_MULTIPROGRAMACION")){
+		grado_max_multiprogramacion = config_get_double_value(config, "GRADO_MAX_MULTIPROGRAMACION");
+		} else {
+			failed_initial_setup("GRADO_MAX_MULTIPROGRAMACION");
+			error = 0;
+		}
+
+
+
+
+
+
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");
