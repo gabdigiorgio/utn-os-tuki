@@ -114,14 +114,24 @@ void enviar_contexto(t_contexto* contexto){
 			break;
 	}
 
-	//aca va logica de exit
+	// aca va logica de exit
 
-	/*if(list_size(contexto->instrucciones) == list_size(contexto_actualizado->registros->ip))
+	log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
+	log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
+
+	if(true) // aca iria if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
 	{
-		log_info(logger,"proceso a exit");
+		log_info(logger,"El contexto se ejecutó completamente");
+
+	    list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
+	    free(contexto_actualizado->registros);
+	    free(contexto_actualizado);
 	}
+	/*
 	else
-		log_info(logger,"proceso a block");*/
+	{
+		log_info(logger,"proceso a block");
+	}*/
 
 
 }

@@ -485,3 +485,247 @@
 [INFO] 06:26:24:734 KERNEL/(7831:7838): El proceso: 4 llego a estado exec
 [INFO] 06:26:29:741 KERNEL/(7831:7838): HOLA
 [INFO] 06:26:29:741 KERNEL/(7831:7838): El proceso: 4 termino de ejecutar
+[INFO] 16:23:24:079 KERNEL/(46867:46867): Valores de configuracion leidos correctamente
+[INFO] 16:23:24:080 KERNEL/(46867:46867): Memoria
+[INFO] 16:23:24:081 KERNEL/(46867:46867): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:23:24:081 KERNEL/(46867:46867): Cpu
+[INFO] 16:23:24:083 KERNEL/(46867:46867): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:23:24:083 KERNEL/(46867:46867): File system
+[INFO] 16:23:24:086 KERNEL/(46867:46867): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:23:24:087 KERNEL/(46867:46867): Kernel listo para recibir Consolas
+[INFO] 16:23:29:964 KERNEL/(46867:46877): Se conecto un cliente!
+[INFO] 16:23:29:964 KERNEL/(46867:46876): El proceso: 0 llego a estado new
+[INFO] 16:23:29:964 KERNEL/(46867:46876): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:23:29:965 KERNEL/(46867:46873): Exec libre => estado_ready comienza a planificar
+[INFO] 16:23:29:965 KERNEL/(46867:46875): El proceso: 0 llego a estado exec
+[INFO] 16:23:29:965 KERNEL/(46867:46875): falle
+[INFO] 16:23:29:965 KERNEL/(46867:46875): El proceso: 0 termino de ejecutar
+[INFO] 22:47:42:601 KERNEL/(48393:48393): Valores de configuracion leidos correctamente
+[INFO] 22:47:42:603 KERNEL/(48393:48393): Memoria
+[INFO] 22:47:42:603 KERNEL/(48393:48393): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:47:42:611 KERNEL/(48393:48393): Cpu
+[INFO] 22:47:42:611 KERNEL/(48393:48393): Se establecio correctamente la conexion
+[INFO] 22:47:42:612 KERNEL/(48393:48393): File system
+[INFO] 22:47:42:613 KERNEL/(48393:48393): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:47:42:613 KERNEL/(48393:48393): Kernel listo para recibir Consolas
+[INFO] 22:47:50:441 KERNEL/(48393:48403): Se conecto un cliente!
+[INFO] 22:47:50:444 KERNEL/(48393:48402): El proceso: 0 llego a estado new
+[INFO] 22:47:50:444 KERNEL/(48393:48402): El proceso: 0 se agrego a la lista de ready
+[INFO] 22:47:50:445 KERNEL/(48393:48399): Exec libre => estado_ready comienza a planificar
+[INFO] 22:47:50:445 KERNEL/(48393:48401): El proceso: 0 llego a estado exec
+[INFO] 22:47:55:455 KERNEL/(48393:48401): HOLA
+[INFO] 22:47:55:455 KERNEL/(48393:48401): El proceso: 0 termino de ejecutar
+[INFO] 01:25:57:382 KERNEL/(50736:50736): Valores de configuracion leidos correctamente
+[INFO] 01:25:57:389 KERNEL/(50736:50736): Memoria
+[INFO] 01:25:57:389 KERNEL/(50736:50736): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:25:57:391 KERNEL/(50736:50736): Cpu
+[INFO] 01:25:57:392 KERNEL/(50736:50736): Se establecio correctamente la conexion
+[INFO] 01:25:57:392 KERNEL/(50736:50736): File system
+[INFO] 01:25:57:392 KERNEL/(50736:50736): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:25:57:393 KERNEL/(50736:50736): Kernel listo para recibir Consolas
+[INFO] 01:26:02:571 KERNEL/(50736:50746): Se conecto un cliente!
+[INFO] 01:26:02:571 KERNEL/(50736:50745): El proceso: 0 llego a estado new
+[INFO] 01:26:02:571 KERNEL/(50736:50745): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:26:02:571 KERNEL/(50736:50742): Exec libre => estado_ready comienza a planificar
+[INFO] 01:26:02:571 KERNEL/(50736:50744): El proceso: 0 llego a estado exec
+[INFO] 01:26:07:578 KERNEL/(50736:50744): HOLA
+[INFO] 01:38:47:583 KERNEL/(50976:50976): Valores de configuracion leidos correctamente
+[INFO] 01:38:57:207 KERNEL/(50976:50976): Memoria
+[INFO] 01:38:59:762 KERNEL/(50976:50976): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:39:02:935 KERNEL/(50976:50976): Cpu
+[INFO] 01:39:02:935 KERNEL/(50976:50976): Se establecio correctamente la conexion
+[INFO] 01:39:06:414 KERNEL/(50976:50976): File system
+[INFO] 01:39:08:519 KERNEL/(50976:50976): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:39:12:900 KERNEL/(50976:50976): Kernel listo para recibir Consolas
+[INFO] 01:39:28:917 KERNEL/(50976:51042): Se conecto un cliente!
+[INFO] 01:39:28:918 KERNEL/(50976:51014): El proceso: 0 llego a estado new
+[INFO] 01:39:28:918 KERNEL/(50976:51014): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:39:28:918 KERNEL/(50976:51010): Exec libre => estado_ready comienza a planificar
+[INFO] 01:39:28:918 KERNEL/(50976:51012): El proceso: 0 llego a estado exec
+[INFO] 01:39:33:926 KERNEL/(50976:51012): HOLA
+[INFO] 02:03:02:220 KERNEL/(51213:51213): Valores de configuracion leidos correctamente
+[INFO] 02:03:02:221 KERNEL/(51213:51213): Memoria
+[INFO] 02:03:02:221 KERNEL/(51213:51213): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:03:02:221 KERNEL/(51213:51213): Cpu
+[INFO] 02:03:02:222 KERNEL/(51213:51213): Se establecio correctamente la conexion
+[INFO] 02:03:02:222 KERNEL/(51213:51213): File system
+[INFO] 02:03:02:222 KERNEL/(51213:51213): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:03:02:222 KERNEL/(51213:51213): Kernel listo para recibir Consolas
+[INFO] 02:03:08:803 KERNEL/(51213:51223): Se conecto un cliente!
+[INFO] 02:03:08:804 KERNEL/(51213:51222): El proceso: 0 llego a estado new
+[INFO] 02:03:08:804 KERNEL/(51213:51222): El proceso: 0 se agrego a la lista de ready
+[INFO] 02:03:08:804 KERNEL/(51213:51219): Exec libre => estado_ready comienza a planificar
+[INFO] 02:03:08:804 KERNEL/(51213:51221): El proceso: 0 llego a estado exec
+[INFO] 02:03:13:814 KERNEL/(51213:51221): HOLA
+[INFO] 02:03:13:814 KERNEL/(51213:51221): El contexto se ejecutó completamente
+[INFO] 02:03:13:814 KERNEL/(51213:51221): El proceso: 0 termino de ejecutar
+[INFO] 02:23:29:212 KERNEL/(51563:51563): Valores de configuracion leidos correctamente
+[INFO] 02:23:29:213 KERNEL/(51563:51563): Memoria
+[INFO] 02:23:29:213 KERNEL/(51563:51563): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:23:29:213 KERNEL/(51563:51563): Cpu
+[INFO] 02:23:29:213 KERNEL/(51563:51563): Se establecio correctamente la conexion
+[INFO] 02:23:29:213 KERNEL/(51563:51563): File system
+[INFO] 02:23:29:215 KERNEL/(51563:51563): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:23:29:215 KERNEL/(51563:51563): Kernel listo para recibir Consolas
+[INFO] 02:23:41:784 KERNEL/(51563:51573): Se conecto un cliente!
+[INFO] 02:23:41:784 KERNEL/(51563:51572): El proceso: 0 llego a estado new
+[INFO] 02:23:41:784 KERNEL/(51563:51572): El proceso: 0 se agrego a la lista de ready
+[INFO] 02:23:41:784 KERNEL/(51563:51569): Exec libre => estado_ready comienza a planificar
+[INFO] 02:23:41:784 KERNEL/(51563:51571): El proceso: 0 llego a estado exec
+[INFO] 02:23:46:791 KERNEL/(51563:51571): HOLA
+[INFO] 02:23:46:791 KERNEL/(51563:51571): El proceso: 0 termino de ejecutar
+[INFO] 03:45:48:770 KERNEL/(51804:51804): Valores de configuracion leidos correctamente
+[INFO] 03:45:48:771 KERNEL/(51804:51804): Memoria
+[INFO] 03:45:48:771 KERNEL/(51804:51804): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:45:48:771 KERNEL/(51804:51804): Cpu
+[INFO] 03:45:48:771 KERNEL/(51804:51804): Se establecio correctamente la conexion
+[INFO] 03:45:48:771 KERNEL/(51804:51804): File system
+[INFO] 03:45:48:771 KERNEL/(51804:51804): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:45:48:772 KERNEL/(51804:51804): Kernel listo para recibir Consolas
+[INFO] 03:45:55:053 KERNEL/(51804:51814): Se conecto un cliente!
+[INFO] 03:45:55:054 KERNEL/(51804:51813): El proceso: 0 llego a estado new
+[INFO] 03:45:55:054 KERNEL/(51804:51813): El proceso: 0 se agrego a la lista de ready
+[INFO] 03:45:55:054 KERNEL/(51804:51810): Exec libre => estado_ready comienza a planificar
+[INFO] 03:45:55:054 KERNEL/(51804:51812): El proceso: 0 llego a estado exec
+[INFO] 03:46:00:066 KERNEL/(51804:51812): HOLA
+[INFO] 03:46:00:066 KERNEL/(51804:51812): El proceso: 0 termino de ejecutar
+[INFO] 03:48:48:683 KERNEL/(51847:51847): Valores de configuracion leidos correctamente
+[INFO] 03:48:48:688 KERNEL/(51847:51847): Memoria
+[INFO] 03:48:48:688 KERNEL/(51847:51847): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:48:48:688 KERNEL/(51847:51847): Cpu
+[INFO] 03:49:03:649 KERNEL/(51847:51847): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:49:03:649 KERNEL/(51847:51847): File system
+[INFO] 03:49:03:649 KERNEL/(51847:51847): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:49:03:650 KERNEL/(51847:51847): Kernel listo para recibir Consolas
+[INFO] 03:49:09:943 KERNEL/(51887:51887): Valores de configuracion leidos correctamente
+[INFO] 03:49:09:947 KERNEL/(51887:51887): Memoria
+[INFO] 03:49:09:947 KERNEL/(51887:51887): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:49:09:948 KERNEL/(51887:51887): Cpu
+[INFO] 03:49:09:948 KERNEL/(51887:51887): Se establecio correctamente la conexion
+[INFO] 03:49:09:948 KERNEL/(51887:51887): File system
+[INFO] 03:49:09:948 KERNEL/(51887:51887): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:49:09:948 KERNEL/(51887:51887): Kernel listo para recibir Consolas
+[INFO] 03:49:15:181 KERNEL/(51887:51897): Se conecto un cliente!
+[INFO] 03:49:15:181 KERNEL/(51887:51896): El proceso: 0 llego a estado new
+[INFO] 03:49:15:181 KERNEL/(51887:51896): El proceso: 0 se agrego a la lista de ready
+[INFO] 03:49:15:181 KERNEL/(51887:51893): Exec libre => estado_ready comienza a planificar
+[INFO] 03:49:15:182 KERNEL/(51887:51895): El proceso: 0 llego a estado exec
+[INFO] 03:49:20:197 KERNEL/(51887:51895): HOLA
+[INFO] 03:49:20:197 KERNEL/(51887:51895): El proceso: 0 termino de ejecutar
+[INFO] 03:51:51:532 KERNEL/(51953:51953): Valores de configuracion leidos correctamente
+[INFO] 03:52:00:019 KERNEL/(51953:51953): Memoria
+[INFO] 03:52:07:782 KERNEL/(51953:51953): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:52:11:064 KERNEL/(51953:51953): Cpu
+[INFO] 03:52:11:064 KERNEL/(51953:51953): Se establecio correctamente la conexion
+[INFO] 03:52:13:611 KERNEL/(51953:51953): File system
+[INFO] 03:52:18:830 KERNEL/(51953:51953): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:52:23:202 KERNEL/(51953:51953): Kernel listo para recibir Consolas
+[INFO] 03:52:32:291 KERNEL/(51953:52014): Se conecto un cliente!
+[INFO] 03:52:32:293 KERNEL/(51953:51987): El proceso: 0 llego a estado new
+[INFO] 03:52:32:293 KERNEL/(51953:51987): El proceso: 0 se agrego a la lista de ready
+[INFO] 03:52:32:293 KERNEL/(51953:51983): Exec libre => estado_ready comienza a planificar
+[INFO] 03:52:32:293 KERNEL/(51953:51985): El proceso: 0 llego a estado exec
+[INFO] 03:52:37:305 KERNEL/(51953:51985): HOLA
+[INFO] 03:52:37:305 KERNEL/(51953:51985): El proceso: 0 termino de ejecutar
+[INFO] 03:54:22:565 KERNEL/(52056:52056): Valores de configuracion leidos correctamente
+[INFO] 03:54:24:979 KERNEL/(52056:52056): Memoria
+[INFO] 03:54:25:854 KERNEL/(52056:52056): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:54:27:398 KERNEL/(52056:52056): Cpu
+[INFO] 03:54:39:480 KERNEL/(52056:52056): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:55:08:557 KERNEL/(52128:52128): Valores de configuracion leidos correctamente
+[INFO] 03:55:11:414 KERNEL/(52128:52128): Memoria
+[INFO] 03:55:12:158 KERNEL/(52128:52128): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:55:13:443 KERNEL/(52128:52128): Cpu
+[INFO] 03:55:13:444 KERNEL/(52128:52128): Se establecio correctamente la conexion
+[INFO] 03:55:14:452 KERNEL/(52128:52128): File system
+[INFO] 03:55:15:355 KERNEL/(52128:52128): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:55:17:450 KERNEL/(52128:52128): Kernel listo para recibir Consolas
+[INFO] 03:55:28:818 KERNEL/(52128:52175): Se conecto un cliente!
+[INFO] 03:55:28:819 KERNEL/(52128:52149): El proceso: 0 llego a estado new
+[INFO] 03:55:28:819 KERNEL/(52128:52149): El proceso: 0 se agrego a la lista de ready
+[INFO] 03:55:28:819 KERNEL/(52128:52145): Exec libre => estado_ready comienza a planificar
+[INFO] 03:55:28:819 KERNEL/(52128:52147): El proceso: 0 llego a estado exec
+[INFO] 03:55:39:991 KERNEL/(52128:52147): HOLA
+[INFO] 03:55:39:991 KERNEL/(52128:52147): El proceso: 0 termino de ejecutar
+[INFO] 03:56:47:738 KERNEL/(52268:52268): Valores de configuracion leidos correctamente
+[INFO] 03:56:47:743 KERNEL/(52268:52268): Memoria
+[INFO] 03:56:47:744 KERNEL/(52268:52268): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:56:47:744 KERNEL/(52268:52268): Cpu
+[INFO] 03:56:47:744 KERNEL/(52268:52268): Se establecio correctamente la conexion
+[INFO] 03:56:47:744 KERNEL/(52268:52268): File system
+[INFO] 03:56:47:744 KERNEL/(52268:52268): Fallo al realizar el handshake, cerrando conexion
+[INFO] 03:56:47:744 KERNEL/(52268:52268): Kernel listo para recibir Consolas
+[INFO] 03:56:51:712 KERNEL/(52268:52278): Se conecto un cliente!
+[INFO] 03:56:51:712 KERNEL/(52268:52277): El proceso: 0 llego a estado new
+[INFO] 03:56:51:712 KERNEL/(52268:52277): El proceso: 0 se agrego a la lista de ready
+[INFO] 03:56:51:712 KERNEL/(52268:52274): Exec libre => estado_ready comienza a planificar
+[INFO] 03:56:51:712 KERNEL/(52268:52276): El proceso: 0 llego a estado exec
+[INFO] 03:56:56:718 KERNEL/(52268:52276): HOLA
+[INFO] 04:05:23:727 KERNEL/(52373:52373): Valores de configuracion leidos correctamente
+[INFO] 04:05:23:728 KERNEL/(52373:52373): Memoria
+[INFO] 04:05:23:728 KERNEL/(52373:52373): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:05:23:728 KERNEL/(52373:52373): Cpu
+[INFO] 04:05:23:729 KERNEL/(52373:52373): Se establecio correctamente la conexion
+[INFO] 04:05:23:729 KERNEL/(52373:52373): File system
+[INFO] 04:05:23:729 KERNEL/(52373:52373): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:05:23:729 KERNEL/(52373:52373): Kernel listo para recibir Consolas
+[INFO] 04:05:43:289 KERNEL/(52373:52383): Se conecto un cliente!
+[INFO] 04:05:43:289 KERNEL/(52373:52382): El proceso: 0 llego a estado new
+[INFO] 04:05:43:289 KERNEL/(52373:52382): El proceso: 0 se agrego a la lista de ready
+[INFO] 04:05:43:289 KERNEL/(52373:52379): Exec libre => estado_ready comienza a planificar
+[INFO] 04:05:43:289 KERNEL/(52373:52381): El proceso: 0 llego a estado exec
+[INFO] 04:05:48:296 KERNEL/(52373:52381): HOLA
+[INFO] 04:05:48:296 KERNEL/(52373:52381): El contexto se ejecutó completamente
+[INFO] 04:05:48:296 KERNEL/(52373:52381): El proceso: 0 termino de ejecutar
+[INFO] 04:09:59:748 KERNEL/(52484:52484): Valores de configuracion leidos correctamente
+[INFO] 04:09:59:749 KERNEL/(52484:52484): Memoria
+[INFO] 04:09:59:750 KERNEL/(52484:52484): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:09:59:750 KERNEL/(52484:52484): Cpu
+[INFO] 04:09:59:750 KERNEL/(52484:52484): Se establecio correctamente la conexion
+[INFO] 04:09:59:750 KERNEL/(52484:52484): File system
+[INFO] 04:09:59:750 KERNEL/(52484:52484): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:09:59:750 KERNEL/(52484:52484): Kernel listo para recibir Consolas
+[INFO] 04:10:04:059 KERNEL/(52484:52494): Se conecto un cliente!
+[INFO] 04:10:04:061 KERNEL/(52484:52493): El proceso: 0 llego a estado new
+[INFO] 04:10:04:061 KERNEL/(52484:52493): El proceso: 0 se agrego a la lista de ready
+[INFO] 04:10:04:061 KERNEL/(52484:52490): Exec libre => estado_ready comienza a planificar
+[INFO] 04:10:04:061 KERNEL/(52484:52492): El proceso: 0 llego a estado exec
+[INFO] 04:10:09:068 KERNEL/(52484:52492): HOLA
+[INFO] 04:10:09:069 KERNEL/(52484:52492): El IP esta en 0
+[INFO] 04:10:09:069 KERNEL/(52484:52492): El contexto se ejecutó completamente
+[INFO] 04:10:09:070 KERNEL/(52484:52492): El proceso: 0 termino de ejecutar
+[INFO] 04:31:45:898 KERNEL/(52846:52846): Valores de configuracion leidos correctamente
+[INFO] 04:31:45:898 KERNEL/(52846:52846): Memoria
+[INFO] 04:31:45:898 KERNEL/(52846:52846): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:31:45:900 KERNEL/(52846:52846): Cpu
+[INFO] 04:31:45:900 KERNEL/(52846:52846): Se establecio correctamente la conexion
+[INFO] 04:31:45:901 KERNEL/(52846:52846): File system
+[INFO] 04:31:45:901 KERNEL/(52846:52846): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:31:45:901 KERNEL/(52846:52846): Kernel listo para recibir Consolas
+[INFO] 04:31:50:383 KERNEL/(52846:52856): Se conecto un cliente!
+[INFO] 04:31:50:385 KERNEL/(52846:52855): El proceso: 0 llego a estado new
+[INFO] 04:31:50:385 KERNEL/(52846:52855): El proceso: 0 se agrego a la lista de ready
+[INFO] 04:31:50:385 KERNEL/(52846:52852): Exec libre => estado_ready comienza a planificar
+[INFO] 04:31:50:385 KERNEL/(52846:52854): El proceso: 0 llego a estado exec
+[INFO] 04:31:55:394 KERNEL/(52846:52854): HOLA
+[INFO] 04:31:55:394 KERNEL/(52846:52854): El IP esta en 0
+[INFO] 04:31:55:394 KERNEL/(52846:52854): El contexto se ejecutó completamente
+[INFO] 04:31:55:394 KERNEL/(52846:52854): El proceso: 0 termino de ejecutar
+[INFO] 04:42:35:827 KERNEL/(53067:53067): Valores de configuracion leidos correctamente
+[INFO] 04:42:35:857 KERNEL/(53067:53067): Memoria
+[INFO] 04:42:35:857 KERNEL/(53067:53067): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:42:35:858 KERNEL/(53067:53067): Cpu
+[INFO] 04:42:35:858 KERNEL/(53067:53067): Se establecio correctamente la conexion
+[INFO] 04:42:35:858 KERNEL/(53067:53067): File system
+[INFO] 04:42:35:858 KERNEL/(53067:53067): Fallo al realizar el handshake, cerrando conexion
+[INFO] 04:42:35:858 KERNEL/(53067:53067): Kernel listo para recibir Consolas
+[INFO] 04:42:42:858 KERNEL/(53067:53076): Se conecto un cliente!
+[INFO] 04:42:42:859 KERNEL/(53067:53075): El proceso: 0 llego a estado new
+[INFO] 04:42:42:859 KERNEL/(53067:53075): El proceso: 0 se agrego a la lista de ready
+[INFO] 04:42:42:859 KERNEL/(53067:53072): Exec libre => estado_ready comienza a planificar
+[INFO] 04:42:42:859 KERNEL/(53067:53074): El proceso: 0 llego a estado exec
+[INFO] 04:42:47:868 KERNEL/(53067:53074): HOLA
+[INFO] 04:42:47:868 KERNEL/(53067:53074): El IP esta en 0
+[INFO] 04:42:47:868 KERNEL/(53067:53074): El size de las instrucciones es 5
+[INFO] 04:42:47:868 KERNEL/(53067:53074): El contexto se ejecutó completamente
+[INFO] 04:42:47:868 KERNEL/(53067:53074): El proceso: 0 termino de ejecutar
