@@ -119,7 +119,7 @@ void enviar_contexto(t_contexto* contexto){
 	log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
 	log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
 
-	if(true) // aca iria if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
+	if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
 	{
 		log_info(logger,"El contexto se ejecutó completamente");
 

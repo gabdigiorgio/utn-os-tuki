@@ -729,3 +729,16 @@
 [INFO] 04:42:47:868 KERNEL/(53067:53074): El size de las instrucciones es 5
 [INFO] 04:42:47:868 KERNEL/(53067:53074): El contexto se ejecutó completamente
 [INFO] 04:42:47:868 KERNEL/(53067:53074): El proceso: 0 termino de ejecutar
+[INFO] 15:22:28:473 KERNEL/(53420:53420): Valores de configuracion leidos correctamente
+[INFO] 15:22:28:474 KERNEL/(53420:53420): Memoria
+[INFO] 15:22:28:474 KERNEL/(53420:53420): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:22:28:475 KERNEL/(53420:53420): Cpu
+[INFO] 15:22:28:475 KERNEL/(53420:53420): Se establecio correctamente la conexion
+[INFO] 15:22:28:475 KERNEL/(53420:53420): File system
+[INFO] 15:22:28:475 KERNEL/(53420:53420): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:22:28:475 KERNEL/(53420:53420): Kernel listo para recibir Consolas
+[INFO] 15:22:33:357 KERNEL/(53420:53431): Se conecto un cliente!
+[INFO] 15:22:33:357 KERNEL/(53420:53430): El proceso: 0 llego a estado new
+[INFO] 15:22:33:358 KERNEL/(53420:53430): El proceso: 0 se agrego a la lista de ready
+[INFO] 15:22:33:358 KERNEL/(53420:53427): Exec libre => estado_ready comienza a planificar
+[INFO] 15:22:33:358 KERNEL/(53420:53429): El proceso: 0 llego a estado exec

@@ -906,3 +906,25 @@
 [INFO] 04:42:45:865 CPU/(53020:53022): Ejecute YIELD
 [INFO] 04:42:46:865 CPU/(53020:53022): Ejecute EXIT
 [INFO] 04:42:47:868 CPU/(53020:53022): HOLA
+[INFO] 15:22:23:890 CPU/(53386:53386): Valores de configuracion leidos correctamente
+[INFO] 15:22:23:890 CPU/(53386:53386): Memoria
+[INFO] 15:22:23:891 CPU/(53386:53386): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:22:23:891 CPU/(53386:53391): Cpu lista para recibir al Kernel
+[INFO] 15:22:28:474 CPU/(53386:53391): Se conecto el Kernel
+[INFO] 15:22:28:475 CPU/(53386:53391): Handshake de Kernel recibido correctamente
+[INFO] 15:22:33:358 CPU/(53386:53391): Ejecute SET
+[INFO] 15:22:33:358 CPU/(53386:53391): HOLA
+[INFO] 15:22:33:358 CPU/(53386:53391): 
+[INFO] 15:22:34:358 CPU/(53386:53391): Ejecute SET
+[INFO] 15:22:34:359 CPU/(53386:53391): CHAU
+[INFO] 15:22:34:360 CPU/(53386:53391): 
+[INFO] 15:22:35:361 CPU/(53386:53391): Ejecute SET
+[INFO] 15:22:35:361 CPU/(53386:53391): SOYUNPRO
+[INFO] 15:22:35:361 CPU/(53386:53391): 
+[INFO] 15:22:36:362 CPU/(53386:53391): Ejecute YIELD
+[INFO] 15:22:37:365 CPU/(53386:53391): Ejecute EXIT
+[INFO] 15:22:38:366 CPU/(53386:53391): HOLA
+[INFO] 18:23:56:670 CPU/(54774:54774): Valores de configuracion leidos correctamente
+[INFO] 18:23:56:670 CPU/(54774:54774): Memoria
+[INFO] 18:23:56:672 CPU/(54774:54774): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:23:56:675 CPU/(54774:54780): Cpu lista para recibir al Kernel
