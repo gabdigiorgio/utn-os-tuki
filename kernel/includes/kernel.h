@@ -114,12 +114,12 @@ bool recibido = 0;
 
 	void iterator(char* value);
 	void iniciar_pcb_lists();
+	void iniciar_semaforos();
 	void enviar_contexto(t_contexto* contexto);
 	t_contexto* obtener_contexto_pcb(pcb_t* pcb);
-	void iniciar_semaforos();
+	void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 	void iniciar_planificador_corto_plazo();
 	void estado_ready();
-	void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
 	void estado_exec();
 	void estado_block();
 	long double calcular_ratio(pcb_t* pcb_actual);

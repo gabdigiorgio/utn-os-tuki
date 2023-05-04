@@ -174,7 +174,7 @@ void enviar_contexto(t_contexto* contexto){
 
 }
 void iniciar_semaforos(){
-	sem_init(&sem_estado_new, 0, 0);
+	sem_init(&sem_estado_new, grado_max_multiprogramacion, 0); //Se le deberia asignar  el valor de multiprogramacion como el valor iniciar del semaforo de new
 	sem_init(&sem_estado_ready, 0, 0);
 	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);
@@ -186,6 +186,33 @@ void iniciar_pcb_lists(){
 	pcb_ready_list = init_list_mutex();
 	pcb_new_list = init_list_mutex();
 	pcb_block_list = init_list_mutex();
+}
+
+void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
+/*
+ *
+ * 		wait(sem_exec == 0)
+ *
+ *
+ * 		t_temporal* tiempo_en_ejecucion = temporal_create(); //NO MODIFICAR (calculo para HRRN)
+ *
+ * 		serializar_contexto()
+ *
+ * 		recibir_contexto()
+ *
+ *      cosas
+ *
+ *		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
+ *		pcb_a_ejecutar->estimado_proxima_rafaga =  //NO MODIFICAR (calculo para HRRN)
+ *			hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
+ *			+ (1-hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
+ *
+ *		temporal_destroy(tiempo_en_ejecucion);  //NO MODIFICAR (calculo para HRRN)
+
+ *      signal(sem_exec) (reduce el semasforo a 0)
+ *
+ *
+ */
 }
 
 void iniciar_planificador_corto_plazo(){
@@ -228,33 +255,6 @@ void estado_ready() {
 	}
 }
 
-
-void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
-/*
- *
- * 		wait(sem_exec == 0)
- *
- *
- * 		t_temporal* tiempo_en_ejecucion = temporal_create(); //NO MODIFICAR (calculo para HRRN)
- *
- * 		serializar_contexto()
- *
- * 		recibir_contexto()
- *
- *      cosas
- *
- *		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
- *		pcb_a_ejecutar->estimado_proxima_rafaga =  //NO MODIFICAR (calculo para HRRN)
- *			hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
- *			+ (1-hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
- *
- *		temporal_destroy(tiempo_en_ejecucion);  //NO MODIFICAR (calculo para HRRN)
-
- *      signal(sem_exec) (reduce el semasforo a 0)
- *
- *
- */
-}
 
 
 void estado_exec(){
@@ -313,6 +313,10 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 
 	return ratio_1 > ratio_2;
 }
+
+
+
+
 void terminar_programa()
 {
 	log_destroy(logger);
