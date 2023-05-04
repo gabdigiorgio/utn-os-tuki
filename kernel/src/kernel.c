@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
+
 t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
@@ -172,7 +173,6 @@ void enviar_contexto(t_contexto* contexto){
 	}*/
 
 }
-
 void iniciar_semaforos(){
 	sem_init(&sem_estado_new, 0, 0);
 	sem_init(&sem_estado_ready, 0, 0);
@@ -188,32 +188,6 @@ void iniciar_pcb_lists(){
 	pcb_block_list = init_list_mutex();
 }
 
-
-
-pcb_t *crear_proceso(t_list* instrucciones){
-	pcb_t *proceso = malloc(sizeof(pcb_t));
-	sem_wait(&sem_pid_aumento);
-	proceso->pid = pid++;
-	sem_post(&sem_pid_aumento);
-	proceso->estimado_proxima_rafaga = estimacion_inicial;
-	proceso->instrucciones = instrucciones;
-	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
-	return proceso;
-}
-
-void agregar_pcb_a_new(t_list* instrucciones){
-	//uint32_t largo = list_mutex_size(pcb_new_list);
-	pcb_t *proceso = crear_proceso(instrucciones);
-	list_push(pcb_new_list,proceso);
-	sem_post(&sem_estado_new);
-}
-
-void iniciar_planificador_largo_plazo(){
-	pthread_t hilo_new;
-	pthread_create(&hilo_new, NULL, (void *)estado_new, NULL);
-	pthread_detach(hilo_new);
-}
-
 void iniciar_planificador_corto_plazo(){
 
 	pthread_t hilo_ready;
@@ -227,20 +201,6 @@ void iniciar_planificador_corto_plazo(){
 	pthread_detach(hilo_exec);
 }
 
-void estado_new(){
-	while(1)
-	{
-		sem_wait(&sem_estado_new);
-		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
-		pcb_para_listo->estado = PCB_NEW;
-		log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
-		list_push(pcb_ready_list,pcb_para_listo);
-		pcb_para_listo->tiempo_espera_en_ready = temporal_create();
-		pcb_para_listo->estado = PCB_READY;
-		log_info(logger, "El proceso: %d se agrego a la lista de ready", pcb_para_listo->pid);
-		sem_post(&sem_estado_ready);
-	}
-}
 
 void estado_ready() {
 	while(1){
@@ -353,7 +313,6 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 
 	return ratio_1 > ratio_2;
 }
-
 void terminar_programa()
 {
 	log_destroy(logger);
