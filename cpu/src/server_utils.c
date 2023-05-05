@@ -52,6 +52,8 @@ void deserializar_header(t_paquete* paquete, int socket){
 t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
 	t_list* lista = list_create();
 	t_contexto* contexto = malloc(sizeof(t_contexto));
+	uint32_t pid;
+	uint32_t delay;
 
 	void* stream = buffer->stream;
 
@@ -120,9 +122,14 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
 	stream += sizeof(char) * 17;
 	memcpy(&(registros->rdx), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
+	memcpy(&(pid), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	memcpy(&(delay), stream, sizeof(uint32_t));
 
 	contexto->instrucciones = lista;
 	contexto->registros = registros;
+	contexto->pid = pid;
+	contexto->delay = delay;
 
 	return contexto;
 }

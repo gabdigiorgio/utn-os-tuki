@@ -63,7 +63,8 @@ typedef struct
 {
 	t_registros* registros;
 	t_list* instrucciones;
-	//uint32_t pid;
+	uint32_t pid;
+	uint32_t delay;
 } t_contexto;
 
 typedef struct{

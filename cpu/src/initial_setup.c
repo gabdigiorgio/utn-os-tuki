@@ -36,6 +36,14 @@ int initial_setup(){
 		error = 0;
 	}
 
+	// RETARDO
+	if (config_has_property(config, "RETARDO_INSTRUCCION")){
+		retardo_instruc = config_get_int_value(config, "RETARDO_INSTRUCCION") / 1000;
+	} else {
+		failed_initial_setup("RETARDO_INSTRUCCION");
+		error = 0;
+	}
+
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");

@@ -43,6 +43,7 @@ int memoria_connection;
 char* memoria_ip;
 char* memoria_port;
 char* server_port;
+int retardo_instruc;
 
 t_config* config;
 
@@ -64,6 +65,7 @@ char rax[17];
 char rbx[17];
 char rcx[17];
 char rdx[17];
+uint32_t delay;
 t_contexto* contexto;
 
 // ________

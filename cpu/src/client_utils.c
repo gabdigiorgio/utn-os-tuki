@@ -85,12 +85,12 @@ uint32_t calcular_tam_instrucciones(t_list* lista){
 uint32_t calcular_tam_registros(t_registros* registros){
 	uint32_t size = 0;
 
-	size = sizeof(uint16_t) + sizeof(char) * 20 + sizeof(char) * 36 + sizeof(char) * 68;
+	size = sizeof(uint16_t) + sizeof(char) * 20 + sizeof(char) * 36 + sizeof(char) * 68 + sizeof(uint32_t) + sizeof(uint32_t);
 
 	return size;
 }
 
-void copiar_contexto(void* stream, t_list* lista, t_registros* registros){
+void copiar_contexto(void* stream, t_list* lista, t_registros* registros, uint32_t pid, uint32_t delay){
 	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	int lineas = list_size(lista);
 	int offset = 0;
@@ -143,6 +143,10 @@ void copiar_contexto(void* stream, t_list* lista, t_registros* registros){
 	memcpy(stream + offset, registros->rcx, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
 	memcpy(stream + offset, registros->rdx, sizeof(char) * 17);
+	offset += sizeof(char) * 17;
+	memcpy(stream + offset, &pid, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, &delay, sizeof(uint32_t));
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
@@ -160,7 +164,7 @@ void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
 	memcpy(a_enviar + offset, buffer->stream, buffer->size);
 }
 
-void serializar_contexto(int socket_cliente, t_contexto* contexto){
+void serializar_contexto(int socket, t_contexto* contexto){
 	//Creo el buffer a utilizar para las instrucciones
 	t_buffer* buffer = malloc(sizeof(t_buffer));
 	//t_instruc* instrucciones = malloc(sizeof(t_instruc));
@@ -173,7 +177,7 @@ void serializar_contexto(int socket_cliente, t_contexto* contexto){
 	void* stream = malloc(buffer->size);
 
 	//Leo toda la lista para copiar los valores en memoria
-	copiar_contexto(stream,contexto->instrucciones,contexto->registros);
+	copiar_contexto(stream,contexto->instrucciones,contexto->registros,contexto->pid,contexto->delay);
 
 	//Añado el stream a mi buffers
 	buffer->stream = stream;
@@ -184,7 +188,7 @@ void serializar_contexto(int socket_cliente, t_contexto* contexto){
 	//Creo un paquete y le asigno los valores iniciales
 
 	//Envio todo el stream al servidor
-	send(socket_cliente, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
 	//Libero memoria que ya no voy a utilizar
 	free(a_enviar);

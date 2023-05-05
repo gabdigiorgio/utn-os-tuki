@@ -1,5 +1,5 @@
-#ifndef COMM_THREAD_H_
-#define COMM_THREAD_H_
+#ifndef MANEJADOR_CONTEXTO_H_
+#define MANEJADOR_CONTEXTO_H_
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -12,10 +12,9 @@
 #include "utils.h"
 #include "../../shared/includes/tad.h"
 
-void conexion_kernel(int server_connection);
 int ejecutar_contexto(int lineas);
 void armar_contexto();
-void serializar_contexto(int socket_cliente, t_contexto* contexto);
+int leer_instruccion(t_instruc* instruccion);
 
 extern t_log* logger;
 extern uint16_t ip;
@@ -31,9 +30,10 @@ extern char rax[17];
 extern char rbx[17];
 extern char rcx[17];
 extern char rdx[17];
+extern uint32_t delay;
 extern t_contexto* contexto;
 
+extern int retardo_instruc;
 
-#endif /* COMM_THREAD_H_ */
 
-
+#endif /* MANEJADOR_CONTEXTO_H_ */

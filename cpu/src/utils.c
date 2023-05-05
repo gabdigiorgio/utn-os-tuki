@@ -17,12 +17,6 @@ t_log* iniciar_logger(void)
 	return nuevo_logger;
 }
 
-void ejecutar_instruccion(t_instruc* instruccion){
-
-	leer_instruccion(instruccion);
-	sleep(1);
-}
-
 bool sort_list(t_instruc* instruc1, t_instruc* instruc2){
 	return instruc1->nro < instruc2->nro;
 }

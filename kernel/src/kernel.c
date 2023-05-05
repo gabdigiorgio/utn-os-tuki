@@ -93,6 +93,7 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 	t_registros *registros = malloc(sizeof(t_registros));
 	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
+	contexto->pid = pcb->pid;
 	return contexto;
 }
 
@@ -117,8 +118,9 @@ void enviar_contexto(t_contexto* contexto){
 
 	// aca va logica de exit
 
-	log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
+	log_info(logger, "El IP esta en %d en el proceso %d", contexto_actualizado->registros->ip, contexto_actualizado->pid);
 	log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
+	log_info(logger, "Hay una espera de %d", contexto_actualizado->delay);
 
 	if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
 	{

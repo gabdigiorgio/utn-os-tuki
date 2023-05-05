@@ -1,9 +1,12 @@
 #include "../../includes/code_reader.h"
 
-void leer_instruccion(t_instruc* instruccion){
+int leer_instruccion(t_instruc* instruccion){
 	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(instruccion->param1,instruccion->param2);
 	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield();
 	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit();
+	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_io(instruccion->param1);
+
+	return 1;
 }
 
 char* seleccionar_registro(char* param){

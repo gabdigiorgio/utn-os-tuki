@@ -8,10 +8,10 @@
 
 #include "../../shared/includes/tad.h"
 
-void leer_instruccion(t_instruc* instruccion);
-void ejecutar_set(char* param1, char* param2);
-void ejecutar_yield();
-void ejecutar_exit();
+int leer_instruccion(t_instruc* instruccion);
+int ejecutar_set(char* param1, char* param2);
+int ejecutar_yield();
+int ejecutar_exit();
 void cambiar_registro(char* registro, char* valor);
 char* seleccionar_registro(char* param);
 
@@ -28,5 +28,6 @@ extern char rax[17];
 extern char rbx[17];
 extern char rcx[17];
 extern char rdx[17];
+extern uint32_t delay;
 
 #endif /* CODE_READER_H_ */
