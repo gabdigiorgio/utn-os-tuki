@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
 
 	return EXIT_SUCCESS;
 }
+
 t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
@@ -172,9 +173,8 @@ void enviar_contexto(t_contexto* contexto){
 	}*/
 
 }
-
 void iniciar_semaforos(){
-	sem_init(&sem_estado_new, 0, 0);
+	sem_init(&sem_estado_new, grado_max_multiprogramacion, 0); //Se le deberia asignar  el valor de multiprogramacion como el valor iniciar del semaforo de new
 	sem_init(&sem_estado_ready, 0, 0);
 	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);
@@ -187,87 +187,6 @@ void iniciar_pcb_lists(){
 	pcb_new_list = init_list_mutex();
 	pcb_block_list = init_list_mutex();
 }
-
-
-
-pcb_t *crear_proceso(t_list* instrucciones){
-	pcb_t *proceso = malloc(sizeof(pcb_t));
-	sem_wait(&sem_pid_aumento);
-	proceso->pid = pid++;
-	sem_post(&sem_pid_aumento);
-	proceso->estimado_proxima_rafaga = estimacion_inicial;
-	proceso->instrucciones = instrucciones;
-	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
-	return proceso;
-}
-
-void agregar_pcb_a_new(t_list* instrucciones){
-	//uint32_t largo = list_mutex_size(pcb_new_list);
-	pcb_t *proceso = crear_proceso(instrucciones);
-	list_push(pcb_new_list,proceso);
-	sem_post(&sem_estado_new);
-}
-
-void iniciar_planificador_largo_plazo(){
-	pthread_t hilo_new;
-	pthread_create(&hilo_new, NULL, (void *)estado_new, NULL);
-	pthread_detach(hilo_new);
-}
-
-void iniciar_planificador_corto_plazo(){
-
-	pthread_t hilo_ready;
-	pthread_t hilo_block;
-	pthread_t hilo_exec;
-	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
-	pthread_create(&hilo_block,NULL,(void*)estado_block,NULL);
-	pthread_create(&hilo_exec,NULL,(void*)estado_exec,NULL);
-	pthread_detach(hilo_ready);
-	pthread_detach(hilo_block);
-	pthread_detach(hilo_exec);
-}
-
-void estado_new(){
-	while(1)
-	{
-		sem_wait(&sem_estado_new);
-		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
-		pcb_para_listo->estado = PCB_NEW;
-		log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
-		list_push(pcb_ready_list,pcb_para_listo);
-		pcb_para_listo->tiempo_espera_en_ready = temporal_create();
-		pcb_para_listo->estado = PCB_READY;
-		log_info(logger, "El proceso: %d se agrego a la lista de ready", pcb_para_listo->pid);
-		sem_post(&sem_estado_ready);
-	}
-}
-
-void estado_ready() {
-	while(1){
-
-		//sem_wait(&sem_grado_multiprogramacion);
-
-		sem_wait(&sem_estado_ready); // espera a que haya algun proceso en la lista de ready
-
-		sem_wait(&sem_exec_libre); // espera a que exec este libre para planificar
-
-		log_info(logger, "Exec libre => estado_ready comienza a planificar");
-
-		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
-			// Comportamiento por defecto
-			// No se tiene que hacer nada
-		}
-		else
-		if (strcmp(algoritmo_planificacion, "HRRN") == 0){
-			pthread_mutex_lock(&(pcb_ready_list->mutex));
-			list_sort(pcb_ready_list->lista , mayor_ratio);
-			pthread_mutex_unlock(&(pcb_ready_list->mutex));
-		}
-
-		sem_post(&sem_estado_exec);
-	}
-}
-
 
 void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
 /*
@@ -295,6 +214,47 @@ void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
  *
  */
 }
+
+void iniciar_planificador_corto_plazo(){
+
+	pthread_t hilo_ready;
+	pthread_t hilo_block;
+	pthread_t hilo_exec;
+	pthread_create(&hilo_ready, NULL, (void *)estado_ready, NULL);
+	pthread_create(&hilo_block,NULL,(void*)estado_block,NULL);
+	pthread_create(&hilo_exec,NULL,(void*)estado_exec,NULL);
+	pthread_detach(hilo_ready);
+	pthread_detach(hilo_block);
+	pthread_detach(hilo_exec);
+}
+
+
+void estado_ready() {
+	while(1){
+
+		//sem_wait(&sem_grado_multiprogramacion);
+
+		sem_wait(&sem_estado_ready); // espera a que haya algun proceso en la lista de ready
+
+		sem_wait(&sem_exec_libre); // espera a que exec este libre para planificar
+
+		log_info(logger, "Exec libre => estado_ready comienza a planificar");
+
+		if(strcmp(algoritmo_planificacion, "FIFO") == 0){
+			// Comportamiento por defecto
+			// No se tiene que hacer nada
+		}
+		else
+		if (strcmp(algoritmo_planificacion, "HRRN") == 0){
+			pthread_mutex_lock(&(pcb_ready_list->mutex));
+			list_sort(pcb_ready_list->lista , mayor_ratio);
+			pthread_mutex_unlock(&(pcb_ready_list->mutex));
+		}
+
+		sem_post(&sem_estado_exec);
+	}
+}
+
 
 
 void estado_exec(){
@@ -353,6 +313,9 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 
 	return ratio_1 > ratio_2;
 }
+
+
+
 
 void terminar_programa()
 {

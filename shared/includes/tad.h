@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <commons/collections/list.h>
+#include <commons/temporal.h>
 
 typedef struct
 {
@@ -64,5 +65,54 @@ typedef struct
 	t_list* instrucciones;
 	//uint32_t pid;
 } t_contexto;
+
+typedef struct{
+		 uint32_t ids;
+		 uint32_t direccion_base;
+		 uint32_t tamanio;
+	}segmento_t;
+
+
+	typedef struct{
+		 segmento_t* segmento;
+	}tabla_segmentos_t;
+
+
+	typedef struct{
+		 char* instrucciones;
+	}lista_instucciones_t;
+
+
+	typedef struct{
+		uint32_t id_archivo;
+		uint32_t posicion_puntero;
+	}archivo_abierto_t;
+
+
+	typedef struct{
+		archivo_abierto_t* archivos_abiertos;
+	}tabla_archivos_abiertos_t;
+
+
+	typedef enum {
+		PCB_NEW,
+		PCB_READY,
+		PCB_EXEC,
+		PCB_BLOCK,
+		PCB_EXIT
+	} pcb_estado_t;
+
+
+	typedef struct {
+		uint32_t pid;
+		pcb_estado_t estado; // tipo de estado, puede ser un enum
+		uint32_t program_counter;
+		uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
+		t_temporal* tiempo_espera_en_ready; // se hace con timer, ver timestamp
+		//registros_cpu_t registros_cpu; // crear struct de registros de cpu
+		tabla_segmentos_t tabla_segmento; // nada
+		t_list* instrucciones; // lista recibida de consola
+		tabla_archivos_abiertos_t tabla_archivos; // nada
+	}pcb_t;
 
 #endif /* TAD_H_ */
