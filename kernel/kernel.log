@@ -786,3 +786,20 @@
 [INFO] 13:11:13:295 KERNEL/(3261:3268): El IP esta en 0
 [INFO] 13:11:13:295 KERNEL/(3261:3268): El size de las instrucciones es 5
 [INFO] 13:11:13:295 KERNEL/(3261:3268): El proceso: 3 termino de ejecutar
+[INFO] 16:52:50:814 KERNEL/(3670:3670): Valores de configuracion leidos correctamente
+[INFO] 16:52:50:815 KERNEL/(3670:3670): Memoria
+[INFO] 16:52:50:815 KERNEL/(3670:3670): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:52:50:815 KERNEL/(3670:3670): Cpu
+[INFO] 16:52:50:815 KERNEL/(3670:3670): Se establecio correctamente la conexion
+[INFO] 16:52:50:815 KERNEL/(3670:3670): File system
+[INFO] 16:52:50:815 KERNEL/(3670:3670): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:52:50:816 KERNEL/(3670:3670): Kernel listo para recibir Consolas
+[INFO] 16:52:54:631 KERNEL/(3670:3679): Se conecto un cliente!
+[INFO] 16:52:54:632 KERNEL/(3670:3678): El proceso: 0 llego a estado new
+[INFO] 16:52:54:632 KERNEL/(3670:3678): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:52:54:632 KERNEL/(3670:3675): Exec libre => estado_ready comienza a planificar
+[INFO] 16:52:54:632 KERNEL/(3670:3677): El proceso: 0 llego a estado exec
+[INFO] 16:52:59:635 KERNEL/(3670:3677): HOLA
+[INFO] 16:52:59:635 KERNEL/(3670:3677): El IP esta en 0
+[INFO] 16:52:59:635 KERNEL/(3670:3677): El size de las instrucciones es 5
+[INFO] 16:52:59:635 KERNEL/(3670:3677): El proceso: 0 termino de ejecutar
