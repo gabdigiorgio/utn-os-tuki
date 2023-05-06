@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 }
 
-t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
+/*t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
@@ -174,7 +174,7 @@ void enviar_contexto(t_contexto* contexto){
 		}
 	}*/
 
-}
+//}
 void iniciar_semaforos(){
 	sem_init(&sem_estado_new, grado_max_multiprogramacion, 0); //Se le deberia asignar  el valor de multiprogramacion como el valor iniciar del semaforo de new
 	sem_init(&sem_estado_ready, 0, 0);
