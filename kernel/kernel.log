@@ -1,0 +1,18 @@
+[INFO] 22:51:27:288 KERNEL/(2257:2257): Valores de configuracion leidos correctamente
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Memoria
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Cpu
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Se establecio correctamente la conexion
+[INFO] 22:51:27:290 KERNEL/(2257:2257): File system
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:51:27:290 KERNEL/(2257:2257): Kernel listo para recibir Consolas
+[INFO] 22:51:32:995 KERNEL/(2257:2266): Se conecto un cliente!
+[INFO] 22:51:32:996 KERNEL/(2257:2265): El proceso: 0 llego a estado new
+[INFO] 22:51:32:996 KERNEL/(2257:2265): El proceso: 0 se agrego a la lista de ready
+[INFO] 22:51:32:996 KERNEL/(2257:2262): Exec libre => estado_ready comienza a planificar
+[INFO] 22:51:32:996 KERNEL/(2257:2264): El proceso: 0 llego a estado exec
+[INFO] 22:51:37:014 KERNEL/(2257:2264): HOLA
+[INFO] 22:51:37:014 KERNEL/(2257:2264): El IP esta en 4 en el proceso 0
+[INFO] 22:51:37:014 KERNEL/(2257:2264): El size de las instrucciones es 6
+[INFO] 22:51:37:014 KERNEL/(2257:2264): Hay una espera de 50
+[INFO] 22:51:37:014 KERNEL/(2257:2264): El proceso: 0 termino de ejecutar

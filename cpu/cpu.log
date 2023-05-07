@@ -1,0 +1,19 @@
+[INFO] 22:51:13:511 CPU/(2193:2193): Valores de configuracion leidos correctamente
+[INFO] 22:51:13:511 CPU/(2193:2193): Memoria
+[INFO] 22:51:13:511 CPU/(2193:2193): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:51:13:512 CPU/(2193:2198): Cpu lista para recibir al Kernel
+[INFO] 22:51:27:290 CPU/(2193:2198): Se conecto el Kernel
+[INFO] 22:51:27:290 CPU/(2193:2198): Handshake de Kernel recibido correctamente
+[INFO] 22:51:32:996 CPU/(2193:2198): Ejecute SET
+[INFO] 22:51:32:996 CPU/(2193:2198): HOLA
+[INFO] 22:51:32:998 CPU/(2193:2198): 
+[INFO] 22:51:33:998 CPU/(2193:2198): Ejecute SET
+[INFO] 22:51:33:998 CPU/(2193:2198): CHAU
+[INFO] 22:51:33:998 CPU/(2193:2198): 
+[INFO] 22:51:34:998 CPU/(2193:2198): Ejecute SET
+[INFO] 22:51:34:998 CPU/(2193:2198): SOYUNPRO
+[INFO] 22:51:34:998 CPU/(2193:2198): 
+[INFO] 22:51:36:006 CPU/(2193:2198): Ejecute I/O
+[INFO] 22:51:37:013 CPU/(2193:2198): El proceso: 0 llego a CPU
+[INFO] 22:51:37:013 CPU/(2193:2198): El proceso sale con un delay 50
+[INFO] 22:51:37:013 CPU/(2193:2198): HOLA
