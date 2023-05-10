@@ -6,12 +6,20 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 	t_registros *registros = malloc(sizeof(t_registros));
 	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
+	contexto->pid = pcb->pid;
 	return contexto;
 }
 
 void enviar_contexto(t_contexto* contexto){
 	t_paquete* paquete2 = malloc(sizeof(t_paquete));
 	paquete2->buffer = malloc(sizeof(t_buffer));
+
+	//inicializo el estado en 0 ya que el CPU es quien nos va a responder con el estado correcto
+	contexto->estado = EXIT;
+	contexto->param = "0";
+	contexto->param_length = strlen(contexto->param) + 1;
+
+
 	t_contexto* contexto_actualizado = malloc(sizeof(t_contexto));
 	contexto_actualizado->instrucciones = list_create();
 	serializar_contexto(cpu_connection,contexto);
@@ -32,6 +40,8 @@ void enviar_contexto(t_contexto* contexto){
 
 	log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
 	log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
+	log_info(logger, "El numero de estado es: %d", contexto_actualizado->estado);
+	log_info(logger, "El parametro de interrupcion es: %s", contexto_actualizado->param);
 
 	if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
 	{

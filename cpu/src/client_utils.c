@@ -85,18 +85,27 @@ uint32_t calcular_tam_instrucciones(t_list* lista){
 uint32_t calcular_tam_registros(t_registros* registros){
 	uint32_t size = 0;
 
-	size = sizeof(uint16_t) + sizeof(char) * 20 + sizeof(char) * 36 + sizeof(char) * 68 + sizeof(uint32_t) + sizeof(uint32_t);
+	size = sizeof(uint16_t) + sizeof(char) * 20 + sizeof(char) * 36 + sizeof(char) * 68;
 
 	return size;
 }
 
-void copiar_contexto(void* stream, t_list* lista, t_registros* registros, uint32_t pid, uint32_t delay){
+uint32_t calcular_tam_contexto(t_contexto* contexto){
+	uint32_t size = 0;
+
+	size = sizeof(uint32_t) + sizeof(contexto_estado_t) + sizeof(uint32_t) + contexto->param_length;
+
+	return size;
+}
+
+//void copiar_contexto(void* stream, t_list* lista, t_registros* registros, uint32_t pid, uint32_t delay){
+void copiar_contexto(void* stream, t_contexto* contexto){
 	t_instruc* instrucciones = malloc(sizeof(t_instruc));
-	int lineas = list_size(lista);
+	int lineas = list_size(contexto->instrucciones);
 	int offset = 0;
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(lista, i);
+			instrucciones = list_get(contexto->instrucciones, i);
 
 			memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
@@ -118,35 +127,39 @@ void copiar_contexto(void* stream, t_list* lista, t_registros* registros, uint32
 			offset += instrucciones->param3_length;
 		}
 
-	memcpy(stream + offset, &registros->ip, sizeof(uint16_t));
+	memcpy(stream + offset, &contexto->registros->ip, sizeof(uint16_t));
 	offset += sizeof(uint16_t);
-	memcpy(stream + offset, registros->ax, sizeof(char) * 5);
+	memcpy(stream + offset, contexto->registros->ax, sizeof(char) * 5);
 	offset += sizeof(char) * 5;
-	memcpy(stream + offset, registros->bx, sizeof(char) * 5);
+	memcpy(stream + offset, contexto->registros->bx, sizeof(char) * 5);
 	offset += sizeof(char) * 5;
-	memcpy(stream + offset, registros->cx, sizeof(char) * 5);
+	memcpy(stream + offset, contexto->registros->cx, sizeof(char) * 5);
 	offset += sizeof(char) * 5;
-	memcpy(stream + offset, registros->dx, sizeof(char) * 5);
+	memcpy(stream + offset, contexto->registros->dx, sizeof(char) * 5);
 	offset += sizeof(char) * 5;
-	memcpy(stream + offset, registros->eax, sizeof(char) * 9);
+	memcpy(stream + offset, contexto->registros->eax, sizeof(char) * 9);
 	offset += sizeof(char) * 9;
-	memcpy(stream + offset, registros->ebx, sizeof(char) * 9);
+	memcpy(stream + offset, contexto->registros->ebx, sizeof(char) * 9);
 	offset += sizeof(char) * 9;
-	memcpy(stream + offset, registros->ecx, sizeof(char) * 9);
+	memcpy(stream + offset, contexto->registros->ecx, sizeof(char) * 9);
 	offset += sizeof(char) * 9;
-	memcpy(stream + offset, registros->edx, sizeof(char) * 9);
+	memcpy(stream + offset, contexto->registros->edx, sizeof(char) * 9);
 	offset += sizeof(char) * 9;
-	memcpy(stream + offset, registros->rax, sizeof(char) * 17);
+	memcpy(stream + offset, contexto->registros->rax, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
-	memcpy(stream + offset, registros->rbx, sizeof(char) * 17);
+	memcpy(stream + offset, contexto->registros->rbx, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
-	memcpy(stream + offset, registros->rcx, sizeof(char) * 17);
+	memcpy(stream + offset, contexto->registros->rcx, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
-	memcpy(stream + offset, registros->rdx, sizeof(char) * 17);
+	memcpy(stream + offset, contexto->registros->rdx, sizeof(char) * 17);
 	offset += sizeof(char) * 17;
-	memcpy(stream + offset, &pid, sizeof(uint32_t));
+	memcpy(stream + offset, &contexto->pid, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(stream + offset, &delay, sizeof(uint32_t));
+	memcpy(stream + offset, &contexto->estado, sizeof(contexto_estado_t));
+	offset += sizeof(contexto_estado_t);
+	memcpy(stream + offset, &contexto->param_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, contexto->param, contexto->param_length);
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
@@ -171,13 +184,14 @@ void serializar_contexto(int socket, t_contexto* contexto){
 
 	//Leo la lista de instrucciones para sumar el tamaño de toda la lista
 	buffer->size = calcular_tam_registros(contexto->registros);
+	buffer->size = buffer->size + calcular_tam_contexto(contexto);
 	buffer->size = buffer->size + calcular_tam_instrucciones(contexto->instrucciones);
 
 	//Asigno memoria para el stream del tamaño de mi lista
 	void* stream = malloc(buffer->size);
 
 	//Leo toda la lista para copiar los valores en memoria
-	copiar_contexto(stream,contexto->instrucciones,contexto->registros,contexto->pid,contexto->delay);
+	copiar_contexto(stream,contexto);
 
 	//Añado el stream a mi buffers
 	buffer->stream = stream;

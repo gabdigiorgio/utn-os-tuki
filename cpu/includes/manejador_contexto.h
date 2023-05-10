@@ -30,7 +30,8 @@ extern char rax[17];
 extern char rbx[17];
 extern char rcx[17];
 extern char rdx[17];
-extern uint32_t delay;
+extern char* contexto_param;
+extern uint32_t contexto_estado;
 extern t_contexto* contexto;
 
 extern int retardo_instruc;

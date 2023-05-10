@@ -59,12 +59,25 @@ typedef struct
 	char rdx[17];
 } t_registros;
 
+typedef enum{
+	EXIT,
+	YIELD,
+	IO,
+	FSYSTEM,
+	MEM,
+	WAIT,
+	SIGNAL
+}contexto_estado_t;
+
 typedef struct
 {
 	t_registros* registros;
 	t_list* instrucciones;
 	uint32_t pid;
-	uint32_t delay;
+	char* param;
+	uint32_t param_length;
+	contexto_estado_t estado;
+
 } t_contexto;
 
 typedef struct{

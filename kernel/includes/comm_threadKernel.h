@@ -6,6 +6,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include "client_utils.h"
+#include "server_utils.h"
 //#include "../includes/kernel.h"
 //extern  pcb_t* pcb;
 extern int cpu_connection;

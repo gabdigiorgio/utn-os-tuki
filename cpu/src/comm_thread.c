@@ -21,7 +21,8 @@ void conexion_kernel(int server_connection){
 				int result = ejecutar_contexto(paquete->lineas);
 				armar_contexto();
 				log_info(logger, "El proceso: %d llego a CPU", contexto->pid);
-				log_info(logger, "El proceso sale con un delay %d", contexto->delay);
+				log_info(logger, "El numero de estado es: %d", contexto->estado);
+				log_info(logger, "El parametro de interrupcion es: %s", contexto->param);
 				log_info(logger,contexto->registros->ax);
 				serializar_contexto(connection_fd,contexto);
 				break;

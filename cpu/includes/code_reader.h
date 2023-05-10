@@ -7,6 +7,7 @@
 #include<commons/log.h>
 
 #include "../../shared/includes/tad.h"
+#include "utils.h"
 
 int leer_instruccion(t_instruc* instruccion);
 int ejecutar_set(char* param1, char* param2);
@@ -28,6 +29,8 @@ extern char rax[17];
 extern char rbx[17];
 extern char rcx[17];
 extern char rdx[17];
-extern uint32_t delay;
+extern char* contexto_param;
+extern uint32_t contexto_estado;
+extern t_contexto* contexto;
 
 #endif /* CODE_READER_H_ */

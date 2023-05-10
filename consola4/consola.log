@@ -110,3 +110,11 @@
 [INFO] 23:43:28:333 CONSOLA/(7394:7394): Valores de configuracion leidos correctamente
 [INFO] 23:43:38:220 CONSOLA/(7405:7405): Valores de configuracion leidos correctamente
 [INFO] 23:45:10:079 CONSOLA/(7501:7501): Valores de configuracion leidos correctamente
+[ERROR] 00:20:14:963 CONSOLA/(7965:7965): Falta parametro del path del archivo de configuracion
+[INFO] 00:21:17:708 CONSOLA/(8002:8002): Valores de configuracion leidos correctamente
+[INFO] 00:21:46:527 CONSOLA/(8053:8053): Valores de configuracion leidos correctamente
+[INFO] 00:24:46:842 CONSOLA/(8268:8268): Valores de configuracion leidos correctamente
+[INFO] 00:26:48:872 CONSOLA/(8467:8467): Valores de configuracion leidos correctamente
+[INFO] 00:38:26:473 CONSOLA/(9224:9224): Valores de configuracion leidos correctamente
+[INFO] 00:39:50:203 CONSOLA/(9428:9428): Valores de configuracion leidos correctamente
+[INFO] 00:40:27:327 CONSOLA/(9577:9577): Valores de configuracion leidos correctamente

@@ -190,33 +190,6 @@ void iniciar_pcb_lists(){
 	pcb_block_list = init_list_mutex();
 }
 
-void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar){
-/*
- *
- * 		wait(sem_exec == 0)
- *
- *
- * 		t_temporal* tiempo_en_ejecucion = temporal_create(); //NO MODIFICAR (calculo para HRRN)
- *
- * 		serializar_contexto()
- *
- * 		recibir_contexto()
- *
- *      cosas
- *
- *		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
- *		pcb_a_ejecutar->estimado_proxima_rafaga =  //NO MODIFICAR (calculo para HRRN)
- *			hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
- *			+ (1-hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
- *
- *		temporal_destroy(tiempo_en_ejecucion);  //NO MODIFICAR (calculo para HRRN)
-
- *      signal(sem_exec) (reduce el semasforo a 0)
- *
- *
- */
-}
-
 void iniciar_planificador_corto_plazo(){
 
 	pthread_t hilo_ready;

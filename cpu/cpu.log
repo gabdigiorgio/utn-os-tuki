@@ -1,0 +1,1083 @@
+[INFO] 22:58:56:523 CPU/(4083:4083): Valores de configuracion leidos correctamente
+[INFO] 22:58:56:524 CPU/(4083:4083): Memoria
+[INFO] 22:58:56:524 CPU/(4083:4083): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:58:56:526 CPU/(4083:4088): Cpu lista para recibir al Kernel
+[INFO] 22:59:00:900 CPU/(4083:4088): Se conecto el Kernel
+[INFO] 22:59:00:903 CPU/(4083:4088): Handshake de Kernel recibido correctamente
+[INFO] 22:59:14:014 CPU/(4083:4088): Ejecute SET
+[INFO] 22:59:14:014 CPU/(4083:4088): HOLA
+[INFO] 22:59:14:014 CPU/(4083:4088): 
+[INFO] 22:59:15:019 CPU/(4083:4088): Ejecute SET
+[INFO] 22:59:15:020 CPU/(4083:4088): CHAU
+[INFO] 22:59:15:020 CPU/(4083:4088): 
+[INFO] 22:59:16:020 CPU/(4083:4088): Ejecute SET
+[INFO] 22:59:16:020 CPU/(4083:4088): SOYUNPRO
+[INFO] 22:59:16:020 CPU/(4083:4088): 
+[INFO] 22:59:17:021 CPU/(4083:4088): Ejecute I/O
+[INFO] 22:59:18:021 CPU/(4083:4088): El proceso: 0 llego a CPU
+[INFO] 22:59:18:022 CPU/(4083:4088): El proceso sale con un delay 50
+[INFO] 22:59:18:022 CPU/(4083:4088): HOLA
+[INFO] 23:00:12:974 CPU/(4537:4537): Valores de configuracion leidos correctamente
+[INFO] 23:00:12:975 CPU/(4537:4537): Memoria
+[INFO] 23:00:12:975 CPU/(4537:4537): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:00:12:976 CPU/(4537:4542): Cpu lista para recibir al Kernel
+[INFO] 23:00:16:977 CPU/(4537:4542): Se conecto el Kernel
+[INFO] 23:00:16:978 CPU/(4537:4542): Handshake de Kernel recibido correctamente
+[INFO] 23:00:21:124 CPU/(4537:4542): Ejecute SET
+[INFO] 23:00:21:124 CPU/(4537:4542): HOLA
+[INFO] 23:00:21:124 CPU/(4537:4542): 
+[INFO] 23:00:22:124 CPU/(4537:4542): Ejecute SET
+[INFO] 23:00:22:125 CPU/(4537:4542): CHAU
+[INFO] 23:00:22:125 CPU/(4537:4542): 
+[INFO] 23:00:23:126 CPU/(4537:4542): Ejecute SET
+[INFO] 23:00:23:126 CPU/(4537:4542): SOYUNPRO
+[INFO] 23:00:23:126 CPU/(4537:4542): 
+[INFO] 23:00:24:126 CPU/(4537:4542): Ejecute I/O
+[INFO] 23:00:25:127 CPU/(4537:4542): El proceso: 0 llego a CPU
+[INFO] 23:00:25:128 CPU/(4537:4542): El proceso sale con un delay 50
+[INFO] 23:00:25:128 CPU/(4537:4542): HOLA
+[INFO] 23:01:41:910 CPU/(4614:4614): Valores de configuracion leidos correctamente
+[INFO] 23:01:41:913 CPU/(4614:4614): Memoria
+[INFO] 23:01:41:925 CPU/(4614:4614): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:01:41:925 CPU/(4614:4619): Cpu lista para recibir al Kernel
+[INFO] 23:01:53:797 CPU/(4614:4619): Se conecto el Kernel
+[INFO] 23:01:53:798 CPU/(4614:4619): Handshake de Kernel recibido correctamente
+[INFO] 23:02:21:908 CPU/(4614:4619): Ejecute SET
+[INFO] 23:02:21:908 CPU/(4614:4619): HOLA
+[INFO] 23:02:21:908 CPU/(4614:4619): 
+[INFO] 23:02:22:908 CPU/(4614:4619): Ejecute SET
+[INFO] 23:02:22:909 CPU/(4614:4619): CHAU
+[INFO] 23:02:22:909 CPU/(4614:4619): 
+[INFO] 23:02:23:909 CPU/(4614:4619): Ejecute SET
+[INFO] 23:02:23:909 CPU/(4614:4619): SOYUNPRO
+[INFO] 23:02:23:909 CPU/(4614:4619): 
+[INFO] 23:02:24:909 CPU/(4614:4619): Ejecute I/O
+[INFO] 23:02:25:909 CPU/(4614:4619): El proceso: 0 llego a CPU
+[INFO] 23:02:25:909 CPU/(4614:4619): El proceso sale con un delay 50
+[INFO] 23:02:25:909 CPU/(4614:4619): HOLA
+[INFO] 23:03:38:705 CPU/(4717:4717): Valores de configuracion leidos correctamente
+[INFO] 23:03:38:741 CPU/(4717:4717): Memoria
+[INFO] 23:03:38:741 CPU/(4717:4717): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:03:38:759 CPU/(4717:4723): Cpu lista para recibir al Kernel
+[INFO] 23:03:51:757 CPU/(4717:4723): Se conecto el Kernel
+[INFO] 23:03:51:757 CPU/(4717:4723): Handshake de Kernel recibido correctamente
+[INFO] 23:04:07:222 CPU/(4717:4723): Ejecute SET
+[INFO] 23:04:07:222 CPU/(4717:4723): HOLA
+[INFO] 23:04:07:222 CPU/(4717:4723): 
+[INFO] 23:04:08:230 CPU/(4717:4723): Ejecute SET
+[INFO] 23:04:08:230 CPU/(4717:4723): CHAU
+[INFO] 23:04:08:230 CPU/(4717:4723): 
+[INFO] 23:04:09:234 CPU/(4717:4723): Ejecute SET
+[INFO] 23:04:09:234 CPU/(4717:4723): SOYUNPRO
+[INFO] 23:04:09:234 CPU/(4717:4723): 
+[INFO] 23:04:10:236 CPU/(4717:4723): Ejecute I/O
+[INFO] 23:04:11:239 CPU/(4717:4723): El proceso: 0 llego a CPU
+[INFO] 23:04:11:239 CPU/(4717:4723): El proceso sale con un delay 50
+[INFO] 23:04:11:239 CPU/(4717:4723): HOLA
+[INFO] 23:08:13:483 CPU/(1902:1902): Valores de configuracion leidos correctamente
+[INFO] 23:08:13:484 CPU/(1902:1902): Memoria
+[INFO] 23:08:13:484 CPU/(1902:1902): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:08:13:485 CPU/(1902:1908): Cpu lista para recibir al Kernel
+[INFO] 23:08:17:811 CPU/(1902:1908): Se conecto el Kernel
+[INFO] 23:08:17:811 CPU/(1902:1908): Handshake de Kernel recibido correctamente
+[INFO] 23:08:22:563 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:22:564 CPU/(1902:1908): HOLA
+[INFO] 23:08:22:564 CPU/(1902:1908): 
+[INFO] 23:08:23:564 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:23:565 CPU/(1902:1908): CHAU
+[INFO] 23:08:23:565 CPU/(1902:1908): 
+[INFO] 23:08:24:565 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:24:565 CPU/(1902:1908): SOYUNPRO
+[INFO] 23:08:24:565 CPU/(1902:1908): 
+[INFO] 23:08:25:566 CPU/(1902:1908): Ejecute I/O
+[INFO] 23:08:26:567 CPU/(1902:1908): El proceso: 0 llego a CPU
+[INFO] 23:08:26:567 CPU/(1902:1908): El proceso sale con un delay 50
+[INFO] 23:08:26:567 CPU/(1902:1908): HOLA
+[INFO] 23:08:34:550 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:34:550 CPU/(1902:1908): HOLA
+[INFO] 23:08:34:550 CPU/(1902:1908): HOLA
+[INFO] 23:08:35:550 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:35:551 CPU/(1902:1908): CHAU
+[INFO] 23:08:35:551 CPU/(1902:1908): CHAU
+[INFO] 23:08:36:551 CPU/(1902:1908): Ejecute SET
+[INFO] 23:08:36:552 CPU/(1902:1908): SOYUNPRO
+[INFO] 23:08:36:552 CPU/(1902:1908): SOYUNPRO
+[INFO] 23:08:37:552 CPU/(1902:1908): Ejecute I/O
+[INFO] 23:08:38:553 CPU/(1902:1908): El proceso: 0 llego a CPU
+[INFO] 23:08:38:554 CPU/(1902:1908): El proceso sale con un delay 50
+[INFO] 23:08:38:554 CPU/(1902:1908): HOLA
+[INFO] 23:09:46:960 CPU/(2104:2104): Valores de configuracion leidos correctamente
+[INFO] 23:09:46:961 CPU/(2104:2104): Memoria
+[INFO] 23:09:46:961 CPU/(2104:2104): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:09:46:961 CPU/(2104:2110): Cpu lista para recibir al Kernel
+[INFO] 23:09:50:264 CPU/(2104:2110): Se conecto el Kernel
+[INFO] 23:09:50:264 CPU/(2104:2110): Handshake de Kernel recibido correctamente
+[INFO] 23:09:53:711 CPU/(2104:2110): Ejecute SET
+[INFO] 23:09:53:711 CPU/(2104:2110): HOLA
+[INFO] 23:09:53:713 CPU/(2104:2110): 
+[INFO] 23:09:54:714 CPU/(2104:2110): Ejecute SET
+[INFO] 23:09:54:714 CPU/(2104:2110): CHAU
+[INFO] 23:09:54:714 CPU/(2104:2110): 
+[INFO] 23:09:55:715 CPU/(2104:2110): Ejecute SET
+[INFO] 23:09:55:715 CPU/(2104:2110): SOYUNPRO
+[INFO] 23:09:55:715 CPU/(2104:2110): 
+[INFO] 23:09:56:715 CPU/(2104:2110): Ejecute I/O
+[INFO] 23:09:57:716 CPU/(2104:2110): El proceso: 0 llego a CPU
+[INFO] 23:09:57:716 CPU/(2104:2110): El proceso sale con un delay 50
+[INFO] 23:09:57:716 CPU/(2104:2110): HOLA
+[INFO] 23:10:01:722 CPU/(2104:2110): Ejecute SET
+[INFO] 23:10:01:722 CPU/(2104:2110): HOLA
+[INFO] 23:10:01:722 CPU/(2104:2110): HOLA
+[INFO] 23:10:02:723 CPU/(2104:2110): Ejecute SET
+[INFO] 23:10:02:723 CPU/(2104:2110): CHAU
+[INFO] 23:10:02:723 CPU/(2104:2110): CHAU
+[INFO] 23:10:03:748 CPU/(2104:2110): Ejecute SET
+[INFO] 23:10:03:749 CPU/(2104:2110): SOYUNPRO
+[INFO] 23:10:03:749 CPU/(2104:2110): SOYUNPRO
+[INFO] 23:10:04:749 CPU/(2104:2110): Ejecute I/O
+[INFO] 23:10:05:749 CPU/(2104:2110): El proceso: 0 llego a CPU
+[INFO] 23:10:05:750 CPU/(2104:2110): El proceso sale con un delay 50
+[INFO] 23:10:05:750 CPU/(2104:2110): HOLA
+[INFO] 23:32:17:678 CPU/(2395:2395): Valores de configuracion leidos correctamente
+[INFO] 23:32:17:678 CPU/(2395:2395): Memoria
+[INFO] 23:32:17:678 CPU/(2395:2395): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:32:17:678 CPU/(2395:2401): Cpu lista para recibir al Kernel
+[INFO] 23:32:21:709 CPU/(2395:2401): Se conecto el Kernel
+[INFO] 23:32:21:711 CPU/(2395:2401): Handshake de Kernel recibido correctamente
+[INFO] 23:32:26:180 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:26:180 CPU/(2395:2401): HOLA
+[INFO] 23:32:26:180 CPU/(2395:2401): 
+[INFO] 23:32:27:181 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:27:181 CPU/(2395:2401): CHAU
+[INFO] 23:32:27:181 CPU/(2395:2401): 
+[INFO] 23:32:28:181 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:28:181 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:28:181 CPU/(2395:2401): 
+[INFO] 23:32:29:182 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:32:30:183 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:32:30:184 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:32:30:184 CPU/(2395:2401): HOLA
+[INFO] 23:32:30:185 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:30:185 CPU/(2395:2401): HOLA
+[INFO] 23:32:30:185 CPU/(2395:2401): HOLA
+[INFO] 23:32:31:185 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:31:186 CPU/(2395:2401): CHAU
+[INFO] 23:32:31:186 CPU/(2395:2401): CHAU
+[INFO] 23:32:32:186 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:32:186 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:32:186 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:33:186 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:32:34:189 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:32:34:189 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:32:34:189 CPU/(2395:2401): HOLA
+[INFO] 23:32:34:190 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:34:190 CPU/(2395:2401): HOLA
+[INFO] 23:32:34:190 CPU/(2395:2401): HOLA
+[INFO] 23:32:35:190 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:35:191 CPU/(2395:2401): CHAU
+[INFO] 23:32:35:191 CPU/(2395:2401): CHAU
+[INFO] 23:32:36:191 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:36:192 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:36:192 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:37:192 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:32:38:193 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:32:38:193 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:32:38:193 CPU/(2395:2401): HOLA
+[INFO] 23:32:38:194 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:38:194 CPU/(2395:2401): HOLA
+[INFO] 23:32:38:194 CPU/(2395:2401): HOLA
+[INFO] 23:32:39:194 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:39:194 CPU/(2395:2401): CHAU
+[INFO] 23:32:39:194 CPU/(2395:2401): CHAU
+[INFO] 23:32:40:195 CPU/(2395:2401): Ejecute SET
+[INFO] 23:32:40:195 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:40:195 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:32:41:195 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:32:42:196 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:32:42:197 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:32:42:197 CPU/(2395:2401): HOLA
+[INFO] 23:33:02:207 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:02:207 CPU/(2395:2401): HOLA
+[INFO] 23:33:02:207 CPU/(2395:2401): HOLA
+[INFO] 23:33:03:209 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:03:209 CPU/(2395:2401): CHAU
+[INFO] 23:33:03:209 CPU/(2395:2401): CHAU
+[INFO] 23:33:04:210 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:04:210 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:04:210 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:05:211 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:33:06:212 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:33:06:212 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:33:06:212 CPU/(2395:2401): HOLA
+[INFO] 23:33:06:214 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:06:214 CPU/(2395:2401): HOLA
+[INFO] 23:33:06:214 CPU/(2395:2401): HOLA
+[INFO] 23:33:07:214 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:07:214 CPU/(2395:2401): CHAU
+[INFO] 23:33:07:214 CPU/(2395:2401): CHAU
+[INFO] 23:33:08:215 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:08:215 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:08:215 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:09:215 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:33:10:217 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:33:10:217 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:33:10:217 CPU/(2395:2401): HOLA
+[INFO] 23:33:10:217 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:10:217 CPU/(2395:2401): HOLA
+[INFO] 23:33:10:217 CPU/(2395:2401): HOLA
+[INFO] 23:33:11:218 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:11:218 CPU/(2395:2401): CHAU
+[INFO] 23:33:11:218 CPU/(2395:2401): CHAU
+[INFO] 23:33:12:218 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:12:219 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:12:219 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:13:219 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:33:14:220 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:33:14:220 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:33:14:221 CPU/(2395:2401): HOLA
+[INFO] 23:33:14:221 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:14:221 CPU/(2395:2401): HOLA
+[INFO] 23:33:14:221 CPU/(2395:2401): HOLA
+[INFO] 23:33:15:221 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:15:222 CPU/(2395:2401): CHAU
+[INFO] 23:33:15:222 CPU/(2395:2401): CHAU
+[INFO] 23:33:16:222 CPU/(2395:2401): Ejecute SET
+[INFO] 23:33:16:223 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:16:223 CPU/(2395:2401): SOYUNPRO
+[INFO] 23:33:17:223 CPU/(2395:2401): Ejecute I/O
+[INFO] 23:33:18:224 CPU/(2395:2401): El proceso: 0 llego a CPU
+[INFO] 23:33:18:224 CPU/(2395:2401): El proceso sale con un delay 50
+[INFO] 23:33:18:224 CPU/(2395:2401): HOLA
+[INFO] 23:35:10:089 CPU/(2640:2640): Valores de configuracion leidos correctamente
+[INFO] 23:35:10:089 CPU/(2640:2640): Memoria
+[INFO] 23:35:10:089 CPU/(2640:2640): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:35:10:090 CPU/(2640:2646): Cpu lista para recibir al Kernel
+[INFO] 23:35:13:679 CPU/(2640:2646): Se conecto el Kernel
+[INFO] 23:35:13:679 CPU/(2640:2646): Handshake de Kernel recibido correctamente
+[INFO] 23:35:29:050 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:29:050 CPU/(2640:2646): HOLA
+[INFO] 23:35:29:050 CPU/(2640:2646): 
+[INFO] 23:35:30:052 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:30:052 CPU/(2640:2646): CHAU
+[INFO] 23:35:30:052 CPU/(2640:2646): 
+[INFO] 23:35:31:053 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:31:053 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:31:053 CPU/(2640:2646): 
+[INFO] 23:35:32:053 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:33:055 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:33:055 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:33:055 CPU/(2640:2646): HOLA
+[INFO] 23:35:33:059 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:33:059 CPU/(2640:2646): HOLA
+[INFO] 23:35:33:059 CPU/(2640:2646): HOLA
+[INFO] 23:35:34:059 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:34:059 CPU/(2640:2646): CHAU
+[INFO] 23:35:34:059 CPU/(2640:2646): CHAU
+[INFO] 23:35:35:060 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:35:060 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:35:060 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:36:060 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:37:062 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:37:062 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:37:062 CPU/(2640:2646): HOLA
+[INFO] 23:35:37:063 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:37:063 CPU/(2640:2646): HOLA
+[INFO] 23:35:37:063 CPU/(2640:2646): HOLA
+[INFO] 23:35:38:063 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:38:064 CPU/(2640:2646): CHAU
+[INFO] 23:35:38:064 CPU/(2640:2646): CHAU
+[INFO] 23:35:39:064 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:39:064 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:39:064 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:40:065 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:41:065 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:41:065 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:41:065 CPU/(2640:2646): HOLA
+[INFO] 23:35:41:065 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:41:065 CPU/(2640:2646): HOLA
+[INFO] 23:35:41:065 CPU/(2640:2646): HOLA
+[INFO] 23:35:42:066 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:42:066 CPU/(2640:2646): CHAU
+[INFO] 23:35:42:066 CPU/(2640:2646): CHAU
+[INFO] 23:35:43:066 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:43:067 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:43:067 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:44:067 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:45:068 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:45:069 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:45:069 CPU/(2640:2646): HOLA
+[INFO] 23:35:45:069 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:45:069 CPU/(2640:2646): HOLA
+[INFO] 23:35:45:069 CPU/(2640:2646): HOLA
+[INFO] 23:35:46:069 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:46:070 CPU/(2640:2646): CHAU
+[INFO] 23:35:46:070 CPU/(2640:2646): CHAU
+[INFO] 23:35:47:070 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:47:070 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:47:070 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:48:070 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:49:071 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:49:071 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:49:071 CPU/(2640:2646): HOLA
+[INFO] 23:35:49:072 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:49:072 CPU/(2640:2646): HOLA
+[INFO] 23:35:49:072 CPU/(2640:2646): HOLA
+[INFO] 23:35:50:072 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:50:073 CPU/(2640:2646): CHAU
+[INFO] 23:35:50:073 CPU/(2640:2646): CHAU
+[INFO] 23:35:51:074 CPU/(2640:2646): Ejecute SET
+[INFO] 23:35:51:075 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:51:075 CPU/(2640:2646): SOYUNPRO
+[INFO] 23:35:52:075 CPU/(2640:2646): Ejecute I/O
+[INFO] 23:35:53:076 CPU/(2640:2646): El proceso: 0 llego a CPU
+[INFO] 23:35:53:076 CPU/(2640:2646): El proceso sale con un delay 50
+[INFO] 23:35:53:076 CPU/(2640:2646): HOLA
+[INFO] 21:59:43:404 CPU/(3570:3570): Valores de configuracion leidos correctamente
+[INFO] 21:59:43:404 CPU/(3570:3570): Memoria
+[INFO] 21:59:43:404 CPU/(3570:3570): Fallo al realizar el handshake, cerrando conexion
+[INFO] 21:59:43:404 CPU/(3570:3575): Cpu lista para recibir al Kernel
+[INFO] 21:59:47:441 CPU/(3570:3575): Se conecto el Kernel
+[INFO] 21:59:47:441 CPU/(3570:3575): Handshake de Kernel recibido correctamente
+[INFO] 22:00:42:470 CPU/(3651:3651): Valores de configuracion leidos correctamente
+[INFO] 22:00:42:470 CPU/(3651:3651): Memoria
+[INFO] 22:00:42:470 CPU/(3651:3651): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:00:42:472 CPU/(3651:3656): Cpu lista para recibir al Kernel
+[INFO] 22:02:41:686 CPU/(3651:3656): Se conecto el Kernel
+[INFO] 22:02:41:686 CPU/(3651:3656): Handshake de Kernel recibido correctamente
+[INFO] 22:07:14:400 CPU/(1988:1988): Valores de configuracion leidos correctamente
+[INFO] 22:07:14:401 CPU/(1988:1988): Memoria
+[INFO] 22:07:14:401 CPU/(1988:1988): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:07:14:401 CPU/(1988:1994): Cpu lista para recibir al Kernel
+[INFO] 22:07:19:883 CPU/(1988:1994): Se conecto el Kernel
+[INFO] 22:07:19:883 CPU/(1988:1994): Handshake de Kernel recibido correctamente
+[INFO] 22:07:23:883 CPU/(1988:1994): Ejecute SET
+[INFO] 22:07:23:883 CPU/(1988:1994): HOLA
+[INFO] 22:07:23:884 CPU/(1988:1994): 
+[INFO] 22:07:24:884 CPU/(1988:1994): Ejecute SET
+[INFO] 22:07:24:884 CPU/(1988:1994): CHAU
+[INFO] 22:07:24:884 CPU/(1988:1994): 
+[INFO] 22:07:25:889 CPU/(1988:1994): Ejecute SET
+[INFO] 22:07:25:889 CPU/(1988:1994): SOYUNPRO
+[INFO] 22:07:25:889 CPU/(1988:1994): 
+[INFO] 22:07:26:904 CPU/(1988:1994): Ejecute I/O
+[INFO] 22:07:27:909 CPU/(1988:1994): El proceso: 544171877 llego a CPU
+[INFO] 22:07:27:910 CPU/(1988:1994): El proceso sale con un delay 
+[INFO] 22:07:27:910 CPU/(1988:1994): HOLA
+[INFO] 22:21:11:511 CPU/(2549:2549): Valores de configuracion leidos correctamente
+[INFO] 22:21:11:515 CPU/(2549:2549): Memoria
+[INFO] 22:21:11:517 CPU/(2549:2549): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:21:11:523 CPU/(2549:2556): Cpu lista para recibir al Kernel
+[INFO] 22:21:20:613 CPU/(2549:2556): Se conecto el Kernel
+[INFO] 22:21:20:614 CPU/(2549:2556): Handshake de Kernel recibido correctamente
+[INFO] 22:21:56:015 CPU/(2549:2556): Ejecute SET
+[INFO] 22:21:56:015 CPU/(2549:2556): HOLA
+[INFO] 22:21:56:015 CPU/(2549:2556): 
+[INFO] 22:21:57:016 CPU/(2549:2556): Ejecute SET
+[INFO] 22:21:57:016 CPU/(2549:2556): CHAU
+[INFO] 22:21:57:016 CPU/(2549:2556): 
+[INFO] 22:21:58:016 CPU/(2549:2556): Ejecute SET
+[INFO] 22:21:58:016 CPU/(2549:2556): SOYUNPRO
+[INFO] 22:21:58:017 CPU/(2549:2556): 
+[INFO] 22:21:59:017 CPU/(2549:2556): Ejecute I/O
+[INFO] 22:22:00:017 CPU/(2549:2556): El proceso: 544171877 llego a CPU
+[INFO] 22:22:00:017 CPU/(2549:2556): El proceso sale con un delay 
+[INFO] 22:22:00:017 CPU/(2549:2556): HOLA
+[INFO] 22:23:56:101 CPU/(2794:2794): Valores de configuracion leidos correctamente
+[INFO] 22:23:56:101 CPU/(2794:2794): Memoria
+[INFO] 22:23:56:101 CPU/(2794:2794): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:23:56:102 CPU/(2794:2800): Cpu lista para recibir al Kernel
+[INFO] 22:23:59:381 CPU/(2794:2800): Se conecto el Kernel
+[INFO] 22:23:59:382 CPU/(2794:2800): Handshake de Kernel recibido correctamente
+[INFO] 22:24:02:800 CPU/(2794:2800): Ejecute SET
+[INFO] 22:24:02:800 CPU/(2794:2800): HOLA
+[INFO] 22:24:02:800 CPU/(2794:2800): 
+[INFO] 22:24:03:804 CPU/(2794:2800): Ejecute SET
+[INFO] 22:24:03:804 CPU/(2794:2800): CHAU
+[INFO] 22:24:03:804 CPU/(2794:2800): 
+[INFO] 22:24:04:805 CPU/(2794:2800): Ejecute SET
+[INFO] 22:24:04:805 CPU/(2794:2800): SOYUNPRO
+[INFO] 22:24:04:805 CPU/(2794:2800): 
+[INFO] 22:24:05:806 CPU/(2794:2800): Ejecute I/O
+[INFO] 22:24:06:824 CPU/(2794:2800): El proceso: 544171877 llego a CPU
+[INFO] 22:24:06:824 CPU/(2794:2800): El proceso sale con un delay 
+[INFO] 22:24:06:824 CPU/(2794:2800): HOLA
+[INFO] 22:24:52:900 CPU/(2867:2867): Valores de configuracion leidos correctamente
+[INFO] 22:24:53:745 CPU/(2867:2867): Memoria
+[INFO] 22:24:53:745 CPU/(2867:2867): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:24:53:748 CPU/(2867:2877): Cpu lista para recibir al Kernel
+[INFO] 22:24:58:876 CPU/(2867:2877): Se conecto el Kernel
+[INFO] 22:24:58:876 CPU/(2867:2877): Handshake de Kernel recibido correctamente
+[INFO] 22:26:51:726 CPU/(2952:2952): Valores de configuracion leidos correctamente
+[INFO] 22:26:51:726 CPU/(2952:2952): Memoria
+[INFO] 22:26:51:726 CPU/(2952:2952): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:26:51:726 CPU/(2952:2958): Cpu lista para recibir al Kernel
+[INFO] 22:27:00:411 CPU/(2952:2958): Se conecto el Kernel
+[INFO] 22:27:00:411 CPU/(2952:2958): Handshake de Kernel recibido correctamente
+[INFO] 22:27:14:627 CPU/(2952:2958): Ejecute SET
+[INFO] 22:27:14:627 CPU/(2952:2958): HOLA
+[INFO] 22:27:14:627 CPU/(2952:2958): 
+[INFO] 22:27:15:628 CPU/(2952:2958): Ejecute SET
+[INFO] 22:27:15:628 CPU/(2952:2958): CHAU
+[INFO] 22:27:15:628 CPU/(2952:2958): 
+[INFO] 22:27:16:629 CPU/(2952:2958): Ejecute SET
+[INFO] 22:27:16:629 CPU/(2952:2958): SOYUNPRO
+[INFO] 22:27:16:629 CPU/(2952:2958): 
+[INFO] 22:27:17:631 CPU/(2952:2958): Ejecute I/O
+[INFO] 22:27:18:631 CPU/(2952:2958): El proceso: 544171877 llego a CPU
+[INFO] 22:27:18:632 CPU/(2952:2958): El proceso sale con un delay 
+[INFO] 22:27:18:632 CPU/(2952:2958): HOLA
+[INFO] 22:27:27:732 CPU/(3041:3041): Valores de configuracion leidos correctamente
+[INFO] 22:27:27:739 CPU/(3041:3041): Memoria
+[INFO] 22:27:27:739 CPU/(3041:3041): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:27:27:744 CPU/(3041:3046): Cpu lista para recibir al Kernel
+[INFO] 22:27:34:236 CPU/(3041:3046): Se conecto el Kernel
+[INFO] 22:27:34:236 CPU/(3041:3046): Handshake de Kernel recibido correctamente
+[INFO] 22:28:54:068 CPU/(3183:3183): Valores de configuracion leidos correctamente
+[INFO] 22:28:54:068 CPU/(3183:3183): Memoria
+[INFO] 22:28:54:068 CPU/(3183:3183): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:28:54:068 CPU/(3183:3189): Cpu lista para recibir al Kernel
+[INFO] 22:28:57:115 CPU/(3183:3189): Se conecto el Kernel
+[INFO] 22:28:57:115 CPU/(3183:3189): Handshake de Kernel recibido correctamente
+[INFO] 22:29:00:485 CPU/(3183:3189): Ejecute SET
+[INFO] 22:29:00:485 CPU/(3183:3189): HOLA
+[INFO] 22:29:00:485 CPU/(3183:3189): 
+[INFO] 22:29:01:486 CPU/(3183:3189): Ejecute SET
+[INFO] 22:29:01:486 CPU/(3183:3189): CHAU
+[INFO] 22:29:01:486 CPU/(3183:3189): 
+[INFO] 22:29:02:486 CPU/(3183:3189): Ejecute SET
+[INFO] 22:29:02:486 CPU/(3183:3189): SOYUNPRO
+[INFO] 22:29:02:486 CPU/(3183:3189): 
+[INFO] 22:29:03:486 CPU/(3183:3189): Ejecute I/O
+[INFO] 22:29:04:487 CPU/(3183:3189): El proceso: 0 llego a CPU
+[INFO] 22:29:04:487 CPU/(3183:3189): El proceso sale con un delay 
+[INFO] 22:29:04:487 CPU/(3183:3189): HOLA
+[INFO] 22:30:39:046 CPU/(3244:3244): Valores de configuracion leidos correctamente
+[INFO] 22:30:39:047 CPU/(3244:3244): Memoria
+[INFO] 22:30:39:047 CPU/(3244:3244): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:30:39:047 CPU/(3244:3250): Cpu lista para recibir al Kernel
+[INFO] 22:30:43:344 CPU/(3244:3250): Se conecto el Kernel
+[INFO] 22:30:43:344 CPU/(3244:3250): Handshake de Kernel recibido correctamente
+[INFO] 22:30:46:403 CPU/(3244:3250): Ejecute SET
+[INFO] 22:30:46:403 CPU/(3244:3250): HOLA
+[INFO] 22:30:46:403 CPU/(3244:3250): 
+[INFO] 22:30:47:403 CPU/(3244:3250): Ejecute SET
+[INFO] 22:30:47:403 CPU/(3244:3250): CHAU
+[INFO] 22:30:47:403 CPU/(3244:3250): 
+[INFO] 22:30:48:404 CPU/(3244:3250): Ejecute SET
+[INFO] 22:30:48:404 CPU/(3244:3250): SOYUNPRO
+[INFO] 22:30:48:405 CPU/(3244:3250): 
+[INFO] 22:30:49:405 CPU/(3244:3250): Ejecute I/O
+[INFO] 22:30:50:406 CPU/(3244:3250): El proceso: 0 llego a CPU
+[INFO] 22:30:50:407 CPU/(3244:3250): El proceso sale con un delay 
+[INFO] 22:30:50:407 CPU/(3244:3250): HOLA
+[INFO] 22:31:25:364 CPU/(3382:3382): Valores de configuracion leidos correctamente
+[INFO] 22:31:25:364 CPU/(3382:3382): Memoria
+[INFO] 22:31:25:364 CPU/(3382:3382): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:31:25:364 CPU/(3382:3388): Cpu lista para recibir al Kernel
+[INFO] 22:31:28:538 CPU/(3382:3388): Se conecto el Kernel
+[INFO] 22:31:28:538 CPU/(3382:3388): Handshake de Kernel recibido correctamente
+[INFO] 22:31:31:767 CPU/(3382:3388): Ejecute SET
+[INFO] 22:31:31:767 CPU/(3382:3388): HOLA
+[INFO] 22:31:31:767 CPU/(3382:3388): 
+[INFO] 22:31:32:768 CPU/(3382:3388): Ejecute SET
+[INFO] 22:31:32:768 CPU/(3382:3388): CHAU
+[INFO] 22:31:32:768 CPU/(3382:3388): 
+[INFO] 22:31:33:769 CPU/(3382:3388): Ejecute SET
+[INFO] 22:31:33:770 CPU/(3382:3388): SOYUNPRO
+[INFO] 22:31:33:770 CPU/(3382:3388): 
+[INFO] 22:31:34:770 CPU/(3382:3388): Ejecute I/O
+[INFO] 22:31:35:776 CPU/(3382:3388): El proceso: 0 llego a CPU
+[INFO] 22:31:35:776 CPU/(3382:3388): El proceso sale con un delay 
+[INFO] 22:31:35:776 CPU/(3382:3388): HOLA
+[INFO] 22:32:37:144 CPU/(3439:3439): Valores de configuracion leidos correctamente
+[INFO] 22:32:37:144 CPU/(3439:3439): Memoria
+[INFO] 22:32:37:144 CPU/(3439:3439): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:32:37:144 CPU/(3439:3445): Cpu lista para recibir al Kernel
+[INFO] 22:32:43:716 CPU/(3439:3445): Se conecto el Kernel
+[INFO] 22:32:43:716 CPU/(3439:3445): Handshake de Kernel recibido correctamente
+[INFO] 22:34:48:302 CPU/(3583:3583): Valores de configuracion leidos correctamente
+[INFO] 22:34:48:302 CPU/(3583:3583): Memoria
+[INFO] 22:34:48:302 CPU/(3583:3583): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:34:48:302 CPU/(3583:3589): Cpu lista para recibir al Kernel
+[INFO] 22:34:52:046 CPU/(3583:3589): Se conecto el Kernel
+[INFO] 22:34:52:046 CPU/(3583:3589): Handshake de Kernel recibido correctamente
+[INFO] 22:34:55:520 CPU/(3583:3589): Ejecute SET
+[INFO] 22:34:55:520 CPU/(3583:3589): HOLA
+[INFO] 22:34:55:520 CPU/(3583:3589): 
+[INFO] 22:34:56:521 CPU/(3583:3589): Ejecute SET
+[INFO] 22:34:56:521 CPU/(3583:3589): CHAU
+[INFO] 22:34:56:521 CPU/(3583:3589): 
+[INFO] 22:34:57:521 CPU/(3583:3589): Ejecute SET
+[INFO] 22:34:57:522 CPU/(3583:3589): SOYUNPRO
+[INFO] 22:34:57:522 CPU/(3583:3589): 
+[INFO] 22:34:58:522 CPU/(3583:3589): Ejecute I/O
+[INFO] 22:34:59:524 CPU/(3583:3589): El proceso: 0 llego a CPU
+[INFO] 22:34:59:524 CPU/(3583:3589): El proceso sale con un delay 
+[INFO] 22:34:59:524 CPU/(3583:3589): HOLA
+[INFO] 22:35:27:480 CPU/(3652:3652): Valores de configuracion leidos correctamente
+[INFO] 22:35:29:136 CPU/(3652:3652): Memoria
+[INFO] 22:35:29:136 CPU/(3652:3652): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:35:29:138 CPU/(3652:3663): Cpu lista para recibir al Kernel
+[INFO] 22:35:33:581 CPU/(3652:3663): Se conecto el Kernel
+[INFO] 22:35:33:581 CPU/(3652:3663): Handshake de Kernel recibido correctamente
+[INFO] 22:37:11:881 CPU/(3847:3847): Valores de configuracion leidos correctamente
+[INFO] 22:37:11:881 CPU/(3847:3847): Memoria
+[INFO] 22:37:11:881 CPU/(3847:3847): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:37:11:882 CPU/(3847:3853): Cpu lista para recibir al Kernel
+[INFO] 22:42:50:401 CPU/(3936:3936): Valores de configuracion leidos correctamente
+[INFO] 22:42:50:402 CPU/(3936:3936): Memoria
+[INFO] 22:42:50:402 CPU/(3936:3936): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:42:50:402 CPU/(3936:3942): Cpu lista para recibir al Kernel
+[INFO] 22:42:53:289 CPU/(3936:3942): Se conecto el Kernel
+[INFO] 22:42:53:289 CPU/(3936:3942): Handshake de Kernel recibido correctamente
+[INFO] 22:42:55:804 CPU/(3936:3942): Ejecute SET
+[INFO] 22:42:55:804 CPU/(3936:3942): HOLA
+[INFO] 22:42:55:804 CPU/(3936:3942): 
+[INFO] 22:42:56:805 CPU/(3936:3942): Ejecute SET
+[INFO] 22:42:56:805 CPU/(3936:3942): CHAU
+[INFO] 22:42:56:805 CPU/(3936:3942): 
+[INFO] 22:42:57:806 CPU/(3936:3942): Ejecute SET
+[INFO] 22:42:57:806 CPU/(3936:3942): SOYUNPRO
+[INFO] 22:42:57:806 CPU/(3936:3942): 
+[INFO] 22:42:58:806 CPU/(3936:3942): Ejecute I/O
+[INFO] 22:42:59:807 CPU/(3936:3942): El proceso: 0 llego a CPU
+[INFO] 22:42:59:807 CPU/(3936:3942): El proceso sale con un delay 
+[INFO] 22:42:59:807 CPU/(3936:3942): HOLA
+[INFO] 22:44:29:581 CPU/(4049:4049): Valores de configuracion leidos correctamente
+[INFO] 22:44:29:582 CPU/(4049:4049): Memoria
+[INFO] 22:44:29:582 CPU/(4049:4049): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:44:29:582 CPU/(4049:4055): Cpu lista para recibir al Kernel
+[INFO] 22:44:33:165 CPU/(4049:4055): Se conecto el Kernel
+[INFO] 22:44:33:165 CPU/(4049:4055): Handshake de Kernel recibido correctamente
+[INFO] 22:44:36:986 CPU/(4049:4055): Ejecute SET
+[INFO] 22:44:36:986 CPU/(4049:4055): HOLA
+[INFO] 22:44:36:986 CPU/(4049:4055): 
+[INFO] 22:44:37:987 CPU/(4049:4055): Ejecute SET
+[INFO] 22:44:37:987 CPU/(4049:4055): CHAU
+[INFO] 22:44:37:987 CPU/(4049:4055): 
+[INFO] 22:44:38:991 CPU/(4049:4055): Ejecute SET
+[INFO] 22:44:38:991 CPU/(4049:4055): SOYUNPRO
+[INFO] 22:44:38:991 CPU/(4049:4055): 
+[INFO] 22:44:39:992 CPU/(4049:4055): Ejecute I/O
+[INFO] 22:44:40:993 CPU/(4049:4055): El proceso: 0 llego a CPU
+[INFO] 22:44:40:993 CPU/(4049:4055): El proceso sale con un delay 
+[INFO] 22:44:40:993 CPU/(4049:4055): HOLA
+[INFO] 22:45:01:638 CPU/(4119:4119): Valores de configuracion leidos correctamente
+[INFO] 22:45:02:639 CPU/(4119:4119): Memoria
+[INFO] 22:45:02:639 CPU/(4119:4119): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:45:02:651 CPU/(4119:4136): Cpu lista para recibir al Kernel
+[INFO] 22:45:07:181 CPU/(4119:4136): Se conecto el Kernel
+[INFO] 22:45:07:181 CPU/(4119:4136): Handshake de Kernel recibido correctamente
+[INFO] 22:46:55:597 CPU/(4281:4281): Valores de configuracion leidos correctamente
+[INFO] 22:46:55:597 CPU/(4281:4281): Memoria
+[INFO] 22:46:55:597 CPU/(4281:4281): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:46:55:601 CPU/(4281:4287): Cpu lista para recibir al Kernel
+[INFO] 22:47:00:841 CPU/(4281:4287): Se conecto el Kernel
+[INFO] 22:47:00:842 CPU/(4281:4287): Handshake de Kernel recibido correctamente
+[INFO] 22:47:20:294 CPU/(4334:4334): Valores de configuracion leidos correctamente
+[INFO] 22:47:20:294 CPU/(4334:4334): Memoria
+[INFO] 22:47:20:294 CPU/(4334:4334): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:47:20:294 CPU/(4334:4340): Cpu lista para recibir al Kernel
+[INFO] 22:47:50:182 CPU/(4372:4372): Valores de configuracion leidos correctamente
+[INFO] 22:47:50:183 CPU/(4372:4372): Memoria
+[INFO] 22:47:50:183 CPU/(4372:4372): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:47:50:185 CPU/(4372:4378): Cpu lista para recibir al Kernel
+[INFO] 22:48:27:700 CPU/(4408:4408): Valores de configuracion leidos correctamente
+[INFO] 22:48:27:701 CPU/(4408:4408): Memoria
+[INFO] 22:48:27:701 CPU/(4408:4408): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:48:27:701 CPU/(4408:4414): Cpu lista para recibir al Kernel
+[INFO] 22:48:30:493 CPU/(4408:4414): Se conecto el Kernel
+[INFO] 22:48:30:493 CPU/(4408:4414): Handshake de Kernel recibido correctamente
+[INFO] 22:48:53:903 CPU/(4461:4461): Valores de configuracion leidos correctamente
+[INFO] 22:48:53:903 CPU/(4461:4461): Memoria
+[INFO] 22:48:53:903 CPU/(4461:4461): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:48:53:904 CPU/(4461:4467): Cpu lista para recibir al Kernel
+[INFO] 22:49:41:805 CPU/(4519:4519): Valores de configuracion leidos correctamente
+[INFO] 22:49:41:805 CPU/(4519:4519): Memoria
+[INFO] 22:49:41:805 CPU/(4519:4519): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:49:41:805 CPU/(4519:4525): Cpu lista para recibir al Kernel
+[INFO] 22:49:48:794 CPU/(4519:4525): Se conecto el Kernel
+[INFO] 22:49:48:794 CPU/(4519:4525): Handshake de Kernel recibido correctamente
+[INFO] 22:53:57:673 CPU/(4675:4675): Valores de configuracion leidos correctamente
+[INFO] 22:53:58:473 CPU/(4675:4675): Memoria
+[INFO] 22:53:58:474 CPU/(4675:4675): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:53:58:475 CPU/(4675:4691): Cpu lista para recibir al Kernel
+[INFO] 22:54:04:009 CPU/(4675:4691): Se conecto el Kernel
+[INFO] 22:54:04:009 CPU/(4675:4691): Handshake de Kernel recibido correctamente
+[INFO] 22:54:52:317 CPU/(4827:4827): Valores de configuracion leidos correctamente
+[INFO] 22:54:53:695 CPU/(4827:4827): Memoria
+[INFO] 22:54:53:695 CPU/(4827:4827): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:54:53:696 CPU/(4827:4836): Cpu lista para recibir al Kernel
+[INFO] 22:56:52:309 CPU/(4890:4890): Valores de configuracion leidos correctamente
+[INFO] 22:56:53:932 CPU/(4890:4890): Memoria
+[INFO] 22:56:53:932 CPU/(4890:4890): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:56:53:933 CPU/(4890:4900): Cpu lista para recibir al Kernel
+[INFO] 22:56:59:210 CPU/(4890:4900): Se conecto el Kernel
+[INFO] 22:56:59:210 CPU/(4890:4900): Handshake de Kernel recibido correctamente
+[INFO] 22:58:40:622 CPU/(4998:4998): Valores de configuracion leidos correctamente
+[INFO] 22:58:40:623 CPU/(4998:4998): Memoria
+[INFO] 22:58:40:623 CPU/(4998:4998): Fallo al realizar el handshake, cerrando conexion
+[INFO] 22:58:40:623 CPU/(4998:5004): Cpu lista para recibir al Kernel
+[INFO] 22:58:43:529 CPU/(4998:5004): Se conecto el Kernel
+[INFO] 22:58:43:529 CPU/(4998:5004): Handshake de Kernel recibido correctamente
+[INFO] 22:58:46:685 CPU/(4998:5004): Ejecute SET
+[INFO] 22:58:46:685 CPU/(4998:5004): HOLA
+[INFO] 22:58:46:685 CPU/(4998:5004): 
+[INFO] 22:58:47:686 CPU/(4998:5004): Ejecute SET
+[INFO] 22:58:47:686 CPU/(4998:5004): CHAU
+[INFO] 22:58:47:686 CPU/(4998:5004): 
+[INFO] 22:58:48:686 CPU/(4998:5004): Ejecute SET
+[INFO] 22:58:48:686 CPU/(4998:5004): SOYUNPRO
+[INFO] 22:58:48:686 CPU/(4998:5004): 
+[INFO] 22:58:49:687 CPU/(4998:5004): Ejecute I/O
+[INFO] 22:58:50:687 CPU/(4998:5004): El proceso: 0 llego a CPU
+[INFO] 22:58:50:687 CPU/(4998:5004): El proceso sale con un delay 
+[INFO] 22:58:50:687 CPU/(4998:5004): HOLA
+[INFO] 23:00:46:094 CPU/(5107:5107): Valores de configuracion leidos correctamente
+[INFO] 23:00:46:806 CPU/(5107:5107): Memoria
+[INFO] 23:00:46:806 CPU/(5107:5107): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:00:46:807 CPU/(5107:5118): Cpu lista para recibir al Kernel
+[INFO] 23:00:51:126 CPU/(5107:5118): Se conecto el Kernel
+[INFO] 23:00:51:126 CPU/(5107:5118): Handshake de Kernel recibido correctamente
+[INFO] 23:01:54:759 CPU/(5107:5118): Ejecute SET
+[INFO] 23:01:54:759 CPU/(5107:5118): HOLA
+[INFO] 23:01:54:759 CPU/(5107:5118): 
+[INFO] 23:01:55:760 CPU/(5107:5118): Ejecute SET
+[INFO] 23:01:55:760 CPU/(5107:5118): CHAU
+[INFO] 23:01:55:760 CPU/(5107:5118): 
+[INFO] 23:01:56:766 CPU/(5107:5118): Ejecute SET
+[INFO] 23:01:56:767 CPU/(5107:5118): SOYUNPRO
+[INFO] 23:01:56:767 CPU/(5107:5118): 
+[INFO] 23:01:57:772 CPU/(5107:5118): Ejecute I/O
+[INFO] 23:02:55:708 CPU/(5107:5118): El proceso: 0 llego a CPU
+[INFO] 23:02:59:659 CPU/(5107:5118): El proceso sale con un delay 
+[INFO] 23:06:37:948 CPU/(5314:5314): Valores de configuracion leidos correctamente
+[INFO] 23:06:38:684 CPU/(5314:5314): Memoria
+[INFO] 23:06:38:684 CPU/(5314:5314): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:06:38:686 CPU/(5314:5324): Cpu lista para recibir al Kernel
+[INFO] 23:06:43:931 CPU/(5314:5324): Se conecto el Kernel
+[INFO] 23:06:43:931 CPU/(5314:5324): Handshake de Kernel recibido correctamente
+[INFO] 23:06:46:964 CPU/(5314:5324): Ejecute SET
+[INFO] 23:06:46:964 CPU/(5314:5324): HOLA
+[INFO] 23:06:46:964 CPU/(5314:5324): 
+[INFO] 23:06:47:964 CPU/(5314:5324): Ejecute SET
+[INFO] 23:06:47:964 CPU/(5314:5324): CHAU
+[INFO] 23:06:47:964 CPU/(5314:5324): 
+[INFO] 23:06:48:965 CPU/(5314:5324): Ejecute SET
+[INFO] 23:06:48:965 CPU/(5314:5324): SOYUNPRO
+[INFO] 23:06:48:965 CPU/(5314:5324): 
+[INFO] 23:06:49:966 CPU/(5314:5324): Ejecute I/O
+[INFO] 23:09:52:318 CPU/(5472:5472): Valores de configuracion leidos correctamente
+[INFO] 23:09:53:118 CPU/(5472:5472): Memoria
+[INFO] 23:09:53:118 CPU/(5472:5472): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:09:53:119 CPU/(5472:5481): Cpu lista para recibir al Kernel
+[INFO] 23:09:58:379 CPU/(5472:5481): Se conecto el Kernel
+[INFO] 23:09:58:379 CPU/(5472:5481): Handshake de Kernel recibido correctamente
+[INFO] 23:10:02:134 CPU/(5472:5481): Ejecute SET
+[INFO] 23:10:02:134 CPU/(5472:5481): HOLA
+[INFO] 23:10:02:134 CPU/(5472:5481): 
+[INFO] 23:10:03:134 CPU/(5472:5481): Ejecute SET
+[INFO] 23:10:03:134 CPU/(5472:5481): CHAU
+[INFO] 23:10:03:134 CPU/(5472:5481): 
+[INFO] 23:10:04:134 CPU/(5472:5481): Ejecute SET
+[INFO] 23:10:04:135 CPU/(5472:5481): SOYUNPRO
+[INFO] 23:10:04:135 CPU/(5472:5481): 
+[INFO] 23:10:05:135 CPU/(5472:5481): Ejecute I/O
+[INFO] 23:10:47:680 CPU/(5565:5565): Valores de configuracion leidos correctamente
+[INFO] 23:10:48:329 CPU/(5565:5565): Memoria
+[INFO] 23:10:48:329 CPU/(5565:5565): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:10:48:332 CPU/(5565:5577): Cpu lista para recibir al Kernel
+[INFO] 23:11:41:288 CPU/(5628:5628): Valores de configuracion leidos correctamente
+[INFO] 23:11:42:048 CPU/(5628:5628): Memoria
+[INFO] 23:11:42:048 CPU/(5628:5628): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:11:42:049 CPU/(5628:5636): Cpu lista para recibir al Kernel
+[INFO] 23:11:46:300 CPU/(5628:5636): Se conecto el Kernel
+[INFO] 23:11:46:300 CPU/(5628:5636): Handshake de Kernel recibido correctamente
+[INFO] 23:12:53:762 CPU/(5628:5636): Ejecute SET
+[INFO] 23:12:53:762 CPU/(5628:5636): HOLA
+[INFO] 23:12:53:762 CPU/(5628:5636): 
+[INFO] 23:12:54:763 CPU/(5628:5636): Ejecute SET
+[INFO] 23:12:54:763 CPU/(5628:5636): CHAU
+[INFO] 23:12:54:763 CPU/(5628:5636): 
+[INFO] 23:12:55:763 CPU/(5628:5636): Ejecute SET
+[INFO] 23:12:55:763 CPU/(5628:5636): SOYUNPRO
+[INFO] 23:12:55:763 CPU/(5628:5636): 
+[INFO] 23:12:56:763 CPU/(5628:5636): Ejecute I/O
+[INFO] 23:17:03:533 CPU/(5778:5778): Valores de configuracion leidos correctamente
+[INFO] 23:17:04:301 CPU/(5778:5778): Memoria
+[INFO] 23:17:04:301 CPU/(5778:5778): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:17:04:303 CPU/(5778:5792): Cpu lista para recibir al Kernel
+[INFO] 23:17:09:277 CPU/(5778:5792): Se conecto el Kernel
+[INFO] 23:17:09:277 CPU/(5778:5792): Handshake de Kernel recibido correctamente
+[INFO] 23:17:48:270 CPU/(5778:5792): Ejecute SET
+[INFO] 23:17:48:270 CPU/(5778:5792): HOLA
+[INFO] 23:17:48:270 CPU/(5778:5792): 
+[INFO] 23:17:49:271 CPU/(5778:5792): Ejecute SET
+[INFO] 23:17:49:271 CPU/(5778:5792): CHAU
+[INFO] 23:17:49:271 CPU/(5778:5792): 
+[INFO] 23:17:50:271 CPU/(5778:5792): Ejecute SET
+[INFO] 23:17:50:271 CPU/(5778:5792): SOYUNPRO
+[INFO] 23:17:50:271 CPU/(5778:5792): 
+[INFO] 23:17:51:272 CPU/(5778:5792): Ejecute I/O
+[INFO] 23:20:27:280 CPU/(6032:6032): Valores de configuracion leidos correctamente
+[INFO] 23:20:28:095 CPU/(6032:6032): Memoria
+[INFO] 23:20:28:095 CPU/(6032:6032): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:20:28:098 CPU/(6032:6043): Cpu lista para recibir al Kernel
+[INFO] 23:20:35:103 CPU/(6032:6043): Se conecto el Kernel
+[INFO] 23:20:35:103 CPU/(6032:6043): Handshake de Kernel recibido correctamente
+[INFO] 23:20:47:952 CPU/(6032:6043): Ejecute SET
+[INFO] 23:20:47:952 CPU/(6032:6043): HOLA
+[INFO] 23:20:47:952 CPU/(6032:6043): 
+[INFO] 23:20:48:953 CPU/(6032:6043): Ejecute SET
+[INFO] 23:20:48:953 CPU/(6032:6043): CHAU
+[INFO] 23:20:48:953 CPU/(6032:6043): 
+[INFO] 23:20:49:954 CPU/(6032:6043): Ejecute SET
+[INFO] 23:20:49:955 CPU/(6032:6043): SOYUNPRO
+[INFO] 23:20:49:955 CPU/(6032:6043): 
+[INFO] 23:20:50:956 CPU/(6032:6043): Ejecute I/O
+[INFO] 23:21:21:187 CPU/(6032:6043): El proceso: 0 llego a CPU
+[INFO] 23:21:21:774 CPU/(6032:6043): El proceso sale con un delay 
+[INFO] 23:23:42:946 CPU/(6155:6155): Valores de configuracion leidos correctamente
+[INFO] 23:23:43:666 CPU/(6155:6155): Memoria
+[INFO] 23:23:43:666 CPU/(6155:6155): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:23:43:667 CPU/(6155:6162): Cpu lista para recibir al Kernel
+[INFO] 23:23:48:703 CPU/(6155:6162): Se conecto el Kernel
+[INFO] 23:23:48:703 CPU/(6155:6162): Handshake de Kernel recibido correctamente
+[INFO] 23:24:24:219 CPU/(6155:6162): Ejecute SET
+[INFO] 23:24:24:219 CPU/(6155:6162): HOLA
+[INFO] 23:24:24:219 CPU/(6155:6162): 
+[INFO] 23:24:25:219 CPU/(6155:6162): Ejecute SET
+[INFO] 23:24:25:219 CPU/(6155:6162): CHAU
+[INFO] 23:24:25:219 CPU/(6155:6162): 
+[INFO] 23:24:26:219 CPU/(6155:6162): Ejecute SET
+[INFO] 23:24:26:220 CPU/(6155:6162): SOYUNPRO
+[INFO] 23:24:26:220 CPU/(6155:6162): 
+[INFO] 23:25:19:395 CPU/(6155:6162): Ejecute I/O
+[INFO] 23:25:21:388 CPU/(6155:6162): El proceso: 0 llego a CPU
+[INFO] 23:25:21:388 CPU/(6155:6162): El proceso sale con un delay 
+[INFO] 23:25:21:388 CPU/(6155:6162): HOLA
+[INFO] 23:29:30:001 CPU/(6312:6312): Valores de configuracion leidos correctamente
+[INFO] 23:29:30:719 CPU/(6312:6312): Memoria
+[INFO] 23:29:30:719 CPU/(6312:6312): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:29:30:720 CPU/(6312:6323): Cpu lista para recibir al Kernel
+[INFO] 23:29:36:404 CPU/(6312:6323): Se conecto el Kernel
+[INFO] 23:29:36:404 CPU/(6312:6323): Handshake de Kernel recibido correctamente
+[INFO] 23:29:42:871 CPU/(6312:6323): Ejecute SET
+[INFO] 23:29:42:871 CPU/(6312:6323): HOLA
+[INFO] 23:29:42:871 CPU/(6312:6323): 
+[INFO] 23:29:43:871 CPU/(6312:6323): Ejecute SET
+[INFO] 23:29:43:871 CPU/(6312:6323): CHAU
+[INFO] 23:29:43:871 CPU/(6312:6323): 
+[INFO] 23:29:44:873 CPU/(6312:6323): Ejecute SET
+[INFO] 23:29:44:873 CPU/(6312:6323): SOYUNPRO
+[INFO] 23:29:44:873 CPU/(6312:6323): 
+[INFO] 23:30:27:456 CPU/(6312:6323): Ejecute I/O
+[INFO] 23:30:29:552 CPU/(6312:6323): El proceso: 0 llego a CPU
+[INFO] 23:30:29:552 CPU/(6312:6323): El proceso sale con un delay 
+[INFO] 23:30:29:552 CPU/(6312:6323): HOLA
+[INFO] 23:46:23:989 CPU/(6732:6732): Valores de configuracion leidos correctamente
+[INFO] 23:46:23:992 CPU/(6732:6732): Memoria
+[INFO] 23:46:23:992 CPU/(6732:6732): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:46:23:996 CPU/(6732:6738): Cpu lista para recibir al Kernel
+[INFO] 23:46:27:736 CPU/(6732:6738): Se conecto el Kernel
+[INFO] 23:46:27:736 CPU/(6732:6738): Handshake de Kernel recibido correctamente
+[INFO] 23:46:31:280 CPU/(6732:6738): Ejecute SET
+[INFO] 23:46:31:280 CPU/(6732:6738): HOLA
+[INFO] 23:46:31:280 CPU/(6732:6738): 
+[INFO] 23:46:32:281 CPU/(6732:6738): Ejecute SET
+[INFO] 23:46:32:281 CPU/(6732:6738): CHAU
+[INFO] 23:46:32:281 CPU/(6732:6738): 
+[INFO] 23:46:33:281 CPU/(6732:6738): Ejecute SET
+[INFO] 23:46:33:281 CPU/(6732:6738): SOYUNPRO
+[INFO] 23:46:33:281 CPU/(6732:6738): 
+[INFO] 23:46:34:281 CPU/(6732:6738): Ejecute I/O
+[INFO] 23:46:35:282 CPU/(6732:6738): El proceso: 0 llego a CPU
+[INFO] 23:46:35:282 CPU/(6732:6738): El proceso sale con un delay 
+[INFO] 23:46:35:282 CPU/(6732:6738): HOLA
+[INFO] 23:49:11:683 CPU/(6844:6844): Valores de configuracion leidos correctamente
+[INFO] 23:49:11:683 CPU/(6844:6844): Memoria
+[INFO] 23:49:11:683 CPU/(6844:6844): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:49:11:684 CPU/(6844:6850): Cpu lista para recibir al Kernel
+[INFO] 23:49:14:849 CPU/(6844:6850): Se conecto el Kernel
+[INFO] 23:49:14:849 CPU/(6844:6850): Handshake de Kernel recibido correctamente
+[INFO] 23:49:18:564 CPU/(6844:6850): Ejecute SET
+[INFO] 23:49:18:564 CPU/(6844:6850): HOLA
+[INFO] 23:49:18:564 CPU/(6844:6850): 
+[INFO] 23:49:19:564 CPU/(6844:6850): Ejecute SET
+[INFO] 23:49:19:564 CPU/(6844:6850): CHAU
+[INFO] 23:49:19:565 CPU/(6844:6850): 
+[INFO] 23:49:20:565 CPU/(6844:6850): Ejecute SET
+[INFO] 23:49:20:565 CPU/(6844:6850): SOYUNPRO
+[INFO] 23:49:20:565 CPU/(6844:6850): 
+[INFO] 23:49:21:566 CPU/(6844:6850): Ejecute I/O
+[INFO] 23:49:22:567 CPU/(6844:6850): El proceso: 0 llego a CPU
+[INFO] 23:49:22:568 CPU/(6844:6850): El proceso sale con un delay a×hrá
+[INFO] 23:49:22:568 CPU/(6844:6850): HOLA
+[INFO] 23:49:41:928 CPU/(6915:6915): Valores de configuracion leidos correctamente
+[INFO] 23:49:42:600 CPU/(6915:6915): Memoria
+[INFO] 23:49:42:600 CPU/(6915:6915): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:49:42:601 CPU/(6915:6928): Cpu lista para recibir al Kernel
+[INFO] 23:49:47:343 CPU/(6915:6928): Se conecto el Kernel
+[INFO] 23:49:47:343 CPU/(6915:6928): Handshake de Kernel recibido correctamente
+[INFO] 23:49:57:450 CPU/(6915:6928): Ejecute SET
+[INFO] 23:49:57:450 CPU/(6915:6928): HOLA
+[INFO] 23:49:57:450 CPU/(6915:6928): 
+[INFO] 23:49:58:450 CPU/(6915:6928): Ejecute SET
+[INFO] 23:49:58:450 CPU/(6915:6928): CHAU
+[INFO] 23:49:58:450 CPU/(6915:6928): 
+[INFO] 23:49:59:451 CPU/(6915:6928): Ejecute SET
+[INFO] 23:49:59:451 CPU/(6915:6928): SOYUNPRO
+[INFO] 23:49:59:451 CPU/(6915:6928): 
+[INFO] 23:50:48:099 CPU/(6915:6928): Ejecute I/O
+[INFO] 23:50:50:269 CPU/(6915:6928): El proceso: 0 llego a CPU
+[INFO] 23:50:50:269 CPU/(6915:6928): El proceso sale con un delay aÿø
+[INFO] 23:50:50:269 CPU/(6915:6928): HOLA
+[INFO] 23:53:31:464 CPU/(7203:7203): Valores de configuracion leidos correctamente
+[INFO] 23:53:32:387 CPU/(7203:7203): Memoria
+[INFO] 23:53:32:387 CPU/(7203:7203): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:53:32:388 CPU/(7203:7213): Cpu lista para recibir al Kernel
+[INFO] 23:53:40:476 CPU/(7203:7213): Se conecto el Kernel
+[INFO] 23:53:40:476 CPU/(7203:7213): Handshake de Kernel recibido correctamente
+[INFO] 23:53:44:114 CPU/(7203:7213): Ejecute SET
+[INFO] 23:53:44:114 CPU/(7203:7213): HOLA
+[INFO] 23:53:44:114 CPU/(7203:7213): 
+[INFO] 23:53:45:115 CPU/(7203:7213): Ejecute SET
+[INFO] 23:53:45:115 CPU/(7203:7213): CHAU
+[INFO] 23:53:45:115 CPU/(7203:7213): 
+[INFO] 23:53:46:116 CPU/(7203:7213): Ejecute SET
+[INFO] 23:53:46:116 CPU/(7203:7213): SOYUNPRO
+[INFO] 23:53:46:116 CPU/(7203:7213): 
+[INFO] 23:54:02:686 CPU/(7203:7213): Ejecute I/O
+[INFO] 23:54:25:686 CPU/(7203:7213): El proceso: 0 llego a CPU
+[INFO] 23:54:26:560 CPU/(7203:7213): El proceso sale con un delay 50
+[INFO] 23:54:27:879 CPU/(7203:7213): HOLA
+[INFO] 23:55:02:958 CPU/(7344:7344): Valores de configuracion leidos correctamente
+[INFO] 23:55:02:959 CPU/(7344:7344): Memoria
+[INFO] 23:55:02:959 CPU/(7344:7344): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:55:02:959 CPU/(7344:7350): Cpu lista para recibir al Kernel
+[INFO] 23:55:33:270 CPU/(7383:7383): Valores de configuracion leidos correctamente
+[INFO] 23:55:33:270 CPU/(7383:7383): Memoria
+[INFO] 23:55:33:270 CPU/(7383:7383): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:55:33:270 CPU/(7383:7389): Cpu lista para recibir al Kernel
+[INFO] 23:56:57:614 CPU/(7420:7420): Valores de configuracion leidos correctamente
+[INFO] 23:56:57:614 CPU/(7420:7420): Memoria
+[INFO] 23:56:57:614 CPU/(7420:7420): Fallo al realizar el handshake, cerrando conexion
+[INFO] 23:56:57:615 CPU/(7420:7426): Cpu lista para recibir al Kernel
+[INFO] 23:57:01:204 CPU/(7420:7426): Se conecto el Kernel
+[INFO] 23:57:01:205 CPU/(7420:7426): Handshake de Kernel recibido correctamente
+[INFO] 23:57:04:196 CPU/(7420:7426): Ejecute SET
+[INFO] 23:57:04:196 CPU/(7420:7426): HOLA
+[INFO] 23:57:04:196 CPU/(7420:7426): 
+[INFO] 23:57:05:197 CPU/(7420:7426): Ejecute SET
+[INFO] 23:57:05:197 CPU/(7420:7426): CHAU
+[INFO] 23:57:05:197 CPU/(7420:7426): 
+[INFO] 23:57:06:198 CPU/(7420:7426): Ejecute SET
+[INFO] 23:57:06:199 CPU/(7420:7426): SOYUNPRO
+[INFO] 23:57:06:199 CPU/(7420:7426): 
+[INFO] 23:57:07:205 CPU/(7420:7426): Ejecute I/O
+[INFO] 23:57:08:214 CPU/(7420:7426): El proceso: 0 llego a CPU
+[INFO] 23:57:08:214 CPU/(7420:7426): El proceso sale con un delay 50
+[INFO] 23:57:08:214 CPU/(7420:7426): HOLA
+[INFO] 00:21:35:518 CPU/(8017:8017): Valores de configuracion leidos correctamente
+[INFO] 00:21:35:518 CPU/(8017:8017): Memoria
+[INFO] 00:21:35:518 CPU/(8017:8017): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:21:35:518 CPU/(8017:8023): Cpu lista para recibir al Kernel
+[INFO] 00:21:39:583 CPU/(8017:8023): Se conecto el Kernel
+[INFO] 00:21:39:584 CPU/(8017:8023): Handshake de Kernel recibido correctamente
+[INFO] 00:21:46:528 CPU/(8017:8023): Ejecute SET
+[INFO] 00:21:46:528 CPU/(8017:8023): HOLA
+[INFO] 00:21:46:528 CPU/(8017:8023): 
+[INFO] 00:21:47:528 CPU/(8017:8023): Ejecute SET
+[INFO] 00:21:47:529 CPU/(8017:8023): CHAU
+[INFO] 00:21:47:529 CPU/(8017:8023): 
+[INFO] 00:21:48:529 CPU/(8017:8023): Ejecute SET
+[INFO] 00:21:48:529 CPU/(8017:8023): SOYUNPRO
+[INFO] 00:21:48:529 CPU/(8017:8023): 
+[INFO] 00:21:49:541 CPU/(8017:8023): Ejecute I/O
+[INFO] 00:21:50:546 CPU/(8017:8023): El proceso: 0 llego a CPU
+[INFO] 00:21:50:546 CPU/(8017:8023): El proceso sale con un delay 50
+[INFO] 00:21:50:546 CPU/(8017:8023): HOLA
+[INFO] 00:24:11:057 CPU/(8117:8117): Valores de configuracion leidos correctamente
+[INFO] 00:24:11:058 CPU/(8117:8117): Memoria
+[INFO] 00:24:11:058 CPU/(8117:8117): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:24:11:058 CPU/(8117:8123): Cpu lista para recibir al Kernel
+[INFO] 00:24:15:180 CPU/(8117:8123): Se conecto el Kernel
+[INFO] 00:24:15:180 CPU/(8117:8123): Handshake de Kernel recibido correctamente
+[INFO] 00:24:21:634 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:21:634 CPU/(8117:8123): HOLA
+[INFO] 00:24:21:634 CPU/(8117:8123): 
+[INFO] 00:24:22:634 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:22:634 CPU/(8117:8123): CHAU
+[INFO] 00:24:22:634 CPU/(8117:8123): 
+[INFO] 00:24:23:635 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:23:635 CPU/(8117:8123): SOYUNPRO
+[INFO] 00:24:23:635 CPU/(8117:8123): 
+[INFO] 00:24:24:636 CPU/(8117:8123): Ejecute I/O
+[INFO] 00:24:25:637 CPU/(8117:8123): El proceso: 0 llego a CPU
+[INFO] 00:24:25:637 CPU/(8117:8123): El proceso sale con un delay 50
+[INFO] 00:24:25:637 CPU/(8117:8123): HOLA
+[INFO] 00:24:29:993 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:29:993 CPU/(8117:8123): HOLA
+[INFO] 00:24:29:993 CPU/(8117:8123): HOLA
+[INFO] 00:24:30:995 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:30:996 CPU/(8117:8123): JAJA
+[INFO] 00:24:30:996 CPU/(8117:8123): CHAU
+[INFO] 00:24:31:996 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:31:996 CPU/(8117:8123): TEC0320
+[INFO] 00:24:31:996 CPU/(8117:8123): SOYUNPRO
+[INFO] 00:24:32:997 CPU/(8117:8123): Ejecute I/O
+[INFO] 00:24:33:997 CPU/(8117:8123): El proceso: 1 llego a CPU
+[INFO] 00:24:33:998 CPU/(8117:8123): El proceso sale con un delay 100
+[INFO] 00:24:33:998 CPU/(8117:8123): HOLA
+[INFO] 00:24:39:336 CPU/(8117:8123): Ejecute SET
+[INFO] 00:24:39:336 CPU/(8117:8123): HUUH
+[INFO] 00:24:39:336 CPU/(8117:8123): HOLA
+[INFO] 00:24:40:337 CPU/(8117:8123): Ejecute YIELD
+[INFO] 00:24:41:337 CPU/(8117:8123): El proceso: 2 llego a CPU
+[INFO] 00:26:22:338 CPU/(8395:8395): Valores de configuracion leidos correctamente
+[INFO] 00:26:22:339 CPU/(8395:8395): Memoria
+[INFO] 00:26:22:339 CPU/(8395:8395): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:26:22:339 CPU/(8395:8401): Cpu lista para recibir al Kernel
+[INFO] 00:26:25:832 CPU/(8395:8401): Se conecto el Kernel
+[INFO] 00:26:25:832 CPU/(8395:8401): Handshake de Kernel recibido correctamente
+[INFO] 00:26:32:721 CPU/(8395:8401): Ejecute SET
+[INFO] 00:26:32:721 CPU/(8395:8401): HOLA
+[INFO] 00:26:32:721 CPU/(8395:8401): 
+[INFO] 00:26:33:721 CPU/(8395:8401): Ejecute SET
+[INFO] 00:26:33:721 CPU/(8395:8401): JAJA
+[INFO] 00:26:33:721 CPU/(8395:8401): 
+[INFO] 00:26:34:722 CPU/(8395:8401): Ejecute SET
+[INFO] 00:26:34:722 CPU/(8395:8401): TEC0320
+[INFO] 00:26:34:722 CPU/(8395:8401): 
+[INFO] 00:26:35:722 CPU/(8395:8401): Ejecute I/O
+[INFO] 00:26:36:723 CPU/(8395:8401): El proceso: 0 llego a CPU
+[INFO] 00:26:36:723 CPU/(8395:8401): El proceso sale con un delay 100
+[INFO] 00:26:36:723 CPU/(8395:8401): HOLA
+[INFO] 00:26:39:773 CPU/(8395:8401): Ejecute SET
+[INFO] 00:26:39:774 CPU/(8395:8401): HUUH
+[INFO] 00:26:39:774 CPU/(8395:8401): HOLA
+[INFO] 00:26:40:774 CPU/(8395:8401): Ejecute YIELD
+[INFO] 00:26:41:774 CPU/(8395:8401): El proceso: 1 llego a CPU
+[INFO] 00:26:41:774 CPU/(8395:8401): El proceso sale con un delay 0
+[INFO] 00:26:41:774 CPU/(8395:8401): HUUH
+[INFO] 00:26:48:875 CPU/(8395:8401): Ejecute SET
+[INFO] 00:26:48:875 CPU/(8395:8401): TETE
+[INFO] 00:26:48:875 CPU/(8395:8401): JAJA
+[INFO] 00:26:49:875 CPU/(8395:8401): Ejecute EXIT
+[INFO] 00:26:50:876 CPU/(8395:8401): El proceso: 2 llego a CPU
+[INFO] 00:26:50:876 CPU/(8395:8401): El proceso sale con un delay 0
+[INFO] 00:26:50:876 CPU/(8395:8401): HUUH
+[INFO] 00:38:05:250 CPU/(9120:9120): Valores de configuracion leidos correctamente
+[INFO] 00:38:05:251 CPU/(9120:9120): Memoria
+[INFO] 00:38:05:251 CPU/(9120:9120): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:38:05:251 CPU/(9120:9126): Cpu lista para recibir al Kernel
+[INFO] 00:38:08:455 CPU/(9120:9126): Se conecto el Kernel
+[INFO] 00:38:08:456 CPU/(9120:9126): Handshake de Kernel recibido correctamente
+[INFO] 00:38:12:034 CPU/(9120:9126): Ejecute SET
+[INFO] 00:38:12:034 CPU/(9120:9126): HOLA
+[INFO] 00:38:12:034 CPU/(9120:9126): 
+[INFO] 00:38:13:035 CPU/(9120:9126): Ejecute SET
+[INFO] 00:38:13:035 CPU/(9120:9126): CHAU
+[INFO] 00:38:13:035 CPU/(9120:9126): 
+[INFO] 00:38:14:035 CPU/(9120:9126): Ejecute SET
+[INFO] 00:38:14:035 CPU/(9120:9126): SOYUNPRO
+[INFO] 00:38:14:035 CPU/(9120:9126): 
+[INFO] 00:38:15:037 CPU/(9120:9126): Ejecute I/O
+[INFO] 00:38:16:039 CPU/(9120:9126): El proceso: 0 llego a CPU
+[INFO] 00:38:16:039 CPU/(9120:9126): El numero de estado es: 1
+[INFO] 00:38:16:039 CPU/(9120:9126): El parametro de interrupcion es; 50
+[INFO] 00:38:16:039 CPU/(9120:9126): HOLA
+[INFO] 00:38:26:481 CPU/(9120:9126): Ejecute SET
+[INFO] 00:38:26:481 CPU/(9120:9126): TETE
+[INFO] 00:38:26:481 CPU/(9120:9126): CHAU
+[INFO] 00:38:27:481 CPU/(9120:9126): Ejecute EXIT
+[INFO] 00:38:28:482 CPU/(9120:9126): El proceso: 1 llego a CPU
+[INFO] 00:38:28:482 CPU/(9120:9126): El numero de estado es: 2
+[INFO] 00:38:28:482 CPU/(9120:9126): El parametro de interrupcion es; 0
+[INFO] 00:38:28:482 CPU/(9120:9126): HOLA
+[INFO] 00:39:24:934 CPU/(9335:9335): Valores de configuracion leidos correctamente
+[INFO] 00:39:24:934 CPU/(9335:9335): Memoria
+[INFO] 00:39:24:934 CPU/(9335:9335): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:39:24:934 CPU/(9335:9341): Cpu lista para recibir al Kernel
+[INFO] 00:39:28:063 CPU/(9335:9341): Se conecto el Kernel
+[INFO] 00:39:28:063 CPU/(9335:9341): Handshake de Kernel recibido correctamente
+[INFO] 00:39:31:653 CPU/(9335:9341): Ejecute SET
+[INFO] 00:39:31:653 CPU/(9335:9341): HOLA
+[INFO] 00:39:31:653 CPU/(9335:9341): 
+[INFO] 00:39:32:654 CPU/(9335:9341): Ejecute SET
+[INFO] 00:39:32:654 CPU/(9335:9341): CHAU
+[INFO] 00:39:32:654 CPU/(9335:9341): 
+[INFO] 00:39:33:654 CPU/(9335:9341): Ejecute SET
+[INFO] 00:39:33:655 CPU/(9335:9341): SOYUNPRO
+[INFO] 00:39:33:655 CPU/(9335:9341): 
+[INFO] 00:39:34:655 CPU/(9335:9341): Ejecute I/O
+[INFO] 00:39:35:656 CPU/(9335:9341): El proceso: 0 llego a CPU
+[INFO] 00:39:35:656 CPU/(9335:9341): El numero de estado es: 2
+[INFO] 00:39:35:656 CPU/(9335:9341): El parametro de interrupcion es: 50
+[INFO] 00:39:35:656 CPU/(9335:9341): HOLA
+[INFO] 00:39:43:809 CPU/(9335:9341): Ejecute SET
+[INFO] 00:39:43:809 CPU/(9335:9341): HUUH
+[INFO] 00:39:43:809 CPU/(9335:9341): HOLA
+[INFO] 00:39:44:810 CPU/(9335:9341): Ejecute YIELD
+[INFO] 00:39:45:810 CPU/(9335:9341): El proceso: 1 llego a CPU
+[INFO] 00:39:45:811 CPU/(9335:9341): El numero de estado es: 1
+[INFO] 00:39:45:811 CPU/(9335:9341): El parametro de interrupcion es: 0
+[INFO] 00:39:45:811 CPU/(9335:9341): HUUH
+[INFO] 00:39:50:204 CPU/(9335:9341): Ejecute SET
+[INFO] 00:39:50:204 CPU/(9335:9341): TETE
+[INFO] 00:39:50:204 CPU/(9335:9341): CHAU
+[INFO] 00:39:51:204 CPU/(9335:9341): Ejecute EXIT
+[INFO] 00:39:52:204 CPU/(9335:9341): El proceso: 2 llego a CPU
+[INFO] 00:39:52:204 CPU/(9335:9341): El numero de estado es: 0
+[INFO] 00:39:52:204 CPU/(9335:9341): El parametro de interrupcion es: 0
+[INFO] 00:39:52:204 CPU/(9335:9341): HUUH
+[INFO] 00:40:16:298 CPU/(9468:9468): Valores de configuracion leidos correctamente
+[INFO] 00:40:16:298 CPU/(9468:9468): Memoria
+[INFO] 00:40:16:298 CPU/(9468:9468): Fallo al realizar el handshake, cerrando conexion
+[INFO] 00:40:16:300 CPU/(9468:9474): Cpu lista para recibir al Kernel
+[INFO] 00:40:19:156 CPU/(9468:9474): Se conecto el Kernel
+[INFO] 00:40:19:156 CPU/(9468:9474): Handshake de Kernel recibido correctamente
+[INFO] 00:40:22:522 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:22:522 CPU/(9468:9474): HOLA
+[INFO] 00:40:22:522 CPU/(9468:9474): 
+[INFO] 00:40:23:522 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:23:522 CPU/(9468:9474): CHAU
+[INFO] 00:40:23:522 CPU/(9468:9474): 
+[INFO] 00:40:24:523 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:24:523 CPU/(9468:9474): SOYUNPRO
+[INFO] 00:40:24:523 CPU/(9468:9474): 
+[INFO] 00:40:25:523 CPU/(9468:9474): Ejecute I/O
+[INFO] 00:40:26:523 CPU/(9468:9474): El proceso: 0 llego a CPU
+[INFO] 00:40:26:523 CPU/(9468:9474): El numero de estado es: 2
+[INFO] 00:40:26:523 CPU/(9468:9474): El parametro de interrupcion es: 50
+[INFO] 00:40:26:523 CPU/(9468:9474): HOLA
+[INFO] 00:40:26:524 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:26:524 CPU/(9468:9474): HOLA
+[INFO] 00:40:26:524 CPU/(9468:9474): HOLA
+[INFO] 00:40:27:524 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:27:525 CPU/(9468:9474): JAJA
+[INFO] 00:40:27:525 CPU/(9468:9474): CHAU
+[INFO] 00:40:28:525 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:28:525 CPU/(9468:9474): TEC0320
+[INFO] 00:40:28:525 CPU/(9468:9474): SOYUNPRO
+[INFO] 00:40:29:526 CPU/(9468:9474): Ejecute I/O
+[INFO] 00:40:30:537 CPU/(9468:9474): El proceso: 1 llego a CPU
+[INFO] 00:40:30:537 CPU/(9468:9474): El numero de estado es: 2
+[INFO] 00:40:30:537 CPU/(9468:9474): El parametro de interrupcion es: 100
+[INFO] 00:40:30:537 CPU/(9468:9474): HOLA
+[INFO] 00:40:30:537 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:30:537 CPU/(9468:9474): HUUH
+[INFO] 00:40:30:537 CPU/(9468:9474): HOLA
+[INFO] 00:40:31:541 CPU/(9468:9474): Ejecute YIELD
+[INFO] 00:40:32:542 CPU/(9468:9474): El proceso: 2 llego a CPU
+[INFO] 00:40:32:543 CPU/(9468:9474): El numero de estado es: 1
+[INFO] 00:40:32:543 CPU/(9468:9474): El parametro de interrupcion es: 0
+[INFO] 00:40:32:543 CPU/(9468:9474): HUUH
+[INFO] 00:40:32:543 CPU/(9468:9474): Ejecute SET
+[INFO] 00:40:32:543 CPU/(9468:9474): TETE
+[INFO] 00:40:32:543 CPU/(9468:9474): JAJA
+[INFO] 00:40:33:548 CPU/(9468:9474): Ejecute EXIT
+[INFO] 00:40:34:549 CPU/(9468:9474): El proceso: 3 llego a CPU
+[INFO] 00:40:34:549 CPU/(9468:9474): El numero de estado es: 0
+[INFO] 00:40:34:549 CPU/(9468:9474): El parametro de interrupcion es: 0
+[INFO] 00:40:34:549 CPU/(9468:9474): HUUH

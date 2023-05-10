@@ -53,7 +53,8 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
 	t_list* lista = list_create();
 	t_contexto* contexto = malloc(sizeof(t_contexto));
 	uint32_t pid;
-	uint32_t delay;
+	contexto_estado_t estado;
+	uint32_t param_length;
 
 	void* stream = buffer->stream;
 
@@ -124,12 +125,21 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
 	stream += sizeof(char) * 17;
 	memcpy(&(pid), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
-	memcpy(&(delay), stream, sizeof(uint32_t));
+	memcpy(&(estado), stream, sizeof(contexto_estado_t));
+	/*
+	stream += sizeof(uint32_t);
+	memcpy(&(param_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	char* param = malloc(param_length);
+	memcpy(param, stream, param_length);
+	*/
 
 	contexto->instrucciones = lista;
 	contexto->registros = registros;
 	contexto->pid = pid;
-	contexto->delay = delay;
+	//contexto->param = param;
+	//contexto->param_length = param_length;
+	contexto->estado = estado;
 
 	return contexto;
 }

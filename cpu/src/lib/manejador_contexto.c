@@ -43,7 +43,8 @@ void armar_contexto(){
 	copiar_string(rcx,contexto->registros->rcx);
 	copiar_string(rdx,contexto->registros->rdx);
 
-	contexto->delay = delay;
+	contexto->estado = contexto_estado;
+
 }
 
 void ejecutar_instrucciones(t_list* lista, int lineas){

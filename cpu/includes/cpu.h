@@ -65,7 +65,8 @@ char rax[17];
 char rbx[17];
 char rcx[17];
 char rdx[17];
-uint32_t delay;
+char* contexto_param;
+uint32_t contexto_estado;
 t_contexto* contexto;
 
 // ________

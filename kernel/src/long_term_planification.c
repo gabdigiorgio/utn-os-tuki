@@ -25,7 +25,7 @@ void agregar_pcb_a_new(t_list* instrucciones){
 	//uint32_t largo = list_mutex_size(pcb_new_list);
 	pcb_t *proceso = crear_proceso(instrucciones);
 	list_push(pcb_new_list,proceso);
-	sem_post(&sem_estado_new);
+	sem_post(&sem_estado_new); //el post deberia estar en el proceso de EXIT
 }
 
 pcb_t *crear_proceso(t_list* instrucciones){
