@@ -300,7 +300,9 @@ void terminar_programa()
 	list_mutex_destroy(pcb_new_list);
 	list_mutex_destroy(pcb_ready_list);
 	list_mutex_destroy(pcb_block_list);
+	list_mutex_destroy(pcb_exit_list);
 	sem_destroy(&sem_estado_exec);
+	sem_destroy(&sem_estado_exit);
 	liberar_conexion(memoria_connection);
 	liberar_conexion(file_system_connection);
 	liberar_conexion(cpu_connection);
