@@ -14,6 +14,7 @@
 void estado_new();
 void agregar_pcb_a_new(t_list* instrucciones);
 pcb_t *crear_proceso(t_list* instrucciones);
+void estado_exit();
 void iniciar_planificador_largo_plazo();
 
 

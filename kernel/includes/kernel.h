@@ -38,6 +38,7 @@ bool recibido = 0;
 	t_lista_mutex *pcb_ready_list;
 	t_lista_mutex *pcb_new_list;
 	t_lista_mutex *pcb_block_list;
+	t_lista_mutex *pcb_exit_list;
 
 	int pid;
 
@@ -47,7 +48,7 @@ bool recibido = 0;
 	sem_t sem_estado_new;
 	sem_t sem_estado_ready;
 	sem_t sem_exec_libre;
-
+	sem_t sem_estado_exit;
 	sem_t sem_pid_aumento;
 
 	sem_t sem_grado_multiprogramacion;

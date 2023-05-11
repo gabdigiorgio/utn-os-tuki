@@ -39,8 +39,22 @@ pcb_t *crear_proceso(t_list* instrucciones){
 	return proceso;
 }
 
+void estado_exit(){
+	while(1){
+		sem_wait(&sem_estado_exit);
+		pcb_t* proceso = list_pop(pcb_exit_list);
+		proceso->estado=PCB_EXIT;
+		log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
+		log_info(logger, "El proceso: %d finalizo definitivamente", proceso->pid);
+		free(proceso);
+		//sem_post(&sem_estado_new);
+	}
+}
 void iniciar_planificador_largo_plazo(){
 	pthread_t hilo_new;
+	pthread_t hilo_exit;
 	pthread_create(&hilo_new, NULL, (void *)estado_new, NULL);
+	pthread_create(&hilo_exit,NULL, (void *)estado_exit,NULL);
 	pthread_detach(hilo_new);
+	pthread_detach(hilo_exit);
 }

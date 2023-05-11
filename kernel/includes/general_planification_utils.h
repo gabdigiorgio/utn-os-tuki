@@ -30,6 +30,7 @@
 	extern t_lista_mutex *pcb_ready_list;
 	extern t_lista_mutex *pcb_new_list;
 	extern t_lista_mutex *pcb_block_list;
+	extern t_lista_mutex *pcb_exit_list;
 
 	extern int pid;
 
@@ -39,6 +40,7 @@
 	extern sem_t sem_estado_new;
 	extern sem_t sem_estado_ready;
 	extern sem_t sem_exec_libre;
+	extern sem_t sem_estado_exit;
 	extern sem_t sem_pid_aumento;
 
 #endif /* GENERAL_PLANIFICATION_UTILS_H_ */

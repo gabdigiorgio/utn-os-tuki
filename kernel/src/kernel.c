@@ -180,7 +180,7 @@ void iniciar_semaforos(){
 	sem_init(&sem_estado_ready, 0, 0);
 	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);
-
+    sem_init(&sem_estado_exit,0,0);
 	sem_init(&sem_pid_aumento, 0, 1);
 }
 
@@ -188,6 +188,7 @@ void iniciar_pcb_lists(){
 	pcb_ready_list = init_list_mutex();
 	pcb_new_list = init_list_mutex();
 	pcb_block_list = init_list_mutex();
+	pcb_exit_list = init_list_mutex();
 }
 
 void iniciar_planificador_corto_plazo(){
