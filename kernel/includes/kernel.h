@@ -50,8 +50,7 @@ bool recibido = 0;
 	sem_t sem_exec_libre;
 	sem_t sem_estado_exit;
 	sem_t sem_pid_aumento;
-
-	sem_t sem_grado_multiprogramacion;
+	sem_t sem_grado_multi;
 
 
 
@@ -102,7 +101,7 @@ bool recibido = 0;
 	int estimacion_inicial;
 	float hrrn_alfa;
 
-	float grado_max_multiprogramacion;
+	int grado_max_multiprogramacion;
 
 	t_config* config;
 

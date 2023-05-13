@@ -123,6 +123,7 @@ typedef struct{
 		uint32_t program_counter;
 		uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
 		t_temporal* tiempo_espera_en_ready; // se hace con timer, ver timestamp
+	    //sacar comentario de registros de CPU
 		//registros_cpu_t registros_cpu; // crear struct de registros de cpu
 		tabla_segmentos_t tabla_segmento; // nada
 		t_list* instrucciones; // lista recibida de consola

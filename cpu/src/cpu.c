@@ -13,8 +13,6 @@
 int main(int argc, char *argv[]) {
 	//Iniciamos tanto el log como el config
 	logger = iniciar_logger();
-	contexto = malloc(sizeof(t_contexto));
-	contexto->instrucciones = list_create();
 
 	 if (argc < 2) {
 		 log_error(logger, "Falta parametro del path del archivo de configuracion");

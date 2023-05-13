@@ -176,7 +176,8 @@ void enviar_contexto(t_contexto* contexto){
 
 //}
 void iniciar_semaforos(){
-	sem_init(&sem_estado_new, grado_max_multiprogramacion, 0); //Se le deberia asignar  el valor de multiprogramacion como el valor iniciar del semaforo de new
+	sem_init(&sem_grado_multi,0 , grado_max_multiprogramacion);
+	sem_init(&sem_estado_new, 0, 0);
 	sem_init(&sem_estado_ready, 0, 0);
 	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);

@@ -9,6 +9,7 @@
 void estado_new(){
 	while(1)
 	{
+		sem_wait(&sem_grado_multi);
 		sem_wait(&sem_estado_new);
 		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
 		pcb_para_listo->estado = PCB_NEW;
@@ -25,7 +26,7 @@ void agregar_pcb_a_new(t_list* instrucciones){
 	//uint32_t largo = list_mutex_size(pcb_new_list);
 	pcb_t *proceso = crear_proceso(instrucciones);
 	list_push(pcb_new_list,proceso);
-	sem_post(&sem_estado_new); //el post deberia estar en el proceso de EXIT
+	sem_post(&sem_estado_new);
 }
 
 pcb_t *crear_proceso(t_list* instrucciones){
@@ -35,6 +36,7 @@ pcb_t *crear_proceso(t_list* instrucciones){
 	sem_post(&sem_pid_aumento);
 	proceso->estimado_proxima_rafaga = estimacion_inicial;
 	proceso->instrucciones = instrucciones;
+	//inicializar los registros del proceso todo en 0
 	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
 	return proceso;
 }
@@ -47,7 +49,7 @@ void estado_exit(){
 		log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
 		log_info(logger, "El proceso: %d finalizo definitivamente", proceso->pid);
 		free(proceso);
-		//sem_post(&sem_estado_new);
+		sem_post(&sem_grado_multi);
 	}
 }
 void iniciar_planificador_largo_plazo(){

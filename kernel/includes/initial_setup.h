@@ -30,7 +30,7 @@ extern char* algoritmo_planificacion;
 extern int estimacion_inicial;
 extern float hrrn_alfa;
 
-extern float grado_max_multiprogramacion;
+extern int grado_max_multiprogramacion;
 
 extern t_config* config;
 

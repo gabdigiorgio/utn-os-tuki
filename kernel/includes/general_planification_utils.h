@@ -42,5 +42,6 @@
 	extern sem_t sem_exec_libre;
 	extern sem_t sem_estado_exit;
 	extern sem_t sem_pid_aumento;
+	extern sem_t sem_grado_multi;
 
 #endif /* GENERAL_PLANIFICATION_UTILS_H_ */

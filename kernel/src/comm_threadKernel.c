@@ -4,16 +4,16 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
-	contexto->registros = registros;
+	contexto->registros = registros; //esto esta mal, tiene que tomarlo del PCB
 	contexto->instrucciones = pcb->instrucciones;
 	contexto->pid = pcb->pid;
 	return contexto;
 }
 
-void enviar_contexto(t_contexto* contexto){
+void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb
 	t_paquete* paquete2 = malloc(sizeof(t_paquete));
 	paquete2->buffer = malloc(sizeof(t_buffer));
-
+    //crear contexto c on ese pcb
 	//inicializo el estado en 0 ya que el CPU es quien nos va a responder con el estado correcto
 	contexto->estado = EXIT;
 	contexto->param = "0";
@@ -30,39 +30,49 @@ void enviar_contexto(t_contexto* contexto){
 		case 1:
 			contexto_actualizado = deserializar_contexto(paquete2->buffer, paquete2->lineas);
 			log_info(logger,contexto_actualizado->registros->ax);
+			// aca va logica de exit
+
+				log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
+				log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
+				log_info(logger, "El numero de estado es: %d", contexto_actualizado->estado);
+				log_info(logger, "El parametro de interrupcion es: %s", contexto_actualizado->param);
+
+				pcb_t *proceso_a_exit = malloc(sizeof(pcb_t)); // utlizar el mismo PCB de antes
+					proceso_a_exit->pid = contexto_actualizado->pid;
+					proceso_a_exit->estimado_proxima_rafaga = 0;
+					proceso_a_exit->instrucciones = contexto_actualizado->instrucciones;
+
+				switch(contexto_actualizado->estado){
+					case EXIT:
+						list_push(pcb_exit_list,proceso_a_exit);
+						sem_post(&sem_estado_exit);
+						break;
+					default:
+						break;
+				}
+
+				//Esto deberia ir dentro del If que analizaria si va a Exit
+				//pcb_t *proceso_a_exit = crear_proceso(contexto_actualizado->instrucciones);
+				//list_push(pcb_exit_list,proceso_a_exit);
+				//sem_post(&sem_estado_exit);
+
+				// Hasta linea 49
+				if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
+				{
+					log_info(logger,"El contexto se ejecutó completamente");
+
+				    list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
+				    free(contexto_actualizado->registros);
+				    free(contexto_actualizado);
+
+
+				}
 			break;
 		default:
 			log_info(logger,"falle");
 			break;
 	}
 
-	// aca va logica de exit
-
-	log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
-	log_info(logger, "El size de las instrucciones es %d", (uint16_t)list_size(contexto->instrucciones));
-	log_info(logger, "El numero de estado es: %d", contexto_actualizado->estado);
-	log_info(logger, "El parametro de interrupcion es: %s", contexto_actualizado->param);
-
-	//Esto deberia ir dentro del If que analizaria si va a Exit
-	//pcb_t *proceso_a_exit = crear_proceso(contexto_actualizado->instrucciones);
-	pcb_t *proceso_a_exit = malloc(sizeof(pcb_t));
-		proceso_a_exit->pid = contexto_actualizado->pid;
-		proceso_a_exit->estimado_proxima_rafaga = 0;
-		proceso_a_exit->instrucciones = contexto_actualizado->instrucciones;
-	list_push(pcb_exit_list,proceso_a_exit);
-	sem_post(&sem_estado_exit);
-
-	// Hasta linea 49
-	if(contexto_actualizado->registros->ip == (uint16_t)list_size(contexto->instrucciones))
-	{
-		log_info(logger,"El contexto se ejecutó completamente");
-
-	    list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
-	    free(contexto_actualizado->registros);
-	    free(contexto_actualizado);
-
-
-	}
 	/*
 	else
 	{

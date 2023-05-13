@@ -7,6 +7,8 @@ void conexion_kernel(int server_connection){
 	log_info(logger,handshake(connection_fd));
 
 	while (1) {
+		contexto = malloc(sizeof(t_contexto));
+		contexto->instrucciones = list_create();
 		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
@@ -22,12 +24,17 @@ void conexion_kernel(int server_connection){
 				armar_contexto();
 				log_info(logger, "El proceso: %d llego a CPU", contexto->pid);
 				log_info(logger, "El numero de estado es: %d", contexto->estado);
-				log_info(logger, "El parametro de interrupcion es: %s", contexto->param);
+				//log_info(logger, "El parametro de interrupcion es: %s", contexto->param); //aca esta el error
 				log_info(logger,contexto->registros->ax);
 				serializar_contexto(connection_fd,contexto);
 				break;
 			default:
 				break;
 		}
+
+	    list_destroy_and_destroy_elements(contexto->instrucciones, free);
+	    free(contexto->registros);
+	    free(contexto->param);
+	    free(contexto);
 	}
 }
