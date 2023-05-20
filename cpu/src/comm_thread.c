@@ -25,7 +25,8 @@ void conexion_kernel(int server_connection){
 				log_info(logger, "El proceso: %d llego a CPU", contexto->pid);
 				log_info(logger, "El numero de estado es: %d", contexto->estado);
 				//log_info(logger, "El parametro de interrupcion es: %s", contexto->param); //aca esta el error
-				log_info(logger,contexto->registros->ax);
+				//log_info(logger,contexto->registros->ax);
+				log_info(logger,contexto->registros->ip);
 				serializar_contexto(connection_fd,contexto);
 				break;
 			default:
