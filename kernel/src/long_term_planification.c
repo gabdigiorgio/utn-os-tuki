@@ -9,7 +9,7 @@
 void estado_new(){
 	while(1)
 	{
-		sem_wait(&sem_grado_multi);
+		sem_wait(&sem_grado_multi); //consultar por un tema de deadlock
 		sem_wait(&sem_estado_new);
 		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
 		pcb_para_listo->estado = PCB_NEW;
@@ -48,8 +48,10 @@ void estado_exit(){
 		proceso->estado=PCB_EXIT;
 		log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
 		log_info(logger, "El proceso: %d finalizo definitivamente", proceso->pid);
+		//hace el free de todo lo que tiene adentro el pcb
 		free(proceso);
 		sem_post(&sem_grado_multi);
+		//comunicar que termino a la consola
 	}
 }
 void iniciar_planificador_largo_plazo(){

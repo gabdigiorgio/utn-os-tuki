@@ -130,4 +130,10 @@ typedef struct{
 		tabla_archivos_abiertos_t tabla_archivos; // nada
 	}pcb_t;
 
+typedef struct {
+	int id; //corresponde con el indice
+	char* id_recurso;
+	int instancias;
+}t_recurso;
+
 #endif /* TAD_H_ */

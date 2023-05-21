@@ -27,7 +27,7 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 
 	char* message = "";
 	uint8_t handshake = tipo_cliente;
-	uint8_t result;
+	uint8_t result = 0;
 
 	switch(tipo_servidor){
 				case 1:

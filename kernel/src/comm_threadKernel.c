@@ -10,11 +10,12 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 	return contexto;
 }
 
-void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb
+void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb (pbc_t pbc)
 	t_paquete* paquete2 = malloc(sizeof(t_paquete));
 	paquete2->buffer = malloc(sizeof(t_buffer));
     //crear contexto c on ese pcb
 	//inicializo el estado en 0 ya que el CPU es quien nos va a responder con el estado correcto
+	//contexto = obtener_contexto_pcb(pcb_t* pcb)
 	contexto->estado = EXIT;
 	contexto->param = "0";
 	contexto->param_length = strlen(contexto->param) + 1;
@@ -42,12 +43,20 @@ void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb
 					proceso_a_exit->estimado_proxima_rafaga = 0;
 					proceso_a_exit->instrucciones = contexto_actualizado->instrucciones;
 
+				//esto hay que mejorarlo
 				switch(contexto_actualizado->estado){
 					case EXIT:
 						list_push(pcb_exit_list,proceso_a_exit);
 						sem_post(&sem_estado_exit);
 						break;
+					case WAIT:
+						//revisar el recurso
+						break;
+					case SIGNAL:
+						//revisar el recurso
+						break;
 					default:
+						//aca iria logica de bloq
 						break;
 				}
 

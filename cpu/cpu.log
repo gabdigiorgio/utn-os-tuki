@@ -1,0 +1,20 @@
+[ERROR] 14:41:13:518 CPU/(3270:3270): Falta parametro del path del archivo de configuracion
+[INFO] 14:41:54:978 CPU/(3307:3307): Valores de configuracion leidos correctamente
+[INFO] 14:41:55:046 CPU/(3307:3307): Memoria
+[INFO] 14:41:55:050 CPU/(3307:3307): Fallo al realizar el handshake, cerrando conexion
+[INFO] 14:41:55:153 CPU/(3307:3315): Cpu lista para recibir al Kernel
+[INFO] 14:42:02:597 CPU/(3307:3315): Se conecto el Kernel
+[INFO] 14:42:02:607 CPU/(3307:3315): Handshake de Kernel recibido correctamente
+[INFO] 14:42:07:840 CPU/(3307:3315): Ejecute SET
+[INFO] 14:42:07:849 CPU/(3307:3315): HOLA
+[INFO] 14:42:07:852 CPU/(3307:3315): 
+[INFO] 14:42:08:859 CPU/(3307:3315): Ejecute SET
+[INFO] 14:42:08:860 CPU/(3307:3315): CHAU
+[INFO] 14:42:08:860 CPU/(3307:3315): 
+[INFO] 14:42:09:862 CPU/(3307:3315): Ejecute SET
+[INFO] 14:42:09:864 CPU/(3307:3315): SOYUNPRO
+[INFO] 14:42:09:865 CPU/(3307:3315): 
+[INFO] 14:42:10:866 CPU/(3307:3315): Ejecute I/O
+[INFO] 14:42:11:870 CPU/(3307:3315): El proceso: 0 llego a CPU
+[INFO] 14:42:11:873 CPU/(3307:3315): El numero de estado es: 2
+[INFO] 14:42:11:874 CPU/(3307:3315): HOLA
