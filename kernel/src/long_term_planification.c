@@ -40,6 +40,14 @@ pcb_t *crear_proceso(t_list* instrucciones){
 	strcpy(proceso->registros_cpu.bx,  "0");
 	strcpy(proceso->registros_cpu.cx,  "0");
 	strcpy(proceso->registros_cpu.dx,  "0");
+	strcpy(proceso->registros_cpu.eax,  "0");
+	strcpy(proceso->registros_cpu.ebx,  "0");
+	strcpy(proceso->registros_cpu.ecx,  "0");
+	strcpy(proceso->registros_cpu.edx,  "0");
+	strcpy(proceso->registros_cpu.rax,  "0");
+	strcpy(proceso->registros_cpu.rbx,  "0");
+	strcpy(proceso->registros_cpu.rcx,  "0");
+	strcpy(proceso->registros_cpu.rdx,  "0");
 	proceso->estado = PCB_NEW;
 	return proceso;
 }

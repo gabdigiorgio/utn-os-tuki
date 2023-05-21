@@ -4,7 +4,8 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
-	contexto->registros = registros; //esto esta mal, tiene que tomarlo del PCB
+	*registros = pcb->registros_cpu;
+	contexto->registros = registros;
 	contexto->instrucciones = pcb->instrucciones;
 	contexto->pid = pcb->pid;
 	return contexto;
