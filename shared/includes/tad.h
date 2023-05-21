@@ -119,16 +119,14 @@ typedef struct{
 
 	typedef struct {
 		uint32_t pid;
-		pcb_estado_t estado; // tipo de estado, puede ser un enum
-		uint32_t program_counter;
-		uint32_t estimado_proxima_rafaga; // se saca inicialmente del config
-		t_temporal* tiempo_espera_en_ready; // se hace con timer, ver timestamp
-	    //sacar comentario de registros de CPU
-		//registros_cpu_t registros_cpu; // crear struct de registros de cpu
-		tabla_segmentos_t tabla_segmento; // nada
-		t_list* instrucciones; // lista recibida de consola
-		tabla_archivos_abiertos_t tabla_archivos; // nada
-	}pcb_t;
+		pcb_estado_t estado; 						// tipo de estado, puede ser un enum
+		uint32_t estimado_proxima_rafaga; 			// se saca inicialmente del config
+		t_temporal* tiempo_espera_en_ready; 		// se hace con timer, ver timestamp
+		t_registros registros_cpu; 					// crear struct de registros de cpu
+		tabla_segmentos_t tabla_segmento; 			// nada
+		t_list* instrucciones; 						// lista recibida de consola
+		tabla_archivos_abiertos_t tabla_archivos; 	// nada
+	} pcb_t;
 
 typedef struct {
 	int id; //corresponde con el indice

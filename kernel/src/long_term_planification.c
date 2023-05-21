@@ -12,8 +12,6 @@ void estado_new(){
 		sem_wait(&sem_grado_multi); //consultar por un tema de deadlock
 		sem_wait(&sem_estado_new);
 		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
-		pcb_para_listo->estado = PCB_NEW;
-		log_info(logger, "El proceso: %d llego a estado new", pcb_para_listo->pid);
 		list_push(pcb_ready_list,pcb_para_listo);
 		pcb_para_listo->tiempo_espera_en_ready = temporal_create();
 		pcb_para_listo->estado = PCB_READY;
@@ -26,6 +24,7 @@ void agregar_pcb_a_new(t_list* instrucciones){
 	//uint32_t largo = list_mutex_size(pcb_new_list);
 	pcb_t *proceso = crear_proceso(instrucciones);
 	list_push(pcb_new_list,proceso);
+	log_info(logger, "El proceso: %d llego a estado new", proceso->pid);
 	sem_post(&sem_estado_new);
 }
 
@@ -36,8 +35,20 @@ pcb_t *crear_proceso(t_list* instrucciones){
 	sem_post(&sem_pid_aumento);
 	proceso->estimado_proxima_rafaga = estimacion_inicial;
 	proceso->instrucciones = instrucciones;
-	//inicializar los registros del proceso todo en 0
-	//Desde aqui se asignarian los tiempos para manejar los algoritmos de planificacion asignando los que inician en 0 y el estado como new
+	proceso->registros_cpu.ip=0;
+	strcpy(proceso->registros_cpu.ax,  "0");
+	strcpy(proceso->registros_cpu.bx,  "0");
+	strcpy(proceso->registros_cpu.cx,  "0");
+	strcpy(proceso->registros_cpu.dx,  "0");
+	strcpy(proceso->registros_cpu.eax,  "0");
+	strcpy(proceso->registros_cpu.ebx,  "0");
+	strcpy(proceso->registros_cpu.ecx,  "0");
+	strcpy(proceso->registros_cpu.edx,  "0");
+	strcpy(proceso->registros_cpu.rax,  "0");
+	strcpy(proceso->registros_cpu.rbx,  "0");
+	strcpy(proceso->registros_cpu.rcx,  "0");
+	strcpy(proceso->registros_cpu.rdx,  "0");
+	proceso->estado = PCB_NEW;
 	return proceso;
 }
 
