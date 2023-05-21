@@ -29,7 +29,7 @@ void atender_consola(int socket_servidor){
 		{
 			case 1:
 				instruc_lista = deserializar_instrucciones(paquete->buffer, paquete->lineas);
-				agregar_pcb_a_new(instruc_lista);
+				agregar_pcb_a_new(instruc_lista,socket_console_client);
 				break;
 			default:
 				break;

@@ -12,8 +12,8 @@
 #include "semaphore.h"
 
 void estado_new();
-void agregar_pcb_a_new(t_list* instrucciones);
-pcb_t *crear_proceso(t_list* instrucciones);
+void agregar_pcb_a_new(t_list* instrucciones, uint32_t socket);
+pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket);
 void estado_exit();
 void iniciar_planificador_largo_plazo();
 

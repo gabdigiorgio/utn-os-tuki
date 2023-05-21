@@ -45,17 +45,40 @@ void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb (pbc_t pbc)
 					proceso_a_exit->instrucciones = contexto_actualizado->instrucciones;
 
 				//esto hay que mejorarlo
+
 				switch(contexto_actualizado->estado){
 					case EXIT:
 						list_push(pcb_exit_list,proceso_a_exit);
 						sem_post(&sem_estado_exit);
 						break;
+					case YIELD:
+						//va devuelta a ready al final de la cola
+						break;
+					case IO:
+						//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
+						break;
 					case WAIT:
 						//revisar el recurso
+						//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
+						//y pushear a block restando 1 a dicho recurso
+						//Si no existe pushear a exit
 						break;
 					case SIGNAL:
 						//revisar el recurso
+						//si no existe pushear a exit, si existe sumar 1 a ese recurso
 						break;
+					case FSYSTEM:
+						//revisar el recurso
+						//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
+						//y pushear a block
+						//Si no existe o existe y esta disponible ejecutar logica de FILE
+						//no hace falta meterlo en block
+					case MEM:
+						//revisar el recurso
+						//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
+						//y pushear a block
+						//Si no existe o existe y esta disponible ejecutar logica de FILE
+						//no hace falta meterlo en block
 					default:
 						//aca iria logica de bloq
 						break;

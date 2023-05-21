@@ -194,3 +194,8 @@
 [INFO] 16:00:23:657 CONSOLA/(58982:58982): Valores de configuracion leidos correctamente
 [INFO] 19:01:30:913 CONSOLA/(2596:2596): Valores de configuracion leidos correctamente
 [INFO] 19:01:49:249 CONSOLA/(2680:2680): Valores de configuracion leidos correctamente
+[INFO] 23:08:04:859 CONSOLA/(5515:5515): Valores de configuracion leidos correctamente
+[ERROR] 23:08:24:262 CONSOLA/(5515:5515): Error en la ejecucion
+[INFO] 23:09:22:034 CONSOLA/(5596:5596): Valores de configuracion leidos correctamente
+[INFO] 23:10:35:756 CONSOLA/(5696:5696): Valores de configuracion leidos correctamente
+[ERROR] 23:11:04:985 CONSOLA/(5696:5696): Error en la ejecucion

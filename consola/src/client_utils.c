@@ -130,6 +130,14 @@ int crear_conexion(char *ip, char* puerto)
 	return socket_cliente;
 }
 
+uint8_t recibir_respuesta(int socket_cliente){
+	uint8_t result = 0;
+
+	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL); //consultar por un timeout
+
+	return result;
+}
+
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);

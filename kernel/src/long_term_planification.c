@@ -20,18 +20,19 @@ void estado_new(){
 	}
 }
 
-void agregar_pcb_a_new(t_list* instrucciones){
+void agregar_pcb_a_new(t_list* instrucciones, uint32_t socket){
 	//uint32_t largo = list_mutex_size(pcb_new_list);
-	pcb_t *proceso = crear_proceso(instrucciones);
+	pcb_t *proceso = crear_proceso(instrucciones, socket);
 	list_push(pcb_new_list,proceso);
 	log_info(logger, "El proceso: %d llego a estado new", proceso->pid);
 	sem_post(&sem_estado_new);
 }
 
-pcb_t *crear_proceso(t_list* instrucciones){
+pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
 	sem_wait(&sem_pid_aumento);
 	proceso->pid = pid++;
+	proceso->consola = socket;
 	sem_post(&sem_pid_aumento);
 	proceso->estimado_proxima_rafaga = estimacion_inicial;
 	proceso->instrucciones = instrucciones;
@@ -54,14 +55,17 @@ pcb_t *crear_proceso(t_list* instrucciones){
 
 void estado_exit(){
 	while(1){
+		uint8_t resultado = 1;
 		sem_wait(&sem_estado_exit);
 		pcb_t* proceso = list_pop(pcb_exit_list);
 		proceso->estado=PCB_EXIT;
 		log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
 		log_info(logger, "El proceso: %d finalizo definitivamente", proceso->pid);
+		send(proceso->consola, resultado, sizeof(uint8_t), NULL);
 		//hace el free de todo lo que tiene adentro el pcb
 		free(proceso);
 		sem_post(&sem_grado_multi);
+
 		//comunicar que termino a la consola
 	}
 }
