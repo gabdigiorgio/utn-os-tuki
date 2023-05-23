@@ -15,7 +15,7 @@ extern int cpu_connection;
 extern t_log* logger;
 
 t_contexto* obtener_contexto_pcb(pcb_t* pcb);
-void enviar_contexto(t_contexto* contexto);
+void enviar_contexto(pcb_t* pcb);
 
 
 

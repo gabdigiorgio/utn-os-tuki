@@ -162,7 +162,7 @@ void estado_exec(){
 
 			t_temporal* tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
 
-			enviar_contexto(obtener_contexto_pcb(pcb_a_ejecutar));
+			enviar_contexto(pcb_a_ejecutar);
 
 			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 

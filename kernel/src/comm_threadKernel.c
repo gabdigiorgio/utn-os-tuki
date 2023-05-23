@@ -11,7 +11,8 @@ t_contexto* obtener_contexto_pcb(pcb_t* pcb) {
 	return contexto;
 }
 
-void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb (pbc_t pbc)
+void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
+	t_contexto* contexto = obtener_contexto_pcb(pcb);
 	t_paquete* paquete2 = malloc(sizeof(t_paquete));
 	paquete2->buffer = malloc(sizeof(t_buffer));
     //crear contexto c on ese pcb
@@ -39,16 +40,11 @@ void enviar_contexto(t_contexto* contexto){ // aca recibir un pcb (pbc_t pbc)
 				log_info(logger, "El numero de estado es: %d", contexto_actualizado->estado);
 				log_info(logger, "El parametro de interrupcion es: %s", contexto_actualizado->param);
 
-				pcb_t *proceso_a_exit = malloc(sizeof(pcb_t)); // utlizar el mismo PCB de antes
-					proceso_a_exit->pid = contexto_actualizado->pid;
-					proceso_a_exit->estimado_proxima_rafaga = 0;
-					proceso_a_exit->instrucciones = contexto_actualizado->instrucciones;
-
 				//esto hay que mejorarlo
 
 				switch(contexto_actualizado->estado){
 					case EXIT:
-						list_push(pcb_exit_list,proceso_a_exit);
+						list_push(pcb_exit_list,pcb);
 						sem_post(&sem_estado_exit);
 						break;
 					case YIELD:
