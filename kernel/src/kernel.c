@@ -131,12 +131,13 @@ void iniciar_lista_recursos(){
 		exit(1);
 	}
 
-
+	lista_recusos = list_create();
 	for(int i = 0; i < cant_lista_nombre_recursos; i++){
 		t_recurso *recurso = malloc(sizeof(t_recurso));
 		recurso->id = i;
 		recurso->nombre_recurso = lista_nombre_recursos[i];
-		recurso->instancias = lista_instancias_recursos[i]-'0';
-		log_info(logger, lista_nombre_recursos[i]);
+		recurso->instancias = (*lista_instancias_recursos[i])-'0';
+		list_add(lista_recusos,recurso);
+
 	}
 }

@@ -244,3 +244,39 @@
 [INFO] 01:59:59:945 CPU/(2714:2719): Ejecute EXIT
 [INFO] 02:00:00:946 CPU/(2714:2719): El proceso: 3 llego a CPU
 [INFO] 02:00:00:946 CPU/(2714:2719): El numero de estado es: 0
+[INFO] 05:38:34:772 CPU/(2350:2350): Valores de configuracion leidos correctamente
+[INFO] 05:38:34:795 CPU/(2350:2350): Memoria
+[INFO] 05:38:34:795 CPU/(2350:2350): Fallo al realizar el handshake, cerrando conexion
+[INFO] 05:38:34:796 CPU/(2350:2357): Cpu lista para recibir al Kernel
+[INFO] 05:38:40:279 CPU/(2350:2357): Se conecto el Kernel
+[INFO] 05:38:40:279 CPU/(2350:2357): Handshake de Kernel recibido correctamente
+[INFO] 05:38:47:534 CPU/(2350:2357): Ejecute SET
+[INFO] 05:38:47:534 CPU/(2350:2357): TETE
+[INFO] 05:38:47:534 CPU/(2350:2357): 0
+[INFO] 05:38:48:534 CPU/(2350:2357): Ejecute EXIT
+[INFO] 05:38:49:535 CPU/(2350:2357): El proceso: 0 llego a CPU
+[INFO] 05:38:49:535 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 05:38:54:286 CPU/(2350:2357): Ejecute SET
+[INFO] 05:38:54:286 CPU/(2350:2357): TETE
+[INFO] 05:38:54:286 CPU/(2350:2357): 0ETE
+[INFO] 05:38:55:287 CPU/(2350:2357): Ejecute EXIT
+[INFO] 05:38:56:287 CPU/(2350:2357): El proceso: 1 llego a CPU
+[INFO] 05:38:56:287 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 05:38:56:287 CPU/(2350:2357): Ejecute SET
+[INFO] 05:38:56:287 CPU/(2350:2357): TETE
+[INFO] 05:38:56:287 CPU/(2350:2357): 0ETE
+[INFO] 05:38:57:287 CPU/(2350:2357): Ejecute EXIT
+[INFO] 05:38:58:288 CPU/(2350:2357): El proceso: 2 llego a CPU
+[INFO] 05:38:58:288 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 05:38:58:289 CPU/(2350:2357): Ejecute SET
+[INFO] 05:38:58:289 CPU/(2350:2357): TETE
+[INFO] 05:38:58:289 CPU/(2350:2357): 0ETE
+[INFO] 05:38:59:289 CPU/(2350:2357): Ejecute EXIT
+[INFO] 05:39:00:291 CPU/(2350:2357): El proceso: 3 llego a CPU
+[INFO] 05:39:00:291 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 05:39:00:292 CPU/(2350:2357): Ejecute SET
+[INFO] 05:39:00:292 CPU/(2350:2357): TETE
+[INFO] 05:39:00:292 CPU/(2350:2357): 0ETE
+[INFO] 05:39:01:293 CPU/(2350:2357): Ejecute EXIT
+[INFO] 05:39:02:294 CPU/(2350:2357): El proceso: 4 llego a CPU
+[INFO] 05:39:02:294 CPU/(2350:2357): El numero de estado es: 0
