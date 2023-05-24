@@ -23,8 +23,8 @@
 	#include "initial_setup.h"
 	#include "general_planification_utils.h"
 	#include "long_term_planification.h"
+	#include "short_term_planification.h"
 	#include "../../shared/includes/tad.h"
-	#include "semaphore.h"
 
 
 // ____________________________________
@@ -33,7 +33,7 @@
 // 		   STRUCTS
 // -------------------------------
 //
-bool recibido = 0;
+	bool recibido = 0;
 
 	t_lista_mutex *pcb_ready_list;
 	t_lista_mutex *pcb_new_list;
@@ -41,6 +41,8 @@ bool recibido = 0;
 	t_lista_mutex *pcb_exit_list;
 
 	int pid;
+
+	t_list * lista_recusos;
 
 	// Semaforos
 
@@ -103,6 +105,9 @@ bool recibido = 0;
 
 	int grado_max_multiprogramacion;
 
+	char** lista_nombre_recursos;
+	char** lista_instancias_recursos;
+
 	t_config* config;
 
 // __________________________________
@@ -115,15 +120,8 @@ bool recibido = 0;
 	void iterator(char* value);
 	void iniciar_pcb_lists();
 	void iniciar_semaforos();
-	void enviar_contexto(t_contexto* contexto);
-	t_contexto* obtener_contexto_pcb(pcb_t* pcb);
-	void enviar_proceso_a_ejecutar(pcb_t* pcb_a_ejecutar);
-	void iniciar_planificador_corto_plazo();
-	void estado_ready();
-	void estado_exec();
-	void estado_block();
-	long double calcular_ratio(pcb_t* pcb_actual);
-	bool mayor_ratio(void* proceso_1, void* proceso_2);
+	void terminar_programa();
+	void iniciar_lista_recursos();
 
 // ____________________________________________________________
 

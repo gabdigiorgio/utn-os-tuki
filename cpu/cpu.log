@@ -184,3 +184,63 @@
 [INFO] 23:10:49:133 CPU/(5632:5638): Ejecute EXIT
 [INFO] 23:10:50:133 CPU/(5632:5638): El proceso: 0 llego a CPU
 [INFO] 23:10:50:133 CPU/(5632:5638): El numero de estado es: 0
+[INFO] 01:38:54:116 CPU/(1963:1963): Valores de configuracion leidos correctamente
+[INFO] 01:38:54:116 CPU/(1963:1963): Memoria
+[INFO] 01:38:54:116 CPU/(1963:1963): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:38:54:116 CPU/(1963:1968): Cpu lista para recibir al Kernel
+[INFO] 01:40:16:953 CPU/(1963:1968): Se conecto el Kernel
+[INFO] 01:40:16:953 CPU/(1963:1968): Handshake de Kernel recibido correctamente
+[INFO] 01:40:45:928 CPU/(1963:1968): Ejecute SET
+[INFO] 01:40:45:928 CPU/(1963:1968): TETE
+[INFO] 01:40:45:928 CPU/(1963:1968): 0
+[INFO] 01:40:46:928 CPU/(1963:1968): Ejecute EXIT
+[INFO] 01:40:47:929 CPU/(1963:1968): El proceso: 0 llego a CPU
+[INFO] 01:40:47:929 CPU/(1963:1968): El numero de estado es: 0
+[INFO] 01:41:02:349 CPU/(1963:1968): Ejecute SET
+[INFO] 01:41:02:349 CPU/(1963:1968): TETE
+[INFO] 01:41:02:349 CPU/(1963:1968): 0ETE
+[INFO] 01:41:03:349 CPU/(1963:1968): Ejecute EXIT
+[INFO] 01:41:04:349 CPU/(1963:1968): El proceso: 1 llego a CPU
+[INFO] 01:41:04:349 CPU/(1963:1968): El numero de estado es: 0
+[INFO] 01:41:04:351 CPU/(1963:1968): Ejecute SET
+[INFO] 01:41:04:352 CPU/(1963:1968): TETE
+[INFO] 01:41:04:352 CPU/(1963:1968): 0ETE
+[INFO] 01:41:05:352 CPU/(1963:1968): Ejecute EXIT
+[INFO] 01:41:06:353 CPU/(1963:1968): El proceso: 2 llego a CPU
+[INFO] 01:41:06:354 CPU/(1963:1968): El numero de estado es: 0
+[INFO] 01:41:06:355 CPU/(1963:1968): Ejecute SET
+[INFO] 01:41:06:355 CPU/(1963:1968): TETE
+[INFO] 01:41:06:355 CPU/(1963:1968): 0ETE
+[INFO] 01:41:07:355 CPU/(1963:1968): Ejecute EXIT
+[INFO] 01:41:08:355 CPU/(1963:1968): El proceso: 3 llego a CPU
+[INFO] 01:41:08:356 CPU/(1963:1968): El numero de estado es: 0
+[INFO] 01:59:36:685 CPU/(2714:2714): Valores de configuracion leidos correctamente
+[INFO] 01:59:36:686 CPU/(2714:2714): Memoria
+[INFO] 01:59:36:686 CPU/(2714:2714): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:59:36:687 CPU/(2714:2719): Cpu lista para recibir al Kernel
+[INFO] 01:59:41:693 CPU/(2714:2719): Se conecto el Kernel
+[INFO] 01:59:41:693 CPU/(2714:2719): Handshake de Kernel recibido correctamente
+[INFO] 01:59:48:461 CPU/(2714:2719): Ejecute SET
+[INFO] 01:59:48:461 CPU/(2714:2719): TETE
+[INFO] 01:59:48:461 CPU/(2714:2719): 0
+[INFO] 01:59:49:461 CPU/(2714:2719): Ejecute EXIT
+[INFO] 01:59:50:462 CPU/(2714:2719): El proceso: 0 llego a CPU
+[INFO] 01:59:50:462 CPU/(2714:2719): El numero de estado es: 0
+[INFO] 01:59:54:936 CPU/(2714:2719): Ejecute SET
+[INFO] 01:59:54:937 CPU/(2714:2719): TETE
+[INFO] 01:59:54:938 CPU/(2714:2719): 0ETE
+[INFO] 01:59:55:938 CPU/(2714:2719): Ejecute EXIT
+[INFO] 01:59:56:939 CPU/(2714:2719): El proceso: 1 llego a CPU
+[INFO] 01:59:56:940 CPU/(2714:2719): El numero de estado es: 0
+[INFO] 01:59:56:942 CPU/(2714:2719): Ejecute SET
+[INFO] 01:59:56:942 CPU/(2714:2719): TETE
+[INFO] 01:59:56:942 CPU/(2714:2719): 0ETE
+[INFO] 01:59:57:943 CPU/(2714:2719): Ejecute EXIT
+[INFO] 01:59:58:943 CPU/(2714:2719): El proceso: 2 llego a CPU
+[INFO] 01:59:58:943 CPU/(2714:2719): El numero de estado es: 0
+[INFO] 01:59:58:945 CPU/(2714:2719): Ejecute SET
+[INFO] 01:59:58:945 CPU/(2714:2719): TETE
+[INFO] 01:59:58:945 CPU/(2714:2719): 0ETE
+[INFO] 01:59:59:945 CPU/(2714:2719): Ejecute EXIT
+[INFO] 02:00:00:946 CPU/(2714:2719): El proceso: 3 llego a CPU
+[INFO] 02:00:00:946 CPU/(2714:2719): El numero de estado es: 0

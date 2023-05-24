@@ -25,7 +25,6 @@
 	#include "utils.h"
 	#include "initial_setup.h"
 	#include "../../shared/includes/tad.h"
-	#include "semaphore.h"
 
 	extern t_lista_mutex *pcb_ready_list;
 	extern t_lista_mutex *pcb_new_list;

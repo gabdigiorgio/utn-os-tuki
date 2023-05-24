@@ -132,7 +132,7 @@ typedef struct{
 
 typedef struct {
 	int id; //corresponde con el indice
-	char* id_recurso;
+	char* nombre_recurso;
 	int instancias;
 }t_recurso;
 

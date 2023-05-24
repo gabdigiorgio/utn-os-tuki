@@ -32,6 +32,9 @@ extern float hrrn_alfa;
 
 extern int grado_max_multiprogramacion;
 
+extern char** lista_nombre_recursos;
+extern char** lista_instancias_recursos;
+
 extern t_config* config;
 
 int initial_setup(void);

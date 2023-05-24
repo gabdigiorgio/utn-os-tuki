@@ -310,3 +310,159 @@
 [INFO] 23:10:50:133 KERNEL/(5667:5679): El proceso: 0 termino de ejecutar
 [INFO] 23:10:50:133 KERNEL/(5667:5681): El proceso: 0 ingreso a exit
 [INFO] 23:10:50:133 KERNEL/(5667:5681): El proceso: 0 finalizo definitivamente
+[ERROR] 01:39:31:611 KERNEL/(2066:2066): Falta parametro del path del archivo de configuracion
+[ERROR] 01:39:53:318 KERNEL/(2077:2077): Falta parametro del path del archivo de configuracion
+[INFO] 01:40:16:951 KERNEL/(2087:2087): Valores de configuracion leidos correctamente
+[INFO] 01:40:16:952 KERNEL/(2087:2087): Memoria
+[INFO] 01:40:16:952 KERNEL/(2087:2087): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:40:16:953 KERNEL/(2087:2087): Cpu
+[INFO] 01:40:16:953 KERNEL/(2087:2087): Se establecio correctamente la conexion
+[INFO] 01:40:16:954 KERNEL/(2087:2087): File system
+[INFO] 01:40:16:954 KERNEL/(2087:2087): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:40:16:954 KERNEL/(2087:2087): Kernel listo para recibir Consolas
+[INFO] 01:40:45:926 KERNEL/(2087:2097): Se conecto un cliente!
+[INFO] 01:40:45:927 KERNEL/(2087:2097): El proceso: 0 llego a estado new
+[INFO] 01:40:45:927 KERNEL/(2087:2095): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:40:45:927 KERNEL/(2087:2092): Exec libre => estado_ready comienza a planificar
+[INFO] 01:40:45:927 KERNEL/(2087:2094): El proceso: 0 llego a estado exec
+[INFO] 01:40:47:929 KERNEL/(2087:2094): 0
+[INFO] 01:40:47:929 KERNEL/(2087:2094): El IP esta en 2
+[INFO] 01:40:47:929 KERNEL/(2087:2094): El size de las instrucciones es 2
+[INFO] 01:40:47:930 KERNEL/(2087:2094): El numero de estado es: 0
+[INFO] 01:40:47:930 KERNEL/(2087:2094): El parametro de interrupcion es: 0
+[INFO] 01:40:47:930 KERNEL/(2087:2094): El contexto se ejecutó completamente
+[INFO] 01:40:47:930 KERNEL/(2087:2094): El proceso: 0 termino de ejecutar
+[INFO] 01:40:47:930 KERNEL/(2087:2096): El proceso: 0 ingreso a exit
+[INFO] 01:40:47:930 KERNEL/(2087:2096): El proceso: 0 finalizo definitivamente
+[INFO] 01:41:02:339 KERNEL/(2087:2097): Se conecto un cliente!
+[INFO] 01:41:02:348 KERNEL/(2087:2097): El proceso: 1 llego a estado new
+[INFO] 01:41:02:349 KERNEL/(2087:2095): El proceso: 1 se agrego a la lista de ready
+[INFO] 01:41:02:349 KERNEL/(2087:2092): Exec libre => estado_ready comienza a planificar
+[INFO] 01:41:02:349 KERNEL/(2087:2094): El proceso: 1 llego a estado exec
+[INFO] 01:41:04:009 KERNEL/(2087:2097): Se conecto un cliente!
+[INFO] 01:41:04:010 KERNEL/(2087:2097): El proceso: 2 llego a estado new
+[INFO] 01:41:04:011 KERNEL/(2087:2095): El proceso: 2 se agrego a la lista de ready
+[INFO] 01:41:04:350 KERNEL/(2087:2094): 0
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El IP esta en 2
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El size de las instrucciones es 2
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El numero de estado es: 0
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El parametro de interrupcion es: 0
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El contexto se ejecutó completamente
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El proceso: 1 termino de ejecutar
+[INFO] 01:41:04:350 KERNEL/(2087:2092): Exec libre => estado_ready comienza a planificar
+[INFO] 01:41:04:350 KERNEL/(2087:2094): El proceso: 2 llego a estado exec
+[INFO] 01:41:04:350 KERNEL/(2087:2096): El proceso: 1 ingreso a exit
+[INFO] 01:41:04:351 KERNEL/(2087:2096): El proceso: 1 finalizo definitivamente
+[INFO] 01:41:05:686 KERNEL/(2087:2097): Se conecto un cliente!
+[INFO] 01:41:05:686 KERNEL/(2087:2097): El proceso: 3 llego a estado new
+[INFO] 01:41:05:686 KERNEL/(2087:2095): El proceso: 3 se agrego a la lista de ready
+[INFO] 01:41:06:354 KERNEL/(2087:2094): 0
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El IP esta en 2
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El size de las instrucciones es 2
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El numero de estado es: 0
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El parametro de interrupcion es: 0
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El contexto se ejecutó completamente
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El proceso: 2 termino de ejecutar
+[INFO] 01:41:06:354 KERNEL/(2087:2092): Exec libre => estado_ready comienza a planificar
+[INFO] 01:41:06:354 KERNEL/(2087:2094): El proceso: 3 llego a estado exec
+[INFO] 01:41:06:355 KERNEL/(2087:2096): El proceso: 2 ingreso a exit
+[INFO] 01:41:06:355 KERNEL/(2087:2096): El proceso: 2 finalizo definitivamente
+[INFO] 01:41:08:356 KERNEL/(2087:2094): 0
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El IP esta en 2
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El size de las instrucciones es 2
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El numero de estado es: 0
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El parametro de interrupcion es: 0
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El contexto se ejecutó completamente
+[INFO] 01:41:08:356 KERNEL/(2087:2094): El proceso: 3 termino de ejecutar
+[INFO] 01:41:08:357 KERNEL/(2087:2096): El proceso: 3 ingreso a exit
+[INFO] 01:41:08:357 KERNEL/(2087:2096): El proceso: 3 finalizo definitivamente
+[INFO] 01:59:41:692 KERNEL/(2734:2734): Valores de configuracion leidos correctamente
+[INFO] 01:59:41:692 KERNEL/(2734:2734): Memoria
+[INFO] 01:59:41:692 KERNEL/(2734:2734): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:59:41:692 KERNEL/(2734:2734): Cpu
+[INFO] 01:59:41:693 KERNEL/(2734:2734): Se establecio correctamente la conexion
+[INFO] 01:59:41:693 KERNEL/(2734:2734): File system
+[INFO] 01:59:41:693 KERNEL/(2734:2734): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:59:41:693 KERNEL/(2734:2734): Kernel listo para recibir Consolas
+[INFO] 01:59:48:460 KERNEL/(2734:2744): Se conecto un cliente!
+[INFO] 01:59:48:460 KERNEL/(2734:2744): El proceso: 0 llego a estado new
+[INFO] 01:59:48:460 KERNEL/(2734:2742): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:59:48:461 KERNEL/(2734:2739): Exec libre => estado_ready comienza a planificar
+[INFO] 01:59:48:461 KERNEL/(2734:2741): El proceso: 0 llego a estado exec
+[INFO] 01:59:50:463 KERNEL/(2734:2741): 0
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El IP esta en 2
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El size de las instrucciones es 2
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El numero de estado es: 0
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El parametro de interrupcion es: 0
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El contexto se ejecutó completamente
+[INFO] 01:59:50:463 KERNEL/(2734:2741): El proceso: 0 termino de ejecutar
+[INFO] 01:59:50:463 KERNEL/(2734:2743): El proceso: 0 ingreso a exit
+[INFO] 01:59:50:463 KERNEL/(2734:2743): El proceso: 0 finalizo definitivamente
+[INFO] 01:59:54:936 KERNEL/(2734:2744): Se conecto un cliente!
+[INFO] 01:59:54:936 KERNEL/(2734:2744): El proceso: 1 llego a estado new
+[INFO] 01:59:54:936 KERNEL/(2734:2742): El proceso: 1 se agrego a la lista de ready
+[INFO] 01:59:54:936 KERNEL/(2734:2739): Exec libre => estado_ready comienza a planificar
+[INFO] 01:59:54:936 KERNEL/(2734:2741): El proceso: 1 llego a estado exec
+[INFO] 01:59:56:776 KERNEL/(2734:2744): Se conecto un cliente!
+[INFO] 01:59:56:776 KERNEL/(2734:2744): El proceso: 2 llego a estado new
+[INFO] 01:59:56:776 KERNEL/(2734:2742): El proceso: 2 se agrego a la lista de ready
+[INFO] 01:59:56:940 KERNEL/(2734:2741): 0
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El IP esta en 2
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El size de las instrucciones es 2
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El numero de estado es: 0
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El parametro de interrupcion es: 0
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El contexto se ejecutó completamente
+[INFO] 01:59:56:940 KERNEL/(2734:2741): El proceso: 1 termino de ejecutar
+[INFO] 01:59:56:940 KERNEL/(2734:2743): El proceso: 1 ingreso a exit
+[INFO] 01:59:56:941 KERNEL/(2734:2743): El proceso: 1 finalizo definitivamente
+[INFO] 01:59:56:942 KERNEL/(2734:2739): Exec libre => estado_ready comienza a planificar
+[INFO] 01:59:56:942 KERNEL/(2734:2741): El proceso: 2 llego a estado exec
+[INFO] 01:59:58:008 KERNEL/(2734:2744): Se conecto un cliente!
+[INFO] 01:59:58:008 KERNEL/(2734:2744): El proceso: 3 llego a estado new
+[INFO] 01:59:58:008 KERNEL/(2734:2742): El proceso: 3 se agrego a la lista de ready
+[INFO] 01:59:58:943 KERNEL/(2734:2741): 0
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El IP esta en 2
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El size de las instrucciones es 2
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El numero de estado es: 0
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El parametro de interrupcion es: 0
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El contexto se ejecutó completamente
+[INFO] 01:59:58:944 KERNEL/(2734:2743): El proceso: 2 ingreso a exit
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El proceso: 2 termino de ejecutar
+[INFO] 01:59:58:944 KERNEL/(2734:2739): Exec libre => estado_ready comienza a planificar
+[INFO] 01:59:58:944 KERNEL/(2734:2743): El proceso: 2 finalizo definitivamente
+[INFO] 01:59:58:944 KERNEL/(2734:2741): El proceso: 3 llego a estado exec
+[INFO] 02:00:00:946 KERNEL/(2734:2741): 0
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El IP esta en 2
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El size de las instrucciones es 2
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El numero de estado es: 0
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El parametro de interrupcion es: 0
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El contexto se ejecutó completamente
+[INFO] 02:00:00:946 KERNEL/(2734:2743): El proceso: 3 ingreso a exit
+[INFO] 02:00:00:946 KERNEL/(2734:2741): El proceso: 3 termino de ejecutar
+[INFO] 02:00:00:946 KERNEL/(2734:2743): El proceso: 3 finalizo definitivamente
+[INFO] 02:18:16:306 KERNEL/(3066:3066): Valores de configuracion leidos correctamente
+[INFO] 02:19:51:613 KERNEL/(3262:3262): Valores de configuracion leidos correctamente
+[INFO] 02:19:51:613 KERNEL/(3262:3262): DISCO
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Memoria
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Cpu
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:19:51:614 KERNEL/(3262:3262): File system
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:19:51:614 KERNEL/(3262:3262): Kernel listo para recibir Consolas
+[INFO] 02:26:28:953 KERNEL/(3462:3462): Valores de configuracion leidos correctamente
+[INFO] 02:26:33:755 KERNEL/(3462:3462): DISCO
+[INFO] 02:27:12:158 KERNEL/(3546:3546): Valores de configuracion leidos correctamente
+[INFO] 02:27:18:304 KERNEL/(3546:3546): DISCO
+[INFO] 02:31:33:038 KERNEL/(3729:3729): Valores de configuracion leidos correctamente
+[INFO] 02:31:37:339 KERNEL/(3729:3729): DISCO
+[INFO] 02:53:09:828 KERNEL/(4527:4527): Valores de configuracion leidos correctamente
+[INFO] 02:53:09:832 KERNEL/(4527:4527): Memoria
+[INFO] 02:53:09:832 KERNEL/(4527:4527): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:53:09:833 KERNEL/(4527:4527): Cpu
+[INFO] 02:53:09:833 KERNEL/(4527:4527): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:53:09:833 KERNEL/(4527:4527): File system
+[INFO] 02:53:09:833 KERNEL/(4527:4527): Fallo al realizar el handshake, cerrando conexion
+[INFO] 02:53:09:833 KERNEL/(4527:4527): Kernel listo para recibir Consolas
+[INFO] 02:53:36:117 KERNEL/(4568:4568): Valores de configuracion leidos correctamente
+[INFO] 02:55:32:754 KERNEL/(4699:4699): Valores de configuracion leidos correctamente
