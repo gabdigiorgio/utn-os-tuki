@@ -7,9 +7,11 @@
 #include<string.h>
 #include "client_utils.h"
 #include "server_utils.h"
-#include "general_planification_utils.h";
-#include "long_term_planification.h";
+#include "general_planification_utils.h"
+#include "long_term_planification.h"
+#include "short_term_planification.h"
 //#include "../includes/kernel.h"
+
 //extern  pcb_t* pcb;
 extern int cpu_connection;
 extern t_log* logger;

@@ -136,7 +136,7 @@ void iniciar_lista_recursos(){
 		t_recurso *recurso = malloc(sizeof(t_recurso));
 		recurso->id = i;
 		recurso->nombre_recurso = lista_nombre_recursos[i];
-		recurso->instancias = (*lista_instancias_recursos[i])-'0';
+		recurso->instancias = atoi(lista_instancias_recursos[i]);
 		list_add(lista_recusos,recurso);
 
 	}
