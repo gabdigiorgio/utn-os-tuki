@@ -62,3 +62,4 @@ dkms.conf
 /file-system/file-system.log
 /kernel/kernel.log
 /memoria/memoria.log
+*.settings
