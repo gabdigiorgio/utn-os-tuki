@@ -74,9 +74,9 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 			}
 			break;
 		case SIGNAL:
-			char *recurso_signal = contexto_actualizado->param;	//revisar el recurso
+			char *recurso_signal = contexto_actualizado->param;
 			if (recurso_existe_en_lista(lista_recursos, recurso_signal)) {
-				sumar_instancia(lista_recursos, recurso_signal);//si no existe pushear a exit, si existe sumar 1 a ese recurso
+				sumar_instancia(lista_recursos, recurso_signal);
 			} else {
 				list_push(pcb_exit_list, pcb);
 				sem_post(&sem_estado_exit);
