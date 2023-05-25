@@ -6,12 +6,14 @@ void conexion_kernel(int server_connection){
 	int connection_fd = esperar_cliente(server_connection);
 	log_info(logger,handshake(connection_fd));
 
-	while (1) {
-		contexto = malloc(sizeof(t_contexto));
-		contexto->instrucciones = list_create();
+	int exit_status = 0;
+
+	while (exit_status == 0) {
 		//Reservo memoria para el paquete
 		t_paquete* paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
+
+		t_contexto* contexto = contexto_create();
 
 		//Recivo el header del paquete + el stream de datos
 		deserializar_header(paquete, connection_fd);
@@ -19,9 +21,9 @@ void conexion_kernel(int server_connection){
 		//Reviso el header para saber de que paquete se trata y deserealizo acorde
 		switch(paquete->codigo_operacion){
 			case 1:
-				contexto = deserializar_contexto(paquete->buffer, paquete->lineas);
-				int result = ejecutar_contexto(paquete->lineas);
-				armar_contexto();
+				deserializar_contexto(paquete->buffer, paquete->lineas, contexto);
+				int result = ejecutar_contexto(contexto, paquete->lineas);
+				armar_contexto(contexto);
 				log_info(logger, "El proceso: %d llego a CPU", contexto->pid);
 				log_info(logger, "El numero de estado es: %d", contexto->estado);
 				//log_info(logger, "El parametro de interrupcion es: %s", contexto->param); //aca esta el error
@@ -30,12 +32,14 @@ void conexion_kernel(int server_connection){
 				serializar_contexto(connection_fd,contexto);
 				break;
 			default:
+				exit_status = 1;
 				break;
 		}
 
-	    list_destroy_and_destroy_elements(contexto->instrucciones, free);
-	    free(contexto->registros);
-	    free(contexto->param);
-	    free(contexto);
+		contexto_destroy(contexto);
+
+		free(paquete->buffer->stream);
+	    free(paquete->buffer);
+	    free(paquete);
 	}
 }

@@ -12,9 +12,9 @@
 #include "utils.h"
 #include "../../shared/includes/tad.h"
 
-int ejecutar_contexto(int lineas);
+int ejecutar_contexto(t_contexto* contexto, int lineas);
 void armar_contexto();
-int leer_instruccion(t_instruc* instruccion);
+int leer_instruccion(t_contexto* contexto, t_instruc* instruccion);
 
 extern t_log* logger;
 extern uint16_t ip;

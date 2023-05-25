@@ -29,3 +29,27 @@ void copiar_string(char* origen, char* destino){
 		destino[i] = origen[i];
 	}
 }
+
+t_contexto* contexto_create(){
+	t_contexto* contexto = malloc(sizeof(t_contexto));
+	contexto->instrucciones = list_create();
+	contexto->registros = malloc(sizeof(t_registros));
+	contexto->param = malloc(sizeof(char*));
+
+	return contexto;
+}
+
+void contexto_destroy(t_contexto* contexto){
+	list_destroy_and_destroy_elements(contexto->instrucciones, (void*)instrucciones_destroy);
+	free(contexto->registros);
+	free(contexto->param);
+	free(contexto);
+}
+
+void instrucciones_destroy(t_instruc* instruccion){
+	free(instruccion->instruct);
+	free(instruccion->param1);
+	free(instruccion->param2);
+	free(instruccion->param3);
+	free(instruccion);
+}

@@ -93,8 +93,6 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 				    list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
 				    free(contexto_actualizado->registros);
 				    free(contexto_actualizado);
-
-
 				}
 			break;
 		default:

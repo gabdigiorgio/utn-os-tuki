@@ -67,7 +67,6 @@ char rcx[17];
 char rdx[17];
 char* contexto_param;
 uint32_t contexto_estado;
-t_contexto* contexto;
 
 // ________
 

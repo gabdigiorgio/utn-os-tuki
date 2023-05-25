@@ -1,8 +1,8 @@
 #include "../../includes/code_reader.h"
 
-int ejecutar_io(char* param1){
+int ejecutar_io(t_contexto* contexto, char* param1){
 	contexto->param_length = strlen(param1) + 1;
-	contexto->param = malloc(contexto->param_length);
+	contexto->param = realloc(contexto->param,contexto->param_length);
 	memcpy(contexto->param, param1, contexto->param_length);
 
 	contexto_estado = IO;
