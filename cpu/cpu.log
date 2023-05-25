@@ -280,3 +280,21 @@
 [INFO] 05:39:01:293 CPU/(2350:2357): Ejecute EXIT
 [INFO] 05:39:02:294 CPU/(2350:2357): El proceso: 4 llego a CPU
 [INFO] 05:39:02:294 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 16:31:12:367 CPU/(2996:2996): Valores de configuracion leidos correctamente
+[INFO] 16:31:12:367 CPU/(2996:2996): Memoria
+[INFO] 16:31:12:367 CPU/(2996:2996): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:31:12:367 CPU/(2996:3001): Cpu lista para recibir al Kernel
+[INFO] 16:31:29:537 CPU/(2996:3001): Se conecto el Kernel
+[INFO] 16:31:29:539 CPU/(2996:3001): Handshake de Kernel recibido correctamente
+[INFO] 16:31:35:443 CPU/(2996:3001): Ejecute SET
+[INFO] 16:31:35:443 CPU/(2996:3001): HOLA
+[INFO] 16:31:35:443 CPU/(2996:3001): 0
+[INFO] 16:31:36:444 CPU/(2996:3001): Ejecute SET
+[INFO] 16:31:36:444 CPU/(2996:3001): CHAU
+[INFO] 16:31:36:444 CPU/(2996:3001): 0
+[INFO] 16:31:37:445 CPU/(2996:3001): Ejecute SET
+[INFO] 16:31:37:445 CPU/(2996:3001): SOYUNPRO
+[INFO] 16:31:37:445 CPU/(2996:3001): 0
+[INFO] 16:31:38:445 CPU/(2996:3001): Ejecute Wait
+[INFO] 16:31:39:446 CPU/(2996:3001): El proceso: 0 llego a CPU
+[INFO] 16:31:39:446 CPU/(2996:3001): El numero de estado es: 2

@@ -5,6 +5,8 @@ int leer_instruccion(t_instruc* instruccion){
 	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield();
 	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit();
 	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_io(instruccion->param1);
+	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_wait(instruccion->param1);
+	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_signal(instruccion->param1);
 
 	return 1;
 }

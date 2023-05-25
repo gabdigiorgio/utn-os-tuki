@@ -13,6 +13,9 @@ int leer_instruccion(t_instruc* instruccion);
 int ejecutar_set(char* param1, char* param2);
 int ejecutar_yield();
 int ejecutar_exit();
+int ejecutar_io(char* param1);
+int ejecutar_signal(char* param1);
+int ejecutar_wait(char* param1);
 void cambiar_registro(char* registro, char* valor);
 char* seleccionar_registro(char* param);
 

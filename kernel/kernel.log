@@ -550,3 +550,22 @@
 [INFO] 05:39:02:294 KERNEL/(2386:2395): El proceso: 4 termino de ejecutar
 [INFO] 05:39:02:294 KERNEL/(2386:2397): El proceso: 4 ingreso a exit
 [INFO] 05:39:02:294 KERNEL/(2386:2397): El proceso: 4 finalizo definitivamente
+[INFO] 16:31:29:536 KERNEL/(3175:3175): Valores de configuracion leidos correctamente
+[INFO] 16:31:29:537 KERNEL/(3175:3175): Memoria
+[INFO] 16:31:29:537 KERNEL/(3175:3175): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:31:29:537 KERNEL/(3175:3175): Cpu
+[INFO] 16:31:29:539 KERNEL/(3175:3175): Se establecio correctamente la conexion
+[INFO] 16:31:29:539 KERNEL/(3175:3175): File system
+[INFO] 16:31:29:539 KERNEL/(3175:3175): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:31:29:539 KERNEL/(3175:3175): Kernel listo para recibir Consolas
+[INFO] 16:31:35:438 KERNEL/(3175:3185): Se conecto un cliente!
+[INFO] 16:31:35:443 KERNEL/(3175:3185): El proceso: 0 llego a estado new
+[INFO] 16:31:35:443 KERNEL/(3175:3183): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:31:35:443 KERNEL/(3175:3180): Exec libre => estado_ready comienza a planificar
+[INFO] 16:31:35:443 KERNEL/(3175:3182): El proceso: 0 llego a estado exec
+[INFO] 16:31:39:447 KERNEL/(3175:3182): HOLA
+[INFO] 16:31:39:447 KERNEL/(3175:3182): El IP esta en 4
+[INFO] 16:31:39:447 KERNEL/(3175:3182): El size de las instrucciones es 7
+[INFO] 16:31:39:447 KERNEL/(3175:3182): El numero de estado es: 2
+[INFO] 16:31:39:448 KERNEL/(3175:3182): El parametro de interrupcion es: TECLADO
+[INFO] 16:31:39:448 KERNEL/(3175:3182): El proceso: 0 termino de ejecutar
