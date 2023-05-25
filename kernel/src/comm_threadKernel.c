@@ -60,13 +60,14 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 							int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso);
 							if(instancias_recurso < 0){
 								pcb->recurso_bloqueante = recurso;
-								list_push(pcb_block_list, pcb);// mando a block en la cola del recurso
+								list_push(pcb_block_list, pcb);
 								sem_post(&sem_estado_block);
 							}
 						}
-						//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
-						//y pushear a block restando 1 a dicho recurso
-						//Si no existe pushear a exit
+						else {
+						list_push(pcb_exit_list,pcb);
+						sem_post(&sem_estado_exit);
+						}
 						break;
 					case SIGNAL:
 						//revisar el recurso
