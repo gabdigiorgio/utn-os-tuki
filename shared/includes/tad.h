@@ -131,10 +131,15 @@ typedef struct{
 	} pcb_t;
 
 typedef struct {
+	t_list * lista;
+	pthread_mutex_t mutex;
+} t_lista_mutex;
+
+typedef struct {
 	int id; //corresponde con el indice
 	char* nombre_recurso;
 	int instancias;
-	t_list* cola_bloqueados;
+	t_lista_mutex* cola_bloqueados;
 }t_recurso;
 
 #endif /* TAD_H_ */

@@ -93,7 +93,7 @@ void estado_block(){
 
 		t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, pcb_bloqueado->recurso_bloqueante);
 
-		t_list* cola_bloqueados_recurso = recurso_bloqueante->cola_bloqueados;
+		t_lista_mutex* cola_bloqueados_recurso = recurso_bloqueante->cola_bloqueados;
 
 		list_push(cola_bloqueados_recurso, pcb_bloqueado);
 	}

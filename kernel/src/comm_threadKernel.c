@@ -89,7 +89,7 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 
 				int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_signal);
 
-				if(instancias_recurso > 0){
+				if(instancias_recurso > 0){ // revisar
 
 					t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
 
