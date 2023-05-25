@@ -59,26 +59,49 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 			break;
 		case WAIT:
 			char *recurso_wait = contexto_actualizado->param;
+
 			if (recurso_existe_en_lista(lista_recursos, recurso_wait)) {
+
 				restar_instancia(lista_recursos, recurso_wait);
-				int instancias_recurso = instancias_de_un_recurso(
-						lista_recursos, recurso_wait);
+
+				int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_wait);
+
 				if (instancias_recurso < 0) {
+
 					pcb->recurso_bloqueante = recurso_wait;
+
 					list_push(pcb_block_list, pcb);
+
 					sem_post(&sem_estado_block);
 				}
 			} else {
 				list_push(pcb_exit_list, pcb);
+
 				sem_post(&sem_estado_exit);
 			}
 			break;
 		case SIGNAL:
 			char *recurso_signal = contexto_actualizado->param;
+
 			if (recurso_existe_en_lista(lista_recursos, recurso_signal)) {
+
 				sumar_instancia(lista_recursos, recurso_signal);
+
+				int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_signal);
+
+				if(instancias_recurso > 0){
+
+					t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
+
+					pcb_t* pcb_desbloqueado = list_pop(recurso_bloqueante->cola_bloqueados);
+
+					list_push(pcb_ready_list, pcb_desbloqueado);
+
+					sem_post(&sem_estado_ready);
+				}
 			} else {
 				list_push(pcb_exit_list, pcb);
+
 				sem_post(&sem_estado_exit);
 			}
 			break;
