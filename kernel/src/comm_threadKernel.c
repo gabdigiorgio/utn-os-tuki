@@ -54,10 +54,12 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 						//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
 						break;
 					case WAIT:
-						if(recurso_existe_en_lista(lista_recursos, pcb->recurso_bloqueante)){ //revisar el recurso
-							restar_instancia(lista_recursos, pcb->recurso_bloqueante);
-							int instancias_recurso = instancias_de_un_recurso(lista_recursos, pcb->recurso_bloqueante);
+						char* recurso = contexto_actualizado->param;
+						if(recurso_existe_en_lista(lista_recursos, recurso)){ //revisar el recurso
+							restar_instancia(lista_recursos, recurso);
+							int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso);
 							if(instancias_recurso < 0){
+								pcb->recurso_bloqueante = recurso;
 								list_push(pcb_block_list, pcb);// mando a block en la cola del recurso
 								sem_post(&sem_estado_block);
 							}
