@@ -28,5 +28,6 @@ int list_mutex_size(t_lista_mutex * list);
 t_recurso* buscar_recurso(t_list *lista_recursos, const char *nombre_recurso);
 bool recurso_existe_en_lista(t_list* lista_recursos, const char* nombre_recurso);
 void restar_instancia(t_list *lista_recursos, const char *nombre_recurso);
+void sumar_instancia(t_list *lista_recursos, const char *nombre_recurso);
 int instancias_de_un_recurso(t_list *lista_recurso, const char* nombre_recurso);
 #endif /* CLIENT_H_ */
