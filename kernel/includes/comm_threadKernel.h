@@ -10,7 +10,7 @@
 #include "general_planification_utils.h";
 #include "long_term_planification.h";
 //#include "../includes/kernel.h"
-extern t_list* lista_recursos;
+extern t_lista_mutex* lista_recursos;
 extern int cpu_connection;
 extern t_log* logger;
 

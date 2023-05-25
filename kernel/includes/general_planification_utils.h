@@ -31,7 +31,7 @@
 	extern t_lista_mutex *pcb_block_list;
 	extern t_lista_mutex *pcb_exit_list;
 
-	extern t_list* lista_recursos;
+	extern t_lista_mutex* lista_recursos;
 
 	extern int pid;
 

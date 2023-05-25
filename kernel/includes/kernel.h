@@ -42,7 +42,7 @@
 
 	int pid;
 
-	t_list * lista_recursos;
+	t_lista_mutex * lista_recursos;
 
 	// Semaforos
 

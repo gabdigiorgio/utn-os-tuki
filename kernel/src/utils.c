@@ -57,9 +57,16 @@ int list_mutex_size(t_lista_mutex *list) {
 	return size;
 }
 
-t_recurso* buscar_recurso(t_list *lista_recursos, const char *nombre_recurso) {
-	for (int i = 0; i < list_size(lista_recursos); i++) {
-		t_recurso *recurso = (t_recurso*) list_get(lista_recursos, i);
+void* list_mutex_get(t_lista_mutex *list, int index){
+	pthread_mutex_lock(&(list->mutex));
+	void* element = list_get(list->lista, index);
+	pthread_mutex_unlock(&(list->mutex));
+	return element;
+}
+
+t_recurso* buscar_recurso(t_lista_mutex *lista_recursos, const char *nombre_recurso) {
+	for (int i = 0; i < list_mutex_size(lista_recursos); i++) {
+		t_recurso *recurso = (t_recurso*) list_mutex_get(lista_recursos, i);
 		if (strcmp(recurso->nombre_recurso, nombre_recurso) == 0) {
 			return recurso;
 		}
@@ -67,22 +74,24 @@ t_recurso* buscar_recurso(t_list *lista_recursos, const char *nombre_recurso) {
 	return NULL;
 }
 
-bool recurso_existe_en_lista(t_list *lista_recursos, const char *nombre_recurso) {
+bool recurso_existe_en_lista(t_lista_mutex *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
 	return (recurso != NULL);
 }
 
-void restar_instancia(t_list *lista_recursos, const char *nombre_recurso) {
+void restar_instancia(t_lista_mutex *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
+	pthread_mutex_lock(&(recurso->mutex_instancias));
 	recurso->instancias--;
+	pthread_mutex_unlock(&(recurso->mutex_instancias));
 }
 
-void sumar_instancia(t_list *lista_recursos, const char *nombre_recurso) {
+void sumar_instancia(t_lista_mutex *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
 	recurso->instancias++;
 }
 
-int instancias_de_un_recurso(t_list *lista_recursos, const char* nombre_recurso) {
+int instancias_de_un_recurso(t_lista_mutex *lista_recursos, const char* nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
 	return recurso->instancias;
 }

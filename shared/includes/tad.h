@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <pthread.h>
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
 
@@ -140,6 +141,7 @@ typedef struct {
 	char* nombre_recurso;
 	int instancias;
 	t_lista_mutex* cola_bloqueados;
+	pthread_mutex_t mutex_instancias;
 }t_recurso;
 
 #endif /* TAD_H_ */
