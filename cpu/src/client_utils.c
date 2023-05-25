@@ -61,12 +61,11 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 }
 
 uint32_t calcular_tam_instrucciones(t_list* lista){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	uint32_t size = 0;
 	int lineas = list_size(lista);
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(lista, i);
+			t_instruc* instrucciones = list_get(lista, i);
 
 			size = size + sizeof(uint32_t)
 					+ sizeof(uint32_t)
@@ -78,6 +77,7 @@ uint32_t calcular_tam_instrucciones(t_list* lista){
 					+ sizeof(uint32_t)
 					+ instrucciones->param3_length;
 		}
+
 
 	return size;
 }
@@ -100,12 +100,11 @@ uint32_t calcular_tam_contexto(t_contexto* contexto){
 
 //void copiar_contexto(void* stream, t_list* lista, t_registros* registros, uint32_t pid, uint32_t delay){
 void copiar_contexto(void* stream, t_contexto* contexto){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	int lineas = list_size(contexto->instrucciones);
 	int offset = 0;
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(contexto->instrucciones, i);
+			t_instruc* instrucciones = list_get(contexto->instrucciones, i);
 
 			memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
@@ -179,7 +178,7 @@ void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
 
 void serializar_contexto(int socket, t_contexto* contexto){
 	//Creo el buffer a utilizar para las instrucciones
-	t_buffer* buffer = malloc(sizeof(t_buffer));
+	t_buffer* buffer = malloc(sizeof(*buffer));
 	//t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
 	//Leo la lista de instrucciones para sumar el tamaño de toda la lista
@@ -205,6 +204,8 @@ void serializar_contexto(int socket, t_contexto* contexto){
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
 	//Libero memoria que ya no voy a utilizar
+	free(buffer->stream);
+	free(buffer);
 	free(a_enviar);
 }
 

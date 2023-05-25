@@ -1,7 +1,7 @@
 #include "../../includes/manejador_contexto.h"
 
-int ejecutar_contexto(int lineas){
-	t_list* instruc_lista = list_create();
+int ejecutar_contexto(t_contexto* contexto, int lineas){
+	t_list* instruc_lista;
 
 	ip = contexto->registros->ip;
 
@@ -22,12 +22,12 @@ int ejecutar_contexto(int lineas){
 
 	list_sort(instruc_lista,(void*)sort_list);
 
-	ejecutar_instrucciones(instruc_lista, lineas);
+	ejecutar_instrucciones(contexto, instruc_lista, lineas);
 
 	return 0;
 }
 
-void armar_contexto(){
+void armar_contexto(t_contexto* contexto){
 	contexto->registros->ip = ip;
 
 	copiar_string(ax,contexto->registros->ax);
@@ -47,14 +47,14 @@ void armar_contexto(){
 
 }
 
-void ejecutar_instrucciones(t_list* lista, int lineas){
+void ejecutar_instrucciones(t_contexto* contexto, t_list* lista, int lineas){
 	int instruc_pointer = ip;
 	int exit = 0;
 
 	while(instruc_pointer < lineas && exit == 0){
-		t_instruc* instruccion = malloc(sizeof(t_instruc));
+		t_instruc* instruccion;
 		instruccion = list_get(lista, instruc_pointer);
-		exit = leer_instruccion(instruccion);
+		exit = leer_instruccion(contexto, instruccion);
 		instruc_pointer++;
 		sleep(retardo_instruc);
 	}

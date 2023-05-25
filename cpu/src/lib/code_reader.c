@@ -1,12 +1,12 @@
 #include "../../includes/code_reader.h"
 
-int leer_instruccion(t_instruc* instruccion){
+int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(instruccion->param1,instruccion->param2);
-	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield();
-	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit();
-	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_io(instruccion->param1);
-	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_wait(instruccion->param1);
-	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_signal(instruccion->param1);
+	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield(contexto);
+	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit(contexto);
+	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_io(contexto,instruccion->param1);
+	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_wait(contexto,instruccion->param1);
+	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_signal(contexto,instruccion->param1);
 
 	return 1;
 }

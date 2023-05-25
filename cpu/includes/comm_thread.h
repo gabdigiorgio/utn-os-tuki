@@ -13,8 +13,8 @@
 #include "../../shared/includes/tad.h"
 
 void conexion_kernel(int server_connection);
-int ejecutar_contexto(int lineas);
-void armar_contexto();
+int ejecutar_contexto(t_contexto* contexto, int lineas);
+void armar_contexto(t_contexto* contexto);
 void serializar_contexto(int socket_cliente, t_contexto* contexto);
 
 extern t_log* logger;

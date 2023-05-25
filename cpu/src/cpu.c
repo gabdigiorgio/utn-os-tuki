@@ -34,14 +34,11 @@ int main(int argc, char *argv[]) {
 
 	int server_connection = iniciar_servidor(server_port);
 
-	// Espero Conexiones de las consolas
-	pthread_t kernel_thread;
-	pthread_create(&kernel_thread, NULL, (void*) conexion_kernel, server_connection);
-
-	pthread_join(kernel_thread, NULL);
+	conexion_kernel(server_connection);
 
 	return EXIT_SUCCESS;
 }
+
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
