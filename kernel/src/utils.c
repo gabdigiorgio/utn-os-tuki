@@ -88,7 +88,9 @@ void restar_instancia(t_lista_mutex *lista_recursos, const char *nombre_recurso)
 
 void sumar_instancia(t_lista_mutex *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
+	pthread_mutex_lock(&(recurso->mutex_instancias));
 	recurso->instancias++;
+	pthread_mutex_unlock(&(recurso->mutex_instancias));
 }
 
 int instancias_de_un_recurso(t_lista_mutex *lista_recursos, const char* nombre_recurso) {

@@ -138,6 +138,7 @@ void iniciar_lista_recursos(){
 		recurso->id = i;
 		recurso->nombre_recurso = lista_nombre_recursos[i];
 		recurso->instancias = (*lista_instancias_recursos[i])-'0';
+		pthread_mutex_init(&(recurso->mutex_instancias), NULL);
 		list_add(lista_recursos->lista,recurso);
 
 	}
