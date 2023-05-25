@@ -74,16 +74,12 @@ bool recurso_existe_en_lista(t_list *lista_recursos, const char *nombre_recurso)
 
 void restar_instancia(t_list *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
-	if(recurso != NULL){
-		recurso->instancias--;
-	}
+	recurso->instancias--;
 }
 
 void sumar_instancia(t_list *lista_recursos, const char *nombre_recurso) {
 	t_recurso* recurso = buscar_recurso(lista_recursos, nombre_recurso);
-	if(recurso != NULL){
-		recurso->instancias++;
-	}
+	recurso->instancias++;
 }
 
 int instancias_de_un_recurso(t_list *lista_recursos, const char* nombre_recurso) {
