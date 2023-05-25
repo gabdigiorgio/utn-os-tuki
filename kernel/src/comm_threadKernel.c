@@ -54,7 +54,14 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 						//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
 						break;
 					case WAIT:
-						//revisar el recurso
+						if(recurso_existe_en_lista(lista_recursos, pcb->recurso_bloqueante)){ //revisar el recurso
+							restar_instancia(lista_recursos, pcb->recurso_bloqueante);
+							int instancias_recurso = instancias_de_un_recurso(lista_recursos, pcb->recurso_bloqueante);
+							if(instancias_recurso < 0){
+								list_push(pcb_block_list, pcb);// mando a block en la cola del recurso
+								sem_post(&sem_estado_block);
+							}
+						}
 						//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
 						//y pushear a block restando 1 a dicho recurso
 						//Si no existe pushear a exit
@@ -76,6 +83,7 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 						//Si no existe o existe y esta disponible ejecutar logica de FILE
 						//no hace falta meterlo en block
 					default:
+
 						//aca iria logica de bloq
 						break;
 				}
@@ -101,49 +109,5 @@ void enviar_contexto(pcb_t* pcb){ // aca recibir un pcb (pbc_t pbc)
 			log_info(logger,"falle");
 			break;
 	}
-
-	/*
-	else
-	{
-		log_info(logger,"proceso a block");
-
-		if(bloqueado_por_io(pcb))
-		{
-			// no se encola
-			// obtener tiempo bloqueado por I/O por medio de la CPU al devolver el contexto de ejecucion
-		}
-
-		char* recurso_solicitado = obtener_recurso(contexto_actualizado);
-
-		else if(desplazado_por_wait(contexto_actualizado))
-		{
-			if(existe_recurso(recurso_solicitado)) // los recursos vienen dados en el .config
-			{
-				restar_instancia(instancias_recursos, recurso_solicitado);
-
-				if(instancias_de_recurso(instancias_recursos, recurso_solicitado) < 0)
-				{
-					list_push(pcb_block_list, pcb);
-				}
-			}
-			else
-			{
-				enviar_proceso_a_exit(pcb);
-			}
-		}
-		else if(desplazado_por_signal(contexto_actualizado))
-		{
-			if(existe_recurso(recurso_solicitado))
-			{
-				sumar_instancia(instancias_recursos, recurso_solicitado);
-				desbloquear_primer_proceso_bloqueado(recurso_solicitado);
-				enviar_proceso_a_ejecutar(pcb);
-			}
-			else
-			{
-				enviar_proceso_a_exit(pcb);
-			}
-		}
-	}*/
 
 }

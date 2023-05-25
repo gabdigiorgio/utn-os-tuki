@@ -85,7 +85,11 @@ void estado_exec(){
 
 void estado_block(){
 	while(1){
-
+		sem_wait(&sem_estado_block);
+		pcb_t* pcb_bloqueado = list_pop(pcb_block_list);
+		t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, pcb_bloqueado->recurso_bloqueante);
+		t_list* cola_bloqueados_recurso = recurso_bloqueante->cola_bloqueados;
+		list_push(cola_bloqueados_recurso, pcb_bloqueado);
 	}
 }
 

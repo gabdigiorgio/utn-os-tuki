@@ -550,3 +550,45 @@
 [INFO] 05:39:02:294 KERNEL/(2386:2395): El proceso: 4 termino de ejecutar
 [INFO] 05:39:02:294 KERNEL/(2386:2397): El proceso: 4 ingreso a exit
 [INFO] 05:39:02:294 KERNEL/(2386:2397): El proceso: 4 finalizo definitivamente
+[INFO] 01:29:51:744 KERNEL/(98506:98506): Valores de configuracion leidos correctamente
+[INFO] 01:29:51:748 KERNEL/(98506:98506): Memoria
+[INFO] 01:29:51:754 KERNEL/(98506:98506): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:29:51:755 KERNEL/(98506:98506): Cpu
+[INFO] 01:29:51:755 KERNEL/(98506:98506): Se establecio correctamente la conexion
+[INFO] 01:29:51:755 KERNEL/(98506:98506): File system
+[INFO] 01:29:51:756 KERNEL/(98506:98506): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:29:51:756 KERNEL/(98506:98506): Kernel listo para recibir Consolas
+[INFO] 01:30:00:706 KERNEL/(98506:98517): Se conecto un cliente!
+[INFO] 01:30:00:706 KERNEL/(98506:98517): El proceso: 0 llego a estado new
+[INFO] 01:30:00:706 KERNEL/(98506:98515): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:30:00:706 KERNEL/(98506:98512): Exec libre => estado_ready comienza a planificar
+[INFO] 01:30:00:706 KERNEL/(98506:98514): El proceso: 0 llego a estado exec
+[INFO] 01:30:04:714 KERNEL/(98506:98514): HOLA
+[INFO] 01:30:04:714 KERNEL/(98506:98514): El IP esta en 4
+[INFO] 01:30:04:714 KERNEL/(98506:98514): El size de las instrucciones es 5
+[INFO] 01:30:04:715 KERNEL/(98506:98514): El numero de estado es: 0
+[INFO] 01:30:04:715 KERNEL/(98506:98514): El parametro de interrupcion es: 
+[INFO] 01:30:04:715 KERNEL/(98506:98514): El proceso: 0 termino de ejecutar
+[INFO] 01:30:04:715 KERNEL/(98506:98516): El proceso: 0 ingreso a exit
+[INFO] 01:30:04:715 KERNEL/(98506:98516): El proceso: 0 finalizo definitivamente
+[INFO] 01:32:11:288 KERNEL/(98654:98654): Valores de configuracion leidos correctamente
+[INFO] 01:32:11:289 KERNEL/(98654:98654): Memoria
+[INFO] 01:32:11:290 KERNEL/(98654:98654): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:32:11:291 KERNEL/(98654:98654): Cpu
+[INFO] 01:32:11:291 KERNEL/(98654:98654): Se establecio correctamente la conexion
+[INFO] 01:32:11:291 KERNEL/(98654:98654): File system
+[INFO] 01:32:11:291 KERNEL/(98654:98654): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:32:11:292 KERNEL/(98654:98654): Kernel listo para recibir Consolas
+[INFO] 01:32:15:602 KERNEL/(98654:98665): Se conecto un cliente!
+[INFO] 01:32:15:606 KERNEL/(98654:98665): El proceso: 0 llego a estado new
+[INFO] 01:32:15:606 KERNEL/(98654:98663): El proceso: 0 se agrego a la lista de ready
+[INFO] 01:32:15:606 KERNEL/(98654:98660): Exec libre => estado_ready comienza a planificar
+[INFO] 01:32:15:606 KERNEL/(98654:98662): El proceso: 0 llego a estado exec
+[INFO] 01:32:19:612 KERNEL/(98654:98662): HOLA
+[INFO] 01:32:19:612 KERNEL/(98654:98662): El IP esta en 4
+[INFO] 01:32:19:612 KERNEL/(98654:98662): El size de las instrucciones es 5
+[INFO] 01:32:19:612 KERNEL/(98654:98662): El numero de estado es: 0
+[INFO] 01:32:19:612 KERNEL/(98654:98662): El parametro de interrupcion es: 
+[INFO] 01:32:19:613 KERNEL/(98654:98662): El proceso: 0 termino de ejecutar
+[INFO] 01:32:19:613 KERNEL/(98654:98664): El proceso: 0 ingreso a exit
+[INFO] 01:32:19:613 KERNEL/(98654:98664): El proceso: 0 finalizo definitivamente

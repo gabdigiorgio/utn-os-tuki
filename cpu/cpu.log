@@ -280,3 +280,37 @@
 [INFO] 05:39:01:293 CPU/(2350:2357): Ejecute EXIT
 [INFO] 05:39:02:294 CPU/(2350:2357): El proceso: 4 llego a CPU
 [INFO] 05:39:02:294 CPU/(2350:2357): El numero de estado es: 0
+[INFO] 01:29:45:810 CPU/(98468:98468): Valores de configuracion leidos correctamente
+[INFO] 01:29:45:864 CPU/(98468:98468): Memoria
+[INFO] 01:29:45:864 CPU/(98468:98468): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:29:45:868 CPU/(98468:98483): Cpu lista para recibir al Kernel
+[INFO] 01:29:51:755 CPU/(98468:98483): Se conecto el Kernel
+[INFO] 01:29:51:755 CPU/(98468:98483): Handshake de Kernel recibido correctamente
+[INFO] 01:30:00:706 CPU/(98468:98483): Ejecute SET
+[INFO] 01:30:00:707 CPU/(98468:98483): HOLA
+[INFO] 01:30:00:707 CPU/(98468:98483): 0
+[INFO] 01:30:01:707 CPU/(98468:98483): Ejecute SET
+[INFO] 01:30:01:708 CPU/(98468:98483): CHAU
+[INFO] 01:30:01:708 CPU/(98468:98483): 0
+[INFO] 01:30:02:708 CPU/(98468:98483): Ejecute SET
+[INFO] 01:30:02:711 CPU/(98468:98483): SOYUNPRO
+[INFO] 01:30:02:711 CPU/(98468:98483): 0
+[INFO] 01:30:04:712 CPU/(98468:98483): El proceso: 0 llego a CPU
+[INFO] 01:30:04:713 CPU/(98468:98483): El numero de estado es: 0
+[INFO] 01:32:06:318 CPU/(98620:98620): Valores de configuracion leidos correctamente
+[INFO] 01:32:06:323 CPU/(98620:98620): Memoria
+[INFO] 01:32:06:323 CPU/(98620:98620): Fallo al realizar el handshake, cerrando conexion
+[INFO] 01:32:06:326 CPU/(98620:98626): Cpu lista para recibir al Kernel
+[INFO] 01:32:11:290 CPU/(98620:98626): Se conecto el Kernel
+[INFO] 01:32:11:291 CPU/(98620:98626): Handshake de Kernel recibido correctamente
+[INFO] 01:32:15:606 CPU/(98620:98626): Ejecute SET
+[INFO] 01:32:15:607 CPU/(98620:98626): HOLA
+[INFO] 01:32:15:607 CPU/(98620:98626): 0
+[INFO] 01:32:16:607 CPU/(98620:98626): Ejecute SET
+[INFO] 01:32:16:607 CPU/(98620:98626): CHAU
+[INFO] 01:32:16:607 CPU/(98620:98626): 0
+[INFO] 01:32:17:608 CPU/(98620:98626): Ejecute SET
+[INFO] 01:32:17:609 CPU/(98620:98626): SOYUNPRO
+[INFO] 01:32:17:609 CPU/(98620:98626): 0
+[INFO] 01:32:19:611 CPU/(98620:98626): El proceso: 0 llego a CPU
+[INFO] 01:32:19:612 CPU/(98620:98626): El numero de estado es: 0

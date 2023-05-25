@@ -42,13 +42,14 @@
 
 	int pid;
 
-	t_list * lista_recusos;
+	t_list * lista_recursos;
 
 	// Semaforos
 
 	sem_t sem_estado_exec;
 	sem_t sem_estado_new;
 	sem_t sem_estado_ready;
+	sem_t sem_estado_block;
 	sem_t sem_exec_libre;
 	sem_t sem_estado_exit;
 	sem_t sem_pid_aumento;

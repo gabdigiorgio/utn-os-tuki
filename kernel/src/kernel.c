@@ -94,6 +94,7 @@ void iniciar_semaforos(){
 	sem_init(&sem_grado_multi,0 , grado_max_multiprogramacion);
 	sem_init(&sem_estado_new, 0, 0);
 	sem_init(&sem_estado_ready, 0, 0);
+	sem_init(&sem_estado_block, 0, 0);
 	sem_init(&sem_exec_libre, 0, 1); // Se pone 1 para indicar que exec esta libre desde un principio
 	sem_init(&sem_estado_exec, 0, 0);
     sem_init(&sem_estado_exit,0,0);
@@ -131,13 +132,13 @@ void iniciar_lista_recursos(){
 		exit(1);
 	}
 
-	lista_recusos = list_create();
+	lista_recursos = list_create();
 	for(int i = 0; i < cant_lista_nombre_recursos; i++){
 		t_recurso *recurso = malloc(sizeof(t_recurso));
 		recurso->id = i;
 		recurso->nombre_recurso = lista_nombre_recursos[i];
 		recurso->instancias = (*lista_instancias_recursos[i])-'0';
-		list_add(lista_recusos,recurso);
+		list_add(lista_recursos,recurso);
 
 	}
 }
