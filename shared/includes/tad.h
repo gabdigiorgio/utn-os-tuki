@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <pthread.h>
 #include <commons/collections/list.h>
 #include <commons/temporal.h>
 
@@ -120,7 +121,7 @@ typedef struct{
 	typedef struct {
 		uint32_t pid;
 		uint32_t consola;
-		//char* recurso_bloqueante; se podria utilizar un int y hacer referencia al id de la lista de recursos
+		char* recurso_bloqueante; //se podria utilizar un int y hacer referencia al id de la lista de recursos
 		pcb_estado_t estado; 						// tipo de estado, puede ser un enum
 		uint32_t estimado_proxima_rafaga; 			// se saca inicialmente del config
 		t_temporal* tiempo_espera_en_ready; 		// se hace con timer, ver timestamp
@@ -131,9 +132,16 @@ typedef struct{
 	} pcb_t;
 
 typedef struct {
+	t_list * lista;
+	pthread_mutex_t mutex;
+} t_lista_mutex;
+
+typedef struct {
 	int id; //corresponde con el indice
 	char* nombre_recurso;
 	int instancias;
+	t_lista_mutex* cola_bloqueados;
+	pthread_mutex_t mutex_instancias;
 }t_recurso;
 
 #endif /* TAD_H_ */

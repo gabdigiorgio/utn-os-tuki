@@ -31,6 +31,8 @@
 	extern t_lista_mutex *pcb_block_list;
 	extern t_lista_mutex *pcb_exit_list;
 
+	extern t_lista_mutex* lista_recursos;
+
 	extern int pid;
 
 	// Semaforos
@@ -38,6 +40,7 @@
 	extern sem_t sem_estado_exec;
 	extern sem_t sem_estado_new;
 	extern sem_t sem_estado_ready;
+	extern sem_t sem_estado_block;
 	extern sem_t sem_exec_libre;
 	extern sem_t sem_estado_exit;
 	extern sem_t sem_pid_aumento;
