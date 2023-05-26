@@ -54,7 +54,9 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 					break;
 
 				case YIELD:
-					//va devuelta a ready al final de la cola
+					list_push(pcb_ready_list,pcb);
+					pcb = temporal_create();
+					sem_post(&sem_estado_ready);
 					break;
 
 				case IO:
