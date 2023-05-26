@@ -43,98 +43,108 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 		log_info(logger, "El parametro de interrupcion es: %s",
 				contexto_actualizado->param);
 
-		//esto hay que mejorarlo
+			pcb->registros_cpu=*(contexto_actualizado->registros);
 
-		switch (contexto_actualizado->estado) {
-		case EXIT:
-			list_push(pcb_exit_list, pcb);
-			sem_post(&sem_estado_exit);
-			break;
-		case YIELD:
-			//va devuelta a ready al final de la cola
-			break;
-		case IO:
-			//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
-			//https://stackoverflow.com/questions/1352749/multiple-arguments-to-function-called-by-pthread-create
-			log_info(logger, contexto_actualizado->param);
+			//esto hay que mejorarlo
 
-			io_block_args* args_io_block = malloc(sizeof(io_block_args));
+			switch(contexto_actualizado->estado){
+				case EXIT:
+					list_push(pcb_exit_list,pcb);
+					sem_post(&sem_estado_exit);
+					break;
 
-			args_io_block->pcb = malloc(sizeof(pcb_t));
-			args_io_block->pcb = pcb;
-			args_io_block->block_time = atoi(contexto_actualizado->param);
+				case YIELD:
+					//va devuelta a ready al final de la cola
+					break;
 
-			log_info(logger, "%d",args_io_block->block_time);
+				case IO:
+					//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
+//https://stackoverflow.com/questions/1352749/multiple-arguments-to-function-called-by-pthread-create
+					log_info(logger, "IO BLOCK");
 
-			pthread_t thread_io_block;
-			pthread_create(&thread_io_block, NULL, (void *)io_block, args_io_block);
-			pthread_detach(thread_io_block);
-			break;
-		case WAIT:
-			char *recurso_wait = contexto_actualizado->param;
+					t_io_block_args  * args = malloc(sizeof(t_io_block_args));;
 
-			if (recurso_existe_en_lista(lista_recursos, recurso_wait)) {
+					args->pcb = pcb;
+					int time = atoi(contexto_actualizado->param);
+					args->block_time = time;
 
-				restar_instancia(lista_recursos, recurso_wait);
+					log_info(logger, "Tiempo: %d", args->block_time);
 
-				int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_wait);
+					pthread_t thread_io_block;
+					pthread_create(&thread_io_block, NULL,(void*) io_block, (t_io_block_args *)args);
+					pthread_detach(thread_io_block);
+					break;
 
-				if (instancias_recurso < 0) {
+				case WAIT:
+					char *recurso_wait = contexto_actualizado->param;
 
-					pcb->recurso_bloqueante = recurso_wait;
+					if (recurso_existe_en_lista(lista_recursos, recurso_wait)) {
 
-					list_push(pcb_block_list, pcb);
+						restar_instancia(lista_recursos, recurso_wait);
 
-					sem_post(&sem_estado_block);
+						int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_wait);
+
+						if (instancias_recurso < 0) {
+
+							pcb->recurso_bloqueante = recurso_wait;
+
+							list_push(pcb_block_list, pcb);
+
+							sem_post(&sem_estado_block);
+						}
+					} else {
+						list_push(pcb_exit_list, pcb);
+
+						sem_post(&sem_estado_exit);
+					}
+					break;
+
+				case SIGNAL:
+					char *recurso_signal = contexto_actualizado->param;
+
+					if (recurso_existe_en_lista(lista_recursos, recurso_signal)) {
+
+						sumar_instancia(lista_recursos, recurso_signal);
+
+						int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_signal);
+
+						if(instancias_recurso > 0){ // revisar
+
+							t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
+
+							pcb_t* pcb_desbloqueado = list_pop(recurso_bloqueante->cola_bloqueados);
+
+							list_push(pcb_ready_list, pcb_desbloqueado);
+
+							sem_post(&sem_estado_ready);
+						}
+					} else {
+						list_push(pcb_exit_list, pcb);
+
+						sem_post(&sem_estado_exit);
+					}
+					break;
+
+				case FSYSTEM:
+					//revisar el recurso
+					//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
+					//y pushear a block
+					//Si no existe o existe y esta disponible ejecutar logica de FILE
+					//no hace falta meterlo en block
+					break;
+
+				case MEM:
+					//revisar el recurso
+					//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
+					//y pushear a block
+					//Si no existe o existe y esta disponible ejecutar logica de FILE
+					//no hace falta meterlo en block
+					break;
+
+				default:
+					//aca iria logica de bloq
+					break;
 				}
-			} else {
-				list_push(pcb_exit_list, pcb);
-
-				sem_post(&sem_estado_exit);
-			}
-			break;
-		case SIGNAL:
-			char *recurso_signal = contexto_actualizado->param;
-
-			if (recurso_existe_en_lista(lista_recursos, recurso_signal)) {
-
-				sumar_instancia(lista_recursos, recurso_signal);
-
-				int instancias_recurso = instancias_de_un_recurso(lista_recursos, recurso_signal);
-
-				if(instancias_recurso > 0){ // revisar
-
-					t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
-
-					pcb_t* pcb_desbloqueado = list_pop(recurso_bloqueante->cola_bloqueados);
-
-					list_push(pcb_ready_list, pcb_desbloqueado);
-
-					sem_post(&sem_estado_ready);
-				}
-			} else {
-				list_push(pcb_exit_list, pcb);
-
-				sem_post(&sem_estado_exit);
-			}
-			break;
-		case FSYSTEM:
-			//revisar el recurso
-			//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
-			//y pushear a block
-			//Si no existe o existe y esta disponible ejecutar logica de FILE
-			//no hace falta meterlo en block
-		case MEM:
-			//revisar el recurso
-			//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
-			//y pushear a block
-			//Si no existe o existe y esta disponible ejecutar logica de FILE
-			//no hace falta meterlo en block
-		default:
-
-			//aca iria logica de bloq
-			break;
-		}
 
 		//Esto deberia ir dentro del If que analizaria si va a Exit
 		//pcb_t *proceso_a_exit = crear_proceso(contexto_actualizado->instrucciones);
@@ -153,6 +163,7 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 
 		}
 		break;
+
 	default:
 		log_info(logger, "falle");
 		break;

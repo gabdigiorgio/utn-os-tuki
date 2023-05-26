@@ -69,10 +69,7 @@ void estado_exec(){
 			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 
 			// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
-			pcb_a_ejecutar->estimado_proxima_rafaga =
-														hrrn_alfa * temporal_gettime(tiempo_en_ejecucion)
-														+
-														(1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga;
+			pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
 
 			temporal_destroy(tiempo_en_ejecucion);
 
@@ -102,11 +99,7 @@ void estado_block(){
 
 
 long double calcular_ratio(pcb_t* pcb_actual){
-	long double  ratio = (
-			 (long double) temporal_gettime(pcb_actual->tiempo_espera_en_ready)
-			+ (long double) pcb_actual->estimado_proxima_rafaga
-			)
-			/(long double) pcb_actual->estimado_proxima_rafaga;
+	long double  ratio = (((long double) temporal_gettime(pcb_actual->tiempo_espera_en_ready) + (long double) pcb_actual->estimado_proxima_rafaga) / (long double) pcb_actual->estimado_proxima_rafaga);
 
 	return ratio;
 }
@@ -118,19 +111,21 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 	return ratio_1 > ratio_2;
 }
 
-void io_block(io_block_args* args){
-	io_block_args* arguments = args;
+void io_block(void *args){
+	 t_io_block_args *arguments = (t_io_block_args *)args;
 
-	unsigned int time = arguments->block_time;
+	log_info(logger, "El proceso: %d esta en I/O block. Tiempo: %d ", arguments->pcb->pid, arguments->block_time);
 
-	log_info(logger, "El proceso: %d esta en I/O block. Tiempo: %d ", arguments->pcb->pid, time);
-
-	sleep(time);
+	sleep(arguments->block_time);
 
 	log_info(logger, "El proceso: %d finalizo en I/O block", arguments->pcb->pid);
 
-	list_push(pcb_ready_list,arguments->pcb->pid);
+	list_push(pcb_ready_list,arguments->pcb);
+	arguments->pcb->tiempo_espera_en_ready = temporal_create();
+
 	sem_post(&sem_estado_ready);
-	//free(pcb)
-	//free (args);
+	free (args);
 }
+
+
+
