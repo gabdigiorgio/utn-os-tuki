@@ -55,7 +55,9 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 
 				case YIELD:
 					list_push(pcb_ready_list,pcb);
-					pcb = temporal_create();
+					pcb->tiempo_espera_en_ready = temporal_create();
+					log_info(logger, "El proceso %d llego a yield. Se envio al final de ready",
+							pcb->pid);
 					sem_post(&sem_estado_ready);
 					break;
 
