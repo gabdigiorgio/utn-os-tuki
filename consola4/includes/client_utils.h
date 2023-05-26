@@ -18,5 +18,7 @@ void serializar_instrucciones(int socket,t_list* lista);
 uint32_t calcular_tam_instrucciones(t_list* lista);
 void copiar_instrucciones(void* stream, t_list* lista);
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas);
+uint8_t recibir_respuesta(int socket_cliente);
+t_instruc* crear_instruccion();
 
 #endif

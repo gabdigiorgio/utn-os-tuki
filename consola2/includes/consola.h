@@ -18,7 +18,7 @@
 void leer_consola(t_log*);
 void paquete(int);
 void terminar_programa();
-int leer_pseudocodigo(char* path);
+int leer_pseudocodigo(char* path_pseudocodigo, t_list* lista);
 
 
 
@@ -39,9 +39,6 @@ t_config* config;
 
 // _____________________
 
-// ___ INSTRUCCIONES ____
-
-t_list* instruc_list;
 
 // _____________________
 

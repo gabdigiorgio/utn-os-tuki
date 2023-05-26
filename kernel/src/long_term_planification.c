@@ -61,7 +61,7 @@ void estado_exit(){
 		proceso->estado=PCB_EXIT;
 		log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
 		log_info(logger, "El proceso: %d finalizo definitivamente", proceso->pid);
-		send(proceso->consola, resultado, sizeof(uint8_t), NULL);
+		send(proceso->consola, &resultado, sizeof(uint8_t), NULL);
 		//hace el free de todo lo que tiene adentro el pcb
 		free(proceso);
 		sem_post(&sem_grado_multi);
