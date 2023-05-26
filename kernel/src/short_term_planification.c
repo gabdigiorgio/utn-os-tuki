@@ -100,6 +100,7 @@ void estado_block(){
 }
 
 
+
 long double calcular_ratio(pcb_t* pcb_actual){
 	long double  ratio = (
 			 (long double) temporal_gettime(pcb_actual->tiempo_espera_en_ready)
@@ -115,4 +116,21 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 	long double ratio_2 = calcular_ratio((pcb_t*)proceso_2);
 
 	return ratio_1 > ratio_2;
+}
+
+void io_block(void *args){
+	struct io_block_args *arguments = args;
+
+	unsigned int time = arguments->block_time;
+
+	log_info(logger, "El proceso: %d esta en I/O block. Tiempo: %d ", arguments->pcb->pid, time);
+
+	sleep(time);
+
+	log_info(logger, "El proceso: %d finalizo en I/O block", arguments->pcb->pid);
+
+	list_push(pcb_ready_list,arguments->pcb->pid);
+	sem_post(&sem_estado_ready);
+	//free(pcb)
+	//free (args);
 }

@@ -27,13 +27,12 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 	serializar_contexto(cpu_connection, contexto);
 	//esperar respuesta de cpu
 	//Recibo el header del paquete + el stream de datos
-	deserializar_header(paquete2, cpu_connection);
-	switch (paquete2->codigo_operacion) {
-	case 1:
-		contexto_actualizado = deserializar_contexto(paquete2->buffer,
-				paquete2->lineas);
-		log_info(logger, contexto_actualizado->registros->ax);
-		// aca va logica de exit
+	deserializar_header(paquete2,cpu_connection);
+	switch(paquete2->codigo_operacion){
+		case 1:
+			contexto_actualizado = deserializar_contexto(paquete2->buffer, paquete2->lineas);
+			//log_info(logger,contexto_actualizado->registros->ax);
+			// aca va logica de exit
 
 		log_info(logger, "El IP esta en %d",
 				contexto_actualizado->registros->ip);
@@ -146,3 +145,8 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 	}
 
 }
+
+
+
+
+

@@ -5,6 +5,8 @@ int ejecutar_contexto(t_contexto* contexto, int lineas){
 
 	ip = contexto->registros->ip;
 
+	log_info(logger, "El IP esta en %d", contexto->registros->ip);
+
 	copiar_string(contexto->registros->ax,ax);
 	copiar_string(contexto->registros->bx,bx);
 	copiar_string(contexto->registros->cx,cx);
@@ -29,6 +31,7 @@ int ejecutar_contexto(t_contexto* contexto, int lineas){
 
 void armar_contexto(t_contexto* contexto){
 	contexto->registros->ip = ip;
+
 
 	copiar_string(ax,contexto->registros->ax);
 	copiar_string(bx,contexto->registros->bx);
