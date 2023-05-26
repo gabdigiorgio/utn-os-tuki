@@ -1,12 +1,11 @@
 #include "../includes/client_utils.h"
 
 uint32_t calcular_tam_instrucciones(t_list* lista){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	uint32_t size = 0;
 	int lineas = list_size(lista);
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(lista, i);
+			t_instruc* instrucciones = list_get(lista, i);
 
 			size = size + sizeof(uint32_t)
 					+ sizeof(uint32_t)
@@ -23,11 +22,11 @@ uint32_t calcular_tam_instrucciones(t_list* lista){
 }
 
 void copiar_instrucciones(void* stream, t_list* lista){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	int lineas = list_size(lista);
 	int offset = 0;
 
 	for(int i = 0; i < lineas; i++){
+			t_instruc* instrucciones = crear_instruccion();
 			instrucciones = list_get(lista, i);
 
 			memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
@@ -52,33 +51,26 @@ void copiar_instrucciones(void* stream, t_list* lista){
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
-	//Creo un paquete y le asigno los valores iniciales
-	t_paquete* paquete = malloc(sizeof(t_paquete));
-
-	paquete->codigo_operacion = 1;
-	paquete->buffer = buffer;
-	paquete->lineas = lineas;
+	uint32_t codigo_operacion = 1;
 
 	//Reservo el stream para el header del paquete
 	int offset = 0;
 
 	//Añado los datos del header al stream
-	memcpy(a_enviar + offset, &(paquete->codigo_operacion), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(codigo_operacion), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, &(paquete->lineas), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(lineas), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, &(paquete->buffer->size), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(buffer->size), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(a_enviar + offset, paquete->buffer->stream, paquete->buffer->size);
+	memcpy(a_enviar + offset, buffer->stream, buffer->size);
 
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
 }
 
 void serializar_instrucciones(int socket, t_list* lista){
 	//Creo el buffer a utilizar para las instrucciones
-	t_buffer* buffer = malloc(sizeof(t_buffer));
+	t_buffer* buffer = malloc(sizeof(*buffer));
+	buffer->size = 0;
 	//t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
 	//Leo la lista de instrucciones para sumar el tamaño de toda la lista
@@ -102,6 +94,8 @@ void serializar_instrucciones(int socket, t_list* lista){
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
 	//Libero memoria que ya no voy a utilizar
+	free(buffer->stream);
+	free(buffer);
 	free(a_enviar);
 }
 
@@ -133,7 +127,7 @@ int crear_conexion(char *ip, char* puerto)
 uint8_t recibir_respuesta(int socket_cliente){
 	uint8_t result = 0;
 
-	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL); //consultar por un timeout
+	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL);
 
 	return result;
 }
