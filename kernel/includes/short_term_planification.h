@@ -13,10 +13,10 @@
 #include "semaphore.h"
 #include<stdbool.h>
 
-struct io_block_args {
+typedef struct {
 	pcb_t* pcb;
-    int block_time;
-};
+	unsigned int block_time;
+} t_io_block_args ;
 
 void iniciar_planificador_corto_plazo();
 void estado_ready();

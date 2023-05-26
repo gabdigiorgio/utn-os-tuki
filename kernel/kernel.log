@@ -1417,3 +1417,1068 @@
 [INFO] 06:44:02:495 KERNEL/(10949:10957): hola
 [INFO] 06:44:02:495 KERNEL/(10949:10957): El proceso: 0 termino de ejecutar
 [INFO] 06:44:02:497 KERNEL/(10949:10977): El proceso: 0 esta en I/O block. Tiempo: -642901760 
+[INFO] 15:23:15:071 KERNEL/(2602:2602): Valores de configuracion leidos correctamente
+[INFO] 15:23:15:233 KERNEL/(2602:2602): Memoria
+[INFO] 15:23:15:233 KERNEL/(2602:2602): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:23:15:240 KERNEL/(2602:2602): Cpu
+[INFO] 15:23:15:242 KERNEL/(2602:2602): Se establecio correctamente la conexion
+[INFO] 15:23:15:242 KERNEL/(2602:2602): File system
+[INFO] 15:23:15:242 KERNEL/(2602:2602): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:23:15:242 KERNEL/(2602:2602): Kernel listo para recibir Consolas
+[INFO] 15:23:23:366 KERNEL/(2602:2612): Se conecto un cliente!
+[INFO] 15:23:23:366 KERNEL/(2602:2612): El proceso: 0 llego a estado new
+[INFO] 15:23:23:366 KERNEL/(2602:2610): El proceso: 0 se agrego a la lista de ready
+[INFO] 15:23:23:366 KERNEL/(2602:2607): Exec libre => estado_ready comienza a planificar
+[INFO] 15:23:23:367 KERNEL/(2602:2609): El proceso: 0 llego a estado exec
+[INFO] 15:23:27:369 KERNEL/(2602:2609): El IP esta en 4
+[INFO] 15:23:27:369 KERNEL/(2602:2609): El size de las instrucciones es 5
+[INFO] 15:23:27:369 KERNEL/(2602:2609): El numero de estado es: 2
+[INFO] 15:23:27:369 KERNEL/(2602:2609): El parametro de interrupcion es: 5
+[INFO] 15:23:27:369 KERNEL/(2602:2609): IO BLOCK
+[INFO] 15:23:27:369 KERNEL/(2602:2609): Tiempo: -1275062688
+[INFO] 15:23:27:369 KERNEL/(2602:2609): El proceso: 0 termino de ejecutar
+[INFO] 15:23:27:376 KERNEL/(2602:2627): El proceso: 0 esta en I/O block. Tiempo: -1275062688 
+[INFO] 15:24:59:814 KERNEL/(2703:2703): Valores de configuracion leidos correctamente
+[INFO] 15:24:59:814 KERNEL/(2703:2703): Memoria
+[INFO] 15:24:59:814 KERNEL/(2703:2703): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:24:59:814 KERNEL/(2703:2703): Cpu
+[INFO] 15:24:59:814 KERNEL/(2703:2703): Se establecio correctamente la conexion
+[INFO] 15:24:59:815 KERNEL/(2703:2703): File system
+[INFO] 15:24:59:815 KERNEL/(2703:2703): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:24:59:815 KERNEL/(2703:2703): Kernel listo para recibir Consolas
+[INFO] 15:25:05:914 KERNEL/(2703:2713): Se conecto un cliente!
+[INFO] 15:25:05:916 KERNEL/(2703:2713): El proceso: 0 llego a estado new
+[INFO] 15:25:05:916 KERNEL/(2703:2711): El proceso: 0 se agrego a la lista de ready
+[INFO] 15:25:05:916 KERNEL/(2703:2708): Exec libre => estado_ready comienza a planificar
+[INFO] 15:25:05:917 KERNEL/(2703:2710): El proceso: 0 llego a estado exec
+[INFO] 15:25:09:920 KERNEL/(2703:2710): El IP esta en 4
+[INFO] 15:25:09:920 KERNEL/(2703:2710): El size de las instrucciones es 5
+[INFO] 15:25:09:920 KERNEL/(2703:2710): El numero de estado es: 2
+[INFO] 15:25:09:920 KERNEL/(2703:2710): El parametro de interrupcion es: 5
+[INFO] 15:25:09:920 KERNEL/(2703:2710): IO BLOCK
+[INFO] 15:25:09:920 KERNEL/(2703:2710): Tiempo: 5
+[INFO] 15:25:09:920 KERNEL/(2703:2710): El proceso: 0 termino de ejecutar
+[INFO] 15:25:09:938 KERNEL/(2703:2728): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 15:25:14:938 KERNEL/(2703:2728): El proceso: 0 finalizo en I/O block
+[INFO] 15:25:14:939 KERNEL/(2703:2708): Exec libre => estado_ready comienza a planificar
+[INFO] 15:25:14:939 KERNEL/(2703:2710): El proceso: 0 llego a estado exec
+[INFO] 15:25:15:939 KERNEL/(2703:2710): El IP esta en 5
+[INFO] 15:25:15:940 KERNEL/(2703:2710): El size de las instrucciones es 5
+[INFO] 15:25:15:940 KERNEL/(2703:2710): El numero de estado es: 0
+[INFO] 15:25:15:940 KERNEL/(2703:2710): El parametro de interrupcion es: 0
+[INFO] 15:25:15:940 KERNEL/(2703:2710): El contexto se ejecutó completamente
+[INFO] 15:25:15:940 KERNEL/(2703:2712): El proceso: 0 ingreso a exit
+[INFO] 15:25:15:940 KERNEL/(2703:2712): El proceso: 0 finalizo definitivamente
+[INFO] 15:25:15:940 KERNEL/(2703:2710): El proceso: 0 termino de ejecutar
+[INFO] 15:25:22:025 KERNEL/(2703:2713): Se conecto un cliente!
+[INFO] 15:25:22:025 KERNEL/(2703:2713): El proceso: 1 llego a estado new
+[INFO] 15:25:22:025 KERNEL/(2703:2711): El proceso: 1 se agrego a la lista de ready
+[INFO] 15:25:22:025 KERNEL/(2703:2708): Exec libre => estado_ready comienza a planificar
+[INFO] 15:25:22:025 KERNEL/(2703:2710): El proceso: 1 llego a estado exec
+[INFO] 15:25:26:029 KERNEL/(2703:2710): El IP esta en 4
+[INFO] 15:25:26:029 KERNEL/(2703:2710): El size de las instrucciones es 5
+[INFO] 15:25:26:029 KERNEL/(2703:2710): El numero de estado es: 2
+[INFO] 15:25:26:029 KERNEL/(2703:2710): El parametro de interrupcion es: 5
+[INFO] 15:25:26:029 KERNEL/(2703:2710): IO BLOCK
+[INFO] 15:25:26:029 KERNEL/(2703:2710): Tiempo: 5
+[INFO] 15:25:26:030 KERNEL/(2703:2710): El proceso: 1 termino de ejecutar
+[INFO] 15:25:26:036 KERNEL/(2703:2746): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 15:25:31:036 KERNEL/(2703:2746): El proceso: 1 finalizo en I/O block
+[INFO] 15:25:31:036 KERNEL/(2703:2708): Exec libre => estado_ready comienza a planificar
+[INFO] 15:27:16:975 KERNEL/(2797:2797): Valores de configuracion leidos correctamente
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Memoria
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Cpu
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Se establecio correctamente la conexion
+[INFO] 15:27:16:976 KERNEL/(2797:2797): File system
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:27:16:976 KERNEL/(2797:2797): Kernel listo para recibir Consolas
+[INFO] 15:27:23:545 KERNEL/(2797:2807): Se conecto un cliente!
+[INFO] 15:27:23:545 KERNEL/(2797:2807): El proceso: 0 llego a estado new
+[INFO] 15:27:23:548 KERNEL/(2797:2805): El proceso: 0 se agrego a la lista de ready
+[INFO] 15:27:23:548 KERNEL/(2797:2802): Exec libre => estado_ready comienza a planificar
+[INFO] 15:27:23:548 KERNEL/(2797:2804): El proceso: 0 llego a estado exec
+[INFO] 15:27:27:549 KERNEL/(2797:2804): El IP esta en 4
+[INFO] 15:27:27:550 KERNEL/(2797:2804): El size de las instrucciones es 5
+[INFO] 15:27:27:550 KERNEL/(2797:2804): El numero de estado es: 2
+[INFO] 15:27:27:550 KERNEL/(2797:2804): El parametro de interrupcion es: 5
+[INFO] 15:27:27:550 KERNEL/(2797:2804): IO BLOCK
+[INFO] 15:27:27:550 KERNEL/(2797:2804): Tiempo: 5
+[INFO] 15:27:27:550 KERNEL/(2797:2804): El proceso: 0 termino de ejecutar
+[INFO] 15:27:27:554 KERNEL/(2797:2823): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 15:27:32:555 KERNEL/(2797:2823): El proceso: 0 finalizo en I/O block
+[INFO] 15:27:32:555 KERNEL/(2797:2802): Exec libre => estado_ready comienza a planificar
+[INFO] 15:27:32:556 KERNEL/(2797:2804): El proceso: 0 llego a estado exec
+[INFO] 15:27:33:558 KERNEL/(2797:2804): El IP esta en 5
+[INFO] 15:27:33:558 KERNEL/(2797:2804): El size de las instrucciones es 5
+[INFO] 15:27:33:558 KERNEL/(2797:2804): El numero de estado es: 0
+[INFO] 15:27:33:558 KERNEL/(2797:2804): El parametro de interrupcion es: 0
+[INFO] 15:27:33:558 KERNEL/(2797:2804): El contexto se ejecutó completamente
+[INFO] 15:27:33:559 KERNEL/(2797:2806): El proceso: 0 ingreso a exit
+[INFO] 15:27:33:559 KERNEL/(2797:2804): El proceso: 0 termino de ejecutar
+[INFO] 15:27:33:559 KERNEL/(2797:2806): El proceso: 0 finalizo definitivamente
+[INFO] 15:28:05:516 KERNEL/(2797:2807): Se conecto un cliente!
+[INFO] 15:28:05:517 KERNEL/(2797:2807): El proceso: 1 llego a estado new
+[INFO] 15:28:05:517 KERNEL/(2797:2805): El proceso: 1 se agrego a la lista de ready
+[INFO] 15:28:05:517 KERNEL/(2797:2802): Exec libre => estado_ready comienza a planificar
+[INFO] 15:28:05:517 KERNEL/(2797:2804): El proceso: 1 llego a estado exec
+[INFO] 15:28:09:520 KERNEL/(2797:2804): El IP esta en 4
+[INFO] 15:28:09:521 KERNEL/(2797:2804): El size de las instrucciones es 5
+[INFO] 15:28:09:521 KERNEL/(2797:2804): El numero de estado es: 2
+[INFO] 15:28:09:521 KERNEL/(2797:2804): El parametro de interrupcion es: 5
+[INFO] 15:28:09:522 KERNEL/(2797:2804): IO BLOCK
+[INFO] 15:28:09:522 KERNEL/(2797:2804): Tiempo: 5
+[INFO] 15:28:09:522 KERNEL/(2797:2804): El proceso: 1 termino de ejecutar
+[INFO] 15:28:09:525 KERNEL/(2797:2880): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 15:28:14:526 KERNEL/(2797:2880): El proceso: 1 finalizo en I/O block
+[INFO] 15:28:14:526 KERNEL/(2797:2802): Exec libre => estado_ready comienza a planificar
+[INFO] 15:32:18:944 KERNEL/(2928:2928): Valores de configuracion leidos correctamente
+[INFO] 15:35:03:889 KERNEL/(2928:2928): Memoria
+[INFO] 15:35:03:890 KERNEL/(2928:2928): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:35:03:890 KERNEL/(2928:2928): Cpu
+[INFO] 15:35:03:895 KERNEL/(2928:2928): Se establecio correctamente la conexion
+[INFO] 15:36:05:541 KERNEL/(2928:2928): File system
+[INFO] 15:36:05:548 KERNEL/(2928:2928): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:36:05:555 KERNEL/(2928:2928): Kernel listo para recibir Consolas
+[INFO] 15:37:05:660 KERNEL/(3050:3050): Valores de configuracion leidos correctamente
+[INFO] 15:37:34:783 KERNEL/(3050:3050): Memoria
+[INFO] 15:37:38:808 KERNEL/(3050:3050): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:37:45:885 KERNEL/(3050:3050): Cpu
+[INFO] 15:37:45:885 KERNEL/(3050:3050): Se establecio correctamente la conexion
+[INFO] 15:37:56:008 KERNEL/(3050:3050): File system
+[INFO] 15:37:58:437 KERNEL/(3050:3050): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:38:10:556 KERNEL/(3050:3050): Kernel listo para recibir Consolas
+[INFO] 15:38:52:795 KERNEL/(3050:3115): Se conecto un cliente!
+[INFO] 15:38:52:796 KERNEL/(3050:3115): El proceso: 0 llego a estado new
+[INFO] 15:38:52:796 KERNEL/(3050:3064): El proceso: 0 se agrego a la lista de ready
+[INFO] 15:38:52:797 KERNEL/(3050:3061): Exec libre => estado_ready comienza a planificar
+[INFO] 15:38:52:798 KERNEL/(3050:3063): El proceso: 0 llego a estado exec
+[INFO] 15:41:05:320 KERNEL/(3050:3063): El IP esta en 4
+[INFO] 15:41:06:354 KERNEL/(3050:3063): El size de las instrucciones es 5
+[INFO] 15:41:07:330 KERNEL/(3050:3063): El numero de estado es: 2
+[INFO] 15:41:08:493 KERNEL/(3050:3063): El parametro de interrupcion es: 5
+[INFO] 15:41:37:627 KERNEL/(3050:3063): IO BLOCK
+[INFO] 15:43:24:687 KERNEL/(3050:3063): Tiempo: 5
+[INFO] 15:43:37:794 KERNEL/(3050:3193): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 15:45:04:854 KERNEL/(3050:3193): El proceso: 0 finalizo en I/O block
+[INFO] 15:46:29:380 KERNEL/(3050:3063): El proceso: 0 termino de ejecutar
+[INFO] 15:46:32:886 KERNEL/(3050:3061): Exec libre => estado_ready comienza a planificar
+[INFO] 15:46:43:075 KERNEL/(3050:3063): El proceso: 0 llego a estado exec
+[INFO] 15:46:50:153 KERNEL/(3050:3063): El IP esta en 5
+[INFO] 15:46:50:153 KERNEL/(3050:3063): El size de las instrucciones es 5
+[INFO] 15:46:50:153 KERNEL/(3050:3063): El numero de estado es: 0
+[INFO] 15:46:50:153 KERNEL/(3050:3063): El parametro de interrupcion es: 0
+[INFO] 15:46:50:153 KERNEL/(3050:3063): El contexto se ejecutó completamente
+[INFO] 15:46:50:153 KERNEL/(3050:3065): El proceso: 0 ingreso a exit
+[INFO] 15:46:57:281 KERNEL/(3050:3065): El proceso: 0 finalizo definitivamente
+[INFO] 15:47:17:663 KERNEL/(3050:3115): Se conecto un cliente!
+[INFO] 15:47:17:663 KERNEL/(3050:3115): El proceso: 1 llego a estado new
+[INFO] 15:47:17:664 KERNEL/(3050:3064): El proceso: 1 se agrego a la lista de ready
+[INFO] 15:47:45:574 KERNEL/(3050:3063): El proceso: -65535 termino de ejecutar
+[INFO] 15:47:48:113 KERNEL/(3050:3061): Exec libre => estado_ready comienza a planificar
+[INFO] 15:47:58:999 KERNEL/(3050:3063): El proceso: 1 llego a estado exec
+[INFO] 15:48:25:906 KERNEL/(3050:3063): El IP esta en 4
+[INFO] 15:48:27:524 KERNEL/(3050:3063): El size de las instrucciones es 5
+[INFO] 15:48:28:697 KERNEL/(3050:3063): El numero de estado es: 2
+[INFO] 15:48:33:635 KERNEL/(3050:3063): El parametro de interrupcion es: 5
+[INFO] 15:49:13:220 KERNEL/(3050:3063): IO BLOCK
+[INFO] 15:49:51:488 KERNEL/(3050:3063): Tiempo: 5
+[INFO] 15:51:11:839 KERNEL/(3050:3063): El proceso: 1 termino de ejecutar
+[INFO] 15:51:11:854 KERNEL/(3050:3342): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 15:51:38:297 KERNEL/(3050:3342): El proceso: 1 finalizo en I/O block
+[INFO] 15:55:09:513 KERNEL/(3050:3061): Exec libre => estado_ready comienza a planificar
+[INFO] 15:59:40:880 KERNEL/(3502:3502): Valores de configuracion leidos correctamente
+[INFO] 15:59:50:965 KERNEL/(3502:3502): Memoria
+[INFO] 15:59:50:966 KERNEL/(3502:3502): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:59:50:966 KERNEL/(3502:3502): Cpu
+[INFO] 15:59:50:967 KERNEL/(3502:3502): Se establecio correctamente la conexion
+[INFO] 15:59:56:572 KERNEL/(3502:3502): File system
+[INFO] 15:59:56:572 KERNEL/(3502:3502): Fallo al realizar el handshake, cerrando conexion
+[INFO] 15:59:56:573 KERNEL/(3502:3502): Kernel listo para recibir Consolas
+[INFO] 16:00:29:729 KERNEL/(3575:3575): Valores de configuracion leidos correctamente
+[INFO] 16:00:34:683 KERNEL/(3575:3575): Memoria
+[INFO] 16:00:34:685 KERNEL/(3575:3575): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:00:34:686 KERNEL/(3575:3575): Cpu
+[INFO] 16:00:34:690 KERNEL/(3575:3575): Se establecio correctamente la conexion
+[INFO] 16:00:41:423 KERNEL/(3575:3575): File system
+[INFO] 16:00:44:468 KERNEL/(3575:3575): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:00:48:481 KERNEL/(3575:3575): Kernel listo para recibir Consolas
+[INFO] 16:01:19:242 KERNEL/(3575:3608): Se conecto un cliente!
+[INFO] 16:01:19:242 KERNEL/(3575:3608): El proceso: 0 llego a estado new
+[INFO] 16:01:19:242 KERNEL/(3575:3585): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:01:19:242 KERNEL/(3575:3582): Exec libre => estado_ready comienza a planificar
+[INFO] 16:01:19:242 KERNEL/(3575:3584): El proceso: 0 llego a estado exec
+[INFO] 16:02:01:787 KERNEL/(3575:3584): El IP esta en 4
+[INFO] 16:02:02:675 KERNEL/(3575:3584): El size de las instrucciones es 5
+[INFO] 16:02:03:431 KERNEL/(3575:3584): El numero de estado es: 2
+[INFO] 16:02:10:655 KERNEL/(3575:3584): El parametro de interrupcion es: 5
+[INFO] 16:02:39:154 KERNEL/(3575:3584): IO BLOCK
+[INFO] 16:03:16:163 KERNEL/(3575:3584): Tiempo: 5
+[INFO] 16:03:38:304 KERNEL/(3575:3680): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:04:44:159 KERNEL/(3575:3680): El proceso: 0 finalizo en I/O block
+[INFO] 16:09:12:679 KERNEL/(3575:3584): El proceso: 0 termino de ejecutar
+[INFO] 16:09:12:679 KERNEL/(3575:3582): Exec libre => estado_ready comienza a planificar
+[INFO] 16:09:12:680 KERNEL/(3575:3584): El proceso: 0 llego a estado exec
+[INFO] 16:11:49:938 KERNEL/(3575:3584): El IP esta en 5
+[INFO] 16:11:51:422 KERNEL/(3575:3584): El size de las instrucciones es 5
+[INFO] 16:11:56:543 KERNEL/(3575:3584): El numero de estado es: 0
+[INFO] 16:11:57:781 KERNEL/(3575:3584): El parametro de interrupcion es: 0
+[INFO] 16:13:16:460 KERNEL/(3575:3584): El contexto se ejecutó completamente
+[INFO] 16:13:16:460 KERNEL/(3575:3584): El proceso: 0 termino de ejecutar
+[INFO] 16:13:26:458 KERNEL/(3575:3586): El proceso: 0 ingreso a exit
+[INFO] 16:13:35:140 KERNEL/(3575:3586): El proceso: 0 finalizo definitivamente
+[INFO] 16:14:32:852 KERNEL/(3575:3608): Se conecto un cliente!
+[INFO] 16:14:32:852 KERNEL/(3575:3608): El proceso: 1 llego a estado new
+[INFO] 16:14:32:852 KERNEL/(3575:3585): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:14:32:852 KERNEL/(3575:3582): Exec libre => estado_ready comienza a planificar
+[INFO] 16:14:32:852 KERNEL/(3575:3584): El proceso: 1 llego a estado exec
+[INFO] 16:15:04:592 KERNEL/(3575:3584): El IP esta en 4
+[INFO] 16:15:06:847 KERNEL/(3575:3584): El size de las instrucciones es 5
+[INFO] 16:15:19:488 KERNEL/(3575:3584): El numero de estado es: 2
+[INFO] 16:15:20:291 KERNEL/(3575:3584): El parametro de interrupcion es: 5
+[INFO] 16:15:38:025 KERNEL/(3575:3584): IO BLOCK
+[INFO] 16:16:21:832 KERNEL/(3575:3584): Tiempo: 5
+[INFO] 16:16:55:387 KERNEL/(3575:3842): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:17:40:629 KERNEL/(3575:3842): El proceso: 1 finalizo en I/O block
+[INFO] 16:18:47:986 KERNEL/(3575:3584): El proceso: 1 termino de ejecutar
+[INFO] 16:18:47:987 KERNEL/(3575:3582): Exec libre => estado_ready comienza a planificar
+[INFO] 16:20:36:290 KERNEL/(3934:3934): Valores de configuracion leidos correctamente
+[INFO] 16:20:36:292 KERNEL/(3934:3934): Memoria
+[INFO] 16:20:36:292 KERNEL/(3934:3934): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:20:36:292 KERNEL/(3934:3934): Cpu
+[INFO] 16:20:36:297 KERNEL/(3934:3934): Se establecio correctamente la conexion
+[INFO] 16:20:36:297 KERNEL/(3934:3934): File system
+[INFO] 16:20:36:297 KERNEL/(3934:3934): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:20:36:297 KERNEL/(3934:3934): Kernel listo para recibir Consolas
+[INFO] 16:20:43:143 KERNEL/(3934:3945): Se conecto un cliente!
+[INFO] 16:20:43:147 KERNEL/(3934:3945): El proceso: 0 llego a estado new
+[INFO] 16:20:43:147 KERNEL/(3934:3943): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:20:43:147 KERNEL/(3934:3940): Exec libre => estado_ready comienza a planificar
+[INFO] 16:20:43:148 KERNEL/(3934:3942): El proceso: 0 llego a estado exec
+[INFO] 16:20:47:151 KERNEL/(3934:3942): El IP esta en 4
+[INFO] 16:20:47:151 KERNEL/(3934:3942): El size de las instrucciones es 5
+[INFO] 16:20:47:151 KERNEL/(3934:3942): El numero de estado es: 2
+[INFO] 16:20:47:151 KERNEL/(3934:3942): El parametro de interrupcion es: 5
+[INFO] 16:20:47:151 KERNEL/(3934:3942): IO BLOCK
+[INFO] 16:20:47:151 KERNEL/(3934:3942): Tiempo: 5
+[INFO] 16:20:47:151 KERNEL/(3934:3942): El proceso: 0 termino de ejecutar
+[INFO] 16:20:53:142 KERNEL/(3934:3945): Se conecto un cliente!
+[INFO] 16:20:53:142 KERNEL/(3934:3945): El proceso: 1 llego a estado new
+[INFO] 16:20:53:142 KERNEL/(3934:3943): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:20:53:144 KERNEL/(3934:3940): Exec libre => estado_ready comienza a planificar
+[INFO] 16:20:53:144 KERNEL/(3934:3942): El proceso: 1 llego a estado exec
+[INFO] 16:20:57:147 KERNEL/(3934:3942): El IP esta en 4
+[INFO] 16:20:57:147 KERNEL/(3934:3942): El size de las instrucciones es 5
+[INFO] 16:20:57:147 KERNEL/(3934:3942): El numero de estado es: 2
+[INFO] 16:20:57:147 KERNEL/(3934:3942): El parametro de interrupcion es: 5
+[INFO] 16:20:57:147 KERNEL/(3934:3942): IO BLOCK
+[INFO] 16:20:57:147 KERNEL/(3934:3942): Tiempo: 5
+[INFO] 16:20:57:147 KERNEL/(3934:3942): El proceso: 1 termino de ejecutar
+[INFO] 16:24:23:714 KERNEL/(4058:4058): Valores de configuracion leidos correctamente
+[INFO] 16:24:23:714 KERNEL/(4058:4058): Memoria
+[INFO] 16:24:23:714 KERNEL/(4058:4058): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:24:23:715 KERNEL/(4058:4058): Cpu
+[INFO] 16:24:23:715 KERNEL/(4058:4058): Se establecio correctamente la conexion
+[INFO] 16:24:23:715 KERNEL/(4058:4058): File system
+[INFO] 16:24:23:715 KERNEL/(4058:4058): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:24:23:715 KERNEL/(4058:4058): Kernel listo para recibir Consolas
+[INFO] 16:24:29:731 KERNEL/(4058:4069): Se conecto un cliente!
+[INFO] 16:24:29:731 KERNEL/(4058:4069): El proceso: 0 llego a estado new
+[INFO] 16:24:29:731 KERNEL/(4058:4067): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:24:29:731 KERNEL/(4058:4064): Exec libre => estado_ready comienza a planificar
+[INFO] 16:24:29:732 KERNEL/(4058:4066): El proceso: 0 llego a estado exec
+[INFO] 16:24:33:738 KERNEL/(4058:4066): El IP esta en 4
+[INFO] 16:24:33:738 KERNEL/(4058:4066): El size de las instrucciones es 5
+[INFO] 16:24:33:738 KERNEL/(4058:4066): El numero de estado es: 2
+[INFO] 16:24:33:738 KERNEL/(4058:4066): El parametro de interrupcion es: 5
+[INFO] 16:24:33:738 KERNEL/(4058:4066): IO BLOCK
+[INFO] 16:24:33:738 KERNEL/(4058:4066): Tiempo: 5
+[INFO] 16:24:33:748 KERNEL/(4058:4085): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:24:38:751 KERNEL/(4058:4085): El proceso: 0 finalizo en I/O block
+[INFO] 16:24:38:752 KERNEL/(4058:4066): El proceso: 0 termino de ejecutar
+[INFO] 16:24:38:752 KERNEL/(4058:4064): Exec libre => estado_ready comienza a planificar
+[INFO] 16:24:38:753 KERNEL/(4058:4066): El proceso: 0 llego a estado exec
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El IP esta en 5
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El size de las instrucciones es 5
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El numero de estado es: 0
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El parametro de interrupcion es: 0
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El contexto se ejecutó completamente
+[INFO] 16:24:39:755 KERNEL/(4058:4066): El proceso: 0 termino de ejecutar
+[INFO] 16:24:39:755 KERNEL/(4058:4068): El proceso: 0 ingreso a exit
+[INFO] 16:24:39:755 KERNEL/(4058:4068): El proceso: 0 finalizo definitivamente
+[INFO] 16:24:44:829 KERNEL/(4058:4069): Se conecto un cliente!
+[INFO] 16:24:44:829 KERNEL/(4058:4069): El proceso: 1 llego a estado new
+[INFO] 16:24:44:830 KERNEL/(4058:4067): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:24:44:830 KERNEL/(4058:4064): Exec libre => estado_ready comienza a planificar
+[INFO] 16:24:44:830 KERNEL/(4058:4066): El proceso: 1 llego a estado exec
+[INFO] 16:24:48:832 KERNEL/(4058:4066): El IP esta en 4
+[INFO] 16:24:48:832 KERNEL/(4058:4066): El size de las instrucciones es 5
+[INFO] 16:24:48:832 KERNEL/(4058:4066): El numero de estado es: 2
+[INFO] 16:24:48:832 KERNEL/(4058:4066): El parametro de interrupcion es: 5
+[INFO] 16:24:48:832 KERNEL/(4058:4066): IO BLOCK
+[INFO] 16:24:48:832 KERNEL/(4058:4066): Tiempo: 5
+[INFO] 16:24:48:835 KERNEL/(4058:4101): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:24:53:836 KERNEL/(4058:4101): El proceso: 1 finalizo en I/O block
+[INFO] 16:24:53:837 KERNEL/(4058:4066): El proceso: 1 termino de ejecutar
+[INFO] 16:24:53:837 KERNEL/(4058:4064): Exec libre => estado_ready comienza a planificar
+[ERROR] 16:25:24:203 KERNEL/(4148:4148): Falta parametro del path del archivo de configuracion
+[INFO] 16:26:06:832 KERNEL/(4167:4167): Valores de configuracion leidos correctamente
+[INFO] 16:26:07:124 KERNEL/(4167:4167): Memoria
+[INFO] 16:26:07:136 KERNEL/(4167:4167): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:26:07:156 KERNEL/(4167:4167): Cpu
+[INFO] 16:26:07:158 KERNEL/(4167:4167): Se establecio correctamente la conexion
+[INFO] 16:26:07:164 KERNEL/(4167:4167): File system
+[INFO] 16:26:07:169 KERNEL/(4167:4167): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:26:07:248 KERNEL/(4167:4167): Kernel listo para recibir Consolas
+[INFO] 16:26:14:239 KERNEL/(4167:4178): Se conecto un cliente!
+[INFO] 16:26:14:265 KERNEL/(4167:4178): El proceso: 0 llego a estado new
+[INFO] 16:26:14:284 KERNEL/(4167:4176): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:26:14:285 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:14:290 KERNEL/(4167:4175): El proceso: 0 llego a estado exec
+[INFO] 16:26:18:342 KERNEL/(4167:4175): El IP esta en 4
+[INFO] 16:26:18:373 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:18:458 KERNEL/(4167:4175): El numero de estado es: 2
+[INFO] 16:26:18:459 KERNEL/(4167:4175): El parametro de interrupcion es: 5
+[INFO] 16:26:18:460 KERNEL/(4167:4175): IO BLOCK
+[INFO] 16:26:18:461 KERNEL/(4167:4175): Tiempo: 5
+[INFO] 16:26:18:535 KERNEL/(4167:4195): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:26:22:408 KERNEL/(4167:4178): Se conecto un cliente!
+[INFO] 16:26:22:408 KERNEL/(4167:4178): El proceso: 1 llego a estado new
+[INFO] 16:26:22:417 KERNEL/(4167:4176): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:26:23:588 KERNEL/(4167:4195): El proceso: 0 finalizo en I/O block
+[INFO] 16:26:23:673 KERNEL/(4167:4175): El proceso: 0 termino de ejecutar
+[INFO] 16:26:23:674 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:23:679 KERNEL/(4167:4175): El proceso: 0 llego a estado exec
+[INFO] 16:26:24:687 KERNEL/(4167:4175): El IP esta en 5
+[INFO] 16:26:24:688 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:24:688 KERNEL/(4167:4175): El numero de estado es: 0
+[INFO] 16:26:24:689 KERNEL/(4167:4175): El parametro de interrupcion es: 0
+[INFO] 16:26:24:690 KERNEL/(4167:4175): El contexto se ejecutó completamente
+[INFO] 16:26:24:690 KERNEL/(4167:4177): El proceso: 0 ingreso a exit
+[INFO] 16:26:24:696 KERNEL/(4167:4175): El proceso: 0 termino de ejecutar
+[INFO] 16:26:24:704 KERNEL/(4167:4177): El proceso: 0 finalizo definitivamente
+[INFO] 16:26:24:705 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:24:746 KERNEL/(4167:4175): El proceso: 1 llego a estado exec
+[INFO] 16:26:28:750 KERNEL/(4167:4175): El IP esta en 4
+[INFO] 16:26:28:750 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:28:750 KERNEL/(4167:4175): El numero de estado es: 2
+[INFO] 16:26:28:751 KERNEL/(4167:4175): El parametro de interrupcion es: 5
+[INFO] 16:26:28:751 KERNEL/(4167:4175): IO BLOCK
+[INFO] 16:26:28:753 KERNEL/(4167:4175): Tiempo: 5
+[INFO] 16:26:28:760 KERNEL/(4167:4208): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:26:33:848 KERNEL/(4167:4208): El proceso: 1 finalizo en I/O block
+[INFO] 16:26:33:910 KERNEL/(4167:4175): El proceso: 1 termino de ejecutar
+[INFO] 16:26:33:911 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:33:913 KERNEL/(4167:4175): El proceso: 1 llego a estado exec
+[INFO] 16:26:34:930 KERNEL/(4167:4175): El IP esta en 5
+[INFO] 16:26:34:961 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:35:005 KERNEL/(4167:4175): El numero de estado es: 0
+[INFO] 16:26:35:036 KERNEL/(4167:4175): El parametro de interrupcion es: 0
+[INFO] 16:26:35:081 KERNEL/(4167:4175): El contexto se ejecutó completamente
+[INFO] 16:26:35:082 KERNEL/(4167:4177): El proceso: 1 ingreso a exit
+[INFO] 16:26:35:212 KERNEL/(4167:4175): El proceso: 1 termino de ejecutar
+[INFO] 16:26:35:227 KERNEL/(4167:4177): El proceso: 1 finalizo definitivamente
+[INFO] 16:26:43:029 KERNEL/(4167:4178): Se conecto un cliente!
+[INFO] 16:26:43:030 KERNEL/(4167:4178): El proceso: 2 llego a estado new
+[INFO] 16:26:43:031 KERNEL/(4167:4176): El proceso: 2 se agrego a la lista de ready
+[INFO] 16:26:43:031 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:43:032 KERNEL/(4167:4175): El proceso: 2 llego a estado exec
+[INFO] 16:26:47:076 KERNEL/(4167:4175): El IP esta en 4
+[INFO] 16:26:47:107 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:47:108 KERNEL/(4167:4175): El numero de estado es: 2
+[INFO] 16:26:47:108 KERNEL/(4167:4175): El parametro de interrupcion es: 5
+[INFO] 16:26:47:108 KERNEL/(4167:4175): IO BLOCK
+[INFO] 16:26:47:109 KERNEL/(4167:4175): Tiempo: 5
+[INFO] 16:26:47:109 KERNEL/(4167:4225): El proceso: 2 esta en I/O block. Tiempo: 5 
+[INFO] 16:26:52:211 KERNEL/(4167:4225): El proceso: 2 finalizo en I/O block
+[INFO] 16:26:52:434 KERNEL/(4167:4175): El proceso: 2 termino de ejecutar
+[INFO] 16:26:52:434 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:26:52:436 KERNEL/(4167:4175): El proceso: 2 llego a estado exec
+[INFO] 16:26:53:505 KERNEL/(4167:4175): El IP esta en 5
+[INFO] 16:26:53:505 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:26:53:506 KERNEL/(4167:4175): El numero de estado es: 0
+[INFO] 16:26:53:506 KERNEL/(4167:4175): El parametro de interrupcion es: 0
+[INFO] 16:26:53:506 KERNEL/(4167:4177): El proceso: 2 ingreso a exit
+[INFO] 16:26:53:507 KERNEL/(4167:4177): El proceso: 2 finalizo definitivamente
+[INFO] 16:26:53:507 KERNEL/(4167:4175): El contexto se ejecutó completamente
+[INFO] 16:26:53:508 KERNEL/(4167:4175): El proceso: 2 termino de ejecutar
+[INFO] 16:27:16:864 KERNEL/(4167:4178): Se conecto un cliente!
+[INFO] 16:27:16:865 KERNEL/(4167:4178): El proceso: 3 llego a estado new
+[INFO] 16:27:16:867 KERNEL/(4167:4176): El proceso: 3 se agrego a la lista de ready
+[INFO] 16:27:16:867 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:27:16:868 KERNEL/(4167:4175): El proceso: 3 llego a estado exec
+[INFO] 16:27:20:874 KERNEL/(4167:4175): El IP esta en 4
+[INFO] 16:27:20:875 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:27:20:875 KERNEL/(4167:4175): El numero de estado es: 2
+[INFO] 16:27:20:875 KERNEL/(4167:4175): El parametro de interrupcion es: 5
+[INFO] 16:27:20:876 KERNEL/(4167:4175): IO BLOCK
+[INFO] 16:27:20:876 KERNEL/(4167:4175): Tiempo: 5
+[INFO] 16:27:20:926 KERNEL/(4167:4241): El proceso: 3 esta en I/O block. Tiempo: 5 
+[INFO] 16:27:26:053 KERNEL/(4167:4241): El proceso: 3 finalizo en I/O block
+[INFO] 16:27:26:203 KERNEL/(4167:4175): El proceso: 3 termino de ejecutar
+[INFO] 16:27:26:236 KERNEL/(4167:4173): Exec libre => estado_ready comienza a planificar
+[INFO] 16:27:26:353 KERNEL/(4167:4175): El proceso: 3 llego a estado exec
+[INFO] 16:27:27:355 KERNEL/(4167:4175): El IP esta en 5
+[INFO] 16:27:27:355 KERNEL/(4167:4175): El size de las instrucciones es 5
+[INFO] 16:27:27:355 KERNEL/(4167:4175): El numero de estado es: 0
+[INFO] 16:27:27:356 KERNEL/(4167:4175): El parametro de interrupcion es: 0
+[INFO] 16:27:27:356 KERNEL/(4167:4175): El contexto se ejecutó completamente
+[INFO] 16:27:27:357 KERNEL/(4167:4175): El proceso: 3 termino de ejecutar
+[INFO] 16:27:27:357 KERNEL/(4167:4177): El proceso: 3 ingreso a exit
+[INFO] 16:27:27:357 KERNEL/(4167:4177): El proceso: 3 finalizo definitivamente
+[INFO] 16:37:26:104 KERNEL/(4707:4707): Valores de configuracion leidos correctamente
+[INFO] 16:37:26:104 KERNEL/(4707:4707): Memoria
+[INFO] 16:37:26:104 KERNEL/(4707:4707): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:37:26:105 KERNEL/(4707:4707): Cpu
+[INFO] 16:37:26:105 KERNEL/(4707:4707): Se establecio correctamente la conexion
+[INFO] 16:37:26:105 KERNEL/(4707:4707): File system
+[INFO] 16:37:26:105 KERNEL/(4707:4707): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:37:26:105 KERNEL/(4707:4707): Kernel listo para recibir Consolas
+[INFO] 16:37:33:645 KERNEL/(4707:4718): Se conecto un cliente!
+[INFO] 16:37:33:646 KERNEL/(4707:4718): El proceso: 0 llego a estado new
+[INFO] 16:37:33:650 KERNEL/(4707:4716): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:37:33:651 KERNEL/(4707:4713): Exec libre => estado_ready comienza a planificar
+[INFO] 16:37:33:651 KERNEL/(4707:4715): El proceso: 0 llego a estado exec
+[INFO] 16:37:37:654 KERNEL/(4707:4715): El IP esta en 4
+[INFO] 16:37:37:654 KERNEL/(4707:4715): El size de las instrucciones es 5
+[INFO] 16:37:37:654 KERNEL/(4707:4715): El numero de estado es: 2
+[INFO] 16:37:37:654 KERNEL/(4707:4715): El parametro de interrupcion es: 5
+[INFO] 16:37:37:654 KERNEL/(4707:4715): IO BLOCK
+[INFO] 16:37:37:654 KERNEL/(4707:4715): Tiempo: 5
+[INFO] 16:37:37:655 KERNEL/(4707:4736): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:37:42:656 KERNEL/(4707:4736): El proceso: 0 finalizo en I/O block
+[INFO] 16:37:42:657 KERNEL/(4707:4715): El proceso: 0 termino de ejecutar
+[INFO] 16:37:42:657 KERNEL/(4707:4713): Exec libre => estado_ready comienza a planificar
+[INFO] 16:37:42:657 KERNEL/(4707:4715): El proceso: 0 llego a estado exec
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El IP esta en 5
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El size de las instrucciones es 5
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El numero de estado es: 0
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El parametro de interrupcion es: 0
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El contexto se ejecutó completamente
+[INFO] 16:37:43:658 KERNEL/(4707:4715): El proceso: 0 termino de ejecutar
+[INFO] 16:37:43:658 KERNEL/(4707:4717): El proceso: 0 ingreso a exit
+[INFO] 16:37:43:658 KERNEL/(4707:4717): El proceso: 0 finalizo definitivamente
+[INFO] 16:37:50:055 KERNEL/(4707:4718): Se conecto un cliente!
+[INFO] 16:37:50:055 KERNEL/(4707:4718): El proceso: 1 llego a estado new
+[INFO] 16:37:50:056 KERNEL/(4707:4716): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:37:50:056 KERNEL/(4707:4713): Exec libre => estado_ready comienza a planificar
+[INFO] 16:37:50:056 KERNEL/(4707:4715): El proceso: 1 llego a estado exec
+[INFO] 16:37:54:058 KERNEL/(4707:4715): El IP esta en 4
+[INFO] 16:37:54:059 KERNEL/(4707:4715): El size de las instrucciones es 5
+[INFO] 16:37:54:059 KERNEL/(4707:4715): El numero de estado es: 2
+[INFO] 16:37:54:059 KERNEL/(4707:4715): El parametro de interrupcion es: 5
+[INFO] 16:37:54:059 KERNEL/(4707:4715): IO BLOCK
+[INFO] 16:37:54:059 KERNEL/(4707:4715): Tiempo: 5
+[INFO] 16:37:54:060 KERNEL/(4707:4755): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:37:59:061 KERNEL/(4707:4755): El proceso: 1 finalizo en I/O block
+[INFO] 16:37:59:062 KERNEL/(4707:4715): El proceso: 1 termino de ejecutar
+[INFO] 16:37:59:062 KERNEL/(4707:4713): Exec libre => estado_ready comienza a planificar
+[INFO] 16:39:33:334 KERNEL/(4839:4839): Valores de configuracion leidos correctamente
+[INFO] 16:39:33:334 KERNEL/(4839:4839): Memoria
+[INFO] 16:39:33:334 KERNEL/(4839:4839): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:39:33:335 KERNEL/(4839:4839): Cpu
+[INFO] 16:39:33:335 KERNEL/(4839:4839): Se establecio correctamente la conexion
+[INFO] 16:39:33:335 KERNEL/(4839:4839): File system
+[INFO] 16:39:33:335 KERNEL/(4839:4839): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:39:33:335 KERNEL/(4839:4839): Kernel listo para recibir Consolas
+[INFO] 16:39:41:709 KERNEL/(4839:4850): Se conecto un cliente!
+[INFO] 16:39:41:716 KERNEL/(4839:4850): El proceso: 0 llego a estado new
+[INFO] 16:39:41:716 KERNEL/(4839:4848): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:39:41:716 KERNEL/(4839:4845): Exec libre => estado_ready comienza a planificar
+[INFO] 16:39:41:716 KERNEL/(4839:4847): El proceso: 0 llego a estado exec
+[INFO] 16:39:45:718 KERNEL/(4839:4847): El IP esta en 4
+[INFO] 16:39:45:718 KERNEL/(4839:4847): El size de las instrucciones es 5
+[INFO] 16:39:45:718 KERNEL/(4839:4847): El numero de estado es: 2
+[INFO] 16:39:45:718 KERNEL/(4839:4847): El parametro de interrupcion es: 5
+[INFO] 16:39:45:718 KERNEL/(4839:4847): IO BLOCK
+[INFO] 16:39:45:718 KERNEL/(4839:4847): Tiempo: 5
+[INFO] 16:39:45:721 KERNEL/(4839:4869): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:39:50:723 KERNEL/(4839:4869): El proceso: 0 finalizo en I/O block
+[INFO] 16:39:50:723 KERNEL/(4839:4847): El proceso: 0 termino de ejecutar
+[INFO] 16:40:45:002 KERNEL/(4925:4925): Valores de configuracion leidos correctamente
+[INFO] 16:40:45:005 KERNEL/(4925:4925): Memoria
+[INFO] 16:40:45:005 KERNEL/(4925:4925): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:40:45:005 KERNEL/(4925:4925): Cpu
+[INFO] 16:40:45:009 KERNEL/(4925:4925): Se establecio correctamente la conexion
+[INFO] 16:40:45:009 KERNEL/(4925:4925): File system
+[INFO] 16:40:45:016 KERNEL/(4925:4925): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:40:45:016 KERNEL/(4925:4925): Kernel listo para recibir Consolas
+[INFO] 16:40:52:589 KERNEL/(4925:4936): Se conecto un cliente!
+[INFO] 16:40:52:591 KERNEL/(4925:4936): El proceso: 0 llego a estado new
+[INFO] 16:40:52:591 KERNEL/(4925:4934): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:40:52:592 KERNEL/(4925:4931): Exec libre => estado_ready comienza a planificar
+[INFO] 16:40:52:592 KERNEL/(4925:4933): El proceso: 0 llego a estado exec
+[INFO] 16:40:56:595 KERNEL/(4925:4933): El IP esta en 4
+[INFO] 16:40:56:595 KERNEL/(4925:4933): El size de las instrucciones es 5
+[INFO] 16:40:56:595 KERNEL/(4925:4933): El numero de estado es: 2
+[INFO] 16:40:56:595 KERNEL/(4925:4933): El parametro de interrupcion es: 5
+[INFO] 16:40:56:595 KERNEL/(4925:4933): IO BLOCK
+[INFO] 16:40:56:595 KERNEL/(4925:4933): Tiempo: 5
+[INFO] 16:40:56:595 KERNEL/(4925:4933): El proceso: 0 termino de ejecutar
+[INFO] 16:40:56:598 KERNEL/(4925:4953): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:41:01:598 KERNEL/(4925:4953): El proceso: 0 finalizo en I/O block
+[INFO] 16:41:08:806 KERNEL/(4925:4936): Se conecto un cliente!
+[INFO] 16:41:08:807 KERNEL/(4925:4936): El proceso: 1 llego a estado new
+[INFO] 16:41:08:809 KERNEL/(4925:4934): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:41:08:809 KERNEL/(4925:4931): Exec libre => estado_ready comienza a planificar
+[INFO] 16:41:08:810 KERNEL/(4925:4933): El proceso: 0 llego a estado exec
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El IP esta en 5
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El size de las instrucciones es 5
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El numero de estado es: 0
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El parametro de interrupcion es: 0
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El contexto se ejecutó completamente
+[INFO] 16:41:09:812 KERNEL/(4925:4933): El proceso: 0 termino de ejecutar
+[INFO] 16:41:09:812 KERNEL/(4925:4935): El proceso: 0 ingreso a exit
+[INFO] 16:41:09:813 KERNEL/(4925:4935): El proceso: 0 finalizo definitivamente
+[INFO] 16:41:18:207 KERNEL/(4925:4936): Se conecto un cliente!
+[INFO] 16:41:18:208 KERNEL/(4925:4936): El proceso: 2 llego a estado new
+[INFO] 16:41:18:210 KERNEL/(4925:4934): El proceso: 2 se agrego a la lista de ready
+[INFO] 16:41:18:211 KERNEL/(4925:4931): Exec libre => estado_ready comienza a planificar
+[INFO] 16:41:18:211 KERNEL/(4925:4933): El proceso: 1 llego a estado exec
+[INFO] 16:41:22:213 KERNEL/(4925:4933): El IP esta en 4
+[INFO] 16:41:22:213 KERNEL/(4925:4933): El size de las instrucciones es 5
+[INFO] 16:41:22:213 KERNEL/(4925:4933): El numero de estado es: 2
+[INFO] 16:41:22:213 KERNEL/(4925:4933): El parametro de interrupcion es: 5
+[INFO] 16:41:22:213 KERNEL/(4925:4933): IO BLOCK
+[INFO] 16:41:22:213 KERNEL/(4925:4933): Tiempo: 5
+[INFO] 16:41:22:214 KERNEL/(4925:4933): El proceso: 1 termino de ejecutar
+[INFO] 16:41:22:226 KERNEL/(4925:4984): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:41:27:227 KERNEL/(4925:4984): El proceso: 1 finalizo en I/O block
+[INFO] 16:41:33:485 KERNEL/(4925:4936): Se conecto un cliente!
+[INFO] 16:41:33:485 KERNEL/(4925:4936): El proceso: 3 llego a estado new
+[INFO] 16:42:28:456 KERNEL/(4925:4936): Se conecto un cliente!
+[INFO] 16:42:28:456 KERNEL/(4925:4936): El proceso: 4 llego a estado new
+[INFO] 16:45:37:767 KERNEL/(5091:5091): Valores de configuracion leidos correctamente
+[INFO] 16:45:37:767 KERNEL/(5091:5091): Memoria
+[INFO] 16:45:37:768 KERNEL/(5091:5091): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:45:37:768 KERNEL/(5091:5091): Cpu
+[INFO] 16:45:37:768 KERNEL/(5091:5091): Se establecio correctamente la conexion
+[INFO] 16:45:37:768 KERNEL/(5091:5091): File system
+[INFO] 16:45:37:768 KERNEL/(5091:5091): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:45:37:768 KERNEL/(5091:5091): Kernel listo para recibir Consolas
+[INFO] 16:45:42:551 KERNEL/(5091:5102): Se conecto un cliente!
+[INFO] 16:45:42:552 KERNEL/(5091:5102): El proceso: 0 llego a estado new
+[INFO] 16:45:42:552 KERNEL/(5091:5100): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:45:42:552 KERNEL/(5091:5097): Exec libre => estado_ready comienza a planificar
+[INFO] 16:45:42:552 KERNEL/(5091:5099): El proceso: 0 llego a estado exec
+[INFO] 16:45:46:554 KERNEL/(5091:5099): El IP esta en 4
+[INFO] 16:45:46:554 KERNEL/(5091:5099): El size de las instrucciones es 5
+[INFO] 16:45:46:554 KERNEL/(5091:5099): El numero de estado es: 2
+[INFO] 16:45:46:554 KERNEL/(5091:5099): El parametro de interrupcion es: 5
+[INFO] 16:45:46:554 KERNEL/(5091:5099): IO BLOCK
+[INFO] 16:45:46:554 KERNEL/(5091:5099): Tiempo: 5
+[INFO] 16:45:46:554 KERNEL/(5091:5099): El proceso: 0 termino de ejecutar
+[INFO] 16:45:46:557 KERNEL/(5091:5118): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:45:51:557 KERNEL/(5091:5118): El proceso: 0 finalizo en I/O block
+[INFO] 16:45:52:558 KERNEL/(5091:5097): Exec libre => estado_ready comienza a planificar
+[INFO] 16:45:52:558 KERNEL/(5091:5099): El proceso: 0 llego a estado exec
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El IP esta en 5
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El size de las instrucciones es 5
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El numero de estado es: 0
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El parametro de interrupcion es: 0
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El contexto se ejecutó completamente
+[INFO] 16:45:53:559 KERNEL/(5091:5101): El proceso: 0 ingreso a exit
+[INFO] 16:45:53:559 KERNEL/(5091:5099): El proceso: 0 termino de ejecutar
+[INFO] 16:45:53:559 KERNEL/(5091:5101): El proceso: 0 finalizo definitivamente
+[INFO] 16:45:58:739 KERNEL/(5091:5102): Se conecto un cliente!
+[INFO] 16:45:58:740 KERNEL/(5091:5102): El proceso: 1 llego a estado new
+[INFO] 16:45:58:740 KERNEL/(5091:5100): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:45:58:740 KERNEL/(5091:5097): Exec libre => estado_ready comienza a planificar
+[INFO] 16:45:58:740 KERNEL/(5091:5099): El proceso: 1 llego a estado exec
+[INFO] 16:46:02:742 KERNEL/(5091:5099): El IP esta en 4
+[INFO] 16:46:02:742 KERNEL/(5091:5099): El size de las instrucciones es 5
+[INFO] 16:46:02:742 KERNEL/(5091:5099): El numero de estado es: 2
+[INFO] 16:46:02:742 KERNEL/(5091:5099): El parametro de interrupcion es: 5
+[INFO] 16:46:02:742 KERNEL/(5091:5099): IO BLOCK
+[INFO] 16:46:02:742 KERNEL/(5091:5099): Tiempo: 5
+[INFO] 16:46:02:742 KERNEL/(5091:5099): El proceso: 1 termino de ejecutar
+[INFO] 16:46:02:746 KERNEL/(5091:5130): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:46:07:747 KERNEL/(5091:5130): El proceso: 1 finalizo en I/O block
+[INFO] 16:46:08:748 KERNEL/(5091:5097): Exec libre => estado_ready comienza a planificar
+[INFO] 16:53:16:457 KERNEL/(5228:5228): Valores de configuracion leidos correctamente
+[INFO] 16:53:16:458 KERNEL/(5228:5228): Memoria
+[INFO] 16:53:16:458 KERNEL/(5228:5228): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:53:16:459 KERNEL/(5228:5228): Cpu
+[INFO] 16:53:16:459 KERNEL/(5228:5228): Se establecio correctamente la conexion
+[INFO] 16:53:16:459 KERNEL/(5228:5228): File system
+[INFO] 16:53:16:459 KERNEL/(5228:5228): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:53:16:459 KERNEL/(5228:5228): Kernel listo para recibir Consolas
+[INFO] 16:53:25:018 KERNEL/(5228:5239): Se conecto un cliente!
+[INFO] 16:53:25:018 KERNEL/(5228:5239): El proceso: 0 llego a estado new
+[INFO] 16:53:25:018 KERNEL/(5228:5237): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:53:25:019 KERNEL/(5228:5234): Exec libre => estado_ready comienza a planificar
+[INFO] 16:53:25:019 KERNEL/(5228:5236): El proceso: 0 llego a estado exec
+[INFO] 16:53:29:022 KERNEL/(5228:5236): El IP esta en 4
+[INFO] 16:53:29:022 KERNEL/(5228:5236): El size de las instrucciones es 5
+[INFO] 16:53:29:022 KERNEL/(5228:5236): El numero de estado es: 2
+[INFO] 16:53:29:022 KERNEL/(5228:5236): El parametro de interrupcion es: 5
+[INFO] 16:53:29:022 KERNEL/(5228:5236): IO BLOCK
+[INFO] 16:53:29:022 KERNEL/(5228:5236): Tiempo: 5
+[INFO] 16:53:29:022 KERNEL/(5228:5236): El proceso: 0 termino de ejecutar
+[INFO] 16:53:29:029 KERNEL/(5228:5256): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:53:34:029 KERNEL/(5228:5256): El proceso: 0 finalizo en I/O block
+[INFO] 16:53:34:029 KERNEL/(5228:5234): Exec libre => estado_ready comienza a planificar
+[INFO] 16:53:34:029 KERNEL/(5228:5236): El proceso: 0 llego a estado exec
+[INFO] 16:53:35:030 KERNEL/(5228:5236): El IP esta en 5
+[INFO] 16:53:35:031 KERNEL/(5228:5236): El size de las instrucciones es 5
+[INFO] 16:53:35:031 KERNEL/(5228:5236): El numero de estado es: 0
+[INFO] 16:53:35:031 KERNEL/(5228:5236): El parametro de interrupcion es: 0
+[INFO] 16:53:35:031 KERNEL/(5228:5236): El contexto se ejecutó completamente
+[INFO] 16:53:35:031 KERNEL/(5228:5238): El proceso: 0 ingreso a exit
+[INFO] 16:53:35:031 KERNEL/(5228:5236): El proceso: 0 termino de ejecutar
+[INFO] 16:53:35:031 KERNEL/(5228:5238): El proceso: 0 finalizo definitivamente
+[INFO] 16:54:03:474 KERNEL/(5228:5239): Se conecto un cliente!
+[INFO] 16:54:03:474 KERNEL/(5228:5239): El proceso: 1 llego a estado new
+[INFO] 16:54:03:478 KERNEL/(5228:5237): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:54:03:480 KERNEL/(5228:5234): Exec libre => estado_ready comienza a planificar
+[INFO] 16:54:03:480 KERNEL/(5228:5236): El proceso: 1 llego a estado exec
+[INFO] 16:54:07:484 KERNEL/(5228:5236): El IP esta en 4
+[INFO] 16:54:07:484 KERNEL/(5228:5236): El size de las instrucciones es 5
+[INFO] 16:54:07:484 KERNEL/(5228:5236): El numero de estado es: 2
+[INFO] 16:54:07:484 KERNEL/(5228:5236): El parametro de interrupcion es: 5
+[INFO] 16:54:07:484 KERNEL/(5228:5236): IO BLOCK
+[INFO] 16:54:07:484 KERNEL/(5228:5236): Tiempo: 5
+[INFO] 16:54:07:484 KERNEL/(5228:5236): El proceso: 1 termino de ejecutar
+[INFO] 16:54:07:488 KERNEL/(5228:5275): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:54:12:489 KERNEL/(5228:5275): El proceso: 1 finalizo en I/O block
+[INFO] 16:54:12:489 KERNEL/(5228:5234): Exec libre => estado_ready comienza a planificar
+[INFO] 16:55:00:635 KERNEL/(5339:5339): Valores de configuracion leidos correctamente
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Memoria
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Cpu
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Se establecio correctamente la conexion
+[INFO] 16:55:00:636 KERNEL/(5339:5339): File system
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:55:00:636 KERNEL/(5339:5339): Kernel listo para recibir Consolas
+[INFO] 16:55:06:136 KERNEL/(5339:5350): Se conecto un cliente!
+[INFO] 16:55:06:136 KERNEL/(5339:5350): El proceso: 0 llego a estado new
+[INFO] 16:55:06:136 KERNEL/(5339:5348): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:55:06:136 KERNEL/(5339:5345): Exec libre => estado_ready comienza a planificar
+[INFO] 16:55:06:136 KERNEL/(5339:5347): El proceso: 0 llego a estado exec
+[INFO] 16:55:10:139 KERNEL/(5339:5347): El IP esta en 4
+[INFO] 16:55:10:139 KERNEL/(5339:5347): El size de las instrucciones es 5
+[INFO] 16:55:10:139 KERNEL/(5339:5347): El numero de estado es: 2
+[INFO] 16:55:10:139 KERNEL/(5339:5347): El parametro de interrupcion es: 5
+[INFO] 16:55:10:139 KERNEL/(5339:5347): IO BLOCK
+[INFO] 16:55:10:139 KERNEL/(5339:5347): Tiempo: 5
+[INFO] 16:55:10:139 KERNEL/(5339:5347): El proceso: 0 termino de ejecutar
+[INFO] 16:55:10:142 KERNEL/(5339:5366): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:55:15:142 KERNEL/(5339:5366): El proceso: 0 finalizo en I/O block
+[INFO] 16:55:26:980 KERNEL/(5339:5350): Se conecto un cliente!
+[INFO] 16:55:26:981 KERNEL/(5339:5350): El proceso: 1 llego a estado new
+[INFO] 16:55:26:981 KERNEL/(5339:5348): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:55:26:981 KERNEL/(5339:5345): Exec libre => estado_ready comienza a planificar
+[INFO] 16:55:26:981 KERNEL/(5339:5347): El proceso: 0 llego a estado exec
+[INFO] 16:55:27:981 KERNEL/(5339:5347): El IP esta en 5
+[INFO] 16:55:27:981 KERNEL/(5339:5347): El size de las instrucciones es 5
+[INFO] 16:55:27:981 KERNEL/(5339:5347): El numero de estado es: 0
+[INFO] 16:55:27:982 KERNEL/(5339:5347): El parametro de interrupcion es: 0
+[INFO] 16:55:27:982 KERNEL/(5339:5347): El contexto se ejecutó completamente
+[INFO] 16:55:27:982 KERNEL/(5339:5349): El proceso: 0 ingreso a exit
+[INFO] 16:55:27:982 KERNEL/(5339:5347): El proceso: 0 termino de ejecutar
+[INFO] 16:55:27:982 KERNEL/(5339:5349): El proceso: 0 finalizo definitivamente
+[INFO] 16:55:38:385 KERNEL/(5339:5350): Se conecto un cliente!
+[INFO] 16:55:38:385 KERNEL/(5339:5350): El proceso: 2 llego a estado new
+[INFO] 16:55:38:385 KERNEL/(5339:5348): El proceso: 2 se agrego a la lista de ready
+[INFO] 16:55:38:385 KERNEL/(5339:5345): Exec libre => estado_ready comienza a planificar
+[INFO] 16:55:38:385 KERNEL/(5339:5347): El proceso: 1 llego a estado exec
+[INFO] 16:55:42:388 KERNEL/(5339:5347): El IP esta en 4
+[INFO] 16:55:42:388 KERNEL/(5339:5347): El size de las instrucciones es 5
+[INFO] 16:55:42:389 KERNEL/(5339:5347): El numero de estado es: 2
+[INFO] 16:55:42:389 KERNEL/(5339:5347): El parametro de interrupcion es: 5
+[INFO] 16:55:42:389 KERNEL/(5339:5347): IO BLOCK
+[INFO] 16:55:42:389 KERNEL/(5339:5347): Tiempo: 5
+[INFO] 16:55:42:389 KERNEL/(5339:5347): El proceso: 1 termino de ejecutar
+[INFO] 16:55:42:392 KERNEL/(5339:5399): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:55:47:393 KERNEL/(5339:5399): El proceso: 1 finalizo en I/O block
+[INFO] 16:55:55:764 KERNEL/(5339:5350): Se conecto un cliente!
+[INFO] 16:55:55:765 KERNEL/(5339:5350): El proceso: 3 llego a estado new
+[INFO] 16:57:29:915 KERNEL/(5474:5474): Valores de configuracion leidos correctamente
+[INFO] 16:57:29:915 KERNEL/(5474:5474): Memoria
+[INFO] 16:57:29:915 KERNEL/(5474:5474): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:57:29:916 KERNEL/(5474:5474): Cpu
+[INFO] 16:57:29:916 KERNEL/(5474:5474): Se establecio correctamente la conexion
+[INFO] 16:57:29:916 KERNEL/(5474:5474): File system
+[INFO] 16:57:29:916 KERNEL/(5474:5474): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:57:29:916 KERNEL/(5474:5474): Kernel listo para recibir Consolas
+[INFO] 16:57:39:887 KERNEL/(5474:5485): Se conecto un cliente!
+[INFO] 16:57:39:893 KERNEL/(5474:5485): El proceso: 0 llego a estado new
+[INFO] 16:57:39:893 KERNEL/(5474:5483): El proceso: 0 se agrego a la lista de ready
+[INFO] 16:57:39:893 KERNEL/(5474:5480): Exec libre => estado_ready comienza a planificar
+[INFO] 16:57:39:893 KERNEL/(5474:5482): El proceso: 0 llego a estado exec
+[INFO] 16:57:43:897 KERNEL/(5474:5482): El IP esta en 4
+[INFO] 16:57:43:897 KERNEL/(5474:5482): El size de las instrucciones es 5
+[INFO] 16:57:43:897 KERNEL/(5474:5482): El numero de estado es: 2
+[INFO] 16:57:43:897 KERNEL/(5474:5482): El parametro de interrupcion es: 5
+[INFO] 16:57:43:897 KERNEL/(5474:5482): IO BLOCK
+[INFO] 16:57:43:897 KERNEL/(5474:5482): Tiempo: 5
+[INFO] 16:57:43:897 KERNEL/(5474:5482): El proceso: 0 termino de ejecutar
+[INFO] 16:57:43:904 KERNEL/(5474:5503): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 16:57:48:904 KERNEL/(5474:5503): El proceso: 0 finalizo en I/O block
+[INFO] 16:57:48:904 KERNEL/(5474:5480): Exec libre => estado_ready comienza a planificar
+[INFO] 16:57:48:904 KERNEL/(5474:5482): El proceso: 0 llego a estado exec
+[INFO] 16:57:49:905 KERNEL/(5474:5482): El IP esta en 5
+[INFO] 16:57:49:906 KERNEL/(5474:5482): El size de las instrucciones es 5
+[INFO] 16:57:49:906 KERNEL/(5474:5482): El numero de estado es: 0
+[INFO] 16:57:49:906 KERNEL/(5474:5482): El parametro de interrupcion es: 0
+[INFO] 16:57:49:906 KERNEL/(5474:5482): El contexto se ejecutó completamente
+[INFO] 16:57:49:906 KERNEL/(5474:5484): El proceso: 0 ingreso a exit
+[INFO] 16:57:49:906 KERNEL/(5474:5482): El proceso: 0 termino de ejecutar
+[INFO] 16:57:49:906 KERNEL/(5474:5484): El proceso: 0 finalizo definitivamente
+[INFO] 16:57:59:095 KERNEL/(5474:5485): Se conecto un cliente!
+[INFO] 16:57:59:095 KERNEL/(5474:5485): El proceso: 1 llego a estado new
+[INFO] 16:57:59:095 KERNEL/(5474:5483): El proceso: 1 se agrego a la lista de ready
+[INFO] 16:57:59:095 KERNEL/(5474:5480): Exec libre => estado_ready comienza a planificar
+[INFO] 16:57:59:095 KERNEL/(5474:5482): El proceso: 1 llego a estado exec
+[INFO] 16:58:03:099 KERNEL/(5474:5482): El IP esta en 4
+[INFO] 16:58:03:099 KERNEL/(5474:5482): El size de las instrucciones es 5
+[INFO] 16:58:03:099 KERNEL/(5474:5482): El numero de estado es: 2
+[INFO] 16:58:03:099 KERNEL/(5474:5482): El parametro de interrupcion es: 5
+[INFO] 16:58:03:099 KERNEL/(5474:5482): IO BLOCK
+[INFO] 16:58:03:099 KERNEL/(5474:5482): Tiempo: 5
+[INFO] 16:58:03:099 KERNEL/(5474:5482): El proceso: 1 termino de ejecutar
+[INFO] 16:58:03:105 KERNEL/(5474:5519): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 16:58:08:105 KERNEL/(5474:5519): El proceso: 1 finalizo en I/O block
+[INFO] 16:58:08:106 KERNEL/(5474:5480): Exec libre => estado_ready comienza a planificar
+[INFO] 16:59:35:206 KERNEL/(5572:5572): Valores de configuracion leidos correctamente
+[INFO] 16:59:35:619 KERNEL/(5572:5572): Memoria
+[INFO] 16:59:35:636 KERNEL/(5572:5572): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:59:35:658 KERNEL/(5572:5572): Cpu
+[INFO] 16:59:35:659 KERNEL/(5572:5572): Se establecio correctamente la conexion
+[INFO] 16:59:35:663 KERNEL/(5572:5572): File system
+[INFO] 16:59:35:666 KERNEL/(5572:5572): Fallo al realizar el handshake, cerrando conexion
+[INFO] 16:59:35:790 KERNEL/(5572:5572): Kernel listo para recibir Consolas
+[INFO] 17:00:39:597 KERNEL/(5572:5583): Se conecto un cliente!
+[INFO] 17:00:39:651 KERNEL/(5572:5583): El proceso: 0 llego a estado new
+[INFO] 17:00:39:700 KERNEL/(5572:5581): El proceso: 0 se agrego a la lista de ready
+[INFO] 17:00:39:701 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:00:39:710 KERNEL/(5572:5580): El proceso: 0 llego a estado exec
+[INFO] 17:00:43:794 KERNEL/(5572:5580): El IP esta en 4
+[INFO] 17:00:43:807 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:00:43:808 KERNEL/(5572:5580): El numero de estado es: 2
+[INFO] 17:00:43:809 KERNEL/(5572:5580): El parametro de interrupcion es: 5
+[INFO] 17:00:43:811 KERNEL/(5572:5580): IO BLOCK
+[INFO] 17:00:43:819 KERNEL/(5572:5580): Tiempo: 5
+[INFO] 17:00:43:884 KERNEL/(5572:5580): El proceso: 0 termino de ejecutar
+[INFO] 17:00:43:902 KERNEL/(5572:5600): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 17:00:48:913 KERNEL/(5572:5600): El proceso: 0 finalizo en I/O block
+[INFO] 17:00:48:915 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:00:48:928 KERNEL/(5572:5580): El proceso: 0 llego a estado exec
+[INFO] 17:00:49:935 KERNEL/(5572:5580): El IP esta en 5
+[INFO] 17:00:49:936 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:00:49:936 KERNEL/(5572:5580): El numero de estado es: 0
+[INFO] 17:00:49:937 KERNEL/(5572:5580): El parametro de interrupcion es: 0
+[INFO] 17:00:49:938 KERNEL/(5572:5582): El proceso: 0 ingreso a exit
+[INFO] 17:00:49:939 KERNEL/(5572:5582): El proceso: 0 finalizo definitivamente
+[INFO] 17:00:49:941 KERNEL/(5572:5580): El contexto se ejecutó completamente
+[INFO] 17:00:49:948 KERNEL/(5572:5580): El proceso: 0 termino de ejecutar
+[INFO] 17:00:52:282 KERNEL/(5572:5583): Se conecto un cliente!
+[INFO] 17:00:52:283 KERNEL/(5572:5583): El proceso: 1 llego a estado new
+[INFO] 17:00:52:305 KERNEL/(5572:5581): El proceso: 1 se agrego a la lista de ready
+[INFO] 17:00:52:335 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:00:52:336 KERNEL/(5572:5580): El proceso: 1 llego a estado exec
+[INFO] 17:00:56:340 KERNEL/(5572:5580): El IP esta en 4
+[INFO] 17:00:56:340 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:00:56:341 KERNEL/(5572:5580): El numero de estado es: 2
+[INFO] 17:00:56:341 KERNEL/(5572:5580): El parametro de interrupcion es: 5
+[INFO] 17:00:56:342 KERNEL/(5572:5580): IO BLOCK
+[INFO] 17:00:56:343 KERNEL/(5572:5580): Tiempo: 5
+[INFO] 17:00:56:362 KERNEL/(5572:5616): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 17:00:56:365 KERNEL/(5572:5580): El proceso: 1 termino de ejecutar
+[INFO] 17:01:01:388 KERNEL/(5572:5616): El proceso: 1 finalizo en I/O block
+[INFO] 17:01:01:402 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:01:01:415 KERNEL/(5572:5580): El proceso: 1 llego a estado exec
+[INFO] 17:01:02:445 KERNEL/(5572:5580): El IP esta en 5
+[INFO] 17:01:02:446 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:01:02:464 KERNEL/(5572:5580): El numero de estado es: 0
+[INFO] 17:01:02:485 KERNEL/(5572:5580): El parametro de interrupcion es: 0
+[INFO] 17:01:02:492 KERNEL/(5572:5580): El contexto se ejecutó completamente
+[INFO] 17:01:02:495 KERNEL/(5572:5580): El proceso: 1 termino de ejecutar
+[INFO] 17:01:02:494 KERNEL/(5572:5582): El proceso: 1 ingreso a exit
+[INFO] 17:01:02:505 KERNEL/(5572:5582): El proceso: 1 finalizo definitivamente
+[INFO] 17:01:08:719 KERNEL/(5572:5583): Se conecto un cliente!
+[INFO] 17:01:08:755 KERNEL/(5572:5583): El proceso: 2 llego a estado new
+[INFO] 17:01:08:756 KERNEL/(5572:5581): El proceso: 2 se agrego a la lista de ready
+[INFO] 17:01:08:757 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:01:08:758 KERNEL/(5572:5580): El proceso: 2 llego a estado exec
+[INFO] 17:01:12:785 KERNEL/(5572:5580): El IP esta en 4
+[INFO] 17:01:12:804 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:01:12:820 KERNEL/(5572:5580): El numero de estado es: 2
+[INFO] 17:01:12:822 KERNEL/(5572:5580): El parametro de interrupcion es: 5
+[INFO] 17:01:12:823 KERNEL/(5572:5580): IO BLOCK
+[INFO] 17:01:12:835 KERNEL/(5572:5580): Tiempo: 5
+[INFO] 17:01:12:867 KERNEL/(5572:5580): El proceso: 2 termino de ejecutar
+[INFO] 17:01:12:868 KERNEL/(5572:5632): El proceso: 2 esta en I/O block. Tiempo: 5 
+[INFO] 17:01:17:899 KERNEL/(5572:5632): El proceso: 2 finalizo en I/O block
+[INFO] 17:01:17:900 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:01:17:915 KERNEL/(5572:5580): El proceso: 2 llego a estado exec
+[INFO] 17:01:18:939 KERNEL/(5572:5580): El IP esta en 5
+[INFO] 17:01:18:965 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:01:19:014 KERNEL/(5572:5580): El numero de estado es: 0
+[INFO] 17:01:19:044 KERNEL/(5572:5580): El parametro de interrupcion es: 0
+[INFO] 17:01:19:054 KERNEL/(5572:5580): El contexto se ejecutó completamente
+[INFO] 17:01:19:055 KERNEL/(5572:5582): El proceso: 2 ingreso a exit
+[INFO] 17:01:19:105 KERNEL/(5572:5580): El proceso: 2 termino de ejecutar
+[INFO] 17:01:19:119 KERNEL/(5572:5582): El proceso: 2 finalizo definitivamente
+[INFO] 17:01:32:686 KERNEL/(5572:5583): Se conecto un cliente!
+[INFO] 17:01:32:687 KERNEL/(5572:5583): El proceso: 3 llego a estado new
+[INFO] 17:01:32:688 KERNEL/(5572:5581): El proceso: 3 se agrego a la lista de ready
+[INFO] 17:01:32:688 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:01:32:714 KERNEL/(5572:5580): El proceso: 3 llego a estado exec
+[INFO] 17:01:36:744 KERNEL/(5572:5580): El IP esta en 4
+[INFO] 17:01:36:745 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:01:36:745 KERNEL/(5572:5580): El numero de estado es: 2
+[INFO] 17:01:36:746 KERNEL/(5572:5580): El parametro de interrupcion es: 5
+[INFO] 17:01:36:746 KERNEL/(5572:5580): IO BLOCK
+[INFO] 17:01:36:747 KERNEL/(5572:5580): Tiempo: 5
+[INFO] 17:01:36:755 KERNEL/(5572:5649): El proceso: 3 esta en I/O block. Tiempo: 5 
+[INFO] 17:01:36:755 KERNEL/(5572:5580): El proceso: 3 termino de ejecutar
+[INFO] 17:01:41:758 KERNEL/(5572:5649): El proceso: 3 finalizo en I/O block
+[INFO] 17:01:41:764 KERNEL/(5572:5578): Exec libre => estado_ready comienza a planificar
+[INFO] 17:01:41:783 KERNEL/(5572:5580): El proceso: 3 llego a estado exec
+[INFO] 17:01:42:785 KERNEL/(5572:5580): El IP esta en 5
+[INFO] 17:01:42:785 KERNEL/(5572:5580): El size de las instrucciones es 5
+[INFO] 17:01:42:786 KERNEL/(5572:5580): El numero de estado es: 0
+[INFO] 17:01:42:786 KERNEL/(5572:5580): El parametro de interrupcion es: 0
+[INFO] 17:01:42:793 KERNEL/(5572:5580): El contexto se ejecutó completamente
+[INFO] 17:01:42:803 KERNEL/(5572:5582): El proceso: 3 ingreso a exit
+[INFO] 17:01:42:825 KERNEL/(5572:5580): El proceso: 3 termino de ejecutar
+[INFO] 17:01:42:826 KERNEL/(5572:5582): El proceso: 3 finalizo definitivamente
+[INFO] 17:05:02:530 KERNEL/(5992:5992): Valores de configuracion leidos correctamente
+[INFO] 17:05:02:531 KERNEL/(5992:5992): Memoria
+[INFO] 17:05:02:532 KERNEL/(5992:5992): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:05:02:532 KERNEL/(5992:5992): Cpu
+[INFO] 17:05:02:532 KERNEL/(5992:5992): Se establecio correctamente la conexion
+[INFO] 17:05:02:532 KERNEL/(5992:5992): File system
+[INFO] 17:05:02:532 KERNEL/(5992:5992): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:05:02:533 KERNEL/(5992:5992): Kernel listo para recibir Consolas
+[INFO] 17:05:09:448 KERNEL/(5992:6003): Se conecto un cliente!
+[INFO] 17:05:09:448 KERNEL/(5992:6003): El proceso: 0 llego a estado new
+[INFO] 17:05:09:449 KERNEL/(5992:6001): El proceso: 0 se agrego a la lista de ready
+[INFO] 17:05:09:449 KERNEL/(5992:5998): Exec libre => estado_ready comienza a planificar
+[INFO] 17:05:09:449 KERNEL/(5992:6000): El proceso: 0 llego a estado exec
+[INFO] 17:05:13:451 KERNEL/(5992:6000): El IP esta en 4
+[INFO] 17:05:13:452 KERNEL/(5992:6000): El size de las instrucciones es 5
+[INFO] 17:05:13:452 KERNEL/(5992:6000): El numero de estado es: 2
+[INFO] 17:05:13:452 KERNEL/(5992:6000): El parametro de interrupcion es: 5
+[INFO] 17:05:13:452 KERNEL/(5992:6000): IO BLOCK
+[INFO] 17:05:13:452 KERNEL/(5992:6000): Tiempo: 5
+[INFO] 17:05:13:452 KERNEL/(5992:6000): El proceso: 0 termino de ejecutar
+[INFO] 17:05:13:456 KERNEL/(5992:6019): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 17:05:18:456 KERNEL/(5992:6019): El proceso: 0 finalizo en I/O block
+[INFO] 17:05:18:457 KERNEL/(5992:5998): Exec libre => estado_ready comienza a planificar
+[INFO] 17:05:18:457 KERNEL/(5992:6000): El proceso: 0 llego a estado exec
+[INFO] 17:05:19:458 KERNEL/(5992:6000): El IP esta en 5
+[INFO] 17:05:19:458 KERNEL/(5992:6000): El size de las instrucciones es 5
+[INFO] 17:05:19:458 KERNEL/(5992:6000): El numero de estado es: 0
+[INFO] 17:05:19:458 KERNEL/(5992:6000): El parametro de interrupcion es: 0
+[INFO] 17:05:19:458 KERNEL/(5992:6000): El proceso: 0 termino de ejecutar
+[INFO] 17:05:19:458 KERNEL/(5992:6002): El proceso: 0 ingreso a exit
+[INFO] 17:05:19:458 KERNEL/(5992:6002): El proceso: 0 finalizo definitivamente
+[INFO] 17:05:26:145 KERNEL/(5992:6003): Se conecto un cliente!
+[INFO] 17:05:26:145 KERNEL/(5992:6003): El proceso: 1 llego a estado new
+[INFO] 17:05:26:146 KERNEL/(5992:6001): El proceso: 1 se agrego a la lista de ready
+[INFO] 17:05:26:146 KERNEL/(5992:5998): Exec libre => estado_ready comienza a planificar
+[INFO] 17:05:26:146 KERNEL/(5992:6000): El proceso: 1 llego a estado exec
+[INFO] 17:05:30:149 KERNEL/(5992:6000): El IP esta en 4
+[INFO] 17:05:30:149 KERNEL/(5992:6000): El size de las instrucciones es 5
+[INFO] 17:05:30:149 KERNEL/(5992:6000): El numero de estado es: 2
+[INFO] 17:05:30:149 KERNEL/(5992:6000): El parametro de interrupcion es: 5
+[INFO] 17:05:30:149 KERNEL/(5992:6000): IO BLOCK
+[INFO] 17:05:30:149 KERNEL/(5992:6000): Tiempo: 5
+[INFO] 17:05:30:149 KERNEL/(5992:6000): El proceso: 1 termino de ejecutar
+[INFO] 17:05:30:153 KERNEL/(5992:6036): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 17:05:35:154 KERNEL/(5992:6036): El proceso: 1 finalizo en I/O block
+[INFO] 17:05:35:154 KERNEL/(5992:5998): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:11:387 KERNEL/(6114:6114): Valores de configuracion leidos correctamente
+[INFO] 17:08:11:390 KERNEL/(6114:6114): Memoria
+[INFO] 17:08:11:390 KERNEL/(6114:6114): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:08:11:390 KERNEL/(6114:6114): Cpu
+[INFO] 17:08:11:394 KERNEL/(6114:6114): Se establecio correctamente la conexion
+[INFO] 17:08:11:394 KERNEL/(6114:6114): File system
+[INFO] 17:08:11:394 KERNEL/(6114:6114): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:08:11:394 KERNEL/(6114:6114): Kernel listo para recibir Consolas
+[INFO] 17:08:18:813 KERNEL/(6114:6125): Se conecto un cliente!
+[INFO] 17:08:18:815 KERNEL/(6114:6125): El proceso: 0 llego a estado new
+[INFO] 17:08:18:815 KERNEL/(6114:6123): El proceso: 0 se agrego a la lista de ready
+[INFO] 17:08:18:815 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:18:815 KERNEL/(6114:6122): El proceso: 0 llego a estado exec
+[INFO] 17:08:22:818 KERNEL/(6114:6122): El IP esta en 4
+[INFO] 17:08:22:818 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:08:22:818 KERNEL/(6114:6122): El numero de estado es: 2
+[INFO] 17:08:22:818 KERNEL/(6114:6122): El parametro de interrupcion es: 5
+[INFO] 17:08:22:818 KERNEL/(6114:6122): IO BLOCK
+[INFO] 17:08:22:819 KERNEL/(6114:6122): Tiempo: 5
+[INFO] 17:08:22:819 KERNEL/(6114:6122): El proceso: 0 termino de ejecutar
+[INFO] 17:08:22:822 KERNEL/(6114:6142): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 17:08:27:822 KERNEL/(6114:6142): El proceso: 0 finalizo en I/O block
+[INFO] 17:08:27:822 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:27:822 KERNEL/(6114:6122): El proceso: 0 llego a estado exec
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El IP esta en 5
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El numero de estado es: 0
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El parametro de interrupcion es: 0
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El contexto se ejecutó completamente
+[INFO] 17:08:28:825 KERNEL/(6114:6124): El proceso: 0 ingreso a exit
+[INFO] 17:08:28:825 KERNEL/(6114:6122): El proceso: 0 termino de ejecutar
+[INFO] 17:08:28:825 KERNEL/(6114:6124): El proceso: 0 finalizo definitivamente
+[INFO] 17:08:28:887 KERNEL/(6114:6125): Se conecto un cliente!
+[INFO] 17:08:28:899 KERNEL/(6114:6125): El proceso: 1 llego a estado new
+[INFO] 17:08:28:899 KERNEL/(6114:6123): El proceso: 1 se agrego a la lista de ready
+[INFO] 17:08:28:899 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:28:899 KERNEL/(6114:6122): El proceso: 1 llego a estado exec
+[INFO] 17:08:32:900 KERNEL/(6114:6122): El IP esta en 4
+[INFO] 17:08:32:901 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:08:32:901 KERNEL/(6114:6122): El numero de estado es: 2
+[INFO] 17:08:32:901 KERNEL/(6114:6122): El parametro de interrupcion es: 5
+[INFO] 17:08:32:901 KERNEL/(6114:6122): IO BLOCK
+[INFO] 17:08:32:901 KERNEL/(6114:6122): Tiempo: 5
+[INFO] 17:08:32:901 KERNEL/(6114:6122): El proceso: 1 termino de ejecutar
+[INFO] 17:08:32:904 KERNEL/(6114:6158): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 17:08:37:905 KERNEL/(6114:6158): El proceso: 1 finalizo en I/O block
+[INFO] 17:08:37:905 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:37:905 KERNEL/(6114:6122): El proceso: 1 llego a estado exec
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El IP esta en 5
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El numero de estado es: 0
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El parametro de interrupcion es: 0
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El contexto se ejecutó completamente
+[INFO] 17:08:38:906 KERNEL/(6114:6124): El proceso: 1 ingreso a exit
+[INFO] 17:08:38:906 KERNEL/(6114:6122): El proceso: 1 termino de ejecutar
+[INFO] 17:08:38:906 KERNEL/(6114:6124): El proceso: 1 finalizo definitivamente
+[INFO] 17:08:51:843 KERNEL/(6114:6125): Se conecto un cliente!
+[INFO] 17:08:51:844 KERNEL/(6114:6125): El proceso: 2 llego a estado new
+[INFO] 17:08:51:844 KERNEL/(6114:6123): El proceso: 2 se agrego a la lista de ready
+[INFO] 17:08:51:844 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:08:51:844 KERNEL/(6114:6122): El proceso: 2 llego a estado exec
+[INFO] 17:08:55:846 KERNEL/(6114:6122): El IP esta en 4
+[INFO] 17:08:55:846 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:08:55:846 KERNEL/(6114:6122): El numero de estado es: 2
+[INFO] 17:08:55:846 KERNEL/(6114:6122): El parametro de interrupcion es: 5
+[INFO] 17:08:55:846 KERNEL/(6114:6122): IO BLOCK
+[INFO] 17:08:55:846 KERNEL/(6114:6122): Tiempo: 5
+[INFO] 17:08:55:846 KERNEL/(6114:6122): El proceso: 2 termino de ejecutar
+[INFO] 17:08:55:849 KERNEL/(6114:6174): El proceso: 2 esta en I/O block. Tiempo: 5 
+[INFO] 17:09:00:849 KERNEL/(6114:6174): El proceso: 2 finalizo en I/O block
+[INFO] 17:09:00:849 KERNEL/(6114:6120): Exec libre => estado_ready comienza a planificar
+[INFO] 17:09:00:849 KERNEL/(6114:6122): El proceso: 2 llego a estado exec
+[INFO] 17:09:01:850 KERNEL/(6114:6122): El IP esta en 5
+[INFO] 17:09:01:851 KERNEL/(6114:6122): El size de las instrucciones es 5
+[INFO] 17:09:01:851 KERNEL/(6114:6122): El numero de estado es: 0
+[INFO] 17:09:01:851 KERNEL/(6114:6122): El parametro de interrupcion es: 0
+[INFO] 17:09:01:851 KERNEL/(6114:6122): El contexto se ejecutó completamente
+[INFO] 17:09:01:851 KERNEL/(6114:6124): El proceso: 2 ingreso a exit
+[INFO] 17:09:01:851 KERNEL/(6114:6124): El proceso: 2 finalizo definitivamente
+[INFO] 17:09:01:851 KERNEL/(6114:6122): El proceso: 2 termino de ejecutar
+[INFO] 17:10:07:584 KERNEL/(6245:6245): Valores de configuracion leidos correctamente
+[INFO] 17:10:07:585 KERNEL/(6245:6245): Memoria
+[INFO] 17:10:07:585 KERNEL/(6245:6245): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:10:07:586 KERNEL/(6245:6245): Cpu
+[INFO] 17:10:07:586 KERNEL/(6245:6245): Se establecio correctamente la conexion
+[INFO] 17:10:07:586 KERNEL/(6245:6245): File system
+[INFO] 17:10:07:586 KERNEL/(6245:6245): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:10:07:586 KERNEL/(6245:6245): Kernel listo para recibir Consolas
+[INFO] 17:10:15:689 KERNEL/(6245:6257): Se conecto un cliente!
+[INFO] 17:10:15:689 KERNEL/(6245:6257): El proceso: 0 llego a estado new
+[INFO] 17:10:15:689 KERNEL/(6245:6255): El proceso: 0 se agrego a la lista de ready
+[INFO] 17:10:15:689 KERNEL/(6245:6252): Exec libre => estado_ready comienza a planificar
+[INFO] 17:10:15:689 KERNEL/(6245:6254): El proceso: 0 llego a estado exec
+[INFO] 17:10:19:691 KERNEL/(6245:6254): El IP esta en 4
+[INFO] 17:10:19:692 KERNEL/(6245:6254): El size de las instrucciones es 5
+[INFO] 17:10:19:692 KERNEL/(6245:6254): El numero de estado es: 2
+[INFO] 17:10:19:692 KERNEL/(6245:6254): El parametro de interrupcion es: 5
+[INFO] 17:10:19:692 KERNEL/(6245:6254): IO BLOCK
+[INFO] 17:10:19:692 KERNEL/(6245:6254): Tiempo: 5
+[INFO] 17:10:19:692 KERNEL/(6245:6254): El proceso: 0 termino de ejecutar
+[INFO] 17:10:19:695 KERNEL/(6245:6273): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 17:10:24:696 KERNEL/(6245:6273): El proceso: 0 finalizo en I/O block
+[INFO] 17:10:24:696 KERNEL/(6245:6252): Exec libre => estado_ready comienza a planificar
+[INFO] 17:10:24:696 KERNEL/(6245:6254): El proceso: 603979920 llego a estado exec
+[INFO] 17:10:25:696 KERNEL/(6245:6254): El IP esta en 5
+[INFO] 17:10:25:697 KERNEL/(6245:6254): El size de las instrucciones es 5
+[INFO] 17:10:25:697 KERNEL/(6245:6254): El numero de estado es: 0
+[INFO] 17:10:25:697 KERNEL/(6245:6254): El parametro de interrupcion es: 0
+[INFO] 17:10:25:697 KERNEL/(6245:6254): El contexto se ejecutó completamente
+[INFO] 17:10:25:697 KERNEL/(6245:6256): El proceso: 603979920 ingreso a exit
+[INFO] 17:10:25:697 KERNEL/(6245:6254): El proceso: 603979920 termino de ejecutar
+[INFO] 17:10:25:697 KERNEL/(6245:6256): El proceso: 603979920 finalizo definitivamente
+[INFO] 17:10:54:752 KERNEL/(6323:6323): Valores de configuracion leidos correctamente
+[INFO] 17:10:54:752 KERNEL/(6323:6323): Memoria
+[INFO] 17:10:54:752 KERNEL/(6323:6323): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:10:54:753 KERNEL/(6323:6323): Cpu
+[INFO] 17:10:54:753 KERNEL/(6323:6323): Se establecio correctamente la conexion
+[INFO] 17:10:54:753 KERNEL/(6323:6323): File system
+[INFO] 17:10:54:753 KERNEL/(6323:6323): Fallo al realizar el handshake, cerrando conexion
+[INFO] 17:10:54:753 KERNEL/(6323:6323): Kernel listo para recibir Consolas
+[INFO] 17:10:58:222 KERNEL/(6323:6334): Se conecto un cliente!
+[INFO] 17:10:58:222 KERNEL/(6323:6334): El proceso: 0 llego a estado new
+[INFO] 17:10:58:222 KERNEL/(6323:6332): El proceso: 0 se agrego a la lista de ready
+[INFO] 17:10:58:222 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:10:58:223 KERNEL/(6323:6331): El proceso: 0 llego a estado exec
+[INFO] 17:11:02:228 KERNEL/(6323:6331): El IP esta en 4
+[INFO] 17:11:02:228 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:02:228 KERNEL/(6323:6331): El numero de estado es: 2
+[INFO] 17:11:02:228 KERNEL/(6323:6331): El parametro de interrupcion es: 5
+[INFO] 17:11:02:228 KERNEL/(6323:6331): IO BLOCK
+[INFO] 17:11:02:228 KERNEL/(6323:6331): Tiempo: 5
+[INFO] 17:11:02:228 KERNEL/(6323:6331): El proceso: 0 termino de ejecutar
+[INFO] 17:11:02:237 KERNEL/(6323:6350): El proceso: 0 esta en I/O block. Tiempo: 5 
+[INFO] 17:11:07:237 KERNEL/(6323:6350): El proceso: 0 finalizo en I/O block
+[INFO] 17:11:07:238 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:11:07:238 KERNEL/(6323:6331): El proceso: 0 llego a estado exec
+[INFO] 17:11:08:239 KERNEL/(6323:6331): El IP esta en 5
+[INFO] 17:11:08:239 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:08:239 KERNEL/(6323:6331): El numero de estado es: 0
+[INFO] 17:11:08:239 KERNEL/(6323:6331): El parametro de interrupcion es: 0
+[INFO] 17:11:08:240 KERNEL/(6323:6331): El contexto se ejecutó completamente
+[INFO] 17:11:08:240 KERNEL/(6323:6331): El proceso: 0 termino de ejecutar
+[INFO] 17:11:08:240 KERNEL/(6323:6333): El proceso: 0 ingreso a exit
+[INFO] 17:11:08:240 KERNEL/(6323:6333): El proceso: 0 finalizo definitivamente
+[INFO] 17:11:15:233 KERNEL/(6323:6334): Se conecto un cliente!
+[INFO] 17:11:15:233 KERNEL/(6323:6334): El proceso: 1 llego a estado new
+[INFO] 17:11:15:233 KERNEL/(6323:6332): El proceso: 1 se agrego a la lista de ready
+[INFO] 17:11:15:233 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:11:15:233 KERNEL/(6323:6331): El proceso: 1 llego a estado exec
+[INFO] 17:11:19:239 KERNEL/(6323:6331): El IP esta en 4
+[INFO] 17:11:19:239 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:19:239 KERNEL/(6323:6331): El numero de estado es: 2
+[INFO] 17:11:19:239 KERNEL/(6323:6331): El parametro de interrupcion es: 5
+[INFO] 17:11:19:239 KERNEL/(6323:6331): IO BLOCK
+[INFO] 17:11:19:239 KERNEL/(6323:6331): Tiempo: 5
+[INFO] 17:11:19:239 KERNEL/(6323:6331): El proceso: 1 termino de ejecutar
+[INFO] 17:11:19:242 KERNEL/(6323:6368): El proceso: 1 esta en I/O block. Tiempo: 5 
+[INFO] 17:11:24:243 KERNEL/(6323:6368): El proceso: 1 finalizo en I/O block
+[INFO] 17:11:24:244 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:11:24:244 KERNEL/(6323:6331): El proceso: 1 llego a estado exec
+[INFO] 17:11:25:245 KERNEL/(6323:6331): El IP esta en 5
+[INFO] 17:11:25:245 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:25:246 KERNEL/(6323:6331): El numero de estado es: 0
+[INFO] 17:11:25:246 KERNEL/(6323:6331): El parametro de interrupcion es: 0
+[INFO] 17:11:25:246 KERNEL/(6323:6331): El contexto se ejecutó completamente
+[INFO] 17:11:25:246 KERNEL/(6323:6333): El proceso: 1 ingreso a exit
+[INFO] 17:11:25:246 KERNEL/(6323:6333): El proceso: 1 finalizo definitivamente
+[INFO] 17:11:25:246 KERNEL/(6323:6331): El proceso: 1 termino de ejecutar
+[INFO] 17:11:30:682 KERNEL/(6323:6334): Se conecto un cliente!
+[INFO] 17:11:30:683 KERNEL/(6323:6334): El proceso: 2 llego a estado new
+[INFO] 17:11:30:683 KERNEL/(6323:6332): El proceso: 2 se agrego a la lista de ready
+[INFO] 17:11:30:684 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:11:30:684 KERNEL/(6323:6331): El proceso: 2 llego a estado exec
+[INFO] 17:11:34:687 KERNEL/(6323:6331): El IP esta en 4
+[INFO] 17:11:34:687 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:34:687 KERNEL/(6323:6331): El numero de estado es: 2
+[INFO] 17:11:34:687 KERNEL/(6323:6331): El parametro de interrupcion es: 5
+[INFO] 17:11:34:687 KERNEL/(6323:6331): IO BLOCK
+[INFO] 17:11:34:687 KERNEL/(6323:6331): Tiempo: 5
+[INFO] 17:11:34:687 KERNEL/(6323:6331): El proceso: 2 termino de ejecutar
+[INFO] 17:11:34:687 KERNEL/(6323:6386): El proceso: 2 esta en I/O block. Tiempo: 5 
+[INFO] 17:11:39:687 KERNEL/(6323:6386): El proceso: 2 finalizo en I/O block
+[INFO] 17:11:39:688 KERNEL/(6323:6329): Exec libre => estado_ready comienza a planificar
+[INFO] 17:11:39:688 KERNEL/(6323:6331): El proceso: 2 llego a estado exec
+[INFO] 17:11:40:689 KERNEL/(6323:6331): El IP esta en 5
+[INFO] 17:11:40:689 KERNEL/(6323:6331): El size de las instrucciones es 5
+[INFO] 17:11:40:689 KERNEL/(6323:6331): El numero de estado es: 0
+[INFO] 17:11:40:689 KERNEL/(6323:6331): El parametro de interrupcion es: 0
+[INFO] 17:11:40:689 KERNEL/(6323:6331): El contexto se ejecutó completamente
+[INFO] 17:11:40:689 KERNEL/(6323:6333): El proceso: 2 ingreso a exit
+[INFO] 17:11:40:690 KERNEL/(6323:6331): El proceso: 2 termino de ejecutar
+[INFO] 17:11:40:690 KERNEL/(6323:6333): El proceso: 2 finalizo definitivamente
