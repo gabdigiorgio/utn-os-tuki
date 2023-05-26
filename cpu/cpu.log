@@ -652,3 +652,199 @@
 [INFO] 18:42:54:872 CPU/(7513:7513): Ejecute I/O
 [INFO] 18:42:55:872 CPU/(7513:7513): El proceso: 1 llego a CPU
 [INFO] 18:42:55:872 CPU/(7513:7513): El numero de estado es: 2
+[INFO] 18:48:40:053 CPU/(9006:9006): Valores de configuracion leidos correctamente
+[INFO] 18:48:40:053 CPU/(9006:9006): Memoria
+[INFO] 18:48:40:054 CPU/(9006:9006): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:48:40:054 CPU/(9006:9006): Cpu lista para recibir al Kernel
+[INFO] 18:48:42:776 CPU/(9006:9006): Se conecto el Kernel
+[INFO] 18:48:42:777 CPU/(9006:9006): Handshake de Kernel recibido correctamente
+[INFO] 18:48:45:831 CPU/(9006:9006): El IP esta en 0
+[INFO] 18:48:45:832 CPU/(9006:9006): Ejecute SET
+[INFO] 18:48:45:832 CPU/(9006:9006): HOLA
+[INFO] 18:48:45:832 CPU/(9006:9006): 0
+[INFO] 18:48:46:836 CPU/(9006:9006): Ejecute SET
+[INFO] 18:48:46:836 CPU/(9006:9006): JAJA
+[INFO] 18:48:46:836 CPU/(9006:9006): 0
+[INFO] 18:48:47:839 CPU/(9006:9006): Ejecute SET
+[INFO] 18:48:47:839 CPU/(9006:9006): TEC0320
+[INFO] 18:48:47:839 CPU/(9006:9006): 0
+[INFO] 18:48:48:843 CPU/(9006:9006): Ejecute I/O
+[INFO] 18:48:49:844 CPU/(9006:9006): El proceso: 0 llego a CPU
+[INFO] 18:48:49:845 CPU/(9006:9006): El numero de estado es: 2
+[INFO] 18:51:15:603 CPU/(9667:9667): Valores de configuracion leidos correctamente
+[INFO] 18:51:15:603 CPU/(9667:9667): Memoria
+[INFO] 18:51:15:603 CPU/(9667:9667): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:51:15:603 CPU/(9667:9667): Cpu lista para recibir al Kernel
+[INFO] 18:51:37:514 CPU/(9708:9708): Valores de configuracion leidos correctamente
+[INFO] 18:51:37:515 CPU/(9708:9708): Memoria
+[INFO] 18:51:37:515 CPU/(9708:9708): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:51:37:515 CPU/(9708:9708): Cpu lista para recibir al Kernel
+[INFO] 18:51:40:293 CPU/(9708:9708): Se conecto el Kernel
+[INFO] 18:51:40:293 CPU/(9708:9708): Handshake de Kernel recibido correctamente
+[INFO] 18:51:45:487 CPU/(9708:9708): El IP esta en 0
+[INFO] 18:51:45:487 CPU/(9708:9708): Ejecute SET
+[INFO] 18:51:45:487 CPU/(9708:9708): HOLA
+[INFO] 18:51:45:487 CPU/(9708:9708): 0
+[INFO] 18:51:46:488 CPU/(9708:9708): Ejecute SET
+[INFO] 18:51:46:488 CPU/(9708:9708): JAJA
+[INFO] 18:51:46:488 CPU/(9708:9708): 0
+[INFO] 18:51:47:489 CPU/(9708:9708): Ejecute SET
+[INFO] 18:51:47:489 CPU/(9708:9708): TEC0320
+[INFO] 18:51:47:489 CPU/(9708:9708): 0
+[INFO] 18:51:48:489 CPU/(9708:9708): Ejecute I/O
+[INFO] 18:51:49:490 CPU/(9708:9708): El proceso: 0 llego a CPU
+[INFO] 18:51:49:490 CPU/(9708:9708): El numero de estado es: 2
+[INFO] 18:53:35:479 CPU/(9780:9780): Valores de configuracion leidos correctamente
+[INFO] 18:53:35:480 CPU/(9780:9780): Memoria
+[INFO] 18:53:35:480 CPU/(9780:9780): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:53:35:480 CPU/(9780:9780): Cpu lista para recibir al Kernel
+[INFO] 18:53:44:077 CPU/(9780:9780): Se conecto el Kernel
+[INFO] 18:53:44:078 CPU/(9780:9780): Handshake de Kernel recibido correctamente
+[INFO] 18:54:11:666 CPU/(9879:9879): Valores de configuracion leidos correctamente
+[INFO] 18:54:11:666 CPU/(9879:9879): Memoria
+[INFO] 18:54:11:667 CPU/(9879:9879): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:54:11:667 CPU/(9879:9879): Cpu lista para recibir al Kernel
+[INFO] 18:54:17:480 CPU/(9879:9879): Se conecto el Kernel
+[INFO] 18:54:17:480 CPU/(9879:9879): Handshake de Kernel recibido correctamente
+[INFO] 18:54:40:145 CPU/(9950:9950): Valores de configuracion leidos correctamente
+[INFO] 18:54:40:146 CPU/(9950:9950): Memoria
+[INFO] 18:54:40:146 CPU/(9950:9950): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:54:40:146 CPU/(9950:9950): Cpu lista para recibir al Kernel
+[INFO] 18:54:42:456 CPU/(9950:9950): Se conecto el Kernel
+[INFO] 18:54:42:456 CPU/(9950:9950): Handshake de Kernel recibido correctamente
+[INFO] 18:54:45:546 CPU/(9950:9950): El IP esta en 0
+[INFO] 18:54:45:546 CPU/(9950:9950): Ejecute SET
+[INFO] 18:54:45:546 CPU/(9950:9950): HOLA
+[INFO] 18:54:45:546 CPU/(9950:9950): 0
+[INFO] 18:54:46:547 CPU/(9950:9950): Ejecute SET
+[INFO] 18:54:46:547 CPU/(9950:9950): JAJA
+[INFO] 18:54:46:547 CPU/(9950:9950): 0
+[INFO] 18:54:47:547 CPU/(9950:9950): Ejecute SET
+[INFO] 18:54:47:547 CPU/(9950:9950): TEC0320
+[INFO] 18:54:47:547 CPU/(9950:9950): 0
+[INFO] 18:54:48:547 CPU/(9950:9950): Ejecute I/O
+[INFO] 18:54:49:548 CPU/(9950:9950): El proceso: 0 llego a CPU
+[INFO] 18:54:49:548 CPU/(9950:9950): El numero de estado es: 2
+[INFO] 18:54:58:430 CPU/(10004:10004): Valores de configuracion leidos correctamente
+[INFO] 18:54:58:430 CPU/(10004:10004): Memoria
+[INFO] 18:54:58:430 CPU/(10004:10004): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:54:58:430 CPU/(10004:10004): Cpu lista para recibir al Kernel
+[INFO] 18:55:03:552 CPU/(10004:10004): Se conecto el Kernel
+[INFO] 18:55:03:552 CPU/(10004:10004): Handshake de Kernel recibido correctamente
+[INFO] 18:55:32:321 CPU/(10102:10102): Valores de configuracion leidos correctamente
+[INFO] 18:55:32:321 CPU/(10102:10102): Memoria
+[INFO] 18:55:32:321 CPU/(10102:10102): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:55:32:321 CPU/(10102:10102): Cpu lista para recibir al Kernel
+[INFO] 18:55:38:063 CPU/(10102:10102): Se conecto el Kernel
+[INFO] 18:55:38:063 CPU/(10102:10102): Handshake de Kernel recibido correctamente
+[INFO] 18:56:20:330 CPU/(10226:10226): Valores de configuracion leidos correctamente
+[INFO] 18:56:20:333 CPU/(10226:10226): Memoria
+[INFO] 18:56:20:335 CPU/(10226:10226): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:56:20:337 CPU/(10226:10226): Cpu lista para recibir al Kernel
+[INFO] 18:56:23:863 CPU/(10226:10226): Se conecto el Kernel
+[INFO] 18:56:23:863 CPU/(10226:10226): Handshake de Kernel recibido correctamente
+[INFO] 18:56:26:441 CPU/(10226:10226): El IP esta en 0
+[INFO] 18:56:26:442 CPU/(10226:10226): Ejecute SET
+[INFO] 18:56:26:442 CPU/(10226:10226): HOLA
+[INFO] 18:56:26:442 CPU/(10226:10226): 0
+[INFO] 18:56:27:446 CPU/(10226:10226): Ejecute SET
+[INFO] 18:56:27:446 CPU/(10226:10226): JAJA
+[INFO] 18:56:27:446 CPU/(10226:10226): 0
+[INFO] 18:56:28:446 CPU/(10226:10226): Ejecute SET
+[INFO] 18:56:28:446 CPU/(10226:10226): TEC0320
+[INFO] 18:56:28:446 CPU/(10226:10226): 0
+[INFO] 18:56:29:446 CPU/(10226:10226): Ejecute I/O
+[INFO] 18:56:30:447 CPU/(10226:10226): El proceso: 0 llego a CPU
+[INFO] 18:56:30:447 CPU/(10226:10226): El numero de estado es: 2
+[INFO] 18:57:44:332 CPU/(10347:10347): Valores de configuracion leidos correctamente
+[INFO] 18:57:44:333 CPU/(10347:10347): Memoria
+[INFO] 18:57:44:333 CPU/(10347:10347): Fallo al realizar el handshake, cerrando conexion
+[INFO] 18:57:44:334 CPU/(10347:10347): Cpu lista para recibir al Kernel
+[INFO] 18:57:47:109 CPU/(10347:10347): Se conecto el Kernel
+[INFO] 18:57:47:109 CPU/(10347:10347): Handshake de Kernel recibido correctamente
+[INFO] 19:00:03:226 CPU/(10496:10496): Valores de configuracion leidos correctamente
+[INFO] 19:00:03:230 CPU/(10496:10496): Memoria
+[INFO] 19:00:03:230 CPU/(10496:10496): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:00:03:230 CPU/(10496:10496): Cpu lista para recibir al Kernel
+[INFO] 19:00:09:307 CPU/(10496:10496): Se conecto el Kernel
+[INFO] 19:00:09:307 CPU/(10496:10496): Handshake de Kernel recibido correctamente
+[INFO] 19:00:38:941 CPU/(10496:10496): El IP esta en 0
+[INFO] 19:00:38:941 CPU/(10496:10496): Ejecute SET
+[INFO] 19:00:38:941 CPU/(10496:10496): HOLA
+[INFO] 19:00:38:941 CPU/(10496:10496): 0
+[INFO] 19:00:39:941 CPU/(10496:10496): Ejecute SET
+[INFO] 19:00:39:941 CPU/(10496:10496): JAJA
+[INFO] 19:00:39:942 CPU/(10496:10496): 0
+[INFO] 19:00:40:942 CPU/(10496:10496): Ejecute SET
+[INFO] 19:00:40:942 CPU/(10496:10496): TEC0320
+[INFO] 19:00:40:942 CPU/(10496:10496): 0
+[INFO] 19:00:41:945 CPU/(10496:10496): Ejecute I/O
+[INFO] 19:00:42:945 CPU/(10496:10496): El proceso: 0 llego a CPU
+[INFO] 19:00:42:945 CPU/(10496:10496): El numero de estado es: 2
+[INFO] 19:01:59:474 CPU/(10655:10655): Valores de configuracion leidos correctamente
+[INFO] 19:01:59:475 CPU/(10655:10655): Memoria
+[INFO] 19:01:59:475 CPU/(10655:10655): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:01:59:475 CPU/(10655:10655): Cpu lista para recibir al Kernel
+[INFO] 19:06:12:803 CPU/(10900:10900): Valores de configuracion leidos correctamente
+[INFO] 19:06:12:803 CPU/(10900:10900): Memoria
+[INFO] 19:06:12:803 CPU/(10900:10900): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:06:12:803 CPU/(10900:10900): Cpu lista para recibir al Kernel
+[INFO] 19:06:18:833 CPU/(10655:10655): Se conecto el Kernel
+[INFO] 19:06:18:834 CPU/(10655:10655): Handshake de Kernel recibido correctamente
+[INFO] 19:06:29:326 CPU/(10655:10655): El IP esta en 0
+[INFO] 19:06:29:326 CPU/(10655:10655): Ejecute SET
+[INFO] 19:06:29:326 CPU/(10655:10655): HOLA
+[INFO] 19:06:29:327 CPU/(10655:10655): 0
+[INFO] 19:06:30:327 CPU/(10655:10655): Ejecute SET
+[INFO] 19:06:30:327 CPU/(10655:10655): JAJA
+[INFO] 19:06:30:327 CPU/(10655:10655): 0
+[INFO] 19:06:31:327 CPU/(10655:10655): Ejecute SET
+[INFO] 19:06:31:328 CPU/(10655:10655): TEC0320
+[INFO] 19:06:31:328 CPU/(10655:10655): 0
+[INFO] 19:06:32:334 CPU/(10655:10655): Ejecute I/O
+[INFO] 19:06:33:335 CPU/(10655:10655): El proceso: 0 llego a CPU
+[INFO] 19:06:33:335 CPU/(10655:10655): El numero de estado es: 2
+[INFO] 19:07:55:137 CPU/(11171:11171): Valores de configuracion leidos correctamente
+[INFO] 19:07:55:138 CPU/(11171:11171): Memoria
+[INFO] 19:07:55:138 CPU/(11171:11171): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:07:55:138 CPU/(11171:11171): Cpu lista para recibir al Kernel
+[INFO] 19:08:01:396 CPU/(11171:11171): Se conecto el Kernel
+[INFO] 19:08:01:396 CPU/(11171:11171): Handshake de Kernel recibido correctamente
+[INFO] 19:08:06:468 CPU/(11171:11171): El IP esta en 0
+[INFO] 19:08:06:468 CPU/(11171:11171): Ejecute SET
+[INFO] 19:08:06:468 CPU/(11171:11171): HOLA
+[INFO] 19:08:06:468 CPU/(11171:11171): 0
+[INFO] 19:08:07:469 CPU/(11171:11171): Ejecute SET
+[INFO] 19:08:07:469 CPU/(11171:11171): JAJA
+[INFO] 19:08:07:469 CPU/(11171:11171): 0
+[INFO] 19:08:08:470 CPU/(11171:11171): Ejecute SET
+[INFO] 19:08:08:470 CPU/(11171:11171): TEC0320
+[INFO] 19:08:08:470 CPU/(11171:11171): 0
+[INFO] 19:08:09:471 CPU/(11171:11171): Ejecute I/O
+[INFO] 19:08:10:471 CPU/(11171:11171): El proceso: 0 llego a CPU
+[INFO] 19:08:10:471 CPU/(11171:11171): El numero de estado es: 2
+[INFO] 19:09:01:577 CPU/(11287:11287): Valores de configuracion leidos correctamente
+[INFO] 19:09:01:578 CPU/(11287:11287): Memoria
+[INFO] 19:09:01:578 CPU/(11287:11287): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:09:01:578 CPU/(11287:11287): Cpu lista para recibir al Kernel
+[INFO] 19:09:07:524 CPU/(11287:11287): Se conecto el Kernel
+[INFO] 19:09:07:524 CPU/(11287:11287): Handshake de Kernel recibido correctamente
+[INFO] 19:10:58:267 CPU/(11381:11381): Valores de configuracion leidos correctamente
+[INFO] 19:10:58:267 CPU/(11381:11381): Memoria
+[INFO] 19:10:58:268 CPU/(11381:11381): Fallo al realizar el handshake, cerrando conexion
+[INFO] 19:10:58:268 CPU/(11381:11381): Cpu lista para recibir al Kernel
+[INFO] 19:11:04:167 CPU/(11381:11381): Se conecto el Kernel
+[INFO] 19:11:04:167 CPU/(11381:11381): Handshake de Kernel recibido correctamente
+[INFO] 19:11:09:367 CPU/(11381:11381): El IP esta en 0
+[INFO] 19:11:09:367 CPU/(11381:11381): Ejecute SET
+[INFO] 19:11:09:367 CPU/(11381:11381): HOLA
+[INFO] 19:11:09:367 CPU/(11381:11381): 0
+[INFO] 19:11:10:368 CPU/(11381:11381): Ejecute SET
+[INFO] 19:11:10:368 CPU/(11381:11381): JAJA
+[INFO] 19:11:10:368 CPU/(11381:11381): 0
+[INFO] 19:11:11:373 CPU/(11381:11381): Ejecute SET
+[INFO] 19:11:11:373 CPU/(11381:11381): TEC0320
+[INFO] 19:11:11:373 CPU/(11381:11381): 0
+[INFO] 19:11:12:373 CPU/(11381:11381): Ejecute I/O
+[INFO] 19:11:13:374 CPU/(11381:11381): El proceso: 0 llego a CPU
+[INFO] 19:11:13:374 CPU/(11381:11381): El numero de estado es: 2

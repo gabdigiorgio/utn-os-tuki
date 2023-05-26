@@ -55,6 +55,20 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 			break;
 		case IO:
 			//crear un hilo por cada uno, que espere el tiempo de sleep y despues vuelva a ready
+			//https://stackoverflow.com/questions/1352749/multiple-arguments-to-function-called-by-pthread-create
+			log_info(logger, contexto_actualizado->param);
+
+			io_block_args* args_io_block = malloc(sizeof(io_block_args));
+
+			args_io_block->pcb = malloc(sizeof(pcb_t));
+			args_io_block->pcb = pcb;
+			args_io_block->block_time = atoi(contexto_actualizado->param);
+
+			log_info(logger, "%d",args_io_block->block_time);
+
+			pthread_t thread_io_block;
+			pthread_create(&thread_io_block, NULL, (void *)io_block, args_io_block);
+			pthread_detach(thread_io_block);
 			break;
 		case WAIT:
 			char *recurso_wait = contexto_actualizado->param;

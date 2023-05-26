@@ -118,8 +118,8 @@ bool mayor_ratio(void* proceso_1, void* proceso_2){
 	return ratio_1 > ratio_2;
 }
 
-void io_block(void *args){
-	struct io_block_args *arguments = args;
+void io_block(io_block_args* args){
+	io_block_args* arguments = args;
 
 	unsigned int time = arguments->block_time;
 
