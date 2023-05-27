@@ -5,7 +5,7 @@ int ejecutar_signal(t_contexto* contexto, char* param1){
 	contexto->param = realloc(contexto->param,contexto->param_length);
 	memcpy(contexto->param, param1, contexto->param_length);
 
-	contexto_estado = IO;
+	contexto_estado = SIGNAL;
 
 	log_info(logger, "Ejecute Signal");
 

@@ -53,7 +53,7 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 	if(result == 1){
 		log_info(logger, "Se establecio correctamente la conexion");
 	} else {
-		log_info(logger, "Fallo al realizar el handshake, cerrando conexion");
+		log_error(logger, "Fallo al realizar el handshake, cerrando conexion");
 		result = -1;
 	}
 
