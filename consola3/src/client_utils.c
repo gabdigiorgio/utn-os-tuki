@@ -26,8 +26,7 @@ void copiar_instrucciones(void* stream, t_list* lista){
 	int offset = 0;
 
 	for(int i = 0; i < lineas; i++){
-			t_instruc* instrucciones = crear_instruccion();
-			instrucciones = list_get(lista, i);
+			t_instruc* instrucciones = list_get(lista, i);
 
 			memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
 			offset += sizeof(uint32_t);

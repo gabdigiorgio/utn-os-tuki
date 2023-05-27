@@ -523,3 +523,13 @@ V
 [ERROR] 18:40:44:713 CONSOLA/(7325:7325): Ejecucion terminada
 [INFO] 18:43:06:608 CONSOLA/(7588:7588): Valores de configuracion leidos correctamente
 [ERROR] 18:43:14:938 CONSOLA/(7588:7588): Error en la ejecucion
+[ERROR] 15:56:02:892 CONSOLA/(2747:2747): Falta parametro del path del archivo de configuracion
+[ERROR] 15:56:17:236 CONSOLA/(2768:2768): Falta parametro del path del archivo de configuracion
+[INFO] 15:56:44:976 CONSOLA/(2805:2805): Valores de configuracion leidos correctamente
+[INFO] 15:56:47:037 CONSOLA/(2805:2805): Ejecucion terminada
+[INFO] 16:17:21:257 CONSOLA/(3122:3122): Valores de configuracion leidos correctamente
+[INFO] 16:17:23:331 CONSOLA/(3122:3122): Ejecucion terminada
+[INFO] 16:17:50:827 CONSOLA/(3188:3188): Valores de configuracion leidos correctamente
+[INFO] 16:17:52:888 CONSOLA/(3188:3188): Ejecucion terminada
+[INFO] 16:23:00:443 CONSOLA/(3551:3551): Valores de configuracion leidos correctamente
+[INFO] 16:23:02:446 CONSOLA/(3551:3551): Ejecucion terminada
