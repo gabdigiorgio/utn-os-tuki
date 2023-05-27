@@ -228,3 +228,72 @@
 [INFO] 17:21:32:146 CONSOLA/(2685:2685): Valores de configuracion leidos correctamente
 [ERROR] 17:21:54:405 CONSOLA/(2685:2685): Error en la ejecucion
 [ERROR] 17:21:54:405 CONSOLA/(2590:2590): Error en la ejecucion
+[INFO] 17:52:04:976 CONSOLA/(13368:13368): Valores de configuracion leidos correctamente
+[INFO] 17:52:08:988 CONSOLA/(13368:13368): Ejecucion terminada
+[INFO] 17:53:40:076 CONSOLA/(13476:13476): Valores de configuracion leidos correctamente
+[INFO] 17:53:44:086 CONSOLA/(13476:13476): Ejecucion terminada
+[INFO] 17:57:55:514 CONSOLA/(13829:13829): Valores de configuracion leidos correctamente
+[ERROR] 18:00:28:085 CONSOLA/(13829:13829): Error en la ejecucion
+[INFO] 18:02:22:334 CONSOLA/(13995:13995): Valores de configuracion leidos correctamente
+[ERROR] 18:10:17:907 CONSOLA/(13995:13995): Error en la ejecucion
+[INFO] 18:16:06:442 CONSOLA/(14358:14358): Valores de configuracion leidos correctamente
+[ERROR] 18:18:59:482 CONSOLA/(14358:14358): Error en la ejecucion
+[INFO] 19:41:35:718 CONSOLA/(15464:15464): Valores de configuracion leidos correctamente
+[ERROR] 19:42:48:567 CONSOLA/(15464:15464): Error en la ejecucion
+[INFO] 19:43:24:171 CONSOLA/(15620:15620): Valores de configuracion leidos correctamente
+[INFO] 19:44:03:186 CONSOLA/(15718:15718): Valores de configuracion leidos correctamente
+[ERROR] 20:39:59:064 CONSOLA/(15718:15718): Error en la ejecucion
+[INFO] 20:42:18:832 CONSOLA/(16227:16227): Valores de configuracion leidos correctamente
+[INFO] 20:43:15:530 CONSOLA/(16328:16328): Valores de configuracion leidos correctamente
+[ERROR] 20:51:08:486 CONSOLA/(16328:16328): Error en la ejecucion
+[INFO] 20:58:54:650 CONSOLA/(18170:18170): Valores de configuracion leidos correctamente
+[INFO] 21:00:41:323 CONSOLA/(18241:18241): Valores de configuracion leidos correctamente
+[ERROR] 21:06:44:023 CONSOLA/(18241:18241): Error en la ejecucion
+[INFO] 21:07:06:612 CONSOLA/(18570:18570): Valores de configuracion leidos correctamente
+[INFO] 21:07:27:419 CONSOLA/(18622:18622): Valores de configuracion leidos correctamente
+[INFO] 21:07:51:096 CONSOLA/(18673:18673): Valores de configuracion leidos correctamente
+[ERROR] 21:08:39:999 CONSOLA/(18673:18673): Error en la ejecucion
+[INFO] 21:11:09:736 CONSOLA/(18761:18761): Valores de configuracion leidos correctamente
+[INFO] 21:11:15:754 CONSOLA/(18761:18761): Ejecucion terminada
+[INFO] 21:20:19:001 CONSOLA/(19144:19144): Valores de configuracion leidos correctamente
+[ERROR] 21:20:22:478 CONSOLA/(19144:19144): Error en la ejecucion
+[INFO] 21:24:35:384 CONSOLA/(19491:19491): Valores de configuracion leidos correctamente
+[INFO] 21:24:41:394 CONSOLA/(19491:19491): Ejecucion terminada
+[INFO] 21:30:50:753 CONSOLA/(19750:19750): Valores de configuracion leidos correctamente
+[INFO] 21:30:56:768 CONSOLA/(19750:19750): Ejecucion terminada
+[INFO] 21:32:11:312 CONSOLA/(19786:19786): Valores de configuracion leidos correctamente
+[INFO] 21:33:10:412 CONSOLA/(19819:19819): Valores de configuracion leidos correctamente
+[ERROR] 21:37:10:323 CONSOLA/(19819:19819): Error en la ejecucion
+[INFO] 21:37:58:978 CONSOLA/(20121:20121): Valores de configuracion leidos correctamente
+[INFO] 21:38:17:123 CONSOLA/(20135:20135): Valores de configuracion leidos correctamente
+[INFO] 21:38:44:989 CONSOLA/(20188:20188): Valores de configuracion leidos correctamente
+[INFO] 21:39:02:009 CONSOLA/(20188:20188): Ejecucion terminada
+[INFO] 21:39:10:746 CONSOLA/(20218:20218): Valores de configuracion leidos correctamente
+[INFO] 21:39:30:905 CONSOLA/(20244:20244): Valores de configuracion leidos correctamente
+[ERROR] 21:41:51:628 CONSOLA/(20244:20244): Error en la ejecucion
+[INFO] 21:43:23:714 CONSOLA/(20434:20434): Valores de configuracion leidos correctamente
+[INFO] 21:43:34:082 CONSOLA/(20462:20462): Valores de configuracion leidos correctamente
+[INFO] 21:43:55:663 CONSOLA/(20490:20490): Valores de configuracion leidos correctamente
+[ERROR] 21:45:19:588 CONSOLA/(20490:20490): Error en la ejecucion
+[INFO] 21:48:34:946 CONSOLA/(20722:20722): Valores de configuracion leidos correctamente
+[INFO] 21:48:50:351 CONSOLA/(20749:20749): Valores de configuracion leidos correctamente
+[INFO] 21:49:05:882 CONSOLA/(20783:20783): Valores de configuracion leidos correctamente
+[ERROR] 21:49:36:935 CONSOLA/(20783:20783): Error en la ejecucion
+[INFO] 22:34:04:723 CONSOLA/(21774:21774): Valores de configuracion leidos correctamente
+[INFO] 22:35:38:345 CONSOLA/(21774:21774): Ejecucion terminada
+[INFO] 22:35:46:962 CONSOLA/(21902:21902): Valores de configuracion leidos correctamente
+[ERROR] 22:37:40:003 CONSOLA/(21902:21902): Error en la ejecucion
+[INFO] 22:38:08:861 CONSOLA/(22046:22046): Valores de configuracion leidos correctamente
+[INFO] 22:53:11:719 CONSOLA/(22288:22288): Valores de configuracion leidos correctamente
+[INFO] 22:54:32:465 CONSOLA/(22288:22288): Ejecucion terminada
+[INFO] 22:55:03:859 CONSOLA/(22405:22405): Valores de configuracion leidos correctamente
+[ERROR] 23:00:30:768 CONSOLA/(22405:22405): Error en la ejecucion
+[INFO] 23:02:46:197 CONSOLA/(22782:22782): Valores de configuracion leidos correctamente
+[INFO] 23:03:00:133 CONSOLA/(22813:22813): Valores de configuracion leidos correctamente
+[ERROR] 23:04:47:674 CONSOLA/(22813:22813): Error en la ejecucion
+[INFO] 23:09:30:121 CONSOLA/(23346:23346): Valores de configuracion leidos correctamente
+[INFO] 23:09:45:131 CONSOLA/(23374:23374): Valores de configuracion leidos correctamente
+[INFO] 23:10:37:652 CONSOLA/(23374:23374): Ejecucion terminada
+[INFO] 23:16:01:848 CONSOLA/(23606:23606): Valores de configuracion leidos correctamente
+[INFO] 23:16:05:721 CONSOLA/(23625:23625): Valores de configuracion leidos correctamente
+[INFO] 23:16:49:713 CONSOLA/(23625:23625): Ejecucion terminada

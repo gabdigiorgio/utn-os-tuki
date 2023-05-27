@@ -54,26 +54,26 @@ void estado_exec(){
 	{
 		sem_wait(&sem_estado_exec); // espera que ready le diga que ya hay proceso para ejecutar
 
-			pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
+		pcb_t* pcb_a_ejecutar = list_pop(pcb_ready_list);
 
-			pcb_a_ejecutar->estado = PCB_EXEC;
+		pcb_a_ejecutar->estado = PCB_EXEC;
 
-			temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
+		temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
 
-			log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
+		log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
 
-			t_temporal* tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
+		t_temporal* tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
 
-			enviar_contexto(pcb_a_ejecutar);
+		enviar_contexto(pcb_a_ejecutar);
 
-			//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
+		//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 
-			// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
-			pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
+		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
+		pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
 
-			temporal_destroy(tiempo_en_ejecucion);
+		temporal_destroy(tiempo_en_ejecucion);
 
-			log_info(logger, "El proceso: %d termino de ejecutar", pcb_a_ejecutar->pid);
+		log_info(logger, "El proceso: %d termino de ejecutar", pcb_a_ejecutar->pid);
 
 		sem_post(&sem_exec_libre); // le avisa a ready que exec ya esta libre
 	}
@@ -88,11 +88,15 @@ void estado_block(){
 
 		pcb_bloqueado->estado = PCB_BLOCK;
 
+		log_info(logger, "El proceso: %d llego a estado block", pcb_bloqueado->pid);
+
 		t_recurso* recurso_bloqueante = buscar_recurso(lista_recursos, pcb_bloqueado->recurso_bloqueante);
 
-		t_lista_mutex* cola_bloqueados_recurso = recurso_bloqueante->cola_bloqueados;
+		log_info(logger, "estado block antes del push");
 
-		list_push(cola_bloqueados_recurso, pcb_bloqueado);
+		list_push(recurso_bloqueante->cola_bloqueados, pcb_bloqueado);
+
+		log_info(logger, "estado block despues del push");
 	}
 }
 
