@@ -1,6 +1,7 @@
 #include "../includes/comm_threadKernel.h"
 
-t_contexto* obtener_contexto_pcb(pcb_t *pcb) {
+t_contexto* obtener_contexto_pcb(pcb_t *pcb)
+{
 
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	t_registros *registros = malloc(sizeof(t_registros));
@@ -11,7 +12,8 @@ t_contexto* obtener_contexto_pcb(pcb_t *pcb) {
 	return contexto;
 }
 
-void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
+void enviar_contexto(pcb_t *pcb)
+{ // aca recibir un pcb (pbc_t pbc)
 	t_contexto *contexto = obtener_contexto_pcb(pcb);
 	t_paquete *paquete2 = malloc(sizeof(t_paquete));
 	paquete2->buffer = malloc(sizeof(t_buffer));
@@ -28,27 +30,24 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 	//esperar respuesta de cpu
 	//Recibo el header del paquete + el stream de datos
 	deserializar_header(paquete2, cpu_connection);
-	switch (paquete2->codigo_operacion) {
+	switch (paquete2->codigo_operacion)
+	{
 	case 1:
-		contexto_actualizado = deserializar_contexto(paquete2->buffer,
-				paquete2->lineas);
+		contexto_actualizado = deserializar_contexto(paquete2->buffer, paquete2->lineas);
 		//log_info(logger,contexto_actualizado->registros->ax);
 		// aca va logica de exit
 
-		log_info(logger, "El IP esta en %d",
-				contexto_actualizado->registros->ip);
-		log_info(logger, "El size de las instrucciones es %d",
-				(uint16_t) list_size(contexto->instrucciones));
-		log_info(logger, "El numero de estado es: %d",
-				contexto_actualizado->estado);
-		log_info(logger, "El parametro de interrupcion es: %s",
-				contexto_actualizado->param);
+		log_info(logger, "El IP esta en %d", contexto_actualizado->registros->ip);
+		log_info(logger, "El size de las instrucciones es %d", (uint16_t) list_size(contexto->instrucciones));
+		log_info(logger, "El numero de estado es: %d", contexto_actualizado->estado);
+		log_info(logger, "El parametro de interrupcion es: %s", contexto_actualizado->param);
 
 		pcb->registros_cpu = *(contexto_actualizado->registros);
 
 		//esto hay que mejorarlo
 
-		switch (contexto_actualizado->estado) {
+		switch (contexto_actualizado->estado)
+		{
 		case EXIT:
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
@@ -57,9 +56,7 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 		case YIELD:
 			list_push(pcb_ready_list, pcb);
 			pcb->tiempo_espera_en_ready = temporal_create();
-			log_info(logger,
-					"El proceso %d llego a yield. Se envio al final de ready",
-					pcb->pid);
+			log_info(logger, "El proceso %d llego a yield. Se envio al final de ready", pcb->pid);
 			sem_post(&sem_estado_ready);
 			break;
 
@@ -77,34 +74,38 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 			log_info(logger, "Tiempo: %d", args->block_time);
 
 			pthread_t thread_io_block;
-			pthread_create(&thread_io_block, NULL, (void*) io_block,
-					(t_io_block_args*) args);
+			pthread_create(&thread_io_block, NULL, (void*) io_block, (t_io_block_args*) args);
 			pthread_detach(thread_io_block);
 			break;
 
 		case WAIT:
 			char *recurso_wait = contexto_actualizado->param;
 
-			if (recurso_existe_en_lista(lista_recursos, recurso_wait)) {
+			if (recurso_existe_en_lista(lista_recursos, recurso_wait))
+			{
 
 				restar_instancia(lista_recursos, recurso_wait);
 
-				int instancias_recurso = instancias_de_un_recurso(
-						lista_recursos, recurso_wait);
+				int instancias_recurso = obtener_instancias(lista_recursos, recurso_wait);
 
-				log_info(logger, "Instancias: %d", instancias_recurso);
+				log_info(logger, "Instancias del recurso %s: %d", recurso_wait, instancias_recurso);
 
-				if (instancias_recurso < 0) {
+				if (instancias_recurso < 0)
+				{
 
 					pcb->recurso_bloqueante = recurso_wait;
 
 					list_push(pcb_block_list, pcb);
 
 					sem_post(&sem_estado_block);
-				} else {
+				}
+				else
+				{
 					enviar_contexto(pcb);
 				}
-			} else {
+			}
+			else
+			{
 				list_push(pcb_exit_list, pcb);
 
 				sem_post(&sem_estado_exit);
@@ -114,35 +115,32 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 		case SIGNAL:
 			char *recurso_signal = contexto_actualizado->param;
 
-			if (recurso_existe_en_lista(lista_recursos, recurso_signal)) {
+			if (recurso_existe_en_lista(lista_recursos, recurso_signal))
+			{
 
 				sumar_instancia(lista_recursos, recurso_signal);
 
-				int instancias_recurso = instancias_de_un_recurso(
-						lista_recursos, recurso_signal);
+				int instancias_recurso = obtener_instancias(lista_recursos, recurso_signal);
 
-				log_info(logger, "Instancias: %d", instancias_recurso);
+				log_info(logger, "Instancias del recurso %s: %d", recurso_signal, instancias_recurso);
 
 				enviar_contexto(pcb);
 
-				if (instancias_recurso <= 0) { // revisar
-					log_info(logger, "Entro al if de instancias recurso de signal");
-
+				if (instancias_recurso <= 0)
+				{
 					t_recurso *recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
-
-					log_info(logger, "Nombre de recurso bloqueante: %s", recurso_bloqueante->nombre_recurso);
 
 					pcb_t *pcb_desbloqueado = list_pop(recurso_bloqueante->cola_bloqueados);
 
-					log_info(logger, "Popeo pcb: %d de la cola de bloqueados",pcb_desbloqueado->pid);
-
 					list_push(pcb_ready_list, pcb_desbloqueado);
 					pcb_desbloqueado->tiempo_espera_en_ready = temporal_create();
-					log_info(logger, "El proceso %d se libero de la cola de bloqueados",pcb_desbloqueado->pid);
+					log_info(logger, "El proceso %d se libero de la cola de bloqueados", pcb_desbloqueado->pid);
 					sem_post(&sem_estado_ready);
 				}
 
-			} else {
+			}
+			else
+			{
 
 				list_push(pcb_exit_list, pcb);
 
@@ -177,12 +175,11 @@ void enviar_contexto(pcb_t *pcb) { // aca recibir un pcb (pbc_t pbc)
 		//sem_post(&sem_estado_exit);
 
 		// Hasta linea 49
-		if ((pcb->registros_cpu).ip
-				== (uint16_t) list_size(contexto->instrucciones)) {
+		if ((pcb->registros_cpu).ip == (uint16_t) list_size(contexto->instrucciones))
+		{
 			log_info(logger, "El contexto se ejecutó completamente");
 
-			list_destroy_and_destroy_elements(
-					contexto_actualizado->instrucciones, free);
+			list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
 			free(contexto_actualizado->registros);
 			free(contexto_actualizado);
 
