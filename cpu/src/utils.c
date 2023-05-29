@@ -40,6 +40,7 @@ t_contexto* contexto_create(){
 }
 
 void contexto_destroy(t_contexto* contexto){
+	log_info(logger, "Eliminación de Proceso PID: %d", contexto->pid);
 	list_destroy_and_destroy_elements(contexto->instrucciones, (void*)instrucciones_destroy);
 	free(contexto->registros);
 	free(contexto->param);
