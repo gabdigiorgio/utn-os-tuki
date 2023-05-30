@@ -22,9 +22,10 @@ void conexion_kernel(int server_connection){
 		switch(paquete->codigo_operacion){
 			case 1:
 				deserializar_contexto(paquete->buffer, paquete->lineas, contexto);
+				log_info(logger,"PID: %d",contexto->pid);
 				int result = ejecutar_contexto(contexto, paquete->lineas);
 				armar_contexto(contexto);
-				log_info(logger, "Creación de Proceso PID: %d", contexto->pid);
+				//log_info(logger, "Creación de Proceso PID: %d", contexto->pid);
 				//log_info(logger, "El numero de estado es: %d", contexto->estado);
 				//log_info(logger, "El parametro de interrupcion es: %s", contexto->param); //aca esta el error
 				//log_info(logger,contexto->registros->ax);
@@ -35,7 +36,6 @@ void conexion_kernel(int server_connection){
 				exit_status = 1;
 				break;
 		}
-
 		contexto_destroy(contexto);
 
 		free(paquete->buffer->stream);
