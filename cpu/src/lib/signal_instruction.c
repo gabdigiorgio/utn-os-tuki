@@ -7,7 +7,7 @@ int ejecutar_signal(t_contexto* contexto, char* param1){
 
 	contexto_estado = SIGNAL;
 
-	log_info(logger, "Ejecute Signal");
+	log_info(logger, "Ejecutando SIGNAL - [%s]", param1);
 
 	return 1;
 }

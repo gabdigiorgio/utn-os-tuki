@@ -7,7 +7,7 @@ int ejecutar_io(t_contexto* contexto, char* param1){
 
 	contexto_estado = IO;
 
-	log_info(logger, "Ejecute I/O");
+	log_info(logger, "Ejecutando IO - [%s]", param1);
 
 	return 1;
 }

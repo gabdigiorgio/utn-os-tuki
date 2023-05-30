@@ -7,7 +7,7 @@ int ejecutar_wait(t_contexto* contexto, char* param1){
 
 	contexto_estado = WAIT;
 
-	log_info(logger, "Ejecute Wait");
+	log_info(logger, "Ejecutando WAIT - [%s]", param1);
 
 	return 1;
 }
