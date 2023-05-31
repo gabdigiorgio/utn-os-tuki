@@ -20,3 +20,15 @@
 [INFO] 04:02:34:298 MEMORIA/(4797:4797): Se conecto un cliente!
 [INFO] 04:02:34:298 MEMORIA/(4797:4909): Thread iniciado correctamente
 [INFO] 04:02:34:300 MEMORIA/(4797:4909): Handshake de Kernel recibido correctamente
+[ERROR] 12:56:03:180 MEMORIA/(2229:2229): Falta parametro del path del archivo de configuracion
+[INFO] 12:56:14:164 MEMORIA/(2242:2242): Valores de configuracion leidos correctamente
+[INFO] 12:56:14:164 MEMORIA/(2242:2242): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 12:57:07:389 MEMORIA/(2242:2242): Se conecto un cliente!
+[INFO] 12:57:07:390 MEMORIA/(2242:2293): Thread iniciado correctamente
+[INFO] 12:57:07:390 MEMORIA/(2242:2293): Handshake de File System recibido correctamente
+[INFO] 12:58:11:571 MEMORIA/(2242:2242): Se conecto un cliente!
+[INFO] 12:58:11:572 MEMORIA/(2242:2333): Thread iniciado correctamente
+[INFO] 12:58:11:573 MEMORIA/(2242:2333): Handshake de CPU recibido correctamente
+[INFO] 12:58:41:318 MEMORIA/(2242:2242): Se conecto un cliente!
+[INFO] 12:58:41:318 MEMORIA/(2242:2371): Thread iniciado correctamente
+[INFO] 12:58:41:318 MEMORIA/(2242:2371): Handshake de Kernel recibido correctamente
