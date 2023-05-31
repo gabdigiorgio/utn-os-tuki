@@ -1,1 +1,57 @@
-[ERROR] 13:54:59:387 CPU/(3357:3357): Falta parametro del path del archivo de configuracion
+[INFO] 16:39:42:855 CPU/(3454:3454): Valores de configuracion leidos correctamente
+[INFO] 16:53:46:245 CPU/(4608:4608): Valores de configuracion leidos correctamente
+[INFO] 16:53:46:246 CPU/(4608:4608): Memoria
+[INFO] 16:53:46:258 CPU/(4608:4608): Se establecio correctamente la conexion
+[INFO] 16:53:46:258 CPU/(4608:4608): Cpu lista para recibir al Kernel
+[INFO] 16:53:46:278 CPU/(4608:4608): Se conecto el Kernel
+[INFO] 16:53:46:278 CPU/(4608:4608): Handshake de Kernel recibido correctamente
+[INFO] 16:55:08:301 CPU/(4745:4745): Valores de configuracion leidos correctamente
+[INFO] 16:55:08:303 CPU/(4745:4745): Memoria
+[INFO] 16:55:08:308 CPU/(4745:4745): Se establecio correctamente la conexion
+[INFO] 16:55:08:309 CPU/(4745:4745): Cpu lista para recibir al Kernel
+[INFO] 16:55:24:069 CPU/(4817:4817): Valores de configuracion leidos correctamente
+[INFO] 16:55:24:069 CPU/(4817:4817): Memoria
+[INFO] 16:55:24:078 CPU/(4817:4817): Se establecio correctamente la conexion
+[INFO] 16:55:24:078 CPU/(4817:4817): Cpu lista para recibir al Kernel
+[INFO] 16:56:08:561 CPU/(4907:4907): Valores de configuracion leidos correctamente
+[INFO] 16:56:08:561 CPU/(4907:4907): Memoria
+[INFO] 16:56:08:563 CPU/(4907:4907): Se establecio correctamente la conexion
+[INFO] 16:56:08:565 CPU/(4907:4907): Cpu lista para recibir al Kernel
+[INFO] 16:56:08:578 CPU/(4907:4907): Se conecto el Kernel
+[INFO] 16:56:08:578 CPU/(4907:4907): Handshake de Kernel recibido correctamente
+[INFO] 16:57:47:972 CPU/(5341:5341): Valores de configuracion leidos correctamente
+[INFO] 16:57:47:974 CPU/(5341:5341): Memoria
+[INFO] 16:57:47:976 CPU/(5341:5341): Se establecio correctamente la conexion
+[INFO] 16:57:47:976 CPU/(5341:5341): Cpu lista para recibir al Kernel
+[INFO] 16:57:48:988 CPU/(5341:5341): Se conecto el Kernel
+[INFO] 16:57:48:988 CPU/(5341:5341): Handshake de Kernel recibido correctamente
+[INFO] 16:58:39:726 CPU/(5562:5562): Valores de configuracion leidos correctamente
+[INFO] 16:58:39:726 CPU/(5562:5562): Memoria
+[INFO] 16:58:39:726 CPU/(5562:5562): Se establecio correctamente la conexion
+[INFO] 16:58:39:727 CPU/(5562:5562): Cpu lista para recibir al Kernel
+[INFO] 17:00:11:736 CPU/(5864:5864): Valores de configuracion leidos correctamente
+[INFO] 17:00:11:736 CPU/(5864:5864): Memoria
+[INFO] 17:00:11:737 CPU/(5864:5864): Se establecio correctamente la conexion
+[INFO] 17:00:11:738 CPU/(5864:5864): Cpu lista para recibir al Kernel
+[INFO] 17:00:20:011 CPU/(5864:5864): Se conecto el Kernel
+[INFO] 17:00:20:011 CPU/(5864:5864): Handshake de Kernel recibido correctamente
+[INFO] 17:02:05:392 CPU/(6163:6163): Valores de configuracion leidos correctamente
+[INFO] 17:02:05:393 CPU/(6163:6163): Memoria
+[INFO] 17:02:05:393 CPU/(6163:6163): Se establecio correctamente la conexion
+[INFO] 17:02:05:393 CPU/(6163:6163): Cpu lista para recibir al Kernel
+[INFO] 17:04:29:619 CPU/(6351:6351): Valores de configuracion leidos correctamente
+[INFO] 17:04:29:620 CPU/(6351:6351): Memoria
+[INFO] 17:04:29:622 CPU/(6351:6351): Se establecio correctamente la conexion
+[INFO] 17:04:29:622 CPU/(6351:6351): Cpu lista para recibir al Kernel
+[INFO] 17:04:30:617 CPU/(6351:6351): Se conecto el Kernel
+[INFO] 17:04:30:617 CPU/(6351:6351): Handshake de Kernel recibido correctamente
+[INFO] 17:05:14:394 CPU/(6469:6469): Valores de configuracion leidos correctamente
+[INFO] 17:05:14:395 CPU/(6469:6469): Memoria
+[INFO] 17:05:14:395 CPU/(6469:6469): Se establecio correctamente la conexion
+[INFO] 17:05:14:396 CPU/(6469:6469): Cpu lista para recibir al Kernel
+[INFO] 17:08:29:490 CPU/(7153:7153): Valores de configuracion leidos correctamente
+[INFO] 17:08:29:491 CPU/(7153:7153): Memoria
+[INFO] 17:08:29:493 CPU/(7153:7153): Se establecio correctamente la conexion
+[INFO] 17:08:29:494 CPU/(7153:7153): Cpu lista para recibir al Kernel
+[INFO] 17:08:30:490 CPU/(7153:7153): Se conecto el Kernel
+[INFO] 17:08:30:490 CPU/(7153:7153): Handshake de Kernel recibido correctamente

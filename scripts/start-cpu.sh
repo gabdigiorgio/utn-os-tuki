@@ -1,0 +1,1 @@
+../cpu/Debug/cpu ../config-files/cpu.config &
