@@ -3,8 +3,8 @@
 t_contexto* obtener_contexto_pcb(pcb_t *pcb)
 {
 
-	t_contexto* contexto = inicializar_contexto();
-	copiar_registros(contexto->registros,pcb->registros_cpu);
+	t_contexto *contexto = inicializar_contexto();
+	copiar_registros(contexto->registros, pcb->registros_cpu);
 	copiar_lista_instrucciones(contexto->instrucciones, pcb->instrucciones);
 	contexto->pid = pcb->pid;
 	return contexto;
@@ -12,7 +12,7 @@ t_contexto* obtener_contexto_pcb(pcb_t *pcb)
 
 void enviar_contexto(pcb_t *pcb)
 {
-	t_contexto* contexto = obtener_contexto_pcb(pcb);
+	t_contexto *contexto = obtener_contexto_pcb(pcb);
 	t_paquete *paquete = malloc(sizeof(t_paquete));
 	paquete->buffer = malloc(sizeof(t_buffer));
 
@@ -21,9 +21,9 @@ void enviar_contexto(pcb_t *pcb)
 	switch (paquete->codigo_operacion)
 	{
 	case 1:
-		t_contexto* contexto_actualizado = inicializar_contexto();
+		t_contexto *contexto_actualizado = inicializar_contexto();
 		deserializar_contexto(contexto_actualizado, paquete->buffer, paquete->lineas);
-		copiar_registros(pcb->registros_cpu,contexto_actualizado->registros);
+		copiar_registros(pcb->registros_cpu, contexto_actualizado->registros);
 
 		switch (contexto_actualizado->estado)
 		{
@@ -50,19 +50,19 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case WAIT:
-			char *recurso_wait = contexto_actualizado->param;
+			char *recurso_wait = crear_recurso(contexto_actualizado->param);
 
 			if (recurso_existe_en_lista(lista_recursos, recurso_wait))
 			{
-
+				asignar_recurso(pcb, recurso_wait);
 				restar_instancia(lista_recursos, recurso_wait);
 				int instancias_recurso = obtener_instancias(lista_recursos, recurso_wait);
-				log_info(logger, "Instancias del recurso %s: %d", recurso_wait, instancias_recurso);
+				log_info(logger, "PID: %d - Wait: %s - Instancias: %d", pcb->pid, recurso_wait, instancias_recurso);
 				if (instancias_recurso < 0)
 				{
 					int recurso_length = strlen(recurso_wait);
-					pcb->recurso_bloqueante = realloc(pcb->recurso_bloqueante,recurso_length);
-					memcpy(pcb->recurso_bloqueante,recurso_wait,recurso_length);
+					pcb->recurso_bloqueante = realloc(pcb->recurso_bloqueante, recurso_length);
+					memcpy(pcb->recurso_bloqueante, recurso_wait, recurso_length);
 					list_push(pcb_block_list, pcb);
 					sem_post(&sem_estado_block);
 				}
@@ -79,23 +79,15 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case SIGNAL:
-			char *recurso_signal = contexto_actualizado->param;
+			char *recurso_signal = crear_recurso(contexto_actualizado->param);
 			if (recurso_existe_en_lista(lista_recursos, recurso_signal))
 			{
+				desasignar_recurso_si_lo_tiene_asignado(pcb, recurso_signal);
 				sumar_instancia(lista_recursos, recurso_signal);
 				int instancias_recurso = obtener_instancias(lista_recursos, recurso_signal);
-				log_info(logger, "Instancias del recurso %s: %d", recurso_signal, instancias_recurso);
+				log_info(logger, "PID: %d - Signal: %s - Instancias: %d", pcb->pid, recurso_signal, instancias_recurso);
 				enviar_contexto(pcb);
-				if (instancias_recurso <= 0)
-				{
-					t_recurso *recurso_bloqueante = buscar_recurso(lista_recursos, recurso_signal);
-					pcb_t *pcb_desbloqueado = list_pop(recurso_bloqueante->cola_bloqueados);
-					list_push(pcb_ready_list, pcb_desbloqueado);
-					pcb_desbloqueado->tiempo_espera_en_ready = temporal_create();
-					log_info(logger, "El proceso %d se libero de la cola de bloqueados", pcb_desbloqueado->pid);
-					sem_post(&sem_estado_ready);
-				}
-
+				liberar_proceso_de_bloqueados_si_necesario(recurso_signal, instancias_recurso);
 			}
 			else
 			{
@@ -125,7 +117,7 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 		}
 
-		list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, (void*)instrucciones_destroy);
+		list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, (void*) instrucciones_destroy);
 		free(contexto_actualizado->param);
 		free(contexto_actualizado->registros);
 		free(contexto_actualizado);
@@ -136,7 +128,7 @@ void enviar_contexto(pcb_t *pcb)
 		break;
 	}
 
-	list_destroy_and_destroy_elements(contexto->instrucciones, (void*)instrucciones_destroy);
+	list_destroy_and_destroy_elements(contexto->instrucciones, (void*) instrucciones_destroy);
 	free(contexto->param);
 	free(contexto->registros);
 	free(contexto);

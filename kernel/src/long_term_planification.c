@@ -39,6 +39,7 @@ pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket){
 	proceso->registros_cpu = inicializar_registros();
 	proceso->estado = PCB_NEW;
 	proceso->recurso_bloqueante = malloc(sizeof(char)*2);
+	proceso->recursos_asignados = list_create();
 	memcpy(proceso->recurso_bloqueante,"0",(sizeof(char)*2));
 	return proceso;
 }

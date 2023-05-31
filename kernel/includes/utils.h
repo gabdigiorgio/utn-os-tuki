@@ -26,11 +26,16 @@ bool list_mutex_is_empty(t_lista_mutex * list);
 int list_mutex_size(t_lista_mutex * list);
 
 // funciones de recursos
+char* crear_recurso(const char *nombre_recurso);
 t_recurso* buscar_recurso(t_lista_mutex*lista_recursos, const char *nombre_recurso);
 bool recurso_existe_en_lista(t_lista_mutex* lista_recursos, const char* nombre_recurso);
 void restar_instancia(t_lista_mutex* lista_recursos, const char *nombre_recurso);
 void sumar_instancia(t_lista_mutex* lista_recursos, const char *nombre_recurso);
 int obtener_instancias(t_lista_mutex* lista_recurso, const char* nombre_recurso);
+void asignar_recurso(pcb_t *pcb, const char *nombre_recurso);
+void desasignar_recurso_si_lo_tiene_asignado(pcb_t *pcb, const char* nombre_recurso);
+void devolver_instancias(pcb_t* pcb, t_lista_mutex *lista_recursos);
+void liberar_proceso_de_bloqueados_si_necesario(const char* recurso, int instancias_recurso);
 
 char* armar_lista_pids(t_list* lista);
 void instrucciones_destroy(t_instruc* instruccion);
