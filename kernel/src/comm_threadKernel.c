@@ -11,13 +11,10 @@ t_contexto* obtener_contexto_pcb(pcb_t *pcb)
 }
 
 void enviar_contexto(pcb_t *pcb)
-{ // aca recibir un pcb (pbc_t pbc)
+{
 	t_contexto* contexto = obtener_contexto_pcb(pcb);
 	t_paquete *paquete = malloc(sizeof(t_paquete));
 	paquete->buffer = malloc(sizeof(t_buffer));
-	//crear contexto c on ese pcb
-	//inicializo el estado en 0 ya que el CPU es quien nos va a responder con el estado correcto
-	//contexto = obtener_contexto_pcb(pcb_t* pcb)
 
 	serializar_contexto(cpu_connection, contexto);
 	deserializar_header(paquete, cpu_connection);
@@ -26,7 +23,6 @@ void enviar_contexto(pcb_t *pcb)
 	case 1:
 		t_contexto* contexto_actualizado = inicializar_contexto();
 		deserializar_contexto(contexto_actualizado, paquete->buffer, paquete->lineas);
-		//t_contexto* contexto_actualizado = deserializar_contexto(paquete->buffer, paquete->lineas);
 		copiar_registros(pcb->registros_cpu,contexto_actualizado->registros);
 
 		switch (contexto_actualizado->estado)
@@ -133,20 +129,6 @@ void enviar_contexto(pcb_t *pcb)
 		free(contexto_actualizado->param);
 		free(contexto_actualizado->registros);
 		free(contexto_actualizado);
-
-
-
-		// Hasta linea 49
-		/*if (contexto_actualizado->registros->ip
-				== (uint16_t) list_size(contexto->instrucciones)) {
-			//log_info(logger, "El contexto se ejecutó completamente");
-
-			list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, free);
-			free(contexto_actualizado->param);
-			free(contexto_actualizado->registros);
-			free(contexto_actualizado);
-
-		}*/
 		break;
 
 	default:

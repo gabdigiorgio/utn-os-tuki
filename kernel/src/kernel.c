@@ -81,10 +81,6 @@ int main(int argc, char *argv[])
 
 	pthread_join(console_thread, NULL);
 
-	//hilo para enviar contexto a cpu
-	pthread_t cpu_thread;
-	//pthread_create(&cpu_thread,NULL,(void*)enviar_contexto,socket_servidor);
-
 	terminar_programa();
 
 	recibido = 0;

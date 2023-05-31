@@ -46,7 +46,6 @@ int registro_4b(char registro[5]){
 	if(strlen(registro)!= 4){
 		return EXIT_FAILURE;
 	}
-	//printf("%s",registro);
 	return 0;
 }
 
@@ -54,14 +53,12 @@ int registro_8b(char registro[9]){
 	if(strlen(registro)!= 8){
 		return EXIT_FAILURE;
 	}
-	//printf("%s",registro);
 	return 0;
 }
 int registro_16b(char registro[16]){
 	if(strlen(registro)!= 16){
 		return EXIT_FAILURE;
 	}
-	//printf("%s",registro);
 	return 0;
 }
 

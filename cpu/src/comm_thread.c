@@ -25,11 +25,6 @@ void conexion_kernel(int server_connection){
 				log_info(logger,"PID: %d",contexto->pid);
 				int result = ejecutar_contexto(contexto, paquete->lineas);
 				armar_contexto(contexto);
-				//log_info(logger, "Creación de Proceso PID: %d", contexto->pid);
-				//log_info(logger, "El numero de estado es: %d", contexto->estado);
-				//log_info(logger, "El parametro de interrupcion es: %s", contexto->param); //aca esta el error
-				//log_info(logger,contexto->registros->ax);
-				//log_info(logger,contexto->registros->ip);
 				serializar_contexto(connection_fd,contexto);
 				break;
 			default:

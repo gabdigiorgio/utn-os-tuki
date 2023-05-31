@@ -23,7 +23,7 @@ int crear_conexion(char *ip, char* puerto)
 	return socket_cliente;
 }
 
-int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){ //char* handshake (int socket_cliente, uint8_t tipo_cliente)
+int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){
 
 	char* message = "";
 	uint8_t handshake = tipo_cliente;
@@ -48,7 +48,7 @@ int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){ 
 
 	send(socket_cliente, &handshake, sizeof(uint8_t), NULL);
 	log_info(logger, message);
-	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL); //consultar por un timeout
+	recv(socket_cliente, &result, sizeof(uint8_t), MSG_WAITALL);
 
 	if(result == 1){
 		log_info(logger, "Se establecio correctamente la conexion");
@@ -177,7 +177,6 @@ void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
 void serializar_contexto(int socket, t_contexto* contexto){
 	//Creo el buffer a utilizar para las instrucciones
 	t_buffer* buffer = malloc(sizeof(t_buffer));
-	//t_instruc* instrucciones = malloc(sizeof(t_instruc));
 
 	//Leo la lista de instrucciones para sumar el tamaño de toda la lista
 	buffer->size = calcular_tam_registros(contexto->registros);
@@ -196,7 +195,6 @@ void serializar_contexto(int socket, t_contexto* contexto){
 	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
 
 	crear_header(a_enviar,buffer,list_size(contexto->instrucciones));
-	//Creo un paquete y le asigno los valores iniciales
 
 	//Envio todo el stream al servidor
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);

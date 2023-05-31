@@ -11,7 +11,5 @@ int ejecutar_set(char* param1, char* param2){
 }
 
 void cambiar_registro(char* registro, char* valor){
-	//log_info(logger,valor);
-	//log_info(logger,registro);
 	copiar_string(valor,registro);
 }

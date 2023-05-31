@@ -25,9 +25,6 @@ void estado_ready()
 {
 	while (1)
 	{
-
-		//sem_wait(&sem_grado_multiprogramacion);
-
 		sem_wait(&sem_estado_ready); // espera a que haya algun proceso en la lista de ready
 
 		char* lista_pids = armar_lista_pids(pcb_ready_list->lista);
@@ -37,8 +34,6 @@ void estado_ready()
 		free(lista_pids);
 
 		sem_wait(&sem_exec_libre); // espera a que exec este libre para planificar
-
-		//log_info(logger, "Exec libre => estado_ready comienza a planificar");
 
 		if (strcmp(algoritmo_planificacion, "FIFO") == 0)
 		{
@@ -68,21 +63,14 @@ void estado_exec()
 
 		temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
 
-
-			//log_info(logger, "El proceso: %d llego a estado exec", pcb_a_ejecutar->pid);
-
 		t_temporal *tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
 
 		enviar_contexto(pcb_a_ejecutar);
-
-		//enviar_proceso_a_ejecutar(pcb_a_ejecutar);
 
 		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
 		pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
 
 		temporal_destroy(tiempo_en_ejecucion);
-
-			//log_info(logger, "El proceso: %d termino de ejecutar", pcb_a_ejecutar->pid);
 
 		sem_post(&sem_exec_libre); // le avisa a ready que exec ya esta libre
 	}
@@ -128,11 +116,8 @@ void io_block(void *args)
 
 	log_info(logger,"PID: %d - Ejecuta IO: %d",arguments->pcb->pid, arguments->block_time);
 	log_info(logger,"PID: %d - Bloqueado por: IO",arguments->pcb->pid);
-	//log_info(logger, "El proceso: %d esta en I/O block. Tiempo: %d ", arguments->pcb->pid, arguments->block_time);
 
 	sleep(arguments->block_time);
-
-	//log_info(logger, "El proceso: %d finalizo en I/O block", arguments->pcb->pid);
 
 	list_push(pcb_ready_list, arguments->pcb);
 	arguments->pcb->tiempo_espera_en_ready = temporal_create();

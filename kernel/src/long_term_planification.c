@@ -9,7 +9,7 @@
 void estado_new(){
 	while(1)
 	{
-		sem_wait(&sem_grado_multi); //consultar por un tema de deadlock
+		sem_wait(&sem_grado_multi);
 		sem_wait(&sem_estado_new);
 		pcb_t* pcb_para_listo = list_pop(pcb_new_list);
 		list_push(pcb_ready_list,pcb_para_listo);
@@ -21,7 +21,6 @@ void estado_new(){
 }
 
 void agregar_pcb_a_new(t_list* instrucciones, uint32_t socket){
-	//uint32_t largo = list_mutex_size(pcb_new_list);
 	pcb_t *proceso = crear_proceso(instrucciones, socket);
 	list_push(pcb_new_list,proceso);
 	log_info(logger, "Se crea el proceso: %d en NEW", proceso->pid);
@@ -50,14 +49,11 @@ void estado_exit(){
 		sem_wait(&sem_estado_exit);
 		pcb_t* proceso = list_pop(pcb_exit_list);
 		proceso->estado=PCB_EXIT;
-		//log_info(logger, "El proceso: %d ingreso a exit", proceso->pid);
 		log_info(logger, "Finaliza el proceso %d - Motivo: SUCCESS", proceso->pid);
 		send(proceso->consola, &resultado, sizeof(uint8_t), NULL);
 		//hace el free de todo lo que tiene adentro el pcb
 		destroy_proceso(proceso);
 		sem_post(&sem_grado_multi);
-
-		//comunicar que termino a la consola
 	}
 }
 void iniciar_planificador_largo_plazo(){
