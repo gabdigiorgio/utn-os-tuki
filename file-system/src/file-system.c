@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 	log_info(logger,handshake(connection_fd));
 	t_list* lista;
 
+	while(1){};
 
 	return EXIT_SUCCESS;
 }

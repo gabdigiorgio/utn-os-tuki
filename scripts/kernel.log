@@ -1,67 +1,15 @@
-[INFO] 16:39:42:859 KERNEL/(3456:3456): Valores de configuracion leidos correctamente
-[INFO] 16:53:46:256 KERNEL/(4609:4609): Valores de configuracion leidos correctamente
-[INFO] 16:53:46:263 KERNEL/(4609:4609): Memoria
-[INFO] 16:53:46:278 KERNEL/(4609:4609): Se establecio correctamente la conexion
-[INFO] 16:53:46:278 KERNEL/(4609:4609): Cpu
-[INFO] 16:53:46:278 KERNEL/(4609:4609): Se establecio correctamente la conexion
-[INFO] 16:53:46:279 KERNEL/(4609:4609): File system
-[INFO] 16:53:46:279 KERNEL/(4609:4609): Se establecio correctamente la conexion
-[INFO] 16:53:46:279 KERNEL/(4609:4609): Kernel listo para recibir Consolas
-[INFO] 16:55:08:305 KERNEL/(4746:4746): Valores de configuracion leidos correctamente
-[INFO] 16:55:08:306 KERNEL/(4746:4746): Memoria
-[INFO] 16:55:08:311 KERNEL/(4746:4746): Se establecio correctamente la conexion
-[INFO] 16:55:24:068 KERNEL/(4818:4818): Valores de configuracion leidos correctamente
-[INFO] 16:55:24:070 KERNEL/(4818:4818): Memoria
-[INFO] 16:55:24:073 KERNEL/(4818:4818): Se establecio correctamente la conexion
-[INFO] 16:56:08:565 KERNEL/(4908:4908): Valores de configuracion leidos correctamente
-[INFO] 16:56:08:567 KERNEL/(4908:4908): Memoria
-[INFO] 16:56:08:578 KERNEL/(4908:4908): Se establecio correctamente la conexion
-[INFO] 16:56:08:578 KERNEL/(4908:4908): Cpu
-[INFO] 16:56:08:579 KERNEL/(4908:4908): Se establecio correctamente la conexion
-[INFO] 16:56:08:579 KERNEL/(4908:4908): File system
-[INFO] 16:56:08:579 KERNEL/(4908:4908): Se establecio correctamente la conexion
-[INFO] 16:56:08:579 KERNEL/(4908:4908): Kernel listo para recibir Consolas
-[INFO] 16:57:48:973 KERNEL/(5342:5342): Valores de configuracion leidos correctamente
-[INFO] 16:57:48:975 KERNEL/(5342:5342): Memoria
-[INFO] 16:57:48:988 KERNEL/(5342:5342): Se establecio correctamente la conexion
-[INFO] 16:57:48:988 KERNEL/(5342:5342): Cpu
-[INFO] 16:57:48:988 KERNEL/(5342:5342): Se establecio correctamente la conexion
-[INFO] 16:57:48:988 KERNEL/(5342:5342): File system
-[INFO] 16:57:48:989 KERNEL/(5342:5342): Se establecio correctamente la conexion
-[INFO] 16:57:48:989 KERNEL/(5342:5342): Kernel listo para recibir Consolas
-[INFO] 16:58:50:019 KERNEL/(5633:5633): Valores de configuracion leidos correctamente
-[INFO] 16:58:50:019 KERNEL/(5633:5633): Memoria
-[INFO] 16:58:50:024 KERNEL/(5633:5633): Se establecio correctamente la conexion
-[INFO] 16:59:07:393 KERNEL/(5701:5701): Valores de configuracion leidos correctamente
-[INFO] 16:59:07:396 KERNEL/(5701:5701): Memoria
-[ERROR] 16:59:39:925 KERNEL/(5701:5701): Fallo al realizar el handshake, cerrando conexion
-[INFO] 17:00:20:001 KERNEL/(5897:5897): Valores de configuracion leidos correctamente
-[INFO] 17:00:20:010 KERNEL/(5897:5897): Memoria
-[INFO] 17:00:20:011 KERNEL/(5897:5897): Se establecio correctamente la conexion
-[INFO] 17:00:20:012 KERNEL/(5897:5897): Cpu
-[INFO] 17:00:20:012 KERNEL/(5897:5897): Se establecio correctamente la conexion
-[INFO] 17:00:20:012 KERNEL/(5897:5897): File system
-[INFO] 17:00:20:012 KERNEL/(5897:5897): Se establecio correctamente la conexion
-[INFO] 17:00:20:012 KERNEL/(5897:5897): Kernel listo para recibir Consolas
-[INFO] 17:02:14:954 KERNEL/(6209:6209): Valores de configuracion leidos correctamente
-[INFO] 17:02:14:963 KERNEL/(6209:6209): Memoria
-[INFO] 17:02:14:965 KERNEL/(6209:6209): Se establecio correctamente la conexion
-[INFO] 17:04:30:613 KERNEL/(6352:6352): Valores de configuracion leidos correctamente
-[INFO] 17:04:30:614 KERNEL/(6352:6352): Memoria
-[INFO] 17:04:30:616 KERNEL/(6352:6352): Se establecio correctamente la conexion
-[INFO] 17:04:30:616 KERNEL/(6352:6352): Cpu
-[INFO] 17:04:30:617 KERNEL/(6352:6352): Se establecio correctamente la conexion
-[INFO] 17:04:30:617 KERNEL/(6352:6352): File system
-[INFO] 17:04:30:617 KERNEL/(6352:6352): Se establecio correctamente la conexion
-[INFO] 17:04:30:617 KERNEL/(6352:6352): Kernel listo para recibir Consolas
-[INFO] 17:05:15:408 KERNEL/(6470:6470): Valores de configuracion leidos correctamente
-[INFO] 17:05:15:408 KERNEL/(6470:6470): Memoria
-[INFO] 17:05:15:410 KERNEL/(6470:6470): Se establecio correctamente la conexion
-[INFO] 17:08:30:489 KERNEL/(7154:7154): Valores de configuracion leidos correctamente
-[INFO] 17:08:30:489 KERNEL/(7154:7154): Memoria
-[INFO] 17:08:30:490 KERNEL/(7154:7154): Se establecio correctamente la conexion
-[INFO] 17:08:30:490 KERNEL/(7154:7154): Cpu
-[INFO] 17:08:30:491 KERNEL/(7154:7154): Se establecio correctamente la conexion
-[INFO] 17:08:30:491 KERNEL/(7154:7154): File system
-[INFO] 17:08:30:491 KERNEL/(7154:7154): Se establecio correctamente la conexion
-[INFO] 17:08:30:492 KERNEL/(7154:7154): Kernel listo para recibir Consolas
+[INFO] 23:43:58:525 KERNEL/(5777:5777): Valores de configuracion leidos correctamente
+[INFO] 23:43:58:526 KERNEL/(5777:5777): Memoria
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Cpu
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:532 KERNEL/(5777:5777): File system
+[INFO] 23:43:58:532 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:532 KERNEL/(5777:5777): Kernel listo para recibir Consolas
+[INFO] 23:44:34:196 KERNEL/(5777:5791): Se conecto un cliente!
+[INFO] 23:44:34:196 KERNEL/(5777:5791): Se crea el proceso: 0 en NEW
+[INFO] 23:44:34:196 KERNEL/(5777:5788): PID: 0 - Estado Anterior: PCB_NEW - Estado Actual: PCB_READY
+[INFO] 23:44:34:196 KERNEL/(5777:5785): Cola Ready HRRN :  0
+[INFO] 23:44:47:203 KERNEL/(5777:5787): El proceso 0 llego a yield. Se envio al final de ready
+[INFO] 23:44:47:203 KERNEL/(5777:5785): Cola Ready HRRN :  0
+[INFO] 23:44:50:205 KERNEL/(5777:5789): Finaliza el proceso 0 - Motivo: SUCCESS
