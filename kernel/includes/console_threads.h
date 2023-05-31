@@ -6,6 +6,7 @@
 
 #include "server_utils.h"
 #include "client_utils.h"
+#include "utils.h"
 #include "../../shared/includes/tad.h"
 
 void atender_consola(int socket_servidor);

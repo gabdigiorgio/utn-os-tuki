@@ -27,7 +27,7 @@ int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){ 
 
 	char* message = "";
 	uint8_t handshake = tipo_cliente;
-	uint8_t result;
+	uint8_t result = 0;
 
 	switch(tipo_servidor){
 				case 1:
@@ -61,12 +61,11 @@ int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor){ 
 }
 
 uint32_t calcular_tam_instrucciones(t_list* lista){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	uint32_t size = 0;
 	int lineas = list_size(lista);
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(lista, i);
+			t_instruc* instrucciones = list_get(lista, i);
 
 			size = size + sizeof(uint32_t)
 					+ sizeof(uint32_t)
@@ -99,12 +98,11 @@ uint32_t calcular_tam_contexto(t_contexto* contexto){
 }
 
 void copiar_contexto(void* stream, t_contexto* contexto){
-	t_instruc* instrucciones = malloc(sizeof(t_instruc));
 	int lineas = list_size(contexto->instrucciones);
 	int offset = 0;
 
 	for(int i = 0; i < lineas; i++){
-			instrucciones = list_get(contexto->instrucciones, i);
+			t_instruc* instrucciones = list_get(contexto->instrucciones, i);
 
 			memcpy(stream + offset, &instrucciones->nro, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
@@ -204,6 +202,8 @@ void serializar_contexto(int socket, t_contexto* contexto){
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
 	//Libero memoria que ya no voy a utilizar
+	free(buffer->stream);
+	free(buffer);
 	free(a_enviar);
 }
 

@@ -9,10 +9,8 @@
 #include "../includes/server_utils.h"
 
 void atender_consola(int socket_servidor){
-	t_list* instruc_lista;
-	instruc_lista = list_create();
-
 	while (1){
+		t_list* instruc_lista = list_create();
 
 		int socket_console_client = 0;
 		socket_console_client = esperar_cliente(socket_servidor);
@@ -28,11 +26,16 @@ void atender_consola(int socket_servidor){
 		switch(paquete->codigo_operacion)
 		{
 			case 1:
-				instruc_lista = deserializar_instrucciones(paquete->buffer, paquete->lineas);
+				deserializar_instrucciones(instruc_lista, paquete->buffer, paquete->lineas);
 				agregar_pcb_a_new(instruc_lista,socket_console_client);
 				break;
 			default:
 				break;
 		}
+
+		list_destroy_and_destroy_elements(instruc_lista, (void*)instrucciones_destroy);
+		free(paquete->buffer->stream);
+		free(paquete->buffer);
+		free(paquete);
 	}
 }

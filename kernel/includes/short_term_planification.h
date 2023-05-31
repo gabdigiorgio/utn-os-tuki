@@ -8,9 +8,9 @@
 #ifndef SHORT_TERM_PLANIFICATION_H_
 #define SHORT_TERM_PLANIFICATION_H_
 
-#include "general_planification_utils.h"
 #include "comm_threadKernel.h"
 #include "semaphore.h"
+#include "utils.h"
 #include<stdbool.h>
 
 typedef struct {

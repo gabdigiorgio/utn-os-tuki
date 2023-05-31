@@ -54,7 +54,6 @@ int main(int argc, char *argv[]) {
 			log_error(logger, "Hubo un error intesperado");
 			break;
 	}
-
 	list_destroy_and_destroy_elements(instruc_list, (void*)instrucciones_destroy);
 
 	terminar_programa(kernel_connection,logger,config);

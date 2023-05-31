@@ -49,9 +49,7 @@ void deserializar_header(t_paquete* paquete, int socket_cliente){
 	recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size, MSG_WAITALL);
 }
 
-t_list* deserializar_instrucciones(t_buffer* buffer, int lineas){
-	t_list* lista = malloc(sizeof(t_list));
-
+void deserializar_instrucciones(t_list* lista, t_buffer* buffer, int lineas){
 	void* stream = buffer->stream;
 
 	for(int i=0; i<lineas; i++){
@@ -90,18 +88,9 @@ t_list* deserializar_instrucciones(t_buffer* buffer, int lineas){
 
 		list_add(lista, instrucciones);
 	}
-
-	return lista;
-
 }
 
-t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
-	t_list* lista = list_create();
-	t_contexto* contexto = malloc(sizeof(t_contexto));
-	uint32_t pid;
-	contexto_estado_t estado;
-	uint32_t param_length;
-
+void deserializar_contexto(t_contexto* contexto, t_buffer* buffer, int lineas){
 	void* stream = buffer->stream;
 
 	for(int i=0; i<lineas; i++){
@@ -138,54 +127,43 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas){
 			memcpy(instrucciones->param3, stream, instrucciones->param3_length);
 			stream += instrucciones->param3_length;
 
-			list_add(lista, instrucciones);
+			list_add(contexto->instrucciones, instrucciones);
 		}
 
-	t_registros* registros = malloc(sizeof *registros);
-
-	memcpy(&(registros->ip), stream, sizeof(uint16_t));
+	memcpy(&(contexto->registros->ip), stream, sizeof(uint16_t));
 	stream += sizeof(uint16_t);
-	memcpy(&(registros->ax), stream, sizeof(char) * 5);
+	memcpy(&(contexto->registros->ax), stream, sizeof(char) * 5);
 	stream += sizeof(char) * 5;
-	memcpy(&(registros->bx), stream, sizeof(char) * 5);
+	memcpy(&(contexto->registros->bx), stream, sizeof(char) * 5);
 	stream += sizeof(char) * 5;
-	memcpy(&(registros->cx), stream, sizeof(char) * 5);
+	memcpy(&(contexto->registros->cx), stream, sizeof(char) * 5);
 	stream += sizeof(char) * 5;
-	memcpy(&(registros->dx), stream, sizeof(char) * 5);
+	memcpy(&(contexto->registros->dx), stream, sizeof(char) * 5);
 	stream += sizeof(char) * 5;
-	memcpy(&(registros->eax), stream, sizeof(char) * 9);
+	memcpy(&(contexto->registros->eax), stream, sizeof(char) * 9);
 	stream += sizeof(char) * 9;
-	memcpy(&(registros->ebx), stream, sizeof(char) * 9);
+	memcpy(&(contexto->registros->ebx), stream, sizeof(char) * 9);
 	stream += sizeof(char) * 9;
-	memcpy(&(registros->ecx), stream, sizeof(char) * 9);
+	memcpy(&(contexto->registros->ecx), stream, sizeof(char) * 9);
 	stream += sizeof(char) * 9;
-	memcpy(&(registros->edx), stream, sizeof(char) * 9);
+	memcpy(&(contexto->registros->edx), stream, sizeof(char) * 9);
 	stream += sizeof(char) * 9;
-	memcpy(&(registros->rax), stream, sizeof(char) * 17);
+	memcpy(&(contexto->registros->rax), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
-	memcpy(&(registros->rbx), stream, sizeof(char) * 17);
+	memcpy(&(contexto->registros->rbx), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
-	memcpy(&(registros->rcx), stream, sizeof(char) * 17);
+	memcpy(&(contexto->registros->rcx), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
-	memcpy(&(registros->rdx), stream, sizeof(char) * 17);
+	memcpy(&(contexto->registros->rdx), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
-	memcpy(&(pid), stream, sizeof(uint32_t));
+	memcpy(&(contexto->pid), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
-	memcpy(&(estado), stream, sizeof(contexto_estado_t));
+	memcpy(&(contexto->estado), stream, sizeof(contexto_estado_t));
 	stream += sizeof(contexto_estado_t);
-	memcpy(&(param_length), stream, sizeof(uint32_t));
+	memcpy(&(contexto->param_length), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
-	char* param = malloc(param_length);
-	memcpy(param, stream, param_length);
-
-	contexto->instrucciones = lista;
-	contexto->registros = registros;
-	contexto->pid = pid;
-	contexto->param = param;
-	contexto->param_length = param_length;
-	contexto->estado = estado;
-
-	return contexto;
+	contexto->param = realloc(contexto->param,contexto->param_length);
+	memcpy(contexto->param, stream, contexto->param_length);
 }
 
 

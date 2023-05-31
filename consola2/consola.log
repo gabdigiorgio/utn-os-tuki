@@ -11,3 +11,15 @@
 [INFO] 02:42:49:781 CONSOLA/(25437:25437): Ejecucion terminada
 [INFO] 03:28:14:993 CONSOLA/(26738:26738): Valores de configuracion leidos correctamente
 [INFO] 03:28:26:016 CONSOLA/(26738:26738): Ejecucion terminada
+[INFO] 21:04:59:623 CONSOLA/(3206:3206): Valores de configuracion leidos correctamente
+[INFO] 21:05:10:651 CONSOLA/(3206:3206): Ejecucion terminada
+[INFO] 21:58:09:029 CONSOLA/(4288:4288): Valores de configuracion leidos correctamente
+[INFO] 21:58:25:175 CONSOLA/(4288:4288): Ejecucion terminada
+[INFO] 22:14:37:605 CONSOLA/(4797:4797): Valores de configuracion leidos correctamente
+[ERROR] 22:14:49:283 CONSOLA/(4797:4797): Error en la ejecucion
+[INFO] 22:19:42:777 CONSOLA/(4995:4995): Valores de configuracion leidos correctamente
+[ERROR] 22:19:45:210 CONSOLA/(4995:4995): Error en la ejecucion
+[INFO] 03:11:57:188 CONSOLA/(33403:33403): Valores de configuracion leidos correctamente
+[INFO] 03:11:58:869 CONSOLA/(33416:33416): Valores de configuracion leidos correctamente
+[INFO] 03:12:16:196 CONSOLA/(33403:33403): Ejecucion terminada
+[INFO] 03:12:21:205 CONSOLA/(33416:33416): Ejecucion terminada

@@ -8,7 +8,7 @@
 #ifndef LONG_TERM_PLANIFICATION_H_
 #define LONG_TERM_PLANIFICATION_H_
 
-#include "general_planification_utils.h"
+#include "utils.h"
 #include "semaphore.h"
 
 void estado_new();

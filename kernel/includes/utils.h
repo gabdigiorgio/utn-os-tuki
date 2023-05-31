@@ -12,6 +12,8 @@
 #include <commons/collections/list.h>
 #include <pthread.h>
 
+#include "general_planification_utils.h"
+
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
 
@@ -29,5 +31,13 @@ bool recurso_existe_en_lista(t_lista_mutex* lista_recursos, const char* nombre_r
 void restar_instancia(t_lista_mutex* lista_recursos, const char *nombre_recurso);
 void sumar_instancia(t_lista_mutex* lista_recursos, const char *nombre_recurso);
 int obtener_instancias(t_lista_mutex* lista_recurso, const char* nombre_recurso);
+
+char* armar_lista_pids(t_list* lista);
+void instrucciones_destroy(t_instruc* instruccion);
+t_registros* inicializar_registros(void);
+void copiar_registros(t_registros* to_registros, t_registros* from_registros);
+t_list* copiar_lista_instrucciones(t_list* nueva_lista, t_list* lista_instrucciones);
+t_contexto* inicializar_contexto();
+void destroy_proceso(pcb_t* proceso);
 
 #endif /* CLIENT_H_ */
