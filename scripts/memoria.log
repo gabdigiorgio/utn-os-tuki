@@ -1,0 +1,11 @@
+[INFO] 23:43:53:515 MEMORIA/(5774:5774): Valores de configuracion leidos correctamente
+[INFO] 23:43:53:516 MEMORIA/(5774:5774): Memoria lista para recibir al CPU, Kernel o File System
+[INFO] 23:43:55:518 MEMORIA/(5774:5774): Se conecto un cliente!
+[INFO] 23:43:55:519 MEMORIA/(5774:5782): Thread iniciado correctamente
+[INFO] 23:43:55:520 MEMORIA/(5774:5782): Handshake de File System recibido correctamente
+[INFO] 23:43:57:524 MEMORIA/(5774:5774): Se conecto un cliente!
+[INFO] 23:43:57:524 MEMORIA/(5774:5784): Thread iniciado correctamente
+[INFO] 23:43:57:524 MEMORIA/(5774:5784): Handshake de CPU recibido correctamente
+[INFO] 23:43:58:526 MEMORIA/(5774:5774): Se conecto un cliente!
+[INFO] 23:43:58:526 MEMORIA/(5774:5790): Thread iniciado correctamente
+[INFO] 23:43:58:538 MEMORIA/(5774:5790): Handshake de Kernel recibido correctamente

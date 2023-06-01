@@ -1,0 +1,15 @@
+[INFO] 23:43:58:525 KERNEL/(5777:5777): Valores de configuracion leidos correctamente
+[INFO] 23:43:58:526 KERNEL/(5777:5777): Memoria
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Cpu
+[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:532 KERNEL/(5777:5777): File system
+[INFO] 23:43:58:532 KERNEL/(5777:5777): Se establecio correctamente la conexion
+[INFO] 23:43:58:532 KERNEL/(5777:5777): Kernel listo para recibir Consolas
+[INFO] 23:44:34:196 KERNEL/(5777:5791): Se conecto un cliente!
+[INFO] 23:44:34:196 KERNEL/(5777:5791): Se crea el proceso: 0 en NEW
+[INFO] 23:44:34:196 KERNEL/(5777:5788): PID: 0 - Estado Anterior: PCB_NEW - Estado Actual: PCB_READY
+[INFO] 23:44:34:196 KERNEL/(5777:5785): Cola Ready HRRN :  0
+[INFO] 23:44:47:203 KERNEL/(5777:5787): El proceso 0 llego a yield. Se envio al final de ready
+[INFO] 23:44:47:203 KERNEL/(5777:5785): Cola Ready HRRN :  0
+[INFO] 23:44:50:205 KERNEL/(5777:5789): Finaliza el proceso 0 - Motivo: SUCCESS

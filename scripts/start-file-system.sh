@@ -1,0 +1,1 @@
+../file-system/Debug/file-system ../config-files/file-system.config &

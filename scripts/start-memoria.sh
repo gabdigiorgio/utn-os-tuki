@@ -1,0 +1,1 @@
+../memoria/Debug/memoria ../config-files/memoria.config &
