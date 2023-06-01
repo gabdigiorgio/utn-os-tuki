@@ -74,6 +74,7 @@ void enviar_contexto(pcb_t *pcb)
 			else
 			{
 				list_push(pcb_exit_list, pcb);
+				log_error(logger,"No existe el recurso %s - terminando proceso PID: %d",recurso_wait, pcb->pid);
 				sem_post(&sem_estado_exit);
 			}
 
@@ -94,6 +95,7 @@ void enviar_contexto(pcb_t *pcb)
 			else
 			{
 				list_push(pcb_exit_list, pcb);
+				log_error(logger,"No existe el recurso %s - terminando proceso PID: %d",recurso_signal, pcb->pid);
 				sem_post(&sem_estado_exit);
 			}
 			free(recurso_signal);

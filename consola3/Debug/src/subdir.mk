@@ -31,4 +31,10 @@ src/%.o: ../src/%.c src/subdir.mk
 	@echo ' '
 
 
+clean: clean-src
+
+clean-src:
+	-$(RM) ./src/client_utils.d ./src/client_utils.o ./src/consola.d ./src/consola.o ./src/initial_setup.d ./src/initial_setup.o ./src/utils.d ./src/utils.o
+
+.PHONY: clean-src
 
