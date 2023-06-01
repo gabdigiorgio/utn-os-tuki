@@ -28,6 +28,7 @@ void enviar_contexto(pcb_t *pcb)
 		switch (contexto_actualizado->estado)
 		{
 		case EXIT:
+			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
 			break;

@@ -59,6 +59,8 @@ void estado_exec()
 
 		pcb_t *pcb_a_ejecutar = list_pop(pcb_ready_list);
 
+		log_info(logger, "PID: %d - Estado Anterior: PCB_READY - Estado Actual: PCB_EXEC", pcb_a_ejecutar->pid);
+
 		pcb_a_ejecutar->estado = PCB_EXEC;
 
 		temporal_destroy(pcb_a_ejecutar->tiempo_espera_en_ready);
