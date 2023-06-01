@@ -76,6 +76,8 @@ void enviar_contexto(pcb_t *pcb)
 				list_push(pcb_exit_list, pcb);
 				sem_post(&sem_estado_exit);
 			}
+
+			free(recurso_wait);
 			break;
 
 		case SIGNAL:
@@ -94,6 +96,7 @@ void enviar_contexto(pcb_t *pcb)
 				list_push(pcb_exit_list, pcb);
 				sem_post(&sem_estado_exit);
 			}
+			free(recurso_signal);
 			break;
 
 		case FSYSTEM:

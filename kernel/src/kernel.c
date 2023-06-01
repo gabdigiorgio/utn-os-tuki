@@ -136,13 +136,18 @@ void iniciar_lista_recursos()
 	lista_recursos = init_list_mutex();
 	for (int i = 0; i < cant_lista_nombre_recursos; i++)
 	{
+		char* nuevo_recurso = string_array_pop(lista_nombre_recursos);
+		int recurso_length = strlen(nuevo_recurso) + 1;
 		t_recurso *recurso = malloc(sizeof(t_recurso));
 		recurso->id = i;
-		recurso->nombre_recurso = lista_nombre_recursos[i];
+		recurso->nombre_recurso = malloc(recurso_length);
+		memcpy(recurso->nombre_recurso,nuevo_recurso,recurso_length);
 		recurso->instancias = (*lista_instancias_recursos[i]) - '0';
 		pthread_mutex_init(&(recurso->mutex_instancias), NULL);
 		recurso->cola_bloqueados = init_list_mutex();
 		list_add(lista_recursos->lista, recurso);
 
 	}
+
+	string_array_destroy(lista_nombre_recursos);
 }
