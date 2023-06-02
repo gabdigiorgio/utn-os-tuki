@@ -1,0 +1,6 @@
+[INFO] 01:36:56:110 FILE-SYSTEM/(7187:7187): Valores de configuracion leidos correctamente
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): Memoria
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): Se establecio correctamente la conexion
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): File System listo para recibir al Kernel
+[INFO] 01:37:02:401 FILE-SYSTEM/(7187:7187): Se conecto el Kernel
+[INFO] 01:37:02:401 FILE-SYSTEM/(7187:7187): Handshake de Kernel recibido correctamente

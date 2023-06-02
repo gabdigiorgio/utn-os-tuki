@@ -45,10 +45,5 @@ consola2: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo ' '
 
 # Other Targets
-clean:
-	-$(RM) consola2
-	-@echo ' '
-
-.PHONY: all clean dependents main-build
 
 -include ../makefile.targets
