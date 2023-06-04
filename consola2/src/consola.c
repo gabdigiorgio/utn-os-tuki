@@ -55,9 +55,6 @@ int main(int argc, char *argv[]) {
 			log_error(logger, "Hubo un error intesperado");
 			break;
 	}
-	while(1){
-		sleep(1000);
-	}
 
 	list_destroy_and_destroy_elements(instruc_list, (void*)instrucciones_destroy);
 

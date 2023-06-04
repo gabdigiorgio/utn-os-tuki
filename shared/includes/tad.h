@@ -62,7 +62,22 @@ typedef struct
 
 typedef enum
 {
-	EXIT, YIELD, IO, FSYSTEM, MEM, WAIT, SIGNAL
+	EXEC,
+	EXIT,
+	YIELD,
+	IO,
+	WAIT,
+	SIGNAL,
+	CREATE_SEGMENT,
+	DELETE_SEGMENT,
+	MOV_IN,
+	MOV_OUT,
+	F_OPEN,
+	F_CLOSE,
+	F_SEEK,
+	F_READ,
+	F_WRITE,
+	F_TRUNCATE
 } contexto_estado_t;
 
 typedef struct
