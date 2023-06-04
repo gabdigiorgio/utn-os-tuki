@@ -1,9 +1,9 @@
 #include "../../includes/code_reader.h"
 
 int ejecutar_signal(t_contexto* contexto, char* param1){
-	contexto->param_length = strlen(param1) + 1;
-	contexto->param = realloc(contexto->param,contexto->param_length);
-	memcpy(contexto->param, param1, contexto->param_length);
+	contexto->param1_length = strlen(param1) + 1;
+	contexto->param1 = realloc(contexto->param1,contexto->param1_length);
+	memcpy(contexto->param1, param1, contexto->param1_length);
 
 	contexto_estado = SIGNAL;
 

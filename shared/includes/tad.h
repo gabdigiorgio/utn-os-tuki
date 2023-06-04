@@ -70,8 +70,12 @@ typedef struct
 	t_registros *registros;
 	t_list *instrucciones;
 	uint32_t pid;
-	char *param;
-	uint32_t param_length;
+	char *param1;
+	uint32_t param1_length;
+	char *param2;
+	uint32_t param2_length;
+	char *param3;
+	uint32_t param3_length;
 	contexto_estado_t estado;
 
 } t_contexto;

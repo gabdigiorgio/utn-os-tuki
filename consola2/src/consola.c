@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
 
 	serializar_instrucciones(kernel_connection,instruc_list);
 
+
 	switch(recibir_respuesta(kernel_connection)){
 		case 0:
 			log_error(logger, "Error en la ejecucion");
@@ -53,6 +54,9 @@ int main(int argc, char *argv[]) {
 		default:
 			log_error(logger, "Hubo un error intesperado");
 			break;
+	}
+	while(1){
+		sleep(1000);
 	}
 
 	list_destroy_and_destroy_elements(instruc_list, (void*)instrucciones_destroy);

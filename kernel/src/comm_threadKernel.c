@@ -43,7 +43,7 @@ void enviar_contexto(pcb_t *pcb)
 		case IO:
 			t_io_block_args *args = malloc(sizeof(t_io_block_args));
 			args->pcb = pcb;
-			int time = atoi(contexto_actualizado->param);
+			int time = atoi(contexto_actualizado->param1);
 			args->block_time = time;
 			pthread_t thread_io_block;
 			pthread_create(&thread_io_block, NULL, (void*) io_block, (t_io_block_args*) args);
@@ -51,7 +51,7 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case WAIT:
-			char *recurso_wait = crear_recurso(contexto_actualizado->param);
+			char *recurso_wait = crear_recurso(contexto_actualizado->param1);
 
 			if (recurso_existe_en_lista(lista_recursos, recurso_wait))
 			{
@@ -83,7 +83,7 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case SIGNAL:
-			char *recurso_signal = crear_recurso(contexto_actualizado->param);
+			char *recurso_signal = crear_recurso(contexto_actualizado->param1);
 			if (recurso_existe_en_lista(lista_recursos, recurso_signal))
 			{
 				desasignar_recurso_si_lo_tiene_asignado(pcb, recurso_signal);
@@ -124,7 +124,9 @@ void enviar_contexto(pcb_t *pcb)
 		}
 
 		list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, (void*) instrucciones_destroy);
-		free(contexto_actualizado->param);
+		free(contexto_actualizado->param1);
+		free(contexto_actualizado->param2);
+		free(contexto_actualizado->param3);
 		free(contexto_actualizado->registros);
 		free(contexto_actualizado);
 		break;
@@ -135,7 +137,9 @@ void enviar_contexto(pcb_t *pcb)
 	}
 
 	list_destroy_and_destroy_elements(contexto->instrucciones, (void*) instrucciones_destroy);
-	free(contexto->param);
+	free(contexto->param1);
+	free(contexto->param2);
+	free(contexto->param3);
 	free(contexto->registros);
 	free(contexto);
 	free(paquete->buffer->stream);

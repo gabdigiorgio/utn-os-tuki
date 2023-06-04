@@ -287,13 +287,19 @@ t_list* copiar_lista_instrucciones(t_list *nueva_lista, t_list *lista_instruccio
 
 t_contexto* inicializar_contexto()
 {
-	t_contexto *contexto = malloc(sizeof(t_contexto));
+	t_contexto* contexto = malloc(sizeof(t_contexto));
 	contexto->instrucciones = list_create();
 	contexto->registros = inicializar_registros();
-	contexto->param = malloc(sizeof(char) * 2);
-	memcpy(contexto->param, "0", (sizeof(char) * 2));
+	contexto->param1 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param1, "0", (sizeof(char) * 2));
+	contexto->param1_length = sizeof(char) * 2;
+	contexto->param2 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param2, "0", (sizeof(char) * 2));
+	contexto->param2_length = sizeof(char) * 2;
+	contexto->param3 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param3, "0", (sizeof(char) * 2));
+	contexto->param3_length = sizeof(char) * 2;
 	contexto->estado = EXIT;
-	contexto->param_length = sizeof(char) * 2;
 	contexto->pid = 0;
 
 	return contexto;

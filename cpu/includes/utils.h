@@ -19,4 +19,5 @@ void copiar_string(char* origen, char* destino);
 void contexto_destroy(t_contexto* contexto);
 void instrucciones_destroy(t_instruc* instruccion);
 t_contexto* contexto_create();
+t_registros* inicializar_registros();
 #endif /* CLIENT_H_ */
