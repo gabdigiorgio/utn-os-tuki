@@ -19,14 +19,18 @@ t_log* iniciar_logger(void)
 
 t_instruc* crear_instruccion(){
 	t_instruc* instruccion = malloc(sizeof(t_instruc));
-	instruccion->instruct = malloc(sizeof(char*));
-	instruccion->instruct_length = 0;
-	instruccion->param1 = malloc(sizeof(char*));
-	instruccion->param1_length = 0;
-	instruccion->param2 = malloc(sizeof(char*));
-	instruccion->param2_length = 0;
-	instruccion->param3 = malloc(sizeof(char*));
-	instruccion->param3_length = 0;
+	instruccion->instruct = malloc(sizeof(char));
+	instruccion->instruct_length = sizeof(char);
+	memcpy(instruccion->instruct, "", (sizeof(char)));
+	instruccion->param1 = malloc(sizeof(char));
+	memcpy(instruccion->param1, "", (sizeof(char)));
+	instruccion->param1_length = sizeof(char);
+	instruccion->param2 = malloc(sizeof(char));
+	memcpy(instruccion->param2, "", (sizeof(char)));
+	instruccion->param2_length = sizeof(char);
+	instruccion->param3 = malloc(sizeof(char));
+	memcpy(instruccion->param3, "", (sizeof(char)));
+	instruccion->param3_length = sizeof(char);
 
 	return instruccion;
 }
