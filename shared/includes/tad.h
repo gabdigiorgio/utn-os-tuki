@@ -104,7 +104,8 @@ typedef struct
 
 typedef struct
 {
-	segmento_t *segmento;
+	uint32_t pid;
+	t_list *segmentos;
 } tabla_segmentos_t;
 
 typedef struct
