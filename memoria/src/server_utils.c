@@ -96,6 +96,38 @@ char* handshake(int socket_cliente){
 	return message;
 }
 
+void deserializar_header(t_paquete* paquete, int socket_cliente){
+	recv(socket_cliente, &(paquete->codigo_operacion), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(paquete->lineas), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(paquete->buffer->size), sizeof(uint32_t), MSG_WAITALL);
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size, MSG_WAITALL);
+}
+
+
+void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&(instruccion->estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
+
+	memcpy(&(instruccion->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	memcpy(instruccion->param1, stream, instruccion->param1_length);
+	stream += instruccion->param1_length;
+	memcpy(&(instruccion->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	memcpy(instruccion->param2, stream, instruccion->param2_length);
+	stream += instruccion->param2_length;
+
+	memcpy(&(instruccion->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	memcpy(instruccion->param3, stream, instruccion->param3_length);
+}
+
 void liberar_conexion(int socket_servidor)
 {
 	close(socket_servidor);

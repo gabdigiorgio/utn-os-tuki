@@ -305,6 +305,38 @@ t_contexto* inicializar_contexto()
 	return contexto;
 }
 
+t_instruc_mem* inicializar_instruc_mem()
+{
+	t_instruc_mem* instruccion = malloc(sizeof(t_instruc_mem));
+	instruccion->param1 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param1, "0", (sizeof(char) * 2));
+	instruccion->param1_length = sizeof(char) * 2;
+	instruccion->param2 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param2, "0", (sizeof(char) * 2));
+	instruccion->param2_length = sizeof(char) * 2;
+	instruccion->param3 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param3, "0", (sizeof(char) * 2));
+	instruccion->param3_length = sizeof(char) * 2;
+	instruccion->estado = CREATE_SEGMENT;
+
+	return instruccion;
+}
+
+void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
+	instruccion->param1_length = contexto->param1_length;
+	instruccion->param2_length = contexto->param2_length;
+	instruccion->param3_length = contexto->param3_length;
+	instruccion->estado = contexto->estado;
+
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+
+	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
+	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
+	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
+}
+
 void destroy_proceso(pcb_t *proceso)
 {
 	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) instrucciones_destroy);

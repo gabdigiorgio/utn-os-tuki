@@ -45,12 +45,20 @@ pthread_t tid[3];
 // ___ CONFIG VARIABLES ____
 
 char* server_port;
+int tam_memoria;
+int tam_segmento_0;
+int cant_segmentos;
+int retardo_memoria;
+int retardo_compactacion;
+char* algoritmo_asignacion;
 
 t_config* config;
 
 // _____________________
 
 // _____ GLOBAL VARIABLES
+
+void * memoria;
 
 bool cpu_conectada;
 bool kernel_conectado;

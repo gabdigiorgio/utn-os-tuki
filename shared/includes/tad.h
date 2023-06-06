@@ -21,11 +21,6 @@ typedef struct
 	char *param3;
 } t_instruc;
 
-typedef enum
-{
-	INSTRUCCIONES,
-} op_code;
-
 typedef struct
 {
 	uint32_t size;
@@ -94,6 +89,17 @@ typedef struct
 	contexto_estado_t estado;
 
 } t_contexto;
+
+typedef struct
+{
+	contexto_estado_t estado;
+	uint32_t param1_length;
+	char *param1;
+	uint32_t param2_length;
+	char *param2;
+	uint32_t param3_length;
+	char *param3;
+} t_instruc_mem;
 
 typedef struct
 {

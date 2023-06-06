@@ -15,6 +15,7 @@ extern t_lista_mutex* lista_recursos;
 
 //extern  pcb_t* pcb;
 extern int cpu_connection;
+extern int memoria_connection;
 extern t_log* logger;
 
 t_contexto* obtener_contexto_pcb(pcb_t* pcb);

@@ -161,6 +161,9 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_m_block;
 			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
 			//pthread_join(thread_m_block);
+			t_instruc_mem* instruccion = inicializar_instruc_mem();
+			copiar_instruccion_mem(instruccion,contexto_actualizado);
+			serializar_instruccion_memoria(memoria_connection, instruccion);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta

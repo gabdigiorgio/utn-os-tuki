@@ -11,18 +11,33 @@
 #include "../includes/memoria.h"
 
 int main(int argc, char *argv[]) {
+
 	logger = iniciar_logger();
-	  if (argc < 2) {
-	    log_error(logger, "Falta parametro del path del archivo de configuracion");
-	    return EXIT_FAILURE;
-	  }
-	config = iniciar_config(argv[1]);
+
 
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
+
+	if (argc < 2) {
+	  log_error(logger, "Falta parametro del path del archivo de configuracion");
+	  return EXIT_FAILURE;
+	}
+
+	config = iniciar_config(argv[1]);
+
+
 	int exit_status = initial_setup();
+
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
+
+
+	// Asigno tamaño a la memoria
+
+	memoria = malloc(tam_memoria);
+
+
+	// Esperamos conexiones de Kernel, CPU y File-System
 
 	int server_connection = iniciar_servidor(server_port);
 
@@ -53,7 +68,6 @@ void thread_main(t_conexion *conexion){
 	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
 	log_info(logger,handshake(conexion->num_socket));
-	t_list* lista;
 }
 
 void iterator(char* value) {
