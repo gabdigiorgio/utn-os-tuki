@@ -63,6 +63,7 @@ void * memoria;
 bool cpu_conectada;
 bool kernel_conectado;
 bool fileSystem_conectado;
+t_list lista_de_tablas;
 
 // _____________________
 

@@ -13,5 +13,6 @@
 
 // La funcion creara un segmento y lo devuelve
 segmento_t crear_segmento(int id, int direccion_base, int tamanio);
+tabla_segmentos_t* buscar_tabla(t_list *lista, int pid);
 
 #endif /* SEGMENTACION_H_ */

@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 	// Asigno tamaño a la memoria
 
 	memoria = malloc(tam_memoria);
-
+	lista_de_tablas = list_create();
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
@@ -62,6 +62,8 @@ int main(int argc, char *argv[]) {
 
 	log_info(logger, "Se superaron las conexiones maximas establecidas, cerrando memoria");
 	liberar_conexion(server_connection);
+
+
 }
 
 void thread_main(t_conexion *conexion){
@@ -71,7 +73,16 @@ void thread_main(t_conexion *conexion){
 	t_list* lista;
 }
 
+void create_tabla_segmento(int pid) {
+	tabla_segmentos_t tabla = malloc(sizeof(tabla_segmentos_t));
+	tabla->pid = pid;
+	tabla->segmentos = list_create();
+	lista_de_tablas = list_add(lista_de_tablas,tabla);
+}
+
+
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
+
 
