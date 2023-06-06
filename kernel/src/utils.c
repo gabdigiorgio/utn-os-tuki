@@ -135,17 +135,17 @@ void asignar_recurso(pcb_t *pcb, const char *nombre_recurso)
 
 void desasignar_recurso_si_lo_tiene_asignado(pcb_t *pcb, const char *nombre_recurso)
 {
-	bool buscar_recurso_por_nombre(void *recurso)
-	{
-		return strcmp(((char*) recurso), nombre_recurso) == 0;
+	bool buscar_recurso(void *recurso){
+		t_recurso *recurso_actual = (t_recurso *) recurso;
+		return strcmp(recurso_actual->nombre_recurso, nombre_recurso) == 0;
 	}
 
-	list_remove_by_condition(pcb->recursos_asignados, buscar_recurso_por_nombre);
+	list_remove_by_condition(pcb->recursos_asignados, buscar_recurso);
 }
 
 void devolver_instancias(pcb_t *pcb, t_lista_mutex *lista_recursos)
 {
-	if (list_size(pcb->recursos_asignados) != 0)
+	if (!list_is_empty(pcb->recursos_asignados))
 	{
 		for (int i = 0; i < list_size(pcb->recursos_asignados); i++)
 		{
@@ -290,10 +290,16 @@ t_contexto* inicializar_contexto()
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	contexto->instrucciones = list_create();
 	contexto->registros = inicializar_registros();
-	contexto->param = malloc(sizeof(char) * 2);
-	memcpy(contexto->param, "0", (sizeof(char) * 2));
+	contexto->param1 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param1, "0", (sizeof(char) * 2));
+	contexto->param1_length = sizeof(char) * 2;
+	contexto->param2 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param2, "0", (sizeof(char) * 2));
+	contexto->param2_length = sizeof(char) * 2;
+	contexto->param3 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param3, "0", (sizeof(char) * 2));
+	contexto->param3_length = sizeof(char) * 2;
 	contexto->estado = EXIT;
-	contexto->param_length = sizeof(char) * 2;
 	contexto->pid = 0;
 
 	return contexto;

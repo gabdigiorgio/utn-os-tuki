@@ -92,7 +92,10 @@ uint32_t calcular_tam_registros(t_registros* registros){
 uint32_t calcular_tam_contexto(t_contexto* contexto){
 	uint32_t size = 0;
 
-	size = sizeof(uint32_t) + sizeof(contexto_estado_t) + sizeof(uint32_t) + contexto->param_length;
+	size = sizeof(uint32_t) + sizeof(contexto_estado_t) +
+			sizeof(uint32_t) + contexto->param1_length +
+			sizeof(uint32_t) + contexto->param2_length +
+			sizeof(uint32_t) + contexto->param3_length;
 
 	return size;
 }
@@ -154,9 +157,20 @@ void copiar_contexto(void* stream, t_contexto* contexto){
 	offset += sizeof(uint32_t);
 	memcpy(stream + offset, &contexto->estado, sizeof(contexto_estado_t));
 	offset += sizeof(contexto_estado_t);
-	memcpy(stream + offset, &contexto->param_length, sizeof(uint32_t));
+
+	memcpy(stream + offset, &contexto->param1_length, sizeof(uint32_t));
 	offset += sizeof(uint32_t);
-	memcpy(stream + offset, contexto->param, contexto->param_length);
+	memcpy(stream + offset, contexto->param1, contexto->param1_length);
+	offset += contexto->param1_length;
+
+	memcpy(stream + offset, &contexto->param2_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, contexto->param2, contexto->param2_length);
+	offset += contexto->param2_length;
+
+	memcpy(stream + offset, &contexto->param3_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, contexto->param3, contexto->param3_length);
 }
 
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas){

@@ -10,7 +10,7 @@ t_contexto* obtener_contexto_pcb(pcb_t *pcb)
 	return contexto;
 }
 
-void enviar_contexto(pcb_t *pcb)
+contexto_estado_t enviar_contexto(pcb_t *pcb)
 {
 	t_contexto *contexto = obtener_contexto_pcb(pcb);
 	t_paquete *paquete = malloc(sizeof(t_paquete));
@@ -43,7 +43,7 @@ void enviar_contexto(pcb_t *pcb)
 		case IO:
 			t_io_block_args *args = malloc(sizeof(t_io_block_args));
 			args->pcb = pcb;
-			int time = atoi(contexto_actualizado->param);
+			int time = atoi(contexto_actualizado->param1);
 			args->block_time = time;
 			pthread_t thread_io_block;
 			pthread_create(&thread_io_block, NULL, (void*) io_block, (t_io_block_args*) args);
@@ -51,7 +51,7 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case WAIT:
-			char *recurso_wait = crear_recurso(contexto_actualizado->param);
+			char *recurso_wait = crear_recurso(contexto_actualizado->param1);
 
 			if (recurso_existe_en_lista(lista_recursos, recurso_wait))
 			{
@@ -61,7 +61,7 @@ void enviar_contexto(pcb_t *pcb)
 				log_info(logger, "PID: %d - Wait: %s - Instancias: %d", pcb->pid, recurso_wait, instancias_recurso);
 				if (instancias_recurso < 0)
 				{
-					int recurso_length = strlen(recurso_wait);
+					int recurso_length = strlen(recurso_wait) + 1;
 					pcb->recurso_bloqueante = realloc(pcb->recurso_bloqueante, recurso_length);
 					memcpy(pcb->recurso_bloqueante, recurso_wait, recurso_length);
 					list_push(pcb_block_list, pcb);
@@ -83,7 +83,7 @@ void enviar_contexto(pcb_t *pcb)
 			break;
 
 		case SIGNAL:
-			char *recurso_signal = crear_recurso(contexto_actualizado->param);
+			char *recurso_signal = crear_recurso(contexto_actualizado->param1);
 			if (recurso_existe_en_lista(lista_recursos, recurso_signal))
 			{
 				desasignar_recurso_si_lo_tiene_asignado(pcb, recurso_signal);
@@ -102,20 +102,95 @@ void enviar_contexto(pcb_t *pcb)
 			free(recurso_signal);
 			break;
 
-		case FSYSTEM:
-			//revisar el recurso
-			//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
-			//y pushear a block
-			//Si no existe o existe y esta disponible ejecutar logica de FILE
-			//no hace falta meterlo en block
+		case F_OPEN:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
 			break;
-
-		case MEM:
-			//revisar el recurso
-			//si el recurso no esta disponible, agregar al pcb el nombre en recurso_bloqueante
-			//y pushear a block
-			//Si no existe o existe y esta disponible ejecutar logica de FILE
-			//no hace falta meterlo en block
+		case F_CLOSE:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case F_SEEK:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case F_READ:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case F_WRITE:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case F_TRUNCATE:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_f_block;
+			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
+			//pthread_join(thread_f_block);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case CREATE_SEGMENT:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_m_block;
+			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
+			//pthread_join(thread_m_block);
+			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case DELETE_SEGMENT:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_m_block;
+			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
+			//pthread_join(thread_m_block);
+			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case MOV_IN:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_m_block;
+			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
+			//pthread_join(thread_m_block);
+			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
+			break;
+		case MOV_OUT:
+			//logica temporal hasta tener la que va
+			//pthread_t thread_m_block;
+			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
+			//pthread_join(thread_m_block);
+			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			//cambiar por la correcta
 			break;
 
 		default:
@@ -124,7 +199,9 @@ void enviar_contexto(pcb_t *pcb)
 		}
 
 		list_destroy_and_destroy_elements(contexto_actualizado->instrucciones, (void*) instrucciones_destroy);
-		free(contexto_actualizado->param);
+		free(contexto_actualizado->param1);
+		free(contexto_actualizado->param2);
+		free(contexto_actualizado->param3);
 		free(contexto_actualizado->registros);
 		free(contexto_actualizado);
 		break;
@@ -135,11 +212,14 @@ void enviar_contexto(pcb_t *pcb)
 	}
 
 	list_destroy_and_destroy_elements(contexto->instrucciones, (void*) instrucciones_destroy);
-	free(contexto->param);
+	free(contexto->param1);
+	free(contexto->param2);
+	free(contexto->param3);
 	free(contexto->registros);
 	free(contexto);
 	free(paquete->buffer->stream);
 	free(paquete->buffer);
 	free(paquete);
 
+	return EXEC;
 }

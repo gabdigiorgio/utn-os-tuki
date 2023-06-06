@@ -67,10 +67,10 @@ void estado_exec()
 
 		t_temporal *tiempo_en_ejecucion = temporal_create(); // Empieza el temporizador de cuanto tarda en ejecutar el proceso
 
-		enviar_contexto(pcb_a_ejecutar);
+		contexto_estado_t resultado = enviar_contexto(pcb_a_ejecutar);
 
 		// En base al tiempo que tardo en ejecutar el proceso, se hace el calculo de la estimación de su proxima rafaga
-		pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
+		if(resultado != EXIT) pcb_a_ejecutar->estimado_proxima_rafaga = (hrrn_alfa * temporal_gettime(tiempo_en_ejecucion) + (1 - hrrn_alfa) * pcb_a_ejecutar->estimado_proxima_rafaga);
 
 		temporal_destroy(tiempo_en_ejecucion);
 
