@@ -1,15 +1,18 @@
-[INFO] 23:43:58:525 KERNEL/(5777:5777): Valores de configuracion leidos correctamente
-[INFO] 23:43:58:526 KERNEL/(5777:5777): Memoria
-[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
-[INFO] 23:43:58:527 KERNEL/(5777:5777): Cpu
-[INFO] 23:43:58:527 KERNEL/(5777:5777): Se establecio correctamente la conexion
-[INFO] 23:43:58:532 KERNEL/(5777:5777): File system
-[INFO] 23:43:58:532 KERNEL/(5777:5777): Se establecio correctamente la conexion
-[INFO] 23:43:58:532 KERNEL/(5777:5777): Kernel listo para recibir Consolas
-[INFO] 23:44:34:196 KERNEL/(5777:5791): Se conecto un cliente!
-[INFO] 23:44:34:196 KERNEL/(5777:5791): Se crea el proceso: 0 en NEW
-[INFO] 23:44:34:196 KERNEL/(5777:5788): PID: 0 - Estado Anterior: PCB_NEW - Estado Actual: PCB_READY
-[INFO] 23:44:34:196 KERNEL/(5777:5785): Cola Ready HRRN :  0
-[INFO] 23:44:47:203 KERNEL/(5777:5787): El proceso 0 llego a yield. Se envio al final de ready
-[INFO] 23:44:47:203 KERNEL/(5777:5785): Cola Ready HRRN :  0
-[INFO] 23:44:50:205 KERNEL/(5777:5789): Finaliza el proceso 0 - Motivo: SUCCESS
+[INFO] 01:37:02:394 KERNEL/(7211:7211): Valores de configuracion leidos correctamente
+[INFO] 01:37:02:398 KERNEL/(7211:7211): Memoria
+[INFO] 01:37:02:399 KERNEL/(7211:7211): Se establecio correctamente la conexion
+[INFO] 01:37:02:399 KERNEL/(7211:7211): Cpu
+[INFO] 01:37:02:400 KERNEL/(7211:7211): Se establecio correctamente la conexion
+[INFO] 01:37:02:401 KERNEL/(7211:7211): File system
+[INFO] 01:37:02:401 KERNEL/(7211:7211): Se establecio correctamente la conexion
+[INFO] 01:37:02:401 KERNEL/(7211:7211): Kernel listo para recibir Consolas
+[INFO] 01:37:13:737 KERNEL/(7211:7218): Se conecto un cliente!
+[INFO] 01:37:13:737 KERNEL/(7211:7218): Se crea el proceso: 0 en NEW
+[INFO] 01:37:13:737 KERNEL/(7211:7215): PID: 0 - Estado Anterior: PCB_NEW - Estado Actual: PCB_READY
+[INFO] 01:37:13:737 KERNEL/(7211:7212): Cola Ready HRRN :  0
+[INFO] 01:37:13:737 KERNEL/(7211:7214): PID: 0 - Estado Anterior: PCB_READY - Estado Actual: PCB_EXEC
+[INFO] 01:37:26:742 KERNEL/(7211:7214): El proceso 0 llego a yield. Se envio al final de ready
+[INFO] 01:37:26:742 KERNEL/(7211:7212): Cola Ready HRRN :  0
+[INFO] 01:37:26:745 KERNEL/(7211:7214): PID: 0 - Estado Anterior: PCB_READY - Estado Actual: PCB_EXEC
+[INFO] 01:37:29:748 KERNEL/(7211:7214): PID: 0 - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT
+[INFO] 01:37:29:748 KERNEL/(7211:7216): Finaliza el proceso 0 - Motivo: SUCCESS

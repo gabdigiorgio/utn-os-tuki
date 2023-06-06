@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 	// Asigno tamaño a la memoria
 
 	memoria = malloc(tam_memoria);
-
+	lista_de_tablas = list_create();
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
@@ -44,8 +44,10 @@ int main(int argc, char *argv[]) {
 	cpu_conectada = false;
 	kernel_conectado = false;
 	fileSystem_conectado = false;
-
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
+	//create_tabla_segmento(1);
+	//crear_segmento(1,1,1,1);
+	//log_info(logger,"Segmento creado correctamente");
 	//SO_REUSEADDR flag para reutilizar el socket
 
 	while (1){
@@ -60,8 +62,11 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
+
 	log_info(logger, "Se superaron las conexiones maximas establecidas, cerrando memoria");
 	liberar_conexion(server_connection);
+
+
 }
 
 void thread_main(t_conexion *conexion){
@@ -70,7 +75,20 @@ void thread_main(t_conexion *conexion){
 	log_info(logger,handshake(conexion->num_socket));
 }
 
+void create_tabla_segmento(int pid) {
+	tabla_segmentos_t *tabla = malloc(sizeof(tabla_segmentos_t));
+	tabla->pid = pid;
+	tabla->segmentos = list_create();
+	log_info(logger,"%d",list_size(lista_de_tablas));
+	log_info(logger,"%d",list_size(tabla->segmentos));
+	list_add(lista_de_tablas,tabla);
+	log_info(logger,"%d",list_size(lista_de_tablas));
+
+}
+
+
 void iterator(char* value) {
 	log_info(logger,"%s", value);
 }
+
 

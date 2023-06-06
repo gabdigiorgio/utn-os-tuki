@@ -23,7 +23,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := consola3
+BUILD_ARTIFACT_NAME := kernel
 BUILD_ARTIFACT_EXTENSION :=
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -34,13 +34,13 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 all: main-build
 
 # Main-build Target
-main-build: consola3
+main-build: kernel
 
 # Tool invocations
-consola3: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+kernel: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc -L"/home/utnso/Documents/TPSO/shared/includes" -o "consola3" $(OBJS) $(USER_OBJS) $(LIBS) -lcommons -lreadline
+	gcc -L"/home/utnso/Documents/TPSO/shared/includes" -o "kernel" $(OBJS) $(USER_OBJS) $(LIBS) -lcommons
 	@echo 'Finished building target: $@'
 	@echo ' '
 

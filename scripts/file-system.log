@@ -1,6 +1,6 @@
-[INFO] 23:43:55:518 FILE-SYSTEM/(5775:5775): Valores de configuracion leidos correctamente
-[INFO] 23:43:55:518 FILE-SYSTEM/(5775:5775): Memoria
-[INFO] 23:43:55:519 FILE-SYSTEM/(5775:5775): Se establecio correctamente la conexion
-[INFO] 23:43:55:520 FILE-SYSTEM/(5775:5775): File System listo para recibir al Kernel
-[INFO] 23:43:58:528 FILE-SYSTEM/(5775:5775): Se conecto el Kernel
-[INFO] 23:43:58:528 FILE-SYSTEM/(5775:5775): Handshake de Kernel recibido correctamente
+[INFO] 01:36:56:110 FILE-SYSTEM/(7187:7187): Valores de configuracion leidos correctamente
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): Memoria
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): Se establecio correctamente la conexion
+[INFO] 01:36:56:111 FILE-SYSTEM/(7187:7187): File System listo para recibir al Kernel
+[INFO] 01:37:02:401 FILE-SYSTEM/(7187:7187): Se conecto el Kernel
+[INFO] 01:37:02:401 FILE-SYSTEM/(7187:7187): Handshake de Kernel recibido correctamente
