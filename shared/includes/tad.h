@@ -21,10 +21,10 @@ typedef struct
 	char *param3;
 } t_instruc;
 
-typedef enum
+/*typedef enum
 {
-	INSTRUCCIONES,
-} op_code;
+	INSTRUCCIONES
+} op_code;*/
 
 typedef struct
 {

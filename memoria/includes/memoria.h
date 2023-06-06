@@ -18,6 +18,7 @@
 #include "server_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
+#include "segmentacion.h"
 
 #define CANTIDAD_DE_THREADS 3
 
@@ -63,7 +64,7 @@ void * memoria;
 bool cpu_conectada;
 bool kernel_conectado;
 bool fileSystem_conectado;
-t_list lista_de_tablas;
+t_list *lista_de_tablas;
 
 // _____________________
 

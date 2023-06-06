@@ -11,8 +11,8 @@
 #include "utils.h"
 #include "../../shared/includes/tad.h"
 
-// La funcion creara un segmento y lo devuelve
-segmento_t crear_segmento(int id, int direccion_base, int tamanio);
-tabla_segmentos_t* buscar_tabla(t_list *lista, int pid);
+extern t_list *lista_de_tablas;
+void crear_segmento(int id, int direccion_base, int tamanio,int pid);
+tabla_segmentos_t* buscar_tabla(int pid);
 
 #endif /* SEGMENTACION_H_ */
