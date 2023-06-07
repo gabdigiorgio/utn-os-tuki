@@ -39,8 +39,6 @@ int main(int argc, char *argv[]) {
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
-
-		conexion_kernel(server_connection);
 	int server_connection = iniciar_servidor(server_port);
 
 	cpu_conectada = false;
@@ -74,7 +72,21 @@ int main(int argc, char *argv[]) {
 void thread_main(t_conexion *conexion){
 	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
-	log_info(logger,handshake(conexion->num_socket));
+	char* mensaje=handshake(conexion->num_socket);
+	log_info(logger,mensaje);
+
+	if(strcmp(mensaje, "Handshake de CPU recibido correctamente")==0){
+
+		  //conexion_cpu(conexion->num_socket);
+	}
+	else if(strcmp(mensaje, "Handshake de Kernel recibido correctamente")==0)
+	{
+		conexion_kernel(conexion->num_socket);
+	}
+	else if(strcmp(mensaje, "Handshake de File System recibido correctamente")==0)
+	{
+		//conexion_fileSystem(conexion->num_socket);
+	}
 }
 
 void create_tabla_segmento(int pid) {

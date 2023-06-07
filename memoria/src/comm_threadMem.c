@@ -4,9 +4,9 @@ void conexion_kernel(int server_connection){
 
 	log_info(logger, "Memoria lista para recibir mensajes del Kernel");
 		kernel_connection= esperar_cliente(server_connection);
-		log_info(logger, handshake(kernel_connection));
-
-		while (1)
+		//log_info(logger, handshake(kernel_connection));
+    int exit_status=0;
+		while (exit_status==0)
 		{
 			t_paquete *paquete = malloc(sizeof(t_paquete));
 			paquete->buffer = malloc(sizeof(t_buffer));
@@ -34,8 +34,12 @@ void conexion_kernel(int server_connection){
 				break;
 
 			default:
-				log_info(logger, "falle");
+				exit_status=1;
 				break;
 			}
+
+			free(paquete->buffer->stream);
+			free(paquete->buffer);
+			free(paquete);
 		}
 }
