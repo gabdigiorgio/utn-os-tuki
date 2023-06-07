@@ -93,6 +93,7 @@ typedef struct
 typedef struct
 {
 	contexto_estado_t estado;
+	uint32_t pid;
 	uint32_t param1_length;
 	char *param1;
 	uint32_t param2_length;

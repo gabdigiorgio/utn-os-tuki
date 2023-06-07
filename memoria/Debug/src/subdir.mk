@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/comm_threadMem.c \
 ../src/initial_setup.c \
 ../src/memoria.c \
+../src/segmentacion.c \
 ../src/server_utils.c \
 ../src/utils.c 
 
@@ -14,6 +15,7 @@ C_DEPS += \
 ./src/comm_threadMem.d \
 ./src/initial_setup.d \
 ./src/memoria.d \
+./src/segmentacion.d \
 ./src/server_utils.d \
 ./src/utils.d 
 
@@ -21,6 +23,7 @@ OBJS += \
 ./src/comm_threadMem.o \
 ./src/initial_setup.o \
 ./src/memoria.o \
+./src/segmentacion.o \
 ./src/server_utils.o \
 ./src/utils.o 
 
@@ -37,7 +40,7 @@ src/%.o: ../src/%.c src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/comm_threadMem.d ./src/comm_threadMem.o ./src/initial_setup.d ./src/initial_setup.o ./src/memoria.d ./src/memoria.o ./src/server_utils.d ./src/server_utils.o ./src/utils.d ./src/utils.o
+	-$(RM) ./src/comm_threadMem.d ./src/comm_threadMem.o ./src/initial_setup.d ./src/initial_setup.o ./src/memoria.d ./src/memoria.o ./src/segmentacion.d ./src/segmentacion.o ./src/server_utils.d ./src/server_utils.o ./src/utils.d ./src/utils.o
 
 .PHONY: clean-src
 

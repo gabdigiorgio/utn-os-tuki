@@ -20,6 +20,7 @@ t_log* iniciar_logger(void)
 t_instruc_mem* inicializar_instruc_mem()
 {
 	t_instruc_mem* contexto = malloc(sizeof(t_instruc_mem));
+	contexto->pid=0;
 	contexto->param1 = malloc(sizeof(char) * 2);
 	memcpy(contexto->param1, "0", (sizeof(char) * 2));
 	contexto->param1_length = sizeof(char) * 2;
@@ -46,4 +47,5 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
 	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
 	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
+	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
 }

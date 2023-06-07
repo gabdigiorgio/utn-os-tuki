@@ -126,6 +126,9 @@ void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buff
 	stream += sizeof(uint32_t);
 	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
 	memcpy(instruccion->param3, stream, instruccion->param3_length);
+	stream += instruccion->param3_length;
+
+	memcpy(&(instruccion->pid), stream, sizeof(uint32_t));
 }
 
 void liberar_conexion(int socket_servidor)
