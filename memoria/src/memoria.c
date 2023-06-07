@@ -39,6 +39,8 @@ int main(int argc, char *argv[]) {
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
+
+		conexion_kernel(server_connection);
 	int server_connection = iniciar_servidor(server_port);
 
 	cpu_conectada = false;

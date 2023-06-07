@@ -52,6 +52,9 @@ int cant_segmentos;
 int retardo_memoria;
 int retardo_compactacion;
 char* algoritmo_asignacion;
+int cpu_connection;
+int kernel_connection;
+int fileSystem_connection;
 
 t_config* config;
 

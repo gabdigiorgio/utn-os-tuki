@@ -60,6 +60,7 @@ char* handshake(int socket_cliente){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de CPU recibido correctamente";
 					cpu_conectada = true;
+					cpu_connection=socket_cliente;
 				}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
@@ -72,6 +73,7 @@ char* handshake(int socket_cliente){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de Kernel recibido correctamente";
 					kernel_conectado = true;
+					kernel_connection=socket_cliente;
 						}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);
@@ -83,6 +85,7 @@ char* handshake(int socket_cliente){
 					send(socket_cliente, &resultOk, sizeof(uint8_t), NULL);
 					message = "Handshake de File System recibido correctamente";
 					fileSystem_conectado = true;
+					fileSystem_connection=socket_cliente;
 				}
 				else {
 					send(socket_cliente,&resultError,sizeof(uint8_t),NULL);

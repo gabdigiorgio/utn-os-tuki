@@ -31,6 +31,9 @@ extern t_log* logger;
 extern bool cpu_conectada;
 extern bool kernel_conectado;
 extern bool fileSystem_conectado;
+extern int cpu_connection;
+extern int kernel_connection;
+extern int fileSystem_connection;
 
 int iniciar_servidor(char* puerto);
 int esperar_cliente(int);

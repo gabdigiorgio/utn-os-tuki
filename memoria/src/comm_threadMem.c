@@ -3,8 +3,8 @@
 void conexion_kernel(int server_connection){
 
 	log_info(logger, "Memoria lista para recibir mensajes del Kernel");
-		int connection_fd = esperar_cliente(server_connection);
-		log_info(logger, handshake(connection_fd));
+		kernel_connection= esperar_cliente(server_connection);
+		log_info(logger, handshake(kernel_connection));
 
 		while (1)
 		{
