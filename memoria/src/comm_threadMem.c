@@ -23,6 +23,7 @@ void conexion_kernel(int server_connection){
 				{
 				case CREATE_SEGMENT:
 					log_info(logger, "Llego create_segmente a memoria");
+					log_info(logger, "pid %d", nueva_instruccion->pid);
 					//responder a kernel
 				}
 

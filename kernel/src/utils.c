@@ -329,6 +329,7 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
 	instruccion->param2_length = contexto->param2_length;
 	instruccion->param3_length = contexto->param3_length;
 	instruccion->estado = contexto->estado;
+	instruccion->pid = contexto->pid;
 
 	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
 	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
@@ -337,7 +338,7 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
 	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
 	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
-	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
+
 }
 
 void destroy_proceso(pcb_t *proceso)
