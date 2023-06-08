@@ -24,7 +24,116 @@ void conexion_kernel(int server_connection){
 				case CREATE_SEGMENT:
 					log_info(logger, "Llego create_segmente a memoria");
 					log_info(logger, "pid %d", nueva_instruccion->pid);
+
+					int id_segmento = atoi(nueva_instruccion->param1);
+					int tamanio_segmento = atoi(nueva_instruccion->param2);
+
+
+					// ___ FIRST ____
+					if (strcmp(algoritmo_asignacion, "FIRST") == 0){
+
+						for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
+						{
+							hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
+
+
+							if (hueco_libre->tamanio >= tamanio_segmento)
+							{
+								uint32_t base_segmento = hueco_libre->direccion_base;
+								if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
+									list_remove_element(lista_de_huecos_libres, hueco_libre);
+								}
+								else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
+									hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
+									hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
+								}
+
+								crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
+								break;
+							}
+
+						}
+
+					}
+
+					// ___ BEST ____
+					else if (strcmp(algoritmo_asignacion, "BEST") == 0){
+
+						int indice_hueco_mas_chico;
+						int tamanio_menor;
+
+						hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, 0);
+						indice_hueco_mas_chico = 0;
+						tamanio_menor = hueco_libre->tamanio;
+
+						for (int i = 1; i < list_size(lista_de_huecos_libres); i++)
+						{
+							hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
+							 if(hueco_libre->tamanio <tamanio_menor){
+								 indice_hueco_mas_chico = i;
+								 tamanio_menor = hueco_libre->tamanio;
+							 }
+
+						}
+
+						hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_chico);
+						if (hueco_libre->tamanio >= tamanio_segmento)
+						{
+
+							uint32_t base_segmento = hueco_libre->direccion_base;
+							if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
+								list_remove_element(lista_de_huecos_libres, hueco_libre);
+							}
+							else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
+								hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
+								hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
+							}
+
+							crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
+						}
+
+					}
+
+					// ___ WORST ____
+					else if (strcmp(algoritmo_asignacion, "WORST") == 0){
+
+						int indice_hueco_mas_grande;
+						int tamanio_mayor;
+
+						hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, 0);
+						indice_hueco_mas_grande = 0;
+						tamanio_mayor = hueco_libre->tamanio;
+
+						for (int i = 1; i < list_size(lista_de_huecos_libres); i++)
+						{
+							hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
+							 if(hueco_libre->tamanio > tamanio_mayor){
+								 indice_hueco_mas_grande = i;
+								 tamanio_mayor = hueco_libre->tamanio;
+							 }
+
+						}
+
+						hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_grande);
+						if (hueco_libre->tamanio >= tamanio_segmento)
+						{
+
+							uint32_t base_segmento = hueco_libre->direccion_base;
+							if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
+								list_remove_element(lista_de_huecos_libres, hueco_libre);
+							}
+							else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
+								hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
+								hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
+							}
+
+							crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
+						}
+					}
+
 					//responder a kernel
+
+
 				}
 
 
