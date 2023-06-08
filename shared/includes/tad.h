@@ -117,6 +117,13 @@ typedef struct
 
 typedef struct
 {
+	uint32_t direccion_base;
+	uint32_t tamanio;
+} hueco_libre_t;
+
+
+typedef struct
+{
 	char *instrucciones;
 } lista_instucciones_t;
 

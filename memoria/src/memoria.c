@@ -32,10 +32,22 @@ int main(int argc, char *argv[]) {
 	}
 
 
-	// Asigno tamaño a la memoria
+	// Asigno tamaño a la memoria, creo lista de tablas de segmentos, de huecos_libres y segmento 0
 
 	memoria = malloc(tam_memoria);
+
 	lista_de_tablas = list_create();
+
+	segemento_0.ids=0;
+	segemento_0.direccion_base=0;
+	segemento_0.tamanio = tam_segmento_0;
+
+	lista_de_huecos_libres = list_create();
+	hueco_libre_t *primer_hueco_libre = malloc(sizeof(hueco_libre_t));
+	primer_hueco_libre->direccion_base = segemento_0.tamanio;
+	primer_hueco_libre->tamanio = tam_memoria - segemento_0.tamanio;
+	list_add(lista_de_huecos_libres,primer_hueco_libre);
+
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 

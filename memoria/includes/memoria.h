@@ -64,10 +64,16 @@ t_config* config;
 
 void * memoria;
 
+segmento_t segemento_0;
+
+t_list *lista_de_tablas;
+
+t_list *lista_de_huecos_libres;
+
 bool cpu_conectada;
 bool kernel_conectado;
 bool fileSystem_conectado;
-t_list *lista_de_tablas;
+
 
 // _____________________
 
