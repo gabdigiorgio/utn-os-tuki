@@ -1,14 +1,30 @@
 #include "../../includes/code_reader.h"
 
 int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
+	//Genericas
 	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(instruccion->param1,instruccion->param2);
 	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield(contexto);
 	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit(contexto);
-	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_io(contexto,instruccion->param1);
-	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_wait(contexto,instruccion->param1);
-	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_signal(contexto,instruccion->param1);
+	//IO
+	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_syscall(contexto,instruccion,IO,1);
+	//Semasforos
+	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_syscall(contexto,instruccion,WAIT,1);
+	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_syscall(contexto,instruccion,SIGNAL,1);
+	//Memoria
+	if((strcmp(instruccion->instruct,"CREATE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,CREATE_SEGMENT,2);
+	if((strcmp(instruccion->instruct,"DELETE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,DELETE_SEGMENT,1);
+	if((strcmp(instruccion->instruct,"MOV_IN"))==0) return ejecutar_syscall(contexto,instruccion,MOV_IN,2);
+	if((strcmp(instruccion->instruct,"MOV_OUT"))==0) return ejecutar_syscall(contexto,instruccion,MOV_OUT,2);
+	//File System
+	if((strcmp(instruccion->instruct,"F_OPEN"))==0) return ejecutar_syscall(contexto,instruccion,F_OPEN,1);
+	if((strcmp(instruccion->instruct,"F_CLOSE"))==0) return ejecutar_syscall(contexto,instruccion,F_CLOSE,1);
+	if((strcmp(instruccion->instruct,"F_SEEK"))==0) return ejecutar_syscall(contexto,instruccion,F_SEEK,2);
+	if((strcmp(instruccion->instruct,"F_READ"))==0) return ejecutar_syscall(contexto,instruccion,F_READ,3);
+	if((strcmp(instruccion->instruct,"F_WRITE"))==0) return ejecutar_syscall(contexto,instruccion,F_WRITE,3);
+	if((strcmp(instruccion->instruct,"F_TRUNCATE"))==0) return ejecutar_syscall(contexto,instruccion,F_TRUNCATE,2);
 
-	return 1;
+	log_error(logger,"Instruccion desconocida [%s]",instruccion->instruct);
+	return ejecutar_exit(contexto);
 }
 
 char* seleccionar_registro(char* param){

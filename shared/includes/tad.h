@@ -21,11 +21,6 @@ typedef struct
 	char *param3;
 } t_instruc;
 
-typedef enum
-{
-	INSTRUCCIONES,
-} op_code;
-
 typedef struct
 {
 	uint32_t size;
@@ -62,7 +57,22 @@ typedef struct
 
 typedef enum
 {
-	EXIT, YIELD, IO, FSYSTEM, MEM, WAIT, SIGNAL
+	EXEC,
+	EXIT,
+	YIELD,
+	IO,
+	WAIT,
+	SIGNAL,
+	CREATE_SEGMENT,
+	DELETE_SEGMENT,
+	MOV_IN,
+	MOV_OUT,
+	F_OPEN,
+	F_CLOSE,
+	F_SEEK,
+	F_READ,
+	F_WRITE,
+	F_TRUNCATE
 } contexto_estado_t;
 
 typedef struct
@@ -70,11 +80,27 @@ typedef struct
 	t_registros *registros;
 	t_list *instrucciones;
 	uint32_t pid;
-	char *param;
-	uint32_t param_length;
+	char *param1;
+	uint32_t param1_length;
+	char *param2;
+	uint32_t param2_length;
+	char *param3;
+	uint32_t param3_length;
 	contexto_estado_t estado;
 
 } t_contexto;
+
+typedef struct
+{
+	contexto_estado_t estado;
+	uint32_t pid;
+	uint32_t param1_length;
+	char *param1;
+	uint32_t param2_length;
+	char *param2;
+	uint32_t param3_length;
+	char *param3;
+} t_instruc_mem;
 
 typedef struct
 {
@@ -85,7 +111,8 @@ typedef struct
 
 typedef struct
 {
-	segmento_t *segmento;
+	uint32_t pid;
+	t_list *segmentos;
 } tabla_segmentos_t;
 
 typedef struct

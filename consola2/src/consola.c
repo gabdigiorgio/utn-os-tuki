@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
 
 	serializar_instrucciones(kernel_connection,instruc_list);
 
+
 	switch(recibir_respuesta(kernel_connection)){
 		case 0:
 			log_error(logger, "Error en la ejecucion");

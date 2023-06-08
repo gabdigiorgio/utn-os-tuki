@@ -36,6 +36,7 @@ void asignar_recurso(pcb_t *pcb, const char *nombre_recurso);
 void desasignar_recurso_si_lo_tiene_asignado(pcb_t *pcb, const char* nombre_recurso);
 void devolver_instancias(pcb_t* pcb, t_lista_mutex *lista_recursos);
 void liberar_proceso_de_bloqueados_si_necesario(const char* recurso, int instancias_recurso);
+void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 
 char* armar_lista_pids(t_list* lista);
 void instrucciones_destroy(t_instruc* instruccion);
@@ -44,5 +45,7 @@ void copiar_registros(t_registros* to_registros, t_registros* from_registros);
 t_list* copiar_lista_instrucciones(t_list* nueva_lista, t_list* lista_instrucciones);
 t_contexto* inicializar_contexto();
 void destroy_proceso(pcb_t* proceso);
+t_instruc_mem* inicializar_instruc_mem();
+void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 
 #endif /* CLIENT_H_ */

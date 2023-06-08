@@ -135,17 +135,17 @@ void asignar_recurso(pcb_t *pcb, const char *nombre_recurso)
 
 void desasignar_recurso_si_lo_tiene_asignado(pcb_t *pcb, const char *nombre_recurso)
 {
-	bool buscar_recurso_por_nombre(void *recurso)
-	{
-		return strcmp(((char*) recurso), nombre_recurso) == 0;
+	bool buscar_recurso(void *recurso){
+		t_recurso *recurso_actual = (t_recurso *) recurso;
+		return strcmp(recurso_actual->nombre_recurso, nombre_recurso) == 0;
 	}
 
-	list_remove_by_condition(pcb->recursos_asignados, buscar_recurso_por_nombre);
+	list_remove_by_condition(pcb->recursos_asignados, buscar_recurso);
 }
 
 void devolver_instancias(pcb_t *pcb, t_lista_mutex *lista_recursos)
 {
-	if (list_size(pcb->recursos_asignados) != 0)
+	if (!list_is_empty(pcb->recursos_asignados))
 	{
 		for (int i = 0; i < list_size(pcb->recursos_asignados); i++)
 		{
@@ -290,13 +290,54 @@ t_contexto* inicializar_contexto()
 	t_contexto *contexto = malloc(sizeof(t_contexto));
 	contexto->instrucciones = list_create();
 	contexto->registros = inicializar_registros();
-	contexto->param = malloc(sizeof(char) * 2);
-	memcpy(contexto->param, "0", (sizeof(char) * 2));
+	contexto->param1 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param1, "0", (sizeof(char) * 2));
+	contexto->param1_length = sizeof(char) * 2;
+	contexto->param2 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param2, "0", (sizeof(char) * 2));
+	contexto->param2_length = sizeof(char) * 2;
+	contexto->param3 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param3, "0", (sizeof(char) * 2));
+	contexto->param3_length = sizeof(char) * 2;
 	contexto->estado = EXIT;
-	contexto->param_length = sizeof(char) * 2;
 	contexto->pid = 0;
 
 	return contexto;
+}
+
+t_instruc_mem* inicializar_instruc_mem()
+{
+	t_instruc_mem* instruccion = malloc(sizeof(t_instruc_mem));
+	instruccion->pid=0;
+	instruccion->param1 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param1, "0", (sizeof(char) * 2));
+	instruccion->param1_length = sizeof(char) * 2;
+	instruccion->param2 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param2, "0", (sizeof(char) * 2));
+	instruccion->param2_length = sizeof(char) * 2;
+	instruccion->param3 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param3, "0", (sizeof(char) * 2));
+	instruccion->param3_length = sizeof(char) * 2;
+	instruccion->estado = CREATE_SEGMENT;
+
+	return instruccion;
+}
+
+void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
+
+	instruccion->param1_length = contexto->param1_length;
+	instruccion->param2_length = contexto->param2_length;
+	instruccion->param3_length = contexto->param3_length;
+	instruccion->estado = contexto->estado;
+
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+
+	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
+	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
+	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
+	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
 }
 
 void destroy_proceso(pcb_t *proceso)

@@ -78,10 +78,8 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* cont
 			instrucciones->param2 = malloc(instrucciones->param2_length);
 			memcpy(instrucciones->param2, stream, instrucciones->param2_length);
 			stream += instrucciones->param2_length;
-
 			memcpy(&(instrucciones->param3_length), stream, sizeof(uint32_t));
 			stream += sizeof(uint32_t);
-
 			instrucciones->param3 = malloc(instrucciones->param3_length);
 			memcpy(instrucciones->param3, stream, instrucciones->param3_length);
 			stream += instrucciones->param3_length;
@@ -118,7 +116,23 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* cont
 	memcpy(&(pid), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
 	memcpy(&(estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
 
+	memcpy(&(contexto->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	contexto->param1 = realloc(contexto->param1,contexto->param1_length);
+	memcpy(contexto->param1, stream, contexto->param1_length);
+	stream += contexto->param1_length;
+	memcpy(&(contexto->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	contexto->param2 = realloc(contexto->param2,contexto->param2_length);
+	memcpy(contexto->param2, stream, contexto->param2_length);
+	stream += contexto->param2_length;
+
+	memcpy(&(contexto->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	contexto->param3 = realloc(contexto->param3,contexto->param3_length);
+	memcpy(contexto->param3, stream, contexto->param3_length);
 	contexto->pid = pid;
 	contexto->estado = estado;
 

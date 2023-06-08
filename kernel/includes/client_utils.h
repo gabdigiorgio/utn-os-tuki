@@ -23,5 +23,7 @@ void crear_header(void* a_enviar, t_buffer* buffer, int lineas);
 void serializar_contexto(int socket, t_contexto* contexto);
 uint32_t calcular_tam_registros(t_registros* registros);
 uint32_t calcular_tam_contexto(t_contexto* contexto);
+void copiar_instruccion_memoria(void* stream, t_instruc_mem* instruccion);
+void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
 
 #endif /* CLIENT_UTILS_H_ */
