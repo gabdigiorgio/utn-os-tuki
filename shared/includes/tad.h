@@ -173,4 +173,11 @@ typedef struct
 	t_list *recursos_asignados;
 } pcb_t;
 
+typedef struct {
+	char *nombre_archivo;
+	uint32_t tamanio_archivo;
+	uint32_t puntero_directo;
+	uint32_t puntero_indirecto;
+}fcb_t;
+
 #endif /* TAD_H_ */

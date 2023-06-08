@@ -14,6 +14,7 @@
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>
+#include "utils.h"
 
 int initial_setup(void);
 void failed_initial_setup(char* key);

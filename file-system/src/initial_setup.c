@@ -37,6 +37,7 @@ int initial_setup(){
 		return EXIT_FAILURE;
 	}
 
+
 }
 
 void failed_initial_setup(char* key){

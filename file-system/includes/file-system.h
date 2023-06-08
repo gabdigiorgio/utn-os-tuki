@@ -14,6 +14,7 @@
 #include "initial_setup.h"
 
 void iterator(char* value);
+void generar_fcb();
 void terminar_programa();
 
 // ___ CONFIG VARIABLES ____
@@ -37,5 +38,12 @@ char* server_port;
 t_config* config;
 
 // _____________________
+
+fcb_t* fcb;
+char* nombre_archivo;
+int tamanio_archivo;
+int puntero_directo;
+int puntero_indirecto;
+
 
 #endif
