@@ -13,7 +13,7 @@ int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	//Memoria
 	if((strcmp(instruccion->instruct,"CREATE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,CREATE_SEGMENT,2);
 	if((strcmp(instruccion->instruct,"DELETE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,DELETE_SEGMENT,1);
-	if((strcmp(instruccion->instruct,"MOV_IN"))==0) return ejecutar_mov_in(contexto);
+	if((strcmp(instruccion->instruct,"MOV_IN"))==0) return ejecutar_mov_in(contexto, instruccion);
 	if((strcmp(instruccion->instruct,"MOV_OUT"))==0) return ejecutar_syscall(contexto,instruccion,MOV_OUT,2);
 	//File System
 	if((strcmp(instruccion->instruct,"F_OPEN"))==0) return ejecutar_syscall(contexto,instruccion,F_OPEN,1);

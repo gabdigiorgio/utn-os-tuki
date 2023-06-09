@@ -1,15 +1,23 @@
 #include "../../includes/code_reader.h"
 
-int ejecutar_mov_in(t_contexto* contexto){
+int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
+{
+	contexto->estado = MOV_IN;
+	contexto->param1_length = instruccion->param1_length;
+	contexto->param1 = realloc(contexto->param1, contexto->param1_length);
+	memcpy(contexto->param1, instruccion->param1, contexto->param1_length);
 
-	t_instruc_mem* instruccion = inicializar_instruc_mem();
-	copiar_instruccion_mem(instruccion, contexto);
-	instruccion->estado = MOV_IN;
-	instruccion->param1 = contexto->param1;
-	instruccion->param2 = contexto->param2; //traducir_direccion(contexto->param2) param2 es direccion logica
-	instruccion->pid = contexto->pid;
+	contexto->param2_length = instruccion->param2_length;
+	contexto->param2 = realloc(contexto->param2, contexto->param2_length);
+	memcpy(contexto->param2, instruccion->param2, contexto->param2_length);
 
-	serializar_instruccion_memoria(memoria_connection, instruccion);
+	t_instruc_mem *instruccion_memoria = inicializar_instruc_mem();
+	copiar_instruccion_mem(instruccion_memoria, contexto);
+	//traducir_direccion(contexto->param2) param2 es direccion logica
+
+	log_info(logger, "Ejecutando [MOV_IN] - [%s , %s]", instruccion->param1, instruccion->param2);
+
+	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
 	//char* registro = esperar_valor_registro(memoria_connection);
 
@@ -21,5 +29,5 @@ int ejecutar_mov_in(t_contexto* contexto){
 }
 
 /*void cambiar_registro(char* registro, char* valor){
-	copiar_string(valor,registro);
-}*/
+ copiar_string(valor,registro);
+ }*/
