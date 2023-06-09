@@ -73,6 +73,7 @@ void reducir_huecos(t_list* lista_huecos){
 	}
 }
 
+//no usar malloc
 void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t id_segmento){
 
 	bool comparar_segmento(segmento_t* seg){
@@ -96,6 +97,7 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 	reducir_huecos(lista_huecos);
 }
 
+//no usar malloc
 void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos){
 	int max_size = 0;
 	int size_segmentos = list_size(lista_segmentos);
