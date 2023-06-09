@@ -24,22 +24,15 @@ void conexion_cpu(int server_connection)
 			{
 
 			case MOV_IN:
-				//logica temporal hasta tener la que va
-				//pthread_t thread_m_block;
-				//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-				//pthread_join(thread_m_block);
 				log_info(logger, "MOV_IN llego a memoria");
-				//enviar_contexto(pcb);
-				//cambiar por la correcta
+				//fijarse la direccion (param2)
+				//devolver el valor que esta dentro de ese registro a CPU
 				break;
 			case MOV_OUT:
-				//logica temporal hasta tener la que va
-				//pthread_t thread_m_block;
-				//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-				//pthread_join(thread_m_block);
 				log_info(logger, "MOV_OUT llego a memoria");
-				//enviar_contexto(pcb);
-				//cambiar por la correcta
+				//leer el valor del registro (param1)
+				//calcular direccion fisica a partir de la logica (param2)
+				//escribir en la direccion fisica el registro
 				break;
 			}
 

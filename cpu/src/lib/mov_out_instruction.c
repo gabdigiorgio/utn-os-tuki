@@ -1,8 +1,8 @@
 #include "../../includes/code_reader.h"
 
-int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
+int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 {
-	contexto->estado = MOV_IN;
+	contexto->estado = MOV_OUT;
 	contexto->param1_length = instruccion->param1_length;
 	contexto->param1 = realloc(contexto->param1, contexto->param1_length);
 	memcpy(contexto->param1, instruccion->param1, contexto->param1_length);
@@ -14,7 +14,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 	t_instruc_mem *instruccion_memoria = inicializar_instruc_mem();
 	copiar_instruccion_mem(instruccion_memoria, contexto);
 
-	log_info(logger, "Ejecutando [MOV_IN] - [%s , %s]", instruccion->param1, instruccion->param2);
+	log_info(logger, "Ejecutando [MOV_OUT] - [%s , %s]", instruccion->param1, instruccion->param2);
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
@@ -30,17 +30,4 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 /*void cambiar_registro(char *registro, char *valor)
 {
 	copiar_string(valor, registro);
-}*/
-
-/*char* esperar_valor_registro(int memoria_connection)
-{
-	t_paquete *paquete = malloc(sizeof(t_paquete));
-	paquete->buffer = malloc(sizeof(t_buffer));
-	deserializar_header(paquete, server_connection);
-
-	switch (paquete->codigo_operacion)
-	{
-	case 1:
-
-	}
 }*/
