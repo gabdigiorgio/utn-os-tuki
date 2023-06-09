@@ -96,8 +96,46 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 	reducir_huecos(lista_huecos);
 }
 
+void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos){
+	int max_size = 0;
+	int size_segmentos = list_size(lista_segmentos);
+	int size_huecos = list_size(lista_huecos);
+
+	segmento_t* segmento_max = list_get(lista_segmentos, size_segmentos - 1 );
+	hueco_libre_t* hueco_max = list_get(lista_huecos, size_huecos - 1);
+
+	max_size = segmento_max->direccion_base > hueco_max->direccion_base
+			? (segmento_max->direccion_base + segmento_max->tamanio)
+			: (hueco_max->direccion_base + hueco_max->tamanio);
+
+	int last_tamanio = 0;
+
+	for(int i=0;i<size_segmentos;i++){
+		segmento_t* segmento = list_get(lista_segmentos,i);
+
+		segmento->direccion_base = last_tamanio;
+		last_tamanio = segmento->tamanio + last_tamanio;
+	}
+
+	segmento_t* nuevo_segmento_max = list_get(lista_segmentos, size_segmentos - 1);
+
+	hueco_libre_t* nuevo_hueco = malloc(sizeof(hueco_libre_t));
+	nuevo_hueco->direccion_base = nuevo_segmento_max->direccion_base + nuevo_segmento_max ->tamanio ;
+	nuevo_hueco->tamanio = max_size - (nuevo_segmento_max->direccion_base + nuevo_segmento_max ->tamanio);
+
+	while(size_huecos > 0){
+		list_remove_and_destroy_element(lista_huecos,size_huecos - 1,free);
+		size_huecos = list_size(lista_huecos);
+	}
+	list_add(lista_huecos,nuevo_hueco);
+}
+
 bool ordenar_lista_huecos(hueco_libre_t* hueco1, hueco_libre_t* hueco2){
 	return hueco1->direccion_base < hueco2->direccion_base;
+}
+
+bool ordenar_lista_segmentos(segmento_t* segmento1, segmento_t* segmento2){
+	return segmento1->direccion_base < segmento2->direccion_base;
 }
 
 void imprimir_valores_huecos(hueco_libre_t* hueco){
