@@ -18,16 +18,5 @@ int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
-	//char *registro = esperar_valor_registro(memoria_connection);
-
-	//log_info(logger, registro);
-
-	//cambiar_registro(registro, seleccionar_registro(contexto->param1));
-
 	return 0;
 }
-
-/*void cambiar_registro(char *registro, char *valor)
-{
-	copiar_string(valor, registro);
-}*/
