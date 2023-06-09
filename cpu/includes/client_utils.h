@@ -23,5 +23,8 @@ void serializar_contexto(int socket_cliente, t_contexto* contexto);
 void copiar_contexto(void* stream, t_contexto* contexto);
 uint32_t calcular_tam_contexto(t_contexto* contexto);
 uint32_t calcular_tam_registros(t_registros* registros);
+uint32_t calcular_tam_instruc_mem(t_instruc_mem* instruccion);
+void copiar_instruccion_memoria(void* stream, t_instruc_mem* instruccion);
+void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
 
 #endif /* CLIENT_UTILS_H_ */

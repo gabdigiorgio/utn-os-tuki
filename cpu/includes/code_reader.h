@@ -8,6 +8,7 @@
 
 #include "../../shared/includes/tad.h"
 #include "utils.h"
+#include "client_utils.h"
 
 int leer_instruccion(t_contexto* contexto, t_instruc* instruccion);
 int ejecutar_set(char* param1, char* param2);
@@ -34,5 +35,7 @@ extern char rdx[17];
 extern char* contexto_param;
 extern uint32_t contexto_estado;
 extern t_contexto* contexto;
+
+extern int memoria_connection;
 
 #endif /* CODE_READER_H_ */
