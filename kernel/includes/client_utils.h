@@ -19,11 +19,12 @@ void liberar_conexion(int socket_cliente);
 int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor);
 uint32_t calcular_tam_instrucciones(t_list* lista);
 void copiar_contexto(void* stream, t_contexto* contexto);
-void crear_header(void* a_enviar, t_buffer* buffer, int lineas);
+void crear_header(void* a_enviar, t_buffer* buffer, int lineas, uint32_t codigo);
 void serializar_contexto(int socket, t_contexto* contexto);
 uint32_t calcular_tam_registros(t_registros* registros);
 uint32_t calcular_tam_contexto(t_contexto* contexto);
 void copiar_instruccion_memoria(void* stream, t_instruc_mem* instruccion);
 void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
+void serializar_solicitud_tabla(int socket);
 
 #endif /* CLIENT_UTILS_H_ */

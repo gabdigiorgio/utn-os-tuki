@@ -65,6 +65,7 @@ typedef enum
 	SIGNAL,
 	CREATE_SEGMENT,
 	DELETE_SEGMENT,
+	ALLOCATE_SEGMENT,
 	MOV_IN,
 	MOV_OUT,
 	F_OPEN,
@@ -167,7 +168,7 @@ typedef struct
 	uint32_t estimado_proxima_rafaga; 		// se saca inicialmente del config
 	t_temporal *tiempo_espera_en_ready; 	// se hace con timer, ver timestamp
 	t_registros *registros_cpu; 			// crear struct de registros de cpu
-	tabla_segmentos_t tabla_segmento; 			// nada
+	tabla_segmentos_t* tabla_segmento; 			// nada
 	t_list *instrucciones; 						// lista recibida de consola
 	tabla_archivos_abiertos_t tabla_archivos; 	// nada
 	t_list *recursos_asignados;

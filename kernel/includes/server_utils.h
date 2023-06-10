@@ -19,6 +19,7 @@
 #include<string.h>
 #include<assert.h>
 #include "../../shared/includes/tad.h"
+#include "utils.h"
 
 extern t_log* logger;
 
@@ -27,5 +28,6 @@ int esperar_cliente(int);
 void deserializar_header(t_paquete* paquete, int socket);
 void deserializar_instrucciones(t_list* lista, t_buffer* buffer, int lineas);
 void deserializar_contexto(t_contexto* contexto, t_buffer* buffer, int lineas);
+void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer, int lineas);
 
 #endif /* SERVER_UTILS_H_ */

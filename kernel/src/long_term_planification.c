@@ -30,9 +30,9 @@ void agregar_pcb_a_new(t_list* instrucciones, uint32_t socket){
 pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket){
 	pcb_t *proceso = malloc(sizeof(pcb_t));
 	sem_wait(&sem_pid_aumento);
-	proceso->pid = pid++;
-	proceso->consola = socket;
+	proceso->pid = ++pid;
 	sem_post(&sem_pid_aumento);
+	proceso->consola = socket;
 	proceso->estimado_proxima_rafaga = estimacion_inicial;
 	proceso->instrucciones = list_create();
 	copiar_lista_instrucciones(proceso->instrucciones,instrucciones);
@@ -40,6 +40,7 @@ pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket){
 	proceso->estado = PCB_NEW;
 	proceso->recurso_bloqueante = malloc(sizeof(char)*2);
 	proceso->recursos_asignados = list_create();
+	proceso->tabla_segmento = solicitar_segmento_0(proceso->pid);
 	memcpy(proceso->recurso_bloqueante,"0",(sizeof(char)*2));
 	return proceso;
 }
@@ -66,4 +67,21 @@ void iniciar_planificador_largo_plazo(){
 	pthread_detach(hilo_exit);
 }
 
+tabla_segmentos_t* solicitar_segmento_0(int pid){
+	bool buscar_tabla(tabla_segmentos_t* tabla){
+		return tabla->pid == pid;
+	}
+
+	t_instruc_mem* instruccion = inicializar_instruc_mem();
+	instruccion->estado = ALLOCATE_SEGMENT;
+	instruccion->pid = pid;
+
+	serializar_instruccion_memoria(memoria_connection, instruccion);
+
+	solicitar_tabla_segmentos();
+
+	tabla_segmentos_t* tabla = list_find(lista_tabla_segmentos->lista,buscar_tabla);
+
+	return tabla;
+}
 

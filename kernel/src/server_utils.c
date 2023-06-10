@@ -175,5 +175,38 @@ void deserializar_contexto(t_contexto* contexto, t_buffer* buffer, int lineas){
 	memcpy(contexto->param3, stream, contexto->param3_length);
 }
 
+void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+	int size_actual = list_size(lista_tablas->lista);
 
+	for(int i=0 ; i<size_actual; i++){
+		list_pop(lista_tablas);
+	}
+
+	for(int i=0 ; i<lineas ; i++){
+		tabla_segmentos_t* tabla_segmentos = malloc(sizeof(tabla_segmentos_t));
+		tabla_segmentos->segmentos = list_create();
+		uint32_t size_tabla = 0;
+
+		memcpy(&tabla_segmentos->pid, stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+		memcpy(&size_tabla, stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		for(uint32_t b = 0 ; b<size_tabla ; b++){
+			segmento_t* segmento = malloc(sizeof(segmento_t));
+
+			memcpy(&segmento->ids, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+			memcpy(&segmento->direccion_base, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+			memcpy(&segmento->tamanio, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+
+			list_add(tabla_segmentos->segmentos,segmento);
+		}
+
+		list_push(lista_tablas,tabla_segmentos);
+	}
+}
 

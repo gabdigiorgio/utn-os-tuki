@@ -28,6 +28,18 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		switch (contexto_actualizado->estado)
 		{
 		case EXIT:
+			void imprimir_tablas(tabla_segmentos_t* tabla){
+				void imprimir_segmentos(segmento_t* segmento){
+					log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
+				}
+
+				log_info(logger,"Tabla %d", tabla->pid);
+
+				list_iterate(tabla->segmentos,imprimir_segmentos);
+				list_iterate(pcb->tabla_segmento->segmentos, imprimir_segmentos);
+			}
+
+			list_iterate(lista_tabla_segmentos->lista,imprimir_tablas);
 			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
