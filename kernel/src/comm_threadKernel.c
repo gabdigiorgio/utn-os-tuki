@@ -162,25 +162,27 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//cambiar por la correcta
 			break;
 		case CREATE_SEGMENT:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_m_block;
-			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-			//pthread_join(thread_m_block);
-			t_instruc_mem *instruccion = inicializar_instruc_mem();
-			copiar_instruccion_mem(instruccion, contexto_actualizado);
+
+			t_instruc_mem* instruccion = inicializar_instruc_mem();
+			copiar_instruccion_mem(instruccion,contexto_actualizado);
 			serializar_instruccion_memoria(memoria_connection, instruccion);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
+
+			solicitar_tabla_segmentos(); // Despues de crear segmento exitoso y de la compactacion
+
+			enviar_contexto(pcb); // Despues de crear segmento exitoso y de la compactacion
+
 			break;
+
 		case DELETE_SEGMENT:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_m_block;
-			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-			//pthread_join(thread_m_block);
+
+			t_instruc_mem* instruccion_delete = inicializar_instruc_mem();
+			copiar_instruccion_mem(instruccion_delete,contexto_actualizado);
+			serializar_instruccion_memoria(memoria_connection, instruccion_delete);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			solicitar_tabla_segmentos();
 			enviar_contexto(pcb);
-			//cambiar por la correcta
+
 			break;
 
 		default:

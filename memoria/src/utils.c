@@ -90,11 +90,14 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 
 	list_add(lista_huecos,nuevo_hueco);
 
+	tam_memoria_restante += segmento->tamanio;
+
 	free(segmento);
 
 	list_sort(lista_huecos,(void*) ordenar_lista_huecos);
 
 	reducir_huecos(lista_huecos);
+
 }
 
 //no usar malloc
