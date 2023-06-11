@@ -21,4 +21,6 @@ void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos);
 bool ordenar_lista_segmentos(segmento_t* segmento1, segmento_t* segmento2);
 #endif /* CLIENT_H_ */
 
+
+extern void* memoria;
 extern t_log* logger;

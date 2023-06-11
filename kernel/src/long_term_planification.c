@@ -68,10 +68,6 @@ void iniciar_planificador_largo_plazo(){
 }
 
 tabla_segmentos_t* solicitar_segmento_0(int pid){
-	bool buscar_tabla(tabla_segmentos_t* tabla){
-		return tabla->pid == pid;
-	}
-
 	t_instruc_mem* instruccion = inicializar_instruc_mem();
 	instruccion->estado = ALLOCATE_SEGMENT;
 	instruccion->pid = pid;
@@ -80,7 +76,7 @@ tabla_segmentos_t* solicitar_segmento_0(int pid){
 
 	solicitar_tabla_segmentos();
 
-	tabla_segmentos_t* tabla = list_find(lista_tabla_segmentos->lista,buscar_tabla);
+	tabla_segmentos_t* tabla = buscar_tabla_segmentos(lista_tabla_segmentos->lista,pid);
 
 	return tabla;
 }

@@ -350,3 +350,26 @@ void destroy_proceso(pcb_t *proceso)
 	free(proceso->registros_cpu);
 	free(proceso);
 }
+
+tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid){
+	bool buscar_tabla(tabla_segmentos_t* tabla){
+		return tabla->pid == pid;
+	}
+
+	tabla_segmentos_t* tabla_encontrada = list_find(lista_tablas,buscar_tabla);
+
+	return tabla_encontrada;
+}
+
+bool existe_tabla_segmentos(t_list* lista_tablas, int pid){
+	bool encontrado = false;
+	int size = list_size(lista_tablas);
+
+	for(int i=0; i<size; i++){
+		tabla_segmentos_t* tabla = list_get(lista_tablas,i);
+
+		if((encontrado = tabla->pid == pid)) break;
+	}
+
+	return encontrado;
+}

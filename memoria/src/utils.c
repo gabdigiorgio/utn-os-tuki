@@ -115,6 +115,11 @@ void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos){
 	for(int i=0;i<size_segmentos;i++){
 		segmento_t* segmento = list_get(lista_segmentos,i);
 
+		memcpy(memoria + last_tamanio,memoria + segmento->direccion_base, segmento->tamanio);
+		//memcpy(memoria + base, asdasd, offset);
+
+		//5646578676 base + offset, 54 5678 segmento + limite
+
 		segmento->direccion_base = last_tamanio;
 		last_tamanio = segmento->tamanio + last_tamanio;
 	}
