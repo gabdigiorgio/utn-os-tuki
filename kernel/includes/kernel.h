@@ -19,6 +19,7 @@
 	#include "server_utils.h"
 	#include "client_utils.h"
 	#include "console_threads.h"
+	#include "comm_Mem.h"
 	#include "utils.h"
 	#include "initial_setup.h"
 	#include "general_planification_utils.h"
@@ -43,6 +44,7 @@
 	int pid;
 
 	t_lista_mutex * lista_recursos;
+	t_lista_mutex * lista_tabla_segmentos;
 
 	// Semaforos
 
@@ -123,6 +125,7 @@
 	void iniciar_semaforos();
 	void terminar_programa();
 	void iniciar_lista_recursos();
+	void iniciar_tabla_segmentos();
 
 // ____________________________________________________________
 

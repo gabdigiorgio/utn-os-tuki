@@ -47,5 +47,7 @@ t_contexto* inicializar_contexto();
 void destroy_proceso(pcb_t* proceso);
 t_instruc_mem* inicializar_instruc_mem();
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
+tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid);
+bool existe_tabla_segmentos(t_list* lista_tablas, int pid);
 
 #endif /* CLIENT_H_ */

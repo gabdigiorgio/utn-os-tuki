@@ -175,5 +175,43 @@ void deserializar_contexto(t_contexto* contexto, t_buffer* buffer, int lineas){
 	memcpy(contexto->param3, stream, contexto->param3_length);
 }
 
+void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+	int size_actual = list_size(lista_tablas->lista);
 
+	for(int i=0 ; i<lineas ; i++){
+		tabla_segmentos_t* tabla_segmentos = malloc(sizeof(tabla_segmentos_t));
+		tabla_segmentos->segmentos = list_create();
+		uint32_t size_tabla = 0;
+
+		memcpy(&tabla_segmentos->pid, stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+		memcpy(&size_tabla, stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		for(uint32_t b = 0 ; b<size_tabla ; b++){
+			segmento_t* segmento = malloc(sizeof(segmento_t));
+
+			memcpy(&segmento->ids, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+			memcpy(&segmento->direccion_base, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+			memcpy(&segmento->tamanio, stream, sizeof(uint32_t));
+			stream += sizeof(uint32_t);
+
+			list_add(tabla_segmentos->segmentos,segmento);
+		}
+
+		if(existe_tabla_segmentos(lista_tablas->lista,tabla_segmentos->pid)){
+			tabla_segmentos_t* tabla_existente = buscar_tabla_segmentos(lista_tablas->lista,tabla_segmentos->pid);
+			t_list* segmentos_a_borrar = list_create();
+			segmentos_a_borrar = tabla_existente->segmentos;
+			tabla_existente->segmentos = tabla_segmentos->segmentos;
+
+			list_destroy_and_destroy_elements(segmentos_a_borrar,free);
+		} else {
+			list_push(lista_tablas,tabla_segmentos);
+		}
+	}
+}
 

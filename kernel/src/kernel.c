@@ -68,6 +68,23 @@ int main(int argc, char *argv[])
 	}
 
 	// ---------------------------------------------
+	// Inicio tabla de segmentos
+
+	iniciar_tabla_segmentos();
+
+	void imprimir_tablas(tabla_segmentos_t* tabla){
+		void imprimir_segmentos(segmento_t* segmento){
+			log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
+		}
+
+		log_info(logger,"Tabla %d", tabla->pid);
+
+		list_iterate(tabla->segmentos,imprimir_segmentos);
+	}
+
+	list_iterate(lista_tabla_segmentos->lista,imprimir_tablas);
+
+	// ---------------------------------------------
 
 	// Inicio servidor del Kernel
 	int socket_servidor = iniciar_servidor(server_port);
@@ -106,6 +123,11 @@ void iniciar_pcb_lists()
 	pcb_new_list = init_list_mutex();
 	pcb_block_list = init_list_mutex();
 	pcb_exit_list = init_list_mutex();
+}
+
+void iniciar_tabla_segmentos(){
+	lista_tabla_segmentos = init_list_mutex();
+	solicitar_tabla_segmentos();
 }
 
 void terminar_programa()

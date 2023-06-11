@@ -13,6 +13,10 @@
 int main(int argc, char *argv[]) {
 
 	logger = iniciar_logger();
+	segmento_t* segmento_0 = malloc(sizeof(segmento_t));
+	segmento_0->ids=0;
+	segmento_0->direccion_base=0;
+	segmento_0->tamanio = tam_segmento_0;
 
 
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
@@ -31,21 +35,25 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-
 	// Asigno tamaño a la memoria, creo lista de tablas de segmentos, de huecos_libres y segmento 0
 
 	memoria = malloc(tam_memoria);
 
+	segmento_0->tamanio = tam_segmento_0;
+
 	lista_de_tablas = list_create();
 
-	segemento_0.ids=0;
-	segemento_0.direccion_base=0;
-	segemento_0.tamanio = tam_segmento_0;
+	tabla_segmentos_t* tabla_segmento_0 = malloc(sizeof(tabla_segmentos_t));
+
+	tabla_segmento_0->pid = 0;
+	tabla_segmento_0->segmentos = list_create();
+	list_add(tabla_segmento_0->segmentos, segmento_0);
+	list_add(lista_de_tablas,tabla_segmento_0);
 
 	lista_de_huecos_libres = list_create();
 	hueco_libre_t *primer_hueco_libre = malloc(sizeof(hueco_libre_t));
-	primer_hueco_libre->direccion_base = segemento_0.tamanio;
-	primer_hueco_libre->tamanio = tam_memoria - segemento_0.tamanio;
+	primer_hueco_libre->direccion_base = segmento_0->direccion_base;
+	primer_hueco_libre->tamanio = tam_memoria - segmento_0->tamanio;
 	list_add(lista_de_huecos_libres,primer_hueco_libre);
 
 

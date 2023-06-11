@@ -185,13 +185,12 @@ void copiar_contexto(void* stream, t_contexto* contexto){
 	memcpy(stream + offset, contexto->param3, contexto->param3_length);
 }
 
-void crear_header(void* a_enviar, t_buffer* buffer, int lineas){
+void crear_header(void* a_enviar, t_buffer* buffer, int lineas, uint32_t codigo){
 	//Reservo el stream para el header del paquete
 	int offset = 0;
-	uint32_t i = 1;
 
 	//Añado los datos del header al stream
-	memcpy(a_enviar + offset, &(i), sizeof(uint32_t));
+	memcpy(a_enviar + offset, &(codigo), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
 	memcpy(a_enviar + offset, &(lineas), sizeof(uint32_t));
 	offset += sizeof(uint32_t);
@@ -220,7 +219,7 @@ void serializar_contexto(int socket, t_contexto* contexto){
 
 	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
 
-	crear_header(a_enviar,buffer,list_size(contexto->instrucciones));
+	crear_header(a_enviar,buffer,list_size(contexto->instrucciones),1);
 
 	//Envio todo el stream al servidor
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
@@ -273,7 +272,7 @@ void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion)
 
 		void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
 
-		crear_header(a_enviar,buffer,0);
+		crear_header(a_enviar,buffer,0,1);
 
 		//Envio todo el stream al servidor
 		send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
@@ -282,6 +281,28 @@ void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion)
 		free(buffer->stream);
 		free(buffer);
 		free(a_enviar);
+}
+
+void serializar_solicitud_tabla(int socket){
+	t_buffer* buffer = malloc(sizeof(t_buffer));
+
+	buffer->size = sizeof(char);
+
+	void* stream = malloc(buffer->size);
+
+	memcpy(stream,"",sizeof(char));
+
+	buffer->stream = stream;
+
+	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+	crear_header(a_enviar,buffer,0,2);
+
+	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+	free(buffer->stream);
+	free(buffer);
+	free(a_enviar);
 }
 
 void liberar_conexion(int socket_cliente)
