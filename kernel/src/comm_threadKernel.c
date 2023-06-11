@@ -80,7 +80,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			else
 			{
 				list_push(pcb_exit_list, pcb);
-				log_error(logger,"No existe el recurso %s - terminando proceso PID: %d",recurso_wait, pcb->pid);
+				log_error(logger, "No existe el recurso %s - terminando proceso PID: %d", recurso_wait, pcb->pid);
 				sem_post(&sem_estado_exit);
 			}
 
@@ -101,7 +101,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			else
 			{
 				list_push(pcb_exit_list, pcb);
-				log_error(logger,"No existe el recurso %s - terminando proceso PID: %d",recurso_signal, pcb->pid);
+				log_error(logger, "No existe el recurso %s - terminando proceso PID: %d", recurso_signal, pcb->pid);
 				sem_post(&sem_estado_exit);
 			}
 			free(recurso_signal);
@@ -166,32 +166,14 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_m_block;
 			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
 			//pthread_join(thread_m_block);
-			t_instruc_mem* instruccion = inicializar_instruc_mem();
-			copiar_instruccion_mem(instruccion,contexto_actualizado);
+			t_instruc_mem *instruccion = inicializar_instruc_mem();
+			copiar_instruccion_mem(instruccion, contexto_actualizado);
 			serializar_instruccion_memoria(memoria_connection, instruccion);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
 			break;
 		case DELETE_SEGMENT:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_m_block;
-			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-			//pthread_join(thread_m_block);
-			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
-			break;
-		case MOV_IN:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_m_block;
-			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
-			//pthread_join(thread_m_block);
-			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
-			break;
-		case MOV_OUT:
 			//logica temporal hasta tener la que va
 			//pthread_t thread_m_block;
 			//pthread_create(&thread_m_block, NULL, (void*) m_block, (t_m_block_args*) args);
