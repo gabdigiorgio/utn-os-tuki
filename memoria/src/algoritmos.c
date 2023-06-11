@@ -8,7 +8,7 @@
 
 
 int first(uint32_t pid, int id_segmento, int tamanio_segmento){
-	int estado_first = 1;
+	int estado_first = 2;
 	for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
 	{
 		hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
@@ -31,6 +31,7 @@ int first(uint32_t pid, int id_segmento, int tamanio_segmento){
 		}
 
 	}
+
 	return estado_first;
 }
 
@@ -56,7 +57,7 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 	}
 
 	if (indice_hueco_mas_chico == -1)
-		return 1;
+		return 2;
 	else{
 
 		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_chico);
@@ -71,9 +72,8 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 			list_remove_element(lista_de_huecos_libres, hueco_libre);
 		}
 
-		log_info(logger, "Base de Hueco libre: %d", hueco_libre->direccion_base);
-		log_info(logger, "Tamaño de Hueco libre: %d", hueco_libre->tamanio);
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
+
 
 		return 0;
 	}
@@ -101,7 +101,7 @@ int worst(uint32_t pid, int id_segmento, int tamanio_segmento){
 	}
 
 	if (indice_hueco_mas_grande == -1 )
-		return 1;
+		return 2;
 	else{
 		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_grande);
 

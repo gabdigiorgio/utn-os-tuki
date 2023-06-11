@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
 	tam_memoria_restante = tam_memoria;
 
 	segmento_0->tamanio = tam_segmento_0;
+	segmento_0->direccion_base = 0;
 	tam_memoria_restante -= tam_segmento_0;
 
 	lista_de_tablas = list_create();
@@ -53,10 +54,18 @@ int main(int argc, char *argv[]) {
 	list_add(lista_de_tablas,tabla_segmento_0);
 
 	lista_de_huecos_libres = list_create();
+
 	hueco_libre_t *primer_hueco_libre = malloc(sizeof(hueco_libre_t));
-	primer_hueco_libre->direccion_base = segmento_0->direccion_base;
+	primer_hueco_libre->direccion_base = segmento_0->tamanio;
 	primer_hueco_libre->tamanio = tam_memoria - segmento_0->tamanio;
 	list_add(lista_de_huecos_libres,primer_hueco_libre);
+
+	hueco_libre_t *hueco_libre;
+	for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
+	{
+		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
+		log_info(logger, "Hueco: %d | Base: %d | Tamanio: %d",i, hueco_libre->direccion_base, hueco_libre->tamanio);
+	}
 
 
 	// Esperamos conexiones de Kernel, CPU y File-System

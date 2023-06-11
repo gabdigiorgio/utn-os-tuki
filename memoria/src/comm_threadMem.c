@@ -52,24 +52,25 @@ void conexion_kernel(int server_connection){
 
 							if(estado_memoria == 0){
 								tam_memoria_restante -= tamanio_segmento;
-								log_info(logger, "Segmento creado");
+								log_info(logger, "Segmento %d creado | Proceso: %d", id_segmento, pid);
 								log_info(logger, "Memoria Restante: %d", tam_memoria_restante);
 							} else {
-								log_error(logger, "Se requiere compactacion");
+								log_info(logger, "Se requiere compactacion");
 							}
 						}
 
 
-						//responder a kernel
+						//responder a kernel usando el numero devuelto por estado_memoria
 
 						break;
 
 						case DELETE_SEGMENT:
-							log_info(logger, "Llego un nuevo proceso a memoria");
+							log_info(logger, "Llego un nuevo proceso a memoria. Delete segment");
 							log_info(logger, "pid %d", nueva_instruccion->pid);
 							int id_segment = atoi(nueva_instruccion->param1);
 
 							tabla_segmentos_t* tabla_de_proceso = buscar_tabla(pid);
+							log_info(logger, "Segmento a borrar: %d | Tabla: %d", id_segment , tabla_de_proceso->pid);
 							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segment);
 							break;
 

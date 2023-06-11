@@ -9,6 +9,8 @@
 #include<readline/readline.h>
 #include "../../shared/includes/tad.h"
 
+extern int tam_memoria_restante;
+
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
