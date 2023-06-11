@@ -21,11 +21,6 @@
 #include<assert.h>
 #include "../../shared/includes/tad.h"
 
-typedef enum
-{
-	MENSAJE,
-	PAQUETE
-}op_code;
 
 void crear_header(void* a_enviar, t_buffer* buffer, uint32_t lineas);
 int calcular_tam_total(t_list* lista_tablas);

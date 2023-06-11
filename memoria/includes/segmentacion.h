@@ -12,6 +12,7 @@
 #include "../../shared/includes/tad.h"
 
 extern t_list *lista_de_tablas;
+
 void crear_segmento(int id, int direccion_base, int tamanio,int pid);
 tabla_segmentos_t* buscar_tabla(int pid);
 

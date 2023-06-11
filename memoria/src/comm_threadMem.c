@@ -17,131 +17,71 @@ void conexion_kernel(int server_connection){
 			case 1:
 				t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
 				deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+				uint32_t pid = nueva_instruccion->pid;
 
 				switch (nueva_instruccion->estado)
 				{
-				case CREATE_SEGMENT:
-					log_info(logger, "Llego create_segmente a memoria");
-					log_info(logger, "pid %d", nueva_instruccion->pid);
+					case CREATE_SEGMENT:
 
-					int id_segmento = atoi(nueva_instruccion->param1);
-					int tamanio_segmento = atoi(nueva_instruccion->param2);
+						log_info(logger, "Llego create_segmente a memoria");
+						log_info(logger, "pid %d", pid);
 
+						int id_segmento = atoi(nueva_instruccion->param1);
+						int tamanio_segmento = atoi(nueva_instruccion->param2);
 
-					// ___ FIRST ____
-					if (strcmp(algoritmo_asignacion, "FIRST") == 0){
+						int estado_memoria; // 0: Se puede crear segmento | 1: Out of memory | 2: Se necesita compactación
 
-						for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
-						{
-							hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
-
-
-							if (hueco_libre->tamanio >= tamanio_segmento)
-							{
-								uint32_t base_segmento = hueco_libre->direccion_base;
-								if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
-									list_remove_element(lista_de_huecos_libres, hueco_libre);
-								}
-								else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
-									hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
-									hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
-								}
-
-								crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
-								break;
-							}
+						if(tamanio_segmento > tam_memoria_restante){
+							log_error(logger, "Out of Memory");
+							estado_memoria = 1;
 
 						}
-
-					}
-
-					// ___ BEST ____
-					else if (strcmp(algoritmo_asignacion, "BEST") == 0){
-
-						int indice_hueco_mas_chico;
-						int tamanio_menor;
-
-						hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, 0);
-						indice_hueco_mas_chico = 0;
-						tamanio_menor = hueco_libre->tamanio;
-
-						for (int i = 1; i < list_size(lista_de_huecos_libres); i++)
+						else
 						{
-							hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
-							 if(hueco_libre->tamanio <tamanio_menor){
-								 indice_hueco_mas_chico = i;
-								 tamanio_menor = hueco_libre->tamanio;
-							 }
+							// ___ FIRST ____
+							if (strcmp(algoritmo_asignacion, "FIRST") == 0)
+								estado_memoria = first(pid, id_segmento, tamanio_segmento);
 
+							// ___ BEST ____
+							else if (strcmp(algoritmo_asignacion, "BEST") == 0)
+								estado_memoria = best(pid, id_segmento, tamanio_segmento);
+
+							// ___ WORST ____
+							else if (strcmp(algoritmo_asignacion, "WORST") == 0)
+								estado_memoria = worst(pid, id_segmento, tamanio_segmento);
+
+							if(estado_memoria == 0){
+								tam_memoria_restante -= tamanio_segmento;
+								log_info(logger, "Segmento creado");
+							} else {
+								log_error(logger, "Se requiere compactacion");
+							}
 						}
 
-						hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_chico);
-						if (hueco_libre->tamanio >= tamanio_segmento)
-						{
 
-							uint32_t base_segmento = hueco_libre->direccion_base;
-							if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
-								list_remove_element(lista_de_huecos_libres, hueco_libre);
-							}
-							else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
-								hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
-								hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
-							}
+						//responder a kernel
 
-							crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
-						}
+						break;
 
-					}
+						case DELETE_SEGMENT:
+							log_info(logger, "Llego un nuevo proceso a memoria");
+							log_info(logger, "pid %d", nueva_instruccion->pid);
+							int id_segmento = atoi(nueva_instruccion->param1);
 
-					// ___ WORST ____
-					else if (strcmp(algoritmo_asignacion, "WORST") == 0){
-
-						int indice_hueco_mas_grande;
-						int tamanio_mayor;
-
-						hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, 0);
-						indice_hueco_mas_grande = 0;
-						tamanio_mayor = hueco_libre->tamanio;
-
-						for (int i = 1; i < list_size(lista_de_huecos_libres); i++)
-						{
-							hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
-							 if(hueco_libre->tamanio > tamanio_mayor){
-								 indice_hueco_mas_grande = i;
-								 tamanio_mayor = hueco_libre->tamanio;
-							 }
-
-						}
-
-						hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_grande);
-						if (hueco_libre->tamanio >= tamanio_segmento)
-						{
-
-							uint32_t base_segmento = hueco_libre->direccion_base;
-							if(hueco_libre->tamanio - tamanio_segmento == 0){ // si el tamanio del hueco libre es 0, entonces lo elimino
-								list_remove_element(lista_de_huecos_libres, hueco_libre);
-							}
-							else { //Si el tamanio del hueco libre no es 0, entonces modifico su base y su tamanio
-								hueco_libre->direccion_base = hueco_libre->direccion_base + tamanio_segmento
-								hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento
-							}
-
-							crear_segmento(id_segmento,base_segmento, tamanio_segmento,nueva_instruccion->pid);
-						}
-					}
-
-					//responder a kernel
+							tabla_segmentos_t* tabla_de_proceso = buscar_tabla(pid);
+							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segmento);
+							break;
 
 
-					// case CREATE_SEGMENT:
-					// 	log_info(logger, "Llego create_segmente a memoria");
-					// 	log_info(logger, "pid %d", nueva_instruccion->pid);
-					// 	//responder a kernel
-					// 	break;
-					case ALLOCATE_SEGMENT:
-						log_info(logger, "Llego un nuevo proceso a memoria");
-						log_info(logger, "pid %d", nueva_instruccion->pid);
-						allocate_segmento_0(nueva_instruccion->pid);
+						case ALLOCATE_SEGMENT:
+							log_info(logger, "Llego un nuevo proceso a memoria");
+							log_info(logger, "pid %d", nueva_instruccion->pid);
+							allocate_segmento_0(nueva_instruccion->pid);
+							break;
+
+						default:
+							log_error(logger, "Instruccion desconocida");
+							break;
 				}
 
 
