@@ -44,6 +44,7 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 	indice_hueco_mas_chico = -1;
 	tamanio_menor = tam_memoria;
 
+	log_info(logger, "BEST");
 	for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
 	{
 		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
@@ -70,6 +71,8 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 			list_remove_element(lista_de_huecos_libres, hueco_libre);
 		}
 
+		log_info(logger, "Base de Hueco libre: %d", hueco_libre->direccion_base);
+		log_info(logger, "Tamaño de Hueco libre: %d", hueco_libre->tamanio);
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
 
 		return 0;
