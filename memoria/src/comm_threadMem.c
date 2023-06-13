@@ -68,7 +68,6 @@ void conexion_kernel(int server_connection){
 							log_info(logger, "Llego un nuevo proceso a memoria. Delete segment");
 							log_info(logger, "pid %d", nueva_instruccion->pid);
 							int id_segment = atoi(nueva_instruccion->param1);
-
 							tabla_segmentos_t* tabla_de_proceso = buscar_tabla(pid);
 							log_info(logger, "Segmento a borrar: %d | Tabla: %d", id_segment , tabla_de_proceso->pid);
 							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segment);

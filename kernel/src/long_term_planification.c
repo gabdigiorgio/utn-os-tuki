@@ -81,3 +81,18 @@ tabla_segmentos_t* solicitar_segmento_0(int pid){
 	return tabla;
 }
 
+tabla_segmentos_t* solicitar_segmento_a_eliminar(int pid, int id_segmento) {
+	t_instruc_mem* instruccion = inicializar_instruc_mem();
+	instruccion->estado = DELETE_SEGMENT;
+	instruccion->param1 = id_segmento;
+	instruccion->pid = pid;
+
+	serializar_instruccion_memoria(memoria_connection, instruccion);
+
+	solicitar_tabla_segmentos();
+
+	tabla_segmentos_t* tabla = buscar_tabla_segmentos(lista_tabla_segmentos->lista,pid);
+
+	return tabla;
+}
+

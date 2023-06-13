@@ -32,7 +32,16 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
 			}
 
+			void eliminar_segmentos(int id){
+
+			}
+
 			list_iterate(pcb->tabla_segmento->segmentos,imprimir_segmentos);
+			while(list_size(pcb->tabla_segmento->segmentos)>1){
+				int id = list_get(pcb->tabla_segmento->segmentos,(list_size(pcb->tabla_segmento->segmentos)-1));
+				solicitar_segmento_a_eliminar(pcb->pid,id);
+				list_iterate(pcb->tabla_segmento->segmentos,imprimir_segmentos);
+			}
 			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
