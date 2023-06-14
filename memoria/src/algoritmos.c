@@ -6,9 +6,10 @@
  */
 #include "../includes/algoritmos.h"
 
+// 0: Se puede crear segmento | 1: Out of memory | 2: Se necesita compactación
 
 int first(uint32_t pid, int id_segmento, int tamanio_segmento){
-	int estado_first = 2;
+	int estado_first = 	COMPACTION_NEEDED;
 	for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
 	{
 		hueco_libre_t *hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
@@ -25,7 +26,7 @@ int first(uint32_t pid, int id_segmento, int tamanio_segmento){
 				hueco_libre->tamanio = hueco_libre->tamanio - tamanio_segmento;
 			}
 
-			estado_first = 0;
+			estado_first = SUCCESS_CREATE_SEGMENT;
 			crear_segmento(id_segmento,base_segmento, tamanio_segmento, pid);
 			break;
 		}
@@ -57,7 +58,7 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 	}
 
 	if (indice_hueco_mas_chico == -1)
-		return 2;
+		return COMPACTION_NEEDED;
 	else{
 
 		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_chico);
@@ -75,7 +76,7 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
 
 
-		return 0;
+		return SUCCESS_CREATE_SEGMENT;
 	}
 }
 
@@ -101,7 +102,7 @@ int worst(uint32_t pid, int id_segmento, int tamanio_segmento){
 	}
 
 	if (indice_hueco_mas_grande == -1 )
-		return 2;
+		return COMPACTION_NEEDED;
 	else{
 		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, indice_hueco_mas_grande);
 
@@ -117,6 +118,6 @@ int worst(uint32_t pid, int id_segmento, int tamanio_segmento){
 
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
 
-		return 0;
+		return SUCCESS_CREATE_SEGMENT;
 	}
 }

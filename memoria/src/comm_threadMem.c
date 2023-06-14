@@ -33,7 +33,7 @@ void conexion_kernel(int server_connection){
 
 						if(tamanio_segmento > tam_memoria_restante){
 							log_error(logger, "Out of Memory");
-							estado_memoria = 1;
+							estado_memoria = OUT_OF_MEMORY;
 
 						}
 						else
@@ -60,7 +60,7 @@ void conexion_kernel(int server_connection){
 						}
 
 
-						//responder a kernel usando el numero devuelto por estado_memoria
+						//responder a kernel usando el numero devuelto por estado_memoria,
 
 						break;
 
