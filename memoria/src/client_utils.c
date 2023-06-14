@@ -109,4 +109,6 @@ void serializar_respuesta_memoria_kernel(int socket,t_resp_mem respuesta)
 		free(buffer->stream);
 		free(buffer);
 		free(a_enviar);
+
+
 }

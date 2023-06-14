@@ -21,3 +21,34 @@ void solicitar_tabla_segmentos(){
 	free(paquete->buffer);
 	free(paquete);
 }
+void esperar_respuesta_memoria(){
+
+		t_paquete *paquete = malloc(sizeof(t_paquete));
+		paquete->buffer = malloc(sizeof(t_buffer));
+
+		deserializar_header(paquete, memoria_connection);
+		switch (paquete->codigo_operacion){
+			case 1:
+				 t_resp_mem respuesta;
+				 deserializar_respuesta_memoria(respuesta,paquete->buffer,paquete->lineas);
+				switch(respuesta){
+				case SUCCESS_CREATE_SEGMENT:
+					log_info(logger,"success create segment");
+					break;
+				case OUT_OF_MEMORY:
+					log_info(logger,"out of memory");
+					break;
+				case COMPACTION_NEEDED:
+					log_info(logger,"compaction needed");
+					break;
+				}
+				break;
+			default:
+				log_error(logger,"Fallo de serializacion  de respuesta memoria");
+				break;
+		}
+
+		free(paquete->buffer->stream);
+		free(paquete->buffer);
+		free(paquete);
+}

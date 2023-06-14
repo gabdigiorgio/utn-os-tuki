@@ -50,7 +50,7 @@ void conexion_kernel(int server_connection){
 							else if (strcmp(algoritmo_asignacion, "WORST") == 0)
 								estado_memoria = worst(pid, id_segmento, tamanio_segmento);
 
-							if(estado_memoria == 0){
+							if(estado_memoria ==SUCCESS_CREATE_SEGMENT ){
 								tam_memoria_restante -= tamanio_segmento;
 								log_info(logger, "Segmento %d creado | Proceso: %d", id_segmento, pid);
 								log_info(logger, "Memoria Restante: %d", tam_memoria_restante);
@@ -61,7 +61,8 @@ void conexion_kernel(int server_connection){
 
 
 						//responder a kernel usando el numero devuelto por estado_memoria,
-
+						serializar_respuesta_memoria_kernel(kernel_connection, estado_memoria);
+						log_info(logger, "Serializacion hecha");
 						break;
 
 						case DELETE_SEGMENT:

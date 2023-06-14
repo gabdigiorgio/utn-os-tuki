@@ -214,4 +214,12 @@ void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer,
 		}
 	}
 }
+void deserializar_respuesta_memoria(t_resp_mem respuesta, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&respuesta, stream, sizeof(t_resp_mem));
+	stream += sizeof(t_resp_mem);
+
+
+}
 
