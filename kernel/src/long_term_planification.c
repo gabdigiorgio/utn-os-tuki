@@ -81,10 +81,13 @@ tabla_segmentos_t* solicitar_segmento_0(int pid){
 	return tabla;
 }
 
-tabla_segmentos_t* solicitar_segmento_a_eliminar(int pid, int id_segmento) {
+void solicitar_segmento_a_eliminar(int pid, int id_segmento) {
 	t_instruc_mem* instruccion = inicializar_instruc_mem();
+	char* param1[10];
+	sprintf(param1,"%d",id_segmento);
+	log_info(logger,"%s",param1);
 	instruccion->estado = DELETE_SEGMENT;
-	instruccion->param1 = id_segmento;
+	instruccion->param1 = param1; //Se lo convierte a char
 	instruccion->pid = pid;
 
 	serializar_instruccion_memoria(memoria_connection, instruccion);
@@ -93,6 +96,6 @@ tabla_segmentos_t* solicitar_segmento_a_eliminar(int pid, int id_segmento) {
 
 	tabla_segmentos_t* tabla = buscar_tabla_segmentos(lista_tabla_segmentos->lista,pid);
 
-	return tabla;
+	//return tabla;
 }
 

@@ -73,7 +73,6 @@ void conexion_kernel(int server_connection){
 							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segment);
 							break;
 
-
 						case ALLOCATE_SEGMENT:
 							log_info(logger, "Llego un nuevo proceso a memoria");
 							log_info(logger, "pid %d", nueva_instruccion->pid);
