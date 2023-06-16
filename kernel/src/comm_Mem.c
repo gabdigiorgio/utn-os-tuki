@@ -29,8 +29,8 @@ void esperar_respuesta_memoria(){
 		deserializar_header(paquete, memoria_connection);
 		switch (paquete->codigo_operacion){
 			case 1:
-				t_resp_mem* respuesta = deserializar_respuesta_memoria(paquete->buffer) ;
-				switch(*respuesta){
+				t_resp_mem respuesta = deserializar_respuesta_memoria(paquete->buffer) ;
+				switch(respuesta){
 				case SUCCESS_CREATE_SEGMENT:
 					log_info(logger,"success create segment");
 					break;

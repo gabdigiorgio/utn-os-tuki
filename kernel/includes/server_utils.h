@@ -29,5 +29,6 @@ void deserializar_header(t_paquete* paquete, int socket);
 void deserializar_instrucciones(t_list* lista, t_buffer* buffer, int lineas);
 void deserializar_contexto(t_contexto* contexto, t_buffer* buffer, int lineas);
 void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer, int lineas);
+t_resp_mem deserializar_respuesta_memoria(t_buffer* buffer);
 
 #endif /* SERVER_UTILS_H_ */

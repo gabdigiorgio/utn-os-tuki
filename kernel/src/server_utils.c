@@ -224,11 +224,11 @@ void deserializar_tabla_segmentos(t_lista_mutex* lista_tablas, t_buffer* buffer,
 }
 */
 
-t_resp_mem* deserializar_respuesta_memoria(t_buffer* buffer) {
+t_resp_mem deserializar_respuesta_memoria(t_buffer* buffer) {
     void* stream = buffer->stream;
-    t_resp_mem* respuesta = malloc(sizeof(t_resp_mem));
+    t_resp_mem respuesta = SUCCESS_CREATE_SEGMENT;
 
-    memcpy(respuesta, stream, sizeof(t_resp_mem));
+    memcpy(&respuesta, stream, sizeof(t_resp_mem));
 
    return respuesta;
 }

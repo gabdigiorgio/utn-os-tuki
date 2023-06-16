@@ -61,7 +61,7 @@ void conexion_kernel(int server_connection){
 
 
 						//responder a kernel usando el numero devuelto por estado_memoria,
-						serializar_respuesta_memoria_kernel(kernel_connection, estado_memoria);
+						serializar_respuesta_memoria_kernel(server_connection, estado_memoria);
 						log_info(logger, "Serializacion hecha");
 						break;
 
