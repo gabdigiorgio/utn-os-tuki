@@ -80,35 +80,25 @@ void serializar_tabla_segmentos(int socket_cliente, t_list* lista_tablas){
 }
 void serializar_respuesta_memoria_kernel(int socket,t_resp_mem respuesta)
 {
-	//Creo el buffer a utilizar para las instrucciones
-		t_buffer* buffer = malloc(sizeof(t_buffer));
+	 t_buffer* buffer = malloc(sizeof(t_buffer));
 
-		buffer->size = sizeof(t_resp_mem);
+	    buffer->size = sizeof(t_resp_mem);
 
-		//Asigno memoria para el stream del tamaño de mi lista
-		void* stream = malloc(buffer->size);
+	    void* stream = malloc(buffer->size);
 
+	    memcpy(stream, &respuesta, buffer->size);
 
-		memcpy(stream , &respuesta, sizeof(t_resp_mem));
+	    buffer->stream = stream;
 
+	    void* a_enviar = malloc(buffer->size + sizeof(uint32_t)*3);
 
-		//Leo toda la lista para copiar los valores en memoria
-		//copiar_instruccion_memoria(stream,instruccion);
+	    crear_header(a_enviar, buffer, 0);
 
-		//Añado el stream a mi buffers
-		buffer->stream = stream;
+	    send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) , 0);
 
-		void* a_enviar = malloc(buffer->size + sizeof(t_resp_mem));
-
-		crear_header(a_enviar,buffer,0);
-
-		//Envio todo el stream al servidor
-		send(socket, a_enviar, buffer->size + sizeof(t_resp_mem), 0);
-
-		//Libero memoria que ya no voy a utilizar
-		free(buffer->stream);
-		free(buffer);
-		free(a_enviar);
-
+	    // Liberar memoria utilizada
+	    free(buffer->stream);
+	    free(buffer);
+	    free(a_enviar);
 
 }
