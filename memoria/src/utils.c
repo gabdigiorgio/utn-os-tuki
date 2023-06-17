@@ -80,7 +80,7 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 		return seg->ids == id_segmento;
 	}
 
-	segmento_t* segmento = list_find(lista_segmentos, comparar_segmento);
+	segmento_t* segmento = list_find(lista_segmentos, (void*)comparar_segmento);
 
 	list_remove_element(lista_segmentos, segmento);
 
@@ -89,8 +89,6 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 	nuevo_hueco->tamanio = segmento->tamanio;
 
 	list_add(lista_huecos,nuevo_hueco);
-
-	tam_memoria_restante += segmento->tamanio;
 
 	free(segmento);
 
@@ -101,13 +99,16 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 }
 
 //no usar malloc
-void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos){
+void compactar_memoria(){
 	int max_size = 0;
+
+	t_list* lista_segmentos = extraer_segmentos();
+
 	int size_segmentos = list_size(lista_segmentos);
-	int size_huecos = list_size(lista_huecos);
+	int size_huecos = list_size(lista_de_huecos_libres);
 
 	segmento_t* segmento_max = list_get(lista_segmentos, size_segmentos - 1 );
-	hueco_libre_t* hueco_max = list_get(lista_huecos, size_huecos - 1);
+	hueco_libre_t* hueco_max = list_get(lista_de_huecos_libres, size_huecos - 1);
 
 	max_size = segmento_max->direccion_base > hueco_max->direccion_base
 			? (segmento_max->direccion_base + segmento_max->tamanio)
@@ -134,10 +135,11 @@ void compactar_memoria(t_list* lista_segmentos, t_list* lista_huecos){
 	nuevo_hueco->tamanio = max_size - (nuevo_segmento_max->direccion_base + nuevo_segmento_max ->tamanio);
 
 	while(size_huecos > 0){
-		list_remove_and_destroy_element(lista_huecos,size_huecos - 1,free);
-		size_huecos = list_size(lista_huecos);
+		list_remove_and_destroy_element(lista_de_huecos_libres,size_huecos - 1,free);
+		size_huecos = list_size(lista_de_huecos_libres);
 	}
-	list_add(lista_huecos,nuevo_hueco);
+	list_add(lista_de_huecos_libres,nuevo_hueco);
+	list_destroy(lista_segmentos);
 }
 
 bool ordenar_lista_huecos(hueco_libre_t* hueco1, hueco_libre_t* hueco2){
@@ -156,4 +158,41 @@ void imprimir_valores_segmentos(segmento_t* segmento){
 	log_info(logger,"Id segmento: %d, Base segmento: %d, Tamanio segmento: %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
 }
 
+int tam_memoria_restante(){
+	int memoria_usada = 0;
+	int size_tablas = list_size(lista_de_tablas);
 
+	for(int i = 0; i < size_tablas; i++){
+		tabla_segmentos_t* tabla = list_get(lista_de_tablas,i);
+		int size_tabla = list_size(tabla->segmentos);
+
+		for(int b = 0; b < size_tabla; b++){
+			segmento_t* segmento = list_get(tabla->segmentos, b);
+
+			memoria_usada += segmento->tamanio;
+		}
+	}
+
+	return tam_memoria - memoria_usada;
+}
+
+t_list* extraer_segmentos(){
+	t_list* lista_unificada = list_create();
+
+	int size_tablas = list_size(lista_de_tablas);
+
+	for(int i = 0; i < size_tablas; i++){
+		tabla_segmentos_t* tabla = list_get(lista_de_tablas,i);
+		int size_tabla = list_size(tabla->segmentos);
+
+		for(int b = 0; b < size_tabla; b++){
+			segmento_t* segmento = list_get(tabla->segmentos, b);
+
+			list_add(lista_unificada,segmento);
+		}
+	}
+
+	list_sort(lista_unificada,ordenar_lista_segmentos);
+
+	return lista_unificada;
+}

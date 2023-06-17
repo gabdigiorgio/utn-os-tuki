@@ -31,7 +31,7 @@ void conexion_kernel(int server_connection){
 
 						int estado_memoria; // 0: Se puede crear segmento | 1: Out of memory | 2: Se necesita compactación
 
-						if(tamanio_segmento > tam_memoria_restante){
+						if(tamanio_segmento > tam_memoria_restante()){
 							log_error(logger, "Out of Memory");
 							estado_memoria = OUT_OF_MEMORY;
 
@@ -50,15 +50,13 @@ void conexion_kernel(int server_connection){
 							else if (strcmp(algoritmo_asignacion, "WORST") == 0)
 								estado_memoria = worst(pid, id_segmento, tamanio_segmento);
 
-							if(estado_memoria ==SUCCESS_CREATE_SEGMENT ){
-								tam_memoria_restante -= tamanio_segmento;
+							if(estado_memoria == SUCCESS_CREATE_SEGMENT ){
 								log_info(logger, "Segmento %d creado | Proceso: %d", id_segmento, pid);
-								log_info(logger, "Memoria Restante: %d", tam_memoria_restante);
+								log_info(logger, "Memoria Restante: %d", tam_memoria_restante());
 							} else {
 								log_info(logger, "Se requiere compactacion");
 							}
 						}
-
 
 						//responder a kernel usando el numero devuelto por estado_memoria,
 						serializar_respuesta_memoria_kernel(server_connection, estado_memoria);
@@ -97,8 +95,8 @@ void conexion_kernel(int server_connection){
 				break;
 			case 3:
 				log_info(logger,"se solicito la compactacion");
-				compactar_memoria( lista_de_tablas,lista_de_huecos_libres);
-
+				compactar_memoria();
+				break;
 			default:
 				exit_status=1;
 				break;

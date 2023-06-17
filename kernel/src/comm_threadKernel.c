@@ -34,22 +34,35 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			}
 
 			void eliminar_segmentos(segmento_t* segmento){
-				int tamanioSegmentos = list_size(pcb->tabla_segmento->segmentos);
-				if(tamanioSegmentos-1>0){
-					solicitar_segmento_a_eliminar(pcb->pid,tamanioSegmentos-1);
-					log_info(logger,"Segmento eliminado");
+				t_contexto* contexto_eliminar = inicializar_contexto();
+
+				char* param1 = string_itoa(segmento->ids);
+
+				uint32_t param1_length = string_length(param1) + 1;
+				contexto_eliminar->param1 = realloc(contexto_eliminar->param1,param1_length);
+				memcpy(contexto_eliminar->param1,param1,param1_length);
+				contexto_eliminar->param1_length = param1_length;
+				contexto_eliminar->estado = DELETE_SEGMENT;
+				contexto_eliminar->pid = pcb->pid;
+
+				delete_segment(contexto_eliminar,pcb);
+				log_info(logger,"Segmento eliminado %d", segmento->ids);
+				//eliminar el contexto creado
+				solicitar_tabla_segmentos();
+			}
+
+			list_iterate(pcb->tabla_segmento->segmentos,(void*) imprimir_segmentos);
+
+			while(list_size(pcb->tabla_segmento->segmentos) > 0){
+				segmento_t* segmento = list_remove(pcb->tabla_segmento->segmentos,0);
+				if(segmento->ids != 0){
+					eliminar_segmentos(segmento);
+					//free el segmento si es distinto de id0
 				}
 			}
 
-			list_iterate(pcb->tabla_segmento->segmentos,imprimir_segmentos);
-			log_info(logger,"%d",list_size(pcb->tabla_segmento->segmentos));
-			int tamanioSegmentos = list_size(pcb->tabla_segmento->segmentos);
-			while(tamanioSegmentos>1){
-				segmento_t* segmento = list_get(pcb->tabla_segmento->segmentos,tamanioSegmentos-1);
-				eliminar_segmentos(segmento);
-				tamanioSegmentos = tamanioSegmentos-1;
-			}
-			list_iterate(pcb->tabla_segmento->segmentos,imprimir_segmentos);
+			//eliminar tabla de segmento
+			list_iterate(pcb->tabla_segmento->segmentos,(void*) imprimir_segmentos);
 			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
@@ -179,12 +192,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//cambiar por la correcta
 			break;
 		case CREATE_SEGMENT:
-
-			t_instruc_mem* instruccion = inicializar_instruc_mem();
-			copiar_instruccion_mem(instruccion,contexto_actualizado);
-			serializar_instruccion_memoria(memoria_connection, instruccion);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
-            esperar_respuesta_memoria();
+			create_segment(contexto_actualizado,pcb);
 
 			solicitar_tabla_segmentos(); // Despues de crear segmento exitoso y de la compactacion
 
@@ -193,11 +202,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			break;
 
 		case DELETE_SEGMENT:
-
-			t_instruc_mem* instruccion_delete = inicializar_instruc_mem();
-			copiar_instruccion_mem(instruccion_delete,contexto_actualizado);
-			serializar_instruccion_memoria(memoria_connection, instruccion_delete);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			delete_segment(contexto_actualizado,pcb);
 			solicitar_tabla_segmentos();
 			enviar_contexto(pcb);
 

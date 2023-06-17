@@ -15,11 +15,10 @@
 
 #include "../../shared/includes/tad.h"
 #include "segmentacion.h"
+#include "utils.h"
 
 extern t_list *lista_de_huecos_libres;
 extern int tam_memoria;
-extern int tam_memoria_restante;
-
 
 int first(uint32_t pid, int id_segmento, int tamanio_segmento);
 int best(uint32_t pid, int id_segmento, int tamanio_segmento);

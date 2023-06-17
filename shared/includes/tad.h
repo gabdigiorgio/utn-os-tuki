@@ -57,9 +57,11 @@ typedef struct
 
 typedef enum
 {
+	ERROR,
 	SUCCESS_CREATE_SEGMENT,
 	OUT_OF_MEMORY,
-	COMPACTION_NEEDED
+	COMPACTION_NEEDED,
+	COMPACTATION_SUCCESS
 }t_resp_mem;
 
 typedef enum

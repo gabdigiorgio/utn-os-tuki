@@ -17,7 +17,9 @@ extern t_log* logger;
 extern t_lista_mutex* lista_tabla_segmentos;
 
 void solicitar_tabla_segmentos();
-void esperar_respuesta_memoria();
+t_resp_mem esperar_respuesta_memoria();
+void create_segment(t_contexto* contexto, pcb_t* pcb);
+void delete_segment(t_contexto* contexto, pcb_t* pcb);
 
 
 #endif /* COMM_MEM_H_ */

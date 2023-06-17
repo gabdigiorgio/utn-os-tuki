@@ -39,11 +39,9 @@ int main(int argc, char *argv[])
 	// Asigno tamaño a la memoria, creo lista de tablas de segmentos, de huecos_libres y segmento 0
 
 	memoria = malloc(tam_memoria);
-	tam_memoria_restante = tam_memoria;
 
 	segmento_0->tamanio = tam_segmento_0;
 	segmento_0->direccion_base = 0;
-	tam_memoria_restante -= tam_segmento_0;
 
 	lista_de_tablas = list_create();
 

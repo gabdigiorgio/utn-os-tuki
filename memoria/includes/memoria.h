@@ -68,8 +68,6 @@ t_list *lista_de_tablas;
 
 t_list *lista_de_huecos_libres;
 
-int tam_memoria_restante;
-
 bool cpu_conectada;
 bool kernel_conectado;
 bool fileSystem_conectado;
