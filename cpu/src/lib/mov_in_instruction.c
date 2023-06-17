@@ -21,21 +21,14 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
-	char *registro = esperar_valor_registro(memoria_connection);
+	char *valor = esperar_valor(memoria_connection);
 
-	//log_info(logger, registro);
-
-	//cambiar_registro(registro, seleccionar_registro(contexto->param1));
+	cambiar_registro(seleccionar_registro(contexto->param1), valor);
 
 	return 0;
 }
 
-/*void cambiar_registro(char *registro, char *valor)
- {
- copiar_string(valor, registro);
- }*/
-
-char* esperar_valor_registro(int memoria_connection)
+char* esperar_valor(int memoria_connection)
 {
 	t_paquete *paquete = malloc(sizeof(t_paquete));
 	paquete->buffer = malloc(sizeof(t_buffer));
