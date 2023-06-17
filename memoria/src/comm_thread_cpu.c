@@ -32,9 +32,8 @@ void conexion_cpu(int server_connection)
 				break;
 			case MOV_OUT:
 				log_info(logger, "MOV_OUT llego a memoria");
-				//leer el valor del registro (param1)
-				//calcular direccion fisica a partir de la logica (param2)
-				//escribir en la direccion fisica el registro
+				//int valor_registro = atoi(nueva_instruccion->param1););
+				//memcpy(memoria + atoi(nueva_instruccion->param1), &valor_registro, sizeof(int));
 				break;
 			}
 

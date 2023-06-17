@@ -14,6 +14,12 @@ int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 
 	log_info(logger, "Ejecutando [MOV_OUT] - [%s , %s]", instruccion->param1, instruccion->param2);
 
+	//Hallo el valor del registro
+	char *registro = seleccionar_registro(contexto->param2);
+	contexto->param2_length = strlen(registro)+1;
+	contexto->param2 = realloc(contexto->param2, contexto->param2_length);
+	memcpy(contexto->param2, registro, contexto->param2_length);
+
 	traducir_direccion(contexto->param1, contexto);
 
 	t_instruc_mem *instruccion_mov_out = inicializar_instruc_mem();
