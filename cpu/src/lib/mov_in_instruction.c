@@ -3,6 +3,8 @@
 
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 {
+	int exit_status = 0;
+
 	contexto->estado = MOV_IN;
 	contexto->param1_length = instruccion->param1_length;
 	contexto->param1 = realloc(contexto->param1, contexto->param1_length);
@@ -14,7 +16,9 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	log_info(logger, "Ejecutando [MOV_IN] - [%s , %s]", instruccion->param1, instruccion->param2);
 
-	traducir_direccion(contexto->param2, contexto);
+	exit_status = traducir_direccion(contexto->param2, contexto);
+
+	if(exit_status != 0) return exit_status;
 
 	t_instruc_mem *instruccion_memoria = inicializar_instruc_mem();
 	copiar_instruccion_mem(instruccion_memoria, contexto);
@@ -25,7 +29,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	cambiar_registro(seleccionar_registro(contexto->param1), valor);
 
-	return 0;
+	return exit_status;
 }
 
 char* esperar_valor(int memoria_connection)
