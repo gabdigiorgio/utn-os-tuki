@@ -37,6 +37,7 @@ void desasignar_recurso_si_lo_tiene_asignado(pcb_t *pcb, const char* nombre_recu
 void devolver_instancias(pcb_t* pcb, t_lista_mutex *lista_recursos);
 void liberar_proceso_de_bloqueados_si_necesario(const char* recurso, int instancias_recurso);
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
+void copiar_tabla_segmentos(tabla_segmentos_t* tabla_contexto,tabla_segmentos_t* tabla_pcb);
 
 char* armar_lista_pids(t_list* lista);
 void instrucciones_destroy(t_instruc* instruccion);

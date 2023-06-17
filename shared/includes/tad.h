@@ -85,6 +85,19 @@ typedef enum
 
 typedef struct
 {
+	uint32_t ids;
+	uint32_t direccion_base;
+	uint32_t tamanio;
+} segmento_t;
+
+typedef struct
+{
+	uint32_t pid;
+	t_list *segmentos;
+} tabla_segmentos_t;
+
+typedef struct
+{
 	t_registros *registros;
 	t_list *instrucciones;
 	uint32_t pid;
@@ -95,6 +108,7 @@ typedef struct
 	char *param3;
 	uint32_t param3_length;
 	contexto_estado_t estado;
+	tabla_segmentos_t *tabla_segmento;
 
 } t_contexto;
 
@@ -112,23 +126,9 @@ typedef struct
 
 typedef struct
 {
-	uint32_t ids;
-	uint32_t direccion_base;
-	uint32_t tamanio;
-} segmento_t;
-
-typedef struct
-{
-	uint32_t pid;
-	t_list *segmentos;
-} tabla_segmentos_t;
-
-typedef struct
-{
 	uint32_t direccion_base;
 	uint32_t tamanio;
 } hueco_libre_t;
-
 
 typedef struct
 {
@@ -175,17 +175,18 @@ typedef struct
 	uint32_t estimado_proxima_rafaga; 		// se saca inicialmente del config
 	t_temporal *tiempo_espera_en_ready; 	// se hace con timer, ver timestamp
 	t_registros *registros_cpu; 			// crear struct de registros de cpu
-	tabla_segmentos_t* tabla_segmento; 			// nada
+	tabla_segmentos_t *tabla_segmento; 			// nada
 	t_list *instrucciones; 						// lista recibida de consola
 	tabla_archivos_abiertos_t tabla_archivos; 	// nada
 	t_list *recursos_asignados;
 } pcb_t;
 
-typedef struct {
+typedef struct
+{
 	char *nombre_archivo;
 	uint32_t tamanio_archivo;
 	uint32_t puntero_directo;
 	uint32_t puntero_indirecto;
-}fcb_t;
+} fcb_t;
 
 #endif /* TAD_H_ */

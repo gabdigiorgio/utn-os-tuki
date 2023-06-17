@@ -20,6 +20,7 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 uint32_t calcular_tam_instrucciones(t_list* lista);
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas);
 void serializar_contexto(int socket_cliente, t_contexto* contexto);
+uint32_t calcular_tam_tabla_segmentos(tabla_segmentos_t * tabla_segmento);
 void copiar_contexto(void* stream, t_contexto* contexto);
 uint32_t calcular_tam_contexto(t_contexto* contexto);
 uint32_t calcular_tam_registros(t_registros* registros);

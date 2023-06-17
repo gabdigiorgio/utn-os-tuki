@@ -18,6 +18,7 @@ int crear_conexion(char* ip, char* puerto);
 void liberar_conexion(int socket_cliente);
 int handshake(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_servidor);
 uint32_t calcular_tam_instrucciones(t_list* lista);
+uint32_t calcular_tam_tabla_segmentos(tabla_segmentos_t * tabla_segmento);
 void copiar_contexto(void* stream, t_contexto* contexto);
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas, uint32_t codigo);
 void serializar_contexto(int socket, t_contexto* contexto);

@@ -25,8 +25,9 @@ void conexion_cpu(int server_connection)
 
 			case MOV_IN:
 				log_info(logger, "MOV_IN llego a memoria");
-				//fijarse la direccion (param2)
-				//devolver el valor que esta dentro de ese registro a CPU
+				int valor;
+				memcpy(&valor, memoria + atoi(nueva_instruccion->param2), sizeof(int)); //fijarse la direccion (param2)
+				//serializar_instruccion_memoria(nueva_instruccion, cpu_connection); //enviar valor a cpu
 				break;
 			case MOV_OUT:
 				log_info(logger, "MOV_OUT llego a memoria");

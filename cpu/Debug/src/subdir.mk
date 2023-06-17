@@ -8,6 +8,7 @@ C_SRCS += \
 ../src/comm_thread.c \
 ../src/cpu.c \
 ../src/initial_setup.c \
+../src/mmu.c \
 ../src/server_utils.c \
 ../src/utils.c 
 
@@ -16,6 +17,7 @@ C_DEPS += \
 ./src/comm_thread.d \
 ./src/cpu.d \
 ./src/initial_setup.d \
+./src/mmu.d \
 ./src/server_utils.d \
 ./src/utils.d 
 
@@ -24,6 +26,7 @@ OBJS += \
 ./src/comm_thread.o \
 ./src/cpu.o \
 ./src/initial_setup.o \
+./src/mmu.o \
 ./src/server_utils.o \
 ./src/utils.o 
 
@@ -40,7 +43,7 @@ src/%.o: ../src/%.c src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/client_utils.d ./src/client_utils.o ./src/comm_thread.d ./src/comm_thread.o ./src/cpu.d ./src/cpu.o ./src/initial_setup.d ./src/initial_setup.o ./src/server_utils.d ./src/server_utils.o ./src/utils.d ./src/utils.o
+	-$(RM) ./src/client_utils.d ./src/client_utils.o ./src/comm_thread.d ./src/comm_thread.o ./src/cpu.d ./src/cpu.o ./src/initial_setup.d ./src/initial_setup.o ./src/mmu.d ./src/mmu.o ./src/server_utils.d ./src/server_utils.o ./src/utils.d ./src/utils.o
 
 .PHONY: clean-src
 

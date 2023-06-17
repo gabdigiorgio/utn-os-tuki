@@ -47,9 +47,6 @@ void deserializar_header(t_paquete* paquete, int socket){
 }
 
 t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* contexto){
-	uint32_t pid;
-	contexto_estado_t estado;
-
 	void* stream = buffer->stream;
 
 	for(int i=0; i<lineas; i++){
@@ -113,9 +110,9 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* cont
 	stream += sizeof(char) * 17;
 	memcpy(&(contexto->registros->rdx), stream, sizeof(char) * 17);
 	stream += sizeof(char) * 17;
-	memcpy(&(pid), stream, sizeof(uint32_t));
+	memcpy(&(contexto->pid), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
-	memcpy(&(estado), stream, sizeof(contexto_estado_t));
+	memcpy(&(contexto->estado), stream, sizeof(contexto_estado_t));
 	stream += sizeof(contexto_estado_t);
 
 	memcpy(&(contexto->param1_length), stream, sizeof(uint32_t));
@@ -128,13 +125,34 @@ t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* cont
 	contexto->param2 = realloc(contexto->param2,contexto->param2_length);
 	memcpy(contexto->param2, stream, contexto->param2_length);
 	stream += contexto->param2_length;
-
 	memcpy(&(contexto->param3_length), stream, sizeof(uint32_t));
 	stream += sizeof(uint32_t);
 	contexto->param3 = realloc(contexto->param3,contexto->param3_length);
 	memcpy(contexto->param3, stream, contexto->param3_length);
-	contexto->pid = pid;
-	contexto->estado = estado;
+	stream += contexto->param3_length;
+
+	//deserializacion de la tabla de segmentos
+	memcpy(&contexto->tabla_segmento->pid, stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	uint32_t size_lista = 0;
+	memcpy(&size_lista, stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+
+	for (int i = 0; i < size_lista; i++)
+	{
+		segmento_t *segmento = malloc(sizeof(segmento_t));
+
+		memcpy(&(segmento->ids), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		memcpy(&(segmento->direccion_base), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		memcpy(&(segmento->tamanio), stream, sizeof(uint32_t));
+		stream += sizeof(uint32_t);
+
+		list_add(contexto->tabla_segmento->segmentos, segmento);
+	}
 
 	return contexto;
 }

@@ -6,6 +6,7 @@ t_contexto* obtener_contexto_pcb(pcb_t *pcb)
 	t_contexto *contexto = inicializar_contexto();
 	copiar_registros(contexto->registros, pcb->registros_cpu);
 	copiar_lista_instrucciones(contexto->instrucciones, pcb->instrucciones);
+	copiar_tabla_segmentos(contexto->tabla_segmento, pcb->tabla_segmento);
 	contexto->pid = pcb->pid;
 	return contexto;
 }

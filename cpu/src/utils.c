@@ -46,6 +46,10 @@ t_contexto* contexto_create(){
 	contexto->estado = EXIT;
 	contexto->pid = 0;
 
+	contexto->tabla_segmento = malloc(sizeof(tabla_segmentos_t));
+	contexto->tabla_segmento->pid = 0;
+	contexto->tabla_segmento->segmentos = list_create();
+
 	return contexto;
 }
 
