@@ -54,10 +54,14 @@ void create_segment(t_contexto* contexto, pcb_t* pcb){
 
 	switch(respuesta){
 		case SUCCESS_CREATE_SEGMENT:
+			enviar_contexto(pcb);
 			log_info(logger,"success create segment");
 			break;
 		case OUT_OF_MEMORY:
 			log_info(logger,"out of memory");
+			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
+			list_push(pcb_exit_list, pcb);
+			sem_post(&sem_estado_exit);
 			break;
 		case COMPACTION_NEEDED:
 			serializar_solicitud_compactacion(memoria_connection);

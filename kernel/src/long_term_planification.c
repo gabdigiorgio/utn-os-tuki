@@ -55,6 +55,9 @@ void estado_exit(){
 		send(proceso->consola, &resultado, sizeof(uint8_t), NULL);
 		//hace el free de todo lo que tiene adentro el pcb
 		destroy_proceso(proceso);
+		//solicitud borrar tabla de segmentos del proceso
+		//crear contexto temporal
+		//mandarle instruct DELETE_TABLE con el pid
 		sem_post(&sem_grado_multi);
 	}
 }

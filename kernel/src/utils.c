@@ -380,7 +380,6 @@ void eliminar_segmentos(segmento_t* segmento , pcb_t* proceso){
 	log_info(logger,"Segmento eliminado %d", segmento->ids);
 	free(contexto_eliminar->param1);
 	free(contexto_eliminar);
-	solicitar_tabla_segmentos();
 }
 void destroy_proceso(pcb_t *proceso)
 {

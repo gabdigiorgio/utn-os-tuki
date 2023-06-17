@@ -9,7 +9,6 @@ void allocate_segmento_0(int pid){
 	tabla->segmentos = list_create();
 
 	segmento_t* segmento_0 = list_get(tabla_0->segmentos,0);
-	segmento_0->tamanio = 50 + pid;
 
 	list_add(tabla->segmentos,segmento_0);
 	list_add(lista_de_tablas,tabla);

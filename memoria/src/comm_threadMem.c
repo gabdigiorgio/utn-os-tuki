@@ -19,6 +19,17 @@ void conexion_kernel(int server_connection){
 				deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
 				uint32_t pid = nueva_instruccion->pid;
 
+				void imprimir_segmentos(segmento_t* segmento){
+					log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
+				}
+
+				void revisar_tablas(tabla_segmentos_t* tabla){
+					log_info(logger,"PID %d ", tabla->pid);
+					list_iterate(tabla->segmentos,(void*) imprimir_segmentos);
+				}
+
+				list_iterate(lista_de_tablas,(void*) revisar_tablas);
+
 				switch (nueva_instruccion->estado)
 				{
 					case CREATE_SEGMENT:
@@ -71,7 +82,11 @@ void conexion_kernel(int server_connection){
 							log_info(logger, "Segmento a borrar: %d | Tabla: %d", id_segment , tabla_de_proceso->pid);
 							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segment);
 							break;
-
+						case DELETE_TABLE:
+							//recibis el contexto y hacer free(lista segmentos) y despues agarrar lista_de_tabla_de_segmentos
+							//y sacar la tabla del pid ese
+							//despues hacer un free de esa tabla
+							break;
 						case ALLOCATE_SEGMENT:
 							log_info(logger, "Llego un nuevo proceso a memoria");
 							log_info(logger, "pid %d", nueva_instruccion->pid);

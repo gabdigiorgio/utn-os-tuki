@@ -166,10 +166,15 @@ int tam_memoria_restante(){
 		tabla_segmentos_t* tabla = list_get(lista_de_tablas,i);
 		int size_tabla = list_size(tabla->segmentos);
 
-		for(int b = 0; b < size_tabla; b++){
-			segmento_t* segmento = list_get(tabla->segmentos, b);
-
+		if(tabla->pid == 0){
+			segmento_t* segmento = list_get(tabla->segmentos, 0);
 			memoria_usada += segmento->tamanio;
+		} else {
+			for(int b = 0; b < size_tabla; b++){
+				segmento_t* segmento = list_get(tabla->segmentos, b);
+
+				if(segmento->ids != 0)memoria_usada += segmento->tamanio;
+			}
 		}
 	}
 
@@ -185,11 +190,17 @@ t_list* extraer_segmentos(){
 		tabla_segmentos_t* tabla = list_get(lista_de_tablas,i);
 		int size_tabla = list_size(tabla->segmentos);
 
-		for(int b = 0; b < size_tabla; b++){
-			segmento_t* segmento = list_get(tabla->segmentos, b);
-
+		if(tabla->pid == 0){
+			segmento_t* segmento = list_get(tabla->segmentos, 0);
 			list_add(lista_unificada,segmento);
+		} else {
+			for(int b = 0; b < size_tabla; b++){
+				segmento_t* segmento = list_get(tabla->segmentos, b);
+
+				if(segmento->ids != 0)list_add(lista_unificada,segmento);
+			}
 		}
+
 	}
 
 	list_sort(lista_unificada,ordenar_lista_segmentos);
