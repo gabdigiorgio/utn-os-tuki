@@ -97,6 +97,9 @@ void conexion_kernel(int server_connection){
 				log_info(logger, "Se solicito la tabla de segmentos");
 				serializar_tabla_segmentos(server_connection,lista_de_tablas);
 				break;
+			case 3:
+				log_info(logger,"se solicito la compactacion");
+				compactar_memoria( lista_de_tablas,lista_de_huecos_libres);
 
 			default:
 				exit_status=1;

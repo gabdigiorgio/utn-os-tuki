@@ -21,6 +21,7 @@ void solicitar_tabla_segmentos(){
 	free(paquete->buffer);
 	free(paquete);
 }
+
 void esperar_respuesta_memoria(){
 
 		t_paquete *paquete = malloc(sizeof(t_paquete));
@@ -38,6 +39,7 @@ void esperar_respuesta_memoria(){
 					log_info(logger,"out of memory");
 					break;
 				case COMPACTION_NEEDED:
+					serializar_solicitud_compactacion(memoria_connection);
 					log_info(logger,"compaction needed");
 					break;
 				}

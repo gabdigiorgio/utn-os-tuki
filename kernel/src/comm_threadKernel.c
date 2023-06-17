@@ -168,6 +168,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			serializar_instruccion_memoria(memoria_connection, instruccion);
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
             esperar_respuesta_memoria();
+
 			solicitar_tabla_segmentos(); // Despues de crear segmento exitoso y de la compactacion
 
 			enviar_contexto(pcb); // Despues de crear segmento exitoso y de la compactacion
