@@ -17,8 +17,6 @@ void agregar_pcb_a_new(t_list* instrucciones, uint32_t socket);
 pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket);
 void estado_exit();
 void iniciar_planificador_largo_plazo();
-tabla_segmentos_t* solicitar_segmento_0(int pid);
-void solicitar_segmento_a_eliminar(int pid, int id_segmento);
 
 extern t_lista_mutex* lista_tabla_segmentos;
 extern int memoria_connection;

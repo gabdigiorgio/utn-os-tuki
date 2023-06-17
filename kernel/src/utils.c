@@ -393,3 +393,17 @@ bool existe_tabla_segmentos(t_list* lista_tablas, int pid){
 
 	return encontrado;
 }
+
+tabla_segmentos_t* solicitar_segmento_0(int pid){
+	t_instruc_mem* instruccion = inicializar_instruc_mem();
+	instruccion->estado = ALLOCATE_SEGMENT;
+	instruccion->pid = pid;
+
+	serializar_instruccion_memoria(memoria_connection, instruccion);
+
+	solicitar_tabla_segmentos();
+
+	tabla_segmentos_t* tabla = buscar_tabla_segmentos(lista_tabla_segmentos->lista,pid);
+
+	return tabla;
+}

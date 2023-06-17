@@ -14,6 +14,9 @@
 
 #include "general_planification_utils.h"
 
+extern t_lista_mutex* lista_tabla_segmentos;
+extern int memoria_connection;
+
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
 
@@ -50,5 +53,7 @@ t_instruc_mem* inicializar_instruc_mem();
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid);
 bool existe_tabla_segmentos(t_list* lista_tablas, int pid);
+tabla_segmentos_t* solicitar_segmento_0(int pid);
+
 
 #endif /* CLIENT_H_ */
