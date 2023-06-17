@@ -8,6 +8,8 @@ C_SRCS += \
 ../src/lib/exit_instruction.c \
 ../src/lib/instruc_log.c \
 ../src/lib/manejador_contexto.c \
+../src/lib/mov_in_instruction.c \
+../src/lib/mov_out_instruction.c \
 ../src/lib/set_instruction.c \
 ../src/lib/syscall_instruccion.c \
 ../src/lib/yield_instruction.c 
@@ -17,6 +19,8 @@ C_DEPS += \
 ./src/lib/exit_instruction.d \
 ./src/lib/instruc_log.d \
 ./src/lib/manejador_contexto.d \
+./src/lib/mov_in_instruction.d \
+./src/lib/mov_out_instruction.d \
 ./src/lib/set_instruction.d \
 ./src/lib/syscall_instruccion.d \
 ./src/lib/yield_instruction.d 
@@ -26,6 +30,8 @@ OBJS += \
 ./src/lib/exit_instruction.o \
 ./src/lib/instruc_log.o \
 ./src/lib/manejador_contexto.o \
+./src/lib/mov_in_instruction.o \
+./src/lib/mov_out_instruction.o \
 ./src/lib/set_instruction.o \
 ./src/lib/syscall_instruccion.o \
 ./src/lib/yield_instruction.o 
@@ -43,7 +49,7 @@ src/lib/%.o: ../src/lib/%.c src/lib/subdir.mk
 clean: clean-src-2f-lib
 
 clean-src-2f-lib:
-	-$(RM) ./src/lib/code_reader.d ./src/lib/code_reader.o ./src/lib/exit_instruction.d ./src/lib/exit_instruction.o ./src/lib/instruc_log.d ./src/lib/instruc_log.o ./src/lib/manejador_contexto.d ./src/lib/manejador_contexto.o ./src/lib/set_instruction.d ./src/lib/set_instruction.o ./src/lib/syscall_instruccion.d ./src/lib/syscall_instruccion.o ./src/lib/yield_instruction.d ./src/lib/yield_instruction.o
+	-$(RM) ./src/lib/code_reader.d ./src/lib/code_reader.o ./src/lib/exit_instruction.d ./src/lib/exit_instruction.o ./src/lib/instruc_log.d ./src/lib/instruc_log.o ./src/lib/manejador_contexto.d ./src/lib/manejador_contexto.o ./src/lib/mov_in_instruction.d ./src/lib/mov_in_instruction.o ./src/lib/mov_out_instruction.d ./src/lib/mov_out_instruction.o ./src/lib/set_instruction.d ./src/lib/set_instruction.o ./src/lib/syscall_instruccion.d ./src/lib/syscall_instruccion.o ./src/lib/yield_instruction.d ./src/lib/yield_instruction.o
 
 .PHONY: clean-src-2f-lib
 

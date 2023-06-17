@@ -17,6 +17,7 @@ extern t_log* logger;
 extern t_lista_mutex* lista_tabla_segmentos;
 
 void solicitar_tabla_segmentos();
+void esperar_respuesta_memoria();
 
 
 #endif /* COMM_MEM_H_ */

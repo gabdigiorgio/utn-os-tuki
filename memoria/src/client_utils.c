@@ -78,3 +78,27 @@ void serializar_tabla_segmentos(int socket_cliente, t_list* lista_tablas){
 	free(buffer);
 	free(a_enviar);
 }
+void serializar_respuesta_memoria_kernel(int socket_cliente,t_resp_mem respuesta)
+{
+	 t_buffer* buffer = malloc(sizeof(t_buffer));
+
+	    buffer->size = sizeof(t_resp_mem);
+
+	    void* stream = malloc(buffer->size);
+
+	    memcpy(stream, &respuesta, buffer->size);
+
+	    buffer->stream = stream;
+
+	    void* a_enviar = malloc(buffer->size + sizeof(uint32_t)*3);
+
+	    crear_header(a_enviar, buffer, 0);
+
+	    send(socket_cliente, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t) , 0);
+
+	    // Liberar memoria utilizada
+	    free(buffer->stream);
+	    free(buffer);
+	    free(a_enviar);
+
+}

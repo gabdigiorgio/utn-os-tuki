@@ -57,6 +57,13 @@ typedef struct
 
 typedef enum
 {
+	SUCCESS_CREATE_SEGMENT,
+	OUT_OF_MEMORY,
+	COMPACTION_NEEDED
+}t_resp_mem;
+
+typedef enum
+{
 	EXEC,
 	EXIT,
 	YIELD,

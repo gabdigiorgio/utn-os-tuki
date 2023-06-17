@@ -304,6 +304,27 @@ void serializar_solicitud_tabla(int socket){
 	free(buffer);
 	free(a_enviar);
 }
+void serializar_solicitud_compactacion(int socket){
+	t_buffer* buffer = malloc(sizeof(t_buffer));
+
+	buffer->size = sizeof(char);
+
+	void* stream = malloc(buffer->size);
+
+	memcpy(stream,"",sizeof(char));
+
+	buffer->stream = stream;
+
+	void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+	crear_header(a_enviar,buffer,0,3);
+
+	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+	free(buffer->stream);
+	free(buffer);
+	free(a_enviar);
+}
 
 void liberar_conexion(int socket_cliente)
 {

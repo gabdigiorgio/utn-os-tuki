@@ -41,5 +41,8 @@ char* handshake(int);
 void liberar_conexion(int socket_servidor);
 void deserializar_header(t_paquete* paquete, int socket_cliente);
 void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buffer, int lineas);
+//void deserializar_respuesta_memoria(t_resp_mem *respuesta,t_buffer* buffer);
+t_resp_mem* deserializar_respuesta_memoria(t_buffer* buffer);
+
 
 #endif /* SERVER_UTILS_H_ */
