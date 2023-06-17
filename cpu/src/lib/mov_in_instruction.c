@@ -21,7 +21,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
-	//char *registro = esperar_valor_registro(memoria_connection);
+	char *registro = esperar_valor_registro(memoria_connection);
 
 	//log_info(logger, registro);
 
@@ -35,15 +35,27 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
  copiar_string(valor, registro);
  }*/
 
-/*char* esperar_valor_registro(int memoria_connection)
- {
- t_paquete *paquete = malloc(sizeof(t_paquete));
- paquete->buffer = malloc(sizeof(t_buffer));
- deserializar_header(paquete, server_connection);
+char* esperar_valor_registro(int memoria_connection)
+{
+	t_paquete *paquete = malloc(sizeof(t_paquete));
+	paquete->buffer = malloc(sizeof(t_buffer));
+	deserializar_header(paquete, memoria_connection);
 
- switch (paquete->codigo_operacion)
- {
- case 1:
+	switch (paquete->codigo_operacion)
+	{
+	case 1:
+		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
+		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+		log_info(logger, "Me llego de memoria el valor: %s", nueva_instruccion->param2);
+		return nueva_instruccion->param2;
+		break;
+	default:
+		log_error(logger, "Fallo respuesta memoria a CPU");
+		return NULL;
+		break;
+	}
 
- }
- }*/
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
+}

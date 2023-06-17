@@ -27,7 +27,8 @@ void conexion_cpu(int server_connection)
 				log_info(logger, "MOV_IN llego a memoria");
 				int valor;
 				memcpy(&valor, memoria + atoi(nueva_instruccion->param2), sizeof(int)); //fijarse la direccion (param2)
-				//serializar_instruccion_memoria(nueva_instruccion, cpu_connection); //enviar valor a cpu
+				snprintf(nueva_instruccion->param2, sizeof(nueva_instruccion->param2), "%d", valor);
+				serializar_instruccion_memoria(server_connection, nueva_instruccion); //enviar valor a cpu
 				break;
 			case MOV_OUT:
 				log_info(logger, "MOV_OUT llego a memoria");
