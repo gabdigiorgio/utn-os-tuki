@@ -95,7 +95,5 @@ void solicitar_segmento_a_eliminar(int pid, int id_segmento) {
 	solicitar_tabla_segmentos();
 
 	tabla_segmentos_t* tabla = buscar_tabla_segmentos(lista_tabla_segmentos->lista,pid);
-
-	//return tabla;
 }
 

@@ -48,6 +48,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				delete_segment(contexto_eliminar,pcb);
 				log_info(logger,"Segmento eliminado %d", segmento->ids);
 				//eliminar el contexto creado
+				free(contexto_eliminar->param1);
+				free(contexto_eliminar);
 				solicitar_tabla_segmentos();
 			}
 
@@ -57,13 +59,12 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				segmento_t* segmento = list_remove(pcb->tabla_segmento->segmentos,0);
 				if(segmento->ids != 0){
 					eliminar_segmentos(segmento);
-					//free el segmento si es distinto de id0
+					free(segmento);
 				}
 			}
-
-			//eliminar tabla de segmento
 			list_iterate(pcb->tabla_segmento->segmentos,(void*) imprimir_segmentos);
 			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
+			list_destroy(pcb->tabla_segmento->segmentos);
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
 			break;
