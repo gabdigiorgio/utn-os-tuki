@@ -35,6 +35,13 @@ char* memoria_port;
 
 char* server_port;
 
+char* path_superbloque;
+char* path_bitmap;
+char* path_bloques;
+char* path_fcb_folder;
+
+int retardo_acceso_bloque;
+
 t_config* config;
 
 // _____________________

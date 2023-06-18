@@ -29,6 +29,46 @@ int initial_setup(){
 		error = 0;
 	}
 
+	// PATH_SUPERBLOQUE
+	if (config_has_property(config, "PATH_SUPERBLOQUE")){
+		path_superbloque = config_get_string_value(config, "PATH_SUPERBLOQUE");
+	} else {
+		failed_initial_setup("PATH_SUPERBLOQUE");
+		error = 0;
+	}
+
+	// PATH_BITMAP
+	if (config_has_property(config, "PATH_BITMAP")){
+		path_bitmap = config_get_string_value(config, "PATH_BITMAP");
+	} else {
+		failed_initial_setup("PATH_BITMAP");
+		error = 0;
+	}
+
+	// PATH_BLOQUES
+	if (config_has_property(config, "PATH_BLOQUES")){
+		path_bloques = config_get_string_value(config, "PATH_BLOQUES");
+	} else {
+		failed_initial_setup("PATH_BLOQUES");
+		error = 0;
+	}
+
+	// PATH_FCB
+	if (config_has_property(config, "PATH_FCB")){
+		path_fcb_folder = config_get_string_value(config, "PATH_FCB");
+	} else {
+		failed_initial_setup("PATH_FCB");
+		error = 0;
+	}
+
+
+	// RETARDO_ACCESO_BLOQUE
+	if (config_has_property(config, "RETARDO_ACCESO_BLOQUE")){
+		retardo_acceso_bloque = config_get_int_value(config, "RETARDO_ACCESO_BLOQUE");
+		} else {
+			failed_initial_setup("RETARDO_ACCESO_BLOQUE");
+			error = 0;
+		}
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");

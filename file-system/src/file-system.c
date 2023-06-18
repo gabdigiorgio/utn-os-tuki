@@ -4,15 +4,15 @@ int main(int argc, char *argv[]) {
 	//Iniciamos tanto el log como el config
 	logger = iniciar_logger();
 
-	 if (argc < 3) {
+	 if (argc < 2) {
 		 log_error(logger, "Falta parametro del path del archivo de configuracion");
 		 return EXIT_FAILURE;
 	 }
 
 	config = iniciar_config(argv[1]);
-	if(argv[2] != NULL) {
-	fcb = iniciar_fcb(argv[2]);
-	}
+//	if(argv[2] != NULL) {
+//	fcb = iniciar_fcb(argv[2]);
+//	}
 
 
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
