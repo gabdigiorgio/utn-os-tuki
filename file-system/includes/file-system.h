@@ -42,7 +42,12 @@ char* path_fcb_folder;
 
 int retardo_acceso_bloque;
 
+// Variables de SuperBloque
+int tamanio_de_bloque;
+int cantidad_de_bloques;
+
 t_config* config;
+t_config* superbloque_config;
 
 // _____________________
 
