@@ -27,9 +27,22 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	char *valor = esperar_valor(memoria_connection);
 
-	cambiar_registro(seleccionar_registro(contexto->param1), valor);
+	asignar_valor_registro(seleccionar_registro(contexto->param1), valor);
+
+	log_info(logger, "Registro: %s, tiene el valor: %s", contexto->param1, seleccionar_registro(contexto->param1));
 
 	return exit_status;
+}
+
+void asignar_valor_registro(char* registro, char* valor)
+{
+	int length_registro = strlen(registro);
+
+	for (int i = 0; i < length_registro; i++)
+	{
+		registro[i] = valor[i];
+	}
+
 }
 
 char* esperar_valor(int memoria_connection)
@@ -43,7 +56,6 @@ char* esperar_valor(int memoria_connection)
 	case 1:
 		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
 		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
-		log_info(logger, "Me llego de memoria el valor: %s", nueva_instruccion->param2);
 		return nueva_instruccion->param2;
 		break;
 	default:

@@ -19,22 +19,24 @@ void conexion_cpu(int server_connection)
 		case 1:
 			t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
 			deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+
 			int direccion_fisica;
+			char valor[17];
+
 			switch (nueva_instruccion->estado)
 			{
 
 			case MOV_IN:
-				log_info(logger, "MOV_IN llego a memoria");
-				int valor;
 				direccion_fisica = atoi(nueva_instruccion->param2);
-				memcpy(&valor, memoria + direccion_fisica, sizeof(int));
-				snprintf(nueva_instruccion->param2, sizeof(nueva_instruccion->param2), "%d", valor);
+				memcpy(valor, (char*)(memoria + direccion_fisica), sizeof(valor));
+				nueva_instruccion->param2_length = sizeof(valor);
+				snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
+				log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
 				serializar_instruccion_memoria(server_connection, nueva_instruccion);
 				break;
 			case MOV_OUT:
-				log_info(logger, "MOV_OUT llego a memoria");
 				direccion_fisica = atoi(nueva_instruccion->param1);
-				memcpy(memoria + direccion_fisica, nueva_instruccion->param2, nueva_instruccion->param2_length);
+				memcpy((char *)(memoria + direccion_fisica), nueva_instruccion->param2, nueva_instruccion->param2_length);
 				break;
 			}
 
