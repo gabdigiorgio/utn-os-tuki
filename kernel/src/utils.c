@@ -365,40 +365,31 @@ void imprimir_segmentos(segmento_t* segmento){
 	log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
 }
 
-void eliminar_segmentos(pcb_t* proceso){
+void eliminar_tabla_segmentos(pcb_t* proceso){
 	t_contexto* contexto_eliminar = inicializar_contexto();
 
-	/*char* param1 = string_itoa(segmento->ids);
-
-	uint32_t param1_length = string_length(param1) + 1;
-	contexto_eliminar->param1 = realloc(contexto_eliminar->param1,param1_length);
-	memcpy(contexto_eliminar->param1,param1,param1_length);
-	contexto_eliminar->param1_length = param1_length;*/
-	//En cuanto este arreglado descomentar
 	contexto_eliminar->estado = DELETE_TABLE;
-	//contexto_eliminar->estado = DELETE_SEGMENT;
 	contexto_eliminar->pid = proceso->pid;
 	//La peticion de eliminacion se hace directamente a memoria
 	delete_segment(contexto_eliminar,proceso);
-	//log_info(logger,"Segmento eliminado %d", segmento->ids);
-	//free(contexto_eliminar->param1);
+
 	free(contexto_eliminar);
 }
-void destroy_proceso(pcb_t *proceso)
-{
-	list_iterate(proceso->tabla_segmento->segmentos,(void*) imprimir_segmentos);
-	/*while(list_size(proceso->tabla_segmento->segmentos) > 0){
-	segmento_t* segmento = list_remove(proceso->tabla_segmento->segmentos,0);
-	if(segmento->ids != 0){
-		eliminar_segmentos(segmento,proceso);
-		free(segmento);
+void destroy_proceso(pcb_t *proceso) {
+
+	eliminar_tabla_segmentos(proceso);
+
+	while(list_size(proceso->tabla_segmento->segmentos) > 0){
+		segmento_t* segmento = list_remove(proceso->tabla_segmento->segmentos,0);
+		if(segmento->ids != 0){
+			free(segmento);
+		}
 	}
-		}*/
-	eliminar_segmentos(proceso);
-	list_iterate(proceso->tabla_segmento->segmentos,(void*) imprimir_segmentos);
-	solicitar_tabla_segmentos();
 	free(proceso->tabla_segmento->segmentos);
-	free(proceso->tabla_segmento);
+	list_remove_element(lista_tabla_segmentos->lista, proceso->tabla_segmento);
+	solicitar_tabla_segmentos();
+
+
 	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) instrucciones_destroy);
 	free(proceso->recurso_bloqueante);
 	devolver_instancias(proceso, lista_recursos);

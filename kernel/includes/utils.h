@@ -41,7 +41,7 @@ void devolver_instancias(pcb_t* pcb, t_lista_mutex *lista_recursos);
 void liberar_proceso_de_bloqueados_si_necesario(const char* recurso, int instancias_recurso);
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 //void eliminar_segmentos(segmento_t* segmento , pcb_t* proceso);
-void eliminar_segmentos(pcb_t* proceso);
+void eliminar_tabla_segmentos(pcb_t* proceso);
 
 void copiar_tabla_segmentos(tabla_segmentos_t* tabla_contexto,tabla_segmentos_t* tabla_pcb);
 
@@ -57,6 +57,9 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid);
 bool existe_tabla_segmentos(t_list* lista_tablas, int pid);
 tabla_segmentos_t* solicitar_segmento_0(int pid);
+
+
+extern t_lista_mutex* lista_tabla_segmentos;
 
 
 #endif /* CLIENT_H_ */

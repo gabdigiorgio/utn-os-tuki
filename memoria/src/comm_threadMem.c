@@ -94,7 +94,8 @@ void conexion_kernel(int server_connection){
 								if(id_segmento != 0) {
 									eliminar_segmento(tabla_de_proceso_to_delete->segmentos, lista_de_huecos_libres, id_segmento);
 								}
-								}
+							}
+							list_remove_element(lista_de_tablas, tabla_de_proceso_to_delete);
 							break;
 						case ALLOCATE_SEGMENT:
 							log_info(logger, "Llego un nuevo proceso a memoria");
