@@ -84,8 +84,13 @@ void conexion_kernel(int server_connection){
 							break;
 						case DELETE_TABLE:
 							//recibis el contexto y hacer free(lista segmentos) y despues agarrar lista_de_tabla_de_segmentos
+							log_info(logger,"Llego una solicitud de eliminacion de Tabla de Segmentos");
+							log_info(logger, "pid %d", nueva_instruccion->pid);
 							//y sacar la tabla del pid ese
+							int id_segment_to_delete = atoi(nueva_instruccion->param1);
+							tabla_segmentos_t* tabla_de_proceso_to_delete = buscar_tabla(pid);
 							//despues hacer un free de esa tabla
+							free(tabla_de_proceso);
 							break;
 						case ALLOCATE_SEGMENT:
 							log_info(logger, "Llego un nuevo proceso a memoria");

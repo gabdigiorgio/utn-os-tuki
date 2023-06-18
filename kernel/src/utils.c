@@ -374,8 +374,11 @@ void eliminar_segmentos(segmento_t* segmento , pcb_t* proceso){
 	contexto_eliminar->param1 = realloc(contexto_eliminar->param1,param1_length);
 	memcpy(contexto_eliminar->param1,param1,param1_length);
 	contexto_eliminar->param1_length = param1_length;
-	contexto_eliminar->estado = DELETE_SEGMENT;
+	//En cuanto este arreglado descomentar
+	contexto_eliminar->estado = DELETE_TABLE;
+	//contexto_eliminar->estado = DELETE_SEGMENT;
 	contexto_eliminar->pid = proceso->pid;
+	//La peticion de eliminacion se hace directamente a memoria
 	delete_segment(contexto_eliminar,proceso);
 	log_info(logger,"Segmento eliminado %d", segmento->ids);
 	free(contexto_eliminar->param1);
@@ -384,12 +387,13 @@ void eliminar_segmentos(segmento_t* segmento , pcb_t* proceso){
 void destroy_proceso(pcb_t *proceso)
 {
 	list_iterate(proceso->tabla_segmento->segmentos,(void*) imprimir_segmentos);
+	//TODO: Cambiar logica para que se solicite la eliminacion de la tabla de segmentos completa
 	while(list_size(proceso->tabla_segmento->segmentos) > 0){
 	segmento_t* segmento = list_remove(proceso->tabla_segmento->segmentos,0);
-		if(segmento->ids != 0){
-				eliminar_segmentos(segmento,proceso);
-				free(segmento);
-			}
+	if(segmento->ids != 0){
+		eliminar_segmentos(segmento,proceso);
+		free(segmento);
+	}
 		}
 	list_iterate(proceso->tabla_segmento->segmentos,(void*) imprimir_segmentos);
 	solicitar_tabla_segmentos();
