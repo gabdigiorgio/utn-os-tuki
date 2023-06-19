@@ -17,14 +17,27 @@
 #include "utils.h"
 
 int initial_setup(void);
-void failed_initial_setup(char* key);
+int leer_superbloque_config();
+void failed_setup(char* key);
 
 extern char* memoria_ip;
 extern char* memoria_port;
 
 extern char* server_port;
 
+extern char* path_superbloque;
+extern char* path_bitmap;
+extern char* path_bloques;
+extern char* path_fcb_folder;
+
+extern int retardo_acceso_bloque;
+
+ // Variables de SuperBloque
+extern int tamanio_de_bloque;
+extern int cantidad_de_bloques;
+
 extern t_config* config;
+extern t_config* superbloque_config;
 
 extern t_log* logger;
 
