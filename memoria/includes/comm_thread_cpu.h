@@ -7,9 +7,10 @@
 #include<commons/log.h>
 #include<commons/collections/list.h>
 
-#include "server_utils.h"
-#include "utils.h"
-#include "../../shared/includes/tad.h"
+#include"client_utils.h"
+#include"server_utils.h"
+#include"utils.h"
+#include"../../shared/includes/tad.h"
 
 void conexion_cpu(int server_connection);
 

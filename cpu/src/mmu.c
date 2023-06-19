@@ -1,6 +1,6 @@
 #include "../includes/mmu.h"
 
-void traducir_direccion(char *param, t_contexto *contexto)
+int traducir_direccion(char *param, t_contexto *contexto)
 {
 	int direccion_fisica;
 	int direccion_logica = atoi(param);
@@ -13,9 +13,10 @@ void traducir_direccion(char *param, t_contexto *contexto)
 	if (direccion_base_segmento + desplazamiento_segmento > tamanio_segmento)
 	{
 		//devolver el contexto de ejecucion a kernel y matar proceso
-		//contexto->estado = EXIT;
-		//serializar_contexto(server_connection, contexto);
-		log_info(logger, "ERROR: SEG_FAULT");
+		log_error(logger, "PID: %d - Error SEG_FAULT - Segmento: %d - Offset: %d - Tamanio: %d",
+				contexto->pid, num_segmento, desplazamiento_segmento, tamanio_segmento);
+		contexto_estado = EXIT;
+		return 1;
 	}
 
 	direccion_fisica = direccion_base_segmento + desplazamiento_segmento;
@@ -24,6 +25,7 @@ void traducir_direccion(char *param, t_contexto *contexto)
 
 	log_info(logger, "Direccion fisica: %d", direccion_fisica);
 
+	return 0;
 }
 
 segmento_t* buscar_segmento(int num_segmento, t_list *segmentos)

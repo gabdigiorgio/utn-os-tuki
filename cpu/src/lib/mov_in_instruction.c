@@ -3,6 +3,8 @@
 
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 {
+	int exit_status = 0;
+
 	contexto->estado = MOV_IN;
 	contexto->param1_length = instruccion->param1_length;
 	contexto->param1 = realloc(contexto->param1, contexto->param1_length);
@@ -14,36 +16,55 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	log_info(logger, "Ejecutando [MOV_IN] - [%s , %s]", instruccion->param1, instruccion->param2);
 
-	traducir_direccion(contexto->param2, contexto);
+	exit_status = traducir_direccion(contexto->param2, contexto);
+
+	if(exit_status != 0) return exit_status;
 
 	t_instruc_mem *instruccion_memoria = inicializar_instruc_mem();
 	copiar_instruccion_mem(instruccion_memoria, contexto);
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_memoria);
 
-	//char *registro = esperar_valor_registro(memoria_connection);
+	char *valor = esperar_valor(memoria_connection);
 
-	//log_info(logger, registro);
+	asignar_valor_registro(seleccionar_registro(contexto->param1), valor);
 
-	//cambiar_registro(registro, seleccionar_registro(contexto->param1));
+	log_info(logger, "Registro: %s, tiene el valor: %s", contexto->param1, seleccionar_registro(contexto->param1));
 
-	return 0;
+	return exit_status;
 }
 
-/*void cambiar_registro(char *registro, char *valor)
- {
- copiar_string(valor, registro);
- }*/
+void asignar_valor_registro(char* registro, char* valor)
+{
+	int length_registro = strlen(registro);
 
-/*char* esperar_valor_registro(int memoria_connection)
- {
- t_paquete *paquete = malloc(sizeof(t_paquete));
- paquete->buffer = malloc(sizeof(t_buffer));
- deserializar_header(paquete, server_connection);
+	for (int i = 0; i < length_registro; i++)
+	{
+		registro[i] = valor[i];
+	}
 
- switch (paquete->codigo_operacion)
- {
- case 1:
+}
 
- }
- }*/
+char* esperar_valor(int memoria_connection)
+{
+	t_paquete *paquete = malloc(sizeof(t_paquete));
+	paquete->buffer = malloc(sizeof(t_buffer));
+	deserializar_header(paquete, memoria_connection);
+
+	switch (paquete->codigo_operacion)
+	{
+	case 1:
+		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
+		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+		return nueva_instruccion->param2;
+		break;
+	default:
+		log_error(logger, "Fallo respuesta memoria a CPU");
+		return NULL;
+		break;
+	}
+
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
+}
