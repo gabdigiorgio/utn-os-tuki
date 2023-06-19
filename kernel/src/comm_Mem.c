@@ -54,8 +54,9 @@ void create_segment(t_contexto* contexto, pcb_t* pcb){
 
 	switch(respuesta){
 		case SUCCESS_CREATE_SEGMENT:
-			enviar_contexto(pcb);
+			solicitar_tabla_segmentos();
 			log_info(logger,"success create segment");
+			enviar_contexto(pcb);
 			break;
 		case OUT_OF_MEMORY:
 			log_info(logger,"out of memory");

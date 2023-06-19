@@ -13,6 +13,7 @@
 #include <pthread.h>
 
 #include "general_planification_utils.h"
+#include "comm_Mem.h"
 
 extern t_lista_mutex* lista_tabla_segmentos;
 extern int memoria_connection;
@@ -57,6 +58,7 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid);
 bool existe_tabla_segmentos(t_list* lista_tablas, int pid);
 tabla_segmentos_t* solicitar_segmento_0(int pid);
+void delete_segment(t_contexto* contexto, pcb_t* pcb);
 
 
 extern t_lista_mutex* lista_tabla_segmentos;

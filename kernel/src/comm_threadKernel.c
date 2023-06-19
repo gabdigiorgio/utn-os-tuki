@@ -160,8 +160,6 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		case CREATE_SEGMENT:
 			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
 			create_segment(contexto_actualizado,pcb);
-
-			solicitar_tabla_segmentos(); // Despues de crear segmento exitoso y de la compactacion
 			break;
 
 		case DELETE_SEGMENT:

@@ -403,7 +403,7 @@ tabla_segmentos_t* buscar_tabla_segmentos(t_list* lista_tablas, int pid){
 		return tabla->pid == pid;
 	}
 
-	tabla_segmentos_t* tabla_encontrada = list_find(lista_tablas,buscar_tabla);
+	tabla_segmentos_t* tabla_encontrada = list_find(lista_tablas,(void*)buscar_tabla);
 
 	return tabla_encontrada;
 }
