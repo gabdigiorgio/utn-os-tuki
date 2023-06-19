@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 {
 
 	logger = iniciar_logger();
+
 	segmento_t* segmento_0 = malloc(sizeof(segmento_t));
 	segmento_0->ids=0;
 	segmento_0->direccion_base=0;

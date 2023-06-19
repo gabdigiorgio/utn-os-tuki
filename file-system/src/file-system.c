@@ -3,6 +3,40 @@
 int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 
+	void* array_bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
+	int offset = 0;
+	int size = 64;
+
+	void* algo = malloc(158);
+
+	offset = 5; //index del bitarray, bloque 5
+
+	//fcb puntero directo = 5, puntero indirecto = 30, 40, 6542
+	//4 * 64
+	//"HOLA/0"
+	//"CHAU/0" -> 8 bytes
+	//FSEEK 72 -> 64 + 8
+
+	//te llega un F_TRUNCATE con tamaño 158 para el archivo 'archivo1'
+	//osea, vos sabes que 158 / tamaño de bloque -> cantidad de bloques que necesitas
+	//ej 158 / 64 -> 3 bloques ( aproximas para arriba )
+	//pusheas los 3 bloques a la lista de bloques (lista_bloques), por ej, bloque 1 2 y 3
+	//FREAD 'archivo1'
+	//tenes que copiar todos los datos de archivo1 a un espacio de memoria
+	//sabes que tenes 3 bloques (list_size(lista_bloques))
+	//tenes que hacer un malloc para el espacio entero de memoria, void* espacio = malloc(3 * tamaño de bloque)
+	//recorres cada bloque de la lista
+	//memcpy(espacio + offset_espacio, array_bloques + (id de bloque + tamaño de bloque), tamaño de bloque)
+	//el bloque en si es un int, solo guarda la posicion que es igual a id.
+
+	memcpy(array_bloques + (offset * size),&algo,sizeof(int)); // 5 * 64
+
+	int resultado = 0;
+
+	memcpy(&resultado,array_bloques + (offset * size),sizeof(int));
+
+	log_info(logger,"resultado %d", resultado);
+
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
 	if (argc < 2) {
 		 log_error(logger, "Falta parametro del path del archivo de configuracion");
