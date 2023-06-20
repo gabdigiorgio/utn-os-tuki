@@ -11,7 +11,7 @@
 #include "long_term_planification.h"
 #include "short_term_planification.h"
 #include "comm_Mem.h"
-//#include "../includes/kernel.h"
+#include "comm_File.h"
 
 extern t_lista_mutex* lista_recursos;
 

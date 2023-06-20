@@ -31,67 +31,10 @@ int iniciar_servidor(char* puerto)
 
 int esperar_cliente(int socket_servidor)
 {
-	// Quitar esta línea cuando hayamos terminado de implementar la funcion
-	//assert(!"no implementado!");
-
-	// Aceptamos un nuevo cliente
 	int socket_cliente = accept(socket_servidor, NULL, NULL);
 	log_info(logger, "Se conecto el Kernel");
 
 	return socket_cliente;
-}
-
-int recibir_operacion(int socket_cliente)
-{
-	int cod_op;
-	if(recv(socket_cliente, &cod_op, sizeof(int), MSG_WAITALL) > 0)
-		return cod_op;
-	else
-	{
-		close(socket_cliente);
-		return -1;
-	}
-}
-
-void* recibir_buffer(int* size, int socket_cliente)
-{
-	void * buffer;
-
-	recv(socket_cliente, size, sizeof(int), MSG_WAITALL);
-	buffer = malloc(*size);
-	recv(socket_cliente, buffer, *size, MSG_WAITALL);
-
-	return buffer;
-}
-
-void recibir_mensaje(int socket_cliente)
-{
-	int size;
-	char* buffer = recibir_buffer(&size, socket_cliente);
-	log_info(logger, "Me llego el mensaje %s", buffer);
-	free(buffer);
-}
-
-t_list* recibir_paquete(int socket_cliente)
-{
-	int size;
-	int desplazamiento = 0;
-	void * buffer;
-	t_list* valores = list_create();
-	int tamanio;
-
-	buffer = recibir_buffer(&size, socket_cliente);
-	while(desplazamiento < size)
-	{
-		memcpy(&tamanio, buffer + desplazamiento, sizeof(int));
-		desplazamiento+=sizeof(int);
-		char* valor = malloc(tamanio);
-		memcpy(valor, buffer+desplazamiento, tamanio);
-		desplazamiento+=tamanio;
-		list_add(valores, valor);
-	}
-	free(buffer);
-	return valores;
 }
 char* handshake(int socket_cliente){
 	char* message = "";
@@ -121,4 +64,90 @@ char* handshake(int socket_cliente){
 
 	}
 	return message;
+}
+
+void deserializar_header(t_paquete* paquete, int socket_cliente){
+	recv(socket_cliente, &(paquete->codigo_operacion), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(paquete->lineas), sizeof(uint32_t), MSG_WAITALL);
+	recv(socket_cliente, &(paquete->buffer->size), sizeof(uint32_t), MSG_WAITALL);
+	paquete->buffer->stream = malloc(paquete->buffer->size);
+	recv(socket_cliente, paquete->buffer->stream, paquete->buffer->size, MSG_WAITALL);
+}
+
+void deserializar_instruccion_file(t_instruc_file* instruccion, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&(instruccion->estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
+
+	memcpy(&(instruccion->pid), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+
+	memcpy(&(instruccion->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	memcpy(instruccion->param1, stream, instruccion->param1_length);
+	stream += instruccion->param1_length;
+	memcpy(&(instruccion->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	memcpy(instruccion->param2, stream, instruccion->param2_length);
+	stream += instruccion->param2_length;
+
+	memcpy(&(instruccion->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	memcpy(instruccion->param3, stream, instruccion->param3_length);
+	stream += instruccion->param3_length;
+}
+
+void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&(instruccion->estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
+
+	memcpy(&(instruccion->pid), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+
+	memcpy(&(instruccion->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	memcpy(instruccion->param1, stream, instruccion->param1_length);
+	stream += instruccion->param1_length;
+	memcpy(&(instruccion->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	memcpy(instruccion->param2, stream, instruccion->param2_length);
+	stream += instruccion->param2_length;
+
+	memcpy(&(instruccion->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	memcpy(instruccion->param3, stream, instruccion->param3_length);
+	stream += instruccion->param3_length;
+}
+
+char* esperar_valor(int memoria_connection)
+{
+	t_paquete *paquete = malloc(sizeof(t_paquete));
+	paquete->buffer = malloc(sizeof(t_buffer));
+	deserializar_header(paquete, memoria_connection);
+
+	switch (paquete->codigo_operacion)
+	{
+	case 1:
+		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
+		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+		return nueva_instruccion->param2;
+		break;
+	default:
+		log_error(logger, "Fallo respuesta file system a CPU");
+		return NULL;
+		break;
+	}
+
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
 }

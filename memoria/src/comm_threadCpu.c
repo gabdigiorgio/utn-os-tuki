@@ -1,4 +1,4 @@
-#include "../includes/comm_thread_cpu.h"
+#include "../includes/comm_threadCpu.h"
 
 void conexion_cpu(int server_connection)
 {
@@ -25,19 +25,18 @@ void conexion_cpu(int server_connection)
 
 			switch (nueva_instruccion->estado)
 			{
-
-			case MOV_IN:
-				direccion_fisica = atoi(nueva_instruccion->param2);
-				memcpy(valor, (char*)(memoria + direccion_fisica), sizeof(valor));
-				nueva_instruccion->param2_length = sizeof(valor);
-				snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
-				log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
-				serializar_instruccion_memoria(server_connection, nueva_instruccion);
-				break;
-			case MOV_OUT:
-				direccion_fisica = atoi(nueva_instruccion->param1);
-				memcpy((char *)(memoria + direccion_fisica), nueva_instruccion->param2, nueva_instruccion->param2_length);
-				break;
+				case MOV_IN:
+					direccion_fisica = atoi(nueva_instruccion->param2);
+					memcpy(valor, (char*)(memoria + direccion_fisica), sizeof(valor));
+					nueva_instruccion->param2_length = sizeof(valor);
+					snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
+					log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
+					serializar_instruccion_memoria(server_connection, nueva_instruccion);
+					break;
+				case MOV_OUT:
+					direccion_fisica = atoi(nueva_instruccion->param1);
+					memcpy((char *)(memoria + direccion_fisica), nueva_instruccion->param2, nueva_instruccion->param2_length);
+					break;
 			}
 
 			free(nueva_instruccion->param1);

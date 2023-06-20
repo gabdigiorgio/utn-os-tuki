@@ -1,5 +1,5 @@
-#ifndef COMM_THREAD_CPU_H_
-#define COMM_THREAD_CPU_H_
+#ifndef COMM_THREADCPU_H_
+#define COMM_THREADCPU_H_
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -14,4 +14,4 @@
 
 void conexion_cpu(int server_connection);
 
-#endif /* COMM_THREAD_CPU_H_ */
+#endif /* COMM_THREADCPU_H_ */

@@ -11,7 +11,11 @@ int main(int argc, char *argv[]) {
 
 	offset = 5; //index del bitarray, bloque 5
 
-	//fcb puntero directo = 5, puntero indirecto = 30, 40, 6542
+	//fcb puntero directo = 5, puntero indirecto = 42
+	// 42 = 3, 50, 6540
+	// 4 elementos -> void* memoria = malloc(4 * tam_bloque)
+	// memcpy(memoria + offset,array_bloques + (id_bloque + tam_bloque), tam_bloque)
+	// offset += tam_bloque
 	//4 * 64
 	//"HOLA/0"
 	//"CHAU/0" -> 8 bytes
@@ -20,6 +24,7 @@ int main(int argc, char *argv[]) {
 	//te llega un F_TRUNCATE con tamaño 158 para el archivo 'archivo1'
 	//osea, vos sabes que 158 / tamaño de bloque -> cantidad de bloques que necesitas
 	//ej 158 / 64 -> 3 bloques ( aproximas para arriba )
+	//agarrar la funcion del bitmap -> buscar los 3 primeros bloques libres, extraer id.
 	//pusheas los 3 bloques a la lista de bloques (lista_bloques), por ej, bloque 1 2 y 3
 	//FREAD 'archivo1'
 	//tenes que copiar todos los datos de archivo1 a un espacio de memoria
@@ -29,7 +34,7 @@ int main(int argc, char *argv[]) {
 	//memcpy(espacio + offset_espacio, array_bloques + (id de bloque + tamaño de bloque), tamaño de bloque)
 	//el bloque en si es un int, solo guarda la posicion que es igual a id.
 
-	memcpy(array_bloques + (offset * size),&algo,sizeof(int)); // 5 * 64
+	memcpy(array_bloques + (offset * size),&algo,64); // 5 * 64
 
 	int resultado = 0;
 
@@ -61,11 +66,14 @@ int main(int argc, char *argv[]) {
 	}
 	//log_info(logger,"%d",tamanio_archivo);
 	int server_connection = iniciar_servidor(server_port);
-	generar_fcb();
+	//generar_fcb();
 	log_info(logger, "File System listo para recibir al Kernel");
 	//log_info(logger,"%d",tamanio_archivo);
 	int connection_fd = esperar_cliente(server_connection);
 	log_info(logger,handshake(connection_fd));
+	pthread_t thread_kernel;
+	pthread_create(&thread_kernel, NULL, (void*) comm_threadKernel, connection_fd);
+	pthread_join(thread_kernel, NULL);
 	t_list* lista;
 
 	while(1){};

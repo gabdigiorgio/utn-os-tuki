@@ -66,6 +66,19 @@ typedef enum
 
 typedef enum
 {
+	F_ERROR,
+	F_OPEN_SUCCESS,
+	F_CLOSE_SUCCESS,
+	F_TRUNCATE_SUCCESS,
+	F_WRITE_SUCCESS,
+	F_SEEK_SUCCESS,
+	F_READ_SUCCESS,
+	F_CREATE_SUCCESS,
+	FILE_DOESNT_EXISTS,
+}t_resp_file;
+
+typedef enum
+{
 	EXEC,
 	EXIT,
 	YIELD,
@@ -83,7 +96,8 @@ typedef enum
 	F_SEEK,
 	F_READ,
 	F_WRITE,
-	F_TRUNCATE
+	F_TRUNCATE,
+	F_CREATE
 } contexto_estado_t;
 
 typedef struct
@@ -126,6 +140,18 @@ typedef struct
 	uint32_t param3_length;
 	char *param3;
 } t_instruc_mem;
+
+typedef struct
+{
+	contexto_estado_t estado;
+	uint32_t pid;
+	uint32_t param1_length;
+	char *param1;
+	uint32_t param2_length;
+	char *param2;
+	uint32_t param3_length;
+	char *param3;
+} t_instruc_file;
 
 typedef struct
 {

@@ -257,3 +257,12 @@ t_resp_mem deserializar_respuesta_memoria(t_buffer* buffer) {
 
    return respuesta;
 }
+
+t_resp_file deserializar_respuesta_file(t_buffer* buffer) {
+    void* stream = buffer->stream;
+    t_resp_file respuesta = F_ERROR;
+
+    memcpy(&respuesta, stream, sizeof(t_resp_file));
+
+   return respuesta;
+}

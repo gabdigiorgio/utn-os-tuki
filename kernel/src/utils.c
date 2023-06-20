@@ -434,3 +434,39 @@ tabla_segmentos_t* solicitar_segmento_0(int pid){
 
 	return tabla;
 }
+
+t_instruc_file* inicializar_instruc_file()
+{
+	t_instruc_file* instruccion = malloc(sizeof(t_instruc_file));
+	instruccion->pid=0;
+	instruccion->param1 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param1, "0", (sizeof(char) * 2));
+	instruccion->param1_length = sizeof(char) * 2;
+	instruccion->param2 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param2, "0", (sizeof(char) * 2));
+	instruccion->param2_length = sizeof(char) * 2;
+	instruccion->param3 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param3, "0", (sizeof(char) * 2));
+	instruccion->param3_length = sizeof(char) * 2;
+	instruccion->estado = F_OPEN;
+
+	return instruccion;
+}
+
+void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto){
+
+	instruccion->param1_length = contexto->param1_length;
+	instruccion->param2_length = contexto->param2_length;
+	instruccion->param3_length = contexto->param3_length;
+	instruccion->estado = contexto->estado;
+	instruccion->pid = contexto->pid;
+
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+
+	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
+	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
+	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
+
+}

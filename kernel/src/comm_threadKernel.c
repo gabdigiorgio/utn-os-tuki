@@ -108,6 +108,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			manejar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
@@ -117,6 +118,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			manejar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
@@ -126,6 +128,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			manejar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
@@ -135,6 +138,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			editar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
@@ -144,6 +148,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			editar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta
@@ -153,6 +158,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//pthread_t thread_f_block;
 			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
 			//pthread_join(thread_f_block);
+			manejar_archivo(contexto_actualizado,pcb);
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta

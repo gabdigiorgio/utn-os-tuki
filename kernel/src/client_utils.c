@@ -112,6 +112,18 @@ uint32_t calcular_tam_instruc_mem(t_instruc_mem* instruccion){
 	return size;
 }
 
+uint32_t calcular_tam_instruc_file(t_instruc_file* instruccion){
+	uint32_t size = 0;
+
+	size = sizeof(contexto_estado_t) +
+			sizeof(uint32_t) +
+			sizeof(uint32_t) + instruccion->param1_length +
+			sizeof(uint32_t) + instruccion->param2_length +
+			sizeof(uint32_t) + instruccion->param3_length;
+
+	return size;
+}
+
 uint32_t calcular_tam_tabla_segmentos(tabla_segmentos_t * tabla_segmento)
 {
 	uint32_t size = sizeof(uint32_t) + sizeof(uint32_t); //size del PID + size de la lista
@@ -355,6 +367,59 @@ void serializar_solicitud_compactacion(int socket){
 	free(buffer->stream);
 	free(buffer);
 	free(a_enviar);
+}
+
+void copiar_instruc_file(void* stream, t_instruc_file* instruccion){
+	int offset = 0;
+
+	memcpy(stream + offset, &instruccion->estado, sizeof(contexto_estado_t));
+	offset += sizeof(contexto_estado_t);
+
+	memcpy(stream + offset, &instruccion->pid, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+
+	memcpy(stream + offset, &instruccion->param1_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param1, instruccion->param1_length);
+	offset += instruccion->param1_length;
+
+	memcpy(stream + offset, &instruccion->param2_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param2, instruccion->param2_length);
+	offset += instruccion->param2_length;
+
+	memcpy(stream + offset, &instruccion->param3_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param3, instruccion->param3_length);
+}
+
+void serializar_instruccion_file(int socket,t_instruc_file* instruccion)
+{
+	//Creo el buffer a utilizar para las instrucciones
+		t_buffer* buffer = malloc(sizeof(t_buffer));
+
+		buffer->size = calcular_tam_instruc_file(instruccion);
+
+		//Asigno memoria para el stream del tamaño de mi lista
+		void* stream = malloc(buffer->size);
+
+		//Leo toda la lista para copiar los valores en memoria
+		copiar_instruc_file(stream,instruccion);
+
+		//Añado el stream a mi buffers
+		buffer->stream = stream;
+
+		void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+		crear_header(a_enviar,buffer,0,1);
+
+		//Envio todo el stream al servidor
+		send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+		//Libero memoria que ya no voy a utilizar
+		free(buffer->stream);
+		free(buffer);
+		free(a_enviar);
 }
 
 void liberar_conexion(int socket_cliente)

@@ -67,6 +67,11 @@ int main(int argc, char *argv[])
 		log_info(logger, "Hueco: %d | Base: %d | Tamanio: %d",i, hueco_libre->direccion_base, hueco_libre->tamanio);
 	}
 
+	//mando un dato temporal
+
+	char* ejemplo = "A";
+
+	memcpy(memoria,ejemplo,2);
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
@@ -118,7 +123,7 @@ void thread_main(t_conexion *conexion)
 	}
 	else if (strcmp(mensaje, "Handshake de File System recibido correctamente") == 0)
 	{
-		//conexion_fileSystem(conexion->num_socket);
+		conexion_file_system(conexion->num_socket);
 	}
 }
 

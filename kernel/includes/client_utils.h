@@ -28,5 +28,6 @@ void copiar_instruccion_memoria(void* stream, t_instruc_mem* instruccion);
 void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
 void serializar_solicitud_tabla(int socket);
 void serializar_solicitud_compactacion(int socket);
+void serializar_instruccion_file(int socket,t_instruc_file* instruccion);
 
 #endif /* CLIENT_UTILS_H_ */

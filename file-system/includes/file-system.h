@@ -8,6 +8,8 @@
 #include<commons/config.h>
 #include<readline/readline.h>
 
+#include "comm_Mem.h"
+#include "comm_ThreadKernel.h"
 #include "client_utils.h"
 #include "server_utils.h"
 #include "utils.h"
