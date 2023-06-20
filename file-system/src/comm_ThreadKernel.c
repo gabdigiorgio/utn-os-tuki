@@ -16,6 +16,7 @@ void comm_threadKernel(int kernel_connection){
 				switch (nueva_instruccion->estado){
 					case F_OPEN:
 						estado_file = F_OPEN_SUCCESS;
+						//estado_file = FILE_DOESNT_EXISTS; si el FCB no existe
 						log_info(logger,"PID: %d solicito F_OPEN para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
