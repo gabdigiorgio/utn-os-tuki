@@ -80,6 +80,54 @@ int initial_setup(){
 
 }
 
+int crear_bitmap()
+{
+	int error = 1;
+
+	int tamanio_bitmap = cantidad_de_bloques / (tamanio_de_bloque * 8);
+
+	log_info(logger, "Tamanio del bitmap: %d", tamanio_bitmap);
+	/*
+
+	FILE* bitmap_file = fopen(path_bitmap, "w+");
+
+	if(bitmap_file == NULL)
+	{
+		log_error(logger, "No se pudo crear el archivo de bitmap");
+		error = 0;
+	}
+
+	if (ftruncate(fileno(bitmap_file), tamanio_bitmap) == -1)
+	{
+		log_error(logger, "No se pudo establecer el tamanio del archivo del bitmap");
+		fclose(bitmap_file);
+		error = 0;
+	}
+
+	void *bitmap_data = mmap(NULL, tamanio_bitmap, PROT_READ | PROT_WRITE, MAP_SHARED, fileno(bitmap_file), 0);
+	if (bitmap_data == MAP_FAILED)
+	{
+		log_error(logger, "No se pudo mapear el archivo de bitmap");
+		fclose(bitmap_file);
+		error = 0;
+	}
+
+	// Inicializo el bitmap con los bits en 0
+	memset(bitmap_data, 0, tamanio_bitmap);
+
+	t_bitarray *bitmap = bitarray_create(bitmap_data, tamanio_bitmap * 8);
+
+	*/
+
+	if (error == 1)
+	{
+		return EXIT_SUCCESS;
+	}
+	else
+	{
+		return EXIT_FAILURE;
+	}
+}
 
 
 int leer_superbloque_config(){

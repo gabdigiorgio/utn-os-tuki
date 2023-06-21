@@ -11,6 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+#include <sys/mman.h>
+#include <commons/bitarray.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>
@@ -38,6 +41,9 @@ extern int cantidad_de_bloques;
 
 extern t_config* config;
 extern t_config* superbloque_config;
+
+// Bitmap
+extern t_bitarray *bitmap;
 
 extern t_log* logger;
 
