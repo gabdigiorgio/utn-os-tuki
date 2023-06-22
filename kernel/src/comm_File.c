@@ -10,9 +10,11 @@ void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 	switch(respuesta){
 		case F_OPEN_SUCCESS:
 			log_info(logger,"F_OPEN success");
+			log_info(logger, "PID: %d - Abrir Archivo: %s", pcb->pid, contexto->param1);
 			break;
 		case F_CLOSE_SUCCESS:
 			log_info(logger,"F_CLOSE success");
+			log_info(logger, "PID: %d - Cerrar Archivo: %s", pcb->pid, contexto->param1);
 			break;
 		case F_TRUNCATE_SUCCESS:
 			log_info(logger,"F_TRUNCATE success");

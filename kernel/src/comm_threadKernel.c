@@ -104,21 +104,90 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			break;
 
 		case F_OPEN:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
+
+			char *archivo_a_abrir = crear_recurso(contexto_actualizado->param1);
+			archivo_abierto_t *archivo;
+			archivo->nombre_archivo = crear_recurso(contexto_actualizado->param1);;
+			archivo->posicion_puntero = 0;
+
+			list_add(pcb->tabla_archivos_abiertos, archivo);
+
+			if(!archivo_existe_en_tabla(tabla_global_archivos_abiertos, archivo_a_abrir)){
+
+				list_add(tabla_global_archivos_abiertos, archivo_a_abrir);
+
+
+				int recurso_length = strlen(archivo_a_abrir) + 1;
+				t_recurso *recurso = malloc(sizeof(t_recurso));
+				recurso->id = list_size(lista_recursos->lista);
+				recurso->nombre_recurso = malloc(recurso_length);
+				memcpy(recurso->nombre_recurso,archivo_a_abrir,recurso_length);
+				recurso->instancias = 1;
+				pthread_mutex_init(&(recurso->mutex_instancias), NULL);
+				recurso->cola_bloqueados = init_list_mutex();
+				list_add(lista_recursos->lista, recurso);
+
+
+
+			}
+
 			manejar_archivo(contexto_actualizado,pcb);
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
+
+			asignar_recurso(pcb, archivo_a_abrir);
+			restar_instancia(lista_recursos, archivo_a_abrir);
+			int instancias_recurso = obtener_instancias(lista_recursos, archivo_a_abrir);
+			if (instancias_recurso < 0)
+			{
+				int recurso_length = strlen(archivo_a_abrir) + 1;
+				pcb->recurso_bloqueante = realloc(pcb->recurso_bloqueante, recurso_length);
+				memcpy(pcb->recurso_bloqueante, archivo_a_abrir, recurso_length);
+				list_push(pcb_block_list, pcb);
+				sem_post(&sem_estado_block);
+			}
+			else
+			{
+				enviar_contexto(pcb);
+			}
+
+
 			break;
+
+
 		case F_CLOSE:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
-			manejar_archivo(contexto_actualizado,pcb);
+
+
+			char *archivo_abierto = contexto_actualizado->param1;
+
+			if (recurso_existe_en_lista(lista_recursos, archivo_abierto) && archivo_existe_en_tabla(tabla_global_archivos_abiertos, archivo_abierto))
+			{
+				desasignar_recurso_si_lo_tiene_asignado(pcb, archivo_abierto);
+				sumar_instancia(lista_recursos, archivo_abierto);
+				int instancias_recurso = obtener_instancias(lista_recursos, archivo_abierto);
+
+				manejar_archivo(contexto_actualizado,pcb);
+
+				archivo_abierto_t archivo_abierto_pcb = buscar_archivo_abierto_t (pcb->tabla_archivos_abiertos, archivo_abierto);
+				list_remove_element(pcb->tabla_archivos_abiertos,archivo_abierto_pcb);
+
+				if(instancias_recurso==1){
+					list_remove_element(tabla_global_archivos_abiertos, archivo_abierto);
+
+				}
+
+				liberar_proceso_de_bloqueados_si_necesario(archivo_abierto, instancias_recurso);
+
+				enviar_contexto(pcb);
+			}
+			else
+			{
+				list_push(pcb_exit_list, pcb);
+				log_error(logger, "No existe el archivo %s - terminando proceso PID: %d", archivo_abierto, pcb->pid);
+				sem_post(&sem_estado_exit);
+			}
+
+
+
+
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
 			//cambiar por la correcta

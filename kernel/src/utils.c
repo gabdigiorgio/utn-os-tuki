@@ -470,3 +470,41 @@ void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto){
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
 
 }
+
+
+
+// ___ Funciones de archivos ____
+
+char* buscar_archivo(t_list *tabla_archivos_abiertos, const char *nombre_archivo)
+{
+	for (int i = 0; i < list_size(tabla_archivos_abiertos); i++)
+	{
+		char* archivo = (char*) list_get(tabla_archivos_abiertos, i);
+		if (strcmp(archivo, nombre_archivo) == 0)
+		{
+			return archivo;
+		}
+	}
+	return NULL;
+}
+
+
+bool archivo_existe_en_tabla(t_list *tabla_archivos_abiertos, const char *nombre_archivo)
+{
+	char *archivo = buscar_recurso(tabla_archivos_abiertos, nombre_archivo);
+	return (archivo != NULL);
+}
+
+
+archivo_abierto_t buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, const char *nombre_archivo)
+{
+	for (int i = 0; i < list_size(tabla_archivos_abiertos); i++)
+	{
+		archivo_abierto_t archivo = (archivo_abierto_t) list_get(tabla_archivos_abiertos, i);
+		if (strcmp(archivo.nombre_archivo, nombre_archivo) == 0)
+		{
+			return archivo;
+		}
+	}
+	return NULL;
+}
