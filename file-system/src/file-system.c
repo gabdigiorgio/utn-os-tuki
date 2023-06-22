@@ -59,7 +59,11 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-	crear_bitmap();
+	exit_status = crear_bitmap();
+	if (exit_status == EXIT_FAILURE)
+	{
+		return EXIT_FAILURE;
+	}
 
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {

@@ -13,6 +13,7 @@
 #include <string.h>
 #include <math.h>
 #include <sys/mman.h>
+#include <fcntl.h>
 #include <commons/bitarray.h>
 #include <commons/log.h>
 #include <commons/string.h>
@@ -21,6 +22,7 @@
 
 int initial_setup(void);
 int leer_superbloque_config();
+int crear_bitmap();
 void failed_setup(char* key);
 
 extern char* memoria_ip;
