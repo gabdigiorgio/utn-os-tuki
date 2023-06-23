@@ -14,6 +14,7 @@
 #include "comm_File.h"
 
 extern t_lista_mutex* lista_recursos;
+extern t_list * tabla_global_archivos_abiertos;
 
 //extern  pcb_t* pcb;
 extern int cpu_connection;

@@ -167,14 +167,9 @@ typedef struct
 
 typedef struct
 {
-	uint32_t id_archivo;
+	char *nombre_archivo;
 	uint32_t posicion_puntero;
 } archivo_abierto_t;
-
-typedef struct
-{
-	archivo_abierto_t *archivos_abiertos;
-} tabla_archivos_abiertos_t;
 
 typedef enum
 {
@@ -207,7 +202,7 @@ typedef struct
 	t_registros *registros_cpu; 			// crear struct de registros de cpu
 	tabla_segmentos_t *tabla_segmento; 			// nada
 	t_list *instrucciones; 						// lista recibida de consola
-	tabla_archivos_abiertos_t tabla_archivos; 	// nada
+	t_list *tabla_archivos_abiertos; 	// nada
 	t_list *recursos_asignados;
 } pcb_t;
 

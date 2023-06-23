@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 
 	pid = 0;
 
+	tabla_global_archivos_abiertos = list_create();
+
 	iniciar_pcb_lists();
 
 	iniciar_semaforos();
@@ -143,6 +145,7 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 	liberar_conexion(file_system_connection);
 	liberar_conexion(cpu_connection);
+	list_destroy(tabla_global_archivos_abiertos);
 }
 
 void iniciar_lista_recursos()

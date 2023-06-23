@@ -46,6 +46,8 @@
 	t_lista_mutex * lista_recursos;
 	t_lista_mutex * lista_tabla_segmentos;
 
+	t_list * tabla_global_archivos_abiertos;
+
 	// Semaforos
 
 	sem_t sem_estado_exec;
