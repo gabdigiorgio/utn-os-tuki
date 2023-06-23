@@ -106,7 +106,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		case F_OPEN:
 
 			char *archivo_a_abrir = crear_recurso(contexto_actualizado->param1);
-			archivo_abierto_t *archivo;
+
+			archivo_abierto_t *archivo = malloc(sizeof(archivo_abierto_t));;
 			archivo->nombre_archivo = crear_recurso(contexto_actualizado->param1);;
 			archivo->posicion_puntero = 0;
 
@@ -127,14 +128,14 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				recurso->cola_bloqueados = init_list_mutex();
 				list_add(lista_recursos->lista, recurso);
 
-
-
 			}
+
 
 			manejar_archivo(contexto_actualizado,pcb);
 
 			asignar_recurso(pcb, archivo_a_abrir);
 			restar_instancia(lista_recursos, archivo_a_abrir);
+
 			int instancias_recurso = obtener_instancias(lista_recursos, archivo_a_abrir);
 			if (instancias_recurso < 0)
 			{
@@ -155,7 +156,6 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 		case F_CLOSE:
 
-
 			char *archivo_abierto = contexto_actualizado->param1;
 
 			if (recurso_existe_en_lista(lista_recursos, archivo_abierto) && archivo_existe_en_tabla(tabla_global_archivos_abiertos, archivo_abierto))
@@ -166,15 +166,20 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 				manejar_archivo(contexto_actualizado,pcb);
 
-				archivo_abierto_t archivo_abierto_pcb = buscar_archivo_abierto_t (pcb->tabla_archivos_abiertos, archivo_abierto);
+				liberar_proceso_de_bloqueados_si_necesario(archivo_abierto, instancias_recurso);
+
+				archivo_abierto_t* archivo_abierto_pcb = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, archivo_abierto);
 				list_remove_element(pcb->tabla_archivos_abiertos,archivo_abierto_pcb);
+
 
 				if(instancias_recurso==1){
 					list_remove_element(tabla_global_archivos_abiertos, archivo_abierto);
+					t_recurso *recurso_a_eliminar = buscar_recurso(lista_recursos, archivo_abierto);
+					list_mutex_destroy(recurso_a_eliminar->cola_bloqueados);
+					pthread_mutex_destroy(&(recurso_a_eliminar->mutex_instancias));
+					list_remove_element(lista_recursos->lista, recurso_a_eliminar);
 
 				}
-
-				liberar_proceso_de_bloqueados_si_necesario(archivo_abierto, instancias_recurso);
 
 				enviar_contexto(pcb);
 			}
@@ -185,13 +190,9 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				sem_post(&sem_estado_exit);
 			}
 
-
-
-
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
 			//cambiar por la correcta
 			break;
+
 		case F_TRUNCATE:
 			//logica temporal hasta tener la que va
 			//pthread_t thread_f_block;
@@ -202,16 +203,19 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			enviar_contexto(pcb);
 			//cambiar por la correcta
 			break;
+
 		case F_SEEK:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
+
+			char *archivo_abierto_seek = contexto_actualizado->param1;
+			int puntero = atoi(contexto_actualizado->param2);
+
+			archivo_abierto_t* archivo_abierto_seek_pcb = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, archivo_abierto_seek);
+			archivo_abierto_seek_pcb->posicion_puntero = (uint32_t) puntero;
+
 			manejar_archivo(contexto_actualizado,pcb);
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
-			//cambiar por la correcta
 			break;
+
 		case F_READ:
 			//logica temporal hasta tener la que va
 			//pthread_t thread_f_block;

@@ -391,6 +391,7 @@ void destroy_proceso(pcb_t *proceso) {
 
 
 	list_destroy_and_destroy_elements(proceso->instrucciones, (void*) instrucciones_destroy);
+	list_destroy(proceso->tabla_archivos_abiertos);
 	free(proceso->recurso_bloqueante);
 	devolver_instancias(proceso, lista_recursos);
 	free(proceso->recursos_asignados);
@@ -491,17 +492,17 @@ char* buscar_archivo(t_list *tabla_archivos_abiertos, const char *nombre_archivo
 
 bool archivo_existe_en_tabla(t_list *tabla_archivos_abiertos, const char *nombre_archivo)
 {
-	char *archivo = buscar_recurso(tabla_archivos_abiertos, nombre_archivo);
+	char *archivo = buscar_archivo(tabla_archivos_abiertos, nombre_archivo);
 	return (archivo != NULL);
 }
 
 
-archivo_abierto_t buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, const char *nombre_archivo)
+archivo_abierto_t* buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, const char *nombre_archivo)
 {
 	for (int i = 0; i < list_size(tabla_archivos_abiertos); i++)
 	{
-		archivo_abierto_t archivo = (archivo_abierto_t) list_get(tabla_archivos_abiertos, i);
-		if (strcmp(archivo.nombre_archivo, nombre_archivo) == 0)
+		archivo_abierto_t* archivo = (archivo_abierto_t*) list_get(tabla_archivos_abiertos, i);
+		if (strcmp(archivo->nombre_archivo, nombre_archivo) == 0)
 		{
 			return archivo;
 		}

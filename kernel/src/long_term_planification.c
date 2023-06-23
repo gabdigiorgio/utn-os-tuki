@@ -42,6 +42,7 @@ pcb_t *crear_proceso(t_list* instrucciones, uint32_t socket){
 	proceso->recursos_asignados = list_create();
 	proceso->tabla_segmento = solicitar_segmento_0(proceso->pid);
 	memcpy(proceso->recurso_bloqueante,"0",(sizeof(char)*2));
+	proceso->tabla_archivos_abiertos = list_create();
 	return proceso;
 }
 

@@ -9,18 +9,19 @@ void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 
 	switch(respuesta){
 		case F_OPEN_SUCCESS:
-			log_info(logger,"F_OPEN success");
 			log_info(logger, "PID: %d - Abrir Archivo: %s", pcb->pid, contexto->param1);
+			log_info(logger,"F_OPEN success");
 			break;
 		case F_CLOSE_SUCCESS:
-			log_info(logger,"F_CLOSE success");
 			log_info(logger, "PID: %d - Cerrar Archivo: %s", pcb->pid, contexto->param1);
+			log_info(logger,"F_CLOSE success");
 			break;
 		case F_TRUNCATE_SUCCESS:
 			log_info(logger,"F_TRUNCATE success");
 			break;
 		case F_SEEK_SUCCESS:
 			log_info(logger,"F_SEEK success");
+			log_info(logger, "PID: %d - Actualizar puntero Archivo: %s - Puntero: %s", pcb->pid, contexto->param1, contexto->param2);
 			break;
 		case FILE_DOESNT_EXISTS:
 			log_info(logger,"F_CREATE required");
