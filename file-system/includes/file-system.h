@@ -59,5 +59,7 @@ int tamanio_archivo;
 int puntero_directo;
 int puntero_indirecto;
 
+t_list *fcb_list;
+
 
 #endif

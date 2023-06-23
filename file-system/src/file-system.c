@@ -11,6 +11,9 @@ int main(int argc, char *argv[]) {
 
 	offset = 5; //index del bitarray, bloque 5
 
+	//Genero una lista vacia de FCB
+	fcb_list = list_create();
+
 	//fcb puntero directo = 5, puntero indirecto = 42
 	// 42 = 3, 50, 6540
 	// 4 elementos -> void* memoria = malloc(4 * tam_bloque)
