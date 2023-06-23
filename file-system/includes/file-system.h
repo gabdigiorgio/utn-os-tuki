@@ -6,6 +6,7 @@
 #include<commons/log.h>
 #include<commons/string.h>
 #include<commons/config.h>
+#include<commons/bitarray.h>
 #include<readline/readline.h>
 #include<fcntl.h>
 #include<sys/mman.h>
@@ -53,6 +54,9 @@ int cantidad_de_bloques;
 
 t_config* config;
 t_config* superbloque_config;
+
+// Bitmap
+t_bitarray *bitmap;
 
 // _____________________
 
