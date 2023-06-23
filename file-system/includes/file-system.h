@@ -63,6 +63,7 @@ int puntero_directo;
 int puntero_indirecto;
 
 int exit_status = 0;
+t_list *fcb_list;
 
 
 #endif
