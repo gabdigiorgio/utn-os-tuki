@@ -13,7 +13,7 @@ t_config* iniciar_config(char * path_config)
 fcb_t* iniciar_fcb(char* path_fcb){
 	fcb_t* nuevo_fcb;
 	if((nuevo_fcb = config_create(path_fcb))==NULL) {
-		printf("No pude leer la config \n");
+		printf("No pude leer la fcb \n");
 		exit(2);
 	}
 	return nuevo_fcb;

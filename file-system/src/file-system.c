@@ -74,6 +74,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	superbloque_config = iniciar_config(path_superbloque);
+
 	exit_status = leer_superbloque_config();
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
@@ -85,6 +86,23 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
+
+	//verifico si existe el directorio
+	/* int check;
+	    char* dirname = "/home/utnso/fs/fcb";
+	    check = mkdir(dirname,0777);
+
+	    // check if directory is created or not
+	    if (!check)
+	        printf("Directory created\n");
+	    else {
+	        printf("Unable to create directory\n");
+	        exit(1);
+	    }*/
+	FILE *tcb;
+	char* nombre = "/home/utnso/fs/fcb\filename.txt";
+	tcb = fopen(nombre,"w");
+
 	log_info(logger,"cant de bits del bitmap %d", bitarray_get_max_bit(bitmap));
 
 	//Inicializamos conexion con memoria
@@ -94,7 +112,7 @@ int main(int argc, char *argv[]) {
 	}
 	//log_info(logger,"%d",tamanio_archivo);
 	int server_connection = iniciar_servidor(server_port);
-	//generar_fcb();
+
 	log_info(logger, "File System listo para recibir al Kernel");
 	//log_info(logger,"%d",tamanio_archivo);
 	int connection_fd = esperar_cliente(server_connection);
@@ -107,26 +125,6 @@ int main(int argc, char *argv[]) {
 }
 void iterator(char* value) {
 	log_info(logger,"%s", value);
-}
-
-void generar_fcb(){
-	if (config_has_property(fcb, "NOMBRE_ARCHIVO")){
-			nombre_archivo = config_get_string_value(fcb, "NOMBRE_ARCHIVO");
-			log_info(logger, "%s", nombre_archivo);
-		}
-	if (config_has_property(fcb, "TAMANIO_ARCHIVO")){
-			tamanio_archivo = config_get_int_value(fcb, "TAMANIO_ARCHIVO");
-			log_info(logger, "%d", tamanio_archivo);
-		}
-	if (config_has_property(fcb, "PUNTERO_DIRECTO")){
-			puntero_directo = config_get_int_value(fcb, "PUNTERO_DIRECTO");
-			log_info(logger, "%d", puntero_directo);
-		}
-	if (config_has_property(fcb, "PUNTERO_INDIRECTO")){
-			puntero_indirecto = config_get_int_value(fcb, "PUNTERO_INDIRECTO");
-			log_info(logger, "%d", puntero_indirecto);
-		}
-	log_info(logger, "FCB Creado");
 }
 
 void terminar_programa()

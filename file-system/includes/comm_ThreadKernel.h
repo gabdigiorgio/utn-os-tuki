@@ -19,6 +19,8 @@
 extern t_log* logger;
 extern int memoria_connection;
 extern int exit_status;
+extern char* path_fcb_folder;
+extern t_list *fcb_list;
 
 void comm_threadKernel(int kernel_connection);
 
