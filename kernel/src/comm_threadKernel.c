@@ -164,18 +164,24 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			//cambiar por la correcta
 			break;
 		case CREATE_SEGMENT:
-			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
 			create_segment(contexto_actualizado,pcb);
 			break;
 
 		case DELETE_SEGMENT:
-			log_info(logger, "El proceso %d se comunico con Memoria. Se continua su ejecucion", pcb->pid);
+			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
 			delete_segment(contexto_actualizado,pcb);
 			solicitar_tabla_segmentos();
 			enviar_contexto(pcb);
-
 			break;
-
+		case PRINT_SEGMENTS:
+			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
+			t_instruc_mem* instruccion = inicializar_instruc_mem();
+			copiar_instruccion_mem(instruccion,contexto_actualizado);
+			serializar_instruccion_memoria(memoria_connection, instruccion);
+			imprimir_tabla_segmentos();
+			enviar_contexto(pcb);
+			break;
 		default:
 			//aca iria logica de bloq
 			break;
@@ -190,7 +196,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		break;
 
 	default:
-		log_info(logger, "falle");
+		log_error(logger, "ERROR COMUNICACION CON CPU");
 		break;
 	}
 

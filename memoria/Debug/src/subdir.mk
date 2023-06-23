@@ -4,40 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/algoritmos.c \
-../src/client_utils.c \
-../src/comm_threadCpu.c \
-../src/comm_threadFile.c \
-../src/comm_threadMem.c \
 ../src/initial_setup.c \
 ../src/memoria.c \
-../src/segmentacion.c \
-../src/server_utils.c \
-../src/utils.c 
+../src/segmentacion.c 
 
 C_DEPS += \
-./src/algoritmos.d \
-./src/client_utils.d \
-./src/comm_threadCpu.d \
-./src/comm_threadFile.d \
-./src/comm_threadMem.d \
 ./src/initial_setup.d \
 ./src/memoria.d \
-./src/segmentacion.d \
-./src/server_utils.d \
-./src/utils.d 
+./src/segmentacion.d 
 
 OBJS += \
-./src/algoritmos.o \
-./src/client_utils.o \
-./src/comm_threadCpu.o \
-./src/comm_threadFile.o \
-./src/comm_threadMem.o \
 ./src/initial_setup.o \
 ./src/memoria.o \
-./src/segmentacion.o \
-./src/server_utils.o \
-./src/utils.o 
+./src/segmentacion.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -52,7 +31,7 @@ src/%.o: ../src/%.c src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/algoritmos.d ./src/algoritmos.o ./src/client_utils.d ./src/client_utils.o ./src/comm_threadCpu.d ./src/comm_threadCpu.o ./src/comm_threadFile.d ./src/comm_threadFile.o ./src/comm_threadMem.d ./src/comm_threadMem.o ./src/initial_setup.d ./src/initial_setup.o ./src/memoria.d ./src/memoria.o ./src/segmentacion.d ./src/segmentacion.o ./src/server_utils.d ./src/server_utils.o ./src/utils.d ./src/utils.o
+	-$(RM) ./src/initial_setup.d ./src/initial_setup.o ./src/memoria.d ./src/memoria.o ./src/segmentacion.d ./src/segmentacion.o
 
 .PHONY: clean-src
 

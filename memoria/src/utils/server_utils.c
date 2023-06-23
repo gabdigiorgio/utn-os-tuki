@@ -1,4 +1,4 @@
-#include "../includes/server_utils.h"
+#include "../../includes/server_utils.h"
 
 int iniciar_servidor(char* puerto)
 {
@@ -29,17 +29,13 @@ int iniciar_servidor(char* puerto)
 
 
 	freeaddrinfo(servinfo);
-	log_trace(logger, "Listo para escuchar a mi cliente");
 
 	return socket_servidor;
 }
 
 int esperar_cliente(int socket_servidor)
 {
-
-	// Aceptamos un nuevo cliente
 	int socket_cliente = accept(socket_servidor, NULL, NULL);
-	log_info(logger, "Se conecto un cliente!");
 
 	return socket_cliente;
 }

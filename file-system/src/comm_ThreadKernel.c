@@ -1,7 +1,6 @@
 #include "../includes/comm_ThreadKernel.h"
 
 void comm_threadKernel(int kernel_connection){
-	int exit_status = 0;
 	while(exit_status == 0){
 		t_paquete *paquete = malloc(sizeof(t_paquete));
 		paquete->buffer = malloc(sizeof(t_buffer));
@@ -61,6 +60,7 @@ void comm_threadKernel(int kernel_connection){
 				free(nueva_instruccion);
 				break;
 			default:
+				exit_status = 1;
 				break;
 		}
 		free(paquete->buffer->stream);

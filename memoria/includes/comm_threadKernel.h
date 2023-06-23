@@ -1,5 +1,5 @@
-#ifndef COMM_THREADMEM_H_
-#define COMM_THREADMEM_H_
+#ifndef COMM_THREADKERNEL_H_
+#define COMM_THREADKERNEL_H_
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -9,6 +9,7 @@
 
 #include "server_utils.h"
 #include "utils.h"
+#include "datos.h"
 #include "mem_instruct.h"
 #include "algoritmos.h"
 #include "client_utils.h"
@@ -16,10 +17,12 @@
 
 void conexion_kernel(int server_connection);
 
+extern int exit_status;
 extern t_log* logger;
 extern uint16_t ip;
 extern t_list* lista_de_tablas;
 extern char* algoritmo_asignacion;
+extern void* memoria;
 
 
-#endif /* COMM_THREADMEM_H_ */
+#endif /* COMM_THREADKERNEL_H_ */

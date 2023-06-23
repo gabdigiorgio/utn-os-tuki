@@ -23,6 +23,7 @@ extern int tam_memoria;
 int first(uint32_t pid, int id_segmento, int tamanio_segmento);
 int best(uint32_t pid, int id_segmento, int tamanio_segmento);
 int worst(uint32_t pid, int id_segmento, int tamanio_segmento);
+void log_algoritmos(uint32_t pid, int id_segmento, int tamanio_segmento, int base_segmento);
 
 
 #endif /* ALGORITMOS_H_ */

@@ -7,6 +7,7 @@
 #include<commons/log.h>
 
 #include"../../shared/includes/tad.h"
+#include"mmu.h"
 #include"utils.h"
 #include"client_utils.h"
 #include"server_utils.h"
@@ -20,6 +21,7 @@ char* seleccionar_registro(char *param);
 void log_instruccion(char *instruc, char *params);
 int ejecutar_syscall(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado, int cant_params);
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion);
+int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion);
 char* esperar_valor(int memoria_connection);
 void asignar_valor_registro(char* registro, char* valor);
 

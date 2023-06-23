@@ -62,6 +62,7 @@ void delete_segment(t_contexto* contexto, pcb_t* pcb);
 
 t_instruc_file* inicializar_instruc_file();
 void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto);
+void imprimir_tabla_segmentos();
 
 
 extern t_lista_mutex* lista_tabla_segmentos;

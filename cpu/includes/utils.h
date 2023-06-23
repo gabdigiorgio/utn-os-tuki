@@ -16,10 +16,5 @@ t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
 bool sort_list(t_instruc* instruc1, t_instruc* instruc2);
 void copiar_string(char* origen, char* destino);
-void contexto_destroy(t_contexto* contexto);
-void instrucciones_destroy(t_instruc* instruccion);
-t_contexto* contexto_create();
 t_registros* inicializar_registros();
-t_instruc_mem* inicializar_instruc_mem();
-void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 #endif /* CLIENT_H_ */

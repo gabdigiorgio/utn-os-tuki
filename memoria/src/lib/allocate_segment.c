@@ -12,6 +12,4 @@ void allocate_segmento_0(int pid){
 
 	list_add(tabla->segmentos,segmento_0);
 	list_add(lista_de_tablas,tabla);
-
-	log_info(logger,"asigne segmento %d a pid %d",segmento_0->ids,tabla->pid);
 }

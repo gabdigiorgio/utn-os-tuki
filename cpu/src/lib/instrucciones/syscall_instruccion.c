@@ -1,4 +1,4 @@
-#include "../../includes/code_reader.h"
+#include "../../../includes/code_reader.h"
 
 int ejecutar_syscall(t_contexto* contexto, t_instruc* instruccion, contexto_estado_t estado,int cant_params){
 	char* params = string_new();

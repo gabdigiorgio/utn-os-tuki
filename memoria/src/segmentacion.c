@@ -1,13 +1,4 @@
-/*
- * segmentacion.c
- *
- *  Created on: Jun 6, 2023
- *      Author: utnso
- */
-
 #include "../includes/segmentacion.h"
-
-
 
 void crear_segmento(int id, int direccion_base, int tamanio, int pid) {
 	segmento_t *segmento = malloc(sizeof(segmento_t));
@@ -16,9 +7,7 @@ void crear_segmento(int id, int direccion_base, int tamanio, int pid) {
 	segmento->tamanio = tamanio;
 	tabla_segmentos_t *tabla = buscar_tabla(pid);
 	list_add(tabla->segmentos,segmento);
-	//return segmento;
 }
-
 
 tabla_segmentos_t* buscar_tabla(int pid)
 {

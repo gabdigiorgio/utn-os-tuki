@@ -1,10 +1,4 @@
-/*
- * algoritmos.c
- *
- *  Created on: Jun 11, 2023
- *      Author: utnso
- */
-#include "../includes/algoritmos.h"
+#include "../../includes/algoritmos.h"
 
 // 0: Se puede crear segmento | 1: Out of memory | 2: Se necesita compactación
 
@@ -28,6 +22,7 @@ int first(uint32_t pid, int id_segmento, int tamanio_segmento){
 
 			estado_first = SUCCESS_CREATE_SEGMENT;
 			crear_segmento(id_segmento,base_segmento, tamanio_segmento, pid);
+			log_algoritmos(pid,id_segmento,tamanio_segmento,base_segmento);
 			break;
 		}
 
@@ -74,7 +69,7 @@ int best(uint32_t pid, int id_segmento, int tamanio_segmento){
 		}
 
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
-
+		log_algoritmos(pid,id_segmento,tamanio_segmento,base_segmento);
 
 		return SUCCESS_CREATE_SEGMENT;
 	}
@@ -117,7 +112,12 @@ int worst(uint32_t pid, int id_segmento, int tamanio_segmento){
 		}
 
 		crear_segmento(id_segmento,base_segmento, tamanio_segmento,pid);
+		log_algoritmos(pid,id_segmento,tamanio_segmento,base_segmento);
 
 		return SUCCESS_CREATE_SEGMENT;
 	}
+}
+
+void log_algoritmos(uint32_t pid, int id_segmento, int tamanio_segmento, int base_segmento){
+	log_info(logger, "PID: %d - Crear Segmento: %d - Base: %d - Tamanio: %d",pid,id_segmento,base_segmento,tamanio_segmento);
 }

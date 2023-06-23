@@ -1,10 +1,3 @@
-/*
- * initial_setup.h
- *
- *  Created on: Apr 6, 2023
- *      Author: utnso
- */
-
 #ifndef INITIAL_SETUP_H_
 #define INITIAL_SETUP_H_
 
@@ -17,7 +10,6 @@
 
 int initial_setup(void);
 void failed_initial_setup(char* key);
-
 
 extern char* server_port;
 extern int tam_memoria;

@@ -1,10 +1,3 @@
-/*
- * segmentacion.h
- *
- *  Created on: Jun 6, 2023
- *      Author: utnso
- */
-
 #ifndef SEGMENTACION_H_
 #define SEGMENTACION_H_
 

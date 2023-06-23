@@ -23,7 +23,7 @@ int traducir_direccion(char *param, t_contexto *contexto)
 
 	snprintf(param, sizeof(param), "%d", direccion_fisica);
 
-	log_info(logger, "Direccion fisica: %d", direccion_fisica);
+	log_info(logger, "[MMU] - Segmento: %d - Direccion fisica: %d", num_segmento, direccion_fisica);
 
 	return 0;
 }

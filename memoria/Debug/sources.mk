@@ -15,4 +15,6 @@ OBJS :=
 SUBDIRS := \
 src \
 src/lib \
+src/threads \
+src/utils \
 

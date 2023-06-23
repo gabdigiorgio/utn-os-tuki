@@ -1,41 +1,26 @@
-#include "../includes/comm_threadMem.h"
+#include "../../includes/comm_threadKernel.h"
 
 void conexion_kernel(int server_connection){
 
-	log_info(logger, "Memoria lista para recibir mensajes del Kernel");
 	kernel_connection= esperar_cliente(server_connection);
-	//log_info(logger, handshake(kernel_connection));
-    int exit_status=0;
-		while (exit_status==0)
-		{
-			t_paquete *paquete = malloc(sizeof(t_paquete));
-			paquete->buffer = malloc(sizeof(t_buffer));
-			deserializar_header(paquete, server_connection);
+	log_info(logger,"Se conecto KERNEL");
 
-			switch (paquete->codigo_operacion)
-			{
+	while (exit_status==0)
+	{
+		t_paquete *paquete = malloc(sizeof(t_paquete));
+		paquete->buffer = malloc(sizeof(t_buffer));
+		deserializar_header(paquete, server_connection);
+
+		switch (paquete->codigo_operacion)
+		{
 			case 1:
 				t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
 				deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
 				uint32_t pid = nueva_instruccion->pid;
 
-				void imprimir_segmentos(segmento_t* segmento){
-					log_info(logger,"Segmento %d, base %d, tamanio %d",segmento->ids,segmento->direccion_base,segmento->tamanio);
-				}
-
-				void revisar_tablas(tabla_segmentos_t* tabla){
-					log_info(logger,"PID %d ", tabla->pid);
-					list_iterate(tabla->segmentos,(void*) imprimir_segmentos);
-				}
-
-				list_iterate(lista_de_tablas,(void*) revisar_tablas);
-
 				switch (nueva_instruccion->estado)
 				{
 					case CREATE_SEGMENT:
-
-						log_info(logger, "Llego create_segmente a memoria");
-						log_info(logger, "pid %d", pid);
 
 						int id_segmento = atoi(nueva_instruccion->param1);
 						int tamanio_segmento = atoi(nueva_instruccion->param2);
@@ -61,48 +46,42 @@ void conexion_kernel(int server_connection){
 							else if (strcmp(algoritmo_asignacion, "WORST") == 0)
 								estado_memoria = worst(pid, id_segmento, tamanio_segmento);
 
-							if(estado_memoria == SUCCESS_CREATE_SEGMENT ){
-								log_info(logger, "Segmento %d creado | Proceso: %d", id_segmento, pid);
-								log_info(logger, "Memoria Restante: %d", tam_memoria_restante());
-							} else {
-								log_info(logger, "Se requiere compactacion");
+							if(estado_memoria == COMPACTION_NEEDED ){
+								log_info(logger, "Se requiere COMPACTACION");
 							}
 						}
 
 						//responder a kernel usando el numero devuelto por estado_memoria,
 						serializar_respuesta_memoria_kernel(server_connection, estado_memoria);
-						log_info(logger, "Serializacion hecha");
 						break;
 
 						case DELETE_SEGMENT:
-							log_info(logger, "Llego un nuevo proceso a memoria. Delete segment");
-							log_info(logger, "pid %d", nueva_instruccion->pid);
 							int id_segment = atoi(nueva_instruccion->param1);
 							tabla_segmentos_t* tabla_de_proceso = buscar_tabla(pid);
-							log_info(logger, "Segmento a borrar: %d | Tabla: %d", id_segment , tabla_de_proceso->pid);
-							eliminar_segmento(tabla_de_proceso->segmentos, lista_de_huecos_libres, (uint32_t) id_segment);
+							eliminar_segmento(tabla_de_proceso, lista_de_huecos_libres, (uint32_t) id_segment);
 							break;
 						case DELETE_TABLE:
-							//recibis el contexto y hacer free(lista segmentos) y despues agarrar lista_de_tabla_de_segmentos
-							log_info(logger,"Llego una solicitud de eliminacion de Tabla de Segmentos");
-							log_info(logger, "pid %d", nueva_instruccion->pid);
-							//y sacar la tabla del pid es
 							tabla_segmentos_t* tabla_de_proceso_to_delete = buscar_tabla(nueva_instruccion->pid);
 							while(list_size(tabla_de_proceso_to_delete->segmentos) > 1){
 								segmento_t* segmento = list_get(tabla_de_proceso_to_delete->segmentos,list_size(tabla_de_proceso_to_delete->segmentos)- 1);
 								int id_segmento = segmento->ids;
 								if(id_segmento != 0) {
-									eliminar_segmento(tabla_de_proceso_to_delete->segmentos, lista_de_huecos_libres, id_segmento);
+									eliminar_segmento(tabla_de_proceso_to_delete, lista_de_huecos_libres, id_segmento);
 								}
 							}
 							list_remove_element(lista_de_tablas, tabla_de_proceso_to_delete);
+							free(tabla_de_proceso_to_delete->segmentos);
+							free(tabla_de_proceso_to_delete);
+							log_info(logger,"Eliminacion del Proceso PID: %d", nueva_instruccion->pid);
 							break;
 						case ALLOCATE_SEGMENT:
-							log_info(logger, "Llego un nuevo proceso a memoria");
-							log_info(logger, "pid %d", nueva_instruccion->pid);
+							log_info(logger,"Creacion del Proceso PID: %d", nueva_instruccion->pid);
 							allocate_segmento_0(nueva_instruccion->pid);
 							break;
-
+						case PRINT_SEGMENTS:
+							log_info(logger,"Solicitud de impresion PID: %d", nueva_instruccion->pid);
+							imprimir_tabla_segmentos();
+							break;
 						default:
 							log_error(logger, "Instruccion desconocida");
 							break;
@@ -115,12 +94,15 @@ void conexion_kernel(int server_connection){
 				free(nueva_instruccion);
 				break;
 			case 2:
-				log_info(logger, "Se solicito la tabla de segmentos");
 				serializar_tabla_segmentos(server_connection,lista_de_tablas);
 				break;
 			case 3:
-				log_info(logger,"se solicito la compactacion");
+				log_info(logger,"Solicitud de COMPACTACION recibida");
 				compactar_memoria();
+				log_info(logger,"Resultado de COMPACTACION");
+				imprimir_tabla_segmentos();
+				t_resp_mem estado_memoria = COMPACTATION_SUCCESS;
+				serializar_respuesta_memoria_kernel(server_connection, estado_memoria);
 				break;
 			default:
 				exit_status=1;

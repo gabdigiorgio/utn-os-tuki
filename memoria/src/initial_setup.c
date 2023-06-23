@@ -1,12 +1,4 @@
-/*
- * initial_setup.c
- *
- *  Created on: Apr 6, 2023
- *      Author: utnso
- */
-
 #include "../includes/initial_setup.h"
-
 
 int initial_setup(){
 	int error = 1;
@@ -66,9 +58,6 @@ int initial_setup(){
 		failed_initial_setup("ALGORITMO_ASIGNACION");
 		error = 0;
 	}
-
-
-
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");

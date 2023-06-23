@@ -1,12 +1,9 @@
-#include "../includes/comm_threadCpu.h"
+#include "../../includes/comm_threadCpu.h"
 
 void conexion_cpu(int server_connection)
 {
-
-	log_info(logger, "Memoria lista para recibir al CPU");
 	cpu_connection = esperar_cliente(server_connection);
-
-	int exit_status = 0;
+	log_info(logger,"Se conecto CPU");
 
 	while (exit_status == 0)
 	{
@@ -30,12 +27,13 @@ void conexion_cpu(int server_connection)
 					memcpy(valor, (char*)(memoria + direccion_fisica), sizeof(valor));
 					nueva_instruccion->param2_length = sizeof(valor);
 					snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
-					log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
 					serializar_instruccion_memoria(server_connection, nueva_instruccion);
+					log_info(logger,"PID: %d - Accion: MOV_IN - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,sizeof(valor));
 					break;
 				case MOV_OUT:
 					direccion_fisica = atoi(nueva_instruccion->param1);
 					memcpy((char *)(memoria + direccion_fisica), nueva_instruccion->param2, nueva_instruccion->param2_length);
+					log_info(logger,"PID: %d - Accion: MOV_OUT - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,sizeof(valor));
 					break;
 			}
 

@@ -5,7 +5,7 @@
 #include<stdlib.h>
 #include<math.h>
 #include<commons/log.h>
-#include"../includes/client_utils.h"
+#include"client_utils.h"
 #include"../../shared/includes/tad.h"
 
 extern int tam_max_segmento;

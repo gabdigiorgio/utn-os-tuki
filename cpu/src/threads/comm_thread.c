@@ -1,4 +1,4 @@
-#include "../includes/comm_thread.h"
+#include "../../includes/comm_thread.h"
 
 void conexion_kernel(int server_connection){
 

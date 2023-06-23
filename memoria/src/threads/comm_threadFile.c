@@ -1,10 +1,8 @@
-#include "../includes/comm_threadFile.h"
+#include "../../includes/comm_threadFile.h"
 
 void conexion_file_system(int server_connection){
-	log_info(logger, "Memoria lista para recibir al File System");
 	cpu_connection = esperar_cliente(server_connection);
-
-	int exit_status = 0;
+	log_info(logger,"Se conecto FILE SYSTEM");
 
 	while (exit_status == 0){
 		t_paquete *paquete = malloc(sizeof(t_paquete));

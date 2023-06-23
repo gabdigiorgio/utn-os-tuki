@@ -39,29 +39,6 @@ int main(int argc, char *argv[]) {
 	return EXIT_SUCCESS;
 }
 
-void iterator(char* value) {
-	log_info(logger,"%s", value);
-}
-int registro_4b(char registro[5]){
-	if(strlen(registro)!= 4){
-		return EXIT_FAILURE;
-	}
-	return 0;
-}
-
-int registro_8b(char registro[9]){
-	if(strlen(registro)!= 8){
-		return EXIT_FAILURE;
-	}
-	return 0;
-}
-int registro_16b(char registro[16]){
-	if(strlen(registro)!= 16){
-		return EXIT_FAILURE;
-	}
-	return 0;
-}
-
 void terminar_programa()
 {
 	log_destroy(logger);

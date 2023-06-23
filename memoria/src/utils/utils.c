@@ -1,4 +1,4 @@
-#include "../includes/utils.h"
+#include "../../includes/utils.h"
 
 t_config* iniciar_config(char * path_config)
 {
@@ -15,39 +15,6 @@ t_log* iniciar_logger(void)
 	t_log* nuevo_logger = log_create("memoria.log", "MEMORIA", 1, LOG_LEVEL_DEBUG);
 
 	return nuevo_logger;
-}
-
-t_instruc_mem* inicializar_instruc_mem()
-{
-	t_instruc_mem* contexto = malloc(sizeof(t_instruc_mem));
-	contexto->pid=0;
-	contexto->param1 = malloc(sizeof(char) * 2);
-	memcpy(contexto->param1, "0", (sizeof(char) * 2));
-	contexto->param1_length = sizeof(char) * 2;
-	contexto->param2 = malloc(sizeof(char) * 2);
-	memcpy(contexto->param2, "0", (sizeof(char) * 2));
-	contexto->param2_length = sizeof(char) * 2;
-	contexto->param3 = malloc(sizeof(char) * 2);
-	memcpy(contexto->param3, "0", (sizeof(char) * 2));
-	contexto->param3_length = sizeof(char) * 2;
-	contexto->estado = CREATE_SEGMENT;
-
-	return contexto;
-}
-
-void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
-	instruccion->param1_length = contexto->param1_length;
-	instruccion->param2_length = contexto->param2_length;
-	instruccion->param3_length = contexto->param3_length;
-
-	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
-	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
-	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
-
-	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
-	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
-	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
-	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
 }
 
 void reducir_huecos(t_list* lista_huecos){
@@ -73,12 +40,13 @@ void reducir_huecos(t_list* lista_huecos){
 	}
 }
 
-//no usar malloc
-void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t id_segmento){
+void eliminar_segmento(tabla_segmentos_t* tabla_proceso, t_list* lista_huecos, uint32_t id_segmento){
 
 	bool comparar_segmento(segmento_t* seg){
 		return seg->ids == id_segmento;
 	}
+
+	t_list* lista_segmentos = tabla_proceso->segmentos;
 
 	segmento_t* segmento = list_find(lista_segmentos, (void*)comparar_segmento);
 
@@ -89,7 +57,7 @@ void eliminar_segmento(t_list* lista_segmentos, t_list* lista_huecos, uint32_t i
 	nuevo_hueco->tamanio = segmento->tamanio;
 
 	list_add(lista_huecos,nuevo_hueco);
-
+	log_info(logger,"PID: %d - Eliminar Segmento: %d - Base: %d - Tamanio: %d",tabla_proceso->pid,id_segmento,segmento->direccion_base,segmento->tamanio);
 	free(segmento);
 
 	list_sort(lista_huecos,(void*) ordenar_lista_huecos);
@@ -203,7 +171,17 @@ t_list* extraer_segmentos(){
 
 	}
 
-	list_sort(lista_unificada,ordenar_lista_segmentos);
+	list_sort(lista_unificada,(void*) ordenar_lista_segmentos);
 
 	return lista_unificada;
+}
+
+void imprimir_tabla_segmentos(){
+	void imprimir_tabla(tabla_segmentos_t* tabla){
+		void imprimir_segmentos(segmento_t* segmento){
+			log_info(logger,"PID: %d - Segmento: %d - Base: %d - Tamanio: %d",tabla->pid,segmento->ids,segmento->direccion_base,segmento->tamanio);
+		}
+		list_iterate(tabla->segmentos, (void*) imprimir_segmentos);
+	}
+	list_iterate(lista_de_tablas,(void*) imprimir_tabla);
 }

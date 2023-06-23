@@ -1,13 +1,3 @@
-/*
- ============================================================================
- Name        : memoria.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
- ============================================================================
- */
-
 #include "../includes/memoria.h"
 
 int main(int argc, char *argv[])
@@ -30,7 +20,7 @@ int main(int argc, char *argv[])
 
 	config = iniciar_config(argv[1]);
 
-	int exit_status = initial_setup();
+	exit_status = initial_setup();
 
 	if (exit_status == EXIT_FAILURE)
 	{
@@ -60,13 +50,6 @@ int main(int argc, char *argv[])
 	primer_hueco_libre->tamanio = tam_memoria - segmento_0->tamanio;
 	list_add(lista_de_huecos_libres,primer_hueco_libre);
 
-	hueco_libre_t *hueco_libre;
-	for (int i = 0; i < list_size(lista_de_huecos_libres); i++)
-	{
-		hueco_libre = (hueco_libre_t*) list_get(lista_de_huecos_libres, i);
-		log_info(logger, "Hueco: %d | Base: %d | Tamanio: %d",i, hueco_libre->direccion_base, hueco_libre->tamanio);
-	}
-
 	//mando un dato temporal
 
 	char* ejemplo = "A";
@@ -81,40 +64,35 @@ int main(int argc, char *argv[])
 	kernel_conectado = false;
 	fileSystem_conectado = false;
 	log_info(logger, "Memoria lista para recibir al CPU, Kernel o File System");
-	//create_tabla_segmento(1);
-	//crear_segmento(1,1,1,1);
-	//log_info(logger,"Segmento creado correctamente");
-	//SO_REUSEADDR flag para reutilizar el socket
+	pthread_t threads[3];
+	int num_threads = 0;
 
-	while (1)
+	while (exit_status == 0)
 	{
-		if (num_threads < CANTIDAD_DE_THREADS)
-		{
+		if(num_threads < CANTIDAD_DE_THREADS){
 			t_conexion *conexion = malloc(sizeof *conexion);
 			conexion->num_socket = esperar_cliente(server_connection);
 			conexion->id_cliente = num_threads;
 
-			pthread_create(&(tid[num_threads]), NULL, (void*) thread_main, conexion);
-			pthread_detach(&(tid[num_threads]));
+			pthread_create(&threads[num_threads], NULL, (void*) thread_main, conexion);
+			pthread_detach(threads[num_threads]);
 			num_threads++;
 		}
 	}
 
-	log_info(logger, "Se superaron las conexiones maximas establecidas, cerrando memoria");
+	log_info(logger, "Terminando modulo MEMORIA");
 	liberar_conexion(server_connection);
 
 }
 
-void thread_main(t_conexion *conexion)
+void thread_main(t_conexion* conexion)
 {
-	int estado = 1;
 	log_info(logger, "Thread iniciado correctamente");
 	char *mensaje = handshake(conexion->num_socket);
-	log_info(logger, mensaje);
+	log_info(logger,"%s", mensaje);
 
 	if (strcmp(mensaje, "Handshake de CPU recibido correctamente") == 0)
 	{
-
 		conexion_cpu(conexion->num_socket);
 	}
 	else if (strcmp(mensaje, "Handshake de Kernel recibido correctamente") == 0)
@@ -125,6 +103,8 @@ void thread_main(t_conexion *conexion)
 	{
 		conexion_file_system(conexion->num_socket);
 	}
+
+	free(conexion);
 }
 
 void create_tabla_segmento(int pid)
@@ -138,9 +118,3 @@ void create_tabla_segmento(int pid)
 	log_info(logger, "%d", list_size(lista_de_tablas));
 
 }
-
-void iterator(char *value)
-{
-	log_info(logger, "%s", value);
-}
-

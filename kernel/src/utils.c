@@ -205,7 +205,6 @@ void instrucciones_destroy(t_instruc *instruccion)
 void copiar_string(char *origen, char *destino)
 {
 	int largo_origen = strlen(origen);
-	int largo_dest = strlen(destino);
 
 	memcpy(destino, origen, largo_origen);
 }
@@ -469,4 +468,14 @@ void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto){
 	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
 
+}
+
+void imprimir_tabla_segmentos(){
+	void imprimir_tabla(tabla_segmentos_t* tabla){
+		void imprimir_segmentos(segmento_t* segmento){
+			log_info(logger,"PID: %d - Segmento: %d - Base: %d - Tamanio: %d",tabla->pid,segmento->ids,segmento->direccion_base,segmento->tamanio);
+		}
+		list_iterate(tabla->segmentos, (void*) imprimir_segmentos);
+	}
+	list_iterate(lista_tabla_segmentos->lista,(void*) imprimir_tabla);
 }

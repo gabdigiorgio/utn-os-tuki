@@ -1,5 +1,4 @@
-#include "../../includes/code_reader.h"
-#include "../../includes/mmu.h"
+#include "../../../includes/code_reader.h"
 
 int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 {
@@ -14,13 +13,13 @@ int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 	contexto->param2 = realloc(contexto->param2, contexto->param2_length);
 	memcpy(contexto->param2, instruccion->param2, contexto->param2_length);
 
-	log_info(logger, "Ejecutando [MOV_OUT] - [%s , %s]", instruccion->param1, instruccion->param2);
-
 	//Hallo el valor del registro
 	char *registro = seleccionar_registro(contexto->param2);
 	contexto->param2_length = strlen(registro) + 1;
 	contexto->param2 = realloc(contexto->param2, contexto->param2_length);
 	memcpy(contexto->param2, registro, contexto->param2_length);
+
+	log_info(logger, "Ejecutando [MOV_OUT]");
 
 	exit_status = traducir_direccion(contexto->param1, contexto);
 
@@ -30,6 +29,8 @@ int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion)
 	copiar_instruccion_mem(instruccion_mov_out, contexto);
 
 	serializar_instruccion_memoria(memoria_connection, instruccion_mov_out);
+
+	log_info(logger, "Accion: [MOV_OUT] - Valor: %s - Registro: %s", contexto->param2, instruccion->param2);
 
 	return exit_status;
 }

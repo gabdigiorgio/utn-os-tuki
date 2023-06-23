@@ -1,5 +1,5 @@
-#include "../../includes/code_reader.h"
-#include "../../includes/mmu.h"
+#include "../../../includes/code_reader.h"
+#include "../../../includes/mmu.h"
 
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 {
@@ -14,8 +14,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 	contexto->param2 = realloc(contexto->param2, contexto->param2_length);
 	memcpy(contexto->param2, instruccion->param2, contexto->param2_length);
 
-	log_info(logger, "Ejecutando [MOV_IN] - [%s , %s]", instruccion->param1, instruccion->param2);
-
+	log_info(logger, "Ejecutando [MOV_IN]");
 	exit_status = traducir_direccion(contexto->param2, contexto);
 
 	if(exit_status != 0) return exit_status;
@@ -29,7 +28,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	asignar_valor_registro(seleccionar_registro(contexto->param1), valor);
 
-	log_info(logger, "Registro: %s, tiene el valor: %s", contexto->param1, seleccionar_registro(contexto->param1));
+	log_info(logger, "Accion: [MOV_IN] - Valor: %s - Registro: %s", seleccionar_registro(contexto->param1), contexto->param1);
 
 	return exit_status;
 }
@@ -43,28 +42,4 @@ void asignar_valor_registro(char* registro, char* valor)
 		registro[i] = valor[i];
 	}
 
-}
-
-char* esperar_valor(int memoria_connection)
-{
-	t_paquete *paquete = malloc(sizeof(t_paquete));
-	paquete->buffer = malloc(sizeof(t_buffer));
-	deserializar_header(paquete, memoria_connection);
-
-	switch (paquete->codigo_operacion)
-	{
-	case 1:
-		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
-		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
-		return nueva_instruccion->param2;
-		break;
-	default:
-		log_error(logger, "Fallo respuesta memoria a CPU");
-		return NULL;
-		break;
-	}
-
-	free(paquete->buffer->stream);
-	free(paquete->buffer);
-	free(paquete);
 }

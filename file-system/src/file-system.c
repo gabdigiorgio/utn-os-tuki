@@ -3,9 +3,26 @@
 int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 
-	void* array_bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
+	void* bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
 	int offset = 0;
 	int size = 64;
+
+	int fd;
+	fd = open("./bloques.dat", O_RDWR);
+	ftruncate(fd,65532 * 64);
+
+	char* ptr = mmap(NULL,65532 * 64, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+
+	void* ejemplo = "DE ACA TENGO QUE EXTRAER EL NUMERO 5 DE TODO ESTE TEXTO VAMOS A VER COMO HAGO";
+	int len = strlen(ejemplo);
+
+	memcpy(ptr,ejemplo,len);
+
+	char* numero = malloc(2);
+
+	memcpy(numero,ptr + 35,1);
+
+	log_info(logger,numero);
 
 	void* algo = malloc(158);
 
@@ -34,11 +51,11 @@ int main(int argc, char *argv[]) {
 	//memcpy(espacio + offset_espacio, array_bloques + (id de bloque + tamaño de bloque), tamaño de bloque)
 	//el bloque en si es un int, solo guarda la posicion que es igual a id.
 
-	memcpy(array_bloques + (offset * size),&algo,64); // 5 * 64
+	memcpy(bloques + (offset * size),&algo,64); // 5 * 64
 
 	int resultado = 0;
 
-	memcpy(&resultado,array_bloques + (offset * size),sizeof(int));
+	memcpy(&resultado,bloques + (offset * size),sizeof(int));
 
 	log_info(logger,"resultado %d", resultado);
 
@@ -70,13 +87,10 @@ int main(int argc, char *argv[]) {
 	log_info(logger, "File System listo para recibir al Kernel");
 	//log_info(logger,"%d",tamanio_archivo);
 	int connection_fd = esperar_cliente(server_connection);
-	log_info(logger,handshake(connection_fd));
+	log_info(logger,"%s",handshake(connection_fd));
 	pthread_t thread_kernel;
 	pthread_create(&thread_kernel, NULL, (void*) comm_threadKernel, connection_fd);
 	pthread_join(thread_kernel, NULL);
-	t_list* lista;
-
-	while(1){};
 
 	return EXIT_SUCCESS;
 }

@@ -1,4 +1,4 @@
-#include "../includes/server_utils.h"
+#include "../../includes/server_utils.h"
 
 int iniciar_servidor(char* puerto)
 {
@@ -212,5 +212,33 @@ char* handshake(int socket_cliente){
 
 	}
 	return message;
+}
+
+char* esperar_valor(int memoria_connection)
+{
+	t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
+	t_paquete *paquete = malloc(sizeof(t_paquete));
+	paquete->buffer = malloc(sizeof(t_buffer));
+	deserializar_header(paquete, memoria_connection);
+
+	switch (paquete->codigo_operacion)
+	{
+	case 1:
+		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+		break;
+	default:
+		log_error(logger, "Fallo respuesta memoria a CPU");
+		break;
+	}
+
+	free(paquete->buffer->stream);
+	free(paquete->buffer);
+	free(paquete);
+
+	char* valor = malloc(nueva_instruccion->param2_length);
+	memcpy(valor,nueva_instruccion->param2,nueva_instruccion->param2_length);
+	destroy_instruc_mem(nueva_instruccion);
+
+	return valor;
 }
 

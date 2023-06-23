@@ -18,6 +18,7 @@
 
 extern t_log* logger;
 extern int memoria_connection;
+extern int exit_status;
 
 void comm_threadKernel(int kernel_connection);
 

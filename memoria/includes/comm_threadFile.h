@@ -8,15 +8,14 @@
 #include<commons/collections/list.h>
 
 #include "server_utils.h"
-#include "utils.h"
-#include "mem_instruct.h"
-#include "algoritmos.h"
+#include "datos.h"
 #include "client_utils.h"
 #include "../../shared/includes/tad.h"
 
 void conexion_file_system(int server_connection);
 
+extern int exit_status;
 extern t_log* logger;
-
+extern void* memoria;
 
 #endif /* COMM_THREADMEM_H_ */

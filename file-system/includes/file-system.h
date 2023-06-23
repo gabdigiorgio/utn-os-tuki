@@ -7,6 +7,9 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<readline/readline.h>
+#include<fcntl.h>
+#include<sys/mman.h>
+#include<unistd.h>
 
 #include "comm_Mem.h"
 #include "comm_ThreadKernel.h"
@@ -58,6 +61,8 @@ char* nombre_archivo;
 int tamanio_archivo;
 int puntero_directo;
 int puntero_indirecto;
+
+int exit_status = 0;
 
 
 #endif
