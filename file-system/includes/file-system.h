@@ -59,5 +59,10 @@ int tamanio_archivo;
 int puntero_directo;
 int puntero_indirecto;
 
+//___GLOBAL VARIABLES___
+
+void* memoria_file_system;
+int tam_memoria_file_system;
+uint32_t  *array_de_bloques;
 
 #endif

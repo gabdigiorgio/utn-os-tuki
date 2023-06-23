@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 
-	void* array_bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
+	// array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
 	int offset = 0;
 	int size = 64;
 
@@ -34,11 +34,11 @@ int main(int argc, char *argv[]) {
 	//memcpy(espacio + offset_espacio, array_bloques + (id de bloque + tamaño de bloque), tamaño de bloque)
 	//el bloque en si es un int, solo guarda la posicion que es igual a id.
 
-	memcpy(array_bloques + (offset * size),&algo,64); // 5 * 64
+	//memcpy(array_de_bloques + (offset * size),&algo,64); // 5 * 64
 
 	int resultado = 0;
 
-	memcpy(&resultado,array_bloques + (offset * size),sizeof(int));
+	//memcpy(&resultado,array_de_bloques + (offset * size),sizeof(int));
 
 	log_info(logger,"resultado %d", resultado);
 
@@ -58,6 +58,16 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
+	 array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
+
+	tam_memoria_file_system=cantidad_de_bloques*tamanio_de_bloque;
+
+	memoria_file_system = malloc(tam_memoria_file_system);
+
+
+
+
+	log_info(logger,"%d",tam_memoria_file_system);
 
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
@@ -112,3 +122,43 @@ void terminar_programa()
 	config_destroy(fcb);
 	liberar_conexion(memoria_connection);
 }
+
+void escribir_bloque(uint32_t bloque_a_escribir){
+	 memcpy(memoria_file_system, &bloque_a_escribir, sizeof(uint32_t));
+	 memoria_file_system += sizeof(uint32_t);
+	      // actualizar bitmap
+}
+void escribir_bytes(int bytes_a_escribir)
+{
+
+
+	uint32_t cantidad_de_bloques_a_escribir = ceil(cantidad_de_bloques / bytes_a_escribir);
+
+	//uint32_t primer_bloque_libre = obtener_primer_bloque_libre();
+   //verificar de tener los bloques necesarios para escribir
+	      for(uint32_t i = primer_bloque_libre; i < cantidad_de_bloques_a_escribir; i++)
+	      {
+	       escribir_bloque(array_de_bloques[i]);
+	      }
+
+}
+
+leer_bloque(uint32_t id_bloque_a_leer)
+{
+      uint32_t bloque;
+      memcpy(bloque, (char*)(memoria_file_system + id_bloque_a_leer * sizeof(uint32_t)), sizeof(uint32_t));
+      //creo q actualizar offset
+      //actualizar bitmap
+      return bloque;
+}
+leer_bytes(int bytes_a_leer)
+{
+       uint32_t cantidad_de_bloques_a_leer= ceil(cantidad_de_bloques / bytes_a_leer);
+      for(uint32_t i = 0; i < cantidad_de_bloques_a_leer; i++)
+      {
+            leer_bloque(array_de_bloques[i]);
+      }
+}
+
+
+

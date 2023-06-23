@@ -218,4 +218,6 @@ typedef struct
 	uint32_t puntero_indirecto;
 } fcb_t;
 
+
+
 #endif /* TAD_H_ */
