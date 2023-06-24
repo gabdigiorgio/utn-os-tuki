@@ -28,6 +28,9 @@ void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 			contexto->estado = F_CREATE;
 			manejar_archivo(contexto,pcb);
 			break;
+		case FILE_ALREADY_EXISTS:
+			log_info(logger,"Archivo %s ya previamente abierto",contexto->param1);
+			break;
 		default:
 			break;
 	}

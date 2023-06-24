@@ -14,27 +14,47 @@ void comm_threadKernel(int kernel_connection){
 				t_resp_file estado_file = F_ERROR;
 				switch (nueva_instruccion->estado){
 					case F_OPEN:
-						char *open_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
-						fcb_t *fcb_to_open = iniciar_fcb(open_file_name);
-						if(fcb_to_open != NULL) {
-							fcb_t *openedFcb = malloc(sizeof(fcb_t*));
-							openedFcb->nombre_archivo=config_get_string_value(fcb_to_open, "NOMBRE_ARCHIVO");
-							log_info(logger, "%s", openedFcb->nombre_archivo);
-							openedFcb->tamanio_archivo=config_get_int_value(fcb_to_open, "TAMANIO_ARCHIVO");
-							log_info(logger, "%d", openedFcb->tamanio_archivo);
-							openedFcb->puntero_directo = config_get_int_value(fcb_to_open, "PUNTERO_DIRECTO");
-							log_info(logger, "%d", openedFcb->puntero_directo);
-							openedFcb->puntero_indirecto = config_get_int_value(fcb_to_open, "PUNTERO_INDIRECTO");
-							log_info(logger, "%d", openedFcb->puntero_indirecto);
-							log_info(logger, "FCB Creado");
-							list_add(fcb_list,openedFcb);
+						bool buscar_archivo(char *nombre_archivo)
+						{
+							for (int i = 0; i < list_size(fcb_list); i++)
+							{
+								fcb_t *fcb = (fcb_t*) list_get(fcb_list, i);
+								if (fcb->nombre_archivo	== nombre_archivo)
+								{
+									return true;
+								}
+							}
+							return false;
+						}
+						log_info(logger,"PID: %d solicito F_OPEN para el archivo %s",pid, nueva_instruccion->param1);
+						//Genero el path
+						if(buscar_archivo(nueva_instruccion->param1)){
+							log_info(logger,"El archivo %s solicitado ya esta abierto", nueva_instruccion->param1);
+							estado_file = FILE_ALREADY_EXISTS;
 						}
 						else {
-							log_info(logger,"El archivo %s solicitado no existe", nueva_instruccion->param1);
+							char *open_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
+							fcb_t *fcb_to_open = iniciar_fcb(open_file_name);
+							if(fcb_to_open != NULL) {
+								fcb_t *openedFcb = malloc(sizeof(fcb_t*));
+								openedFcb->nombre_archivo=config_get_string_value(fcb_to_open, "NOMBRE_ARCHIVO");
+								log_info(logger, "%s", openedFcb->nombre_archivo);
+								openedFcb->tamanio_archivo=config_get_int_value(fcb_to_open, "TAMANIO_ARCHIVO");
+								log_info(logger, "%d", openedFcb->tamanio_archivo);
+								openedFcb->puntero_directo = config_get_int_value(fcb_to_open, "PUNTERO_DIRECTO");
+								log_info(logger, "%d", openedFcb->puntero_directo);
+								openedFcb->puntero_indirecto = config_get_int_value(fcb_to_open, "PUNTERO_INDIRECTO");
+								log_info(logger, "%d", openedFcb->puntero_indirecto);
+								log_info(logger, "FCB Creado");
+								list_add(fcb_list,openedFcb);
+								config_destroy(fcb_to_open);
+								estado_file = F_OPEN_SUCCESS;
+							}
+							else {
+								log_info(logger,"El archivo %s solicitado no existe", nueva_instruccion->param1);
+								estado_file = FILE_DOESNT_EXISTS;
+								}
 						}
-						estado_file = F_OPEN_SUCCESS;
-						//estado_file = FILE_DOESNT_EXISTS; si el FCB no existe
-						log_info(logger,"PID: %d solicito F_OPEN para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_CREATE:
@@ -67,6 +87,21 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_CLOSE:
+						// Se debe encontrar el FCB el cual coincida el nombre del archivo
+						char *file_name = nueva_instruccion->param1;
+						log_info(logger,"Se size de la lista es %d",list_size(fcb_list));
+						list_remove_element(fcb_list,file_name);
+						/*int index_of_fcb;
+						for(int i = 0; i<list_size(fcb_list);i++){
+							fcb_t *fcb_correcto = malloc(sizeof(fcb_t));
+							fcb_correcto = fcb_list[i];
+							if(strcmp(file_name,fcb_correcto->nombre_archivo)== 0){
+
+							}
+
+						}*/
+						log_info(logger,"Se size de la lista es %d",list_size(fcb_list));
+						// Luego se debe quitar de la lista de FCB
 						estado_file = F_CLOSE_SUCCESS;
 						log_info(logger,"PID: %d solicito F_CLOSE para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
