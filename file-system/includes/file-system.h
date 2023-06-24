@@ -18,6 +18,7 @@
 #include "server_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
+#include "bitmap_utils.h"
 
 void iterator(char* value);
 void generar_fcb();
