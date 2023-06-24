@@ -123,10 +123,18 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 }
 
+void asignar_bloque(fcb_t* archivo)
+{
+     archivo->puntero_directo=obtener_pirmer_bloque_libre();
+     //que hago con el puntero indirecto?
+     //actualizar bitmap
+    // setear_bit_en_bitmap(archivo->puntero_directo);
+}
+
 void escribir_bloque(uint32_t bloque_a_escribir){
 	 memcpy(memoria_file_system, &bloque_a_escribir, sizeof(uint32_t));
 	 memoria_file_system += sizeof(uint32_t);
-	      // actualizar bitmap
+
 }
 void escribir_bytes(int bytes_a_escribir)
 {
@@ -136,22 +144,21 @@ void escribir_bytes(int bytes_a_escribir)
 
 	//uint32_t primer_bloque_libre = obtener_primer_bloque_libre();
    //verificar de tener los bloques necesarios para escribir
-	      for(uint32_t i = primer_bloque_libre; i < cantidad_de_bloques_a_escribir; i++)
+	      for(uint32_t i =0; i < cantidad_de_bloques_a_escribir; i++)
 	      {
 	       escribir_bloque(array_de_bloques[i]);
 	      }
 
 }
 
-leer_bloque(uint32_t id_bloque_a_leer)
+uint32_t leer_bloque(uint32_t id_bloque_a_leer)
 {
       uint32_t bloque;
       memcpy(bloque, (char*)(memoria_file_system + id_bloque_a_leer * sizeof(uint32_t)), sizeof(uint32_t));
-      //creo q actualizar offset
-      //actualizar bitmap
+      //creo q actualizar offset?
       return bloque;
 }
-leer_bytes(int bytes_a_leer)
+void leer_bytes(int bytes_a_leer)
 {
        uint32_t cantidad_de_bloques_a_leer= ceil(cantidad_de_bloques / bytes_a_leer);
       for(uint32_t i = 0; i < cantidad_de_bloques_a_leer; i++)
