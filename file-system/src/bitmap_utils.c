@@ -5,6 +5,11 @@ void setear_bit_en_bitmap(int posicion)
 	bitarray_set_bit(bitmap, posicion);
 }
 
+void limpiar_bit_en_bitmap(int posicion)
+{
+	bitarray_clean_bit(bitmap, posicion);
+}
+
 uint32_t obtener_bit_en_bitmap(int posicion)
 {
 	return bitarray_test_bit(bitmap, posicion);
