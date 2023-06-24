@@ -14,15 +14,14 @@ void comm_threadKernel(int kernel_connection){
 				t_resp_file estado_file = F_ERROR;
 				switch (nueva_instruccion->estado){
 					case F_OPEN:
-						FILE *fcb_to_open;
 						char *open_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
-						fcb_to_open = fopen(open_file_name,"r");
+						fcb_t *fcb_to_open = iniciar_fcb(open_file_name);
 						if(fcb_to_open != NULL) {
-							fcb_t *openedFcb = iniciar_fcb(open_file_name);
+							fcb_t *openedFcb = malloc(sizeof(fcb_t*));
 							openedFcb->nombre_archivo=config_get_string_value(fcb_to_open, "NOMBRE_ARCHIVO");
 							log_info(logger, "%s", openedFcb->nombre_archivo);
-							openedFcb->tamanio_archivo=config_get_string_value(fcb_to_open, "TAMANIO_ARCHIVO");
-							log_info(logger, "%s", openedFcb->tamanio_archivo);
+							openedFcb->tamanio_archivo=config_get_int_value(fcb_to_open, "TAMANIO_ARCHIVO");
+							log_info(logger, "%d", openedFcb->tamanio_archivo);
 							openedFcb->puntero_directo = config_get_int_value(fcb_to_open, "PUNTERO_DIRECTO");
 							log_info(logger, "%d", openedFcb->puntero_directo);
 							openedFcb->puntero_indirecto = config_get_int_value(fcb_to_open, "PUNTERO_INDIRECTO");

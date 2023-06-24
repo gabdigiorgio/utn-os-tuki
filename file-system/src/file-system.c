@@ -86,22 +86,7 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 
-
-	//verifico si existe el directorio
-	/* int check;
-	    char* dirname = "/home/utnso/fs/fcb";
-	    check = mkdir(dirname,0777);
-
-	    // check if directory is created or not
-	    if (!check)
-	        printf("Directory created\n");
-	    else {
-	        printf("Unable to create directory\n");
-	        exit(1);
-	    }*/
-	FILE *tcb;
-	char* nombre = "/home/utnso/fs/fcb\filename.txt";
-	tcb = fopen(nombre,"w");
+	//Verificar si existe el directorio
 
 	log_info(logger,"cant de bits del bitmap %d", bitarray_get_max_bit(bitmap));
 
