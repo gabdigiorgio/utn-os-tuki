@@ -131,22 +131,22 @@ void asignar_bloque(fcb_t* archivo)
     // setear_bit_en_bitmap(archivo->puntero_directo);
 }
 
-void escribir_bloque(uint32_t bloque_a_escribir){
-	 memcpy(memoria_file_system, &bloque_a_escribir, sizeof(uint32_t));
-	 memoria_file_system += sizeof(uint32_t);
-
+/*
+void escribir_bloque(uint32_t bloque_a_escribir, void* datos){
+	int tamanio_datos = strlen(datos) + 1;
+	memcpy(memoria_file_system + (bloque_a_escribir * tamanio_bloque), datos, tamanio_datos);
 }
-void escribir_bytes(int bytes_a_escribir)
+
+void escribir_bytes(int bytes_a_escribir, void* todos_los_datos)
 {
-
-
 	uint32_t cantidad_de_bloques_a_escribir = ceil(cantidad_de_bloques / bytes_a_escribir);
 
 	//uint32_t primer_bloque_libre = obtener_primer_bloque_libre();
    //verificar de tener los bloques necesarios para escribir
 	      for(uint32_t i =0; i < cantidad_de_bloques_a_escribir; i++)
 	      {
-	       escribir_bloque(array_de_bloques[i]);
+
+	       escribir_bloque(i,todos_los_datos + (i * tamanio_bloque));
 	      }
 
 }
@@ -166,6 +166,6 @@ void leer_bytes(int bytes_a_leer)
             leer_bloque(array_de_bloques[i]);
       }
 }
-
+*/
 
 
