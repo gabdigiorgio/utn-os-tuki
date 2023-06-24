@@ -75,6 +75,7 @@ typedef enum
 	F_READ_SUCCESS,
 	F_CREATE_SUCCESS,
 	FILE_DOESNT_EXISTS,
+	FILE_ALREADY_EXISTS,
 }t_resp_file;
 
 typedef enum
