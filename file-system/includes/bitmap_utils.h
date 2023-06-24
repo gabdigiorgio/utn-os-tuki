@@ -11,6 +11,7 @@ extern t_bitarray *bitmap;
 
 // Functions
 void setear_bit_en_bitmap(int posicion);
+uint32_t obtener_bit_en_bitmap(int posicion);
 uint32_t obtener_primer_bloque_libre();
 
 #endif /* BITMAP_UTILS_H_ */
