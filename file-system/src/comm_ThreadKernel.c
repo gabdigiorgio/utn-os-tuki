@@ -33,7 +33,12 @@ void comm_threadKernel(int kernel_connection){
 							estado_file = FILE_ALREADY_EXISTS;
 						}
 						else {
-							char *open_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
+							//char *open_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
+							char *open_file_name = malloc(strlen(path_fcb_folder)+strlen(nueva_instruccion->param1)+1);
+							int offset = 0;
+							memcpy(open_file_name,path_fcb_folder,strlen(path_fcb_folder));
+							offset = strlen(path_fcb_folder);
+							memcpy(open_file_name+offset,nueva_instruccion->param1,strlen(nueva_instruccion->param1)+1);
 							fcb_t *fcb_to_open = iniciar_fcb(open_file_name);
 							if(fcb_to_open != NULL) {
 								fcb_t *openedFcb = malloc(sizeof(fcb_t*));
@@ -47,8 +52,8 @@ void comm_threadKernel(int kernel_connection){
 								log_info(logger, "%d", openedFcb->puntero_indirecto);
 								log_info(logger, "FCB Creado");
 								list_add(fcb_list,openedFcb);
-								config_destroy(fcb_to_open);
 								estado_file = F_OPEN_SUCCESS;
+								config_destroy(fcb_to_open);
 							}
 							else {
 								log_info(logger,"El archivo %s solicitado no existe", nueva_instruccion->param1);
@@ -87,19 +92,28 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_CLOSE:
+						int buscar_archivo_cerrar(char *nombre_archivo)
+						{
+							for (int i = 0; i < list_size(fcb_list); i++)
+							{
+								fcb_t *fcb = (fcb_t*) list_get(fcb_list, i);
+								if (fcb->nombre_archivo	== nombre_archivo)
+								{
+									return i;
+								}
+							}
+							return -1;
+						}
 						// Se debe encontrar el FCB el cual coincida el nombre del archivo
 						char *file_name = nueva_instruccion->param1;
-						log_info(logger,"Se size de la lista es %d",list_size(fcb_list));
-						list_remove_element(fcb_list,file_name);
-						/*int index_of_fcb;
-						for(int i = 0; i<list_size(fcb_list);i++){
-							fcb_t *fcb_correcto = malloc(sizeof(fcb_t));
-							fcb_correcto = fcb_list[i];
-							if(strcmp(file_name,fcb_correcto->nombre_archivo)== 0){
-
-							}
-
-						}*/
+						int id = buscar_archivo_cerrar(file_name);
+						if(id != -1){
+							fcb_t *fcb = (fcb_t*) list_get(fcb_list, id);
+							//list_remove(fcb_list, id);
+							list_remove_element(fcb_list,fcb);
+							log_info(logger,"%d",list_size(fcb_list));
+							log_info(logger,"FCB Cerrado");
+						}
 						log_info(logger,"Se size de la lista es %d",list_size(fcb_list));
 						// Luego se debe quitar de la lista de FCB
 						estado_file = F_CLOSE_SUCCESS;
