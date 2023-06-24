@@ -23,7 +23,6 @@ bool sort_list(t_instruc* instruc1, t_instruc* instruc2){
 
 void copiar_string(char* origen, char* destino){
 	int largo_origen = strlen(origen);
-	int largo_dest = strlen(destino);
 
 	for(int i = 0; i<largo_origen; i++){
 		destino[i] = origen[i];

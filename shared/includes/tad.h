@@ -209,10 +209,25 @@ typedef struct
 
 typedef struct
 {
-	char *nombre_archivo;
+	uint32_t id;
+	char* nombre_archivo;
+	char* ruta_archivo;
 	uint32_t tamanio_archivo;
 	uint32_t puntero_directo;
 	uint32_t puntero_indirecto;
 } fcb_t;
+
+typedef struct
+{
+	t_list* lista_fcb;
+} fcb_list_t;
+
+//modify(id, TAMANIO, 50)
+//get(id)
+//push(fcb_t)
+//remove(id)
+//find("Archivo1") = id
+//inicializar() se fija todos los archivos .dat que estan cargados en la carpeta FCB, genera el fcb_t para cada uno y lo mete adentro de
+//fcb_list_t
 
 #endif /* TAD_H_ */

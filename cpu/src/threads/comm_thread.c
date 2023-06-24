@@ -4,7 +4,7 @@ void conexion_kernel(int server_connection){
 
 	log_info(logger, "Cpu lista para recibir al Kernel");
 	int connection_fd = esperar_cliente(server_connection);
-	log_info(logger,handshake(connection_fd));
+	log_info(logger,"%s",handshake(connection_fd));
 
 	int exit_status = 0;
 
@@ -23,7 +23,7 @@ void conexion_kernel(int server_connection){
 			case 1:
 				deserializar_contexto(paquete->buffer, paquete->lineas, contexto);
 				log_info(logger,"PID: %d",contexto->pid);
-				int result = ejecutar_contexto(contexto, paquete->lineas);
+				ejecutar_contexto(contexto, paquete->lineas);
 				armar_contexto(contexto);
 				serializar_contexto(connection_fd,contexto);
 				break;

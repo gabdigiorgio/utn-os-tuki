@@ -63,6 +63,11 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_CREATE:
+
+						//fcb_t nuevo_fcb = inicializar_fcb();
+						//copias todos los datos
+						//push(nuevo_fcb)
+
 						FILE *fcb_to_create;
 						// Crear archivo en path especifico
 						char *create_file_name = strcat(path_fcb_folder,nueva_instruccion->param1);
@@ -92,6 +97,9 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_CLOSE:
+
+						//int id = find("Archivo1.dat");
+						//remove(id)
 						int buscar_archivo_cerrar(char *nombre_archivo)
 						{
 							for (int i = 0; i < list_size(fcb_list); i++)
@@ -129,12 +137,14 @@ void comm_threadKernel(int kernel_connection){
 						realizar_f_write(nueva_instruccion);
 						estado_file = F_WRITE_SUCCESS;
 						log_info(logger,"PID: %d solicito F_WRITE para el archivo %s",pid, nueva_instruccion->param1);
+						sleep(20);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_READ:
 						realizar_f_read(nueva_instruccion);
 						estado_file = F_READ_SUCCESS;
 						log_info(logger,"PID: %d solicito F_READ para el archivo %s",pid, nueva_instruccion->param1);
+						sleep(20);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_SEEK:

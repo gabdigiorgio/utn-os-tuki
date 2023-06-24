@@ -41,5 +41,4 @@ void asignar_valor_registro(char* registro, char* valor)
 	{
 		registro[i] = valor[i];
 	}
-
 }
