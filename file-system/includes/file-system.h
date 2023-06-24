@@ -70,5 +70,10 @@ int puntero_indirecto;
 int exit_status = 0;
 t_list *fcb_list;
 
+//___GLOBAL VARIABLES___
+
+void* memoria_file_system;
+int tam_memoria_file_system;
+uint32_t  *array_de_bloques;
 
 #endif

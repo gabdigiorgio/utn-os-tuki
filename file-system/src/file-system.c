@@ -79,6 +79,16 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
+	 array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
+
+	tam_memoria_file_system=cantidad_de_bloques*tamanio_de_bloque;
+
+	memoria_file_system = malloc(tam_memoria_file_system);
+
+
+
+
+	log_info(logger,"%d",tam_memoria_file_system);
 
 	exit_status = crear_bitmap();
 	if (exit_status == EXIT_FAILURE)
@@ -120,3 +130,50 @@ void terminar_programa()
 	config_destroy(fcb);
 	liberar_conexion(memoria_connection);
 }
+
+void asignar_bloque(fcb_t* archivo)
+{
+     //archivo->puntero_directo=obtener_pirmer_bloque_libre();
+     //que hago con el puntero indirecto?
+     //actualizar bitmap
+    // setear_bit_en_bitmap(archivo->puntero_directo);
+}
+
+/*
+void escribir_bloque(uint32_t bloque_a_escribir, void* datos){
+	int tamanio_datos = strlen(datos) + 1;
+	memcpy(memoria_file_system + (bloque_a_escribir * tamanio_bloque), datos, tamanio_datos);
+}
+
+void escribir_bytes(int bytes_a_escribir, void* todos_los_datos)
+{
+	uint32_t cantidad_de_bloques_a_escribir = ceil(cantidad_de_bloques / bytes_a_escribir);
+
+	//uint32_t primer_bloque_libre = obtener_primer_bloque_libre();
+   //verificar de tener los bloques necesarios para escribir
+	      for(uint32_t i =0; i < cantidad_de_bloques_a_escribir; i++)
+	      {
+
+	       escribir_bloque(i,todos_los_datos + (i * tamanio_bloque));
+	      }
+
+}
+
+uint32_t leer_bloque(uint32_t id_bloque_a_leer)
+{
+      uint32_t bloque;
+      memcpy(bloque, (char*)(memoria_file_system + id_bloque_a_leer * sizeof(uint32_t)), sizeof(uint32_t));
+      //creo q actualizar offset?
+      return bloque;
+}
+void leer_bytes(int bytes_a_leer)
+{
+       uint32_t cantidad_de_bloques_a_leer= ceil(cantidad_de_bloques / bytes_a_leer);
+      for(uint32_t i = 0; i < cantidad_de_bloques_a_leer; i++)
+      {
+            leer_bloque(array_de_bloques[i]);
+      }
+}
+*/
+
+
