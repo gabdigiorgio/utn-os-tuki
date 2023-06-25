@@ -2,6 +2,10 @@
 
 int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
+	inicializar_fcb_list();
+
+	int fcb_id = buscar_fcb("ParcialLeo");
+	modificar_fcb_id(fcb_id,TAMANIO_ARCHIVO,540);
 
 	void* bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
 	int offset = 0;

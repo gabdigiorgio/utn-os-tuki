@@ -19,6 +19,7 @@
 #include "utils.h"
 #include "initial_setup.h"
 #include "bitmap_utils.h"
+#include "fcb_list.h"
 
 void iterator(char* value);
 void generar_fcb();
@@ -62,12 +63,14 @@ t_bitarray *bitmap;
 // _____________________
 
 fcb_t* fcb;
+int fcb_id;
 char* nombre_archivo;
 int tamanio_archivo;
 int puntero_directo;
 int puntero_indirecto;
 
 int exit_status = 0;
+fcb_list_t* lista_global_fcb;
 t_list *fcb_list;
 
 //___GLOBAL VARIABLES___

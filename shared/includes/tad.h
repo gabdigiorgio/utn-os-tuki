@@ -215,12 +215,21 @@ typedef struct
 	uint32_t tamanio_archivo;
 	uint32_t puntero_directo;
 	uint32_t puntero_indirecto;
+	uint32_t puntero_archivo;
 } fcb_t;
 
 typedef struct
 {
 	t_list* lista_fcb;
 } fcb_list_t;
+
+typedef enum
+{
+	TAMANIO_ARCHIVO,
+	PUNTERO_INDIRECTO,
+	PUNTERO_DIRECTO,
+	PUNTERO_ARCHIVO
+} fcb_prop_t;
 
 //modify(id, TAMANIO, 50)
 //get(id)
