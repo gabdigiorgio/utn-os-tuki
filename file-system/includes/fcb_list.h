@@ -19,9 +19,11 @@ extern int fcb_id;
 
 void inicializar_fcb_list();
 int buscar_fcb(char* nombre_fcb);
-fcb_t* get_fcb(char* nombre);
-fcb_t* get_fcb_id(int id);
-void modificar_fcb_id(int id,fcb_prop_t llave, uint32_t valor);
-void modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor);
+fcb_t* _get_fcb(char* nombre);
+fcb_t* _get_fcb_id(int id);
+int modificar_fcb(int id,fcb_prop_t llave, uint32_t valor);
+int _modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor);
+uint32_t valor_fcb(int id,fcb_prop_t llave);
+uint32_t _valor_fcb(fcb_t* fcb, fcb_prop_t llave);
 
 #endif /* FCB_LIST_H_ */

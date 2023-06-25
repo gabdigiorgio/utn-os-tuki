@@ -1,10 +1,10 @@
 #include "../../../includes/fcb_list.h"
 
-fcb_t* get_fcb(char* nombre){
-	return get_fcb_id(buscar_fcb(nombre));
+fcb_t* _get_fcb(char* nombre){
+	return _get_fcb_id(buscar_fcb(nombre));
 }
 
-fcb_t* get_fcb_id(int id){
+fcb_t* _get_fcb_id(int id){
 	fcb_t* resultado = malloc(sizeof(fcb_t));
 
 	int size = list_size(lista_global_fcb->lista_fcb);

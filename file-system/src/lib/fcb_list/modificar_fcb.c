@@ -1,12 +1,16 @@
 #include "../../../includes/fcb_list.h"
 
-void modificar_fcb_id(int id,fcb_prop_t llave, uint32_t valor){
-	fcb_t* fcb = get_fcb(id);
+int modificar_fcb(int id,fcb_prop_t llave, uint32_t valor){
+	fcb_t* fcb = _get_fcb_id(id);
 
-	modificar_fcb(fcb,llave,valor);
+	int resultado = _modificar_fcb(fcb,llave,valor);
+
+	return resultado;
 }
 
-void modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor){
+int _modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor){
+	int resultado = 1;
+
 	t_config* fcb_fisico = config_create(fcb->ruta_archivo);
 	char* valor_string = string_itoa(valor);
 
@@ -28,6 +32,7 @@ void modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor){
 			config_set_value(fcb_fisico, "PUNTERO_ARCHIVO", valor_string);
 			break;
 		default:
+			resultado = -1;
 			break;
 	}
 
@@ -35,4 +40,6 @@ void modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor){
 
 	config_destroy(fcb_fisico);
 	free(valor_string);
+
+	return resultado;
 }
