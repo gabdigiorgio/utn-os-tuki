@@ -91,3 +91,19 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_instruc_file* contexto
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
 	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
 }
+
+fcb_t* inicializar_fcb(){
+	fcb_t* new_fcb = malloc(sizeof(fcb_t));
+
+	new_fcb->nombre_archivo = malloc(sizeof(char) * 2);
+	memcpy(new_fcb->nombre_archivo,"0",sizeof(char) * 2);
+	new_fcb->ruta_archivo = malloc(sizeof(char) * 2);
+	memcpy(new_fcb->nombre_archivo,"0",sizeof(char) * 2);
+	new_fcb->id = 0;
+	new_fcb->puntero_archivo = 0;
+	new_fcb->puntero_directo = 0;
+	new_fcb->puntero_indirecto = 0;
+	new_fcb->tamanio_archivo = 0;
+
+	return new_fcb;
+}

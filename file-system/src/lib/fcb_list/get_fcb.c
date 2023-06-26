@@ -5,7 +5,7 @@ fcb_t* _get_fcb(char* nombre){
 }
 
 fcb_t* _get_fcb_id(int id){
-	fcb_t* resultado = malloc(sizeof(fcb_t));
+	fcb_t* resultado;
 
 	int size = list_size(lista_global_fcb->lista_fcb);
 

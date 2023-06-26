@@ -11,6 +11,7 @@
 #include <commons/string.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
+#include <commons/collections/dictionary.h>
 #include "utils.h"
 
 extern fcb_list_t* lista_global_fcb;
@@ -25,5 +26,9 @@ int modificar_fcb(int id,fcb_prop_t llave, uint32_t valor);
 int _modificar_fcb(fcb_t* fcb, fcb_prop_t llave, uint32_t valor);
 uint32_t valor_fcb(int id,fcb_prop_t llave);
 uint32_t _valor_fcb(fcb_t* fcb, fcb_prop_t llave);
+int nombre_fcb(int id,char* nombre);
+int crear_fcb(char* nombre_fcb);
+int buscar_fcb_id(int id);
+int borrar_fcb(int id);
 
 #endif /* FCB_LIST_H_ */

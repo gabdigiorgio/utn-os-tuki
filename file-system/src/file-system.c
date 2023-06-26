@@ -10,6 +10,12 @@ int main(int argc, char *argv[]) {
 	modificar_fcb(fcb_id,TAMANIO_ARCHIVO,250);
 	log_info(logger,"%d",valor_fcb(fcb_id,TAMANIO_ARCHIVO));
 
+	crear_fcb("ExamenGaby");
+	int examen_gaby = buscar_fcb("ExamenGaby");
+	modificar_fcb(examen_gaby,TAMANIO_ARCHIVO,700);
+	log_info(logger,"%d",valor_fcb(examen_gaby,TAMANIO_ARCHIVO));
+	borrar_fcb(examen_gaby);
+
 	log_info(logger,"Ya lei");
 
 	void* bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
