@@ -324,6 +324,27 @@ t_contexto* inicializar_contexto()
 	return contexto;
 }
 
+void duplicar_contexto(t_contexto* contexto_destino, t_contexto* contexto_origen){
+	contexto_destino->param1_length = contexto_origen->param1_length;
+	contexto_destino->param2_length = contexto_origen->param2_length;
+	contexto_destino->param3_length = contexto_origen->param3_length;
+	contexto_destino->estado = contexto_origen->estado;
+	contexto_destino->pid = contexto_origen->pid;
+
+	contexto_destino->param1 = realloc(contexto_destino->param1,contexto_origen->param1_length);
+	contexto_destino->param2 = realloc(contexto_destino->param2,contexto_origen->param2_length);
+	contexto_destino->param3 = realloc(contexto_destino->param3,contexto_origen->param3_length);
+
+	memcpy(contexto_destino->param1,contexto_origen->param1,contexto_destino->param1_length);
+	memcpy(contexto_destino->param2,contexto_origen->param2,contexto_destino->param2_length);
+	memcpy(contexto_destino->param3,contexto_origen->param3,contexto_destino->param3_length);
+
+	copiar_registros(contexto_destino->registros, contexto_origen->registros);
+	copiar_lista_instrucciones(contexto_destino->instrucciones,contexto_origen->instrucciones);
+
+	contexto_destino->tabla_segmento = contexto_origen->tabla_segmento;
+}
+
 t_instruc_mem* inicializar_instruc_mem()
 {
 	t_instruc_mem* instruccion = malloc(sizeof(t_instruc_mem));
@@ -448,26 +469,32 @@ t_instruc_file* inicializar_instruc_file()
 	instruccion->param3 = malloc(sizeof(char) * 2);
 	memcpy(instruccion->param3, "0", (sizeof(char) * 2));
 	instruccion->param3_length = sizeof(char) * 2;
+	instruccion->param4 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param4, "0", (sizeof(char) * 2));
+	instruccion->param4_length = sizeof(char) * 2;
 	instruccion->estado = F_OPEN;
 
 	return instruccion;
 }
 
-void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto){
+void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto, char* puntero){
 
 	instruccion->param1_length = contexto->param1_length;
 	instruccion->param2_length = contexto->param2_length;
 	instruccion->param3_length = contexto->param3_length;
+	instruccion->param4_length = strlen(puntero) + 1;
 	instruccion->estado = contexto->estado;
 	instruccion->pid = contexto->pid;
 
 	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
 	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
 	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	instruccion->param4 = realloc(instruccion->param4,instruccion->param4_length);
 
 	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
 	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
+	memcpy(instruccion->param4,puntero,instruccion->param4_length);
 
 }
 

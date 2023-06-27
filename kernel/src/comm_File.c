@@ -2,7 +2,9 @@
 
 void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 	t_instruc_file* instruccion = inicializar_instruc_file();
-	copiar_instruccion_file(instruccion,contexto);
+	char* puntero = string_new();
+	string_append(&puntero,"");
+	copiar_instruccion_file(instruccion,contexto,puntero);
 	serializar_instruccion_file(file_system_connection, instruccion);
 
 	t_resp_file respuesta = esperar_respuesta_file();
@@ -38,7 +40,11 @@ void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 
 void editar_archivo(t_contexto* contexto, pcb_t* pcb){
 	t_instruc_file* instruccion = inicializar_instruc_file();
-	copiar_instruccion_file(instruccion,contexto);
+
+	char* puntero = string_new();
+	string_append(&puntero,"55");
+
+	copiar_instruccion_file(instruccion,contexto,puntero);
 	serializar_instruccion_file(file_system_connection, instruccion);
 
 	t_resp_file respuesta = esperar_respuesta_file();

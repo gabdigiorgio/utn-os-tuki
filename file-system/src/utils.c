@@ -38,24 +38,12 @@ t_instruc_file* inicializar_instruc_file()
 	contexto->param3 = malloc(sizeof(char) * 2);
 	memcpy(contexto->param3, "0", (sizeof(char) * 2));
 	contexto->param3_length = sizeof(char) * 2;
+	contexto->param4 = malloc(sizeof(char) * 2);
+	memcpy(contexto->param4, "0", (sizeof(char) * 2));
+	contexto->param4_length = sizeof(char) * 2;
 	contexto->estado = CREATE_SEGMENT;
 
 	return contexto;
-}
-
-void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto){
-	instruccion->param1_length = contexto->param1_length;
-	instruccion->param2_length = contexto->param2_length;
-	instruccion->param3_length = contexto->param3_length;
-
-	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
-	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
-	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
-
-	memcpy(instruccion->param1,contexto->param1,instruccion->param1_length);
-	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
-	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
-	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
 }
 
 t_instruc_mem* inicializar_instruc_mem()

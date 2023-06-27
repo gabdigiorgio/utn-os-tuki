@@ -131,10 +131,10 @@ void io_block(void *args)
 	free(args);
 }
 
-void file_system_read_write_block(void *args)
+void file_system_read_write_block(t_read_write_block_args* args)
 {
 	sem_wait(&sem_compactacion);
-	t_read_write_block_args *arguments = (t_read_write_block_args*) args;
+	t_read_write_block_args *arguments = args;
 
 	log_info(logger,"PID: %d - Bloqueado por: Read/Write",arguments->pcb->pid);
 

@@ -221,10 +221,12 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 			t_read_write_block_args *args_read = malloc(sizeof(t_read_write_block_args));
 			args_read->pcb = pcb;
-			args_read->contexto = contexto_actualizado;
+			args_read->contexto = inicializar_contexto();
+
+			duplicar_contexto(args_read->contexto,contexto_actualizado);
 
 			pthread_t thread_read_block;
-			pthread_create(&thread_read_block, NULL, (void*) file_system_read_write_block, (t_read_write_block_args*) args_read);
+			pthread_create(&thread_read_block, NULL, (void*) file_system_read_write_block, args_read);
 			pthread_detach(thread_read_block);
 
 			break;
@@ -233,10 +235,12 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		case F_WRITE:
 			t_read_write_block_args *args_write = malloc(sizeof(t_read_write_block_args));
 			args_write->pcb = pcb;
-			args_write->contexto = contexto_actualizado;
+			args_write->contexto = inicializar_contexto();
+
+			duplicar_contexto(args_write->contexto,contexto_actualizado);
 
 			pthread_t thread_write_block;
-			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, (t_read_write_block_args*) args_write);
+			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, args_write);
 			pthread_detach(thread_write_block);
 
 			break;

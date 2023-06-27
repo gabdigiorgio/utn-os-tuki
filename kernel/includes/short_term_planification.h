@@ -31,6 +31,6 @@ void estado_block();
 long double calcular_ratio(pcb_t* pcb_actual);
 bool mayor_ratio(void* proceso_1, void* proceso_2);
 void io_block(void *args);
-void file_system_read_write_block(void *args);
+void file_system_read_write_block(t_read_write_block_args* args);
 
 #endif /* SHORT_TERM_PLANIFICATION_H_ */

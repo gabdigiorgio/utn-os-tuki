@@ -61,12 +61,14 @@ tabla_segmentos_t* solicitar_segmento_0(int pid);
 void delete_segment(t_contexto* contexto, pcb_t* pcb);
 
 t_instruc_file* inicializar_instruc_file();
-void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto);
+void copiar_instruccion_file(t_instruc_file* instruccion, t_contexto* contexto, char* puntero);
 void imprimir_tabla_segmentos();
 
 char* buscar_archivo(t_list *tabla_archivos_abiertos, const char *nombre_archivo);
 bool archivo_existe_en_tabla(t_list *tabla_archivos_abiertos, const char *nombre_archivo);
 archivo_abierto_t* buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, const char *nombre_archivo);
+
+void duplicar_contexto(t_contexto* contexto_destino, t_contexto* contexto_origen);
 
 extern t_lista_mutex* lista_tabla_segmentos;
 
