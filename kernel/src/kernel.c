@@ -117,6 +117,7 @@ void iniciar_semaforos()
 	sem_init(&sem_estado_exec, 0, 0);
 	sem_init(&sem_estado_exit, 0, 0);
 	sem_init(&sem_pid_aumento, 0, 1);
+	sem_init(&sem_compactacion, 0, 1);
 }
 
 void iniciar_pcb_lists()

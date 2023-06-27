@@ -5,6 +5,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include "semaphore.h"
 #include "client_utils.h"
 #include "server_utils.h"
 #include "utils.h"
@@ -15,6 +16,7 @@
 extern int memoria_connection;
 extern t_log* logger;
 extern t_lista_mutex* lista_tabla_segmentos;
+extern sem_t sem_compactacion;
 
 void solicitar_tabla_segmentos();
 t_resp_mem esperar_respuesta_memoria();

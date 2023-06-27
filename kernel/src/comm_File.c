@@ -68,7 +68,7 @@ t_resp_file esperar_respuesta_file(){
 				respuesta = resp;
 				break;
 			default:
-				log_error(logger,"Fallo de serializacion  de respuesta file");
+				log_error(logger,"Fallo de serializacion de respuesta file");
 				break;
 		}
 

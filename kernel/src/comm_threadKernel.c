@@ -216,26 +216,32 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			enviar_contexto(pcb);
 			break;
 
+
 		case F_READ:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
-			editar_archivo(contexto_actualizado,pcb);
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
+
+			t_read_write_block_args *args_read = malloc(sizeof(t_read_write_block_args));
+			args_read->pcb = pcb;
+			args_read->contexto = contexto_actualizado;
+
+			pthread_t thread_read_block;
+			pthread_create(&thread_read_block, NULL, (void*) file_system_read_write_block, (t_read_write_block_args*) args_read);
+			pthread_detach(thread_read_block);
+
 			break;
+
+
 		case F_WRITE:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
-			editar_archivo(contexto_actualizado,pcb);
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
-			//cambiar por la correcta
+			t_read_write_block_args *args_write = malloc(sizeof(t_read_write_block_args));
+			args_write->pcb = pcb;
+			args_write->contexto = contexto_actualizado;
+
+			pthread_t thread_write_block;
+			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, (t_read_write_block_args*) args_write);
+			pthread_detach(thread_write_block);
+
 			break;
+
+
 		case CREATE_SEGMENT:
 			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
 			create_segment(contexto_actualizado,pcb);

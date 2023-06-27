@@ -119,12 +119,36 @@ void io_block(void *args)
 	log_info(logger,"PID: %d - Ejecuta IO: %d",arguments->pcb->pid, arguments->block_time);
 	log_info(logger,"PID: %d - Bloqueado por: IO",arguments->pcb->pid);
 
+	arguments->pcb->estado = PCB_BLOCK;
+
 	sleep(arguments->block_time);
 
 	list_push(pcb_ready_list, arguments->pcb);
+	arguments->pcb->estado = PCB_READY;
 	arguments->pcb->tiempo_espera_en_ready = temporal_create();
 
 	sem_post(&sem_estado_ready);
 	free(args);
 }
 
+void file_system_read_write_block(void *args)
+{
+	sem_wait(&sem_compactacion);
+	t_read_write_block_args *arguments = (t_read_write_block_args*) args;
+
+	log_info(logger,"PID: %d - Bloqueado por: Read/Write",arguments->pcb->pid);
+
+	arguments->pcb->estado = PCB_BLOCK;
+
+	editar_archivo(arguments->contexto,arguments->pcb);
+
+	list_push(pcb_ready_list, arguments->pcb);
+	arguments->pcb->estado = PCB_READY;
+	arguments->pcb->tiempo_espera_en_ready = temporal_create();
+	log_info(logger,"PID: %d - Salio del Bloqueo por: Read/Write",arguments->pcb->pid);
+
+	sem_post(&sem_compactacion);
+	sem_post(&sem_estado_ready);
+
+	free(args);
+}

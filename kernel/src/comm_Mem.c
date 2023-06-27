@@ -67,8 +67,10 @@ void create_segment(t_contexto* contexto, pcb_t* pcb){
 			break;
 		case COMPACTION_NEEDED:
 			log_info(logger,"Solicitud de COMPACTACION recibida, esperando Fin de Operaciones de FS");
+			sem_wait(&sem_compactacion);
 			serializar_solicitud_compactacion(memoria_connection);
 			t_resp_mem resp_comp = esperar_respuesta_memoria();
+			sem_post(&sem_compactacion);
 			if(resp_comp == COMPACTATION_SUCCESS) log_info(logger,"COMPACTACION Finalizada");
 			else {
 				log_info(logger,"ERROR COMPACTACION");
