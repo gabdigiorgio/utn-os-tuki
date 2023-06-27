@@ -4,7 +4,7 @@ int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 	inicializar_fcb_list();
 
-	int fcb_id = buscar_fcb("ParcialLeo");
+	/*int fcb_id = buscar_fcb("ParcialLeo");
 	modificar_fcb(fcb_id,TAMANIO_ARCHIVO,540);
 	log_info(logger,"%d",valor_fcb(fcb_id,TAMANIO_ARCHIVO));
 	modificar_fcb(fcb_id,TAMANIO_ARCHIVO,250);
@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 	log_info(logger,"%d",valor_fcb(examen_gaby,TAMANIO_ARCHIVO));
 	borrar_fcb(examen_gaby);
 
-	log_info(logger,"Ya lei");
+	log_info(logger,"Ya lei");*/
 
 	void* bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
 	int offset = 0;
