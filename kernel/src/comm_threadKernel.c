@@ -171,9 +171,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 				archivo_abierto_t* archivo_abierto_pcb = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, archivo_abierto);
 				list_remove_element(pcb->tabla_archivos_abiertos,archivo_abierto_pcb);
 
-
 				if(instancias_recurso==1){
-					list_remove_element(tabla_global_archivos_abiertos, archivo_abierto);
+					eliminar_archivo_abierto_t(tabla_global_archivos_abiertos, archivo_abierto);
 					t_recurso *recurso_a_eliminar = buscar_recurso(lista_recursos, archivo_abierto);
 					list_mutex_destroy(recurso_a_eliminar->cola_bloqueados);
 					pthread_mutex_destroy(&(recurso_a_eliminar->mutex_instancias));

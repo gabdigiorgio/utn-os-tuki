@@ -543,3 +543,17 @@ archivo_abierto_t* buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, co
 	}
 	return NULL;
 }
+
+void eliminar_archivo_abierto_t(t_list *tabla_archivos_abiertos, const char *nombre_archivo)
+{
+	bool buscar_archivo(void *archivo){
+		char *recurso_actual = (char *) archivo;
+		return strcmp(archivo, nombre_archivo) == 0;
+	}
+
+	list_remove_by_condition(tabla_archivos_abiertos, buscar_archivo);
+
+
+
+}
+

@@ -67,6 +67,7 @@ void imprimir_tabla_segmentos();
 char* buscar_archivo(t_list *tabla_archivos_abiertos, const char *nombre_archivo);
 bool archivo_existe_en_tabla(t_list *tabla_archivos_abiertos, const char *nombre_archivo);
 archivo_abierto_t* buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, const char *nombre_archivo);
+void eliminar_archivo_abierto_t(t_list *tabla_archivos_abiertos, const char *nombre_archivo);
 
 void duplicar_contexto(t_contexto* contexto_destino, t_contexto* contexto_origen);
 
