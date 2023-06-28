@@ -2,13 +2,13 @@
 #define COMM_THREADKERNEL_H_
 
 #include "../../shared/includes/tad.h"
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<commons/log.h>
-#include<commons/string.h>
-#include<commons/config.h>
-#include<readline/readline.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <commons/log.h>
+#include <commons/string.h>
+#include <commons/config.h>
+#include <readline/readline.h>
 #include <commons/collections/list.h>
 #include <pthread.h>
 #include "client_utils.h"
@@ -21,6 +21,7 @@ extern int memoria_connection;
 extern int exit_status;
 extern char* path_fcb_folder;
 extern t_list *fcb_list;
+extern int tamanio_de_bloque;
 
 void comm_threadKernel(int kernel_connection);
 

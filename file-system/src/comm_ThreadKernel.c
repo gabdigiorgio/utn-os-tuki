@@ -39,12 +39,23 @@ void comm_threadKernel(int kernel_connection){
 						break;
 					case F_TRUNCATE:
 
-						int nuevo_tamanio = atoi(nueva_instruccion->param2);
 						int id_fcb = buscar_fcb(nueva_instruccion->param1);
+						int nuevo_tamanio = atoi(nueva_instruccion->param2);
+						int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 						if(id_fcb != -1)
 						{
-							asignar_bloques(id_fcb, 4);
-
+							if(nuevo_tamanio > tamanio_archivo)
+							{
+								int bloques_a_agregar = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // usar ceil
+								asignar_bloques(id_fcb, bloques_a_agregar);
+								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
+							}
+							if(nuevo_tamanio < tamanio_archivo)
+							{
+								int bloques_a_sacar = (tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque; // usar ceil
+								//desasignar_bloques(id_fcb, bloques_a_sacar);
+								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
+							}
 						}
 
 						estado_file = F_TRUNCATE_SUCCESS;
