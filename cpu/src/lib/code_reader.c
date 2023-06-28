@@ -19,6 +19,7 @@ int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	//File System
 	if((strcmp(instruccion->instruct,"F_OPEN"))==0) return ejecutar_syscall(contexto,instruccion,F_OPEN,1);
 	if((strcmp(instruccion->instruct,"F_CLOSE"))==0) return ejecutar_syscall(contexto,instruccion,F_CLOSE,1);
+	if((strcmp(instruccion->instruct,"F_DELETE"))==0) return ejecutar_syscall(contexto,instruccion,F_DELETE,1);
 	if((strcmp(instruccion->instruct,"F_SEEK"))==0) return ejecutar_syscall(contexto,instruccion,F_SEEK,2);
 	if((strcmp(instruccion->instruct,"F_READ"))==0) return ejecutar_syscall(contexto,instruccion,F_READ,3);
 	if((strcmp(instruccion->instruct,"F_WRITE"))==0) return ejecutar_syscall(contexto,instruccion,F_WRITE,3);

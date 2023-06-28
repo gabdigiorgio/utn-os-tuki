@@ -74,6 +74,7 @@ typedef enum
 	F_SEEK_SUCCESS,
 	F_READ_SUCCESS,
 	F_CREATE_SUCCESS,
+	F_DELETE_SUCCESS,
 	FILE_DOESNT_EXISTS,
 	FILE_ALREADY_EXISTS,
 }t_resp_file;
@@ -99,6 +100,7 @@ typedef enum
 	F_READ,
 	F_WRITE,
 	F_TRUNCATE,
+	F_DELETE,
 	F_CREATE
 } contexto_estado_t;
 
