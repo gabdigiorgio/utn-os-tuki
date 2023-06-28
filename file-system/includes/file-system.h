@@ -24,6 +24,7 @@
 void iterator(char* value);
 void generar_fcb();
 void terminar_programa();
+void asignar_bloques(int id_fcb, int cant_bloques);
 
 // ___ CONFIG VARIABLES ____
 

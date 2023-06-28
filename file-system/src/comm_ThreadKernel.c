@@ -40,10 +40,11 @@ void comm_threadKernel(int kernel_connection){
 					case F_TRUNCATE:
 
 						int nuevo_tamanio = atoi(nueva_instruccion->param2);
-
-						if(buscar_fcb(nueva_instruccion->param1) != -1)
+						int id_fcb = buscar_fcb(nueva_instruccion->param1);
+						if(id_fcb != -1)
 						{
-							fcb_t* fcb = _get_fcb(nueva_instruccion->param1);
+							asignar_bloques(id_fcb, 4);
+
 						}
 
 						estado_file = F_TRUNCATE_SUCCESS;

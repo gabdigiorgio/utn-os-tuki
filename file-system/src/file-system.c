@@ -100,9 +100,6 @@ int main(int argc, char *argv[]) {
 
 	memoria_file_system = malloc(tam_memoria_file_system);
 
-
-
-
 	log_info(logger,"%d",tam_memoria_file_system);
 
 	exit_status = crear_bitmap();
@@ -146,12 +143,47 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 }
 
-void asignar_bloque(fcb_t* archivo)
+void asignar_bloques(int id_fcb, int cant_bloques)
 {
-     //archivo->puntero_directo=obtener_pirmer_bloque_libre();
-     //que hago con el puntero indirecto?
-     //actualizar bitmap
-    // setear_bit_en_bitmap(archivo->puntero_directo);
+
+	uint32_t bloque_directo = obtener_primer_bloque_libre();
+	uint32_t bloque_indirecto;
+
+	if (cant_bloques == 1)
+	{
+		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+		setear_bit_en_bitmap(bloque_directo);
+	}
+	else
+	{
+		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+		setear_bit_en_bitmap(bloque_directo);
+
+		bloque_indirecto = obtener_primer_bloque_libre();
+		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
+		setear_bit_en_bitmap(bloque_indirecto);
+
+		for (int i = 0; i < cant_bloques - 1; i++)
+		{
+			uint32_t bloque = obtener_primer_bloque_libre();
+			setear_bit_en_bitmap(bloque);
+
+			int offset = 0;
+			memcpy((array_de_bloques + offset), valor_fcb(id_fcb, PUNTERO_INDIRECTO), sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+		}
+	}
+
+}
+
+void desasignar_bloque(int id_fcb)
+{
+
+}
+
+void desasignar_bloques(int id_fcb, int tamanio_nuevo)
+{
+	uint32_t tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 }
 
 /*
