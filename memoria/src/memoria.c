@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 	// Asigno tamaño a la memoria, creo lista de tablas de segmentos, de huecos_libres y segmento 0
 
 	memoria = malloc(tam_memoria);
+	inicializar_datos_memoria();
 
 	segmento_0->tamanio = tam_segmento_0;
 	segmento_0->direccion_base = 0;
@@ -55,6 +56,14 @@ int main(int argc, char *argv[])
 	char* ejemplo = "A";
 
 	memcpy(memoria,ejemplo,2);
+
+	// Conectamos al monitor, comentar para la entrega
+
+	int monitor_connection = crear_conexion("127.0.0.1","8040");
+
+	pthread_t thread_mon;
+	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
+	pthread_detach(thread_mon);
 
 	// Esperamos conexiones de Kernel, CPU y File-System
 
@@ -117,4 +126,11 @@ void create_tabla_segmento(int pid)
 	list_add(lista_de_tablas, tabla);
 	log_info(logger, "%d", list_size(lista_de_tablas));
 
+}
+
+void thread_monitor(int connection){
+	while(1){
+		usleep(250);
+		serializar_memoria(connection,memoria,tam_memoria);
+	}
 }

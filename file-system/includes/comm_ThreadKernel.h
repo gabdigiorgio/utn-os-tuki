@@ -13,6 +13,7 @@
 #include <pthread.h>
 #include "client_utils.h"
 #include "server_utils.h"
+#include "fcb_list.h"
 #include "utils.h"
 #include "comm_Mem.h"
 

@@ -82,6 +82,10 @@ void conexion_kernel(int server_connection){
 							log_info(logger,"Solicitud de impresion PID: %d", nueva_instruccion->pid);
 							imprimir_tabla_segmentos();
 							break;
+						case PRINT_MEMORY_DATA:
+							log_info(logger,"Solicitud de impresion de datos PID: %d", nueva_instruccion->pid);
+							imprimir_datos();
+							break;
 						default:
 							log_error(logger, "Instruccion desconocida");
 							break;

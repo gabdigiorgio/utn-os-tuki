@@ -185,3 +185,34 @@ void imprimir_tabla_segmentos(){
 	}
 	list_iterate(lista_de_tablas,(void*) imprimir_tabla);
 }
+
+void imprimir_datos(){
+	int offset = tam_memoria;
+	int lineas = tam_memoria / 64;
+	int b = 0;
+	char string[tam_memoria + lineas + 1];
+	char nueva_linea = '\n';
+	char final = '\0';
+
+	for(int i = 0; i<(offset + lineas); i++){
+		if((i % 64) == 0){
+			memcpy(string + i,&nueva_linea, sizeof(char));
+			continue;
+		}
+		memcpy(string + i,memoria + b, sizeof(char));
+		if(string[i] == '\0') string[i] = '0';
+		b++;
+	}
+	memcpy(string + (offset + lineas),&final, sizeof(char));
+	log_info(logger,"%s",string);
+}
+
+void inicializar_datos_memoria(){
+	int offset = tam_memoria;
+	char caracter = '0';
+
+	for(int i = 0; i<offset; i++){
+		memcpy(memoria + i,&caracter, sizeof(char));
+	}
+
+}

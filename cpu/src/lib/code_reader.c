@@ -16,6 +16,7 @@ int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	if((strcmp(instruccion->instruct,"MOV_IN"))==0) return ejecutar_mov_in(contexto, instruccion);
 	if((strcmp(instruccion->instruct,"MOV_OUT"))==0) return ejecutar_mov_out(contexto,instruccion);
 	if((strcmp(instruccion->instruct,"PRINT_SEGMENTS"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_SEGMENTS,1);
+	if((strcmp(instruccion->instruct,"PRINT_MEMORY_DATA"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_MEMORY_DATA,1);
 	//File System
 	if((strcmp(instruccion->instruct,"F_OPEN"))==0) return ejecutar_syscall(contexto,instruccion,F_OPEN,1);
 	if((strcmp(instruccion->instruct,"F_CLOSE"))==0) return ejecutar_syscall(contexto,instruccion,F_CLOSE,1);
@@ -24,6 +25,8 @@ int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	if((strcmp(instruccion->instruct,"F_READ"))==0) return ejecutar_syscall(contexto,instruccion,F_READ,3);
 	if((strcmp(instruccion->instruct,"F_WRITE"))==0) return ejecutar_syscall(contexto,instruccion,F_WRITE,3);
 	if((strcmp(instruccion->instruct,"F_TRUNCATE"))==0) return ejecutar_syscall(contexto,instruccion,F_TRUNCATE,2);
+	if((strcmp(instruccion->instruct,"PRINT_FILE_STATE"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_FILE_STATE,1);
+	if((strcmp(instruccion->instruct,"PRINT_FILE_DATA"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_FILE_DATA,1);
 
 	log_error(logger,"Instruccion desconocida [%s]",instruccion->instruct);
 	return ejecutar_exit(contexto);

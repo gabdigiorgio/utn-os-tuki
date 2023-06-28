@@ -92,6 +92,7 @@ typedef enum
 	DELETE_TABLE,
 	ALLOCATE_SEGMENT,
 	PRINT_SEGMENTS,
+	PRINT_MEMORY_DATA,
 	MOV_IN,
 	MOV_OUT,
 	F_OPEN,
@@ -101,7 +102,9 @@ typedef enum
 	F_WRITE,
 	F_TRUNCATE,
 	F_DELETE,
-	F_CREATE
+	F_CREATE,
+	PRINT_FILE_STATE,
+	PRINT_FILE_DATA
 } contexto_estado_t;
 
 typedef struct
@@ -172,6 +175,7 @@ typedef struct
 
 typedef struct
 {
+	uint32_t pid;
 	char *nombre_archivo;
 	uint32_t posicion_puntero;
 } archivo_abierto_t;

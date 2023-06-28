@@ -10,7 +10,7 @@ int traducir_direccion(char *param, t_contexto *contexto)
 	int direccion_base_segmento = obtener_direccion_base(num_segmento, contexto->tabla_segmento);
 	int tamanio_segmento = obtener_tamanio_segmento(num_segmento, contexto->tabla_segmento);
 
-	if (direccion_base_segmento + desplazamiento_segmento > tamanio_segmento)
+	if (desplazamiento_segmento > tamanio_segmento)
 	{
 		//devolver el contexto de ejecucion a kernel y matar proceso
 		log_error(logger, "PID: %d - Error SEG_FAULT - Segmento: %d - Offset: %d - Tamanio: %d",

@@ -25,6 +25,7 @@ typedef struct
 } t_conexion;
 
 void thread_main(t_conexion *conexion);
+void thread_monitor(int connection);
 
 
 // ___ CONFIG VARIABLES ____

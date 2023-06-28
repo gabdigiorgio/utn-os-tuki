@@ -110,6 +110,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			archivo_abierto_t *archivo = malloc(sizeof(archivo_abierto_t));;
 			archivo->nombre_archivo = crear_recurso(contexto_actualizado->param1);;
 			archivo->posicion_puntero = 0;
+			archivo->pid = contexto_actualizado->pid;
 
 			list_add(pcb->tabla_archivos_abiertos, archivo);
 
@@ -241,10 +242,21 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			pthread_t thread_write_block;
 			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, args_write);
 			pthread_detach(thread_write_block);
-
 			break;
-
-
+		case PRINT_FILE_DATA:
+			{
+				t_instruc_file* instruccion = inicializar_instruc_file();
+				char* puntero = string_new();
+				string_append(&puntero,"");
+				copiar_instruccion_file(instruccion,contexto_actualizado,puntero);
+				serializar_instruccion_file(file_system_connection, instruccion);
+				enviar_contexto(pcb);
+			}
+			break;
+		case PRINT_FILE_STATE:
+			imprimir_tabla_archivos();
+			enviar_contexto(pcb);
+			break;
 		case CREATE_SEGMENT:
 			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
 			create_segment(contexto_actualizado,pcb);
@@ -257,11 +269,22 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			enviar_contexto(pcb);
 			break;
 		case PRINT_SEGMENTS:
-			log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
-			t_instruc_mem* instruccion = inicializar_instruc_mem();
-			copiar_instruccion_mem(instruccion,contexto_actualizado);
-			serializar_instruccion_memoria(memoria_connection, instruccion);
-			imprimir_tabla_segmentos();
+			{
+				log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
+				t_instruc_mem* instruccion = inicializar_instruc_mem();
+				copiar_instruccion_mem(instruccion,contexto_actualizado);
+				serializar_instruccion_memoria(memoria_connection, instruccion);
+				imprimir_tabla_segmentos();
+			}
+			enviar_contexto(pcb);
+			break;
+		case PRINT_MEMORY_DATA:
+			{
+				log_info(logger, "PID: %d - Comunicacion con MEMORIA", pcb->pid);
+				t_instruc_mem* instruccion = inicializar_instruc_mem();
+				copiar_instruccion_mem(instruccion,contexto_actualizado);
+				serializar_instruccion_memoria(memoria_connection, instruccion);
+			}
 			enviar_contexto(pcb);
 			break;
 		default:

@@ -1,5 +1,28 @@
 #include "../../includes/client_utils.h"
 
+int crear_conexion(char *ip, char* puerto)
+{
+	struct addrinfo hints;
+	struct addrinfo *server_info;
+
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;
+
+	getaddrinfo(ip, puerto, &hints, &server_info);
+
+	// Ahora vamos a crear el socket.
+	int socket_cliente = socket(server_info->ai_family,server_info->ai_socktype,server_info->ai_protocol);
+
+	// Ahora que tenemos el socket, vamos a conectarlo
+	connect(socket_cliente, server_info->ai_addr, server_info->ai_addrlen);
+
+	freeaddrinfo(server_info);
+
+	return socket_cliente;
+}
+
 void crear_header(void *a_enviar, t_buffer *buffer, uint32_t lineas)
 {
 	//Reservo el stream para el header del paquete
@@ -87,6 +110,29 @@ void serializar_instruccion_memoria(int socket, t_instruc_mem *instruccion)
 	send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
 
 	//Libero memoria que ya no voy a utilizar
+	free(buffer->stream);
+	free(buffer);
+	free(a_enviar);
+}
+
+void serializar_memoria(int socket_cliente, void* memoria, int tam_memoria)
+{
+	t_buffer *buffer = malloc(sizeof(t_buffer));
+
+	buffer->size = tam_memoria;
+
+	void *stream = malloc(buffer->size);
+
+	memcpy(stream,memoria,tam_memoria);
+
+	buffer->stream = stream;
+
+	void *a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+	crear_header(a_enviar, buffer, 0);
+
+	send(socket_cliente, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
 	free(buffer->stream);
 	free(buffer);
 	free(a_enviar);

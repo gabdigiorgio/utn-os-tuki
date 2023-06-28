@@ -63,6 +63,9 @@ void comm_threadKernel(int kernel_connection){
 						log_info(logger,"PID: %d solicito F_SEEK para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
+					case PRINT_FILE_DATA:
+						log_info(logger,"PID: %d solicito impresion de datos",pid);
+						break;
 					default:
 						break;
 				}

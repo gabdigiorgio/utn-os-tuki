@@ -29,5 +29,7 @@ bool ordenar_lista_segmentos(segmento_t* segmento1, segmento_t* segmento2);
 int tam_memoria_restante();
 t_list* extraer_segmentos();
 void imprimir_tabla_segmentos();
+void imprimir_datos();
+void inicializar_datos_memoria();
 
 #endif /* UTILS_H_ */

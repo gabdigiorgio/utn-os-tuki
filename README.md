@@ -1,5 +1,13 @@
 # Bienvenidos al TP Final Segmentation-Fault
 
+## INSTRUCCIONES CUSTOM
+
+- PRINT_SEGMENTS sin parametros
+- PRINT_MEMORY_DATA sin parametros
+- F_DELETE nombre_archivo
+- PRINT_FILE_STATE sin parametros
+- PRINT_FILE_DATA sin parametros
+
 ## Detalles del Repositorio
 
     Para trabajar en el repositorio vamos a utilizar la siguientes branchs:
