@@ -38,6 +38,14 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_TRUNCATE:
+
+						int nuevo_tamanio = atoi(nueva_instruccion->param2);
+
+						if(buscar_fcb(nueva_instruccion->param1) != -1)
+						{
+							fcb_t* fcb = _get_fcb(nueva_instruccion->param1);
+						}
+
 						estado_file = F_TRUNCATE_SUCCESS;
 						log_info(logger,"PID: %d solicito F_TRUNCATE para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
