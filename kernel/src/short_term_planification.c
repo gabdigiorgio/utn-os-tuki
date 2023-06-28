@@ -133,12 +133,13 @@ void io_block(void *args)
 
 void file_system_read_write_block(t_read_write_block_args* args)
 {
-	sem_wait(&sem_compactacion);
 	t_read_write_block_args *arguments = args;
 
 	log_info(logger,"PID: %d - Bloqueado por: Read/Write",arguments->pcb->pid);
 
 	arguments->pcb->estado = PCB_BLOCK;
+
+	sem_wait(&sem_compactacion);
 
 	editar_archivo(arguments->contexto,arguments->pcb);
 

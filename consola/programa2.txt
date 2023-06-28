@@ -1,4 +1,7 @@
 F_OPEN Pepe.ho
+F_SEEK Pepe.ho 10
+F_READ Pepe.ho 55 128
+F_WRITE Pepe.ho 0 2
 I/O 10
 F_CLOSE Pepe.ho
 EXIT
