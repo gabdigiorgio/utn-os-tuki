@@ -94,11 +94,15 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
-	 array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
+	array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
 
 	tam_memoria_file_system=cantidad_de_bloques*tamanio_de_bloque;
 
 	memoria_file_system = malloc(tam_memoria_file_system);
+
+	inicializar_datos_memoria();
+
+	memcpy(memoria_file_system,"ABCD",sizeof(char) * 5);
 
 	log_info(logger,"%d",tam_memoria_file_system);
 
@@ -111,6 +115,14 @@ int main(int argc, char *argv[]) {
 	//Verificar si existe el directorio
 
 	log_info(logger,"cant de bits del bitmap %d", bitarray_get_max_bit(bitmap));
+
+	// Conectamos al monitor, comentar para la entrega
+
+	int monitor_connection = crear_conexion("127.0.0.1","8050");
+
+	pthread_t thread_mon;
+	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
+	pthread_detach(thread_mon);
 
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
@@ -244,5 +256,12 @@ void leer_bytes(int bytes_a_leer)
       }
 }
 */
+
+void thread_monitor(int connection){
+	while(1){
+		usleep(1000);
+		serializar_memoria(connection,memoria_file_system,tam_memoria_file_system);
+	}
+}
 
 

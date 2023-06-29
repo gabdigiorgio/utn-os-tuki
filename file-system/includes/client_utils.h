@@ -25,5 +25,6 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 void serializar_respuesta_file_kernel(int socket_cliente, t_resp_file respuesta);
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas, uint32_t codigo);
 void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
+void serializar_memoria(int socket_cliente, void* memoria, int tam_memoria);
 
 #endif

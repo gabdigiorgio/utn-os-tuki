@@ -164,6 +164,29 @@ void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion)
 		free(a_enviar);
 }
 
+void serializar_memoria(int socket_cliente, void* memoria, int tam_memoria)
+{
+	t_buffer *buffer = malloc(sizeof(t_buffer));
+
+	buffer->size = tam_memoria;
+
+	void *stream = malloc(buffer->size);
+
+	memcpy(stream,memoria,tam_memoria);
+
+	buffer->stream = stream;
+
+	void *a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+	crear_header(a_enviar, buffer, 0, 1);
+
+	send(socket_cliente, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+	free(buffer->stream);
+	free(buffer);
+	free(a_enviar);
+}
+
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);

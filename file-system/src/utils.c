@@ -127,3 +127,13 @@ void inicializar_datos_memoria(){
 
 }
 */
+
+void inicializar_datos_memoria(){
+	int offset = tam_memoria_file_system;
+	char caracter = '0';
+
+	for(int i = 0; i<offset; i++){
+		memcpy(memoria_file_system + i,&caracter, sizeof(char));
+	}
+
+}
