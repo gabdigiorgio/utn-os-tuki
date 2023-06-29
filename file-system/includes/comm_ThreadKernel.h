@@ -22,6 +22,7 @@ extern int exit_status;
 extern char* path_fcb_folder;
 extern t_list *fcb_list;
 extern int tamanio_de_bloque;
+extern uint32_t  *array_de_bloques;
 
 void comm_threadKernel(int kernel_connection);
 

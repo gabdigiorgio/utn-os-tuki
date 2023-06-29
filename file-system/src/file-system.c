@@ -147,31 +147,29 @@ void asignar_bloques(int id_fcb, int cant_bloques)
 {
 
 	uint32_t bloque_directo = obtener_primer_bloque_libre();
-	uint32_t bloque_indirecto;
+	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+	setear_bit_en_bitmap(bloque_directo);
 
-	if (cant_bloques == 1)
-	{
-		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
-		setear_bit_en_bitmap(bloque_directo);
-	}
-	else
-	{
-		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
-		setear_bit_en_bitmap(bloque_directo);
+	log_info(logger, "Bloque directo: %d", bloque_directo);
 
-		bloque_indirecto = obtener_primer_bloque_libre();
+	if (cant_bloques > 1)
+	{
+		uint32_t bloque_indirecto = obtener_primer_bloque_libre();
 		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
 		setear_bit_en_bitmap(bloque_indirecto);
 
+		log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
+
 		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
 
-		for (int i = 0; i < cant_bloques - 1; i++)
+		int offset = puntero_indirecto;
+		for(int i = 0; i < cant_bloques - 1; i++)
 		{
 			uint32_t bloque = obtener_primer_bloque_libre();
 			setear_bit_en_bitmap(bloque);
 
-			int offset = 0;
-			memcpy(array_de_bloques + offset, &puntero_indirecto, sizeof(uint32_t));
+			log_info(logger, "Bloque apuntado: %d", bloque);
+			memcpy(array_de_bloques + offset, &bloque, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 		}
 	}
