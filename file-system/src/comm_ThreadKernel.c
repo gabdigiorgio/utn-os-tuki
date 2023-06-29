@@ -101,6 +101,12 @@ void comm_threadKernel(int kernel_connection){
 						log_info(logger,"PID: %d solicito F_SEEK para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
+					case F_DELETE:
+						borrar_fcb(buscar_fcb(nueva_instruccion->param1));
+						estado_file = F_DELETE_SUCCESS;
+						log_info(logger,"PID: %d solicito F_DELETE para el archivo %s",pid, nueva_instruccion->param1);
+						serializar_respuesta_file_kernel(kernel_connection, estado_file);
+						break;
 					case PRINT_FILE_DATA:
 						log_info(logger,"PID: %d solicito impresion de datos",pid);
 						break;

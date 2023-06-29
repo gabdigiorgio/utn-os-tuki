@@ -153,6 +153,11 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 			break;
 
+		case F_DELETE:
+			manejar_archivo(contexto_actualizado,pcb);
+			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
+			enviar_contexto(pcb);
+			break;
 
 		case F_CLOSE:
 

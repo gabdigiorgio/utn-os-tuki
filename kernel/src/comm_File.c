@@ -30,8 +30,10 @@ void manejar_archivo(t_contexto* contexto, pcb_t* pcb){
 			contexto->estado = F_CREATE;
 			manejar_archivo(contexto,pcb);
 			break;
-		case FILE_ALREADY_EXISTS:
-			log_info(logger,"Archivo %s ya previamente abierto",contexto->param1);
+		case F_DELETE_SUCCESS:
+			log_info(logger,"PID: %d - Cerrar Archivo: %s", pcb->pid, contexto->param1);
+			list_remove_element(tabla_global_archivos_abiertos,contexto->param1);
+			log_info(logger,"F_DELETE success");
 			break;
 		default:
 			break;
