@@ -124,6 +124,36 @@ int main(int argc, char *argv[]) {
 	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
 	pthread_detach(thread_mon);
 
+	int idej = buscar_fcb("ParcialDamian");
+	int cant_bloques = 500 / 64;
+	asignar_bloques(idej, cant_bloques);
+
+	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
+
+	int bloque_directo = valor_fcb(idej,PUNTERO_DIRECTO);
+	//memcpy(memoria_file_system + (bloque_directo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	int bloque_indirecto = valor_fcb(idej,PUNTERO_INDIRECTO);
+
+	t_list* list_ejemplo = list_create();
+
+	list_add(list_ejemplo,&bloque_directo);
+
+	int offset3 = 0;
+
+	for (int i = 0; i < cant_bloques; i++){
+		void* s_numero = malloc(4);
+		memcpy(s_numero,memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset3,sizeof(uint32_t));
+		offset3 += sizeof(uint32_t);
+		//uint32_t numero = atoi(s_numero);
+		list_add(list_ejemplo,s_numero);
+	}
+
+	for (int i = 0; i < list_size(list_ejemplo); i++){
+		void* puntero_ejemplo = list_get(list_ejemplo,i);
+		uint32_t bloque_ejemplo = atoi(puntero_ejemplo);
+		memcpy(memoria_file_system + (bloque_ejemplo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	}
+
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
 		terminar_programa();
@@ -174,14 +204,18 @@ void asignar_bloques(int id_fcb, int cant_bloques)
 
 		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
 
-		int offset = puntero_indirecto;
+		int offset = 0;
 		for(int i = 0; i < cant_bloques - 1; i++)
 		{
 			uint32_t bloque = obtener_primer_bloque_libre();
 			setear_bit_en_bitmap(bloque);
 
+			char* string = string_itoa(bloque);
+			void* string2 = malloc(4);
+			memcpy(string2,"0000",4);
+			memcpy(string2 + (4 - strlen(string)),string,strlen(string));
 			log_info(logger, "Bloque apuntado: %d", bloque);
-			memcpy(array_de_bloques + offset, &bloque, sizeof(uint32_t));
+			memcpy(memoria_file_system + (puntero_indirecto * tamanio_de_bloque) + offset, string2, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 		}
 	}
