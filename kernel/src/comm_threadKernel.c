@@ -231,7 +231,6 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 			break;
 
-
 		case F_WRITE:
 			t_read_write_block_args *args_write = malloc(sizeof(t_read_write_block_args));
 			args_write->pcb = pcb;

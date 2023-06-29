@@ -21,5 +21,6 @@ int handshake_cliente(int socket_cliente, uint8_t tipo_cliente, uint8_t tipo_ser
 void crear_header(void* a_enviar, t_buffer* buffer, int lineas);
 void serializar_contexto(int socket_cliente, t_contexto* contexto);
 void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
+void serializar_instruccion_mov(int socket,t_instruc_mov* instruccion);
 
 #endif /* CLIENT_UTILS_H_ */

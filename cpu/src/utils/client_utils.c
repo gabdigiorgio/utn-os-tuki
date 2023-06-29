@@ -137,6 +137,36 @@ void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion)
 		free(a_enviar);
 }
 
+void serializar_instruccion_mov(int socket,t_instruc_mov* instruccion)
+{
+	//Creo el buffer a utilizar para las instrucciones
+		t_buffer* buffer = malloc(sizeof(t_buffer));
+
+		buffer->size = calcular_tam_instruc_mov(instruccion);
+
+		//Asigno memoria para el stream del tamaño de mi lista
+		void* stream = malloc(buffer->size);
+
+		//Leo toda la lista para copiar los valores en memoria
+		copiar_instruccion_memoria(stream,instruccion);
+
+		//Añado el stream a mi buffers
+		buffer->stream = stream;
+
+		void* a_enviar = malloc(buffer->size + sizeof(uint32_t) * 3);
+
+		crear_header(a_enviar,buffer,0);
+
+		//Envio todo el stream al servidor
+		send(socket, a_enviar, buffer->size + sizeof(uint32_t) + sizeof(uint32_t) + sizeof(uint32_t), 0);
+
+		//Libero memoria que ya no voy a utilizar
+		free(buffer->stream);
+		free(buffer);
+		free(a_enviar);
+}
+
+
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);

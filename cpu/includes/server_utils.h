@@ -29,6 +29,6 @@ char* handshake(int);
 void deserializar_header(t_paquete* paquete, int socket);
 t_contexto* deserializar_contexto(t_buffer* buffer, int lineas, t_contexto* contexto);
 void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buffer, int lineas);
-char* esperar_valor(int memoria_connection);
+void* esperar_valor(int memoria_connection);
 
 #endif /* SERVER_UTILS_H_ */

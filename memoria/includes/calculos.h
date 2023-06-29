@@ -7,5 +7,6 @@
 
 int calcular_tam_total(t_list *lista_tablas);
 uint32_t calcular_tam_instruc_mem(t_instruc_mem *instruccion);
+uint32_t calcular_tam_instruc_mov(t_instruc_mov *instruccion);
 
 #endif /* CALCULOS_H_ */

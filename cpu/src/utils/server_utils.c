@@ -214,7 +214,7 @@ char* handshake(int socket_cliente){
 	return message;
 }
 
-char* esperar_valor(int memoria_connection)
+void* esperar_valor(int memoria_connection)
 {
 	t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
 	t_paquete *paquete = malloc(sizeof(t_paquete));
@@ -235,8 +235,8 @@ char* esperar_valor(int memoria_connection)
 	free(paquete->buffer);
 	free(paquete);
 
-	char* valor = malloc(nueva_instruccion->param2_length);
-	memcpy(valor,nueva_instruccion->param2,nueva_instruccion->param2_length);
+	void* valor = malloc(nueva_instruccion->param1_length);
+	memcpy(valor,nueva_instruccion->param1,nueva_instruccion->param1_length);
 	destroy_instruc_mem(nueva_instruccion);
 
 	return valor;

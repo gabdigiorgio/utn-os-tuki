@@ -10,22 +10,19 @@ int traducir_direccion(char *param, t_contexto *contexto)
 	int direccion_base_segmento = obtener_direccion_base(num_segmento, contexto->tabla_segmento);
 	int tamanio_segmento = obtener_tamanio_segmento(num_segmento, contexto->tabla_segmento);
 
-	if (desplazamiento_segmento > tamanio_segmento)
-	{
-		//devolver el contexto de ejecucion a kernel y matar proceso
+
+	if (direccion_base_segmento == -1 || tamanio_segmento == -1 || desplazamiento_segmento > tamanio_segmento){
 		log_error(logger, "PID: %d - Error SEG_FAULT - Segmento: %d - Offset: %d - Tamanio: %d",
 				contexto->pid, num_segmento, desplazamiento_segmento, tamanio_segmento);
 		contexto_estado = EXIT;
-		return 1;
+		return -1;
 	}
 
 	direccion_fisica = direccion_base_segmento + desplazamiento_segmento;
 
-	snprintf(param, sizeof(param), "%d", direccion_fisica);
-
 	log_info(logger, "[MMU] - Segmento: %d - Direccion fisica: %d", num_segmento, direccion_fisica);
 
-	return 0;
+	return direccion_fisica;
 }
 
 segmento_t* buscar_segmento(int num_segmento, t_list *segmentos)

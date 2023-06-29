@@ -22,8 +22,8 @@ void log_instruccion(char *instruc, char *params);
 int ejecutar_syscall(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado, int cant_params);
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion);
 int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion);
-char* esperar_valor(int memoria_connection);
-void asignar_valor_registro(char* registro, char* valor);
+int ejecutar_f_write_read(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado);
+void* esperar_valor(int memoria_connection);
 
 extern t_log *logger;
 extern char ax[5];

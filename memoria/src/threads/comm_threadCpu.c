@@ -14,26 +14,28 @@ void conexion_cpu(int server_connection)
 		switch (paquete->codigo_operacion)
 		{
 		case 1:
-			t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
-			deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+			t_instruc_mov *nueva_instruccion = inicializar_instruc_mov();
+			deserializar_instruccion_mov(nueva_instruccion, paquete->buffer, paquete->lineas);
 
-			int direccion_fisica;
-			char valor[17];
+			int direccion_fisica = 0;
+			int tamanio = 0;
 
 			switch (nueva_instruccion->estado)
 			{
 				case MOV_IN:
-					direccion_fisica = atoi(nueva_instruccion->param2);
-					memcpy(valor, (char*)(memoria + direccion_fisica), sizeof(valor));
-					nueva_instruccion->param2_length = sizeof(valor);
-					snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
-					serializar_instruccion_memoria(server_connection, nueva_instruccion);
-					log_info(logger,"PID: %d - Accion: MOV_IN - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,sizeof(valor));
+					direccion_fisica = atoi(nueva_instruccion->param1);
+					tamanio = atoi(nueva_instruccion->param2);
+					nueva_instruccion->param1 = realloc(nueva_instruccion->param1, tamanio);
+					memcpy(nueva_instruccion->param1,memoria + direccion_fisica, tamanio);
+					nueva_instruccion->param1_length = tamanio;
+					serializar_instruccion_mov(server_connection, nueva_instruccion);
+					log_info(logger,"PID: %d - Accion: MOV_IN - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
 					break;
 				case MOV_OUT:
 					direccion_fisica = atoi(nueva_instruccion->param1);
-					memcpy((char *)(memoria + direccion_fisica), nueva_instruccion->param2, nueva_instruccion->param2_length);
-					log_info(logger,"PID: %d - Accion: MOV_OUT - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,sizeof(valor));
+					tamanio = atoi(nueva_instruccion->param2);
+					memcpy(memoria + direccion_fisica, nueva_instruccion->param3, tamanio);
+					log_info(logger,"PID: %d - Accion: MOV_OUT - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
 					break;
 			}
 

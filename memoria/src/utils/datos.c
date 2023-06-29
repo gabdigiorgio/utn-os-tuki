@@ -54,6 +54,31 @@ void copiar_instruccion_memoria(void *stream, t_instruc_mem *instruccion)
 	memcpy(stream + offset, instruccion->param3, instruccion->param3_length);
 }
 
+void copiar_instruccion_mov(void *stream, t_instruc_mov *instruccion)
+{
+	int offset = 0;
+
+	memcpy(stream + offset, &instruccion->estado, sizeof(contexto_estado_t));
+	offset += sizeof(contexto_estado_t);
+
+	memcpy(stream + offset, &instruccion->pid, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+
+	memcpy(stream + offset, &instruccion->param1_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param1, instruccion->param1_length);
+	offset += instruccion->param1_length;
+
+	memcpy(stream + offset, &instruccion->param2_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param2, instruccion->param2_length);
+	offset += instruccion->param2_length;
+
+	memcpy(stream + offset, &instruccion->param3_length, sizeof(uint32_t));
+	offset += sizeof(uint32_t);
+	memcpy(stream + offset, instruccion->param3, instruccion->param3_length);
+}
+
 t_instruc_mem* inicializar_instruc_mem()
 {
 	t_instruc_mem* contexto = malloc(sizeof(t_instruc_mem));
@@ -85,4 +110,22 @@ void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto){
 	memcpy(instruccion->param2,contexto->param2,instruccion->param2_length);
 	memcpy(instruccion->param3,contexto->param3,instruccion->param3_length);
 	memcpy(&(instruccion->pid), &(contexto->pid), sizeof(uint32_t));
+}
+
+t_instruc_mov* inicializar_instruc_mov()
+{
+	t_instruc_mov* instruccion = malloc(sizeof(t_instruc_mov));
+	instruccion->pid=0;
+	instruccion->param1 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param1, "0", (sizeof(char) * 2));
+	instruccion->param1_length = sizeof(char) * 2;
+	instruccion->param2 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param2, "0", (sizeof(char) * 2));
+	instruccion->param2_length = sizeof(char) * 2;
+	instruccion->param3 = malloc(sizeof(char) * 2);
+	memcpy(instruccion->param3, "0", (sizeof(char)));
+	instruccion->param3_length = sizeof(char);
+	instruccion->estado = CREATE_SEGMENT;
+
+	return instruccion;
 }

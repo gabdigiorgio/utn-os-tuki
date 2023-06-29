@@ -26,3 +26,12 @@ uint32_t calcular_tam_instruc_mem(t_instruc_mem *instruccion)
 
 	return size;
 }
+
+uint32_t calcular_tam_instruc_mov(t_instruc_mov *instruccion)
+{
+	uint32_t size = 0;
+
+	size = sizeof(contexto_estado_t) + sizeof(uint32_t) + sizeof(uint32_t) + instruccion->param1_length + sizeof(uint32_t) + instruccion->param2_length + sizeof(uint32_t) + instruccion->param3_length;
+
+	return size;
+}
