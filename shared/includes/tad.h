@@ -189,7 +189,7 @@ typedef struct
 {
 	uint32_t pid;
 	char *nombre_archivo;
-	uint32_t posicion_puntero;
+	char * posicion_puntero;
 } archivo_abierto_t;
 
 typedef enum

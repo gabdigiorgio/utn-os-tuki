@@ -100,9 +100,6 @@ int main(int argc, char *argv[]) {
 
 	memoria_file_system = malloc(tam_memoria_file_system);
 
-
-
-
 	log_info(logger,"%d",tam_memoria_file_system);
 
 	exit_status = crear_bitmap();
@@ -146,13 +143,70 @@ void terminar_programa()
 	liberar_conexion(memoria_connection);
 }
 
-void asignar_bloque(fcb_t* archivo)
+void asignar_bloques(int id_fcb, int cant_bloques)
 {
-     //archivo->puntero_directo=obtener_pirmer_bloque_libre();
-     //que hago con el puntero indirecto?
-     //actualizar bitmap
-    // setear_bit_en_bitmap(archivo->puntero_directo);
+
+	uint32_t bloque_directo = obtener_primer_bloque_libre();
+	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+	setear_bit_en_bitmap(bloque_directo);
+
+	log_info(logger, "Bloque directo: %d", bloque_directo);
+
+	if (cant_bloques > 1)
+	{
+		uint32_t bloque_indirecto = obtener_primer_bloque_libre();
+		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
+		setear_bit_en_bitmap(bloque_indirecto);
+
+		log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
+
+		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
+
+		int offset = puntero_indirecto;
+		for(int i = 0; i < cant_bloques - 1; i++)
+		{
+			uint32_t bloque = obtener_primer_bloque_libre();
+			setear_bit_en_bitmap(bloque);
+
+			log_info(logger, "Bloque apuntado: %d", bloque);
+			memcpy(array_de_bloques + offset, &bloque, sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+		}
+	}
+
 }
+
+void desasignar_bloque(int id_fcb)
+{
+
+}
+
+/*void desasignar_bloques(int id_fcb, int cant_bloques)
+{
+	int cant_bloques_fcb = valor_fcb(id_fcb, TAMANIO_ARCHIVO) / tamanio_de_bloque;
+
+	for(int i = 0; i < cant_bloques; i++)
+	{
+		if(cant_bloques_fcb == 1)
+		{
+			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
+			return;
+		}
+		else
+		{
+			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
+			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_INDIRECTO));
+
+			uint32_t *array_de_bloques_indirectos = obtener_bloques_indirectos();
+
+			for (int i = 0; i < cantidad_de_bloques_indirectos(); i++)
+			{
+				limpiar_bit_en_bitmap(array_de_bloques_indirectos[i]);
+			}
+		}
+
+	}
+}*/
 
 /*
 void escribir_bloque(uint32_t bloque_a_escribir, void* datos){

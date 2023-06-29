@@ -109,8 +109,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 			archivo_abierto_t *archivo = malloc(sizeof(archivo_abierto_t));;
 			archivo->nombre_archivo = crear_recurso(contexto_actualizado->param1);;
-			archivo->posicion_puntero = 0;
-			archivo->pid = contexto_actualizado->pid;
+			archivo->posicion_puntero = "0";
 
 			list_add(pcb->tabla_archivos_abiertos, archivo);
 
@@ -207,10 +206,13 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		case F_SEEK:
 
 			char *archivo_abierto_seek = contexto_actualizado->param1;
-			int puntero = atoi(contexto_actualizado->param2);
 
+			log_info(logger, "Tamanio %d", strlen(archivo_abierto_seek));
 			archivo_abierto_t* archivo_abierto_seek_pcb = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, archivo_abierto_seek);
-			archivo_abierto_seek_pcb->posicion_puntero = (uint32_t) puntero;
+
+			archivo_abierto_seek_pcb->posicion_puntero = copiar_char_puntero(contexto_actualizado->param2);
+
+			log_info(logger, "Puntero %s", archivo_abierto_seek_pcb->posicion_puntero);
 
 			manejar_archivo(contexto_actualizado,pcb);
 			enviar_contexto(pcb);

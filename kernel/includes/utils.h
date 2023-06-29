@@ -43,6 +43,8 @@ void liberar_proceso_de_bloqueados_si_necesario(const char* recurso, int instanc
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_contexto* contexto);
 //void eliminar_segmentos(segmento_t* segmento , pcb_t* proceso);
 void eliminar_tabla_segmentos(pcb_t* proceso);
+void copiar_string(char *origen, char *destino);
+char* copiar_char_puntero(const char *param);
 
 void copiar_tabla_segmentos(tabla_segmentos_t* tabla_contexto,tabla_segmentos_t* tabla_pcb);
 

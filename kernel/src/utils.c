@@ -554,10 +554,21 @@ archivo_abierto_t* buscar_archivo_abierto_t (t_list *tabla_archivos_abiertos, co
 void eliminar_archivo_abierto_t(t_list *tabla_archivos_abiertos, const char *nombre_archivo)
 {
 	bool buscar_archivo(void *archivo){
-		char *recurso_actual = (char *) archivo;
-		return strcmp(archivo, nombre_archivo) == 0;
+		char *archivo_actual = (char *) archivo;
+		return strcmp(archivo_actual, nombre_archivo) == 0;
 	}
 
 	list_remove_by_condition(tabla_archivos_abiertos, buscar_archivo);
 }
 
+
+char* copiar_char_puntero(const char *param)
+{
+	char *string1 = malloc(sizeof(char) * 2);
+	memcpy(string1, "0", (sizeof(char) * 2));
+
+	string1 = realloc(string1, strlen(param) + 1);
+	memcpy(string1, param, strlen(param) + 1);
+
+	return string1;
+}
