@@ -126,7 +126,10 @@ int main(int argc, char *argv[]) {
 
 	int idej = buscar_fcb("ParcialDamian");
 	int cant_bloques = 500 / 64;
+	modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
 	asignar_bloques(idej, cant_bloques);
+
+	obtener_lista_de_bloques(idej);
 
 	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
 
@@ -187,7 +190,6 @@ void terminar_programa()
 
 void asignar_bloques(int id_fcb, int cant_bloques)
 {
-
 	uint32_t bloque_directo = obtener_primer_bloque_libre();
 	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
 	setear_bit_en_bitmap(bloque_directo);
@@ -215,11 +217,38 @@ void asignar_bloques(int id_fcb, int cant_bloques)
 			memcpy(string2,"0000",4);
 			memcpy(string2 + (4 - strlen(string)),string,strlen(string));
 			log_info(logger, "Bloque apuntado: %d", bloque);
-			memcpy(memoria_file_system + (puntero_indirecto * tamanio_de_bloque) + offset, string2, sizeof(uint32_t));
+			memcpy(memoria_file_system + (puntero_indirecto * tamanio_de_bloque) + offset, &bloque, sizeof(uint32_t));
 			offset += sizeof(uint32_t);
 		}
 	}
 
+}
+
+t_list* obtener_lista_de_bloques(int id_fcb)
+{
+	t_list* lista_de_bloques_fcb = list_create();
+	int tamanio_fcb = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
+	int cant_bloques_fcb = tamanio_fcb / tamanio_de_bloque; // usar ceil
+
+	uint32_t bloque_directo = valor_fcb(id_fcb, PUNTERO_DIRECTO);
+
+	list_add(lista_de_bloques_fcb, &bloque_directo);
+
+	if (cant_bloques_fcb > 1)
+	{
+		uint32_t bloque_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
+		int offset = 0;
+
+		for (int i = 0; i < cant_bloques_fcb - 1; i++)
+		{
+			uint32_t bloque;
+			memcpy(&bloque, memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset,sizeof(uint32_t));
+			offset += sizeof(uint32_t);
+			list_add(lista_de_bloques_fcb, &bloque);
+		}
+	}
+
+	return lista_de_bloques_fcb;
 }
 
 void desasignar_bloque(int id_fcb)
