@@ -10,6 +10,11 @@
 
 typedef struct
 {
+	uint32_t id_bloque;
+} t_bloque;
+
+typedef struct
+{
 	uint32_t nro;
 	uint32_t instruct_length;
 	char *instruct;

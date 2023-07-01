@@ -8,6 +8,7 @@
 #include<commons/string.h>
 #include<commons/config.h>
 #include<commons/bitarray.h>
+#include<commons/collections/queue.h>
 #include<readline/readline.h>
 #include<fcntl.h>
 #include<sys/mman.h>
@@ -27,7 +28,7 @@ void generar_fcb();
 void terminar_programa();
 void asignar_bloques(int id_fcb, int cant_bloques);
 int obtener_cantidad_de_bloques(int id_fcb);
-uint32_t* obtener_array_de_bloques(int id_fcb);
+t_list* obtener_lista_de_bloques(int id_fcb);
 void thread_monitor(int connection);
 
 // ___ CONFIG VARIABLES ____
