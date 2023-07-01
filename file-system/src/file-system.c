@@ -129,7 +129,9 @@ int main(int argc, char *argv[]) {
 	modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
 	asignar_bloques(idej, cant_bloques);
 
-	obtener_lista_de_bloques(idej);
+	obtener_array_de_bloques(idej);
+
+	desasignar_bloques(idej, 6);
 
 	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
 
@@ -224,15 +226,21 @@ void asignar_bloques(int id_fcb, int cant_bloques)
 
 }
 
-t_list* obtener_lista_de_bloques(int id_fcb)
+int obtener_cantidad_de_bloques(int id_fcb)
 {
-	t_list* lista_de_bloques_fcb = list_create();
 	int tamanio_fcb = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 	int cant_bloques_fcb = tamanio_fcb / tamanio_de_bloque; // usar ceil
 
-	uint32_t bloque_directo = valor_fcb(id_fcb, PUNTERO_DIRECTO);
+	return cant_bloques_fcb;
+}
 
-	list_add(lista_de_bloques_fcb, &bloque_directo);
+uint32_t* obtener_array_de_bloques(int id_fcb)
+{
+	int cant_bloques_fcb = obtener_cantidad_de_bloques(id_fcb);
+	uint32_t *array_de_bloques = malloc((cant_bloques_fcb + 1) * sizeof(uint32_t));
+
+	uint32_t bloque_directo = valor_fcb(id_fcb, PUNTERO_DIRECTO);
+	array_de_bloques[0] = bloque_directo;
 
 	if (cant_bloques_fcb > 1)
 	{
@@ -242,18 +250,31 @@ t_list* obtener_lista_de_bloques(int id_fcb)
 		for (int i = 0; i < cant_bloques_fcb - 1; i++)
 		{
 			uint32_t bloque;
-			memcpy(&bloque, memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset,sizeof(uint32_t));
+			memcpy(&bloque, memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset, sizeof(uint32_t));
+			array_de_bloques[i + 1] = bloque;
 			offset += sizeof(uint32_t);
-			list_add(lista_de_bloques_fcb, &bloque);
 		}
 	}
 
-	return lista_de_bloques_fcb;
+	return array_de_bloques;
 }
 
-void desasignar_bloque(int id_fcb)
+void desasignar_bloques(int id_fcb, int cant_bloques_a_desasignar)
 {
+	uint32_t* array_de_bloques = obtener_array_de_bloques(id_fcb);
+	int cant_bloques_fcb = obtener_cantidad_de_bloques(id_fcb) - 1;
 
+	// Primero limpiar los indirectos
+	// Segundo limpiar bloque puntero indirecto
+	// Tercero limpiar bloque directo
+
+	for(int i = 0; i < cant_bloques_fcb - cant_bloques_a_desasignar ; i++) // Limpia los que apunta el puntero indirecto
+	{
+		log_info(logger, "Lei: %d", array_de_bloques[cant_bloques_fcb - i]);
+		limpiar_bit_en_bitmap(array_de_bloques[cant_bloques_fcb - i]);
+	}
+
+	//if()
 }
 
 /*void desasignar_bloques(int id_fcb, int cant_bloques)
