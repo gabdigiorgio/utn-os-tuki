@@ -14,6 +14,8 @@
 
 extern void* memoria_file_system;
 extern int tam_memoria_file_system;
+extern int tamanio_de_bloque;
+extern t_log* logger;
 
 t_log* iniciar_logger(void);
 fcb_t* iniciar_fcb(char* path_fcb);

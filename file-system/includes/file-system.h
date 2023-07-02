@@ -26,10 +26,6 @@
 void iterator(char* value);
 void generar_fcb();
 void terminar_programa();
-void asignar_bloques(int id_fcb, int nuevo_tamanio);
-void desasignar_bloques(int id_fcb, int nuevo_tamanio);
-int obtener_cantidad_de_bloques(int id_fcb);
-t_list* obtener_lista_de_bloques(int id_fcb);
 void thread_monitor(int connection);
 
 // ___ CONFIG VARIABLES ____
