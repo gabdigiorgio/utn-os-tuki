@@ -127,11 +127,11 @@ int main(int argc, char *argv[]) {
 	int idej = buscar_fcb("ParcialDamian");
 	//int cant_bloques = 500 / 64;
 	//modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
-	asignar_bloques(idej, 256);
+	//asignar_bloques(idej, 512);
 
-	obtener_lista_de_bloques(idej);
+	//obtener_lista_de_bloques(idej);
 
-	desasignar_bloques(idej, 128);
+	//desasignar_bloques(idej, 128);
 
 	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
 
@@ -201,38 +201,42 @@ int obtener_cantidad_de_bloques(int id_fcb)
 void asignar_bloques(int id_fcb, int nuevo_tamanio)
 {
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
-	int cant_bloques = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // Usar ceil()
+	int cant_bloques_fcb = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // Usar ceil()
 	modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
 
-	uint32_t bloque_directo = obtener_primer_bloque_libre();
-	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
-	setear_bit_en_bitmap(bloque_directo);
-
-	log_info(logger, "Bloque directo: %d", bloque_directo);
-
-	if (cant_bloques > 1)
+	if (cant_bloques_fcb > 0)
 	{
-		uint32_t bloque_indirecto = obtener_primer_bloque_libre();
-		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
-		setear_bit_en_bitmap(bloque_indirecto);
+		uint32_t bloque_directo = obtener_primer_bloque_libre();
+		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+		setear_bit_en_bitmap(bloque_directo);
 
-		log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
+		log_info(logger, "Bloque directo: %d", bloque_directo);
 
-		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
-
-		int offset = 0;
-		for(int i = 0; i < cant_bloques - 1; i++)
+		if (cant_bloques_fcb > 1)
 		{
-			uint32_t bloque = obtener_primer_bloque_libre();
-			setear_bit_en_bitmap(bloque);
+			uint32_t bloque_indirecto = obtener_primer_bloque_libre();
+			modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
+			setear_bit_en_bitmap(bloque_indirecto);
 
-			char* string = string_itoa(bloque);
-			void* string2 = malloc(4);
-			memcpy(string2,"0000",4);
-			memcpy(string2 + (4 - strlen(string)),string,strlen(string));
-			log_info(logger, "Bloque apuntado: %d", bloque);
-			memcpy(memoria_file_system + (puntero_indirecto * tamanio_de_bloque) + offset, &bloque, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
+			log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
+
+			uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
+			int offset = 0;
+			int cant_bloques_indirectos = cant_bloques_fcb - 2;
+
+			for (int i = 0; i < cant_bloques_indirectos; i++)
+			{
+				uint32_t bloque = obtener_primer_bloque_libre();
+				setear_bit_en_bitmap(bloque);
+
+				char *string = string_itoa(bloque);
+				void *string2 = malloc(4);
+				memcpy(string2, "0000", 4);
+				memcpy(string2 + (4 - strlen(string)), string, strlen(string));
+				log_info(logger, "Bloque apuntado: %d", bloque);
+				memcpy(memoria_file_system + (puntero_indirecto * tamanio_de_bloque) + offset, &bloque, sizeof(uint32_t));
+				offset += sizeof(uint32_t);
+			}
 		}
 	}
 
@@ -241,11 +245,10 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 t_list* obtener_lista_de_bloques(int id_fcb)
 {
 	t_list* lista_de_bloques = list_create();
+	int cant_bloques_fcb = obtener_cantidad_de_bloques(id_fcb);
 
 	t_bloque* bloque_directo = malloc(sizeof(t_bloque));
 	bloque_directo->id_bloque = valor_fcb(id_fcb, PUNTERO_DIRECTO);
-
-	int cant_bloques_fcb = obtener_cantidad_de_bloques(id_fcb);
 
 	list_add(lista_de_bloques, bloque_directo);
 
@@ -253,8 +256,9 @@ t_list* obtener_lista_de_bloques(int id_fcb)
 	{
 		uint32_t bloque_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
 		int offset = 0;
+		int cant_bloques_indirectos = cant_bloques_fcb - 2;
 
-		for (int i = 0; i < cant_bloques_fcb - 1; i++)
+		for (int i = 0; i < cant_bloques_indirectos; i++)
 		{
 			t_bloque* bloque = malloc(sizeof(t_bloque));
 			memcpy(&bloque->id_bloque, memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset, sizeof(uint32_t));
