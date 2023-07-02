@@ -1,6 +1,6 @@
 #include "../../../includes/fcb_list.h"
 
-int truncar_fcb(char* nombre_fcb, int nuevo_tamanio)
+int truncar_fcb(char *nombre_fcb, int nuevo_tamanio)
 {
 	int resultado = -1;
 	int id_fcb = buscar_fcb(nombre_fcb);
@@ -9,16 +9,13 @@ int truncar_fcb(char* nombre_fcb, int nuevo_tamanio)
 	{
 		int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 
-		if (id_fcb != -1)
+		if (nuevo_tamanio > tamanio_archivo)
 		{
-			if (nuevo_tamanio > tamanio_archivo)
-			{
-				asignar_bloques(id_fcb, nuevo_tamanio);
-			}
-			if (nuevo_tamanio < tamanio_archivo)
-			{
-				desasignar_bloques(id_fcb, nuevo_tamanio);
-			}
+			asignar_bloques(id_fcb, nuevo_tamanio);
+		}
+		else if (nuevo_tamanio < tamanio_archivo)
+		{
+			desasignar_bloques(id_fcb, nuevo_tamanio);
 		}
 
 		resultado = 0;
@@ -37,10 +34,10 @@ int obtener_cantidad_de_bloques(int id_fcb)
 
 t_list* obtener_lista_de_bloques(int id_fcb)
 {
-	t_list* lista_de_bloques = list_create();
+	t_list *lista_de_bloques = list_create();
 	int cant_bloques_fcb = obtener_cantidad_de_bloques(id_fcb);
 
-	t_bloque* bloque_directo = malloc(sizeof(t_bloque));
+	t_bloque *bloque_directo = malloc(sizeof(t_bloque));
 	bloque_directo->id_bloque = valor_fcb(id_fcb, PUNTERO_DIRECTO);
 
 	list_add(lista_de_bloques, bloque_directo);
@@ -53,7 +50,7 @@ t_list* obtener_lista_de_bloques(int id_fcb)
 
 		for (int i = 0; i < cant_bloques_indirectos; i++)
 		{
-			t_bloque* bloque = malloc(sizeof(t_bloque));
+			t_bloque *bloque = malloc(sizeof(t_bloque));
 			memcpy(&bloque->id_bloque, memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset, sizeof(uint32_t));
 			list_add(lista_de_bloques, bloque);
 			offset += sizeof(uint32_t);
@@ -109,16 +106,16 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 
 void desasignar_bloques(int id_fcb, int nuevo_tamanio)
 {
-	t_list* lista_de_bloques = obtener_lista_de_bloques(id_fcb);
+	t_list *lista_de_bloques = obtener_lista_de_bloques(id_fcb);
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 	int cant_bloques_a_desasignar = (tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque; // Usar ceil()
 	modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
 
 	int i = 0;
 
-	while(i < cant_bloques_a_desasignar)
+	while (i < cant_bloques_a_desasignar)
 	{
-		t_bloque* bloque = list_pop(lista_de_bloques);
+		t_bloque *bloque = list_pop(lista_de_bloques);
 		log_info(logger, "Limpie: %d", bloque->id_bloque);
 		limpiar_bit_en_bitmap(bloque->id_bloque);
 		i++;

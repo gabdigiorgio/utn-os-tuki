@@ -38,7 +38,7 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_TRUNCATE:
-						if(truncar_fcb(nueva_instruccion->param1, atoi(nueva_instruccion->param2)) != 1)
+						if(truncar_fcb(nueva_instruccion->param1, atoi(nueva_instruccion->param2)) != -1)
 						{
 							estado_file = F_TRUNCATE_SUCCESS;
 							log_info(logger,"PID: %d solicito F_TRUNCATE para el archivo %s",pid, nueva_instruccion->param1);
