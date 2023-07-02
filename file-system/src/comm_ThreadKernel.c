@@ -47,15 +47,11 @@ void comm_threadKernel(int kernel_connection){
 						{
 							if(nuevo_tamanio > tamanio_archivo)
 							{
-								int bloques_a_agregar = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // usar ceil
-								asignar_bloques(id_fcb, bloques_a_agregar); // pasar tamanio nuevo
-								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
+								asignar_bloques(id_fcb, nuevo_tamanio); // pasar tamanio nuevo
 							}
 							if(nuevo_tamanio < tamanio_archivo)
 							{
-								int bloques_a_sacar = (tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque; // usar ceil
-								//desasignar_bloques(id_fcb, bloques_a_sacar);  // pasar tamanio nuevo
-								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
+								desasignar_bloques(id_fcb, nuevo_tamanio);  // pasar tamanio nuevo
 							}
 						}
 
