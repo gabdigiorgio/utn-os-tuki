@@ -248,7 +248,9 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			pthread_t thread_write_block;
 			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, args_write);
 			pthread_detach(thread_write_block);
+
 			break;
+
 		case PRINT_FILE_DATA:
 			{
 				t_instruc_file* instruccion = inicializar_instruc_file();

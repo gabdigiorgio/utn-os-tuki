@@ -17,18 +17,32 @@ void conexion_file_system(int server_connection){
 				int tamanio = 0;
 
 				switch (nueva_instruccion->estado){
+
 					case F_WRITE:
 						log_info(logger,"El proceso PID: %d solicito un F_WRITE",nueva_instruccion->pid);
+
 						direccion_fisica = atoi(nueva_instruccion->param2);
 						tamanio = atoi(nueva_instruccion->param3);
 						char* valor = malloc(tamanio);
+
 						memcpy(valor, (char*)(memoria + direccion_fisica), tamanio);
+
 						nueva_instruccion->param2_length = tamanio;
 						snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
+
 						log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
+
 						serializar_instruccion_memoria(server_connection, nueva_instruccion);
+
 						break;
+
 					case F_READ:
+
+						direccion_fisica = atoi(nueva_instruccion->param2);
+						tamanio = atoi(nueva_instruccion->param3);
+
+						memcpy(memoria + direccion_fisica, nueva_instruccion->param1, tamanio);
+
 						log_info(logger,"El proceso PID: %d solicito un F_READ",nueva_instruccion->pid);
 						break;
 					default:
