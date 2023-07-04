@@ -6,7 +6,7 @@ int ejecutar_exit(t_contexto* contexto){
 	contexto->param1 = realloc(contexto->param1,contexto->param1_length);
 	memcpy(contexto->param1, placeholder, contexto->param1_length);
 
-	log_instruccion("EXIT","");
+	log_instruccion(contexto->pid,"EXIT","");
 	contexto_estado = EXIT;
 
 	return 1;

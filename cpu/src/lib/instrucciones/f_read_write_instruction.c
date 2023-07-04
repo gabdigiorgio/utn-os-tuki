@@ -34,7 +34,7 @@ int ejecutar_f_write_read(t_contexto *contexto, t_instruc *instruccion, contexto
 
 	contexto_estado = estado;
 
-	log_instruccion(instruccion->instruct,params);
+	log_instruccion(contexto->pid,instruccion->instruct,params);
 
 	free(params);
 

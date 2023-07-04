@@ -52,7 +52,7 @@ int ejecutar_syscall(t_contexto* contexto, t_instruc* instruccion, contexto_esta
 
 	contexto_estado = estado;
 
-	log_instruccion(instruccion->instruct,params);
+	log_instruccion(contexto->pid,instruccion->instruct,params);
 
 	free(params);
 
