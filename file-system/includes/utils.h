@@ -14,6 +14,8 @@
 
 extern void* memoria_file_system;
 extern int tam_memoria_file_system;
+extern int tamanio_de_bloque;
+extern t_log* logger;
 
 t_log* iniciar_logger(void);
 fcb_t* iniciar_fcb(char* path_fcb);
@@ -23,5 +25,6 @@ t_instruc_mem* inicializar_instruc_mem();
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_instruc_file* contexto);
 fcb_t* inicializar_fcb();
 void inicializar_datos_memoria();
+void* list_pop(t_list* list);
 
 #endif /* CLIENT_H_ */
