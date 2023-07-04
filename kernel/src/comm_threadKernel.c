@@ -30,26 +30,6 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 		{
 		case EXIT:
 			log_info(logger, "PID: %d - Estado Anterior: PCB_EXEC - Estado Actual: PCB_EXIT", pcb->pid);
-			for(int i=0; i<list_size(tabla_global_archivos_abiertos);i++){
-				archivo_abierto_t* archivo = (archivo_abierto_t*) list_get(pcb->tabla_archivos_abiertos, i);
-				char *archivo_abierto = archivo->nombre_archivo;
-				if (recurso_existe_en_lista(lista_recursos, archivo_abierto) && archivo_existe_en_tabla(tabla_global_archivos_abiertos, archivo_abierto))
-				{
-					desasignar_recurso_si_lo_tiene_asignado(pcb, archivo_abierto);
-					sumar_instancia(lista_recursos, archivo_abierto);
-					int instancias_recurso = obtener_instancias(lista_recursos, archivo_abierto);
-					liberar_proceso_de_bloqueados_si_necesario(archivo_abierto, instancias_recurso);
-					archivo_abierto_t* archivo_abierto_pcb = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, archivo_abierto);
-					list_remove_element(pcb->tabla_archivos_abiertos,archivo_abierto_pcb);
-					if(instancias_recurso==1){
-						eliminar_archivo_abierto_t(tabla_global_archivos_abiertos, archivo_abierto);
-						t_recurso *recurso_a_eliminar = buscar_recurso(lista_recursos, archivo_abierto);
-						list_mutex_destroy(recurso_a_eliminar->cola_bloqueados);
-						pthread_mutex_destroy(&(recurso_a_eliminar->mutex_instancias));
-						list_remove_element(lista_recursos->lista, recurso_a_eliminar);
-					}
-				}
-			}
 			list_push(pcb_exit_list, pcb);
 			sem_post(&sem_estado_exit);
 			break;
