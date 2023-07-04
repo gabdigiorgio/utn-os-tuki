@@ -7,6 +7,7 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <libgen.h>
+#include <math.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>
@@ -17,6 +18,7 @@
 extern fcb_list_t* lista_global_fcb;
 extern t_log* logger;
 extern int fcb_id;
+extern int tamanio_de_bloque;
 
 void inicializar_fcb_list();
 int buscar_fcb(char* nombre_fcb);
@@ -30,5 +32,7 @@ int nombre_fcb(int id,char* nombre);
 int crear_fcb(char* nombre_fcb);
 int buscar_fcb_id(int id);
 int borrar_fcb(int id);
+int obtener_cantidad_de_bloques(int id_fcb);
+t_list* armar_lista_offsets(int id_fcb, int tam_a_leer);
 
 #endif /* FCB_LIST_H_ */

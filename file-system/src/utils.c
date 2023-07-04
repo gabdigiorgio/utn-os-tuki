@@ -137,3 +137,24 @@ void inicializar_datos_memoria(){
 	}
 
 }
+
+t_list* armar_lista_offsets(int id_fcb, int tam_a_leer){
+	t_list* lista_offsets = list_create();
+
+	int cant_bloques = obtener_cantidad_de_bloques(id_fcb);
+
+	offset_fcb_t* nuevo_offset = malloc(sizeof(offset_fcb_t));
+	int bloque_directo = valor_fcb(id_fcb, PUNTERO_DIRECTO);
+	int offset = tamanio_de_bloque * bloque_directo;
+
+	nuevo_offset->id_bloque = bloque_directo;
+	nuevo_offset->offset = offset;
+
+	list_add(lista_offsets,nuevo_offset);
+
+	if(cant_bloques > 1){
+
+	}
+
+	return lista_offsets;
+}

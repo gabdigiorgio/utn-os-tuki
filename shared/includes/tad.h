@@ -250,6 +250,12 @@ typedef enum
 	PUNTERO_ARCHIVO
 } fcb_prop_t;
 
+typedef struct
+{
+	uint32_t id_bloque;
+	uint32_t offset;
+} offset_fcb_t;
+
 //modify(id, TAMANIO, 50)
 //get(id)
 //push(fcb_t)

@@ -120,7 +120,6 @@ void io_block(void *args)
 	log_info(logger,"PID: %d - Bloqueado por: IO",arguments->pcb->pid);
 
 	arguments->pcb->estado = PCB_BLOCK;
-
 	sleep(arguments->block_time);
 
 	list_push(pcb_ready_list, arguments->pcb);
