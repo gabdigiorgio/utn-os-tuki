@@ -55,6 +55,9 @@ void editar_archivo(t_contexto* contexto, pcb_t* pcb){
 		case F_READ_SUCCESS:
 			log_info(logger,"F_READ success");
 			break;
+		case F_TRUNCATE_SUCCESS:
+			log_info(logger,"F_TRUNCATE success");
+			break;
 		default:
 			break;
 	}
