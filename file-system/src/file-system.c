@@ -124,6 +124,41 @@ int main(int argc, char *argv[]) {
 	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
 	pthread_detach(thread_mon);
 
+	int idej = buscar_fcb("ParcialDamian");
+	//int cant_bloques = 500 / 64;
+	//modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
+	//asignar_bloques(idej, 512);
+
+	//obtener_lista_de_bloques(idej);
+
+	//desasignar_bloques(idej, 128);
+
+	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
+
+	int bloque_directo = valor_fcb(idej,PUNTERO_DIRECTO);
+	//memcpy(memoria_file_system + (bloque_directo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	int bloque_indirecto = valor_fcb(idej,PUNTERO_INDIRECTO);
+
+	t_list* list_ejemplo = list_create();
+
+	list_add(list_ejemplo,&bloque_directo);
+
+	int offset3 = 0;
+
+	/*for (int i = 0; i < cant_bloques; i++){
+		void* s_numero = malloc(4);
+		memcpy(s_numero,memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset3,sizeof(uint32_t));
+		offset3 += sizeof(uint32_t);
+		//uint32_t numero = atoi(s_numero);
+		list_add(list_ejemplo,s_numero);
+	}
+
+	for (int i = 0; i < list_size(list_ejemplo); i++){
+		void* puntero_ejemplo = list_get(list_ejemplo,i);
+		uint32_t bloque_ejemplo = atoi(puntero_ejemplo);
+		memcpy(memoria_file_system + (bloque_ejemplo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	}*/
+
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
 		terminar_programa();
@@ -154,71 +189,6 @@ void terminar_programa()
 	config_destroy(fcb);
 	liberar_conexion(memoria_connection);
 }
-
-void asignar_bloques(int id_fcb, int cant_bloques)
-{
-
-	uint32_t bloque_directo = obtener_primer_bloque_libre();
-	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
-	setear_bit_en_bitmap(bloque_directo);
-
-	log_info(logger, "Bloque directo: %d", bloque_directo);
-
-	if (cant_bloques > 1)
-	{
-		uint32_t bloque_indirecto = obtener_primer_bloque_libre();
-		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
-		setear_bit_en_bitmap(bloque_indirecto);
-
-		log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
-
-		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
-
-		int offset = puntero_indirecto;
-		for(int i = 0; i < cant_bloques - 1; i++)
-		{
-			uint32_t bloque = obtener_primer_bloque_libre();
-			setear_bit_en_bitmap(bloque);
-
-			log_info(logger, "Bloque apuntado: %d", bloque);
-			memcpy(array_de_bloques + offset, &bloque, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-		}
-	}
-
-}
-
-void desasignar_bloque(int id_fcb)
-{
-
-}
-
-/*void desasignar_bloques(int id_fcb, int cant_bloques)
-{
-	int cant_bloques_fcb = valor_fcb(id_fcb, TAMANIO_ARCHIVO) / tamanio_de_bloque;
-
-	for(int i = 0; i < cant_bloques; i++)
-	{
-		if(cant_bloques_fcb == 1)
-		{
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
-			return;
-		}
-		else
-		{
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_INDIRECTO));
-
-			uint32_t *array_de_bloques_indirectos = obtener_bloques_indirectos();
-
-			for (int i = 0; i < cantidad_de_bloques_indirectos(); i++)
-			{
-				limpiar_bit_en_bitmap(array_de_bloques_indirectos[i]);
-			}
-		}
-
-	}
-}*/
 
 /*
 void escribir_bloque(uint32_t bloque_a_escribir, void* datos){

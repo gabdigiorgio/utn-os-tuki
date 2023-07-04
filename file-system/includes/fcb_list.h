@@ -31,4 +31,9 @@ int crear_fcb(char* nombre_fcb);
 int buscar_fcb_id(int id);
 int borrar_fcb(int id);
 
+int obtener_cantidad_de_bloques(int id_fcb);
+t_list* obtener_lista_de_bloques(int id_fcb);
+void asignar_bloques(int id_fcb, int nuevo_tamanio);
+void desasignar_bloques(int id_fcb, int nuevo_tamanio);
+
 #endif /* FCB_LIST_H_ */
