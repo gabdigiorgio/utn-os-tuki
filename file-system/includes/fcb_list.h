@@ -1,19 +1,21 @@
 #ifndef FCB_LIST_H_
 #define FCB_LIST_H_
 
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
 #include <sys/types.h>
 #include <libgen.h>
-#include <math.h>
 #include <commons/log.h>
 #include <commons/string.h>
 #include <commons/config.h>
 #include <commons/collections/list.h>
 #include <commons/collections/dictionary.h>
 #include "utils.h"
+#include "bitmap_utils.h"
+#include "handler_file.h"
 
 extern fcb_list_t* lista_global_fcb;
 extern t_log* logger;
@@ -33,6 +35,10 @@ int crear_fcb(char* nombre_fcb);
 int buscar_fcb_id(int id);
 int borrar_fcb(int id);
 int obtener_cantidad_de_bloques(int id_fcb);
-t_list* armar_lista_offsets(int id_fcb, int tam_a_leer);
+
+t_list* obtener_lista_de_bloques(int id_fcb,int primer_bloque, int size);
+t_list* obtener_lista_total_de_bloques(int id_fcb);
+void asignar_bloques(int id_fcb, int nuevo_tamanio);
+void desasignar_bloques(int id_fcb, int nuevo_tamanio);
 
 #endif /* FCB_LIST_H_ */

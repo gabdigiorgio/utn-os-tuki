@@ -38,46 +38,12 @@ void comm_threadKernel(int kernel_connection){
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_TRUNCATE:
-
-						int id_fcb = buscar_fcb(nueva_instruccion->param1);
-						int nuevo_tamanio = atoi(nueva_instruccion->param2);
-						int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
-
-						uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
-						int offset = puntero_indirecto;
-
-						asignar_bloques(id_fcb, 5);
-						t_list* lista_bloques = list_create();
-						list_add(lista_bloques, valor_fcb(id_fcb, PUNTERO_DIRECTO));
-
-						for(int i = 0; i < 4; i++)
+						if(truncar_fcb(nueva_instruccion->param1, atoi(nueva_instruccion->param2)) != -1)
 						{
-							uint32_t id_bloque = 0;
-							memcpy(&id_bloque, array_de_bloques + offset, sizeof(uint32_t));
-							log_info(logger, "Valor apuntado: %d", id_bloque);
-							offset += sizeof(uint32_t);
-							list_add(lista_bloques, id_bloque);
+							estado_file = F_TRUNCATE_SUCCESS;
+							log_info(logger,"PID: %d solicito F_TRUNCATE para el archivo %s",pid, nueva_instruccion->param1);
 						}
 
-						/*
-						if(id_fcb != -1)
-						{
-							if(nuevo_tamanio > tamanio_archivo)
-							{
-								int bloques_a_agregar = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // usar ceil
-								asignar_bloques(id_fcb, bloques_a_agregar);
-								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
-							}
-							if(nuevo_tamanio < tamanio_archivo)
-							{
-								int bloques_a_sacar = (tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque; // usar ceil
-								//desasignar_bloques(id_fcb, bloques_a_sacar);
-								modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
-							}
-						}*/
-
-						estado_file = F_TRUNCATE_SUCCESS;
-						log_info(logger,"PID: %d solicito F_TRUNCATE para el archivo %s",pid, nueva_instruccion->param1);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 					case F_WRITE:

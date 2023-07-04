@@ -12,8 +12,13 @@
 #include <commons/collections/list.h>
 #include <pthread.h>
 
+#include "fcb_list.h"
+#include "handler_file.h"
+
 extern void* memoria_file_system;
 extern int tam_memoria_file_system;
+extern int tamanio_de_bloque;
+extern t_log* logger;
 
 t_log* iniciar_logger(void);
 fcb_t* iniciar_fcb(char* path_fcb);
@@ -23,5 +28,7 @@ t_instruc_mem* inicializar_instruc_mem();
 void copiar_instruccion_mem(t_instruc_mem* instruccion, t_instruc_file* contexto);
 fcb_t* inicializar_fcb();
 void inicializar_datos_memoria();
+void* list_pop(t_list* list);
+t_list* armar_lista_offsets(int id_fcb, int tam_a_leer, int p_seek);
 
 #endif /* CLIENT_H_ */

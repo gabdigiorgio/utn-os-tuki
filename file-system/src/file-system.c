@@ -4,79 +4,6 @@ int main(int argc, char *argv[]) {
 	logger = iniciar_logger();
 	inicializar_fcb_list();
 
-	/*int fcb_id = buscar_fcb("ParcialLeo");
-	modificar_fcb(fcb_id,TAMANIO_ARCHIVO,540);
-	log_info(logger,"%d",valor_fcb(fcb_id,TAMANIO_ARCHIVO));
-	modificar_fcb(fcb_id,TAMANIO_ARCHIVO,250);
-	log_info(logger,"%d",valor_fcb(fcb_id,TAMANIO_ARCHIVO));
-
-	crear_fcb("ExamenGaby");
-	int examen_gaby = buscar_fcb("ExamenGaby");
-	modificar_fcb(examen_gaby,TAMANIO_ARCHIVO,700);
-	log_info(logger,"%d",valor_fcb(examen_gaby,TAMANIO_ARCHIVO));
-	borrar_fcb(examen_gaby);
-
-	log_info(logger,"Ya lei");*/
-
-	void* bloques = malloc(65532 * 64); //cantidad de bloques * tamaño de bloque
-	int offset = 0;
-	int size = 64;
-
-	int fd;
-	fd = open("./bloques.dat", O_RDWR);
-	ftruncate(fd,65532 * 64);
-
-	char* ptr = mmap(NULL,65532 * 64, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
-
-	void* ejemplo = "DE ACA TENGO QUE EXTRAER EL NUMERO 5 DE TODO ESTE TEXTO VAMOS A VER COMO HAGO";
-	int len = strlen(ejemplo);
-
-	memcpy(ptr,ejemplo,len);
-
-	char* numero = malloc(2);
-
-	memcpy(numero,ptr + 35,1);
-
-	log_info(logger,numero);
-
-	void* algo = malloc(158);
-
-	offset = 5; //index del bitarray, bloque 5
-
-	//Genero una lista vacia de FCB
-	fcb_list = list_create();
-
-	//fcb puntero directo = 5, puntero indirecto = 42
-	// 42 = 3, 50, 6540
-	// 4 elementos -> void* memoria = malloc(4 * tam_bloque)
-	// memcpy(memoria + offset,array_bloques + (id_bloque + tam_bloque), tam_bloque)
-	// offset += tam_bloque
-	//4 * 64
-	//"HOLA/0"
-	//"CHAU/0" -> 8 bytes
-	//FSEEK 72 -> 64 + 8
-
-	//te llega un F_TRUNCATE con tamaño 158 para el archivo 'archivo1'
-	//osea, vos sabes que 158 / tamaño de bloque -> cantidad de bloques que necesitas
-	//ej 158 / 64 -> 3 bloques ( aproximas para arriba )
-	//agarrar la funcion del bitmap -> buscar los 3 primeros bloques libres, extraer id.
-	//pusheas los 3 bloques a la lista de bloques (lista_bloques), por ej, bloque 1 2 y 3
-	//FREAD 'archivo1'
-	//tenes que copiar todos los datos de archivo1 a un espacio de memoria
-	//sabes que tenes 3 bloques (list_size(lista_bloques))
-	//tenes que hacer un malloc para el espacio entero de memoria, void* espacio = malloc(3 * tamaño de bloque)
-	//recorres cada bloque de la lista
-	//memcpy(espacio + offset_espacio, array_bloques + (id de bloque + tamaño de bloque), tamaño de bloque)
-	//el bloque en si es un int, solo guarda la posicion que es igual a id.
-
-	memcpy(bloques + (offset * size),&algo,64); // 5 * 64
-
-	int resultado = 0;
-
-	memcpy(&resultado,bloques + (offset * size),sizeof(int));
-
-	log_info(logger,"resultado %d", resultado);
-
 	//Inicializamos las variables globales desde el config, que loggee errores o success si todo esta bien
 	if (argc < 2) {
 		 log_error(logger, "Falta parametro del path del archivo de configuracion");
@@ -94,17 +21,78 @@ int main(int argc, char *argv[]) {
 	if (exit_status==EXIT_FAILURE){
 		return EXIT_FAILURE;
 	}
-	array_de_bloques = malloc(sizeof(uint32_t)*cantidad_de_bloques); //cantidad de bloques
 
 	tam_memoria_file_system=cantidad_de_bloques*tamanio_de_bloque;
 
-	memoria_file_system = malloc(tam_memoria_file_system);
+	int fd;
+	fd = open("./bloques.dat", O_RDWR);
+	ftruncate(fd,tam_memoria_file_system);
+
+	memoria_file_system = mmap(NULL,tam_memoria_file_system, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
 	inicializar_datos_memoria();
 
-	memcpy(memoria_file_system,"ABCD",sizeof(char) * 5);
+	memcpy(memoria_file_system,"0123456789ABCDEF",sizeof(char) * 16);
+	int bloque1 = 2;
+	int bloque2 = 3;
+	int bloque3 = 4;
+	memcpy(memoria_file_system + 16, &bloque1, sizeof(uint32_t));
+	memcpy(memoria_file_system + 20, &bloque2, sizeof(uint32_t));
+	memcpy(memoria_file_system + 24, &bloque3, sizeof(uint32_t));
 
-	log_info(logger,"%d",tam_memoria_file_system);
+	memcpy(memoria_file_system + 32,"FEDCBA9876543210",sizeof(char) * 16);
+	memcpy(memoria_file_system + 48,"0123456789ABCDEF",sizeof(char) * 16);
+	memcpy(memoria_file_system + 64,"FEDCBA9876543210",sizeof(char) * 16);
+
+	int id = buscar_fcb("PRUEBA");
+	log_info(logger,"Buscado FCB %d", id);
+
+	void imprimir_bloques(offset_fcb_t* offset){
+		log_info(logger,"Bloque ID: %d, Offset: %d",offset->id_bloque,offset->offset);
+	}
+
+	void imprimir_bloques2(offset_fcb_t* offset){
+		log_info(logger,"Bloque ID: %d, Offset: %d, tamanio: %d",offset->id_bloque,offset->offset,offset->tamanio);
+	}
+
+	t_list* lista_bloques1 = obtener_lista_total_de_bloques(id);
+
+	log_info(logger,"Lista 1");
+	list_iterate(lista_bloques1,(void*) imprimir_bloques);
+
+	t_list* lista_bloques2= armar_lista_offsets(id,36,20);
+
+	log_info(logger,"Lista 2");
+	list_iterate(lista_bloques2,(void*) imprimir_bloques2);
+
+	t_list* lista_bloques3= armar_lista_offsets(id,20,14);
+
+	log_info(logger,"Lista 3");
+	list_iterate(lista_bloques3,(void*) imprimir_bloques2);
+
+	t_list* lista_bloques4= armar_lista_offsets(id,18,0);
+
+	log_info(logger,"Lista 4");
+	list_iterate(lista_bloques4,(void*) imprimir_bloques2);
+
+	t_list* lista_bloques5= armar_lista_offsets(id,46,18);
+
+	log_info(logger,"Lista 5");
+	list_iterate(lista_bloques5,(void*) imprimir_bloques2);
+
+	t_list* lista_bloques6= armar_lista_offsets(id,64,0);
+
+	log_info(logger,"Lista 6");
+	list_iterate(lista_bloques6,(void*) imprimir_bloques2);
+
+	t_list* lista_bloques7= armar_lista_offsets(id,64,18);
+	log_info(logger,"Lista Error");
+
+	void* datos2 = leer_datos(lista_bloques2);
+	log_info(logger,"%s",datos2);
+
+	void* datos4 = leer_datos(lista_bloques4);
+	log_info(logger,"%s",datos4);
 
 	exit_status = crear_bitmap();
 	if (exit_status == EXIT_FAILURE)
@@ -123,6 +111,41 @@ int main(int argc, char *argv[]) {
 	pthread_t thread_mon;
 	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
 	pthread_detach(thread_mon);
+
+	int idej = buscar_fcb("ParcialDamian");
+	//int cant_bloques = 500 / 64;
+	//modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
+	//asignar_bloques(idej, 512);
+
+	//obtener_lista_de_bloques(idej);
+
+	//desasignar_bloques(idej, 128);
+
+	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
+
+	int bloque_directo = valor_fcb(idej,PUNTERO_DIRECTO);
+	//memcpy(memoria_file_system + (bloque_directo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	int bloque_indirecto = valor_fcb(idej,PUNTERO_INDIRECTO);
+
+	t_list* list_ejemplo = list_create();
+
+	list_add(list_ejemplo,&bloque_directo);
+
+	int offset3 = 0;
+
+	/*for (int i = 0; i < cant_bloques; i++){
+		void* s_numero = malloc(4);
+		memcpy(s_numero,memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset3,sizeof(uint32_t));
+		offset3 += sizeof(uint32_t);
+		//uint32_t numero = atoi(s_numero);
+		list_add(list_ejemplo,s_numero);
+	}
+
+	for (int i = 0; i < list_size(list_ejemplo); i++){
+		void* puntero_ejemplo = list_get(list_ejemplo,i);
+		uint32_t bloque_ejemplo = atoi(puntero_ejemplo);
+		memcpy(memoria_file_system + (bloque_ejemplo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
+	}*/
 
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
@@ -154,71 +177,6 @@ void terminar_programa()
 	config_destroy(fcb);
 	liberar_conexion(memoria_connection);
 }
-
-void asignar_bloques(int id_fcb, int cant_bloques)
-{
-
-	uint32_t bloque_directo = obtener_primer_bloque_libre();
-	modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
-	setear_bit_en_bitmap(bloque_directo);
-
-	log_info(logger, "Bloque directo: %d", bloque_directo);
-
-	if (cant_bloques > 1)
-	{
-		uint32_t bloque_indirecto = obtener_primer_bloque_libre();
-		modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
-		setear_bit_en_bitmap(bloque_indirecto);
-
-		log_info(logger, "Bloque indirecto: %d", bloque_indirecto);
-
-		uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
-
-		int offset = puntero_indirecto;
-		for(int i = 0; i < cant_bloques - 1; i++)
-		{
-			uint32_t bloque = obtener_primer_bloque_libre();
-			setear_bit_en_bitmap(bloque);
-
-			log_info(logger, "Bloque apuntado: %d", bloque);
-			memcpy(array_de_bloques + offset, &bloque, sizeof(uint32_t));
-			offset += sizeof(uint32_t);
-		}
-	}
-
-}
-
-void desasignar_bloque(int id_fcb)
-{
-
-}
-
-/*void desasignar_bloques(int id_fcb, int cant_bloques)
-{
-	int cant_bloques_fcb = valor_fcb(id_fcb, TAMANIO_ARCHIVO) / tamanio_de_bloque;
-
-	for(int i = 0; i < cant_bloques; i++)
-	{
-		if(cant_bloques_fcb == 1)
-		{
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
-			return;
-		}
-		else
-		{
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_DIRECTO));
-			limpiar_bit_en_bitmap(valor_fcb(id_fcb, PUNTERO_INDIRECTO));
-
-			uint32_t *array_de_bloques_indirectos = obtener_bloques_indirectos();
-
-			for (int i = 0; i < cantidad_de_bloques_indirectos(); i++)
-			{
-				limpiar_bit_en_bitmap(array_de_bloques_indirectos[i]);
-			}
-		}
-
-	}
-}*/
 
 /*
 void escribir_bloque(uint32_t bloque_a_escribir, void* datos){

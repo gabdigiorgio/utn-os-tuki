@@ -198,14 +198,19 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			break;
 
 		case F_TRUNCATE:
-			//logica temporal hasta tener la que va
-			//pthread_t thread_f_block;
-			//pthread_create(&thread_f_block, NULL, (void*) f_block, (t_f_block_args*) args);
-			//pthread_join(thread_f_block);
-			manejar_archivo(contexto_actualizado,pcb);
+
+			t_read_write_block_args *args_truncate = malloc(sizeof(t_read_write_block_args));
+			args_truncate->pcb = pcb;
+			args_truncate->contexto = inicializar_contexto();
+
+			duplicar_contexto(args_truncate->contexto, contexto_actualizado);
+
+			pthread_t thread_truncate_block;
+			pthread_create(&thread_truncate_block, NULL, (void*) file_system_truncate_block, args_truncate);
+			pthread_detach(thread_truncate_block);
+
 			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
 			enviar_contexto(pcb);
-			//cambiar por la correcta
 			break;
 
 		case F_SEEK:
