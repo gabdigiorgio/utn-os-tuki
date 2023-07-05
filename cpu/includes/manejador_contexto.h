@@ -15,6 +15,7 @@
 int ejecutar_contexto(t_contexto* contexto, int lineas);
 void armar_contexto();
 int leer_instruccion(t_contexto* contexto, t_instruc* instruccion);
+void ejecutar_instrucciones(t_contexto* contexto, t_list* lista, int lineas);
 
 extern t_log* logger;
 extern uint16_t ip;

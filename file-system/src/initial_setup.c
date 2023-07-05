@@ -84,7 +84,7 @@ int initial_setup()
 	// RETARDO_ACCESO_BLOQUE
 	if (config_has_property(config, "RETARDO_ACCESO_BLOQUE"))
 	{
-		retardo_acceso_bloque = config_get_int_value(config, "RETARDO_ACCESO_BLOQUE");
+		retardo_acceso_bloque = config_get_int_value(config, "RETARDO_ACCESO_BLOQUE") / 1000;
 	}
 	else
 	{

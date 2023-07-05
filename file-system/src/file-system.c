@@ -44,56 +44,6 @@ int main(int argc, char *argv[]) {
 	memcpy(memoria_file_system + 48,"0123456789ABCDEF",sizeof(char) * 16);
 	memcpy(memoria_file_system + 64,"FEDCBA9876543210",sizeof(char) * 16);
 
-	int id = buscar_fcb("PRUEBA");
-	log_info(logger,"Buscado FCB %d", id);
-
-	void imprimir_bloques(offset_fcb_t* offset){
-		log_info(logger,"Bloque ID: %d, Offset: %d",offset->id_bloque,offset->offset);
-	}
-
-	void imprimir_bloques2(offset_fcb_t* offset){
-		log_info(logger,"Bloque ID: %d, Offset: %d, tamanio: %d",offset->id_bloque,offset->offset,offset->tamanio);
-	}
-
-	t_list* lista_bloques1 = obtener_lista_total_de_bloques(id);
-
-	log_info(logger,"Lista 1");
-	list_iterate(lista_bloques1,(void*) imprimir_bloques);
-
-	t_list* lista_bloques2= armar_lista_offsets(id,36,20);
-
-	log_info(logger,"Lista 2");
-	list_iterate(lista_bloques2,(void*) imprimir_bloques2);
-
-	t_list* lista_bloques3= armar_lista_offsets(id,20,14);
-
-	log_info(logger,"Lista 3");
-	list_iterate(lista_bloques3,(void*) imprimir_bloques2);
-
-	t_list* lista_bloques4= armar_lista_offsets(id,18,0);
-
-	log_info(logger,"Lista 4");
-	list_iterate(lista_bloques4,(void*) imprimir_bloques2);
-
-	t_list* lista_bloques5= armar_lista_offsets(id,46,18);
-
-	log_info(logger,"Lista 5");
-	list_iterate(lista_bloques5,(void*) imprimir_bloques2);
-
-	t_list* lista_bloques6= armar_lista_offsets(id,64,0);
-
-	log_info(logger,"Lista 6");
-	list_iterate(lista_bloques6,(void*) imprimir_bloques2);
-
-	t_list* lista_bloques7= armar_lista_offsets(id,64,18);
-	log_info(logger,"Lista Error");
-
-	void* datos2 = leer_datos(lista_bloques2);
-	log_info(logger,"%s",datos2);
-
-	void* datos4 = leer_datos(lista_bloques4);
-	log_info(logger,"%s",datos4);
-
 	exit_status = crear_bitmap();
 	if (exit_status == EXIT_FAILURE)
 	{
@@ -111,6 +61,71 @@ int main(int argc, char *argv[]) {
 	pthread_t thread_mon;
 	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
 	pthread_detach(thread_mon);
+
+	int id = buscar_fcb("PRUEBA");
+		log_info(logger,"Buscado FCB %d", id);
+
+		void imprimir_bloques(offset_fcb_t* offset){
+			log_info(logger,"Bloque ID: %d, Offset: %d",offset->id_bloque,offset->offset);
+		}
+
+		void imprimir_bloques2(offset_fcb_t* offset){
+			log_info(logger,"Bloque ID: %d, Offset: %d, tamanio: %d",offset->id_bloque,offset->offset,offset->tamanio);
+		}
+
+		t_list* lista_bloques1 = obtener_lista_total_de_bloques(id);
+
+		log_info(logger,"Lista 1");
+		list_iterate(lista_bloques1,(void*) imprimir_bloques);
+
+		t_list* lista_bloques2= armar_lista_offsets(id,36,20);
+
+		log_info(logger,"Lista 2");
+		list_iterate(lista_bloques2,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques3= armar_lista_offsets(id,20,14);
+
+		log_info(logger,"Lista 3");
+		list_iterate(lista_bloques3,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques4= armar_lista_offsets(id,18,0);
+
+		log_info(logger,"Lista 4");
+		list_iterate(lista_bloques4,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques5= armar_lista_offsets(id,46,18);
+
+		log_info(logger,"Lista 5");
+		list_iterate(lista_bloques5,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques6= armar_lista_offsets(id,64,0);
+
+		log_info(logger,"Lista 6");
+		list_iterate(lista_bloques6,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques7= armar_lista_offsets(id,4,20);
+
+		log_info(logger,"Lista 7");
+		list_iterate(lista_bloques7,(void*) imprimir_bloques2);
+
+		t_list* lista_bloques8= armar_lista_offsets(id,64,18);
+		log_info(logger,"Lista Error");
+
+		void* datos2 = leer_datos(lista_bloques2);
+		log_info(logger,"%s",datos2);
+
+		void* datos4 = leer_datos(lista_bloques4);
+		log_info(logger,"%s",datos4);
+
+		t_list* lista_bloques9 = armar_lista_offsets(id,4,6);
+
+		log_info(logger,"Lista 9");
+		list_iterate(lista_bloques9,(void*) imprimir_bloques2);
+
+		void* datos_ej = malloc(4);
+		memcpy(datos_ej,"ABCD",4);
+
+		escribir_datos(datos_ej,lista_bloques8);
 
 	int idej = buscar_fcb("ParcialDamian");
 	//int cant_bloques = 500 / 64;

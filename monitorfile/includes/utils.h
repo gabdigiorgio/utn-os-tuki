@@ -10,6 +10,7 @@
 #include<assert.h>
 #include<commons/log.h>
 #include<commons/config.h>
+#include<commons/string.h>
 #include "../../shared/includes/tad.h"
 
 void imprimir_datos(void* memoria, int tam_memoria);

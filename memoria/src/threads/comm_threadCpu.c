@@ -25,9 +25,9 @@ void conexion_cpu(int server_connection)
 				case MOV_IN:
 					direccion_fisica = atoi(nueva_instruccion->param1);
 					tamanio = atoi(nueva_instruccion->param2);
-					nueva_instruccion->param1 = realloc(nueva_instruccion->param1, tamanio);
-					memcpy(nueva_instruccion->param1,memoria + direccion_fisica, tamanio);
-					nueva_instruccion->param1_length = tamanio;
+					nueva_instruccion->param3 = realloc(nueva_instruccion->param3, tamanio);
+					memcpy(nueva_instruccion->param3,memoria + direccion_fisica, tamanio);
+					nueva_instruccion->param3_length = tamanio;
 					serializar_instruccion_mov(server_connection, nueva_instruccion);
 					log_info(logger,"PID: %d - Accion: MOV_IN - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
 					break;
