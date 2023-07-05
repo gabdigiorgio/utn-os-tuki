@@ -11,8 +11,10 @@ void conexion_file_system(int server_connection){
 
 		switch (paquete->codigo_operacion){
 			case 1:
-				t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
-				deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+				t_instruc_mov *nueva_instruccion = inicializar_instruc_mov();
+				deserializar_instruccion_mov(nueva_instruccion, paquete->buffer, paquete->lineas);
+
+
 				int direccion_fisica = 0;
 				int tamanio = 0;
 
@@ -21,30 +23,32 @@ void conexion_file_system(int server_connection){
 					case F_WRITE:
 						log_info(logger,"El proceso PID: %d solicito un F_WRITE",nueva_instruccion->pid);
 
-						direccion_fisica = atoi(nueva_instruccion->param2);
-						tamanio = atoi(nueva_instruccion->param3);
-						char* valor = malloc(tamanio);
+						direccion_fisica = atoi(nueva_instruccion->param1);
+						tamanio = atoi(nueva_instruccion->param2);
 
-						memcpy(valor, (char*)(memoria + direccion_fisica), tamanio);
+						nueva_instruccion->param3 = realloc(nueva_instruccion->param3, tamanio);
 
-						nueva_instruccion->param2_length = tamanio;
-						snprintf(nueva_instruccion->param2, nueva_instruccion->param2_length, "%s", valor);
+						memcpy(nueva_instruccion->param3 , memoria + direccion_fisica , tamanio);
+						nueva_instruccion->param3_length = tamanio;
 
-						log_info(logger, "Lei el valor %s", nueva_instruccion->param2);
 
-						serializar_instruccion_memoria(server_connection, nueva_instruccion);
+						log_info(logger, "Lei el valor %s", nueva_instruccion->param3);
+
+						serializar_instruccion_mov(server_connection, nueva_instruccion);
 
 						break;
 
 					case F_READ:
 
-						direccion_fisica = atoi(nueva_instruccion->param2);
-						tamanio = atoi(nueva_instruccion->param3);
+						direccion_fisica = atoi(nueva_instruccion->param1);
+						tamanio = atoi(nueva_instruccion->param2);
 
-						memcpy(memoria + direccion_fisica, nueva_instruccion->param1, tamanio);
+						memcpy(memoria + direccion_fisica, nueva_instruccion->param3 , tamanio);
 
 						log_info(logger,"El proceso PID: %d solicito un F_READ",nueva_instruccion->pid);
+
 						break;
+
 					default:
 						break;
 				}

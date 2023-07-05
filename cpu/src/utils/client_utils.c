@@ -167,6 +167,32 @@ void serializar_instruccion_mov(int socket,t_instruc_mov* instruccion)
 }
 
 
+void generar_instruccion_mov(t_instruc_mov* instruccion_nueva,contexto_estado_t instruccion, uint32_t dir_fisica, uint32_t tamanio, char* valor){
+	char* s_dir_fisica = string_itoa(dir_fisica);
+	char* s_tamanio = string_itoa(tamanio);
+
+	int size_dir = strlen(s_dir_fisica) + 1;
+	int size_tamanio = strlen(s_tamanio) + 1;
+
+	instruccion_nueva->param1_length = size_dir;
+	instruccion_nueva->param1 = realloc(instruccion_nueva->param1,size_dir);
+	memcpy(instruccion_nueva->param1,s_dir_fisica,size_dir);
+
+	instruccion_nueva->param2_length = size_tamanio;
+	instruccion_nueva->param2 = realloc(instruccion_nueva->param2,size_tamanio);
+	memcpy(instruccion_nueva->param2,s_tamanio,size_tamanio);
+
+	instruccion_nueva->param3_length = tamanio;
+	instruccion_nueva->param3 = realloc(instruccion_nueva->param3, tamanio);
+	memcpy(instruccion_nueva->param3,valor,tamanio);
+
+	instruccion_nueva->estado = instruccion;
+
+	free(s_dir_fisica);
+	free(s_tamanio);
+}
+
+
 void liberar_conexion(int socket_cliente)
 {
 	close(socket_cliente);
