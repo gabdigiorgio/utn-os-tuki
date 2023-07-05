@@ -13,12 +13,12 @@
 #include"server_utils.h"
 
 int leer_instruccion(t_contexto *contexto, t_instruc *instruccion);
-int ejecutar_set(char *param1, char *param2);
+int ejecutar_set(uint32_t pid, char* param1, char* param2);
 int ejecutar_yield(t_contexto *contexto);
 int ejecutar_exit(t_contexto *contexto);
 void cambiar_registro(char *registro, char *valor);
 char* seleccionar_registro(char *param);
-void log_instruccion(char *instruc, char *params);
+void log_instruccion(uint32_t pid, char* instruc, char* params);
 int ejecutar_syscall(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado, int cant_params);
 int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion);
 int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion);

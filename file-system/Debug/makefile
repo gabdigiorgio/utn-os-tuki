@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include src/lib/handler_file/subdir.mk
 -include src/lib/fcb_list/subdir.mk
 -include src/subdir.mk
 ifneq ($(MAKECMDGOALS),clean)
@@ -41,7 +42,7 @@ main-build: file-system
 file-system: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc  -o "file-system" $(OBJS) $(USER_OBJS) $(LIBS) -lcommons -lreadline
+	gcc  -o "file-system" $(OBJS) $(USER_OBJS) $(LIBS) -lm -lcommons -lreadline
 	@echo 'Finished building target: $@'
 	@echo ' '
 

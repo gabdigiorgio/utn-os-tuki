@@ -22,7 +22,7 @@ void conexion_kernel(int server_connection){
 		switch(paquete->codigo_operacion){
 			case 1:
 				deserializar_contexto(paquete->buffer, paquete->lineas, contexto);
-				log_info(logger,"PID: %d",contexto->pid);
+				//log_info(logger,"PID: %d",contexto->pid);
 				ejecutar_contexto(contexto, paquete->lineas);
 				armar_contexto(contexto);
 				serializar_contexto(connection_fd,contexto);

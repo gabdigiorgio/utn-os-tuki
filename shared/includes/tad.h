@@ -10,6 +10,11 @@
 
 typedef struct
 {
+	uint32_t id_bloque;
+} t_bloque;
+
+typedef struct
+{
 	uint32_t nro;
 	uint32_t instruct_length;
 	char *instruct;
@@ -249,6 +254,13 @@ typedef enum
 	PUNTERO_DIRECTO,
 	PUNTERO_ARCHIVO
 } fcb_prop_t;
+
+typedef struct
+{
+	uint32_t id_bloque;
+	uint32_t offset;
+	uint32_t tamanio;
+} offset_fcb_t;
 
 //modify(id, TAMANIO, 50)
 //get(id)

@@ -2,7 +2,7 @@
 
 int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
 	//Genericas
-	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(instruccion->param1,instruccion->param2);
+	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(contexto->pid,instruccion->param1,instruccion->param2);
 	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield(contexto);
 	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit(contexto);
 	//IO

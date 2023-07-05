@@ -15,4 +15,5 @@ OBJS :=
 SUBDIRS := \
 src \
 src/lib/fcb_list \
+src/lib/handler_file \
 

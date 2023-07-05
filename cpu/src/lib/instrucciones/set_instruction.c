@@ -1,9 +1,7 @@
 #include "../../../includes/code_reader.h"
 
-int ejecutar_set(char* param1, char* param2){
-	log_info(logger, "Ejecutando SET - [%s %s]", param1, param2);
-
-	char** registro;
+int ejecutar_set(uint32_t pid, char* param1, char* param2){
+	log_info(logger, "PID: %d - Ejecutando SET - [%s %s]", pid, param1, param2);
 
 	cambiar_registro(seleccionar_registro(param1),param2);
 

@@ -137,3 +137,41 @@ void inicializar_datos_memoria(){
 	}
 
 }
+
+t_list* armar_lista_offsets(int id_fcb, int tam_a_leer, int p_seek){
+	t_list* lista_offsets = list_create();
+
+	int bloque_apuntado = ceil((double)(p_seek + 1) / tamanio_de_bloque);
+	int nro_bloque = 0;
+	t_list* lista_bloques = obtener_lista_de_bloques(id_fcb,p_seek,tam_a_leer);
+	int cant_bloques = list_size(lista_bloques);
+
+	while(nro_bloque < cant_bloques){
+		offset_fcb_t* nuevo_offset = malloc(sizeof(offset_fcb_t));
+		offset_fcb_t* bloque = list_get(lista_bloques, nro_bloque);
+
+		nuevo_offset->offset = bloque->id_bloque * tamanio_de_bloque;
+		nuevo_offset->id_bloque = bloque->id_bloque;
+		nuevo_offset->tamanio = tamanio_de_bloque;
+
+		if(nro_bloque == 0){
+			nuevo_offset->offset = nuevo_offset->offset + (p_seek - ((bloque_apuntado - 1) * tamanio_de_bloque));
+			nuevo_offset->tamanio = (bloque_apuntado * tamanio_de_bloque) - p_seek;
+		} else if (nro_bloque + 1 == cant_bloques){
+			nuevo_offset->tamanio = (p_seek + tam_a_leer) - ((bloque_apuntado - 1) * tamanio_de_bloque);
+		}
+
+		nro_bloque++;
+		bloque_apuntado = ceil(((double)(p_seek + 1) + (tamanio_de_bloque * nro_bloque)) / tamanio_de_bloque);
+
+		list_add(lista_offsets,nuevo_offset);
+	}
+
+	return lista_offsets;
+}
+
+void* list_pop(t_list* list)
+{
+	int last_element_index = (list_size(list) - 1);
+	return list_remove(list, last_element_index);
+}

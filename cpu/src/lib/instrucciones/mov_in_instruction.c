@@ -25,7 +25,7 @@ int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion)
 
 	destroy_instruc_mov(instruccion_movimiento);
 
-	log_info(logger, "Accion: [MOV_IN] - Valor: %s - Registro: %s", seleccionar_registro(contexto->param1), contexto->param1);
+	log_info(logger, "PID: %d - Accion: [MOV_IN] - Valor: %s - Registro: %s",contexto->pid, seleccionar_registro(contexto->param1), contexto->param1);
 
 	return 0;
 }
