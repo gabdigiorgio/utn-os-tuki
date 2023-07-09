@@ -58,14 +58,17 @@ void* leer_datos(t_list* lista_offsets){
 	memcpy(datos,dato,bloque_inicial->tamanio);
 	offset += bloque_inicial->tamanio;
 
+	free(dato);
+
 	for(int i = 1; i<cant_bloques; i++){
 		offset_fcb_t* bloque = list_get(lista_offsets,i);
 
-		void* dato = leer_dato(bloque->offset,bloque->tamanio);
+		void* dato2 = leer_dato(bloque->offset,bloque->tamanio);
 
 		datos = realloc(datos,offset + bloque->tamanio);
 		memcpy(datos+offset,dato,bloque->tamanio);
 		offset += bloque->tamanio;
+		free(dato2);
 	}
 
 	return datos;
