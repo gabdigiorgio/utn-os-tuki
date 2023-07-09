@@ -194,6 +194,14 @@ void serializar_instruccion_mov(int socket,t_instruc_mov* instruccion)
 }
 
 
+void destroy_instruc_mov(t_instruc_mov* instruccion){
+	free(instruccion->param1);
+	free(instruccion->param2);
+	free(instruccion->param3);
+	free(instruccion);
+}
+
+
 void serializar_memoria(int socket_cliente, void* memoria, int tam_memoria)
 {
 	t_buffer *buffer = malloc(sizeof(t_buffer));

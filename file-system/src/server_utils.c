@@ -134,8 +134,9 @@ void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buff
 	stream += instruccion->param3_length;
 }
 
-char* esperar_valor(int memoria_connection)
+void* esperar_valor(int memoria_connection)
 {
+	t_instruc_mov *nueva_instruccion = inicializar_instruc_mov();
 	t_paquete *paquete = malloc(sizeof(t_paquete));
 	paquete->buffer = malloc(sizeof(t_buffer));
 	deserializar_header(paquete, memoria_connection);
@@ -143,17 +144,20 @@ char* esperar_valor(int memoria_connection)
 	switch (paquete->codigo_operacion)
 	{
 	case 1:
-		t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
-		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
-		return nueva_instruccion->param2;
+		deserializar_instruccion_mov(nueva_instruccion, paquete->buffer, paquete->lineas);
 		break;
 	default:
-		log_error(logger, "Fallo respuesta file system a CPU");
-		return NULL;
+		log_error(logger, "Fallo respuesta memoria a File-System");
 		break;
 	}
 
 	free(paquete->buffer->stream);
 	free(paquete->buffer);
 	free(paquete);
+
+	void* valor = malloc(nueva_instruccion->param3_length);
+	memcpy(valor,nueva_instruccion->param3,nueva_instruccion->param3_length);
+	destroy_instruc_mem(nueva_instruccion);
+
+	return valor;
 }

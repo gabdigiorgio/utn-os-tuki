@@ -28,5 +28,6 @@ void serializar_instruccion_memoria(int socket,t_instruc_mem* instruccion);
 void serializar_memoria(int socket_cliente, void* memoria, int tam_memoria);
 void serializar_instruccion_mov(int socket,t_instruc_mov* instruccion);
 void generar_instruccion_mov(t_instruc_mov* instruccion_nueva,contexto_estado_t instruccion, uint32_t dir_fisica, uint32_t tamanio, char* valor);
+void destroy_instruc_mov(t_instruc_mov* instruccion);
 
 #endif

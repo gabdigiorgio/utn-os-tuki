@@ -22,7 +22,7 @@ int esperar_cliente(int);
 char* handshake(int);
 void deserializar_header(t_paquete* paquete, int socket_cliente);
 void deserializar_instruccion_file(t_instruc_file* instruccion, t_buffer* buffer, int lineas);
-char* esperar_valor(int memoria_connection);
+void* esperar_valor(int memoria_connection);
 
 
 #endif

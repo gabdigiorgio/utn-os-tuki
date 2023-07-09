@@ -50,26 +50,23 @@ void comm_threadKernel(int kernel_connection){
 						break;
 
 					case F_WRITE:
+
 						realizar_f_write(nueva_instruccion);
 						estado_file = F_WRITE_SUCCESS;
 						log_info(logger,"Escribir Archivo: %s - Puntero: %s - Memoria: %s - Tamaño: %s",nueva_instruccion->param1,nueva_instruccion->param4,nueva_instruccion->param2,nueva_instruccion->param3);
-						sleep(20);
+
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
 						break;
 
 					case F_READ:
+
 						log_info(logger,"PID: %d solicito F_READ para el archivo %s",pid, nueva_instruccion->param1);
 						log_info(logger,"PID: %d puntero %s",pid, nueva_instruccion->param4);
-
-						// leer el dato del archivo del bloque de acuerdo el puntero (param4) y guardarlo en el param1
-
-
 						realizar_f_read(nueva_instruccion);
+
 						estado_file = F_READ_SUCCESS;
-
-
-						sleep(20);
 						serializar_respuesta_file_kernel(kernel_connection, estado_file);
+
 						break;
 
 					case F_SEEK:

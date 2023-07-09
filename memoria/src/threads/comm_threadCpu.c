@@ -29,13 +29,13 @@ void conexion_cpu(int server_connection)
 					memcpy(nueva_instruccion->param3,memoria + direccion_fisica, tamanio);
 					nueva_instruccion->param3_length = tamanio;
 					serializar_instruccion_mov(server_connection, nueva_instruccion);
-					log_info(logger,"PID: %d - Accion: MOV_IN - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
+					log_info(logger,"PID: %d - Accion: LEER - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
 					break;
 				case MOV_OUT:
 					direccion_fisica = atoi(nueva_instruccion->param1);
 					tamanio = atoi(nueva_instruccion->param2);
 					memcpy(memoria + direccion_fisica, nueva_instruccion->param3, tamanio);
-					log_info(logger,"PID: %d - Accion: MOV_OUT - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
+					log_info(logger,"PID: %d - Accion: ESCRIBIR - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
 					break;
 			}
 
