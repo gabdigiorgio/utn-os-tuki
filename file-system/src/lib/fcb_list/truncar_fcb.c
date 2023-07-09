@@ -27,11 +27,33 @@ int truncar_fcb(char *nombre_fcb, int nuevo_tamanio)
 void asignar_bloques(int id_fcb, int nuevo_tamanio)
 {
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
-	int cant_bloques_fcb = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // Usar ceil()
+	int cant_bloques_a_asignar = ceil((double)((nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque));
 	modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
 
+	if(tamanio_archivo == 0) // para archivos nuevos
+	{
+		uint32_t bloque_directo = obtener_primer_bloque_libre();
+		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
+		setear_bit_en_bitmap(bloque_directo);
 
-	if (cant_bloques_fcb > 0)
+		if(cant_bloques_a_asignar > 1)
+		{
+			uint32_t bloque_indirecto = obtener_primer_bloque_libre();
+			modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
+			setear_bit_en_bitmap(bloque_indirecto);
+
+			int cant_bloques_indirectos = cant_bloques_a_asignar - 2;
+
+			for(int i = 0; i < cant_bloques_indirectos; i++)
+			{
+				uint32_t bloque = obtener_primer_bloque_libre();
+				setear_bit_en_bitmap(bloque);
+				escribir_bloques_indirectos(obtener_lista_total_de_bloques(id_fcb), 1);
+			}
+		}
+	}
+
+	if (cant_bloques_a_asignar > 0)
 	{
 		//id_bloque * tamanio_de_bloque = offset absoluto
 		//vos vas a saber cuantos bloques nuevos necesitas
@@ -44,7 +66,7 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 
 		log_info(logger, "Bloque directo: %d", bloque_directo);
 
-		if (cant_bloques_fcb > 1)
+		if (cant_bloques_a_asignar > 1)
 		{
 			uint32_t bloque_indirecto = obtener_primer_bloque_libre();
 			modificar_fcb(id_fcb, PUNTERO_INDIRECTO, bloque_indirecto);
@@ -54,7 +76,7 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 
 			uint32_t puntero_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
 			int offset = 0;
-			int cant_bloques_indirectos = cant_bloques_fcb - 2;
+			int cant_bloques_indirectos = cant_bloques_a_asignar - 2;
 
 			for (int i = 0; i < cant_bloques_indirectos; i++)
 			{
