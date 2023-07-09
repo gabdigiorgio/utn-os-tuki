@@ -21,7 +21,8 @@ void conexion_file_system(int server_connection){
 				switch (nueva_instruccion->estado){
 
 					case F_WRITE:
-						log_info(logger,"El proceso PID: %d solicito un F_WRITE",nueva_instruccion->pid);
+
+						log_info(logger,"PID: %d - Accion: LEER - Direccion Fisica: %d - Tamanio: %d - Origen: FS",nueva_instruccion->pid,direccion_fisica,tamanio);
 
 						direccion_fisica = atoi(nueva_instruccion->param1);
 						tamanio = atoi(nueva_instruccion->param2);
@@ -34,18 +35,20 @@ void conexion_file_system(int server_connection){
 
 						serializar_instruccion_mov(server_connection, nueva_instruccion);
 
-						log_info(logger,"PID: %d - Accion: ESCRIBIR - Direccion Fisica: %d - Tamanio: %d - Origen: CPU",nueva_instruccion->pid,direccion_fisica,tamanio);
-
 						break;
 
 					case F_READ:
 
+						log_info(logger,"PID: %d - Accion: ESCRIBIR - Direccion Fisica: %d - Tamanio: %d - Origen: FS",nueva_instruccion->pid,direccion_fisica,tamanio);
+
 						direccion_fisica = atoi(nueva_instruccion->param1);
 						tamanio = atoi(nueva_instruccion->param2);
 
+						log_info(logger, "ESCRIBI el valor %s", (char*) nueva_instruccion->param3);
+
 						memcpy(memoria + direccion_fisica, nueva_instruccion->param3 , tamanio);
 
-						log_info(logger,"PID: %d - Accion: LEER - Direccion Fisica: %d - Tamanio: %d - Origen: FS",nueva_instruccion->pid,direccion_fisica,tamanio);
+
 
 						break;
 

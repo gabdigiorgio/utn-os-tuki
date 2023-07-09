@@ -105,11 +105,14 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 		case F_OPEN:
 
+			log_info(logger, "PID: %d - Abrir Archivo: %s", pcb->pid, contexto_actualizado->param1);
+
 			char *archivo_a_abrir = crear_recurso(contexto_actualizado->param1);
 
 			archivo_abierto_t *archivo = malloc(sizeof(archivo_abierto_t));;
 			archivo->nombre_archivo = crear_recurso(contexto_actualizado->param1);;
 			archivo->posicion_puntero = "0";
+
 
 			list_add(pcb->tabla_archivos_abiertos, archivo);
 
@@ -160,6 +163,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			break;
 
 		case F_CLOSE:
+
+			log_info(logger, "PID: %d - Cerrar Archivo: %s", pcb->pid, contexto_actualizado->param1);
 
 			char *archivo_abierto = contexto_actualizado->param1;
 
@@ -215,6 +220,8 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 		case F_SEEK:
 
+			log_info(logger, "PID: %d - Actualizar puntero Archivo: %s - Puntero: %s", pcb->pid, contexto_actualizado->param1, contexto_actualizado->param2);
+
 			char *archivo_abierto_seek = contexto_actualizado->param1;
 
 			log_info(logger, "Tamanio %d", strlen(archivo_abierto_seek));
@@ -237,6 +244,10 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 
 			duplicar_contexto(args_read->contexto,contexto_actualizado);
 
+			archivo_abierto_t* archivo_abierto_pcb_read = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, contexto_actualizado->param1);
+
+			log_info(logger, "PID: %d - Leer Archivo: %s - Puntero %s - Dirección Memoria %s - Tamaño %s", pcb->pid, contexto_actualizado->param1, archivo_abierto_pcb_read->posicion_puntero, contexto_actualizado->param2, contexto_actualizado->param3);
+
 			pthread_t thread_read_block;
 			pthread_create(&thread_read_block, NULL, (void*) file_system_read_write_block, args_read);
 			pthread_detach(thread_read_block);
@@ -249,6 +260,10 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			args_write->contexto = inicializar_contexto();
 
 			duplicar_contexto(args_write->contexto,contexto_actualizado);
+
+			archivo_abierto_t* archivo_abierto_pcb_write = buscar_archivo_abierto_t(pcb->tabla_archivos_abiertos, contexto_actualizado->param1);
+
+			log_info(logger, "PID: %d - Escribir  Archivo: %s - Puntero %s - Dirección Memoria %s - Tamaño %s", pcb->pid, contexto_actualizado->param1, archivo_abierto_pcb_write->posicion_puntero, contexto_actualizado->param2, contexto_actualizado->param3);
 
 			pthread_t thread_write_block;
 			pthread_create(&thread_write_block, NULL, (void*) file_system_read_write_block, args_write);

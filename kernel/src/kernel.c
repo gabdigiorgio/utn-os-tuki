@@ -160,7 +160,7 @@ void iniciar_lista_recursos()
 	}
 
 	lista_recursos = init_list_mutex();
-	for (int i = 0; i < cant_lista_nombre_recursos; i++)
+	for (int i = cant_lista_nombre_recursos - 1; i >= 0; i--)
 	{
 		char* nuevo_recurso = string_array_pop(lista_nombre_recursos);
 		int recurso_length = strlen(nuevo_recurso) + 1;

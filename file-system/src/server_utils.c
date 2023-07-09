@@ -157,7 +157,42 @@ void* esperar_valor(int memoria_connection)
 
 	void* valor = malloc(nueva_instruccion->param3_length);
 	memcpy(valor,nueva_instruccion->param3,nueva_instruccion->param3_length);
-	destroy_instruc_mem(nueva_instruccion);
+	destroy_instruc_mov(nueva_instruccion);
 
 	return valor;
+}
+
+void destroy_instruc_mov(t_instruc_mov* instruccion){
+	free(instruccion->param1);
+	free(instruccion->param2);
+	free(instruccion->param3);
+	free(instruccion);
+}
+
+
+void deserializar_instruccion_mov(t_instruc_mov* instruccion, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&(instruccion->estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
+
+	memcpy(&(instruccion->pid), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+
+	memcpy(&(instruccion->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	memcpy(instruccion->param1, stream, instruccion->param1_length);
+	stream += instruccion->param1_length;
+	memcpy(&(instruccion->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	memcpy(instruccion->param2, stream, instruccion->param2_length);
+	stream += instruccion->param2_length;
+
+	memcpy(&(instruccion->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	memcpy(instruccion->param3, stream, instruccion->param3_length);
+	stream += instruccion->param3_length;
 }

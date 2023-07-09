@@ -264,7 +264,7 @@ void* esperar_valor(int memoria_connection)
 
 	void* valor = malloc(nueva_instruccion->param3_length);
 	memcpy(valor,nueva_instruccion->param3,nueva_instruccion->param3_length);
-	destroy_instruc_mem(nueva_instruccion);
+	destroy_instruc_mov(nueva_instruccion);
 
 	return valor;
 }
