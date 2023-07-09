@@ -3,4 +3,5 @@ SET BX ASD0
 F_OPEN ParcialDamian
 F_OPEN ParcialLeo
 F_CLOSE ParcialLeo
+F_DELETE ParcialLeo
 EXIT

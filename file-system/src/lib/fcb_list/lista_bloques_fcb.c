@@ -31,18 +31,7 @@ t_list* obtener_lista_de_bloques(int id_fcb,int offset_inicial, int size)
 
 	if (cant_bloques_fcb > 1)
 	{
-		uint32_t bloque_indirecto = valor_fcb(id_fcb, PUNTERO_INDIRECTO);
-		int offset = floor(((double)offset_fcb / tamanio_de_bloque) - 1) * sizeof(uint32_t);
-
-		while(offset_fcb < size + offset_inicial){
-			offset_fcb_t *bloque = malloc(sizeof(offset_fcb_t));
-			uint32_t dato = leer_int((bloque_indirecto * tamanio_de_bloque) + offset, sizeof(uint32_t));
-			memcpy(&bloque->id_bloque, &dato , sizeof(uint32_t));
-			bloque->offset = bloque->id_bloque * tamanio_de_bloque;
-			list_add(lista_de_bloques, bloque);
-			offset += sizeof(uint32_t);
-			offset_fcb += tamanio_de_bloque;
-		}
+		leer_bloques_indirectos(id_fcb,lista_de_bloques,offset_fcb,size + offset_inicial);
 	}
 
 	return lista_de_bloques;

@@ -154,11 +154,14 @@ t_list* armar_lista_offsets(int id_fcb, int tam_a_leer, int p_seek){
 		nuevo_offset->id_bloque = bloque->id_bloque;
 		nuevo_offset->tamanio = tamanio_de_bloque;
 
-		if(nro_bloque == 0){
+		if(tam_a_leer < tamanio_de_bloque){
 			nuevo_offset->offset = nuevo_offset->offset + (p_seek - ((bloque_apuntado - 1) * tamanio_de_bloque));
-			nuevo_offset->tamanio = (bloque_apuntado * tamanio_de_bloque) - p_seek;
+			nuevo_offset->tamanio = tam_a_leer;
 		} else if (nro_bloque + 1 == cant_bloques){
 			nuevo_offset->tamanio = (p_seek + tam_a_leer) - ((bloque_apuntado - 1) * tamanio_de_bloque);
+		} else if(nro_bloque == 0){
+			nuevo_offset->offset = nuevo_offset->offset + (p_seek - ((bloque_apuntado - 1) * tamanio_de_bloque));
+			nuevo_offset->tamanio = (bloque_apuntado * tamanio_de_bloque) - p_seek;
 		}
 
 		nro_bloque++;

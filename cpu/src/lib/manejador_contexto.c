@@ -57,6 +57,7 @@ void ejecutar_instrucciones(t_contexto* contexto, t_list* lista, int lineas){
 		instruccion = list_get(lista, instruc_pointer);
 		exit = leer_instruccion(contexto, instruccion);
 		instruc_pointer++;
+
 		sleep(retardo_instruc);
 	}
 

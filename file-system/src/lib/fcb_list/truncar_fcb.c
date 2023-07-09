@@ -30,8 +30,14 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 	int cant_bloques_fcb = (nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque; // Usar ceil()
 	modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
 
+
 	if (cant_bloques_fcb > 0)
 	{
+		//id_bloque * tamanio_de_bloque = offset absoluto
+		//vos vas a saber cuantos bloques nuevos necesitas
+		//te paras en el ultimo id_bloque y calculas el offset de ese + 4
+		//luego iteras con la cantidad de bloques que necesitas
+		//y escribis el bloque en memoria corriendo el offset 4 por cada uno
 		uint32_t bloque_directo = obtener_primer_bloque_libre();
 		modificar_fcb(id_fcb, PUNTERO_DIRECTO, bloque_directo);
 		setear_bit_en_bitmap(bloque_directo);
@@ -79,7 +85,7 @@ void desasignar_bloques(int id_fcb, int nuevo_tamanio)
 
 	while (i < cant_bloques_a_desasignar)
 	{
-		t_bloque *bloque = list_pop(lista_de_bloques);
+		offset_fcb_t *bloque = list_pop(lista_de_bloques);
 		log_info(logger, "Limpie: %d", bloque->id_bloque);
 		limpiar_bit_en_bitmap(bloque->id_bloque);
 		i++;

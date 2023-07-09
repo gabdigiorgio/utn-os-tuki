@@ -184,6 +184,33 @@ void deserializar_instruccion_memoria(t_instruc_mem* instruccion, t_buffer* buff
 	stream += instruccion->param3_length;
 }
 
+void deserializar_instruccion_mov(t_instruc_mov* instruccion, t_buffer* buffer, int lineas){
+	void* stream = buffer->stream;
+
+	memcpy(&(instruccion->estado), stream, sizeof(contexto_estado_t));
+	stream += sizeof(contexto_estado_t);
+
+	memcpy(&(instruccion->pid), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+
+	memcpy(&(instruccion->param1_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param1 = realloc(instruccion->param1,instruccion->param1_length);
+	memcpy(instruccion->param1, stream, instruccion->param1_length);
+	stream += instruccion->param1_length;
+	memcpy(&(instruccion->param2_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param2 = realloc(instruccion->param2,instruccion->param2_length);
+	memcpy(instruccion->param2, stream, instruccion->param2_length);
+	stream += instruccion->param2_length;
+
+	memcpy(&(instruccion->param3_length), stream, sizeof(uint32_t));
+	stream += sizeof(uint32_t);
+	instruccion->param3 = realloc(instruccion->param3,instruccion->param3_length);
+	memcpy(instruccion->param3, stream, instruccion->param3_length);
+	stream += instruccion->param3_length;
+}
+
 char* handshake(int socket_cliente){
 	char* message = "";
 	uint8_t handshake;
@@ -216,7 +243,7 @@ char* handshake(int socket_cliente){
 
 void* esperar_valor(int memoria_connection)
 {
-	t_instruc_mem *nueva_instruccion = inicializar_instruc_mem();
+	t_instruc_mov *nueva_instruccion = inicializar_instruc_mov();
 	t_paquete *paquete = malloc(sizeof(t_paquete));
 	paquete->buffer = malloc(sizeof(t_buffer));
 	deserializar_header(paquete, memoria_connection);
@@ -224,7 +251,7 @@ void* esperar_valor(int memoria_connection)
 	switch (paquete->codigo_operacion)
 	{
 	case 1:
-		deserializar_instruccion_memoria(nueva_instruccion, paquete->buffer, paquete->lineas);
+		deserializar_instruccion_mov(nueva_instruccion, paquete->buffer, paquete->lineas);
 		break;
 	default:
 		log_error(logger, "Fallo respuesta memoria a CPU");
@@ -235,8 +262,8 @@ void* esperar_valor(int memoria_connection)
 	free(paquete->buffer);
 	free(paquete);
 
-	void* valor = malloc(nueva_instruccion->param1_length);
-	memcpy(valor,nueva_instruccion->param1,nueva_instruccion->param1_length);
+	void* valor = malloc(nueva_instruccion->param3_length);
+	memcpy(valor,nueva_instruccion->param3,nueva_instruccion->param3_length);
 	destroy_instruc_mem(nueva_instruccion);
 
 	return valor;
