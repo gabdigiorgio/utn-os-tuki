@@ -41,7 +41,7 @@ void comm_threadKernel(int kernel_connection){
 					case F_TRUNCATE:
 						if(truncar_fcb(nueva_instruccion->param1, atoi(nueva_instruccion->param2)) != -1)
 						{
-							log_info(logger,"Truncar Archivo: %s - Tamaño: %d",nueva_instruccion->param1,nueva_instruccion->param2);
+							log_info(logger,"Truncar Archivo: %s - Tamaño: %s",nueva_instruccion->param1, nueva_instruccion->param2);
 							estado_file = F_TRUNCATE_SUCCESS;
 						}
 
