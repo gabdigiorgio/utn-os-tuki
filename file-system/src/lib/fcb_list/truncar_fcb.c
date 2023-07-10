@@ -40,20 +40,28 @@ void asignar_bloque_indirecto(int id_fcb)
 
 void asignar_bloques_indirectos(int id_fcb, int cant_bloques_indirectos)
 {
-	t_list *lista_de_bloques = obtener_lista_total_de_bloques(id_fcb);
+	t_list *lista_total_de_bloques = obtener_lista_total_de_bloques(id_fcb);
+	int indice_inicial;
 
 	for (int i = 0; i < cant_bloques_indirectos; i++)
 	{
-		uint32_t bloque = obtener_primer_bloque_libre();
-		setear_bit_en_bitmap(bloque);
-		escribir_bloques_indirectos(lista_de_bloques, lista_de_bloques->elements_count);
+		offset_fcb_t *bloque = malloc(sizeof(offset_fcb_t));
+		bloque->id_bloque = obtener_primer_bloque_libre();
+		log_info(logger, "Bloque indirecto: %d", bloque->id_bloque);
+		setear_bit_en_bitmap(bloque->id_bloque);
+		list_add(lista_total_de_bloques, bloque);
 	}
+
+	indice_inicial = lista_total_de_bloques->elements_count;
+
+	escribir_bloques_indirectos(lista_total_de_bloques, indice_inicial);
 }
 
 void asignar_bloques(int id_fcb, int nuevo_tamanio)
 {
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
 	int cant_bloques_a_asignar = ceil((double) ((nuevo_tamanio - tamanio_archivo) / tamanio_de_bloque));
+	int cant_bloques_indirectos = cant_bloques_a_asignar - 2;
 
 	log_info(logger, "Ejecutando asignar bloques");
 
@@ -66,7 +74,6 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 			if (cant_bloques_a_asignar > 1)
 			{
 				asignar_bloque_indirecto(id_fcb);
-				int cant_bloques_indirectos = cant_bloques_a_asignar - 1;
 				asignar_bloques_indirectos(id_fcb, cant_bloques_indirectos);
 			}
 		}
@@ -76,7 +83,6 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 		if (cant_bloques_a_asignar > 0)
 		{
 			asignar_bloque_indirecto(id_fcb);
-			int cant_bloques_indirectos = cant_bloques_a_asignar - 1;
 			asignar_bloques_indirectos(id_fcb, cant_bloques_indirectos);
 		}
 	}
@@ -84,7 +90,6 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 	{
 		if (cant_bloques_a_asignar > 0)
 		{
-			int cant_bloques_indirectos = cant_bloques_a_asignar - 1;
 			asignar_bloques_indirectos(id_fcb, cant_bloques_indirectos);
 		}
 	}
