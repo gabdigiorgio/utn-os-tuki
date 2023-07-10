@@ -24,14 +24,14 @@ int main(int argc, char *argv[]) {
 
 	tam_memoria_file_system=cantidad_de_bloques*tamanio_de_bloque;
 
+	//Mapeo de memoria
 	int fd;
 	fd = open("./bloques.dat", O_RDWR);
 	ftruncate(fd,tam_memoria_file_system);
 
 	memoria_file_system = mmap(NULL,tam_memoria_file_system, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
-	inicializar_datos_memoria();
-
+	/*
 	memcpy(memoria_file_system,"0123456789ABCDEF",sizeof(char) * 16);
 	int bloque1 = 2;
 	int bloque2 = 3;
@@ -43,6 +43,7 @@ int main(int argc, char *argv[]) {
 	memcpy(memoria_file_system + 32,"FEDCBA9876543210",sizeof(char) * 16);
 	memcpy(memoria_file_system + 48,"0123456789ABCDEF",sizeof(char) * 16);
 	memcpy(memoria_file_system + 64,"FEDCBA9876543210",sizeof(char) * 16);
+	*/
 
 	exit_status = crear_bitmap();
 	if (exit_status == EXIT_FAILURE)
@@ -61,106 +62,6 @@ int main(int argc, char *argv[]) {
 	pthread_t thread_mon;
 	pthread_create(&thread_mon, NULL, (void*) thread_monitor, monitor_connection);
 	pthread_detach(thread_mon);
-
-	int id = buscar_fcb("PRUEBA");
-		log_info(logger,"Buscado FCB %d", id);
-
-		void imprimir_bloques(offset_fcb_t* offset){
-			log_info(logger,"Bloque ID: %d, Offset: %d",offset->id_bloque,offset->offset);
-		}
-
-		void imprimir_bloques2(offset_fcb_t* offset){
-			log_info(logger,"Bloque ID: %d, Offset: %d, tamanio: %d",offset->id_bloque,offset->offset,offset->tamanio);
-		}
-
-		t_list* lista_bloques1 = obtener_lista_total_de_bloques(id);
-
-		log_info(logger,"Lista 1");
-		list_iterate(lista_bloques1,(void*) imprimir_bloques);
-
-		t_list* lista_bloques2= armar_lista_offsets(id,36,20);
-
-		log_info(logger,"Lista 2");
-		list_iterate(lista_bloques2,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques3= armar_lista_offsets(id,20,14);
-
-		log_info(logger,"Lista 3");
-		list_iterate(lista_bloques3,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques4= armar_lista_offsets(id,18,0);
-
-		log_info(logger,"Lista 4");
-		list_iterate(lista_bloques4,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques5= armar_lista_offsets(id,46,18);
-
-		log_info(logger,"Lista 5");
-		list_iterate(lista_bloques5,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques6= armar_lista_offsets(id,64,0);
-
-		log_info(logger,"Lista 6");
-		list_iterate(lista_bloques6,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques7= armar_lista_offsets(id,4,20);
-
-		log_info(logger,"Lista 7");
-		list_iterate(lista_bloques7,(void*) imprimir_bloques2);
-
-		t_list* lista_bloques8= armar_lista_offsets(id,64,18);
-		log_info(logger,"Lista Error");
-
-		void* datos2 = leer_datos(lista_bloques2);
-		log_info(logger,"%s",datos2);
-
-		void* datos4 = leer_datos(lista_bloques4);
-		log_info(logger,"%s",datos4);
-
-		t_list* lista_bloques9 = armar_lista_offsets(id,4,6);
-
-		log_info(logger,"Lista 9");
-		list_iterate(lista_bloques9,(void*) imprimir_bloques2);
-
-		void* datos_ej = malloc(4);
-		memcpy(datos_ej,"ABCD",4);
-
-		escribir_datos(datos_ej,lista_bloques8);
-
-	int idej = buscar_fcb("ParcialDamian");
-	//int cant_bloques = 500 / 64;
-	//modificar_fcb(idej, TAMANIO_ARCHIVO, 500);
-	//asignar_bloques(idej, 512);
-
-	//obtener_lista_de_bloques(idej);
-
-	//desasignar_bloques(idej, 128);
-
-	char* ejemplo2 = "QUIERO COPIAR TODO ESTO EN MI ARCHIVO";
-
-	int bloque_directo = valor_fcb(idej,PUNTERO_DIRECTO);
-	//memcpy(memoria_file_system + (bloque_directo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
-	int bloque_indirecto = valor_fcb(idej,PUNTERO_INDIRECTO);
-
-	t_list* list_ejemplo = list_create();
-
-	list_add(list_ejemplo,&bloque_directo);
-
-	int offset3 = 0;
-
-	/*for (int i = 0; i < cant_bloques; i++){
-		void* s_numero = malloc(4);
-		memcpy(s_numero,memoria_file_system + (bloque_indirecto * tamanio_de_bloque) + offset3,sizeof(uint32_t));
-		offset3 += sizeof(uint32_t);
-		//uint32_t numero = atoi(s_numero);
-		list_add(list_ejemplo,s_numero);
-	}
-
-	for (int i = 0; i < list_size(list_ejemplo); i++){
-		void* puntero_ejemplo = list_get(list_ejemplo,i);
-		uint32_t bloque_ejemplo = atoi(puntero_ejemplo);
-		memcpy(memoria_file_system + (bloque_ejemplo * tamanio_de_bloque), ejemplo2, strlen(ejemplo2));
-	}*/
 
 	//Inicializamos conexion con memoria
 	if((memoria_connection = crear_conexion(memoria_ip,memoria_port)) == 0 || handshake_cliente(memoria_connection,3,4) == -1) {
