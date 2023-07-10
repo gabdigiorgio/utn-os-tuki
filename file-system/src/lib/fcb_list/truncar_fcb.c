@@ -103,17 +103,17 @@ void desasignar_bloques(int id_fcb, int nuevo_tamanio)
 {
 	t_list *lista_de_bloques = obtener_lista_total_de_bloques(id_fcb);
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
-	int cant_bloques_a_desasignar = (tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque; // Usar ceil()
+	int cant_bloques_a_desasignar = ceil((double)((tamanio_archivo - nuevo_tamanio) / tamanio_de_bloque)); // Usar ceil()
 
 	int i = 0;
 
-	while (i < cant_bloques_a_desasignar)
+	/*while (i < cant_bloques_a_desasignar - 1)
 	{
 		offset_fcb_t *bloque = list_pop(lista_de_bloques);
 		log_info(logger, "Limpie: %d", bloque->id_bloque);
 		limpiar_bit_en_bitmap(bloque->id_bloque);
 		i++;
-	}
+	}*/
 
 	modificar_fcb(id_fcb, TAMANIO_ARCHIVO, nuevo_tamanio);
 }
