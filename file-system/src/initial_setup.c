@@ -106,7 +106,7 @@ int initial_setup()
 
 int crear_bitmap()
 {
-	int tamanio_bitmap = cantidad_de_bloques / 8; // Usar ceil()
+	int tamanio_bitmap = ceil((double)cantidad_de_bloques / 8);
 
 	int file_descriptor = open(path_bitmap, O_CREAT | O_RDWR, 0644); // 0644 -> permisos de lectura/escritura
 	if (file_descriptor < 0)

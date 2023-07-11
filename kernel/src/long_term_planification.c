@@ -52,7 +52,6 @@ void estado_exit(){
 		sem_wait(&sem_estado_exit);
 		pcb_t* proceso = list_pop(pcb_exit_list);
 		proceso->estado=PCB_EXIT;
-		log_info(logger, "Finaliza el proceso %d - Motivo: SUCCESS", proceso->pid);
 		send(proceso->consola, &resultado, sizeof(uint8_t), NULL);
 		destroy_proceso(proceso);
 		sem_post(&sem_grado_multi);

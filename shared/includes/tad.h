@@ -108,7 +108,8 @@ typedef enum
 	F_DELETE,
 	F_CREATE,
 	PRINT_FILE_STATE,
-	PRINT_FILE_DATA
+	PRINT_FILE_DATA,
+	ERROR_SEG_FAULT
 } contexto_estado_t;
 
 typedef struct

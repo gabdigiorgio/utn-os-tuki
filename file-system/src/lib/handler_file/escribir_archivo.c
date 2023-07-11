@@ -20,11 +20,16 @@ void _escribir_int(uint32_t dato, int offset){
 void escribir_bloques_indirectos(t_list* lista_bloques, int indice_inicial, int offset_indirecto){
 	int size = list_size(lista_bloques);
 
+	if(size < 2){
+		log_error(logger,"No puede haber menos de 2 bloques para escribir indirectos");
+		return;
+	}
+
 	for (int i = indice_inicial; i < size; i++)
 	{
 		offset_fcb_t *bloque = list_get(lista_bloques, i);
 
-		int offset = (i * sizeof(uint32_t)) + offset_indirecto;
+		int offset = ((i - 2) * sizeof(uint32_t)) + offset_indirecto;
 
 		_escribir_int(bloque->id_bloque, offset);
 	}

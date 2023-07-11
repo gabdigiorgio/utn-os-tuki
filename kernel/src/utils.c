@@ -397,8 +397,8 @@ void eliminar_tabla_segmentos(pcb_t* proceso){
 }
 void destroy_proceso(pcb_t *proceso) {
 
-	for(int i=0; i<list_size(tabla_global_archivos_abiertos);i++){
-		archivo_abierto_t* archivo = (archivo_abierto_t*) list_get(proceso->tabla_archivos_abiertos, i);
+	while(list_size(proceso->tabla_archivos_abiertos) != 0){
+		archivo_abierto_t* archivo = (archivo_abierto_t*) list_get(proceso->tabla_archivos_abiertos, 0);
 		char *archivo_abierto = archivo->nombre_archivo;
 		if (recurso_existe_en_lista(lista_recursos, archivo_abierto) && archivo_existe_en_tabla(tabla_global_archivos_abiertos, archivo_abierto))
 		{
