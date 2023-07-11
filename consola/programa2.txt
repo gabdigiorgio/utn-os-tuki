@@ -1,4 +1,4 @@
 F_OPEN Pepe.ho
-F_TRUNCATE Pepe.ho 123
+F_TRUNCATE Pepe.ho 128
 F_CLOSE Pepe.ho
 EXIT

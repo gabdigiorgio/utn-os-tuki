@@ -208,7 +208,7 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			args_truncate->pcb = pcb;
 			args_truncate->contexto = inicializar_contexto();
 
-			duplicar_contexto(args_truncate->contexto, contexto_actualizado);
+			duplicar_contexto(args_truncate->contexto,contexto_actualizado);
 
 			pthread_t thread_truncate_block;
 			pthread_create(&thread_truncate_block, NULL, (void*) file_system_truncate_block, args_truncate);

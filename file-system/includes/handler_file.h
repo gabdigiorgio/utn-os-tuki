@@ -32,5 +32,6 @@ void escribir_dato(void* dato, int offset, int size);
 void escribir_int(uint32_t dato,int offset);
 void _escribir_int(uint32_t dato, int offset);
 void escribir_datos(void* datos, t_list* lista_offsets);
+void escribir_bloques_indirectos(t_list* lista_bloques, int indice_inicial);
 
 #endif /* HANDLER_FILE_H_ */
