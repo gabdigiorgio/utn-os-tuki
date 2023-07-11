@@ -102,7 +102,7 @@ void asignar_bloques(int id_fcb, int nuevo_tamanio)
 	int size_final = list_size(lista_total_de_bloques);
 
 	if(size_final > 2){
-		int indice_inicial = size_final - size_inicial == 0 ? size_inicial - 2 : size_inicial;
+		int indice_inicial = size_final - size_inicial == 0 ? size_inicial - 2 : size_inicial == 1 ? size_inicial - 1 : size_inicial;
 
 		uint32_t offset_indirecto = valor_fcb(id_fcb,PUNTERO_INDIRECTO) * tamanio_de_bloque;
 
