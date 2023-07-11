@@ -175,6 +175,6 @@ t_list* armar_lista_offsets(int id_fcb, int tam_a_leer, int p_seek){
 
 void* list_pop(t_list* list)
 {
-	int last_element_index = (list->elements_count - 2);
+	int last_element_index = (list->elements_count - 1);
 	return list_remove(list, last_element_index);
 }

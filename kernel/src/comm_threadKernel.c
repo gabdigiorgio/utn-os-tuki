@@ -213,9 +213,6 @@ contexto_estado_t enviar_contexto(pcb_t *pcb)
 			pthread_t thread_truncate_block;
 			pthread_create(&thread_truncate_block, NULL, (void*) file_system_truncate_block, args_truncate);
 			pthread_detach(thread_truncate_block);
-
-			log_info(logger, "El proceso %d se comunico con FileSystem. Se continua su ejecucion", pcb->pid);
-			enviar_contexto(pcb);
 			break;
 
 		case F_SEEK:

@@ -31,6 +31,8 @@ int main(int argc, char *argv[]) {
 
 	memoria_file_system = mmap(NULL,tam_memoria_file_system, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
+	inicializar_datos_memoria();
+
 	/*
 	memcpy(memoria_file_system,"0123456789ABCDEF",sizeof(char) * 16);
 	int bloque1 = 2;

@@ -17,15 +17,16 @@ void _escribir_int(uint32_t dato, int offset){
 	memcpy(memoria_file_system + offset, &dato, 4);
 }
 
-void escribir_bloques_indirectos(t_list* lista_bloques, int indice_inicial){
+void escribir_bloques_indirectos(t_list* lista_bloques, int indice_inicial, int offset_indirecto){
 	int size = list_size(lista_bloques);
 
-	for(int i=indice_inicial; i<size; i++){
-		offset_fcb_t* bloque = list_get(lista_bloques,i);
+	for (int i = indice_inicial; i < size; i++)
+	{
+		offset_fcb_t *bloque = list_get(lista_bloques, i);
 
-		int offset = i*sizeof(uint32_t);
+		int offset = (i * sizeof(uint32_t)) + offset_indirecto;
 
-		_escribir_int(bloque->id_bloque,offset);
+		_escribir_int(bloque->id_bloque, offset);
 	}
 	sleep(retardo_acceso_bloque);
 }

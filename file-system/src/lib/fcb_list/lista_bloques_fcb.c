@@ -8,6 +8,7 @@ t_list* obtener_lista_de_bloques(int id_fcb,int offset_inicial, int size)
 {
 	t_list *lista_de_bloques = list_create();
 	int tamanio_archivo = valor_fcb(id_fcb, TAMANIO_ARCHIVO);
+	if (tamanio_archivo == 0) return lista_de_bloques;
 
 	if(size + offset_inicial > tamanio_archivo) {
 		log_error(logger,"El tamanio a leer es mayor al tamanio del archivo seleccionado");
