@@ -9,7 +9,7 @@ void escribir_dato(void* dato, int offset, int size){
 void escribir_int(uint32_t dato,int offset){
 	memcpy(memoria_file_system + offset, &dato, 4);
 
-	sleep(retardo_acceso_bloque);
+	sleep(retardo_acceso_bloque);/home/utnso/tps0/config-files/Prueba_Base/cpu.config);
 }
 
 //no usar no tiene retardo
