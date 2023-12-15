@@ -54,3 +54,12 @@ Module.symvers
 Mkfile.old
 dkms.conf
 /.metadata/
+/consola/consola.log
+/consola2/consola.log
+/consola3/consola.log
+/consola4/consola.log
+/cpu/cpu.log
+/file-system/file-system.log
+/kernel/kernel.log
+/memoria/memoria.log
+*.settings

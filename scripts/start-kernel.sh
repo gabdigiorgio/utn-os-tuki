@@ -1,0 +1,1 @@
+../kernel/Debug/kernel ../config-files/kernel.config &

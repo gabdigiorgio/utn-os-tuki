@@ -1,9 +1,35 @@
 #include "../../includes/code_reader.h"
 
-void leer_instruccion(t_instruc* instruccion){
-	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(instruccion->param1,instruccion->param2);
-	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield();
-	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit();
+int leer_instruccion(t_contexto* contexto, t_instruc* instruccion){
+	//Genericas
+	if((strcmp(instruccion->instruct,"SET"))==0) return ejecutar_set(contexto->pid,instruccion->param1,instruccion->param2);
+	if((strcmp(instruccion->instruct,"YIELD"))==0) return ejecutar_yield(contexto);
+	if((strcmp(instruccion->instruct,"EXIT"))==0) return ejecutar_exit(contexto);
+	//IO
+	if((strcmp(instruccion->instruct,"I/O"))==0) return ejecutar_syscall(contexto,instruccion,IO,1);
+	//Semasforos
+	if((strcmp(instruccion->instruct,"WAIT"))==0) return ejecutar_syscall(contexto,instruccion,WAIT,1);
+	if((strcmp(instruccion->instruct,"SIGNAL"))==0) return ejecutar_syscall(contexto,instruccion,SIGNAL,1);
+	//Memoria
+	if((strcmp(instruccion->instruct,"CREATE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,CREATE_SEGMENT,2);
+	if((strcmp(instruccion->instruct,"DELETE_SEGMENT"))==0) return ejecutar_syscall(contexto,instruccion,DELETE_SEGMENT,1);
+	if((strcmp(instruccion->instruct,"MOV_IN"))==0) return ejecutar_mov_in(contexto, instruccion);
+	if((strcmp(instruccion->instruct,"MOV_OUT"))==0) return ejecutar_mov_out(contexto,instruccion);
+	if((strcmp(instruccion->instruct,"PRINT_SEGMENTS"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_SEGMENTS,1);
+	if((strcmp(instruccion->instruct,"PRINT_MEMORY_DATA"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_MEMORY_DATA,1);
+	//File System
+	if((strcmp(instruccion->instruct,"F_OPEN"))==0) return ejecutar_syscall(contexto,instruccion,F_OPEN,1);
+	if((strcmp(instruccion->instruct,"F_CLOSE"))==0) return ejecutar_syscall(contexto,instruccion,F_CLOSE,1);
+	if((strcmp(instruccion->instruct,"F_DELETE"))==0) return ejecutar_syscall(contexto,instruccion,F_DELETE,1);
+	if((strcmp(instruccion->instruct,"F_SEEK"))==0) return ejecutar_syscall(contexto,instruccion,F_SEEK,2);
+	if((strcmp(instruccion->instruct,"F_READ"))==0) return ejecutar_f_write_read(contexto,instruccion,F_READ);
+	if((strcmp(instruccion->instruct,"F_WRITE"))==0) return ejecutar_f_write_read(contexto,instruccion,F_WRITE);
+	if((strcmp(instruccion->instruct,"F_TRUNCATE"))==0) return ejecutar_syscall(contexto,instruccion,F_TRUNCATE,2);
+	if((strcmp(instruccion->instruct,"PRINT_FILE_STATE"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_FILE_STATE,1);
+	if((strcmp(instruccion->instruct,"PRINT_FILE_DATA"))==0) return ejecutar_syscall(contexto,instruccion,PRINT_FILE_DATA,1);
+
+	log_error(logger,"Instruccion desconocida [%s]",instruccion->instruct);
+	return ejecutar_exit(contexto);
 }
 
 char* seleccionar_registro(char* param){
@@ -19,4 +45,6 @@ char* seleccionar_registro(char* param){
 	if((strcmp(param,"RBX"))==0) return rbx;
 	if((strcmp(param,"RCX"))==0) return rcx;
 	if((strcmp(param,"RDX"))==0) return rdx;
+
+	return "";
 }

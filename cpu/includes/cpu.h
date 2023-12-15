@@ -20,35 +20,46 @@
 #include "client_utils.h"
 #include "utils.h"
 #include "initial_setup.h"
-#include "code_reader.h"
+#include "comm_thread.h"
 #include "../../shared/includes/tad.h"
 
-void iterator(char* value);
 void terminar_programa();
-void prueba_dps_borrar();
-static bool sort_list(t_instruc* instruc1, t_instruc* instruc2);
 
 // ___ CONFIG VARIABLES ____
 
 t_log* logger;
-
-int server_connection;
-
-int memoria_connection;
-
-
-
-// _____________________
-
-// ___ CONFIG VARIABLES ____
-char* memoria_ip;
-char* memoria_port;
-
-char* server_port;
-
 t_config* config;
 
+int server_connection;
+int memoria_connection;
+char* memoria_ip;
+char* memoria_port;
+char* server_port;
+int retardo_instruc;
+int tam_max_segmento;
+
 // _____________________
+
+// ___ CONTEXTO ____
+
+//Declaramos los registros de proposito general
+uint16_t ip;
+char ax[5];
+char bx[5];
+char cx[5];
+char dx[5];
+char eax[9];
+char ebx[9];
+char ecx[9];
+char edx[9];
+char rax[17];
+char rbx[17];
+char rcx[17];
+char rdx[17];
+char* contexto_param;
+uint32_t contexto_estado;
+
+// ________
 
 
 #endif /* CPU_H_ */

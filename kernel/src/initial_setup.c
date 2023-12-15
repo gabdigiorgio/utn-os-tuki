@@ -89,6 +89,31 @@ int initial_setup(){
 			error = 0;
 		}
 
+	// GRADO_MAX_MULTIPROGRAMACION
+	if (config_has_property(config, "GRADO_MAX_MULTIPROGRAMACION")){
+		grado_max_multiprogramacion = config_get_int_value(config, "GRADO_MAX_MULTIPROGRAMACION");
+		} else {
+			failed_initial_setup("GRADO_MAX_MULTIPROGRAMACION");
+			error = 0;
+		}
+
+	// RECURSOS
+	if (config_has_property(config, "RECURSOS")){
+		lista_nombre_recursos = config_get_array_value(config, "RECURSOS");
+		} else {
+			failed_initial_setup("RECURSOS");
+			error = 0;
+		}
+	if (config_has_property(config, "INSTANCIAS_RECURSOS")){
+		lista_instancias_recursos = config_get_array_value(config, "INSTANCIAS_RECURSOS");
+		} else {
+			failed_initial_setup("INSTANCIAS_RECURSOS");
+			error = 0;
+		}
+
+
+
+
 
 	if(error == 1){
 		log_info(logger, "Valores de configuracion leidos correctamente");

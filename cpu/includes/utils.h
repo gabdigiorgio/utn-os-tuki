@@ -14,5 +14,7 @@ extern t_log* logger;
 
 t_log* iniciar_logger(void);
 t_config* iniciar_config(char * path_config);
-void ejecutar_instruccion(t_instruc* instruccion);
+bool sort_list(t_instruc* instruc1, t_instruc* instruc2);
+void copiar_string(char* origen, char* destino);
+t_registros* inicializar_registros();
 #endif /* CLIENT_H_ */

@@ -23,6 +23,10 @@ extern char* memoria_port;
 
 extern char* server_port;
 
+extern int retardo_instruc;
+
+extern int tam_max_segmento;
+
 extern t_config* config;
 
 extern t_log* logger;

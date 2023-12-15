@@ -6,16 +6,26 @@
 #include<string.h>
 #include<commons/log.h>
 
-#include "../../shared/includes/tad.h"
+#include"../../shared/includes/tad.h"
+#include"mmu.h"
+#include"utils.h"
+#include"client_utils.h"
+#include"server_utils.h"
 
-void leer_instruccion(t_instruc* instruccion);
-void ejecutar_set(char* param1, char* param2);
-void ejecutar_yield();
-void ejecutar_exit();
-void cambiar_registro(char* registro, char* valor);
-char* seleccionar_registro(char* param);
+int leer_instruccion(t_contexto *contexto, t_instruc *instruccion);
+int ejecutar_set(uint32_t pid, char* param1, char* param2);
+int ejecutar_yield(t_contexto *contexto);
+int ejecutar_exit(t_contexto *contexto);
+void cambiar_registro(char *registro, char *valor);
+char* seleccionar_registro(char *param);
+void log_instruccion(uint32_t pid, char* instruc, char* params);
+int ejecutar_syscall(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado, int cant_params);
+int ejecutar_mov_in(t_contexto *contexto, t_instruc *instruccion);
+int ejecutar_mov_out(t_contexto *contexto, t_instruc *instruccion);
+int ejecutar_f_write_read(t_contexto *contexto, t_instruc *instruccion, contexto_estado_t estado);
+void* esperar_valor(int memoria_connection);
 
-extern t_log* logger;
+extern t_log *logger;
 extern char ax[5];
 extern char bx[5];
 extern char cx[5];
@@ -28,5 +38,10 @@ extern char rax[17];
 extern char rbx[17];
 extern char rcx[17];
 extern char rdx[17];
+extern char *contexto_param;
+extern uint32_t contexto_estado;
+extern t_contexto *contexto;
+
+extern int memoria_connection;
 
 #endif /* CODE_READER_H_ */

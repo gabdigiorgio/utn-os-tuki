@@ -10,6 +10,9 @@
 #include<commons/collections/list.h>
 #include<string.h>
 #include<assert.h>
+#include "../../shared/includes/tad.h"
+#include "utils.h"
+#include "client_utils.h"
 
 extern t_log* logger;
 
@@ -17,9 +20,12 @@ void* recibir_buffer(int*, int);
 
 int iniciar_servidor(char*);
 int esperar_cliente(int);
-t_list* recibir_paquete(int);
-void recibir_mensaje(int);
-int recibir_operacion(int);
 char* handshake(int);
+void deserializar_header(t_paquete* paquete, int socket_cliente);
+void deserializar_instruccion_file(t_instruc_file* instruccion, t_buffer* buffer, int lineas);
+void* esperar_valor(int memoria_connection);
+void destroy_instruc_mov(t_instruc_mov* instruccion);
+void deserializar_instruccion_mov(t_instruc_mov* instruccion, t_buffer* buffer, int lineas);
+
 
 #endif
